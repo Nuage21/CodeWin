@@ -17,7 +17,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="979.0" prefWidth="979.0" stylesheets="@css/Auth.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<VBox prefHeight="805.0" prefWidth="979.0" style="-fx-background-color: white;" stylesheets="@css/Auth.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Auth_Controller">
    <children>
       <HBox prefHeight="64.0" prefWidth="979.0" style="-fx-background-color: #1d1d1d;">
          <children>
@@ -34,13 +34,13 @@
          <children>
             <TabPane prefHeight="666.0" prefWidth="979.0" side="LEFT" tabClosingPolicy="UNAVAILABLE">
               <tabs>
-                <Tab style="-fx-text-inner-color: white;" styleClass="sign-tab" text="Sign up">
+                <Tab fx:id="signupTab" styleClass="sign-tab" text="Sign up">
                      <content>
-                        <VBox id="signup-vbox" prefHeight="664.0" prefWidth="934.0">
+                        <VBox fx:id="signupvbox" prefHeight="664.0" prefWidth="934.0">
                            <children>
                               <VBox prefHeight="668.0" prefWidth="934.0">
                                  <children>
-                                    <Pane prefHeight="64.0" prefWidth="950.0" styleClass="sign-top">
+                                    <Pane prefHeight="64.0" prefWidth="950.0" style="-fx-background-color: white;" styleClass="sign-top">
                                        <children>
                                           <Label layoutX="763.0" prefHeight="64.0" prefWidth="187.0" text="Sign up" textFill="#3f5986">
                                              <font>
@@ -53,7 +53,7 @@
                                        <children>
                                           <Pane prefHeight="81.0" prefWidth="900.0">
                                              <children>
-                                                <Pane fx:id="UsernamePane" layoutX="14.0" layoutY="16.0" prefHeight="50.0" prefWidth="875.0" style="-fx-border-style: solid; -fx-border-width: 1; -fx-border-color: #d1d1d1;">
+                                                <Pane fx:id="UsernamePane" layoutX="14.0" layoutY="16.0" prefHeight="50.0" prefWidth="875.0" style="-fx-border-style: solid; -fx-border-width: 1; -fx-border-color: #d1d1d1;" styleClass="sign-field">
                                                    <children>
                                                       <ImageView fitHeight="25.0" fitWidth="23.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true" translateX="10.0" translateY="13.0">
                                                          <image>
@@ -71,7 +71,7 @@
                                           </Pane>
                                           <Pane prefHeight="81.0" prefWidth="900.0">
                                              <children>
-                                                <Pane fx:id="PasswordPane" layoutX="14.0" layoutY="16.0" prefHeight="50.0" prefWidth="875.0" style="-fx-border-style: solid; -fx-border-width: 1; -fx-border-color: #d1d1d1;">
+                                                <Pane fx:id="PasswordPane" layoutX="14.0" layoutY="16.0" prefHeight="50.0" prefWidth="875.0" style="-fx-border-style: solid; -fx-border-width: 1; -fx-border-color: #d1d1d1;" styleClass="sign-field">
                                                    <children>
                                                       <ImageView fitHeight="23.0" fitWidth="23.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true" translateX="10.0" translateY="10.0">
                                                          <image>
@@ -89,7 +89,7 @@
                                           </Pane>
                                           <Pane prefHeight="81.0" prefWidth="900.0">
                                              <children>
-                                                <Pane fx:id="UsernamePane1" layoutX="14.0" layoutY="16.0" prefHeight="50.0" prefWidth="429.0" style="-fx-border-style: solid; -fx-border-width: 1; -fx-border-color: #d1d1d1;">
+                                                <Pane fx:id="UsernamePane1" layoutX="14.0" layoutY="16.0" prefHeight="50.0" prefWidth="429.0" style="-fx-border-style: solid; -fx-border-width: 1; -fx-border-color: #d1d1d1;" styleClass="sign-field">
                                                    <children>
                                                       <ImageView fitHeight="25.0" fitWidth="23.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true" translateX="10.0" translateY="13.0">
                                                          <image>
@@ -103,7 +103,7 @@
                                                       </TextField>
                                                    </children>
                                                 </Pane>
-                                                <Pane fx:id="UsernamePane11" layoutX="455.0" layoutY="16.0" prefHeight="50.0" prefWidth="434.0" style="-fx-border-style: solid; -fx-border-width: 1; -fx-border-color: #d1d1d1;">
+                                                <Pane fx:id="UsernamePane11" layoutX="455.0" layoutY="16.0" prefHeight="50.0" prefWidth="434.0" style="-fx-border-style: solid; -fx-border-width: 1; -fx-border-color: #d1d1d1;" styleClass="sign-field">
                                                    <children>
                                                       <ImageView fitHeight="25.0" fitWidth="23.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true" translateX="10.0" translateY="13.0">
                                                          <image>
@@ -121,7 +121,7 @@
                                           </Pane>
                                           <Pane prefHeight="81.0" prefWidth="900.0">
                                              <children>
-                                                <Pane fx:id="PhonePane" layoutX="14.0" layoutY="16.0" prefHeight="50.0" prefWidth="430.0" style="-fx-border-style: solid; -fx-border-width: 1; -fx-border-color: #d1d1d1;">
+                                                <Pane fx:id="PhonePane" layoutX="14.0" layoutY="16.0" prefHeight="50.0" prefWidth="430.0" style="-fx-border-style: solid; -fx-border-width: 1; -fx-border-color: #d1d1d1;" styleClass="sign-field">
                                                    <children>
                                                       <ImageView fitHeight="25.0" fitWidth="23.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true" translateX="10.0" translateY="13.0">
                                                          <image>
@@ -135,7 +135,7 @@
                                                       </TextField>
                                                    </children>
                                                 </Pane>
-                                                <Pane fx:id="EmailPane" layoutX="455.0" layoutY="16.0" prefHeight="50.0" prefWidth="431.0" style="-fx-border-style: solid; -fx-border-width: 1; -fx-border-color: #d1d1d1;">
+                                                <Pane fx:id="EmailPane" layoutX="455.0" layoutY="16.0" prefHeight="50.0" prefWidth="431.0" style="-fx-border-style: solid; -fx-border-width: 1; -fx-border-color: #d1d1d1;" styleClass="sign-field">
                                                    <children>
                                                       <ImageView fitHeight="25.0" fitWidth="23.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true" translateX="10.0" translateY="13.0">
                                                          <image>
@@ -153,7 +153,7 @@
                                           </Pane>
                                           <Pane prefHeight="81.0" prefWidth="900.0">
                                              <children>
-                                                <Pane fx:id="AddressPane" layoutX="14.0" layoutY="16.0" prefHeight="50.0" prefWidth="433.0" style="-fx-border-style: solid; -fx-border-width: 1; -fx-border-color: #d1d1d1;">
+                                                <Pane fx:id="AddressPane" layoutX="14.0" layoutY="16.0" prefHeight="50.0" prefWidth="433.0" style="-fx-border-style: solid; -fx-border-width: 1; -fx-border-color: #d1d1d1;" styleClass="sign-field">
                                                    <children>
                                                       <ImageView fitHeight="25.0" fitWidth="23.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true" translateX="10.0" translateY="13.0">
                                                          <image>
@@ -167,7 +167,7 @@
                                                       </TextField>
                                                    </children>
                                                 </Pane>
-                                                <Pane fx:id="AddressPane1" layoutX="455.0" layoutY="16.0" prefHeight="50.0" prefWidth="433.0" style="-fx-border-style: solid; -fx-border-width: 1; -fx-border-color: #d1d1d1;">
+                                                <Pane fx:id="AddressPane1" layoutX="455.0" layoutY="16.0" prefHeight="50.0" prefWidth="433.0" style="-fx-border-style: solid; -fx-border-width: 1; -fx-border-color: #d1d1d1;" styleClass="sign-field">
                                                    <children>
                                                       <ImageView fitHeight="25.0" fitWidth="23.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true" translateX="10.0" translateY="13.0">
                                                          <image>
@@ -190,7 +190,7 @@
                                           </Pane>
                                           <Pane prefHeight="71.0" prefWidth="894.0">
                                              <children>
-                                                <Button id="signup-btn" fx:id="SubmitBtn1" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" opacity="0.89" prefHeight="57.0" prefWidth="869.0" style="-fx-background-color: white; -fx-border-color: #1d1d1d; -fx-border-radius: 20; -fx-background-radius: 20; -fx-text-fill: #3d3d3d;" text="Submit" textFill="WHITE">
+                                                <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" opacity="0.89" prefHeight="57.0" prefWidth="869.0" style="-fx-background-color: white; -fx-border-color: #1d1d1d; -fx-border-radius: 20; -fx-background-radius: 20; -fx-text-fill: #3d3d3d;" styleClass="submit-btn" text="Submit" textFill="WHITE">
                                                    <font>
                                                       <Font name="System Bold" size="15.0" />
                                                    </font>
@@ -202,7 +202,7 @@
                                           </Pane>
                                           <Pane prefHeight="84.0" prefWidth="894.0">
                                              <children>
-                                                <Button id="canceal-btn" fx:id="SubmitBtn11" layoutX="13.0" layoutY="13.0" mnemonicParsing="false" opacity="0.89" prefHeight="57.0" prefWidth="869.0" style="-fx-background-color: white; -fx-border-color: #1d1d1d; -fx-border-radius: 20; -fx-background-radius: 20; -fx-text-fill: #3d3d3d;" text="Canceal" textFill="WHITE">
+                                                <Button fx:id="signUpCancealBtn" layoutX="13.0" layoutY="13.0" mnemonicParsing="false" opacity="0.89" prefHeight="57.0" prefWidth="869.0" style="-fx-background-color: white; -fx-border-color: #1d1d1d; -fx-border-radius: 20; -fx-background-radius: 20; -fx-text-fill: #3d3d3d;" styleClass="canceal-btn" text="Canceal" textFill="WHITE">
                                                    <font>
                                                       <Font name="System Bold" size="15.0" />
                                                    </font>
@@ -220,7 +220,7 @@
                         </VBox>
                      </content>
                   </Tab>
-                <Tab styleClass="sign-tab" text="Sign in">
+                <Tab fx:id="signinTab" styleClass="sign-tab" text="Sign in">
                      <content>
                         <VBox prefHeight="200.0" prefWidth="100.0">
                            <children>
@@ -237,7 +237,7 @@
                                  <children>
                                     <Pane prefHeight="81.0" prefWidth="900.0">
                                        <children>
-                                          <Pane fx:id="UsernamePane1" layoutX="14.0" layoutY="16.0" prefHeight="50.0" prefWidth="875.0" style="-fx-border-style: solid; -fx-border-width: 1; -fx-border-color: #d1d1d1;">
+                                          <Pane fx:id="UsernamePane1" layoutX="14.0" layoutY="16.0" prefHeight="50.0" prefWidth="875.0" style="-fx-border-style: solid; -fx-border-width: 1; -fx-border-color: #d1d1d1;" styleClass="sign-field">
                                              <children>
                                                 <ImageView fitHeight="25.0" fitWidth="23.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true" translateX="10.0" translateY="13.0">
                                                    <image>
@@ -255,7 +255,7 @@
                                     </Pane>
                                     <Pane prefHeight="81.0" prefWidth="900.0">
                                        <children>
-                                          <Pane fx:id="PasswordPane1" layoutX="14.0" layoutY="16.0" prefHeight="50.0" prefWidth="875.0" style="-fx-border-style: solid; -fx-border-width: 1; -fx-border-color: #d1d1d1;">
+                                          <Pane fx:id="PasswordPane1" layoutX="14.0" layoutY="16.0" prefHeight="50.0" prefWidth="875.0" style="-fx-border-style: solid; -fx-border-width: 1; -fx-border-color: #d1d1d1;" styleClass="sign-field">
                                              <children>
                                                 <ImageView fitHeight="23.0" fitWidth="23.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true" translateX="10.0" translateY="10.0">
                                                    <image>
@@ -274,7 +274,7 @@
                                     <Pane prefHeight="28.0" prefWidth="894.0" />
                                     <Pane prefHeight="71.0" prefWidth="894.0">
                                        <children>
-                                          <Button id="signup-btn" fx:id="SubmitBtn11" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" opacity="0.89" prefHeight="57.0" prefWidth="869.0" style="-fx-background-color: white; -fx-border-color: #1d1d1d; -fx-border-radius: 20; -fx-background-radius: 20; -fx-text-fill: #3d3d3d;" text="Connexion" textFill="WHITE">
+                                          <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" opacity="0.89" prefHeight="57.0" prefWidth="869.0" style="-fx-background-color: white; -fx-border-color: #1d1d1d; -fx-border-radius: 20; -fx-background-radius: 20; -fx-text-fill: #3d3d3d;" styleClass="submit-btn" text="Connexion" textFill="WHITE">
                                              <font>
                                                 <Font name="System Bold" size="15.0" />
                                              </font>
@@ -286,7 +286,7 @@
                                     </Pane>
                                     <Pane prefHeight="84.0" prefWidth="894.0">
                                        <children>
-                                          <Button id="canceal-btn" fx:id="SubmitBtn111" layoutX="13.0" layoutY="13.0" mnemonicParsing="false" opacity="0.89" prefHeight="57.0" prefWidth="869.0" style="-fx-background-color: white; -fx-border-color: #1d1d1d; -fx-border-radius: 20; -fx-background-radius: 20; -fx-text-fill: #3d3d3d;" text="Canceal" textFill="WHITE">
+                                          <Button fx:id="signInCancealBtn" layoutX="13.0" layoutY="13.0" mnemonicParsing="false" opacity="0.89" prefHeight="57.0" prefWidth="869.0" style="-fx-background-color: white; -fx-border-color: #1d1d1d; -fx-border-radius: 20; -fx-background-radius: 20; -fx-text-fill: #3d3d3d;" styleClass="canceal-btn" text="Canceal" textFill="WHITE">
                                              <font>
                                                 <Font name="System Bold" size="15.0" />
                                              </font>
@@ -306,115 +306,107 @@
             </TabPane>
          </children>
       </VBox>
-      <HBox prefHeight="199.0" prefWidth="979.0" style="-fx-background-color: #1d1d1d;">
+      <HBox prefHeight="51.0" prefWidth="979.0" style="-fx-background-color: #1d1d1d;">
          <children>
-            <VBox prefHeight="212.0" prefWidth="310.0">
+            <Pane prefHeight="198.0" prefWidth="1293.0">
                <children>
-                  <Pane prefHeight="103.0" prefWidth="310.0" style="-fx-background-color: #1d1d1d;">
-                     <children>
-                        <Label layoutX="79.0" layoutY="63.0" text="Tamaziɣt" textFill="WHITE" textOverrun="CENTER_WORD_ELLIPSIS">
-                           <font>
-                              <Font name="Tahoma Bold" size="11.0" />
-                           </font>
-                        </Label>
-                        <Label layoutX="212.0" layoutY="63.0" text="English" textFill="WHITE" textOverrun="CENTER_WORD_ELLIPSIS">
-                           <font>
-                              <Font name="Tahoma Bold" size="11.0" />
-                           </font>
-                        </Label>
-                        <Label layoutX="91.0" layoutY="8.0" prefHeight="35.0" prefWidth="100.0" text="Language" textFill="#dddddd">
-                           <font>
-                              <Font name="Jokerman" size="19.0" />
-                           </font>
-                        </Label>
-                        <StackPane layoutX="30.0" layoutY="53.0" prefHeight="31.0" prefWidth="25.0" style="-fx-padding: 10; -fx-background-color: black; -fx-background-radius: 20;">
-                           <children>
-                              <ImageView fitHeight="15.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@img/flags/berber.png" />
-                                 </image>
-                              </ImageView>
-                           </children>
-                        </StackPane>
-                        <StackPane layoutX="160.0" layoutY="53.0" prefHeight="31.0" prefWidth="25.0" style="-fx-padding: 10; -fx-background-color: black; -fx-background-radius: 20;">
-                           <children>
-                              <ImageView fitHeight="15.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@img/flags/uk.png" />
-                                 </image>
-                              </ImageView>
-                           </children>
-                        </StackPane>
-                     </children>
-                  </Pane>
-                  <Pane prefHeight="47.0" prefWidth="310.0" style="-fx-background-color: #1d1d1d;">
-                     <children>
-                        <Label layoutX="79.0" layoutY="5.0" text="Français" textFill="WHITE" textOverrun="CENTER_WORD_ELLIPSIS">
-                           <font>
-                              <Font name="Tahoma Bold" size="11.0" />
-                           </font>
-                        </Label>
-                        <Label layoutX="213.0" layoutY="7.0" text="Español" textFill="WHITE" textOverrun="CENTER_WORD_ELLIPSIS">
-                           <font>
-                              <Font name="Tahoma Bold" size="11.0" />
-                           </font>
-                        </Label>
-                        <StackPane layoutX="30.0" layoutY="-3.0" prefHeight="31.0" prefWidth="25.0" style="-fx-padding: 10; -fx-background-color: black; -fx-background-radius: 20;">
-                           <children>
-                              <ImageView fitHeight="15.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@img/flags/france.gif" />
-                                 </image>
-                              </ImageView>
-                           </children>
-                        </StackPane>
-                        <StackPane layoutX="162.0" layoutY="-3.0" prefHeight="31.0" prefWidth="25.0" style="-fx-padding: 10; -fx-background-color: black; -fx-background-radius: 20;">
-                           <children>
-                              <ImageView fitHeight="15.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@img/flags/spain.gif" />
-                                 </image>
-                              </ImageView>
-                           </children>
-                        </StackPane>
-                     </children>
-                  </Pane>
-                  <Pane prefHeight="64.0" prefWidth="310.0" style="-fx-background-color: #1d1d1d;">
-                     <children>
-                        <Label layoutX="86.0" layoutY="2.0" text="العربية" textFill="WHITE" textOverrun="CENTER_WORD_ELLIPSIS">
-                           <font>
-                              <Font name="Tahoma Bold" size="11.0" />
-                           </font>
-                        </Label>
-                        <StackPane layoutX="33.0" layoutY="-3.0" prefHeight="31.0" prefWidth="25.0" style="-fx-padding: 10; -fx-background-color: black; -fx-background-radius: 20;">
-                           <children>
-                              <ImageView fitHeight="15.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@img/flags/arab.png" />
-                                 </image>
-                              </ImageView>
-                           </children>
-                        </StackPane>
-                     </children>
-                  </Pane>
-               </children>
-            </VBox>
-            <Pane prefHeight="212.0" prefWidth="354.0" />
-         </children>
-      </HBox>
-      <HBox prefHeight="28.0" prefWidth="979.0" style="-fx-background-color: black;">
-         <children>
-            <Pane prefHeight="85.0" prefWidth="346.0" />
-            <Pane prefHeight="54.0" prefWidth="337.0" style="-fx-background-color: #0d0d0d;">
-               <children>
-                  <Label layoutX="80.0" layoutY="7.0" text="© Copyright 2020" textFill="WHITE">
+                  <Label layoutX="225.0" layoutY="18.0" styleClass="lng-selector" text="Tamaziɣt" textFill="WHITE" textOverrun="CENTER_WORD_ELLIPSIS">
                      <font>
-                        <Font name="Verdana Italic" size="11.0" />
+                        <Font name="Tahoma Bold" size="11.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Label>
+                  <StackPane layoutX="176.0" layoutY="8.0" prefHeight="31.0" prefWidth="25.0" style="-fx-padding: 10; -fx-background-color: black; -fx-background-radius: 20;">
+                     <children>
+                        <ImageView fitHeight="15.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/flags/berber.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </StackPane>
+                  <Label layoutX="352.0" layoutY="18.0" styleClass="lng-selector" text="English" textFill="WHITE" textOverrun="CENTER_WORD_ELLIPSIS">
+                     <font>
+                        <Font name="Tahoma Bold" size="11.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Label>
+                  <StackPane layoutX="300.0" layoutY="8.0" prefHeight="31.0" prefWidth="25.0" style="-fx-padding: 10; -fx-background-color: black; -fx-background-radius: 20;">
+                     <children>
+                        <ImageView fitHeight="15.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/flags/uk.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </StackPane>
+                  <Label layoutX="467.0" layoutY="16.0" styleClass="lng-selector" text="Français" textFill="WHITE" textOverrun="CENTER_WORD_ELLIPSIS">
+                     <font>
+                        <Font name="Tahoma Bold" size="11.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Label>
+                  <StackPane layoutX="418.0" layoutY="8.0" prefHeight="31.0" prefWidth="25.0" style="-fx-padding: 10; -fx-background-color: black; -fx-background-radius: 20;">
+                     <children>
+                        <ImageView fitHeight="15.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/flags/france.gif" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </StackPane>
+                  <Label layoutX="590.0" layoutY="17.0" styleClass="lng-selector" text="Español" textFill="WHITE" textOverrun="CENTER_WORD_ELLIPSIS">
+                     <font>
+                        <Font name="Tahoma Bold" size="11.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Label>
+                  <StackPane layoutX="539.0" layoutY="7.0" prefHeight="31.0" prefWidth="25.0" style="-fx-padding: 10; -fx-background-color: black; -fx-background-radius: 20;">
+                     <children>
+                        <ImageView fitHeight="15.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/flags/spain.gif" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </StackPane>
+                  <Label layoutX="705.0" layoutY="16.0" styleClass="lng-selector" text="العربية" textFill="WHITE" textOverrun="CENTER_WORD_ELLIPSIS">
+                     <font>
+                        <Font name="Tahoma Bold" size="11.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Label>
+                  <StackPane layoutX="653.0" layoutY="9.0" prefHeight="31.0" prefWidth="25.0" style="-fx-padding: 10; -fx-background-color: black; -fx-background-radius: 20;">
+                     <children>
+                        <ImageView fitHeight="15.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/flags/arab.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </StackPane>
+                  <Label layoutX="47.0" layoutY="5.0" prefHeight="35.0" prefWidth="100.0" text="Language" textFill="#dddddd">
+                     <font>
+                        <Font name="Jokerman" size="17.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="864.0" layoutY="18.0" text="© Copyright 2020" textFill="WHITE">
+                     <font>
+                        <Font name="Verdana Italic" size="9.0" />
                      </font>
                   </Label>
                </children>
             </Pane>
-            <Pane prefHeight="85.0" prefWidth="296.0" />
          </children>
       </HBox>
    </children>
