@@ -157,7 +157,7 @@
                                                    <children>
                                                       <ImageView fitHeight="25.0" fitWidth="23.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true" translateX="10.0" translateY="13.0">
                                                          <image>
-                                                            <Image url="@img/icons/address.jpg" />
+                                                            <Image url="@img/icons/address.png" />
                                                          </image>
                                                       </ImageView>
                                                       <TextField fx:id="AddressField" layoutX="61.0" layoutY="8.0" prefHeight="35.0" prefWidth="363.0" promptText="Address" style="-fx-background-color: transparent;">
@@ -171,7 +171,7 @@
                                                    <children>
                                                       <ImageView fitHeight="25.0" fitWidth="23.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true" translateX="10.0" translateY="13.0">
                                                          <image>
-                                                            <Image url="@img/icons/address.jpg" />
+                                                            <Image url="@img/icons/dob.png" />
                                                          </image>
                                                       </ImageView>
                                                       <DatePicker layoutX="62.0" layoutY="9.0" prefHeight="28.0" prefWidth="364.0" styleClass="datepicker" />
