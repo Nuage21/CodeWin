@@ -53,7 +53,7 @@
                                        <children>
                                           <Pane prefHeight="81.0" prefWidth="900.0">
                                              <children>
-                                                <Pane fx:id="UsernamePane" layoutX="14.0" layoutY="16.0" prefHeight="50.0" prefWidth="875.0" style="-fx-border-style: solid; -fx-border-width: 1; -fx-border-color: #d1d1d1;" styleClass="sign-field">
+                                                <Pane fx:id="UsernamePane" layoutX="14.0" layoutY="16.0" prefHeight="50.0" prefWidth="875.0" style="-fx-border-style: solid; -fx-border-color: #d1d1d1;" styleClass="sign-field">
                                                    <children>
                                                       <ImageView fitHeight="25.0" fitWidth="23.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true" translateX="10.0" translateY="13.0">
                                                          <image>
@@ -71,7 +71,7 @@
                                           </Pane>
                                           <Pane prefHeight="81.0" prefWidth="900.0">
                                              <children>
-                                                <Pane fx:id="PasswordPane" layoutX="14.0" layoutY="16.0" prefHeight="50.0" prefWidth="875.0" style="-fx-border-style: solid; -fx-border-width: 1; -fx-border-color: #d1d1d1;" styleClass="sign-field">
+                                                <Pane fx:id="PasswordPane" layoutX="14.0" layoutY="16.0" prefHeight="50.0" prefWidth="875.0" style="-fx-border-style: solid; -fx-border-color: #d1d1d1;" styleClass="sign-field">
                                                    <children>
                                                       <ImageView fitHeight="23.0" fitWidth="23.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true" translateX="10.0" translateY="10.0">
                                                          <image>
@@ -89,28 +89,28 @@
                                           </Pane>
                                           <Pane prefHeight="81.0" prefWidth="900.0">
                                              <children>
-                                                <Pane fx:id="UsernamePane1" layoutX="14.0" layoutY="16.0" prefHeight="50.0" prefWidth="429.0" style="-fx-border-style: solid; -fx-border-width: 1; -fx-border-color: #d1d1d1;" styleClass="sign-field">
+                                                <Pane fx:id="FirstnamePane" layoutX="14.0" layoutY="16.0" prefHeight="50.0" prefWidth="429.0" style="-fx-border-style: solid; -fx-border-color: #d1d1d1;" styleClass="sign-field">
                                                    <children>
                                                       <ImageView fitHeight="25.0" fitWidth="23.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true" translateX="10.0" translateY="13.0">
                                                          <image>
                                                             <Image url="@img/icons/username.png" />
                                                          </image>
                                                       </ImageView>
-                                                      <TextField fx:id="UsernameField1" layoutX="61.0" layoutY="8.0" prefHeight="35.0" prefWidth="360.0" promptText="Firstname" style="-fx-background-color: transparent;">
+                                                      <TextField fx:id="FirstnameField" layoutX="61.0" layoutY="8.0" prefHeight="35.0" prefWidth="360.0" promptText="Firstname" style="-fx-background-color: transparent;">
                                                          <font>
                                                             <Font size="15.0" />
                                                          </font>
                                                       </TextField>
                                                    </children>
                                                 </Pane>
-                                                <Pane fx:id="UsernamePane11" layoutX="455.0" layoutY="16.0" prefHeight="50.0" prefWidth="434.0" style="-fx-border-style: solid; -fx-border-width: 1; -fx-border-color: #d1d1d1;" styleClass="sign-field">
+                                                <Pane fx:id="LastnamePane" layoutX="455.0" layoutY="16.0" prefHeight="50.0" prefWidth="434.0" style="-fx-border-style: solid; -fx-border-color: #d1d1d1;" styleClass="sign-field">
                                                    <children>
                                                       <ImageView fitHeight="25.0" fitWidth="23.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true" translateX="10.0" translateY="13.0">
                                                          <image>
                                                             <Image url="@img/icons/username.png" />
                                                          </image>
                                                       </ImageView>
-                                                      <TextField fx:id="UsernameField11" layoutX="61.0" layoutY="8.0" prefHeight="35.0" prefWidth="364.0" promptText="Lastname" style="-fx-background-color: transparent;">
+                                                      <TextField fx:id="LastnameField" layoutX="61.0" layoutY="8.0" prefHeight="35.0" prefWidth="364.0" promptText="Lastname" style="-fx-background-color: transparent;">
                                                          <font>
                                                             <Font size="15.0" />
                                                          </font>
@@ -121,7 +121,7 @@
                                           </Pane>
                                           <Pane prefHeight="81.0" prefWidth="900.0">
                                              <children>
-                                                <Pane fx:id="PhonePane" layoutX="14.0" layoutY="16.0" prefHeight="50.0" prefWidth="430.0" style="-fx-border-style: solid; -fx-border-width: 1; -fx-border-color: #d1d1d1;" styleClass="sign-field">
+                                                <Pane fx:id="PhonePane" layoutX="14.0" layoutY="16.0" prefHeight="50.0" prefWidth="430.0" style="-fx-border-style: solid; -fx-border-color: #d1d1d1;" styleClass="sign-field">
                                                    <children>
                                                       <ImageView fitHeight="25.0" fitWidth="23.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true" translateX="10.0" translateY="13.0">
                                                          <image>
@@ -135,7 +135,7 @@
                                                       </TextField>
                                                    </children>
                                                 </Pane>
-                                                <Pane fx:id="EmailPane" layoutX="455.0" layoutY="16.0" prefHeight="50.0" prefWidth="431.0" style="-fx-border-style: solid; -fx-border-width: 1; -fx-border-color: #d1d1d1;" styleClass="sign-field">
+                                                <Pane fx:id="EmailPane" layoutX="455.0" layoutY="16.0" prefHeight="50.0" prefWidth="431.0" style="-fx-border-style: solid; -fx-border-color: #d1d1d1;" styleClass="sign-field">
                                                    <children>
                                                       <ImageView fitHeight="25.0" fitWidth="23.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true" translateX="10.0" translateY="13.0">
                                                          <image>
@@ -153,11 +153,11 @@
                                           </Pane>
                                           <Pane prefHeight="81.0" prefWidth="900.0">
                                              <children>
-                                                <Pane fx:id="AddressPane" layoutX="14.0" layoutY="16.0" prefHeight="50.0" prefWidth="433.0" style="-fx-border-style: solid; -fx-border-width: 1; -fx-border-color: #d1d1d1;" styleClass="sign-field">
+                                                <Pane fx:id="AddressPane" layoutX="14.0" layoutY="16.0" prefHeight="50.0" prefWidth="433.0" style="-fx-border-style: solid; -fx-border-color: #d1d1d1;" styleClass="sign-field">
                                                    <children>
                                                       <ImageView fitHeight="25.0" fitWidth="23.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true" translateX="10.0" translateY="13.0">
                                                          <image>
-                                                            <Image url="@img/icons/address.jpg" />
+                                                            <Image url="@img/icons/address.png" />
                                                          </image>
                                                       </ImageView>
                                                       <TextField fx:id="AddressField" layoutX="61.0" layoutY="8.0" prefHeight="35.0" prefWidth="363.0" promptText="Address" style="-fx-background-color: transparent;">
@@ -167,14 +167,14 @@
                                                       </TextField>
                                                    </children>
                                                 </Pane>
-                                                <Pane fx:id="AddressPane1" layoutX="455.0" layoutY="16.0" prefHeight="50.0" prefWidth="433.0" style="-fx-border-style: solid; -fx-border-width: 1; -fx-border-color: #d1d1d1;" styleClass="sign-field">
+                                                <Pane fx:id="DatePickerPane" layoutX="455.0" layoutY="16.0" prefHeight="50.0" prefWidth="433.0" style="-fx-border-style: solid; -fx-border-color: #d1d1d1;" styleClass="sign-field">
                                                    <children>
                                                       <ImageView fitHeight="25.0" fitWidth="23.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true" translateX="10.0" translateY="13.0">
                                                          <image>
-                                                            <Image url="@img/icons/address.jpg" />
+                                                            <Image url="@img/icons/dob.png" />
                                                          </image>
                                                       </ImageView>
-                                                      <DatePicker layoutX="62.0" layoutY="9.0" prefHeight="28.0" prefWidth="364.0" styleClass="datepicker" />
+                                                      <DatePicker fx:id="DatePickerField" layoutX="62.0" layoutY="9.0" prefHeight="28.0" prefWidth="364.0" styleClass="datepicker" />
                                                    </children>
                                                 </Pane>
                                              </children>
@@ -237,14 +237,14 @@
                                  <children>
                                     <Pane prefHeight="81.0" prefWidth="900.0">
                                        <children>
-                                          <Pane fx:id="UsernamePane1" layoutX="14.0" layoutY="16.0" prefHeight="50.0" prefWidth="875.0" style="-fx-border-style: solid; -fx-border-width: 1; -fx-border-color: #d1d1d1;" styleClass="sign-field">
+                                          <Pane fx:id="UsernameSignInPane" layoutX="14.0" layoutY="16.0" prefHeight="50.0" prefWidth="875.0" style="-fx-border-style: solid;" styleClass="sign-field">
                                              <children>
                                                 <ImageView fitHeight="25.0" fitWidth="23.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true" translateX="10.0" translateY="13.0">
                                                    <image>
                                                       <Image url="@img/icons/username.png" />
                                                    </image>
                                                 </ImageView>
-                                                <TextField fx:id="UsernameField1" layoutX="61.0" layoutY="8.0" prefHeight="35.0" prefWidth="804.0" promptText="Username" style="-fx-background-color: transparent;">
+                                                <TextField fx:id="UsernameSignInField" layoutX="61.0" layoutY="8.0" prefHeight="35.0" prefWidth="804.0" promptText="Username" style="-fx-background-color: transparent;">
                                                    <font>
                                                       <Font size="15.0" />
                                                    </font>
@@ -255,14 +255,14 @@
                                     </Pane>
                                     <Pane prefHeight="81.0" prefWidth="900.0">
                                        <children>
-                                          <Pane fx:id="PasswordPane1" layoutX="14.0" layoutY="16.0" prefHeight="50.0" prefWidth="875.0" style="-fx-border-style: solid; -fx-border-width: 1; -fx-border-color: #d1d1d1;" styleClass="sign-field">
+                                          <Pane fx:id="PasswordSignInPane" layoutX="14.0" layoutY="16.0" prefHeight="50.0" prefWidth="875.0" style="-fx-border-style: solid;" styleClass="sign-field">
                                              <children>
                                                 <ImageView fitHeight="23.0" fitWidth="23.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true" translateX="10.0" translateY="10.0">
                                                    <image>
                                                       <Image url="@img/icons/password.png" />
                                                    </image>
                                                 </ImageView>
-                                                <PasswordField fx:id="PwdField1" layoutX="61.0" layoutY="10.0" prefHeight="31.0" prefWidth="805.0" promptText="Password" style="-fx-background-color: transparent;">
+                                                <PasswordField fx:id="PwdSignInField" layoutX="61.0" layoutY="10.0" prefHeight="31.0" prefWidth="805.0" promptText="Password" style="-fx-background-color: transparent;">
                                                    <font>
                                                       <Font size="15.0" />
                                                    </font>

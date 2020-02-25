@@ -33,18 +33,18 @@
 }
 
 .datepicker .text-field {
-    -fx-control-inner-background: #f1f1f1;
+    -fx-control-inner-background: white;
+}
+
+.sign-field{
+	-fx-border-width: 0 0 1 0;
+	-fx-border-color: #d1d1d1 !important;
 }
 
 .sign-field:hover{
-	-fx-border-color: #1299bb !important;
 	-fx-effect: dropshadow(three-pass-box, #1299bb, 10, 0, 0, 0) !important;  
 }
 
-.sign-field:focus{
-	-fx-border-color: #1299bb !important;
-	-fx-effect: dropshadow(three-pass-box, #1299bb, 10, 0, 0, 0) !important;  
-}
 
 .lng-selector:hover{
 	-fx-text-fill: #1299bb !important;

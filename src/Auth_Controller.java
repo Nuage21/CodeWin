@@ -1,7 +1,11 @@
 import javafx.application.Platform;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.Tab;
+import javafx.scene.control.*;
+import javafx.scene.layout.Pane;
+
+import java.util.ArrayList;
 
 public class Auth_Controller {
 
@@ -14,8 +18,40 @@ public class Auth_Controller {
     @FXML
     private Button signUpCancealBtn;
 
+    @FXML private Pane UsernamePane;
+    @FXML private TextField UsernameField;
+
+    @FXML private Pane UsernameSignInPane;
+    @FXML private TextField UsernameSignInField;
+
+    @FXML private Pane FirstnamePane;
+    @FXML private TextField FirstnameField;
+
+    @FXML private Pane LastnamePane;
+    @FXML private TextField LastnameField;
+
+    @FXML private Pane PhonePane;
+    @FXML private TextField PhoneField;
+
+    @FXML private Pane EmailPane;
+    @FXML private TextField EmailField;
+
+    @FXML private Pane AddressPane;
+    @FXML private TextField AddressField;
+
+    @FXML private Pane DatePickerPane;
+    @FXML private DatePicker DatePickerField;
+
+    @FXML private PasswordField PwdField;
+    @FXML private Pane PasswordPane;
+
+    @FXML private PasswordField PwdSignInField;
+    @FXML private Pane PasswordSignInPane;
+
     enum SignCase {signIn, signUp};
     private SignCase signCase = SignCase.signUp;
+
+    private Pane Focused = null;
 
     @FXML
     private void initialize() {
@@ -46,6 +82,24 @@ public class Auth_Controller {
 
         });
 
+        ArrayList<Control> focusable = new ArrayList<>();
+
+        focusable.add(UsernameField);
+        focusable.add(UsernameSignInField);
+        focusable.add(FirstnameField);
+        focusable.add(LastnameField);
+        focusable.add(EmailField);
+        focusable.add(PhoneField);
+        focusable.add(AddressField);
+        focusable.add(DatePickerField);
+        focusable.add(PwdSignInField);
+        focusable.add(PwdField);
+
+        for(Control c : focusable)
+            c.focusedProperty().addListener((arg0, oldPropertyValue, newPropertyValue) -> applyFocusStyle((Pane) c.getParent(), newPropertyValue));
+
+
+
     }
     private void applyTabStyle(Tab tab, boolean isSelected)
     {
@@ -53,5 +107,17 @@ public class Auth_Controller {
             tab.setStyle("-fx-background-color: #1da1cc !important;");
         else
             tab.setStyle("-fx-background-color: #1d1d1d !important;");
+    }
+
+    private void applyFocusStyle(Pane p, boolean app)
+    {
+        if(app)
+        {
+            p.setStyle("-fx-effect: dropshadow(three-pass-box, #1299bb, 10, 0, 0, 0) !important; ");
+        }
+        else
+        {
+            p.setStyle("-fx-effect: dropshadow(three-pass-box, #1299bb, 0, 0, 0, 0) !important;");
+        }
     }
 }
