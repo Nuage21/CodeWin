@@ -51,7 +51,7 @@ public class Auth_Controller {
     enum SignCase {signIn, signUp};
     private SignCase signCase = SignCase.signUp;
 
-    private Pane Focused = null;
+    private Control Focused = null;
 
     @FXML
     private void initialize() {
@@ -113,11 +113,11 @@ public class Auth_Controller {
     {
         if(app)
         {
-            p.setStyle("-fx-effect: dropshadow(three-pass-box, #1299bb, 10, 0, 0, 0) !important; ");
+            p.setStyle("-fx-effect: dropshadow(three-pass-box, #1299bb, 10, 0, 0, 0); ");
         }
         else
         {
-            p.setStyle("-fx-effect: dropshadow(three-pass-box, #1299bb, 0, 0, 0, 0) !important;");
+            p.setStyle("-fx-effect: dropshadow(three-pass-box, #1299bb, 0, 0, 0, 0);");
         }
     }
 }
