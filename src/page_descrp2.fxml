@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.gluonhq.charm.glisten.control.Icon?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="699.0" style="-fx-background-color: #1d1d1d;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ImageView fitHeight="273.0" fitWidth="475.0" layoutX="210.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/téléchargement%20(4).jpg" />
+         </image>
+      </ImageView>
+      <Text fill="WHITE" layoutX="17.0" layoutY="334.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CodeWin vous offre l'opportunité de mettre en place l'apprentissage qui convient le mieux à votre capacité d'assimilation" wrappingWidth="506.61204528808594">
+         <font>
+            <Font name="Lucida Calligraphy Italic" size="14.0" />
+         </font>
+      </Text>
+      <Icon content="HELP_OUTLINE" layoutX="28.0" layoutY="27.0" prefHeight="7.0" prefWidth="6.0" style="-fx-background-color: #ffffff;" />
+      <Icon content="HELP_OUTLINE" layoutX="46.0" layoutY="27.0" prefHeight="7.0" prefWidth="6.0" style="-fx-background-color: #ffffff;" />
+      <Icon content="HELP_OUTLINE" layoutX="62.0" layoutY="27.0" prefHeight="7.0" prefWidth="6.0" style="-fx-background-color: #ffffff;" />
+      <Icon content="HELP_OUTLINE" layoutX="80.0" layoutY="27.0" prefHeight="7.0" prefWidth="6.0" style="-fx-background-color: #ffffff;" />
+   </children>
+</Pane>
