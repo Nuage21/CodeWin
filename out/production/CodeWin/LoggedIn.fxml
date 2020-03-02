@@ -1,6 +1,87 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="806.0" prefWidth="1222.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" />
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="806.0" prefWidth="1222.0" stylesheets="@css/LoggedIn.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <bottom>
+      <VBox prefHeight="206.0" prefWidth="1222.0" styleClass="footer" BorderPane.alignment="CENTER" />
+   </bottom>
+   <top>
+      <BorderPane prefHeight="56.0" prefWidth="1222.0" styleClass="up-pane" BorderPane.alignment="CENTER">
+         <right>
+            <Pane prefHeight="78.0" prefWidth="316.0" BorderPane.alignment="CENTER">
+               <children>
+                  <StackPane layoutX="249.0" layoutY="7.0" prefHeight="39.0" prefWidth="47.0" style="-fx-background-radius: 30; -fx-background-color: #e1e1e1;">
+                     <children>
+                        <ImageView fitHeight="49.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true" style="-fx-border-radius: 56;">
+                           <image>
+                              <Image url="@img/test/profile.jpg" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </StackPane>
+               </children>
+            </Pane>
+         </right>
+         <left>
+            <Pane prefHeight="78.0" prefWidth="380.0" BorderPane.alignment="CENTER">
+               <children>
+      				  <Pane fx:id="UsernameSignInPane" layoutX="67.0" layoutY="14.0" prefHeight="30.0" prefWidth="291.0" style="-fx-border-style: solid;" styleClass="sign-field">
+                                             <children>
+                                                <ImageView fitHeight="25.0" fitWidth="23.0" layoutX="4.0" layoutY="-9.0" pickOnBounds="true" preserveRatio="true" translateX="10.0" translateY="13.0">
+                                                   <image>
+                                                      <Image url="@img/icons/username.png" />
+                                                   </image>
+                                                </ImageView>
+                        <TextField layoutX="54.0" layoutY="1.0" prefHeight="30.0" prefWidth="219.0" promptText="Search CodeWin" style="-fx-background-color: transparent;">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </TextField>
+                                             </children>
+                                          </Pane>
+               </children></Pane>
+         </left>
+      </BorderPane>
+   </top>
+   <left>
+      <VBox prefHeight="522.0" prefWidth="9.0" style="-fx-background-color: #1f1f1f;" BorderPane.alignment="CENTER">
+         <children>
+            <StackPane prefHeight="47.0" prefWidth="49.0" style="-fx-background-radius: 30; -fx-background-color: #212121; -fx-padding: 30 0 0 0;" styleClass="left-icon-pane">
+               <children>
+                  <ImageView fitHeight="35.0" fitWidth="55.0" pickOnBounds="true" preserveRatio="true" style="-fx-border-radius: 56;" styleClass="left-icon">
+                     <image>
+                        <Image url="@img/icons/stats1.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </StackPane>
+            <StackPane prefHeight="47.0" prefWidth="49.0" style="-fx-background-radius: 30; -fx-background-color: #212121;" styleClass="left-icon-pane">
+               <children>
+                  <ImageView fitHeight="35.0" fitWidth="43.0" pickOnBounds="true" preserveRatio="true" style="-fx-border-radius: 56;" styleClass="left-icon">
+                     <image>
+                        <Image url="@img/icons/quiz.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </StackPane>
+            <StackPane prefHeight="47.0" prefWidth="49.0" style="-fx-background-radius: 30; -fx-background-color: #212121;" styleClass="left-icon-pane">
+               <children>
+                  <ImageView fitHeight="38.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true" style="-fx-border-radius: 56;" styleClass="left-icon">
+                     <image>
+                        <Image url="@img/icons/course1.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </StackPane>
+         </children>
+      </VBox>
+   </left>
+</BorderPane>

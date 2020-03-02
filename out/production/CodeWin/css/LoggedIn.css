@@ -1,0 +1,28 @@
+.up-pane{
+	-fx-background-color: #1d1d1d;
+}
+
+.left-pane{
+	-fx-background-color: #1d1d1d;
+}
+
+.footer{
+	-fx-background-color: #1d1d1d;
+}
+
+.sign-field{
+	-fx-background-color: #e1e1e1;
+	-fx-background-radius: 40;
+}
+
+.sign-field:hover{
+	-fx-effect: dropshadow(three-pass-box, #1299bb, 10, 0, 0, 0) !important;  
+}
+
+.left-icons{
+	
+}
+
+.left-icon-pane{
+	-fx-padding: 30 5 5 5;
+}
