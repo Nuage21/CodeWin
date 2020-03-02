@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="612.0" prefWidth="665.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <TabPane layoutY="26.0" prefHeight="383.0" prefWidth="665.0" side="LEFT" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Statistiques">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+            </content>
+          </Tab>
+          <Tab text="Cours">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="375.0" prefWidth="636.0" />
+            </content>
+          </Tab>
+            <Tab text="Tests">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+               </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+      <MenuBar layoutX="-1.0" layoutY="-1.0" prefHeight="28.0" prefWidth="665.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="Quitter">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Close" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Logout">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Delete" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Settings">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+            <Menu mnemonicParsing="false" text="Username">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="About" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Help">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="About" />
+               </items>
+            </Menu>
+        </menus>
+      </MenuBar>
+      <Pane layoutX="-1.0" layoutY="575.0" prefHeight="37.0" prefWidth="665.0" style="-fx-background-color: black;">
+         <children>
+            <Label contentDisplay="CENTER" layoutX="293.0" layoutY="6.0" text="© Copyright 2020" textFill="WHITE">
+               <font>
+                  <Font name="Verdana Italic" size="11.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <HBox layoutX="-1.0" layoutY="410.0" prefHeight="165.0" prefWidth="665.0" style="-fx-background-color: #1d1d1d;">
+         <children>
+            <StackPane prefHeight="150.0" prefWidth="200.0">
+               <children>
+                  <Pane prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="23.0" layoutY="6.0" text="Language" textFill="#dddddd">
+                           <font>
+                              <Font name="Jokerman" size="15.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="95.0" layoutY="47.0" prefHeight="14.0" prefWidth="48.0" text="English" textFill="WHITE">
+                           <font>
+                              <Font name="Tahoma Bold" size="11.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="25.0" fitWidth="28.0" layoutX="22.0" layoutY="78.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Pictures/images%20(1).jpg" />
+                           </image>
+                        </ImageView>
+                        <Label layoutX="95.0" layoutY="83.0" text="Français" textFill="WHITE">
+                           <font>
+                              <Font name="Tahoma Bold" size="11.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="28.0" fitWidth="35.0" layoutX="21.0" layoutY="115.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Pictures/arabe.jpg" />
+                           </image>
+                        </ImageView>
+                        <Label layoutX="95.0" layoutY="120.0" prefHeight="17.0" prefWidth="39.0" text="Arabe" textFill="WHITE">
+                           <font>
+                              <Font name="Tahoma Bold" size="11.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="28.0" fitWidth="39.0" layoutX="21.0" layoutY="46.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Pictures/images%20(3).jpg" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+               </children>
+            </StackPane>
+            <Pane prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <Label layoutX="30.0" layoutY="8.0" prefHeight="25.0" prefWidth="48.0" text="About" textFill="#dddddd">
+                     <font>
+                        <Font name="Jokerman" size="15.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>
