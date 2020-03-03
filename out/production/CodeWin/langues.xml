@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- New XML document created with EditiX XML Editor (http://www.editix.com) at Fri Feb 28 16:10:06 CET 2020 -->
+
+<langues>
+	<francais linkImg = "france.png">
+	</francais>
+	
+	<arabe linkImg ="arab.png">
+	</arabe>
+	
+	<berber linkImg="berber.png">
+	</berber>
+	
+	<anglais linkImg ="uk.png">
+	
+	</anglais>
+
+
+</langues>
