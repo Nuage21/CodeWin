@@ -36,7 +36,7 @@
       </Text>
       <Pane layoutX="430.0" layoutY="333.0" prefHeight="53.0" prefWidth="219.0">
          <children>
-            <Button alignment="CENTER" layoutX="2.0" layoutY="7.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="216.0" style="-fx-background-color: white; -fx-border-color: #1d1d1d; -fx-border-radius: 20; -fx-background-radius: 20; -fx-text-fill: #3d3d3d;" styleClass="next-bt" text="Next page">
+            <Button alignment="CENTER" layoutX="2.0" layoutY="7.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="216.0" style="-fx-background-color: white; -fx-border-color: #1d1d1d; -fx-border-radius: 20; -fx-background-radius: 20; -fx-text-fill: #3d3d3d;" styleClass="next-bt" text="Page suivante ">
                <font>
                   <Font name="Cambria Bold" size="16.0" />
                </font>
@@ -45,7 +45,7 @@
       </Pane>
       <Pane layoutX="47.0" layoutY="333.0" prefHeight="53.0" prefWidth="227.0">
          <children>
-            <Button alignment="CENTER" layoutX="6.0" layoutY="7.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="216.0" style="-fx-background-color: white; -fx-border-color: #1d1d1d; -fx-border-radius: 20; -fx-background-radius: 20; -fx-text-fill: #3d3d3d;" styleClass="previous-bt" text="Previous page">
+            <Button alignment="CENTER" layoutX="6.0" layoutY="7.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="216.0" style="-fx-background-color: white; -fx-border-color: #1d1d1d; -fx-border-radius: 20; -fx-background-radius: 20; -fx-text-fill: #3d3d3d;" styleClass="previous-bt" text="Page précedente">
                <font>
                   <Font name="Cambria Bold" size="16.0" />
                </font>
