@@ -17,20 +17,31 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox prefHeight="805.0" prefWidth="979.0" style="-fx-background-color: white;" stylesheets="@css/Auth.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Auth_Controller">
+<VBox prefHeight="828.0" prefWidth="979.0" style="-fx-background-color: white;" stylesheets="@css/Auth.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Auth_Controller">
    <children>
-      <HBox prefHeight="64.0" prefWidth="979.0" style="-fx-background-color: #1d1d1d;">
+      <HBox prefHeight="100.0" prefWidth="979.0" style="-fx-background-color: white; -fx-border-color: #1d1d1d; -fx-border-width: 0 0 5 3; -fx-border-width: ;">
          <children>
-            <StackPane prefHeight="31.0" prefWidth="25.0" style="-fx-padding: 10; -fx-background-color: black; -fx-background-radius: 20;" />
-            <Label prefHeight="65.0" prefWidth="188.0" style="-fx-padding: 20;" text="CodeWin" textFill="#dddddd">
+            <StackPane prefHeight="108.0" prefWidth="133.0" style="-fx-padding: 0; -fx-background-color: white; -fx-background-radius: 10;">
+               <children>
+                  <StackPane prefHeight="82.0" prefWidth="97.0" style="-fx-padding: 10; -fx-background-color: white; -fx-background-radius: 20;">
+                     <children>
+                        <ImageView fitHeight="84.0" fitWidth="97.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/logo.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </StackPane>
+               </children></StackPane>
+            <Label prefHeight="108.0" prefWidth="858.0" style="-fx-padding: 25 20 20 20;" text="CodeWin" textFill="#070707">
                <font>
-                  <Font name="Jokerman" size="32.0" />
+                  <Font name="Jokerman" size="40.0" />
                </font>
             </Label>
-            <Pane prefHeight="84.0" prefWidth="767.0" />
+            <Pane prefHeight="109.0" prefWidth="5.0" style="-fx-background-color: #1d1d1d;" />
          </children>
       </HBox>
-      <VBox prefHeight="663.0" prefWidth="979.0">
+      <VBox prefHeight="671.0" prefWidth="979.0">
          <children>
             <TabPane prefHeight="666.0" prefWidth="979.0" side="LEFT" tabClosingPolicy="UNAVAILABLE">
               <tabs>
@@ -313,9 +324,9 @@
             </TabPane>
          </children>
       </VBox>
-      <HBox prefHeight="51.0" prefWidth="979.0" style="-fx-background-color: #1d1d1d;">
+      <HBox prefHeight="50.0" prefWidth="979.0" style="-fx-background-color: #1d1d1d;">
          <children>
-            <Pane prefHeight="198.0" prefWidth="1293.0">
+            <Pane prefHeight="41.0" prefWidth="979.0">
                <children>
                   <Label layoutX="225.0" layoutY="18.0" styleClass="lng-selector" text="Tamaziɣt" textFill="WHITE" textOverrun="CENTER_WORD_ELLIPSIS">
                      <font>
