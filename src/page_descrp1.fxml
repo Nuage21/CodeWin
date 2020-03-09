@@ -1,28 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.gluonhq.charm.glisten.control.Icon?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="697.0" style="-fx-background-color: #1d1d1d;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="697.0" style="-fx-background-color: #e1f0f5;" stylesheets="@css/page-descript.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Icon content="HELP_OUTLINE" layoutX="28.0" layoutY="32.0" prefHeight="7.0" prefWidth="6.0" style="-fx-background-color: #ffffff;" />
-      <Icon content="HELP_OUTLINE" layoutX="43.0" layoutY="32.0" prefHeight="7.0" prefWidth="6.0" style="-fx-background-color: #ffffff;" />
-      <Icon content="HELP_OUTLINE" layoutX="59.0" layoutY="32.0" prefHeight="7.0" prefWidth="6.0" style="-fx-background-color: #ffffff;" />
-      <Icon content="HELP_OUTLINE" layoutX="74.0" layoutY="32.0" prefHeight="7.0" prefWidth="6.0" style="-fx-background-color: #ffffff;" />
-      <ImageView fitHeight="213.0" fitWidth="479.0" layoutX="199.0" layoutY="67.0" pickOnBounds="true" preserveRatio="true">
+      <Icon content="HELP_OUTLINE" layoutX="28.0" layoutY="32.0" prefHeight="7.0" prefWidth="6.0" style="-fx-background-color: #1d1d1d;" />
+      <Icon content="HELP_OUTLINE" layoutX="43.0" layoutY="32.0" prefHeight="7.0" prefWidth="6.0" style="-fx-background-color: #1d1d1d;" />
+      <Icon content="HELP_OUTLINE" layoutX="59.0" layoutY="32.0" prefHeight="7.0" prefWidth="6.0" style="-fx-background-color: #1d1d1d;" />
+      <Icon content="HELP_OUTLINE" layoutX="74.0" layoutY="32.0" prefHeight="7.0" prefWidth="6.0" style="-fx-background-color: #1d1d1d;" />
+      <ImageView fitHeight="200.0" fitWidth="375.0" layoutX="171.0" layoutY="67.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../Pictures/quels-avantages-a-reviser-le-code-de-la-route-en-ligne--lg-33387.jpg" />
+            <Image url="@../../../../Pictures/illustration4.jpg" />
          </image>
       </ImageView>
-      <Text fill="WHITE" layoutX="20.0" layoutY="314.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Passer son code est onéreux. En revanche, CodeWin est destinée à te faire apprendre le code de la route gratuitement via ses cours et tests." wrappingWidth="506.99997138977045">
+      <Text layoutX="34.0" layoutY="111.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Passer son code est onéreux." wrappingWidth="114.13672256469727">
          <font>
-            <Font name="Lucida Calligraphy Italic" size="14.0" />
+            <Font name="Bauhaus 93" size="15.0" />
          </font>
       </Text>
+      <Text layoutX="560.0" layoutY="140.0" strokeType="OUTSIDE" strokeWidth="0.0" text="En revanche, CodeWin est déstinée à te faire apprendre le code de la route." wrappingWidth="114.13672256469732">
+         <font>
+            <Font name="Bauhaus 93" size="15.0" />
+         </font>
+      </Text>
+      <Text layoutX="43.0" layoutY="248.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Et cela grace à ses cours et ses tests." wrappingWidth="95.3333511352539">
+         <font>
+            <Font name="Bauhaus 93" size="15.0" />
+         </font>
+      </Text>
+      <Pane layoutX="430.0" layoutY="333.0" prefHeight="53.0" prefWidth="219.0">
+         <children>
+            <Button alignment="CENTER" layoutX="2.0" layoutY="7.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="216.0" style="-fx-background-color: white; -fx-border-color: #1d1d1d; -fx-border-radius: 20; -fx-background-radius: 20; -fx-text-fill: #3d3d3d;" styleClass="next-bt" text="Page suivante ">
+               <font>
+                  <Font name="Cambria Bold" size="16.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
+      <Pane layoutX="47.0" layoutY="333.0" prefHeight="53.0" prefWidth="227.0">
+         <children>
+            <Button alignment="CENTER" layoutX="6.0" layoutY="7.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="216.0" style="-fx-background-color: white; -fx-border-color: #1d1d1d; -fx-border-radius: 20; -fx-background-radius: 20; -fx-text-fill: #3d3d3d;" styleClass="previous-bt" text="Page précedente">
+               <font>
+                  <Font name="Cambria Bold" size="16.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
    </children>
 </Pane>
