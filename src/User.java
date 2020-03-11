@@ -22,7 +22,6 @@ public class User {
     public static final String PASSWORD = "houssam2020";
     public static final String CONN = "jdbc:mysql://localhost:3306/projet";
 
-    //constructeur vide
     public User() {
 
     }
