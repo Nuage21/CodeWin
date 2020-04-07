@@ -10,15 +10,12 @@ public class Settings {
 
     private Stage appStage;
 
-    public static void newNotification(Parent root)
-    {
-        final Stage dialog = new Stage();
-        dialog.initModality(Modality.APPLICATION_MODAL);
-        dialog.setScene(new Scene(root) );
-        dialog.show();
-    }
-
     public void setAppStage(Stage appStage) {
         this.appStage = appStage;
     }
+
+    public Stage getAppStage() {
+        return this.appStage;
+    }
+
 }

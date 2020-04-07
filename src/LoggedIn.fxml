@@ -1,87 +1,674 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="806.0" prefWidth="1222.0" stylesheets="@css/LoggedIn.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1066.0" prefWidth="1975.0" fx:controller="LoggedIn_Controller" stylesheets="@css/LoggedIn.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <bottom>
-      <VBox prefHeight="206.0" prefWidth="1222.0" styleClass="footer" BorderPane.alignment="CENTER" />
+      <VBox prefHeight="37.0" prefWidth="1975.0" styleClass="footer" BorderPane.alignment="CENTER">
+         <children>
+            <HBox prefHeight="41.0" prefWidth="1975.0">
+               <children>
+                  <Pane prefHeight="82.0" prefWidth="1219.0">
+                     <children>
+                        <StackPane layoutX="1045.0" layoutY="7.0" prefHeight="27.0" prefWidth="29.0" style="-fx-background-radius: 30; -fx-background-color: #e1e1e1;">
+                           <children>
+                              <ImageView fitHeight="22.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true" style="-fx-border-radius: 56;">
+                                 <image>
+                                    <Image url="@img/icons/social/github.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </StackPane>
+                        <StackPane layoutX="1097.0" layoutY="8.0" prefHeight="25.0" prefWidth="29.0" style="-fx-background-radius: 30; -fx-background-color: #e1e1e1;">
+                           <children>
+                              <ImageView fitHeight="22.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true" style="-fx-border-radius: 56;">
+                                 <image>
+                                    <Image url="@img/icons/social/facebook.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </StackPane>
+                        <Label layoutX="715.0" layoutY="10.0" text="© 2020 CodeWin Inc. All rights reserved." textFill="WHITE">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <StackPane layoutX="1147.0" layoutY="8.0" prefHeight="25.0" prefWidth="29.0" style="-fx-background-radius: 30; -fx-background-color: #e1e1e1;">
+                           <children>
+                              <ImageView fitHeight="22.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true" style="-fx-border-radius: 56;">
+                                 <image>
+                                    <Image url="@img/icons/social/twitter.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </StackPane>
+                     </children>
+                  </Pane>
+               </children>
+            </HBox>
+         </children></VBox>
    </bottom>
    <top>
-      <BorderPane prefHeight="56.0" prefWidth="1222.0" styleClass="up-pane" BorderPane.alignment="CENTER">
+      <BorderPane prefHeight="61.0" prefWidth="1975.0" styleClass="up-pane" BorderPane.alignment="CENTER">
          <right>
-            <Pane prefHeight="78.0" prefWidth="316.0" BorderPane.alignment="CENTER">
+            <Pane prefHeight="71.0" prefWidth="358.0" BorderPane.alignment="CENTER">
                <children>
-                  <StackPane layoutX="249.0" layoutY="7.0" prefHeight="39.0" prefWidth="47.0" style="-fx-background-radius: 30; -fx-background-color: #e1e1e1;">
+                  <StackPane layoutX="14.0" layoutY="7.0" prefHeight="47.0" prefWidth="50.0" style="-fx-background-radius: 30; -fx-background-color: #e1e1e1;">
                      <children>
-                        <ImageView fitHeight="49.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true" style="-fx-border-radius: 56;">
+                        <ImageView fitHeight="33.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true" style="-fx-border-radius: 56;">
                            <image>
                               <Image url="@img/test/profile.jpg" />
                            </image>
                         </ImageView>
                      </children>
                   </StackPane>
+                  <Label layoutX="78.0" layoutY="13.0" text="Barack Obama" textFill="WHITE">
+                     <font>
+                        <Font name="Jokerman" size="23.0" />
+                     </font>
+                  </Label>
                </children>
             </Pane>
          </right>
          <left>
-            <Pane prefHeight="78.0" prefWidth="380.0" BorderPane.alignment="CENTER">
+            <Pane prefHeight="71.0" prefWidth="283.0" BorderPane.alignment="CENTER">
                <children>
-      				  <Pane fx:id="UsernameSignInPane" layoutX="67.0" layoutY="14.0" prefHeight="30.0" prefWidth="291.0" style="-fx-border-style: solid;" styleClass="sign-field">
-                                             <children>
-                                                <ImageView fitHeight="25.0" fitWidth="23.0" layoutX="4.0" layoutY="-9.0" pickOnBounds="true" preserveRatio="true" translateX="10.0" translateY="13.0">
-                                                   <image>
-                                                      <Image url="@img/icons/username.png" />
-                                                   </image>
-                                                </ImageView>
-                        <TextField layoutX="54.0" layoutY="1.0" prefHeight="30.0" prefWidth="219.0" promptText="Search CodeWin" style="-fx-background-color: transparent;">
-                           <font>
-                              <Font size="14.0" />
-                           </font>
-                        </TextField>
-                                             </children>
-                                          </Pane>
+                  <Label layoutX="84.0" layoutY="7.0" prefHeight="48.0" prefWidth="148.0" text="CodeWin" textFill="WHITE">
+                     <font>
+                        <Font name="Jokerman" size="26.0" />
+                     </font>
+                  </Label>
+                  <StackPane layoutX="15.0" layoutY="5.0" prefHeight="46.0" prefWidth="58.0" style="-fx-background-radius: 15; -fx-background-color: white;">
+                     <children>
+                        <ImageView fitHeight="47.0" fitWidth="56.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/logo.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </StackPane>
                </children></Pane>
          </left>
+         <center>
+            <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Pane prefHeight="61.0" prefWidth="498.0">
+                     <children>
+            				  <Pane fx:id="UsernameSignInPane" layoutX="6.0" layoutY="11.0" prefHeight="36.0" prefWidth="444.0" styleClass="sign-field">
+                                                   <children>
+                                                      <ImageView fitHeight="30.0" fitWidth="29.0" layoutX="4.0" layoutY="-9.0" pickOnBounds="true" preserveRatio="true" translateX="10.0" translateY="13.0">
+                                                         <image>
+                                                            <Image url="@img/icons/search.png" />
+                                                         </image>
+                                                      </ImageView>
+                              <TextField layoutX="54.0" layoutY="1.0" prefHeight="35.0" prefWidth="219.0" promptText="Search CodeWin" style="-fx-background-color: transparent;">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </TextField>
+                                                   </children>
+                                                </Pane>
+                     </children>
+                  </Pane>
+               </children>
+            </HBox>
+         </center>
       </BorderPane>
    </top>
    <left>
-      <VBox prefHeight="522.0" prefWidth="9.0" style="-fx-background-color: #1f1f1f;" BorderPane.alignment="CENTER">
+      <VBox prefHeight="601.0" prefWidth="283.0" style="-fx-background-color: #e1e1e1;" BorderPane.alignment="CENTER">
          <children>
-            <StackPane prefHeight="47.0" prefWidth="49.0" style="-fx-background-radius: 30; -fx-background-color: #212121; -fx-padding: 30 0 0 0;" styleClass="left-icon-pane">
+            <Pane prefHeight="117.0" prefWidth="283.0" styleClass="course-head-pane">
                <children>
-                  <ImageView fitHeight="35.0" fitWidth="55.0" pickOnBounds="true" preserveRatio="true" style="-fx-border-radius: 56;" styleClass="left-icon">
-                     <image>
-                        <Image url="@img/icons/stats1.png" />
-                     </image>
-                  </ImageView>
+                  <Label layoutX="14.0" layoutY="33.0" text="Code de la Route" textFill="#515151">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="14.0" layoutY="64.0" text="~ CodeWin" textFill="#515151">
+                     <font>
+                        <Font name="System Italic" size="15.0" />
+                     </font>
+                  </Label>
                </children>
-            </StackPane>
-            <StackPane prefHeight="47.0" prefWidth="49.0" style="-fx-background-radius: 30; -fx-background-color: #212121;" styleClass="left-icon-pane">
+            </Pane>
+            <Pane prefHeight="58.0" prefWidth="283.0" style="-fx-background-color: white; -fx-border-color: #1354a1;" styleClass="side-left-pane">
                <children>
-                  <ImageView fitHeight="35.0" fitWidth="43.0" pickOnBounds="true" preserveRatio="true" style="-fx-border-radius: 56;" styleClass="left-icon">
-                     <image>
-                        <Image url="@img/icons/quiz.png" />
-                     </image>
-                  </ImageView>
+                  <Label layoutX="28.0" layoutY="14.0" text="Vue Générale" textFill="#515151">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
                </children>
-            </StackPane>
-            <StackPane prefHeight="47.0" prefWidth="49.0" style="-fx-background-radius: 30; -fx-background-color: #212121;" styleClass="left-icon-pane">
+            </Pane>
+            <VBox prefHeight="294.0" prefWidth="283.0">
                <children>
-                  <ImageView fitHeight="38.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true" style="-fx-border-radius: 56;" styleClass="left-icon">
-                     <image>
-                        <Image url="@img/icons/course1.png" />
-                     </image>
-                  </ImageView>
+                  <Pane prefHeight="58.0" prefWidth="283.0" styleClass="side-left-pane">
+                     <children>
+                        <Label layoutX="37.0" layoutY="11.0" text="Theme 1" textFill="#515151">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <Pane prefHeight="58.0" prefWidth="283.0" styleClass="side-left-pane">
+                     <children>
+                        <Label layoutX="37.0" layoutY="11.0" text="Theme 2" textFill="#515151">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <Pane prefHeight="58.0" prefWidth="283.0" styleClass="side-left-pane">
+                     <children>
+                        <Label layoutX="37.0" layoutY="11.0" text="Theme 3" textFill="#515151">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <Pane prefHeight="58.0" prefWidth="283.0" styleClass="side-left-pane">
+                     <children>
+                        <Label layoutX="37.0" layoutY="11.0" text="Theme 4" textFill="#515151">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <Pane prefHeight="58.0" prefWidth="283.0" styleClass="side-left-pane">
+                     <children>
+                        <Label layoutX="37.0" layoutY="11.0" text="Theme 5" textFill="#515151">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
                </children>
-            </StackPane>
+            </VBox>
+            <VBox prefHeight="245.0" prefWidth="283.0" style="-fx-border-width: 1 0 0 0; -fx-border-color: #c1c1c1;">
+               <children>
+                  <Pane prefHeight="58.0" prefWidth="283.0" styleClass="side-left-pane">
+                     <children>
+                        <Label layoutX="67.0" layoutY="17.0" text="Statistiques" textFill="#515151">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                        <StackPane layoutX="7.0" layoutY="6.0" prefHeight="45.0" prefWidth="50.0" style="-fx-background-radius: 30; -fx-background-color: #e1e1e1;">
+                           <children>
+                              <ImageView fitHeight="45.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true" style="-fx-border-radius: 56;">
+                                 <image>
+                                    <Image url="@img/icons/stats.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </StackPane>
+                     </children>
+                  </Pane>
+                  <Pane prefHeight="58.0" prefWidth="283.0" styleClass="side-left-pane">
+                     <children>
+                        <Label layoutX="67.0" layoutY="17.0" text="Paramètres " textFill="#515151">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                        <StackPane layoutX="7.0" layoutY="6.0" prefHeight="45.0" prefWidth="50.0" style="-fx-background-radius: 30; -fx-background-color: #e1e1e1;">
+                           <children>
+                              <ImageView fitHeight="45.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true" style="-fx-border-radius: 56;">
+                                 <image>
+                                    <Image url="@img/icons/settings.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </StackPane>
+                     </children>
+                  </Pane>
+                  <Pane prefHeight="58.0" prefWidth="283.0" styleClass="side-left-pane">
+                     <children>
+                        <Label layoutX="67.0" layoutY="17.0" text="Aide" textFill="#515151">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                        <StackPane layoutX="7.0" layoutY="6.0" prefHeight="45.0" prefWidth="50.0" style="-fx-background-radius: 30; -fx-background-color: #e1e1e1;">
+                           <children>
+                              <ImageView fitHeight="45.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true" style="-fx-border-radius: 56;">
+                                 <image>
+                                    <Image url="@img/icons/help.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </StackPane>
+                     </children>
+                  </Pane>
+               </children>
+            </VBox>
          </children>
       </VBox>
    </left>
+   <right>
+      <VBox prefHeight="968.0" prefWidth="122.0" style="-fx-background-color: #eeee;" BorderPane.alignment="CENTER">
+         <children>
+            <Pane prefHeight="84.0" prefWidth="347.0" styleClass="course-head-pane">
+               <children>
+                  <StackPane layoutX="7.0" layoutY="7.0" prefHeight="47.0" prefWidth="50.0" style="-fx-background-radius: 30; -fx-background-color: #e1e1e1;">
+                     <children>
+                        <ImageView fitHeight="33.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true" style="-fx-border-radius: 56;">
+                           <image>
+                              <Image url="@img/icons/notification.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </StackPane>
+               </children>
+            </Pane>
+         </children>
+      </VBox>
+   </right>
+   <center>
+      <VBox prefHeight="617.0" prefWidth="672.0" BorderPane.alignment="CENTER">
+         <children>
+            <VBox prefHeight="933.0" prefWidth="1308.0">
+               <children>
+                  <Pane prefHeight="202.0" prefWidth="1570.0">
+                     <children>
+                        <Label layoutX="52.0" layoutY="21.0" prefHeight="84.0" prefWidth="476.0" text="Code de la Route" textFill="#1e1e1e">
+                           <font>
+                              <Font name="Rockwell" size="47.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <ScrollPane hbarPolicy="NEVER" vbarPolicy="ALWAYS">
+                     <content>
+                        <VBox prefHeight="900.0" prefWidth="1559.0">
+                           <children>
+                              <Pane prefHeight="180.0" prefWidth="1308.0" styleClass="overview-chapter">
+                                 <children>
+                                    <Label layoutX="88.0" layoutY="14.0" prefHeight="64.0" prefWidth="533.0" text="Theme 1: La signalisation routière" textFill="#1e1e1e">
+                                       <font>
+                                          <Font name="Rockwell" size="32.0" />
+                                       </font>
+                                    </Label>
+                                    <Pane layoutX="1245.0" layoutY="7.0" prefHeight="164.0" prefWidth="291.0">
+                                       <children>
+                                          <Label layoutX="76.0" layoutY="19.0" prefHeight="32.0" prefWidth="68.0" text="Cours : " textFill="#1e1e1e">
+                                             <font>
+                                                <Font name="Rockwell" size="17.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="77.0" layoutY="67.0" prefHeight="32.0" prefWidth="65.0" text="Quizes:" textFill="#1e1e1e">
+                                             <font>
+                                                <Font name="Rockwell" size="17.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="76.0" layoutY="116.0" prefHeight="32.0" prefWidth="89.0" text="Examens: " textFill="#1e1e1e">
+                                             <font>
+                                                <Font name="Rockwell" size="17.0" />
+                                             </font>
+                                          </Label>
+                                          <StackPane layoutX="10.0" layoutY="11.0" prefHeight="47.0" prefWidth="50.0" style="-fx-background-radius: 30; -fx-background-color: #e1e1e1;">
+                                             <children>
+                                                <ImageView fitHeight="33.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true" style="-fx-border-radius: 56;">
+                                                   <image>
+                                                      <Image url="@img/icons/course.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </children>
+                                          </StackPane>
+                                          <StackPane layoutX="10.0" layoutY="59.0" prefHeight="47.0" prefWidth="50.0" style="-fx-background-radius: 30; -fx-background-color: #e1e1e1;">
+                                             <children>
+                                                <ImageView fitHeight="33.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true" style="-fx-border-radius: 56;">
+                                                   <image>
+                                                      <Image url="@img/icons/quiz.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </children>
+                                          </StackPane>
+                                          <StackPane layoutX="10.0" layoutY="108.0" prefHeight="47.0" prefWidth="50.0" style="-fx-background-radius: 30; -fx-background-color: #e1e1e1;">
+                                             <children>
+                                                <ImageView fitHeight="33.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true" style="-fx-border-radius: 56;">
+                                                   <image>
+                                                      <Image url="@img/icons/exam.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </children>
+                                          </StackPane>
+                                          <Label layoutX="189.0" layoutY="18.0" prefHeight="32.0" prefWidth="68.0" text="15" textFill="#1e1e1e">
+                                             <font>
+                                                <Font name="Cambria" size="27.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="190.0" layoutY="66.0" prefHeight="32.0" prefWidth="65.0" text="4" textFill="#1e1e1e">
+                                             <font>
+                                                <Font name="Cambria" size="27.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="189.0" layoutY="115.0" prefHeight="34.0" prefWidth="67.0" text="1" textFill="#1e1e1e">
+                                             <font>
+                                                <Font name="Cambria" size="27.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </Pane>
+                                 </children>
+                              </Pane>
+                              <Pane prefHeight="180.0" prefWidth="1308.0" styleClass="overview-chapter">
+                                 <children>
+                                    <Label layoutX="88.0" layoutY="14.0" prefHeight="64.0" prefWidth="533.0" text="Theme 2: Les intersections" textFill="#1e1e1e">
+                                       <font>
+                                          <Font name="Rockwell" size="32.0" />
+                                       </font>
+                                    </Label>
+                                    <Pane layoutX="1245.0" layoutY="7.0" prefHeight="164.0" prefWidth="291.0">
+                                       <children>
+                                          <Label layoutX="76.0" layoutY="19.0" prefHeight="32.0" prefWidth="68.0" text="Cours : " textFill="#1e1e1e">
+                                             <font>
+                                                <Font name="Rockwell" size="17.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="77.0" layoutY="67.0" prefHeight="32.0" prefWidth="65.0" text="Quizes:" textFill="#1e1e1e">
+                                             <font>
+                                                <Font name="Rockwell" size="17.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="76.0" layoutY="116.0" prefHeight="32.0" prefWidth="89.0" text="Examens: " textFill="#1e1e1e">
+                                             <font>
+                                                <Font name="Rockwell" size="17.0" />
+                                             </font>
+                                          </Label>
+                                          <StackPane layoutX="10.0" layoutY="11.0" prefHeight="47.0" prefWidth="50.0" style="-fx-background-radius: 30; -fx-background-color: #e1e1e1;">
+                                             <children>
+                                                <ImageView fitHeight="33.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true" style="-fx-border-radius: 56;">
+                                                   <image>
+                                                      <Image url="@img/icons/course.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </children>
+                                          </StackPane>
+                                          <StackPane layoutX="10.0" layoutY="59.0" prefHeight="47.0" prefWidth="50.0" style="-fx-background-radius: 30; -fx-background-color: #e1e1e1;">
+                                             <children>
+                                                <ImageView fitHeight="33.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true" style="-fx-border-radius: 56;">
+                                                   <image>
+                                                      <Image url="@img/icons/quiz.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </children>
+                                          </StackPane>
+                                          <StackPane layoutX="10.0" layoutY="108.0" prefHeight="47.0" prefWidth="50.0" style="-fx-background-radius: 30; -fx-background-color: #e1e1e1;">
+                                             <children>
+                                                <ImageView fitHeight="33.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true" style="-fx-border-radius: 56;">
+                                                   <image>
+                                                      <Image url="@img/icons/exam.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </children>
+                                          </StackPane>
+                                          <Label layoutX="189.0" layoutY="18.0" prefHeight="32.0" prefWidth="68.0" text="5" textFill="#1e1e1e">
+                                             <font>
+                                                <Font name="Cambria" size="27.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="190.0" layoutY="66.0" prefHeight="32.0" prefWidth="65.0" text="2" textFill="#1e1e1e">
+                                             <font>
+                                                <Font name="Cambria" size="27.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="189.0" layoutY="115.0" prefHeight="34.0" prefWidth="67.0" text="1" textFill="#1e1e1e">
+                                             <font>
+                                                <Font name="Cambria" size="27.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </Pane>
+                                 </children>
+                              </Pane>
+                              <Pane prefHeight="180.0" prefWidth="1308.0" styleClass="overview-chapter">
+                                 <children>
+                                    <Label layoutX="88.0" layoutY="14.0" prefHeight="64.0" prefWidth="533.0" text="Theme 3: Les règles de priorité" textFill="#1e1e1e">
+                                       <font>
+                                          <Font name="Rockwell" size="32.0" />
+                                       </font>
+                                    </Label>
+                                    <Pane layoutX="1245.0" layoutY="7.0" prefHeight="164.0" prefWidth="291.0">
+                                       <children>
+                                          <Label layoutX="76.0" layoutY="19.0" prefHeight="32.0" prefWidth="68.0" text="Cours : " textFill="#1e1e1e">
+                                             <font>
+                                                <Font name="Rockwell" size="17.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="77.0" layoutY="67.0" prefHeight="32.0" prefWidth="65.0" text="Quizes:" textFill="#1e1e1e">
+                                             <font>
+                                                <Font name="Rockwell" size="17.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="76.0" layoutY="116.0" prefHeight="32.0" prefWidth="89.0" text="Examens: " textFill="#1e1e1e">
+                                             <font>
+                                                <Font name="Rockwell" size="17.0" />
+                                             </font>
+                                          </Label>
+                                          <StackPane layoutX="10.0" layoutY="11.0" prefHeight="47.0" prefWidth="50.0" style="-fx-background-radius: 30; -fx-background-color: #e1e1e1;">
+                                             <children>
+                                                <ImageView fitHeight="33.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true" style="-fx-border-radius: 56;">
+                                                   <image>
+                                                      <Image url="@img/icons/course.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </children>
+                                          </StackPane>
+                                          <StackPane layoutX="10.0" layoutY="59.0" prefHeight="47.0" prefWidth="50.0" style="-fx-background-radius: 30; -fx-background-color: #e1e1e1;">
+                                             <children>
+                                                <ImageView fitHeight="33.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true" style="-fx-border-radius: 56;">
+                                                   <image>
+                                                      <Image url="@img/icons/quiz.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </children>
+                                          </StackPane>
+                                          <StackPane layoutX="10.0" layoutY="108.0" prefHeight="47.0" prefWidth="50.0" style="-fx-background-radius: 30; -fx-background-color: #e1e1e1;">
+                                             <children>
+                                                <ImageView fitHeight="33.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true" style="-fx-border-radius: 56;">
+                                                   <image>
+                                                      <Image url="@img/icons/exam.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </children>
+                                          </StackPane>
+                                          <Label layoutX="189.0" layoutY="18.0" prefHeight="32.0" prefWidth="68.0" text="5" textFill="#1e1e1e">
+                                             <font>
+                                                <Font name="Cambria" size="27.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="190.0" layoutY="66.0" prefHeight="32.0" prefWidth="65.0" text="2" textFill="#1e1e1e">
+                                             <font>
+                                                <Font name="Cambria" size="27.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="189.0" layoutY="115.0" prefHeight="34.0" prefWidth="67.0" text="1" textFill="#1e1e1e">
+                                             <font>
+                                                <Font name="Cambria" size="27.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </Pane>
+                                 </children>
+                              </Pane>
+                              <Pane prefHeight="180.0" prefWidth="1308.0" styleClass="overview-chapter">
+                                 <children>
+                                    <Label layoutX="88.0" layoutY="14.0" prefHeight="64.0" prefWidth="533.0" text="Theme 4: La vitesse de circulation" textFill="#1e1e1e">
+                                       <font>
+                                          <Font name="Rockwell" size="32.0" />
+                                       </font>
+                                    </Label>
+                                    <Pane layoutX="1245.0" layoutY="7.0" prefHeight="164.0" prefWidth="291.0">
+                                       <children>
+                                          <Label layoutX="76.0" layoutY="19.0" prefHeight="32.0" prefWidth="68.0" text="Cours : " textFill="#1e1e1e">
+                                             <font>
+                                                <Font name="Rockwell" size="17.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="77.0" layoutY="67.0" prefHeight="32.0" prefWidth="65.0" text="Quizes:" textFill="#1e1e1e">
+                                             <font>
+                                                <Font name="Rockwell" size="17.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="76.0" layoutY="116.0" prefHeight="32.0" prefWidth="89.0" text="Examens: " textFill="#1e1e1e">
+                                             <font>
+                                                <Font name="Rockwell" size="17.0" />
+                                             </font>
+                                          </Label>
+                                          <StackPane layoutX="10.0" layoutY="11.0" prefHeight="47.0" prefWidth="50.0" style="-fx-background-radius: 30; -fx-background-color: #e1e1e1;">
+                                             <children>
+                                                <ImageView fitHeight="33.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true" style="-fx-border-radius: 56;">
+                                                   <image>
+                                                      <Image url="@img/icons/course.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </children>
+                                          </StackPane>
+                                          <StackPane layoutX="10.0" layoutY="59.0" prefHeight="47.0" prefWidth="50.0" style="-fx-background-radius: 30; -fx-background-color: #e1e1e1;">
+                                             <children>
+                                                <ImageView fitHeight="33.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true" style="-fx-border-radius: 56;">
+                                                   <image>
+                                                      <Image url="@img/icons/quiz.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </children>
+                                          </StackPane>
+                                          <StackPane layoutX="10.0" layoutY="108.0" prefHeight="47.0" prefWidth="50.0" style="-fx-background-radius: 30; -fx-background-color: #e1e1e1;">
+                                             <children>
+                                                <ImageView fitHeight="33.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true" style="-fx-border-radius: 56;">
+                                                   <image>
+                                                      <Image url="@img/icons/exam.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </children>
+                                          </StackPane>
+                                          <Label layoutX="189.0" layoutY="18.0" prefHeight="32.0" prefWidth="68.0" text="17" textFill="#1e1e1e">
+                                             <font>
+                                                <Font name="Cambria" size="27.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="190.0" layoutY="66.0" prefHeight="32.0" prefWidth="65.0" text="7" textFill="#1e1e1e">
+                                             <font>
+                                                <Font name="Cambria" size="27.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="189.0" layoutY="115.0" prefHeight="34.0" prefWidth="67.0" text="2" textFill="#1e1e1e">
+                                             <font>
+                                                <Font name="Cambria" size="27.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </Pane>
+                                 </children>
+                              </Pane>
+                              <Pane prefHeight="180.0" prefWidth="1308.0" styleClass="overview-chapter">
+                                 <children>
+                                    <Label layoutX="88.0" layoutY="14.0" prefHeight="64.0" prefWidth="694.0" text="Theme 5: Le croisement et lesdépassements" textFill="#1e1e1e">
+                                       <font>
+                                          <Font name="Rockwell" size="32.0" />
+                                       </font>
+                                    </Label>
+                                    <Pane layoutX="1245.0" layoutY="7.0" prefHeight="164.0" prefWidth="291.0">
+                                       <children>
+                                          <Label layoutX="76.0" layoutY="19.0" prefHeight="32.0" prefWidth="68.0" text="Cours : " textFill="#1e1e1e">
+                                             <font>
+                                                <Font name="Rockwell" size="17.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="77.0" layoutY="67.0" prefHeight="32.0" prefWidth="65.0" text="Quizes:" textFill="#1e1e1e">
+                                             <font>
+                                                <Font name="Rockwell" size="17.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="76.0" layoutY="116.0" prefHeight="32.0" prefWidth="89.0" text="Examens: " textFill="#1e1e1e">
+                                             <font>
+                                                <Font name="Rockwell" size="17.0" />
+                                             </font>
+                                          </Label>
+                                          <StackPane layoutX="10.0" layoutY="11.0" prefHeight="47.0" prefWidth="50.0" style="-fx-background-radius: 30; -fx-background-color: #e1e1e1;">
+                                             <children>
+                                                <ImageView fitHeight="33.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true" style="-fx-border-radius: 56;">
+                                                   <image>
+                                                      <Image url="@img/icons/course.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </children>
+                                          </StackPane>
+                                          <StackPane layoutX="10.0" layoutY="59.0" prefHeight="47.0" prefWidth="50.0" style="-fx-background-radius: 30; -fx-background-color: #e1e1e1;">
+                                             <children>
+                                                <ImageView fitHeight="33.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true" style="-fx-border-radius: 56;">
+                                                   <image>
+                                                      <Image url="@img/icons/quiz.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </children>
+                                          </StackPane>
+                                          <StackPane layoutX="10.0" layoutY="108.0" prefHeight="47.0" prefWidth="50.0" style="-fx-background-radius: 30; -fx-background-color: #e1e1e1;">
+                                             <children>
+                                                <ImageView fitHeight="33.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true" style="-fx-border-radius: 56;">
+                                                   <image>
+                                                      <Image url="@img/icons/exam.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </children>
+                                          </StackPane>
+                                          <Label layoutX="189.0" layoutY="18.0" prefHeight="32.0" prefWidth="68.0" text="8" textFill="#1e1e1e">
+                                             <font>
+                                                <Font name="Cambria" size="27.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="190.0" layoutY="66.0" prefHeight="32.0" prefWidth="65.0" text="2" textFill="#1e1e1e">
+                                             <font>
+                                                <Font name="Cambria" size="27.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="189.0" layoutY="115.0" prefHeight="34.0" prefWidth="67.0" text="0" textFill="#1e1e1e">
+                                             <font>
+                                                <Font name="Cambria" size="27.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </Pane>
+                                 </children>
+                              </Pane>
+                           </children>
+                        </VBox>
+                     </content>
+                  </ScrollPane>
+               </children>
+            </VBox>
+            <Pane prefHeight="41.0" prefWidth="672.0" style="-fx-background-color: #eeeeee;">
+               <children>
+                  <Label layoutX="1376.0" layoutY="5.0" text="Suivant &gt;" textFill="#616161">
+                     <font>
+                        <Font name="Jokerman" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="75.0" layoutY="5.0" text="&lt; Precedant" textFill="#616161">
+                     <font>
+                        <Font name="Jokerman" size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+         </children>
+      </VBox>
+   </center>
 </BorderPane>

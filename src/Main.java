@@ -7,7 +7,7 @@ import javafx.stage.StageStyle;
 
 public class Main extends Application {
 
-    public Settings appSettings = new Settings();
+    public static Settings appSettings = new Settings();
 
     @Override
     public void start(Stage primaryStage) throws Exception{
@@ -18,7 +18,6 @@ public class Main extends Application {
         primaryStage.initStyle(StageStyle.UNDECORATED);
         primaryStage.show();
         appSettings.setAppStage(primaryStage);
-        appSettings.newNotification(FXMLLoader.load(getClass().getResource("Notification.fxml")));
     }
 
 

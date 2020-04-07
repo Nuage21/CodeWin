@@ -201,7 +201,7 @@
                                           </Pane>
                                           <Pane prefHeight="71.0" prefWidth="894.0">
                                              <children>
-                                                <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" opacity="0.89" prefHeight="57.0" prefWidth="869.0" style="-fx-background-color: white; -fx-border-color: #1d1d1d; -fx-border-radius: 20; -fx-background-radius: 20; -fx-text-fill: #3d3d3d;" styleClass="submit-btn" text="Submit" textFill="WHITE">
+                                                <Button  fx:id="signUpBtn" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" opacity="0.89" prefHeight="57.0" prefWidth="869.0" style="-fx-background-color: white; -fx-border-color: #1d1d1d; -fx-border-radius: 20; -fx-background-radius: 20; -fx-text-fill: #3d3d3d;" styleClass="submit-btn" text="Submit" textFill="WHITE">
                                                    <font>
                                                       <Font name="System Bold" size="15.0" />
                                                    </font>
