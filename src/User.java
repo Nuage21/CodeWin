@@ -6,14 +6,15 @@ import java.time.*;
 
 public class User {
 
-    private String surname;
+    private String username;
     private String name;
+    private String prenom;
     private String telephone;
     private String address;
     private String email;
-    private String avatar;
+    private String photo;
     private String password;
-    private LocalDate dob;
+    private Date dob;
     private boolean darkmode;
     private int lang;
 
@@ -42,7 +43,6 @@ public class User {
             ResultSet rs = null;
 
             rs = stmt.executeQuery();
-            System.out.println(rs.first());
             if (rs.first() == false) {
                 return false;
             } else {
@@ -65,7 +65,7 @@ public class User {
             ResultSet rs = null;
 
             rs = stmt.executeQuery();
-            System.out.println(rs.first());
+         //   System.out.println(rs.first());
             if (rs.first() == false) {
                 return false;
             } else {
@@ -78,17 +78,19 @@ public class User {
     }
 
 
-    public static void addUser(String nom, String prenom, String username, Date dob, String email, String password, String numtel, String photo, String adresse, int langue, boolean darkmod) {
-        String insert = "INSERT INTO users (nom,prenom,username,dob,email,password,numtel,photo,adresse,langue,darkmod) VALUES (?,?,?,?,?,?,?,?,?,?,?)";
 
+	public static boolean addUser(String nom, String prenom, String username, Date dob, String email, String password, String numtel, String photo, String adresse, int langue, boolean darkmod) {
+        String insert = "INSERT INTO users (nom,prenom,username,dob,email,password,numtel,photo,adresse,langue,darkmod) VALUES (?,?,?,?,?,?,?,?,?,?,?)";
+         boolean b = false;
         try {
             Connection conn = getConnection();
             PreparedStatement stmt = conn.prepareStatement(insert);
 
             if (userEmailExiste(email) || userNameExiste(username)) {
-                System.out.println("l'utilisateur existe deja on peut pas l'ajouté");
+             //   System.out.println("l'utilisateur existe deja on peut pas l'ajouté");
+            	b = true;
             } else {
-                String tableQuestions = "CREATE TABLE " + username + " " + "( question text,reponse_1 text DEFAULT NULL,reponse_2 text DEFAULT NULL ,reponse_3 text DEFAULT NULL, reponse_4 text DEFAULT NULL);";
+               // String tableQuestions = "CREATE TABLE " + username + " " + "( question text,reponse_1 text DEFAULT NULL,reponse_2 text DEFAULT NULL ,reponse_3 text DEFAULT NULL, reponse_4 text DEFAULT NULL);";
 
 
                 stmt.setString(1, nom);
@@ -106,35 +108,39 @@ public class User {
                 stmt.execute();
                 stmt.close();
 
-                stmt = conn.prepareStatement(tableQuestions);
+            /*    stmt = conn.prepareStatement(tableQuestions);
 
                 stmt.execute();
-                stmt.close();
+                stmt.close();    */
 
+              b=false ;
             }
         } catch (SQLException e) {
             System.err.println(e);
+        }finally{
+        	return b;
         }
+
     }
 
 
     //les setters et les getters
-    public String getSurname() {
-        return surname;
-    }
-
-
-    public void setSurname(String surname) {
-        this.surname = surname;
-    }
-
-
     public String getName() {
         return name;
     }
 
 
-    public void setName(String name) {
+    public String getUsername() {
+		return username;
+	}
+
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
+
+	public void setName(String name) {
         this.name = name;
     }
 
@@ -169,17 +175,19 @@ public class User {
     }
 
 
-    public String getAvatar() {
-        return avatar;
-    }
 
 
-    public void setAvatar(String avatar) {
-        this.avatar = avatar;
-    }
+    public String getPhoto() {
+		return photo;
+	}
 
 
-    public String getPassword() {
+	public void setPhoto(String photo) {
+		this.photo = photo;
+	}
+
+
+	public String getPassword() {
         return password;
     }
 
@@ -189,12 +197,12 @@ public class User {
     }
 
 
-    public LocalDate getDob() {
+    public Date getDob() {
         return dob;
     }
 
 
-    public void setDob(LocalDate dob) {
+    public void setDob(Date dob) {
         this.dob = dob;
     }
 
@@ -217,6 +225,16 @@ public class User {
     public void setLang(int lang) {
         this.lang = lang;
     }
+
+
+	public String getPrenom() {
+		return prenom;
+	}
+
+
+	public void setPrenom(String prenom) {
+		this.prenom = prenom;
+	}
 
 
 }

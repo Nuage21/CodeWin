@@ -11,6 +11,7 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
 import java.io.IOException;
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class Auth_Controller {
@@ -132,6 +133,8 @@ public class Auth_Controller {
             } catch (IOException e) {
                 e.printStackTrace();
             }
+            //l'ajout de user ici
+            this.addUser();
             Stage stg = Main.appSettings.getAppStage();
             stg.setScene(new Scene(root));
             stg.setFullScreen(true);
@@ -153,4 +156,51 @@ public class Auth_Controller {
             p.setStyle("-fx-effect: dropshadow(three-pass-box, #1299bb, 0, 0, 0, 0);");
         }
     }
+
+
+
+/*la fonction user qui ajoute l'user a la base de données s'il n'existe pas déja et l'affecter a la fenetre
+ loggedln_controller comme une variable statique
+*/
+    @FXML
+    private void addUser()
+    {   //les variables de la fonction
+    	boolean userExiste = false;
+    	User user = new User() ;
+
+    /* la recuperation de la date et La transformer vers une date sql donc vous devez remplir le champ date sinon
+    il y aura une nullpointer error */
+    LocalDate localdate = DatePickerField.getValue();
+    java.sql.Date dob = java.sql.Date.valueOf(localdate);
+
+
+//l'ajout de user a la base de données
+    userExiste = User.addUser(FirstnameField.getText(), LastnameField.getText(), UsernameField.getText(), dob , EmailField.getText(),PwdField.getText(),PhoneField.getText() , "",  AddressField.getText(), 0 , false);
+
+//verification du succes du poccessus d'ajout de user vers la base de données
+    if(userExiste) //s'il existe déja
+    	{
+    		//le traitement lorsque le usrname ou son email existe déja
+    	//sinon on va affecter le user a Loggedln_Controller
+    	}
+    	else{  //sinon on affecte le user vers la fenetre loggedln comme variable statique
+    		//d'abord on remplit les attributs de user
+user.setUsername(UsernameField.getText());
+user.setName(FirstnameField.getText());
+user.setPrenom(LastnameField.getText());
+user.setEmail(EmailField.getText());
+user.setPassword(PwdField.getText());
+user.setTelephone(PhoneField.getText());
+user.setAddress(AddressField.getText());
+user.setDob(dob);
+user.setLang(0);
+user.setDarkmode(false);
+user.setPhoto("");
+//l'affectation de user
+LoggedIn_Controller.setUser(user);
+    	}
+
+    }
+
+
 }
