@@ -1,0 +1,11 @@
+.lineheight{
+	text-align: 12;
+}
+.deconnexion:hover{
+    -fx-background-color: #032356 !important;
+	-fx-text-fill: ##032356 !important;
+}
+.enregistrer:hover{
+	-fx-background-color: #050134 !important;
+	-fx-text-fill: ###050134 !important;
+}
