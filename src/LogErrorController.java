@@ -4,12 +4,16 @@ import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.geometry.Point2D;
+import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.scene.control.*;
 
+import java.awt.*;
+import java.awt.event.InputEvent;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
@@ -22,7 +26,8 @@ public class LogErrorController implements Initializable {
     VBox msgbox ;
 
     public static ArrayList<Auth_Controller.Msg> list = new ArrayList<>() ;
-    public void updMsg(){
+
+    public  void updMsg(){
         for (Auth_Controller.Msg m :list) {
             String valid = m.b?"valide":"invalid";
             Label t = new Label("\t"+m.msg);
@@ -32,6 +37,23 @@ public class LogErrorController implements Initializable {
             img.setFitWidth(25);
             t.setGraphic(img);
             msgbox.getChildren().add(t);
+
+             /*
+            Robot robot = null;
+
+            //region find another way
+            try {
+                robot = new Robot();
+            } catch (AWTException e) {
+                e.printStackTrace();
+            }
+            Point2D p =  Auth_Controller.ctrl.localToScreen(0,0);
+            robot.mouseMove((int)p.getX(),(int)p.getY());
+            robot.mousePress(InputEvent.BUTTON1_MASK);
+            robot.mouseRelease(InputEvent.BUTTON1_MASK);
+            //endregion
+   */
+             Main.appSettings.getAppStage().requestFocus();
 
         }
 
