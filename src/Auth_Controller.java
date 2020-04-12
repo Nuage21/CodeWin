@@ -23,6 +23,7 @@ import javafx.util.Duration;
 
 import java.io.IOException;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -108,6 +109,17 @@ public class Auth_Controller {
     @FXML
     private void initialize() {
 
+        // _____________ NO REPEAT INIT ______________
+        UsernameField.setText("Barack_Hawaii");
+        PwdField.setText("Barack1234#;");
+        LastnameField.setText("Obama");
+        FirstnameField.setText("Barack");
+        AddressField.setText("Honolulu, Hawaii, United States");
+        PhoneField.setText("(120)-234-1234");
+        EmailField.setText("barack_obama@wh.gov");
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+        DatePickerField.setValue(LocalDate.parse("04-10-1961", formatter));
+        // __________________________________________
         //region oh god
 
         applyTabStyle(signupTab, true);

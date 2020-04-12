@@ -8,8 +8,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-<VBox prefHeight="575.0" prefWidth="1396.0" stylesheets="@css/Params.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<VBox prefHeight="575.0" prefWidth="1575.0" stylesheets="@css/Params.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Pane fx:id="UsernameSignInPane1" prefHeight="102.0" prefWidth="1396.0" styleClass="param-seek">
          <children>
@@ -25,9 +24,9 @@
             </ImageView>
          </children>
       </Pane>
-      <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="518.0" prefWidth="1388.0" style="-fx-background-color: white;">
+      <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="518.0" prefWidth="1573.0" style="-fx-background-color: white;">
          <children>
-            <VBox layoutX="6.0" prefHeight="509.0" prefWidth="1372.0" style="-fx-padding: 10 0 0 20;">
+            <VBox layoutX="6.0" prefHeight="509.0" prefWidth="1566.0" style="-fx-padding: 10 0 0 20;">
                <children>
                   <Pane prefHeight="69.0" prefWidth="1352.0" styleClass="param-pane">
                      <children>
