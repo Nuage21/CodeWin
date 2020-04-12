@@ -98,14 +98,12 @@ public class Auth_Controller {
 
 
     enum SignCase {signIn, signUp}
-
     private SignCase signCase = SignCase.signUp;
-
     private Control Focused = null;
 
-   private IntegerProperty ffs = new SimpleIntegerProperty(0);
-   public  Control lastCtrl = UsernameField;
-    public   Control ctrl = UsernameField;
+    public Stage main_stage = null;
+    public LogErrorController main_controller ;
+    private boolean all_is_ok = true ; // set to false if logger is called ;
 
     @FXML
     private void initialize() {
@@ -148,6 +146,7 @@ public class Auth_Controller {
         focusable.add(PwdSignInField);
         focusable.add(PwdField);
 
+
         for (Control c : focusable)
             c.focusedProperty().addListener((arg0, oldPropertyValue, newPropertyValue) -> applyFocusStyle((Pane) c.getParent(), newPropertyValue));
 
@@ -159,12 +158,27 @@ public class Auth_Controller {
                 e.printStackTrace();
             }
             //l'ajout de user ici
-            if(dateVer(!dateVer(false))&&(mailVer(!mailVer(false)))&&(psswrdVer(!psswrdVer(false)))&&(userNameVer(!userNameVer(false)))&&(notEmpty(FirstnameField,!notEmpty(FirstnameField,false)))&&(notEmpty(LastnameField,!notEmpty(LastnameField,false)))&&(notEmpty(PhoneField,!notEmpty(PhoneField,false)))&&(notEmpty(AddressField,!notEmpty(AddressField,false)))){
+
+           if(main_stage!=null ) main_stage.close();
+            all_is_ok = true ;
+           if(! userNameVer()) loger(UsernameField);
+           if(! psswrdVer()) loger(PwdField);
+            if(  !notEmpty(FirstnameField) ) loger(FirstnameField);
+            if( ! notEmpty(LastnameField) ) loger(LastnameField);
+            if( ! notEmpty(AddressField) )loger(AddressField);
+            if( ! notEmpty(PhoneField) ) loger(PhoneField);
+            if( ! mailVer() ) loger(EmailField);
+            if( ! dateVer() ) loger(DatePickerField);
+            
+
+          if(all_is_ok){
+              if(main_stage!=null)main_stage.close();
             this.addUser();
             Stage stg = Main.appSettings.getAppStage();
             stg.setScene(new Scene(root));
           stg.setFullScreen(true);
             stg.show();}
+
         });
         //endregion
         PhoneField.textProperty().addListener(new ChangeListener<String>() {
@@ -175,170 +189,169 @@ public class Auth_Controller {
                     PhoneField.setText(oldValue);
                 }
             }
-        });
+        }); // only number textfield
 
-
-
-
+        //region onClikc
         UsernameField.setOnMouseClicked(e->{
             {
-
-                    ffs.setValue(ffs.getValue() + 1);
-                    userNameVer(true);
-
+                userNameVer();
+                onClick(UsernameField);
+                main_controller.updMsg();
             }
         });
         PwdField.setOnMouseClicked(e->{
         {
-
-                ffs.setValue(ffs.getValue() + 1);
-                psswrdVer(true);
-
+            psswrdVer();
+            onClick(PwdField);
+            main_controller.updMsg();
             }
         });
+
         FirstnameField.setOnMouseClicked(e->{
-            ctrl=FirstnameField;
-            ffs.setValue(ffs.getValue() + 1);
-            notEmpty(FirstnameField,true);
+            notEmpty(FirstnameField);
+            onClick(FirstnameField);
+            main_controller.updMsg();
         });
         LastnameField.setOnMouseClicked(e->{
-            ctrl=LastnameField;
-            ffs.setValue(ffs.getValue() + 1);
-            notEmpty(LastnameField,true);
+            notEmpty(LastnameField);
+            onClick(LastnameField);
+            main_controller.updMsg();
         });
         AddressField.setOnMouseClicked(e->{
-            ctrl=AddressField;
-            ffs.setValue(ffs.getValue() + 1);
-            notEmpty(AddressField,true);
+            notEmpty(AddressField);
+            onClick(AddressField);
+            main_controller.updMsg();
         });
 
         EmailField.setOnMouseClicked(e->{
-            ctrl=EmailField;
-            ffs.setValue(ffs.getValue() + 1);
-            mailVer(true);
+            mailVer();
+            onClick(EmailField);
+            main_controller.updMsg();
         });
-
+        PhoneField.setOnMouseClicked(e->{
+            notEmpty(PhoneField);
+            onClick(PhoneField);
+            main_controller.updMsg();
+        });
         DatePickerField.setEditable(false);
-       PhoneField.setOnMouseClicked(e->{
-           ctrl=PhoneField;
-           ffs.setValue(ffs.getValue() + 1);
-           notEmpty(PhoneField,true);
-       });
-
-
-
-
-
-
+        //endregion
+        //region on Change
         UsernameField.textProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
-
-                ffs.setValue(ffs.getValue()+1);
-                userNameVer(true) ;
+                userNameVer();
+                main_controller.updMsg();
             }
         });
         PwdField.textProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
-                    ctrl = PwdField;
-                    ffs.setValue(ffs.getValue() + 1);
-                psswrdVer(true);
+               psswrdVer();
+               main_controller.updMsg();
             }
         });
+
         FirstnameField.textProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
-
-                ffs.setValue(ffs.getValue()+1);
-                notEmpty(FirstnameField,true) ;
+                notEmpty(FirstnameField);
+                main_controller.updMsg();
             }
         });
         LastnameField.textProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
-
-                ffs.setValue(ffs.getValue()+1);
-                notEmpty(LastnameField,true) ;
+                notEmpty(LastnameField);
+                main_controller.updMsg();
             }
         });
         PhoneField.textProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
-
-                ffs.setValue(ffs.getValue()+1);
-                notEmpty(PhoneField,true) ;
+                notEmpty(PhoneField);
+                main_controller.updMsg();
             }
         });
         EmailField.textProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
-
-                ffs.setValue(ffs.getValue()+1);
-                mailVer(true);
+                mailVer();
+                main_controller.updMsg();
             }
         });
         AddressField.textProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+                notEmpty(AddressField);
+                main_controller.updMsg();
+            }
+        });
 
-                ffs.setValue(ffs.getValue()+1);
-                notEmpty(AddressField,true) ;
-            }
-        });
-        Platform.runLater(new Runnable() {
-            @Override
-            public void run() {
-                UsernameField.requestFocus();
-                ctrl= UsernameField;
-                lastCtrl=null;
-            }
-        });
+        //endregion
     }
 
 
 
+     public void onClick(Control c ){
+        if(main_stage != null) main_stage.close();
+        init();
+        main_stage.show();
+        positionner(c);
+    }
+     public void positionner(Control c){
+       Point2D p = c.localToScreen(0.0,0.0);
+       main_stage.setX(p.getX());
+       main_stage.setY(p.getY()+30);
+   }
+     public void init(){
+         try {
+             FXMLLoader loader =new FXMLLoader(getClass().getResource("LogError.fxml"));
+             main_stage = new Stage();
+             main_stage.setAlwaysOnTop(true);
+            // main_stage.initOwner(Main.appSettings.getAppStage());
+             Scene sc = new Scene(loader.load());
+             main_controller = (LogErrorController) loader.getController();
+             sc.setFill(Color.TRANSPARENT);
+             main_stage.initStyle(StageStyle.TRANSPARENT);
+             main_stage.setScene(sc);
+           // main_controller.main.setOnMouseClicked(e->main_stage.close());
+
+         } catch (
+                 IOException e) {
+             e.printStackTrace();
+         }
+     }
 
 
-     public boolean userNameVer(boolean show){
+
+     public boolean userNameVer(){
 
         String usr = UsernameField.getText();
-         ctrl = UsernameField ;
         boolean is_not_taken = true ;  // verification au pres de la bdd
         boolean lenght = usr.length()>=6  ;
-
               LogErrorController.list.clear();
-            LogErrorController.list.add(new Msg(Integer.toString(usr.length()),is_not_taken));
+            LogErrorController.list.add(new Msg("pseudo non utilisé ",is_not_taken));
             LogErrorController.list.add(new Msg("plus de 6 characteres",lenght));
-            if(show)loger(UsernameField);
             return lenght&&is_not_taken;
         }
-
-     public boolean psswrdVer(boolean show){
+     public boolean psswrdVer(){
          String usr = PwdField.getText();
-         ctrl = PwdField ;
          boolean lengh = usr.length()>= 8 ;
          boolean num = usr.matches("^.*[0-9].*.[0-9].*");
          boolean spec = usr.matches("^.*(?=.*[*@_;,&çà]).*$");
-
          LogErrorController.list.clear();
          LogErrorController.list.add(new Msg("au moin 8 caractéres",lengh));
          LogErrorController.list.add(new Msg("au moin 2 chiffres",num));
          LogErrorController.list.add(new Msg("au moin un cara special",spec));
-         if(show)loger(PwdField);
          return lengh&&num&&spec;
      }
-
-     public boolean notEmpty(TextField t,boolean show){
+     public boolean notEmpty(TextField t){
         boolean emp = t.getText().length()!=0 ;
-       ctrl = t ;
          LogErrorController.list.clear();
          LogErrorController.list.add(new Msg("remplir ce champs",emp));
-         if(show)loger(t);
          return emp ;
      }
-
-     public boolean mailVer(boolean show){
+     public boolean mailVer(){
          String email  = EmailField.getText();
          String mail_format = "^[a-zA-Z0-9_!#$%&'*+/=?`{|}~^-]+(?:\\.[a-zA-Z0-9_!#$%&'*+/=?`{|}~^-]+)*@[a-zA-Z0-9-]+(?:\\.[a-zA-Z0-9-]+)*$";
          Pattern pattern = Pattern.compile(mail_format);
@@ -349,24 +362,20 @@ public class Auth_Controller {
          LogErrorController.list.clear();
          LogErrorController.list.add(new Msg("format de mail valide",valide_mail));
          LogErrorController.list.add(new Msg("mail non utilisé",is_not_used));
-         if(show)loger(EmailField);
          return valide_mail&&is_not_used ;
      }
-     public boolean dateVer(boolean show){
+     public boolean dateVer(){
         boolean empty = DatePickerField.getValue() != null;
          LogErrorController.list.clear();
          LogErrorController.list.add(new Msg("selectionnez une date",empty));
-         if(show)loger(DatePickerField);
          return empty ;
      }
-    public boolean same(){
-        return ctrl.equals(lastCtrl);
-    }
+
 
  public void loger(Control c){
+        all_is_ok = false ;
+
      try {
-
-
          FXMLLoader loader =new FXMLLoader(getClass().getResource("LogError.fxml"));
 
          Stage stg = new Stage();
@@ -382,33 +391,17 @@ public class Auth_Controller {
          stg.setScene(sc);
          LogErrorController controller = (LogErrorController) loader.getController();
           controller.main.setOnMouseClicked(e->stg.close());
-         ffs.addListener(new ChangeListener<Number>() {
-             @Override
-             public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
-
-               stg.close();
-             }
-         });
-
-
+          controller.errorMsg();
         PauseTransition dela = new PauseTransition(Duration.seconds(1));
          dela.setOnFinished( event -> {
              Timeline timeline = new Timeline();
-             KeyFrame key = new KeyFrame(Duration.millis(2000),
+             KeyFrame key = new KeyFrame(Duration.millis(1000),
                      new KeyValue(stg.getScene().getRoot().opacityProperty(), 0));
              timeline.getKeyFrames().add(key);
              timeline.setOnFinished((ae) -> stg.close());
              timeline.play();
          } );
          dela.play();
-         PauseTransition delay = new PauseTransition(Duration.millis(1));
-         delay.setOnFinished( event -> {
-             Main.appSettings.getAppStage().requestFocus();
-             ctrl.requestFocus();
-             ( (TextInputControl) ctrl).positionCaret(( (TextInputControl) ctrl).getText().length());
-             } // RECUP LE FOCUS ?GETME OUT JAVAFX
-              );
-         delay.play();
          stg.show();
      } catch (
              IOException e) {
@@ -432,8 +425,8 @@ public class Auth_Controller {
     }
 
 /*la fonction user qui ajoute l'user a la base de données s'il n'existe pas déja et l'affecter a la fenetre
- loggedln_controller comme une variable statique
-*/
+ loggedln_controller comme une variable statique*/
+
     @FXML
     private void addUser()
     {   //les variables de la fonction

@@ -28,6 +28,7 @@ public class LogErrorController implements Initializable {
     public static ArrayList<Auth_Controller.Msg> list = new ArrayList<>() ;
 
     public  void updMsg(){
+        msgbox.getChildren().clear();
         for (Auth_Controller.Msg m :list) {
             String valid = m.b?"valide":"invalid";
             Label t = new Label("\t"+m.msg);
@@ -36,30 +37,31 @@ public class LogErrorController implements Initializable {
             img.setFitHeight(25);
             img.setFitWidth(25);
             t.setGraphic(img);
+
             msgbox.getChildren().add(t);
 
-             /*
-            Robot robot = null;
 
-            //region find another way
-            try {
-                robot = new Robot();
-            } catch (AWTException e) {
-                e.printStackTrace();
-            }
-            Point2D p =  Auth_Controller.ctrl.localToScreen(0,0);
-            robot.mouseMove((int)p.getX(),(int)p.getY());
-            robot.mousePress(InputEvent.BUTTON1_MASK);
-            robot.mouseRelease(InputEvent.BUTTON1_MASK);
-            //endregion
-   */
              Main.appSettings.getAppStage().requestFocus();
 
         }
 
         }
 
+      public void errorMsg(){
+          main.setStyle( "-fx-background-size: 1200 900;"+
+                  "-fx-background-radius: 18 18 18 18;"+
+                  "-fx-border-radius: 18 18 18 18;"+
+                  "-fx-background-color: #ff1a1a;");
 
+          Label er = new Label("veillez remplir ce champ correctement");
+          Image image = new Image(getClass().getResourceAsStream("img/invalid.jpg"));
+          ImageView img = new ImageView(image);
+          img.setFitHeight(25);
+          img.setFitWidth(25);
+         er.setGraphic(img);
+          msgbox.getChildren().clear();
+         msgbox.getChildren().add(er);
+      }
 
 
     @Override
@@ -69,7 +71,7 @@ public class LogErrorController implements Initializable {
         main.setStyle( "-fx-background-size: 1200 900;"+
                 "-fx-background-radius: 18 18 18 18;"+
                 "-fx-border-radius: 18 18 18 18;"+
-                "-fx-background-color: #12F423;");
+                "-fx-background-color: #b3b300;");
 
 
     }

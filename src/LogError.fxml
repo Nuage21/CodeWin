@@ -6,8 +6,8 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane fx:id="main" prefHeight="67.0" prefWidth="266.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="LogErrorController">
+<AnchorPane fx:id="main" prefHeight="30.0" prefWidth="260.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="LogErrorController">
    <children>
-      <VBox fx:id="msgbox" layoutX="109.0" layoutY="125.0" prefHeight="173.0" prefWidth="291.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="15.0" />
+      <VBox fx:id="msgbox" layoutX="109.0" layoutY="125.0" prefHeight="173.0" prefWidth="291.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="5.0" />
    </children>
 </AnchorPane>
