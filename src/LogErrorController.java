@@ -41,27 +41,27 @@ public class LogErrorController implements Initializable {
             msgbox.getChildren().add(t);
 
 
-             Main.appSettings.getAppStage().requestFocus();
+            Main.appSettings.getAppStage().requestFocus();
 
         }
 
-        }
+    }
 
-      public void errorMsg(){
-          main.setStyle( "-fx-background-size: 1200 900;"+
-                  "-fx-background-radius: 18 18 18 18;"+
-                  "-fx-border-radius: 18 18 18 18;"+
-                  "-fx-background-color: #ff1a1a;");
+    public void errorMsg(){
+        main.setStyle( "-fx-background-size: 1200 900;"+
+                "-fx-background-radius: 18 18 18 18;"+
+                "-fx-border-radius: 18 18 18 18;"+
+                "-fx-background-color: #ff1a1a;");
 
-          Label er = new Label("veillez remplir ce champ correctement");
-          Image image = new Image(getClass().getResourceAsStream("img/invalid.jpg"));
-          ImageView img = new ImageView(image);
-          img.setFitHeight(25);
-          img.setFitWidth(25);
-         er.setGraphic(img);
-          msgbox.getChildren().clear();
-         msgbox.getChildren().add(er);
-      }
+        Label er = new Label("veillez remplir ce champ correctement");
+        Image image = new Image(getClass().getResourceAsStream("img/invalid.jpg"));
+        ImageView img = new ImageView(image);
+        img.setFitHeight(25);
+        img.setFitWidth(25);
+        er.setGraphic(img);
+        msgbox.getChildren().clear();
+        msgbox.getChildren().add(er);
+    }
 
 
     @Override

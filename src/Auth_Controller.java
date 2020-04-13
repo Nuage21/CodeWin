@@ -159,25 +159,25 @@ public class Auth_Controller {
             }
             //l'ajout de user ici
 
-           if(main_stage!=null ) main_stage.close();
+            if(main_stage!=null ) main_stage.close();
             all_is_ok = true ;
-           if(! userNameVer()) loger(UsernameField);
-           if(! psswrdVer()) loger(PwdField);
+            if(! userNameVer()) loger(UsernameField);
+            if(! psswrdVer()) loger(PwdField);
             if(  !notEmpty(FirstnameField) ) loger(FirstnameField);
             if( ! notEmpty(LastnameField) ) loger(LastnameField);
             if( ! notEmpty(AddressField) )loger(AddressField);
             if( ! notEmpty(PhoneField) ) loger(PhoneField);
             if( ! mailVer() ) loger(EmailField);
             if( ! dateVer() ) loger(DatePickerField);
-            
 
-          if(all_is_ok){
-              if(main_stage!=null)main_stage.close();
-            this.addUser();
-            Stage stg = Main.appSettings.getAppStage();
-            stg.setScene(new Scene(root));
-          stg.setFullScreen(true);
-            stg.show();}
+
+            if(all_is_ok){
+                if(main_stage!=null)main_stage.close();
+                this.addUser();
+                Stage stg = Main.appSettings.getAppStage();
+                stg.setScene(new Scene(root));
+                stg.setFullScreen(true);
+                stg.show();}
 
         });
         //endregion
@@ -200,10 +200,10 @@ public class Auth_Controller {
             }
         });
         PwdField.setOnMouseClicked(e->{
-        {
-            psswrdVer();
-            onClick(PwdField);
-            main_controller.updMsg();
+            {
+                psswrdVer();
+                onClick(PwdField);
+                main_controller.updMsg();
             }
         });
 
@@ -246,8 +246,8 @@ public class Auth_Controller {
         PwdField.textProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
-               psswrdVer();
-               main_controller.updMsg();
+                psswrdVer();
+                main_controller.updMsg();
             }
         });
 
@@ -292,122 +292,122 @@ public class Auth_Controller {
 
 
 
-     public void onClick(Control c ){
+    public void onClick(Control c ){
         if(main_stage != null) main_stage.close();
         init();
         main_stage.show();
         positionner(c);
     }
-     public void positionner(Control c){
-       Point2D p = c.localToScreen(0.0,0.0);
-       main_stage.setX(p.getX());
-       main_stage.setY(p.getY()+30);
-   }
-     public void init(){
-         try {
-             FXMLLoader loader =new FXMLLoader(getClass().getResource("LogError.fxml"));
-             main_stage = new Stage();
-             main_stage.setAlwaysOnTop(true);
+    public void positionner(Control c){
+        Point2D p = c.localToScreen(0.0,0.0);
+        main_stage.setX(p.getX());
+        main_stage.setY(p.getY()+30);
+    }
+    public void init(){
+        try {
+            FXMLLoader loader =new FXMLLoader(getClass().getResource("LogError.fxml"));
+            main_stage = new Stage();
+            main_stage.setAlwaysOnTop(true);
             // main_stage.initOwner(Main.appSettings.getAppStage());
-             Scene sc = new Scene(loader.load());
-             main_controller = (LogErrorController) loader.getController();
-             sc.setFill(Color.TRANSPARENT);
-             main_stage.initStyle(StageStyle.TRANSPARENT);
-             main_stage.setScene(sc);
-           // main_controller.main.setOnMouseClicked(e->main_stage.close());
+            Scene sc = new Scene(loader.load());
+            main_controller = (LogErrorController) loader.getController();
+            sc.setFill(Color.TRANSPARENT);
+            main_stage.initStyle(StageStyle.TRANSPARENT);
+            main_stage.setScene(sc);
+            // main_controller.main.setOnMouseClicked(e->main_stage.close());
 
-         } catch (
-                 IOException e) {
-             e.printStackTrace();
-         }
-     }
+        } catch (
+                IOException e) {
+            e.printStackTrace();
+        }
+    }
 
 
 
-     public boolean userNameVer(){
+    public boolean userNameVer(){
 
         String usr = UsernameField.getText();
         boolean is_not_taken = true ;  // verification au pres de la bdd
         boolean lenght = usr.length()>=6  ;
-              LogErrorController.list.clear();
-            LogErrorController.list.add(new Msg("pseudo non utilisé ",is_not_taken));
-            LogErrorController.list.add(new Msg("plus de 6 characteres",lenght));
-            return lenght&&is_not_taken;
-        }
-     public boolean psswrdVer(){
-         String usr = PwdField.getText();
-         boolean lengh = usr.length()>= 8 ;
-         boolean num = usr.matches("^.*[0-9].*.[0-9].*");
-         boolean spec = usr.matches("^.*(?=.*[*@_;,&çà]).*$");
-         LogErrorController.list.clear();
-         LogErrorController.list.add(new Msg("au moin 8 caractéres",lengh));
-         LogErrorController.list.add(new Msg("au moin 2 chiffres",num));
-         LogErrorController.list.add(new Msg("au moin un cara special",spec));
-         return lengh&&num&&spec;
-     }
-     public boolean notEmpty(TextField t){
+        LogErrorController.list.clear();
+        LogErrorController.list.add(new Msg("pseudo non utilisé ",is_not_taken));
+        LogErrorController.list.add(new Msg("plus de 6 characteres",lenght));
+        return lenght&&is_not_taken;
+    }
+    public boolean psswrdVer(){
+        String usr = PwdField.getText();
+        boolean lengh = usr.length()>= 8 ;
+        boolean num = usr.matches("^.*[0-9].*.[0-9].*");
+        boolean spec = usr.matches("^.*(?=.*[*@_;,&çà]).*$");
+        LogErrorController.list.clear();
+        LogErrorController.list.add(new Msg("au moin 8 caractéres",lengh));
+        LogErrorController.list.add(new Msg("au moin 2 chiffres",num));
+        LogErrorController.list.add(new Msg("au moin un cara special",spec));
+        return lengh&&num&&spec;
+    }
+    public boolean notEmpty(TextField t){
         boolean emp = t.getText().length()!=0 ;
-         LogErrorController.list.clear();
-         LogErrorController.list.add(new Msg("remplir ce champs",emp));
-         return emp ;
-     }
-     public boolean mailVer(){
-         String email  = EmailField.getText();
-         String mail_format = "^[a-zA-Z0-9_!#$%&'*+/=?`{|}~^-]+(?:\\.[a-zA-Z0-9_!#$%&'*+/=?`{|}~^-]+)*@[a-zA-Z0-9-]+(?:\\.[a-zA-Z0-9-]+)*$";
-         Pattern pattern = Pattern.compile(mail_format);
-         Matcher match =  pattern.matcher(email) ;
+        LogErrorController.list.clear();
+        LogErrorController.list.add(new Msg("remplir ce champs",emp));
+        return emp ;
+    }
+    public boolean mailVer(){
+        String email  = EmailField.getText();
+        String mail_format = "^[a-zA-Z0-9_!#$%&'*+/=?`{|}~^-]+(?:\\.[a-zA-Z0-9_!#$%&'*+/=?`{|}~^-]+)*@[a-zA-Z0-9-]+(?:\\.[a-zA-Z0-9-]+)*$";
+        Pattern pattern = Pattern.compile(mail_format);
+        Matcher match =  pattern.matcher(email) ;
 
-         boolean valide_mail = match.matches() ;
-         boolean is_not_used = true; // BDD request here
-         LogErrorController.list.clear();
-         LogErrorController.list.add(new Msg("format de mail valide",valide_mail));
-         LogErrorController.list.add(new Msg("mail non utilisé",is_not_used));
-         return valide_mail&&is_not_used ;
-     }
-     public boolean dateVer(){
+        boolean valide_mail = match.matches() ;
+        boolean is_not_used = true; // BDD request here
+        LogErrorController.list.clear();
+        LogErrorController.list.add(new Msg("format de mail valide",valide_mail));
+        LogErrorController.list.add(new Msg("mail non utilisé",is_not_used));
+        return valide_mail&&is_not_used ;
+    }
+    public boolean dateVer(){
         boolean empty = DatePickerField.getValue() != null;
-         LogErrorController.list.clear();
-         LogErrorController.list.add(new Msg("selectionnez une date",empty));
-         return empty ;
-     }
+        LogErrorController.list.clear();
+        LogErrorController.list.add(new Msg("selectionnez une date",empty));
+        return empty ;
+    }
 
 
- public void loger(Control c){
+    public void loger(Control c){
         all_is_ok = false ;
 
-     try {
-         FXMLLoader loader =new FXMLLoader(getClass().getResource("LogError.fxml"));
+        try {
+            FXMLLoader loader =new FXMLLoader(getClass().getResource("LogError.fxml"));
 
-         Stage stg = new Stage();
-         Point2D p = c.localToScreen(0.0,0.0);
-        stg.setX(p.getX());
-         stg.setY(p.getY()+30);
+            Stage stg = new Stage();
+            Point2D p = c.localToScreen(0.0,0.0);
+            stg.setX(p.getX());
+            stg.setY(p.getY()+30);
 
-         stg.setAlwaysOnTop(true);
-         stg.initOwner(Main.appSettings.getAppStage());
-         stg.initStyle(StageStyle.TRANSPARENT);
-         Scene sc = new Scene(loader.load());
-         sc.setFill(Color.TRANSPARENT);
-         stg.setScene(sc);
-         LogErrorController controller = (LogErrorController) loader.getController();
-          controller.main.setOnMouseClicked(e->stg.close());
-          controller.errorMsg();
-        PauseTransition dela = new PauseTransition(Duration.seconds(1));
-         dela.setOnFinished( event -> {
-             Timeline timeline = new Timeline();
-             KeyFrame key = new KeyFrame(Duration.millis(1000),
-                     new KeyValue(stg.getScene().getRoot().opacityProperty(), 0));
-             timeline.getKeyFrames().add(key);
-             timeline.setOnFinished((ae) -> stg.close());
-             timeline.play();
-         } );
-         dela.play();
-         stg.show();
-     } catch (
-             IOException e) {
-         e.printStackTrace();
-     }
- }
+            stg.setAlwaysOnTop(true);
+            stg.initOwner(Main.appSettings.getAppStage());
+            stg.initStyle(StageStyle.TRANSPARENT);
+            Scene sc = new Scene(loader.load());
+            sc.setFill(Color.TRANSPARENT);
+            stg.setScene(sc);
+            LogErrorController controller = (LogErrorController) loader.getController();
+            controller.main.setOnMouseClicked(e->stg.close());
+            controller.errorMsg();
+            PauseTransition dela = new PauseTransition(Duration.seconds(1));
+            dela.setOnFinished( event -> {
+                Timeline timeline = new Timeline();
+                KeyFrame key = new KeyFrame(Duration.millis(1000),
+                        new KeyValue(stg.getScene().getRoot().opacityProperty(), 0));
+                timeline.getKeyFrames().add(key);
+                timeline.setOnFinished((ae) -> stg.close());
+                timeline.play();
+            } );
+            dela.play();
+            stg.show();
+        } catch (
+                IOException e) {
+            e.printStackTrace();
+        }
+    }
 
     private void applyTabStyle(Tab tab, boolean isSelected) {
         if (isSelected)
@@ -430,50 +430,50 @@ public class Auth_Controller {
     @FXML
     private void addUser()
     {   //les variables de la fonction
-    	boolean userExiste = false;
-    	User user = new User() ;
+        boolean userExiste = false;
+        User user = new User() ;
 
     /* la recuperation de la date et La transformer vers une date sql donc vous devez remplir le champ date sinon
     il y aura une nullpointer error  */
-    LocalDate localdate = DatePickerField.getValue();
-    java.sql.Date dob = java.sql.Date.valueOf(localdate);
+        LocalDate localdate = DatePickerField.getValue();
+        java.sql.Date dob = java.sql.Date.valueOf(localdate);
 
 
 //l'ajout de user a la base de données
-    userExiste = User.addUser(FirstnameField.getText(), LastnameField.getText(), UsernameField.getText(), dob , EmailField.getText(),PwdField.getText(),PhoneField.getText() , "",  AddressField.getText(), 0 , false);
+        userExiste = User.addUser(FirstnameField.getText(), LastnameField.getText(), UsernameField.getText(), dob , EmailField.getText(),PwdField.getText(),PhoneField.getText() , "",  AddressField.getText(), 0 , false);
 
 //verification du succes du poccessus d'ajout de user vers la base de données
-    if(userExiste) //s'il existe déja
-    	{
-    		//le traitement lorsque le usrname ou son email existe déja
-    	//sinon on va affecter le user a Loggedln_Controller
-    	}
-    	else{  //sinon on affecte le user vers la fenetre loggedln comme variable statique
-    		//d'abord on remplit les attributs de user
-user.setUsername(UsernameField.getText());
-user.setName(FirstnameField.getText());
-user.setPrenom(LastnameField.getText());
-user.setEmail(EmailField.getText());
-user.setPassword(PwdField.getText());
-user.setTelephone(PhoneField.getText());
-user.setAddress(AddressField.getText());
-user.setDob(dob);
-user.setLang(0);
-user.setDarkmode(false);
-user.setPhoto("");
+        if(userExiste) //s'il existe déja
+        {
+            //le traitement lorsque le usrname ou son email existe déja
+            //sinon on va affecter le user a Loggedln_Controller
+        }
+        else{  //sinon on affecte le user vers la fenetre loggedln comme variable statique
+            //d'abord on remplit les attributs de user
+            user.setUsername(UsernameField.getText());
+            user.setName(FirstnameField.getText());
+            user.setPrenom(LastnameField.getText());
+            user.setEmail(EmailField.getText());
+            user.setPassword(PwdField.getText());
+            user.setTelephone(PhoneField.getText());
+            user.setAddress(AddressField.getText());
+            user.setDob(dob);
+            user.setLang(0);
+            user.setDarkmode(false);
+            user.setPhoto("");
 //l'affectation de user
-LoggedIn_Controller.setUser(user);
-    	}
+//            LoggedIn_Controller.setUser(user);
+        }
 
     }
 
 
-     static class Msg{
+    static class Msg{
         String msg ;
         boolean b ;
         public Msg(String msg,boolean b){
             this.b=b;
             this.msg=msg;
         }
-     }
+    }
 }

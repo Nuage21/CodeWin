@@ -1,0 +1,29 @@
+{
+  "courseTitle": "Code de la Route",
+  "chapterNomination": "Theme",
+  "chapters": [
+    {
+      "ID": 1,
+      "chapterTitle": "Signalisation Routiere",
+      "nCourses": 12,
+      "nQuestions": 4,
+      "nQuizes": 1,
+    }
+    ,
+    {
+      "ID": 2,
+      "chapterTitle": "Intersections",
+      "nCourses": 8,
+      "nQuestions": 2,
+      "nQuizes": 1,
+    }
+    ,
+    {
+      "ID": 3,
+      "chapterTitle": "Chapter Title",
+      "nCourses": 18,
+      "nQuestions": 7,
+      "nQuizes": 2,
+    }
+  ]
+}

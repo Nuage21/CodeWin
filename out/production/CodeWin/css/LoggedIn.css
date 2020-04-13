@@ -28,17 +28,18 @@
 }
 
 .side-left-pane{
-	-fx-border-width:  0 0 0 10;
+	-fx-border-width:  0 0 0 5;
 	-fx-cursor: hand;
 	-fx-background-color: transparent;
 }
 
 .side-left-pane:hover{
-	-fx-background-color: #eeeeee;
+	-fx-background-color: #eeeeee !important;
 }
 
 .course-head-pane{
-	-fx-border-width:  5 0 0 0;
+	-fx-border-width:  0 0 1 0;
+	-fx-border-color: #bbbbbb;
 }
 
 .overview-chapter{
