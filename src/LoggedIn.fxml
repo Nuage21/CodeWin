@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -62,7 +62,7 @@
     <top>
         <BorderPane prefHeight="61.0" prefWidth="1975.0" styleClass="up-pane" BorderPane.alignment="CENTER">
             <right>
-                <Pane prefHeight="71.0" prefWidth="358.0" BorderPane.alignment="CENTER">
+                <Pane fx:id="accountHolderPane" prefHeight="71.0" prefWidth="358.0" BorderPane.alignment="CENTER">
                     <children>
                         <StackPane layoutX="14.0" layoutY="7.0" prefHeight="47.0" prefWidth="50.0" style="-fx-background-radius: 30; -fx-background-color: #e1e1e1;">
                             <children>
@@ -73,11 +73,23 @@
                                 </ImageView>
                             </children>
                         </StackPane>
-                        <Label layoutX="78.0" layoutY="13.0" text="Barack Obama" textFill="WHITE">
+                        <Label fx:id="accountUsernameLabel" layoutX="78.0" layoutY="13.0" styleClass="accountUsername" text="Barack Obama" textFill="WHITE">
                             <font>
                                 <Font name="Jokerman" size="23.0" />
                             </font>
                         </Label>
+                  <StackPane layoutX="250.0" layoutY="21.0" prefHeight="28.0" prefWidth="25.0" style="-fx-background-radius: 30; -fx-background-color: transparent;">
+                     <children>
+                        <ImageView fitHeight="33.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true" style="-fx-border-radius: 56;">
+                           <image>
+                              <Image url="@img/icons/down.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </StackPane>
                     </children>
                 </Pane>
             </right>
@@ -106,22 +118,36 @@
                     <children>
                         <Pane prefHeight="61.0" prefWidth="498.0">
                             <children>
-                                <Pane fx:id="UsernameSignInPane" layoutX="6.0" layoutY="11.0" prefHeight="36.0" prefWidth="444.0" styleClass="sign-field">
+                                <Pane fx:id="UsernameSignInPane" layoutX="6.0" layoutY="11.0" prefHeight="36.0" prefWidth="444.0" styleClass="search-bar">
                                     <children>
                                         <ImageView fitHeight="30.0" fitWidth="29.0" layoutX="4.0" layoutY="-9.0" pickOnBounds="true" preserveRatio="true" translateX="10.0" translateY="13.0">
                                             <image>
                                                 <Image url="@img/icons/search.png" />
                                             </image>
                                         </ImageView>
-                                        <TextField layoutX="54.0" layoutY="1.0" prefHeight="35.0" prefWidth="219.0" promptText="Search CodeWin" style="-fx-background-color: transparent;">
+                                        <TextField layoutX="54.0" layoutY="1.0" prefHeight="35.0" prefWidth="368.0" promptText="Recherche sur CodeWin" style="-fx-background-color: transparent;">
                                             <font>
-                                                <Font size="14.0" />
+                                                <Font name="Rockwell" size="17.0" />
                                             </font>
                                         </TextField>
                                     </children>
                                 </Pane>
                             </children>
                         </Pane>
+                  <Pane prefHeight="61.0" prefWidth="587.0" />
+                  <VBox fx:id="darkmodeVBox" prefHeight="61.0" prefWidth="78.0" style="-fx-padding: 16 0 0 0;" />
+                  <Pane prefHeight="61.0" prefWidth="118.0">
+                     <children>
+                        <Label layoutX="10.0" layoutY="18.0" text="Darkmode" textFill="WHITE">
+                           <font>
+                              <Font name="Rockwell" size="18.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Label>
+                     </children>
+                  </Pane>
                     </children>
                 </HBox>
             </center>
@@ -153,68 +179,7 @@
                         </Label>
                     </children>
                 </Pane>
-                <ScrollPane hbarPolicy="NEVER" prefHeight="342.0" prefWidth="283.0" style="-fx-translate-y: 30 0 0 0;">
-                    <content>
-                        <VBox prefHeight="385.0" prefWidth="283.0">
-                            <children>
-                                <Pane prefHeight="58.0" prefWidth="283.0" styleClass="side-left-pane">
-                                    <children>
-                                        <Label layoutX="37.0" layoutY="11.0" text="Theme 1" textFill="#515151">
-                                            <font>
-                                                <Font size="20.0" />
-                                            </font>
-                                        </Label>
-                                    </children>
-                                </Pane>
-                                <Pane prefHeight="58.0" prefWidth="283.0" styleClass="side-left-pane">
-                                    <children>
-                                        <Label layoutX="37.0" layoutY="11.0" text="Theme 2" textFill="#515151">
-                                            <font>
-                                                <Font size="20.0" />
-                                            </font>
-                                        </Label>
-                                    </children>
-                                </Pane>
-                                <Pane prefHeight="58.0" prefWidth="283.0" styleClass="side-left-pane">
-                                    <children>
-                                        <Label layoutX="37.0" layoutY="11.0" text="Theme 3" textFill="#515151">
-                                            <font>
-                                                <Font size="20.0" />
-                                            </font>
-                                        </Label>
-                                    </children>
-                                </Pane>
-                                <Pane prefHeight="58.0" prefWidth="283.0" styleClass="side-left-pane">
-                                    <children>
-                                        <Label layoutX="37.0" layoutY="11.0" text="Theme 4" textFill="#515151">
-                                            <font>
-                                                <Font size="20.0" />
-                                            </font>
-                                        </Label>
-                                    </children>
-                                </Pane>
-                                <Pane prefHeight="58.0" prefWidth="283.0" styleClass="side-left-pane">
-                                    <children>
-                                        <Label layoutX="37.0" layoutY="11.0" text="Theme 5" textFill="#515151">
-                                            <font>
-                                                <Font size="20.0" />
-                                            </font>
-                                        </Label>
-                                    </children>
-                                </Pane>
-                                <Pane prefHeight="58.0" prefWidth="283.0" styleClass="side-left-pane">
-                                    <children>
-                                        <Label layoutX="37.0" layoutY="11.0" text="Theme 6" textFill="#515151">
-                                            <font>
-                                                <Font size="20.0" />
-                                            </font>
-                                        </Label>
-                                    </children>
-                                </Pane>
-                            </children>
-                        </VBox>
-                    </content>
-                </ScrollPane>
+            <VBox fx:id="sidebarChaptersHolder" prefHeight="522.0" prefWidth="283.0" />
                 <VBox prefHeight="245.0" prefWidth="283.0" style="-fx-border-width: 1 0 0 0; -fx-border-color: #c1c1c1;">
                     <children>
                         <Pane fx:id="Side_Stats_Pane" prefHeight="69.0" prefWidth="283.0" styleClass="side-left-pane">
@@ -314,16 +279,46 @@
                 </VBox>
                 <Pane prefHeight="41.0" prefWidth="672.0" style="-fx-background-color: #eeeeee;">
                     <children>
-                        <Label layoutX="1376.0" layoutY="5.0" text="Suivant &gt;" textFill="#616161">
+                        <Label layoutX="71.0" layoutY="9.0" styleClass="browse-label" text="Precedant" textFill="#616161">
                             <font>
-                                <Font name="Jokerman" size="18.0" />
+                                <Font name="Rockwell" size="18.0" />
                             </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
                         </Label>
-                        <Label layoutX="75.0" layoutY="5.0" text="&lt; Precedant" textFill="#616161">
-                            <font>
-                                <Font name="Jokerman" size="18.0" />
-                            </font>
-                        </Label>
+                  <StackPane layoutX="25.0" layoutY="3.0" prefHeight="14.0" prefWidth="26.0" style="-fx-background-radius: 30; -fx-background-color: #e1e1e1;">
+                     <children>
+                        <ImageView fitHeight="34.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true" style="-fx-border-radius: 56;">
+                           <image>
+                              <Image url="@img/icons/back.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </StackPane>
+                  <StackPane layoutX="1454.0" layoutY="3.0" prefHeight="28.0" prefWidth="25.0" style="-fx-background-radius: 30; -fx-background-color: #e1e1e1;">
+                     <children>
+                        <ImageView fitHeight="34.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true" style="-fx-border-radius: 56;">
+                           <image>
+                              <Image url="@img/icons/next.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </StackPane>
+                  <Label layoutX="1378.0" layoutY="8.0" styleClass="browse-label" text="Suivant" textFill="#616161">
+                     <font>
+                        <Font name="Rockwell" size="18.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Label>
                     </children>
                 </Pane>
             </children>

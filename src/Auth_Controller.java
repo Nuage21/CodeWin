@@ -1,4 +1,3 @@
-import com.sun.javafx.scene.control.ControlAcceleratorSupport;
 import javafx.animation.KeyFrame;
 import javafx.animation.KeyValue;
 import javafx.animation.PauseTransition;
@@ -21,8 +20,8 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import javafx.stage.WindowEvent;
 import javafx.util.Duration;
-import sun.rmi.server.MarshalInputStream;
 
+import javax.swing.text.DateFormatter;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -101,14 +100,24 @@ public class Auth_Controller {
     private SignCase signCase = SignCase.signUp;
     private Control Focused = null;
 
-    public Stage main_stage = null;
+    public Stage stage;
     public LogErrorController main_controller ;
     private boolean all_is_ok = true ; // set to false if logger is called ;
 
+    public void setStage(Stage stg){
+        this.stage = stg;
+    }
     @FXML
     private void initialize() {
 
-        //region oh god
+        UsernameField.setText("Barack_Hawaii_123");
+        LastnameField.setText("Obama");
+        FirstnameField.setText("Barack");
+        EmailField.setText("obama@wh.gov");
+        PwdField.setText("hbdsj1234;");
+        DatePickerField.setValue(LocalDate.of(1961, 10, 4));
+        AddressField.setText("Honolulu, Hawaii, United States");
+        PhoneField.setText("(860)-231-1234");
 
         applyTabStyle(signupTab, true);
 
@@ -153,13 +162,16 @@ public class Auth_Controller {
         signUpBtn.setOnAction((event) -> {
             Parent root = null;
             try {
-                root = FXMLLoader.load(getClass().getResource("LoggedIn.fxml"));
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("LoggedIn.fxml"));
+                root = loader.load();
+                LoggedIn_Controller ctr = loader.getController();
+                ctr.setStage(stage);
             } catch (IOException e) {
                 e.printStackTrace();
             }
             //l'ajout de user ici
 
-            if(main_stage!=null ) main_stage.close();
+            if(stage!=null ) stage.close();
             all_is_ok = true ;
             if(! userNameVer()) loger(UsernameField);
             if(! psswrdVer()) loger(PwdField);
@@ -172,7 +184,7 @@ public class Auth_Controller {
 
 
             if(all_is_ok){
-                if(main_stage!=null)main_stage.close();
+                if(stage!=null)stage.close();
                 this.addUser();
                 Stage stg = Main.appSettings.getAppStage();
                 stg.setScene(new Scene(root));
@@ -293,28 +305,28 @@ public class Auth_Controller {
 
 
     public void onClick(Control c ){
-        if(main_stage != null) main_stage.close();
+        if(stage != null) stage.close();
         init();
-        main_stage.show();
+        stage.show();
         positionner(c);
     }
     public void positionner(Control c){
         Point2D p = c.localToScreen(0.0,0.0);
-        main_stage.setX(p.getX());
-        main_stage.setY(p.getY()+30);
+        stage.setX(p.getX());
+        stage.setY(p.getY()+30);
     }
     public void init(){
         try {
             FXMLLoader loader =new FXMLLoader(getClass().getResource("LogError.fxml"));
-            main_stage = new Stage();
-            main_stage.setAlwaysOnTop(true);
-            // main_stage.initOwner(Main.appSettings.getAppStage());
+            stage = new Stage();
+            stage.setAlwaysOnTop(true);
+            // stage.initOwner(Main.appSettings.getAppStage());
             Scene sc = new Scene(loader.load());
             main_controller = (LogErrorController) loader.getController();
             sc.setFill(Color.TRANSPARENT);
-            main_stage.initStyle(StageStyle.TRANSPARENT);
-            main_stage.setScene(sc);
-            // main_controller.main.setOnMouseClicked(e->main_stage.close());
+            stage.initStyle(StageStyle.TRANSPARENT);
+            stage.setScene(sc);
+            // main_controller.main.setOnMouseClicked(e->stage.close());
 
         } catch (
                 IOException e) {

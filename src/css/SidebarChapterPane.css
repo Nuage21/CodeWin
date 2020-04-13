@@ -1,0 +1,11 @@
+.progress-bar {
+    -fx-accent: green !important;
+}
+
+.expand-spane{
+	-fx-cursor: hand;
+}
+
+.expand-img:hover{
+	-fx-opacity: 1;
+}

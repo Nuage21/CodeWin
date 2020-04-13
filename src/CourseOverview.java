@@ -8,7 +8,7 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 
 public class CourseOverview {
-/*
+
     private String courseTitle;
     private String chapterNomination;
     private ArrayList<ChapterOverview> chapters = new ArrayList<>();
@@ -32,7 +32,7 @@ public class CourseOverview {
 
     public void parseFromJson(String filename) throws IOException {
 
-        String jsonOverviewCourse = Files.readString(Paths.get(filename), StandardCharsets.US_ASCII);
+        String jsonOverviewCourse = Files.readString(Paths.get(filename), StandardCharsets.UTF_8);
         JSONObject obj = new JSONObject(jsonOverviewCourse);
 
         this.courseTitle = obj.getString("courseTitle");
@@ -47,7 +47,13 @@ public class CourseOverview {
             int nQuizes = arr.getJSONObject(i).getInt("nQuizes");
             String title = arr.getJSONObject(i).getString("chapterTitle");
 
-            ChapterOverview chapOv = new ChapterOverview(id, title, nCourses, nQuestions, nQuizes);
+            ArrayList<String> courses = new ArrayList<>();
+            JSONArray coursesArr = arr.getJSONObject(i).getJSONArray("courses");
+
+            for (int j = 0; j < coursesArr.length(); ++j)
+                courses.add(coursesArr.getString(j));
+
+            ChapterOverview chapOv = new ChapterOverview(id, title, nCourses, nQuestions, nQuizes, courses);
             chapters.add(chapOv);
         }
     }
@@ -59,12 +65,15 @@ public class CourseOverview {
         private int nQuestions;
         private int nQuizes;
 
-        ChapterOverview(int _id, String _title, int _nCourse, int _nQuestions, int _nQuizes) {
+        private ArrayList<String> courses;
+
+        ChapterOverview(int _id, String _title, int _nCourse, int _nQuestions, int _nQuizes, ArrayList<String> _courses) {
             this.ID = _id;
             this.chapterTitle = _title;
             this.nCourse = _nCourse;
             this.nQuestions = _nQuestions;
             this.nQuizes = _nQuizes;
+            this.courses = _courses;
         }
 
         public int getnCourse() {
@@ -86,7 +95,9 @@ public class CourseOverview {
         public int getID() {
             return ID;
         }
-    }
-    */
 
+        public ArrayList<String> getCourses() {
+            return courses;
+        }
+    }
 }

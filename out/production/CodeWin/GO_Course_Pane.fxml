@@ -9,7 +9,7 @@
 
 <Pane prefHeight="180.0" prefWidth="1562.0" styleClass="overview-chapter" stylesheets="@css/CoursePane.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GO_Course_Pane_Controller">
    <children>
-      <Label fx:id="titleLabel" layoutX="88.0" layoutY="14.0" prefHeight="64.0" prefWidth="533.0" text="Theme 1: La signalisation routière" textFill="#1e1e1e">
+      <Label fx:id="titleLabel" layoutX="88.0" layoutY="14.0" prefHeight="64.0" prefWidth="929.0" text="Theme 1: La signalisation routière" textFill="#1e1e1e">
          <font>
             <Font name="Rockwell" size="32.0" />
          </font>

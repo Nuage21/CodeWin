@@ -1,0 +1,7 @@
+.not-quit:hover{
+	-fx-background-color: #1354a1;
+}
+
+.quit:hover{
+	-fx-background-color: red;
+}

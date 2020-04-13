@@ -15,6 +15,11 @@
 	-fx-border-color: #eeeeee;
 }
 
+.search-bar:hover{
+	-fx-effect: dropshadow(three-pass-box, #236599, 25, 0, 0, 0) !important;
+	-fx-background-color: white !important;
+}
+
 .param-pane{
 	-fx-border-width: 0 0 1 0;
 	-fx-border-color: #eeeeee;

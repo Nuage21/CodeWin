@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.AreaChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="1102.0" prefWidth="1556.0" stylesheets="@css/Stats.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Stats_Controller">
+   <children>
+      <VBox prefHeight="576.0" prefWidth="1238.0" style="-fx-background-color: white;">
+         <children>
+            <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="87.0" prefWidth="1556.0" style="-fx-background-color: #1774a1;">
+               <children>
+                  <Label layoutX="14.0" layoutY="14.0" text="Statistiques generale" textFill="WHITE">
+                     <font>
+                        <Font size="40.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane prefHeight="473.0" prefWidth="1238.0">
+               <children>
+                  <AreaChart fx:id="activityAreaChart" layoutX="58.0" layoutY="69.0" prefHeight="379.0" prefWidth="720.0">
+                    <xAxis>
+                      <CategoryAxis fx:id="activityChartXCategoryAxis" side="BOTTOM" />
+                    </xAxis>
+                    <yAxis>
+                      <NumberAxis fx:id="activityChartYNumberAxis" side="LEFT" />
+                    </yAxis>
+                  </AreaChart>
+                  <Label layoutX="80.0" layoutY="26.0" prefHeight="43.0" prefWidth="91.0" text="Activite" underline="true">
+                     <font>
+                        <Font size="25.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="810.0" layoutY="26.0" prefHeight="43.0" prefWidth="219.0" text="Progression" underline="true">
+                     <font>
+                        <Font size="25.0" />
+                     </font>
+                  </Label>
+                  <Button layoutX="14.0" layoutY="82.0" mnemonicParsing="false" prefHeight="134.0" prefWidth="58.0" style="-fx-background-color: #f3f3f3; -fx-border-width: 0 0 0 1; -fx-border-color: #125699;" text="Sem" />
+                  <Button layoutX="14.0" layoutY="226.0" mnemonicParsing="false" prefHeight="134.0" prefWidth="58.0" style="-fx-background-color: #dddddd;" text="Mois" />
+                  <AreaChart fx:id="progressionAreaChart" layoutX="792.0" layoutY="70.0" prefHeight="379.0" prefWidth="720.0">
+                     <xAxis>
+                        <CategoryAxis fx:id="progressionChartXCategoryAxis" side="BOTTOM" />
+                     </xAxis>
+                     <yAxis>
+                        <NumberAxis fx:id="progressionChartYNumberAxis" side="LEFT" />
+                     </yAxis>
+                  </AreaChart>
+               </children>
+            </Pane>
+         </children>
+      </VBox>
+      <VBox prefHeight="518.0" prefWidth="1238.0" style="-fx-background-color: white;">
+         <children>
+            <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="79.0" prefWidth="1556.0" style="-fx-background-color: #1774a1;">
+               <children>
+                  <Label layoutX="25.0" layoutY="14.0" text="Cours les plus frequentes" textFill="WHITE">
+                     <font>
+                        <Font size="34.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <HBox prefHeight="461.0" prefWidth="1238.0">
+               <children>
+                  <Pane prefHeight="461.0" prefWidth="417.0" style="-fx-background-color: white;">
+                     <children>
+                        <StackPane layoutX="48.0" layoutY="72.0" prefHeight="219.0" prefWidth="308.0" style="-fx-padding: 20; -fx-background-color: #1774a1; -fx-background-radius: 20; -fx-border-color: transparent;" styleClass="course-pane">
+                           <children>
+                              <ImageView fitHeight="174.0" fitWidth="265.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@img/test/croute.jpg" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </StackPane>
+                        <Label layoutX="95.0" layoutY="307.0" text="Code de la Route">
+                           <font>
+                              <Font size="28.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <Pane prefHeight="461.0" prefWidth="417.0" style="-fx-background-color: white;">
+                     <children>
+                        <StackPane layoutX="48.0" layoutY="72.0" prefHeight="219.0" prefWidth="308.0" style="-fx-padding: 20; -fx-background-color: #1774a1; -fx-background-radius: 20; -fx-border-color: transparent;" styleClass="course-pane">
+                           <children>
+                              <ImageView fitHeight="154.0" fitWidth="265.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@img/test/ML.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </StackPane>
+                        <Label layoutX="95.0" layoutY="307.0" text="Machine Learning">
+                           <font>
+                              <Font size="28.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <Pane prefHeight="461.0" prefWidth="417.0" style="-fx-background-color: white;">
+                     <children>
+                        <StackPane layoutX="48.0" layoutY="72.0" prefHeight="219.0" prefWidth="308.0" style="-fx-padding: 20; -fx-background-color: #1774a1; -fx-background-radius: 20; -fx-border-color: transparent;" styleClass="course-pane">
+                           <children>
+                              <ImageView fitHeight="174.0" fitWidth="265.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@img/test/cac.jpg" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </StackPane>
+                        <Label layoutX="95.0" layoutY="307.0" text="Cuire des Cactus">
+                           <font>
+                              <Font size="28.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+      <Pane prefHeight="12.0" prefWidth="1238.0" />
+   </children>
+</VBox>
