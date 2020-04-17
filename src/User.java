@@ -4,9 +4,9 @@ import java.time.*;
 
 public class User {
 
-    private String username;
-    private String name;
-    private String prenom;
+    private String userName;
+    private String lastName;
+    private String firstName;
     private String telephone;
     private String address;
     private String email;
@@ -77,23 +77,23 @@ public class User {
 
 
 
-	public static boolean addUser(String nom, String prenom, String username, Date dob, String email, String password, String numtel, String photo, String adresse, int langue, boolean darkmod) {
-        String insert = "INSERT INTO users (nom,prenom,username,dob,email,password,numtel,photo,adresse,langue,darkmod) VALUES (?,?,?,?,?,?,?,?,?,?,?)";
+	public static boolean addUser(String firstName, String lastName, String userName, Date dob, String email, String password, String numtel, String photo, String adresse, int langue, boolean darkmod) {
+        String insert = "INSERT INTO users (firstName,lastName,userName,dob,email,password,numtel,photo,adresse,langue,darkmod) VALUES (?,?,?,?,?,?,?,?,?,?,?)";
          boolean b = false;
         try {
             Connection conn = getConnection();
             PreparedStatement stmt = conn.prepareStatement(insert);
 
-            if (userEmailExiste(email) || userNameExiste(username)) {
+            if (userEmailExiste(email) || userNameExiste(userName)) {
              //   System.out.println("l'utilisateur existe deja on peut pas l'ajouté");
             	b = true;
             } else {
                // String tableQuestions = "CREATE TABLE " + username + " " + "( question text,reponse_1 text DEFAULT NULL,reponse_2 text DEFAULT NULL ,reponse_3 text DEFAULT NULL, reponse_4 text DEFAULT NULL);";
 
 
-                stmt.setString(1, nom);
-                stmt.setString(2, prenom);
-                stmt.setString(3, username);
+                stmt.setString(1, firstName);
+                stmt.setString(2, lastName);
+                stmt.setString(3, userName);
                 stmt.setDate(4, dob);
                 stmt.setString(5, email);
                 stmt.setString(6, password);
@@ -122,25 +122,150 @@ public class User {
     }
 
 
+	public static boolean updateUserName(User user,String userName){
+  boolean b = false;
+if(User.userNameExiste(userName))
+{
+	return  false;
+}
+else{String update = "UPDATE users SET userName = ? WHERE userName = '" + user.getUserName()+ "'";
+try {
+    Connection conn = getConnection();
+    PreparedStatement stmt = conn.prepareStatement(update);
+
+
+        stmt.setString(1, userName);
+        stmt.execute();
+        stmt.close();
+
+        b = true ;
+} catch (SQLException e) {
+    System.err.println(e);
+}finally{
+	return b;
+}
+}
+
+	}
+
+
+	public static boolean updateEmail(User user,String email){
+		  boolean b = false;
+		if(User.userEmailExiste(email))
+		{
+			return  false;
+		}
+		else{String update = "UPDATE users SET email = ? WHERE email = '" + user.getEmail()+ "'";
+		try {
+		    Connection conn = getConnection();
+		    PreparedStatement stmt = conn.prepareStatement(update);
+
+
+		        stmt.setString(1, email);
+		        stmt.execute();
+		        stmt.close();
+
+		        b = true ;
+		} catch (SQLException e) {
+		    System.err.println(e);
+		}finally{
+			return b;
+		}
+		}
+
+			}
+
+
+
+	public static boolean updateFirstName(User user,String firstName){
+		  boolean b = false;
+
+		String update = "UPDATE users SET firstName = ? WHERE email = '" + user.getEmail()+ "' and userName = '" + user.getUserName()+"'";
+		try {
+		    Connection conn = getConnection();
+		    PreparedStatement stmt = conn.prepareStatement(update);
+
+
+		        stmt.setString(1, firstName);
+		        stmt.execute();
+		        stmt.close();
+
+		        b = true ;
+		} catch (SQLException e) {
+		    System.err.println(e);
+		}finally{
+			return b;
+		}
+		}
+
+
+	public static boolean updateLastName(User user,String lastName){
+		  boolean b = false;
+
+		String update = "UPDATE users SET lastName = ? WHERE email = '" + user.getEmail()+ "' and userName = '" + user.getUserName()+"'";
+		try {
+		    Connection conn = getConnection();
+		    PreparedStatement stmt = conn.prepareStatement(update);
+
+
+		        stmt.setString(1, lastName);
+		        stmt.execute();
+		        stmt.close();
+
+		        b = true ;
+		} catch (SQLException e) {
+		    System.err.println(e);
+		}finally{
+			return b;
+		}
+		}
+
+	public static boolean updateNumtel(User user,String numtel){
+		  boolean b = false;
+
+		String update = "UPDATE users SET numtel = ? WHERE email = '" + user.getEmail()+ "' and userName = '" + user.getUserName()+"'";
+		try {
+		    Connection conn = getConnection();
+		    PreparedStatement stmt = conn.prepareStatement(update);
+
+
+		        stmt.setString(1, numtel);
+		        stmt.execute();
+		        stmt.close();
+
+		        b = true ;
+		} catch (SQLException e) {
+		    System.err.println(e);
+		}finally{
+			return b;
+		}
+		}
+
+	public static boolean updatePassword(User user,String password){
+		  boolean b = false;
+
+		String update = "UPDATE users SET password = ? WHERE email = '" + user.getEmail()+ "' and userName = '" + user.getUserName()+"'";
+		try {
+		    Connection conn = getConnection();
+		    PreparedStatement stmt = conn.prepareStatement(update);
+
+
+		        stmt.setString(1, password);
+		        stmt.execute();
+		        stmt.close();
+
+		        b = true ;
+		} catch (SQLException e) {
+		    System.err.println(e);
+		}finally{
+			return b;
+		}
+		}
+
+
+
+
     //les setters et les getters
-    public String getName() {
-        return name;
-    }
-
-
-    public String getUsername() {
-		return username;
-	}
-
-
-	public void setUsername(String username) {
-		this.username = username;
-	}
-
-
-	public void setName(String name) {
-        this.name = name;
-    }
 
 
     public String getTelephone() {
@@ -148,7 +273,37 @@ public class User {
     }
 
 
-    public void setTelephone(String telephone) {
+    public String getUserName() {
+		return userName;
+	}
+
+
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
+
+
+	public String getLastName() {
+		return lastName;
+	}
+
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+
+
+	public String getFirstName() {
+		return firstName;
+	}
+
+
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+
+
+	public void setTelephone(String telephone) {
         this.telephone = telephone;
     }
 
@@ -225,14 +380,6 @@ public class User {
     }
 
 
-	public String getPrenom() {
-		return prenom;
-	}
-
-
-	public void setPrenom(String prenom) {
-		this.prenom = prenom;
-	}
 
 
 }

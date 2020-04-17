@@ -123,7 +123,7 @@ public class Auth_Controller {
 
         signInCancealBtn.setOnAction((event) -> {
             Platform.exit();
-        });
+            });
 
         signUpCancealBtn.setOnAction((event) -> {
             Platform.exit();
@@ -462,9 +462,9 @@ public class Auth_Controller {
         }
         else{  //sinon on affecte le user vers la fenetre loggedln comme variable statique
             //d'abord on remplit les attributs de user
-            user.setUsername(UsernameField.getText());
-            user.setName(FirstnameField.getText());
-            user.setPrenom(LastnameField.getText());
+        	user.setUserName(UsernameField.getText());
+        	user.setFirstName(FirstnameField.getText());
+        	user.setLastName(LastnameField.getText());
             user.setEmail(EmailField.getText());
             user.setPassword(PwdField.getText());
             user.setTelephone(PhoneField.getText());
@@ -474,7 +474,7 @@ public class Auth_Controller {
             user.setDarkmode(false);
             user.setPhoto("");
 //l'affectation de user
-//            LoggedIn_Controller.setUser(user);
+            LoggedIn_Controller.setUser(user);
         }
 
     }
