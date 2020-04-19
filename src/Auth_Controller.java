@@ -122,8 +122,9 @@ public class Auth_Controller {
         applyTabStyle(signupTab, true);
 
         signInCancealBtn.setOnAction((event) -> {
-            Platform.exit();
-            });
+           Platform.exit();
+
+        });
 
         signUpCancealBtn.setOnAction((event) -> {
             Platform.exit();

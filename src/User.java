@@ -263,6 +263,35 @@ try {
 		}
 
 
+	public static boolean deleteUser(User user){
+		boolean b = false;
+		if(!((User.userNameExiste(user.getUserName()))||(User.userEmailExiste(user.getEmail()))))
+		{
+			return false;
+		}
+		else
+		{ String del = "DELETE FROM users WHERE email='" + user.getEmail() +"' and userName='"+ user.getUserName() + "'";
+		try {
+		    Connection conn = getConnection();
+		    PreparedStatement stmt = conn.prepareStatement(del);
+
+
+
+		        stmt.execute();
+		        stmt.close();
+
+		        b = true ;
+		} catch (SQLException e) {
+		    System.err.println(e);
+		}finally{
+			return b;
+		}
+
+		}
+
+	}
+
+
 
 
     //les setters et les getters
