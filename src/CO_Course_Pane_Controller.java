@@ -14,6 +14,12 @@ public class CO_Course_Pane_Controller {
 
     @FXML
     public void initialize() {
+        holderPane.setOnMouseEntered( mouseEvent -> {
+            titleLabel.setText(" " + titleLabel.getText());
+        });
+        holderPane.setOnMouseExited( mouseEvent -> {
+            titleLabel.setText(titleLabel.getText().substring(1));
+        });
     }
 
     public void setAll(String title, int _rtime) {

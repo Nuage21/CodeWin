@@ -134,7 +134,8 @@ public class LoggedIn_Controller {
             Central_Container_SPane.getChildren().clear();
             try {
                 this.loadCourseGeneralOverview();
-                this.sidebarFocusNewPane(Side_GO_Pane);
+                if(side_bar_activated_pane != Side_GO_Pane)
+                    this.sidebarFocusNewPane(Side_GO_Pane);
                 Central_Up_Title_Label.setText("Vue Générale");
 
             } catch (IOException e) {
@@ -274,6 +275,10 @@ public class LoggedIn_Controller {
 
         // empty Central Pane
         Central_Container_SPane.getChildren().clear();
+
+        VBox holder = new VBox();
+        ScrollPane scp = new ScrollPane();
+
         for(int i = 0; i < nCourses; ++i)
         {
             String courseTitle = courses.getString(i);
@@ -282,8 +287,11 @@ public class LoggedIn_Controller {
             Pane coursePane = loader.load();
             CO_Course_Pane_Controller controller = loader.getController();
             controller.setAll(courseTitle, readTime);
-            Central_Container_SPane.getChildren().add(coursePane);
+            holder.getChildren().add(coursePane);
         }
+        scp.setContent(holder);
+        scp.setFitToWidth(true);
+        Central_Container_SPane.getChildren().add(scp);
     }
     public void setStage(Stage stage) {
         this.stage = stage;

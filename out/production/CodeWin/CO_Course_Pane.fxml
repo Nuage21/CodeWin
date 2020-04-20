@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -7,16 +8,16 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-<Pane fx:id="holderPane" prefHeight="78.0" prefWidth="1562.0" style="-fx-background-color: #3389bb;" styleClass="overview-chapter" stylesheets="@../../../../test_loggedin/src/sample/css/CoursePane.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CO_Course_Pane_Controller">
+<Pane fx:id="holderPane" prefHeight="78.0" prefWidth="1562.0" style="-fx-background-color: #f1f1f1; -fx-border-color: #777777; -fx-border-width: 0 0 3 0;" styleClass="overview-chapter" stylesheets="@../../../../test_loggedin/src/sample/css/CoursePane.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CO_Course_Pane_Controller">
    <children>
-      <Label fx:id="titleLabel" layoutX="55.0" layoutY="7.0" prefHeight="64.0" prefWidth="1104.0" text="La signalisation routière" textFill="WHITE">
+      <Label fx:id="titleLabel" layoutX="55.0" layoutY="7.0" prefHeight="64.0" prefWidth="1104.0" text="La signalisation routière">
          <font>
             <Font name="Rockwell" size="32.0" />
          </font>
       </Label>
       <Pane layoutX="1179.0" layoutY="7.0" prefHeight="73.0" prefWidth="357.0">
          <children>
-            <Label layoutX="76.0" layoutY="19.0" prefHeight="32.0" prefWidth="162.0" text="Temps de Lecture:" textFill="WHITE">
+            <Label layoutX="76.0" layoutY="19.0" prefHeight="32.0" prefWidth="162.0" text="Temps de Lecture:">
                <font>
                   <Font name="Rockwell" size="17.0" />
                </font>
@@ -30,7 +31,7 @@
                   </ImageView>
                </children>
             </StackPane>
-            <Label fx:id="readTimeLabel" layoutX="262.0" layoutY="18.0" prefHeight="32.0" prefWidth="68.0" text="15" textFill="WHITE">
+            <Label fx:id="readTimeLabel" layoutX="262.0" layoutY="18.0" prefHeight="32.0" prefWidth="68.0" text="15">
                <font>
                   <Font name="Cambria" size="27.0" />
                </font>
@@ -38,4 +39,7 @@
          </children>
       </Pane>
    </children>
+   <cursor>
+      <Cursor fx:constant="HAND" />
+   </cursor>
 </Pane>

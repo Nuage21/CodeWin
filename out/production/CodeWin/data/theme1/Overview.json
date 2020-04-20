@@ -1,5 +1,5 @@
 {
-  "courses": ["La signalisation routière","Les intersections","Les règles de priorité","La vitesse de circulation","La signalisation routière","Le stationnement et arrêt"],
-  "readTimes": [15, 10, 12, 20, 7, 5],
+  "courses": ["La signalisation routière","Les intersections","Les règles de priorité","La vitesse de circulation","La signalisation routière","Le stationnement et arrêt", "Bla bla bla bla", "Bla bla bla bla", "Bla bla bla bla", "Bla bla bla bla", "Bla bla bla bla", "Bla bla bla bla", "Bla bla bla bla", "Bla bla bla bla", "Bla bla bla bla", "Bla bla bla bla", "Bla bla bla bla", "Bla bla bla bla"],
+  "readTimes": [15, 10, 12, 20, 7, 5, 13, 12, 11, 13, 12, 11, 13, 12, 11, 13, 12, 11],
   "files": ["course1.json", "course1.json", "course1.json", "course1.json", "course1.json", "course1.json"]
 }
