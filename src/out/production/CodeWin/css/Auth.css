@@ -1,0 +1,51 @@
+.sign-top{
+	-fx-border-color: #1d1d1d;
+	-fx-border-width: 0 0 1 0;
+}
+
+#signupvbox{
+	-fx-padding: 0 0 0 0;
+}
+
+.sign-tab{
+	-fx-background-color: #1d1d1d;
+	-fx-pref-width: 315;
+	-fx-pref-height: 40;
+	-fx-text-base-color: #e3e3e3;
+	-fx-font-family: "Charter";
+	-fx-font-weight: bold;
+    -fx-font-size: 15;
+}
+
+.tab-pane > .tab-header-area > .headers-region > .tab > .tab-container > .tab-label {
+    -fx-alignment: CENTER;
+     -fx-pref-width: 150.0;
+}
+
+.submit-btn:hover{
+	-fx-background-color: #1d99ee !important;
+	-fx-text-fill: #e3e3e3 !important;
+}
+
+.canceal-btn:hover{
+	-fx-background-color: #e13333 !important;
+	-fx-text-fill: #e3e3e3 !important;
+}
+
+.datepicker .text-field {
+    -fx-control-inner-background: white;
+}
+
+.sign-field{
+	-fx-border-width: 0 0 1 0;
+	-fx-border-color: #d1d1d1 !important;
+}
+
+.sign-field:hover{
+	-fx-effect: dropshadow(three-pass-box, #1299bb, 10, 0, 0, 0) !important;  
+}
+
+
+.lng-selector:hover{
+	-fx-text-fill: #1299bb !important;
+}

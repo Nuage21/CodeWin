@@ -1,0 +1,431 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="828.0" prefWidth="979.0" style="-fx-background-color: white;" stylesheets="@css/Auth.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Auth_Controller">
+   <children>
+      <HBox prefHeight="100.0" prefWidth="979.0" style="-fx-background-color: white; -fx-border-color: #1d1d1d; -fx-border-width: 0 0 5 3; -fx-border-width: ;">
+         <children>
+            <StackPane prefHeight="108.0" prefWidth="133.0" style="-fx-padding: 0; -fx-background-color: white; -fx-background-radius: 10;">
+               <children>
+                  <StackPane prefHeight="82.0" prefWidth="97.0" style="-fx-padding: 10; -fx-background-color: white; -fx-background-radius: 20;">
+                     <children>
+                        <ImageView fitHeight="84.0" fitWidth="97.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/logo.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </StackPane>
+               </children></StackPane>
+            <Label prefHeight="108.0" prefWidth="858.0" style="-fx-padding: 25 20 20 20;" text="CodeWin" textFill="#070707">
+               <font>
+                  <Font name="Jokerman" size="40.0" />
+               </font>
+            </Label>
+            <Pane prefHeight="109.0" prefWidth="5.0" style="-fx-background-color: #1d1d1d;" />
+         </children>
+      </HBox>
+      <VBox prefHeight="671.0" prefWidth="979.0">
+         <children>
+            <TabPane prefHeight="666.0" prefWidth="979.0" side="LEFT" tabClosingPolicy="UNAVAILABLE">
+              <tabs>
+                <Tab fx:id="signupTab" styleClass="sign-tab" text="Sign up">
+                     <content>
+                        <VBox fx:id="signupvbox" prefHeight="664.0" prefWidth="934.0">
+                           <children>
+                              <VBox prefHeight="668.0" prefWidth="934.0">
+                                 <children>
+                                    <Pane prefHeight="64.0" prefWidth="950.0" style="-fx-background-color: white;" styleClass="sign-top">
+                                       <children>
+                                          <Label layoutX="763.0" prefHeight="64.0" prefWidth="187.0" text="Sign up" textFill="#3f5986">
+                                             <font>
+                                                <Font name="Jokerman" size="32.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </Pane>
+                                    <VBox prefHeight="608.0" prefWidth="934.0" style="-fx-padding: 20;">
+                                       <children>
+                                          <Pane prefHeight="81.0" prefWidth="900.0">
+                                             <children>
+                                                <Pane fx:id="UsernamePane" layoutX="14.0" layoutY="16.0" prefHeight="50.0" prefWidth="875.0" style="-fx-border-style: solid; -fx-border-color: #d1d1d1;" styleClass="sign-field">
+                                                   <children>
+                                                      <ImageView fitHeight="25.0" fitWidth="23.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true" translateX="10.0" translateY="13.0">
+                                                         <image>
+                                                            <Image url="@img/icons/username.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                      <TextField fx:id="UsernameField" layoutX="61.0" layoutY="8.0" prefHeight="35.0" prefWidth="804.0" promptText="Username" style="-fx-background-color: transparent;">
+                                                         <font>
+                                                            <Font size="15.0" />
+                                                         </font>
+                                                      </TextField>
+                                                   </children>
+                                                </Pane>
+                                             </children>
+                                          </Pane>
+                                          <Pane prefHeight="81.0" prefWidth="900.0">
+                                             <children>
+                                                <Pane fx:id="PasswordPane" layoutX="14.0" layoutY="16.0" prefHeight="50.0" prefWidth="875.0" style="-fx-border-style: solid; -fx-border-color: #d1d1d1;" styleClass="sign-field">
+                                                   <children>
+                                                      <ImageView fitHeight="23.0" fitWidth="23.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true" translateX="10.0" translateY="10.0">
+                                                         <image>
+                                                            <Image url="@img/icons/password.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                      <PasswordField fx:id="PwdField" layoutX="61.0" layoutY="10.0" prefHeight="31.0" prefWidth="805.0" promptText="Password" style="-fx-background-color: transparent;">
+                                                         <font>
+                                                            <Font size="15.0" />
+                                                         </font>
+                                                      </PasswordField>
+                                                   </children>
+                                                </Pane>
+                                             </children>
+                                          </Pane>
+                                          <Pane prefHeight="81.0" prefWidth="900.0">
+                                             <children>
+                                                <Pane fx:id="FirstnamePane" layoutX="14.0" layoutY="16.0" prefHeight="50.0" prefWidth="429.0" style="-fx-border-style: solid; -fx-border-color: #d1d1d1;" styleClass="sign-field">
+                                                   <children>
+                                                      <ImageView fitHeight="25.0" fitWidth="23.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true" translateX="10.0" translateY="13.0">
+                                                         <image>
+                                                            <Image url="@img/icons/username.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                      <TextField fx:id="FirstnameField" layoutX="61.0" layoutY="8.0" prefHeight="35.0" prefWidth="360.0" promptText="Firstname" style="-fx-background-color: transparent;">
+                                                         <font>
+                                                            <Font size="15.0" />
+                                                         </font>
+                                                      </TextField>
+                                                   </children>
+                                                </Pane>
+                                                <Pane fx:id="LastnamePane" layoutX="455.0" layoutY="16.0" prefHeight="50.0" prefWidth="434.0" style="-fx-border-style: solid; -fx-border-color: #d1d1d1;" styleClass="sign-field">
+                                                   <children>
+                                                      <ImageView fitHeight="25.0" fitWidth="23.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true" translateX="10.0" translateY="13.0">
+                                                         <image>
+                                                            <Image url="@img/icons/username.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                      <TextField fx:id="LastnameField" layoutX="61.0" layoutY="8.0" prefHeight="35.0" prefWidth="364.0" promptText="Lastname" style="-fx-background-color: transparent;">
+                                                         <font>
+                                                            <Font size="15.0" />
+                                                         </font>
+                                                      </TextField>
+                                                   </children>
+                                                </Pane>
+                                             </children>
+                                          </Pane>
+                                          <Pane prefHeight="81.0" prefWidth="900.0">
+                                             <children>
+                                                <Pane fx:id="PhonePane" layoutX="14.0" layoutY="16.0" prefHeight="50.0" prefWidth="430.0" style="-fx-border-style: solid; -fx-border-color: #d1d1d1;" styleClass="sign-field">
+                                                   <children>
+                                                      <ImageView fitHeight="25.0" fitWidth="23.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true" translateX="10.0" translateY="13.0">
+                                                         <image>
+                                                            <Image url="@img/icons/phone.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                      <TextField fx:id="PhoneField" layoutX="61.0" layoutY="8.0" prefHeight="35.0" prefWidth="362.0" promptText="Phone" style="-fx-background-color: transparent;">
+                                                         <font>
+                                                            <Font size="15.0" />
+                                                         </font>
+                                                      </TextField>
+                                                   </children>
+                                                </Pane>
+                                                <Pane fx:id="EmailPane" layoutX="455.0" layoutY="16.0" prefHeight="50.0" prefWidth="431.0" style="-fx-border-style: solid; -fx-border-color: #d1d1d1;" styleClass="sign-field">
+                                                   <children>
+                                                      <ImageView fitHeight="25.0" fitWidth="23.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true" translateX="10.0" translateY="13.0">
+                                                         <image>
+                                                            <Image url="@img/icons/email.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                      <TextField fx:id="EmailField" layoutX="61.0" layoutY="8.0" prefHeight="35.0" prefWidth="362.0" promptText="exemple@gmail.com" style="-fx-background-color: transparent;">
+                                                         <font>
+                                                            <Font size="15.0" />
+                                                         </font>
+                                                      </TextField>
+                                                   </children>
+                                                </Pane>
+                                             </children>
+                                          </Pane>
+                                          <Pane prefHeight="81.0" prefWidth="900.0">
+                                             <children>
+                                                <Pane fx:id="AddressPane" layoutX="14.0" layoutY="16.0" prefHeight="50.0" prefWidth="433.0" style="-fx-border-style: solid; -fx-border-color: #d1d1d1;" styleClass="sign-field">
+                                                   <children>
+                                                      <ImageView fitHeight="25.0" fitWidth="23.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true" translateX="10.0" translateY="13.0">
+                                                         <image>
+                                                            <Image url="@img/icons/address.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                      <TextField fx:id="AddressField" layoutX="61.0" layoutY="8.0" prefHeight="35.0" prefWidth="363.0" promptText="Address" style="-fx-background-color: transparent;">
+                                                         <font>
+                                                            <Font size="15.0" />
+                                                         </font>
+                                                      </TextField>
+                                                   </children>
+                                                </Pane>
+                                                <Pane fx:id="DatePickerPane" layoutX="455.0" layoutY="16.0" prefHeight="50.0" prefWidth="433.0" style="-fx-border-style: solid; -fx-border-color: #d1d1d1;" styleClass="sign-field">
+                                                   <children>
+                                                      <ImageView fitHeight="25.0" fitWidth="23.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true" translateX="10.0" translateY="13.0">
+                                                         <image>
+                                                            <Image url="@img/icons/dob.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                      <DatePicker fx:id="DatePickerField" layoutX="62.0" layoutY="9.0" prefHeight="28.0" prefWidth="364.0" styleClass="datepicker" />
+                                                   </children>
+                                                </Pane>
+                                             </children>
+                                          </Pane>
+                                          <Pane prefHeight="45.0" prefWidth="894.0">
+                                             <children>
+                                                <CheckBox layoutX="23.0" layoutY="14.0" mnemonicParsing="false" text="By clicking Submit, you agree to our Terms and Data Policy">
+                                                   <font>
+                                                      <Font size="15.0" />
+                                                   </font>
+                                                </CheckBox>
+                                             </children>
+                                          </Pane>
+                                          <Pane prefHeight="71.0" prefWidth="894.0">
+                                             <children>
+                                                <Button  fx:id="signUpBtn" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" opacity="0.89" prefHeight="57.0" prefWidth="869.0" style="-fx-background-color: white; -fx-border-color: #1d1d1d; -fx-border-radius: 20; -fx-background-radius: 20; -fx-text-fill: #3d3d3d;" styleClass="submit-btn" text="Submit" textFill="WHITE">
+                                                   <font>
+                                                      <Font name="System Bold" size="15.0" />
+                                                   </font>
+                                                   <cursor>
+                                                      <Cursor fx:constant="HAND" />
+                                                   </cursor>
+                                                </Button>
+                                             </children>
+                                          </Pane>
+                                          <Pane prefHeight="84.0" prefWidth="894.0">
+                                             <children>
+                                                <Button fx:id="signUpCancealBtn" layoutX="13.0" layoutY="13.0" mnemonicParsing="false" opacity="0.89" prefHeight="57.0" prefWidth="869.0" style="-fx-background-color: white; -fx-border-color: #1d1d1d; -fx-border-radius: 20; -fx-background-radius: 20; -fx-text-fill: #3d3d3d;" styleClass="canceal-btn" text="Canceal" textFill="WHITE">
+                                                   <font>
+                                                      <Font name="System Bold" size="15.0" />
+                                                   </font>
+                                                   <cursor>
+                                                      <Cursor fx:constant="HAND" />
+                                                   </cursor>
+                                                </Button>
+                                             </children>
+                                          </Pane>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </VBox>
+                     </content>
+                  </Tab>
+                <Tab fx:id="signinTab" styleClass="sign-tab" text="Sign in">
+                     <content>
+                        <VBox prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <Pane prefHeight="64.0" prefWidth="950.0" styleClass="sign-top">
+                                 <children>
+                                    <Label layoutX="763.0" prefHeight="64.0" prefWidth="187.0" text="Sign in" textFill="#3f5986">
+                                       <font>
+                                          <Font name="Jokerman" size="32.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </Pane>
+                              <VBox prefHeight="608.0" prefWidth="934.0" style="-fx-padding: 20;">
+                                 <children>
+                                    <Pane prefHeight="81.0" prefWidth="900.0">
+                                       <children>
+                                          <Pane fx:id="UsernameSignInPane" layoutX="14.0" layoutY="16.0" prefHeight="50.0" prefWidth="875.0" style="-fx-border-style: solid;" styleClass="sign-field">
+                                             <children>
+                                                <ImageView fitHeight="25.0" fitWidth="23.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true" translateX="10.0" translateY="13.0">
+                                                   <image>
+                                                      <Image url="@img/icons/username.png" />
+                                                   </image>
+                                                </ImageView>
+                                                <TextField fx:id="UsernameSignInField" layoutX="61.0" layoutY="8.0" prefHeight="35.0" prefWidth="804.0" promptText="Username" style="-fx-background-color: transparent;">
+                                                   <font>
+                                                      <Font size="15.0" />
+                                                   </font>
+                                                </TextField>
+                                             </children>
+                                          </Pane>
+                                       </children>
+                                    </Pane>
+                                    <Pane prefHeight="81.0" prefWidth="900.0">
+                                       <children>
+                                          <Pane fx:id="PasswordSignInPane" layoutX="14.0" layoutY="16.0" prefHeight="50.0" prefWidth="875.0" style="-fx-border-style: solid;" styleClass="sign-field">
+                                             <children>
+                                                <ImageView fitHeight="23.0" fitWidth="23.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true" translateX="10.0" translateY="10.0">
+                                                   <image>
+                                                      <Image url="@img/icons/password.png" />
+                                                   </image>
+                                                </ImageView>
+                                                <PasswordField fx:id="PwdSignInField" layoutX="61.0" layoutY="10.0" prefHeight="31.0" prefWidth="805.0" promptText="Password" style="-fx-background-color: transparent;">
+                                                   <font>
+                                                      <Font size="15.0" />
+                                                   </font>
+                                                </PasswordField>
+                                             </children>
+                                          </Pane>
+                                       </children>
+                                    </Pane>
+                                    <Pane prefHeight="28.0" prefWidth="894.0">
+                                       <children>
+                                          <CheckBox layoutX="20.0" layoutY="4.0" mnemonicParsing="false" text="Password forgottern ?">
+                                             <font>
+                                                <Font size="15.0" />
+                                             </font>
+                                          </CheckBox>
+                                       </children></Pane>
+                                    <Pane prefHeight="71.0" prefWidth="894.0">
+                                       <children>
+                                          <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" opacity="0.89" prefHeight="57.0" prefWidth="869.0" style="-fx-background-color: white; -fx-border-color: #1d1d1d; -fx-border-radius: 20; -fx-background-radius: 20; -fx-text-fill: #3d3d3d;" styleClass="submit-btn" text="Connexion" textFill="WHITE">
+                                             <font>
+                                                <Font name="System Bold" size="15.0" />
+                                             </font>
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                          </Button>
+                                       </children>
+                                    </Pane>
+                                    <Pane prefHeight="84.0" prefWidth="894.0">
+                                       <children>
+                                          <Button fx:id="signInCancealBtn" layoutX="13.0" layoutY="13.0" mnemonicParsing="false" opacity="0.89" prefHeight="57.0" prefWidth="869.0" style="-fx-background-color: white; -fx-border-color: #1d1d1d; -fx-border-radius: 20; -fx-background-radius: 20; -fx-text-fill: #3d3d3d;" styleClass="canceal-btn" text="Canceal" textFill="WHITE">
+                                             <font>
+                                                <Font name="System Bold" size="15.0" />
+                                             </font>
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                          </Button>
+                                       </children>
+                                    </Pane>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </VBox>
+                     </content>
+                  </Tab>
+              </tabs>
+            </TabPane>
+         </children>
+      </VBox>
+      <HBox prefHeight="50.0" prefWidth="979.0" style="-fx-background-color: #1d1d1d;">
+         <children>
+            <Pane prefHeight="41.0" prefWidth="979.0">
+               <children>
+                  <Label layoutX="225.0" layoutY="18.0" styleClass="lng-selector" text="Tamaziɣt" textFill="WHITE" textOverrun="CENTER_WORD_ELLIPSIS">
+                     <font>
+                        <Font name="Tahoma Bold" size="13.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Label>
+                  <StackPane layoutX="176.0" layoutY="8.0" prefHeight="31.0" prefWidth="25.0" style="-fx-padding: 10; -fx-background-color: black; -fx-background-radius: 20;">
+                     <children>
+                        <ImageView fitHeight="15.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/flags/berber.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </StackPane>
+                  <Label layoutX="352.0" layoutY="18.0" styleClass="lng-selector" text="English" textFill="WHITE" textOverrun="CENTER_WORD_ELLIPSIS">
+                     <font>
+                        <Font name="Tahoma Bold" size="13.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Label>
+                  <StackPane layoutX="300.0" layoutY="8.0" prefHeight="31.0" prefWidth="25.0" style="-fx-padding: 10; -fx-background-color: black; -fx-background-radius: 20;">
+                     <children>
+                        <ImageView fitHeight="15.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/flags/uk.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </StackPane>
+                  <Label layoutX="467.0" layoutY="16.0" styleClass="lng-selector" text="Français" textFill="WHITE" textOverrun="CENTER_WORD_ELLIPSIS">
+                     <font>
+                        <Font name="Tahoma Bold" size="13.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Label>
+                  <StackPane layoutX="418.0" layoutY="8.0" prefHeight="31.0" prefWidth="25.0" style="-fx-padding: 10; -fx-background-color: black; -fx-background-radius: 20;">
+                     <children>
+                        <ImageView fitHeight="15.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/flags/france.gif" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </StackPane>
+                  <Label layoutX="590.0" layoutY="17.0" styleClass="lng-selector" text="Español" textFill="WHITE" textOverrun="CENTER_WORD_ELLIPSIS">
+                     <font>
+                        <Font name="Tahoma Bold" size="13.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Label>
+                  <StackPane layoutX="539.0" layoutY="7.0" prefHeight="31.0" prefWidth="25.0" style="-fx-padding: 10; -fx-background-color: black; -fx-background-radius: 20;">
+                     <children>
+                        <ImageView fitHeight="15.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/flags/spain.gif" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </StackPane>
+                  <Label layoutX="705.0" layoutY="16.0" styleClass="lng-selector" text="العربية" textFill="WHITE" textOverrun="CENTER_WORD_ELLIPSIS">
+                     <font>
+                        <Font name="Tahoma Bold" size="13.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Label>
+                  <StackPane layoutX="653.0" layoutY="9.0" prefHeight="31.0" prefWidth="25.0" style="-fx-padding: 10; -fx-background-color: black; -fx-background-radius: 20;">
+                     <children>
+                        <ImageView fitHeight="15.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/flags/arab.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </StackPane>
+                  <Label layoutX="47.0" layoutY="5.0" prefHeight="35.0" prefWidth="100.0" text="Language" textFill="#dddddd">
+                     <font>
+                        <Font name="Jokerman" size="17.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="864.0" layoutY="18.0" text="© Copyright 2020" textFill="WHITE">
+                     <font>
+                        <Font name="Verdana Italic" size="9.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+         </children>
+      </HBox>
+   </children>
+</VBox>
