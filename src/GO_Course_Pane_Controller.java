@@ -1,5 +1,6 @@
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
+import javafx.scene.layout.Pane;
 
 
 public class GO_Course_Pane_Controller {
@@ -15,6 +16,7 @@ public class GO_Course_Pane_Controller {
     @FXML
     private Label nQuizesLabel;
 
+    @FXML private Pane holderPane;
 
     @FXML
     public void initialize() {
@@ -25,5 +27,9 @@ public class GO_Course_Pane_Controller {
         nCoursesLabel.setText("" + nCourse);
         nQuestionsLabel.setText("" + nQuestions);
         nQuizesLabel.setText("" + nQuizes);
+    }
+
+    public Pane getHolderPane() {
+        return holderPane;
     }
 }

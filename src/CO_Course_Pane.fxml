@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<Pane fx:id="holderPane" prefHeight="78.0" prefWidth="1562.0" style="-fx-background-color: #f1f1f1; -fx-border-color: #777777; -fx-border-width: 0 0 3 0;" styleClass="overview-chapter" stylesheets="@../../../../test_loggedin/src/sample/css/CoursePane.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CO_Course_Pane_Controller">
+   <children>
+      <Label fx:id="titleLabel" layoutX="55.0" layoutY="7.0" prefHeight="64.0" prefWidth="1104.0" text="La signalisation routière">
+         <font>
+            <Font name="Rockwell" size="32.0" />
+         </font>
+      </Label>
+      <Pane layoutX="1179.0" layoutY="7.0" prefHeight="73.0" prefWidth="357.0">
+         <children>
+            <Label layoutX="76.0" layoutY="19.0" prefHeight="32.0" prefWidth="162.0" text="Temps de Lecture:">
+               <font>
+                  <Font name="Rockwell" size="17.0" />
+               </font>
+            </Label>
+            <StackPane layoutX="10.0" layoutY="11.0" prefHeight="47.0" prefWidth="50.0" style="-fx-background-radius: 30; -fx-background-color: #e1e1e1;">
+               <children>
+                  <ImageView fitHeight="33.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true" style="-fx-border-radius: 56;">
+                     <image>
+                        <Image url="@img/icons/clock.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </StackPane>
+            <Label fx:id="readTimeLabel" layoutX="262.0" layoutY="18.0" prefHeight="32.0" prefWidth="68.0" text="15">
+               <font>
+                  <Font name="Cambria" size="27.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+   </children>
+   <cursor>
+      <Cursor fx:constant="HAND" />
+   </cursor>
+</Pane>

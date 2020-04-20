@@ -41,19 +41,21 @@ public class CourseOverview {
         JSONArray arr = obj.getJSONArray("chapters");
 
         for (int i = 0; i < arr.length(); ++i) {
-            int id = arr.getJSONObject(i).getInt("ID");
-            int nCourses = arr.getJSONObject(i).getInt("nCourses");
-            int nQuestions = arr.getJSONObject(i).getInt("nQuestions");
-            int nQuizes = arr.getJSONObject(i).getInt("nQuizes");
-            String title = arr.getJSONObject(i).getString("chapterTitle");
+            JSONObject cObj = arr.getJSONObject(i);
+            int id = cObj.getInt("ID");
+            int nCourses = cObj.getInt("nCourses");
+            int nQuestions = cObj.getInt("nQuestions");
+            int nQuizes = cObj.getInt("nQuizes");
+            String title = cObj.getString("chapterTitle");
+            String folder = cObj.getString("folder");
 
             ArrayList<String> courses = new ArrayList<>();
-            JSONArray coursesArr = arr.getJSONObject(i).getJSONArray("courses");
+            JSONArray coursesArr = cObj.getJSONArray("courses");
 
             for (int j = 0; j < coursesArr.length(); ++j)
                 courses.add(coursesArr.getString(j));
 
-            ChapterOverview chapOv = new ChapterOverview(id, title, nCourses, nQuestions, nQuizes, courses);
+            ChapterOverview chapOv = new ChapterOverview(id, title, nCourses, nQuestions, nQuizes, folder, courses);
             chapters.add(chapOv);
         }
     }
@@ -64,15 +66,17 @@ public class CourseOverview {
         private int nCourse;
         private int nQuestions;
         private int nQuizes;
+        private String folder;
 
         private ArrayList<String> courses;
 
-        ChapterOverview(int _id, String _title, int _nCourse, int _nQuestions, int _nQuizes, ArrayList<String> _courses) {
+        ChapterOverview(int _id, String _title, int _nCourse, int _nQuestions, int _nQuizes, String _folder, ArrayList<String> _courses) {
             this.ID = _id;
             this.chapterTitle = _title;
             this.nCourse = _nCourse;
             this.nQuestions = _nQuestions;
             this.nQuizes = _nQuizes;
+            this.folder = _folder;
             this.courses = _courses;
         }
 
@@ -98,6 +102,10 @@ public class CourseOverview {
 
         public ArrayList<String> getCourses() {
             return courses;
+        }
+
+        public String getFolder() {
+            return folder;
         }
     }
 }

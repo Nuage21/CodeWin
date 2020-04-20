@@ -18,9 +18,13 @@ import java.util.ResourceBundle;
 
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import jdk.jfr.Percentage;
+import org.json.JSONArray;
+import org.json.JSONObject;
 
 public class LoggedIn_Controller {
 
+    //region FXML declarations
     @FXML
     private ResourceBundle resources;
 
@@ -65,6 +69,7 @@ public class LoggedIn_Controller {
 
     @FXML
     private Pane side_bar_activated_pane;
+    //endregion
 
 
     private static User user;   // Signed In user
@@ -129,7 +134,8 @@ public class LoggedIn_Controller {
             Central_Container_SPane.getChildren().clear();
             try {
                 this.loadCourseGeneralOverview();
-                this.sidebarFocusNewPane(Side_GO_Pane);
+                if(side_bar_activated_pane != Side_GO_Pane)
+                    this.sidebarFocusNewPane(Side_GO_Pane);
                 Central_Up_Title_Label.setText("Vue Générale");
 
             } catch (IOException e) {
@@ -157,7 +163,7 @@ public class LoggedIn_Controller {
         });
 
         this.loadCourseGeneralOverview(); // Course's General Overview shown by default
-        this.viewSidebarChapters();
+       this.viewSidebarChapters();
     }
 
     public void sidebarFocusNewPane(Pane p)
@@ -177,7 +183,7 @@ public class LoggedIn_Controller {
 
     public void loadCourseGeneralOverview() throws IOException {
 
-        CourseOverview CO = new CourseOverview("C:\\Users\\hbais\\Desktop\\test_loggedin\\src\\sample\\Overview.json");
+        CourseOverview CO = new CourseOverview(Main.appSettings.dataPath + "Overview.json");
         this.courseCO = CO;
         ArrayList<CourseOverview.ChapterOverview> chapters = CO.getChapters();
 
@@ -195,8 +201,18 @@ public class LoggedIn_Controller {
             int nCourses = chap.getnCourse();
             int nQuestions = chap.getnQuestions();
             int nQuizes = chap.getnQuizes();
+            String folder = chap.getFolder();
 
             controller.setAll(title, nCourses, nQuestions, nQuizes);
+
+            Pane holder = controller.getHolderPane();
+            holder.setOnMouseClicked( event -> {
+                try {
+                    this.loadChapterOverview(folder);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            });
 
             vb.getChildren().add(course_pane);
         }
@@ -248,6 +264,35 @@ public class LoggedIn_Controller {
         sidebarChaptersHolder.getChildren().add(scp);
     }
 
+    public void loadChapterOverview(String folder) throws IOException {
+        String json_file = Main.appSettings.dataPath + folder + "Overview.json";
+        String jsonOverviewString = Files.readString(Paths.get(json_file), StandardCharsets.UTF_8);
+        JSONObject obj = new JSONObject(jsonOverviewString);
+        JSONArray courses = obj.getJSONArray("courses");
+        JSONArray files = obj.getJSONArray("files");
+        JSONArray readTimes = obj.getJSONArray("readTimes");
+        int nCourses = courses.length();
+
+        // empty Central Pane
+        Central_Container_SPane.getChildren().clear();
+
+        VBox holder = new VBox();
+        ScrollPane scp = new ScrollPane();
+
+        for(int i = 0; i < nCourses; ++i)
+        {
+            String courseTitle = courses.getString(i);
+            int readTime = readTimes.getInt(i);
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("CO_Course_Pane.fxml"));
+            Pane coursePane = loader.load();
+            CO_Course_Pane_Controller controller = loader.getController();
+            controller.setAll(courseTitle, readTime);
+            holder.getChildren().add(coursePane);
+        }
+        scp.setContent(holder);
+        scp.setFitToWidth(true);
+        Central_Container_SPane.getChildren().add(scp);
+    }
     public void setStage(Stage stage) {
         this.stage = stage;
     }
