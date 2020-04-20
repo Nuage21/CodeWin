@@ -21,6 +21,7 @@ import javafx.stage.StageStyle;
 
 public class LoggedIn_Controller {
 
+    //region FXML declarations
     @FXML
     private ResourceBundle resources;
 
@@ -65,6 +66,7 @@ public class LoggedIn_Controller {
 
     @FXML
     private Pane side_bar_activated_pane;
+    //endregion
 
 
     private static User user;   // Signed In user
@@ -157,7 +159,7 @@ public class LoggedIn_Controller {
         });
 
         this.loadCourseGeneralOverview(); // Course's General Overview shown by default
-        this.viewSidebarChapters();
+       this.viewSidebarChapters();
     }
 
     public void sidebarFocusNewPane(Pane p)
@@ -177,7 +179,7 @@ public class LoggedIn_Controller {
 
     public void loadCourseGeneralOverview() throws IOException {
 
-        CourseOverview CO = new CourseOverview("C:\\Users\\hbais\\Desktop\\test_loggedin\\src\\sample\\Overview.json");
+        CourseOverview CO = new CourseOverview("C:\\Users\\namgal\\Desktop\\CodeWin\\src\\Overview.json");
         this.courseCO = CO;
         ArrayList<CourseOverview.ChapterOverview> chapters = CO.getChapters();
 

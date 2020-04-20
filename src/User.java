@@ -1,6 +1,7 @@
 import java.sql.Date;
 import java.sql.*;
 import java.time.*;
+import java.util.TreeMap;
 
 public class User {
 
@@ -15,6 +16,11 @@ public class User {
     private Date dob;
     private boolean darkmode;
     private int lang;
+    // pour les stats
+    private TreeMap<Integer,Date> point ;
+    private TreeMap<Integer,Date> activité ;
+
+
 
     // database settings
     public static final String USERNAME = "houssamtertaki";

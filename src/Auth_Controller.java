@@ -16,6 +16,7 @@ import javafx.scene.control.*;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
+import javafx.scene.transform.Scale;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import javafx.stage.WindowEvent;
@@ -101,6 +102,7 @@ public class Auth_Controller {
     private Control Focused = null;
 
     public Stage stage;
+    public Stage errorStage = null ;
     public LogErrorController main_controller ;
     private boolean all_is_ok = true ; // set to false if logger is called ;
 
@@ -110,6 +112,8 @@ public class Auth_Controller {
     @FXML
     private void initialize() {
 
+   //region remplissage
+
         UsernameField.setText("Barack_Hawaii_123");
         LastnameField.setText("Obama");
         FirstnameField.setText("Barack");
@@ -118,6 +122,7 @@ public class Auth_Controller {
         DatePickerField.setValue(LocalDate.of(1961, 10, 4));
         AddressField.setText("Honolulu, Hawaii, United States");
         PhoneField.setText("(860)-231-1234");
+        //endregion
 
         applyTabStyle(signupTab, true);
 
@@ -171,7 +176,7 @@ public class Auth_Controller {
             }
             //l'ajout de user ici
 
-            if(stage!=null ) stage.close();
+            if(errorStage!=null ) errorStage.close();
             all_is_ok = true ;
             if(! userNameVer()) loger(UsernameField);
             if(! psswrdVer()) loger(PwdField);
@@ -184,11 +189,14 @@ public class Auth_Controller {
 
 
             if(all_is_ok){
-                if(stage!=null)stage.close();
-                this.addUser();
+                if(errorStage!=null)errorStage.close();
+               // this.addUser();
                 Stage stg = Main.appSettings.getAppStage();
-                stg.setScene(new Scene(root));
-                stg.setFullScreen(true);
+                Scene sc = new Scene(root);
+
+                //stg.setFullScreen(true);
+
+                stg.setScene(sc);
                 stg.show();}
 
         });
@@ -305,28 +313,28 @@ public class Auth_Controller {
 
 
     public void onClick(Control c ){
-        if(stage != null) stage.close();
+        if(errorStage != null) this.errorStage.close();
         init();
-        stage.show();
+        errorStage.show();
         positionner(c);
     }
     public void positionner(Control c){
         Point2D p = c.localToScreen(0.0,0.0);
-        stage.setX(p.getX());
-        stage.setY(p.getY()+30);
+        errorStage.setX(p.getX());
+        errorStage.setY(p.getY()+30);
     }
     public void init(){
         try {
             FXMLLoader loader =new FXMLLoader(getClass().getResource("LogError.fxml"));
-            stage = new Stage();
-            stage.setAlwaysOnTop(true);
+            errorStage = new Stage();
+            errorStage.setAlwaysOnTop(true);
             // stage.initOwner(Main.appSettings.getAppStage());
             Scene sc = new Scene(loader.load());
             main_controller = (LogErrorController) loader.getController();
             sc.setFill(Color.TRANSPARENT);
-            stage.initStyle(StageStyle.TRANSPARENT);
-            stage.setScene(sc);
-            // main_controller.main.setOnMouseClicked(e->stage.close());
+            errorStage.initStyle(StageStyle.TRANSPARENT);
+            errorStage.setScene(sc);
+            main_controller.main.setOnMouseClicked(e->errorStage.close());
 
         } catch (
                 IOException e) {
