@@ -18,6 +18,9 @@ import java.util.ResourceBundle;
 
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import jdk.jfr.Percentage;
+import org.json.JSONArray;
+import org.json.JSONObject;
 
 public class LoggedIn_Controller {
 
@@ -179,7 +182,7 @@ public class LoggedIn_Controller {
 
     public void loadCourseGeneralOverview() throws IOException {
 
-        CourseOverview CO = new CourseOverview("C:\\Users\\namgal\\Desktop\\CodeWin\\src\\Overview.json");
+        CourseOverview CO = new CourseOverview(Main.appSettings.dataPath + "Overview.json");
         this.courseCO = CO;
         ArrayList<CourseOverview.ChapterOverview> chapters = CO.getChapters();
 
@@ -197,8 +200,18 @@ public class LoggedIn_Controller {
             int nCourses = chap.getnCourse();
             int nQuestions = chap.getnQuestions();
             int nQuizes = chap.getnQuizes();
+            String folder = chap.getFolder();
 
             controller.setAll(title, nCourses, nQuestions, nQuizes);
+
+            Pane holder = controller.getHolderPane();
+            holder.setOnMouseClicked( event -> {
+                try {
+                    this.loadChapterOverview(folder);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            });
 
             vb.getChildren().add(course_pane);
         }
@@ -250,6 +263,28 @@ public class LoggedIn_Controller {
         sidebarChaptersHolder.getChildren().add(scp);
     }
 
+    public void loadChapterOverview(String folder) throws IOException {
+        String json_file = Main.appSettings.dataPath + folder + "Overview.json";
+        String jsonOverviewString = Files.readString(Paths.get(json_file), StandardCharsets.UTF_8);
+        JSONObject obj = new JSONObject(jsonOverviewString);
+        JSONArray courses = obj.getJSONArray("courses");
+        JSONArray files = obj.getJSONArray("files");
+        JSONArray readTimes = obj.getJSONArray("readTimes");
+        int nCourses = courses.length();
+
+        // empty Central Pane
+        Central_Container_SPane.getChildren().clear();
+        for(int i = 0; i < nCourses; ++i)
+        {
+            String courseTitle = courses.getString(i);
+            int readTime = readTimes.getInt(i);
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("CO_Course_Pane.fxml"));
+            Pane coursePane = loader.load();
+            CO_Course_Pane_Controller controller = loader.getController();
+            controller.setAll(courseTitle, readTime);
+            Central_Container_SPane.getChildren().add(coursePane);
+        }
+    }
     public void setStage(Stage stage) {
         this.stage = stage;
     }

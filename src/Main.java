@@ -23,7 +23,7 @@ public class Main extends Application {
         primaryStage.setResizable(false);
         primaryStage.initStyle(StageStyle.UNDECORATED);
         primaryStage.show();
-        appSettings.setAppStage(primaryStage);
+        appSettings.appStage = primaryStage;
     }
 
 

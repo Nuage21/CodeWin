@@ -8,14 +8,6 @@ import javafx.stage.StageStyle;
 
 public class Settings {
 
-    private Stage appStage;
-
-    public void setAppStage(Stage appStage) {
-        this.appStage = appStage;
-    }
-
-    public Stage getAppStage() {
-        return this.appStage;
-    }
-
+    public Stage appStage;
+    public String dataPath = "C:\\Users\\hbais\\Desktop\\P2CP\\CodeWin\\CodeWin\\src\\data\\";
 }
