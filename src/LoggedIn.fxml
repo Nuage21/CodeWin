@@ -279,7 +279,7 @@
                 </VBox>
                 <Pane prefHeight="41.0" prefWidth="672.0" style="-fx-background-color: #eeeeee;">
                     <children>
-                        <Label layoutX="71.0" layoutY="9.0" styleClass="browse-label" text="Precedant" textFill="#616161">
+                        <Label fx:id="previousLabel" layoutX="71.0" layoutY="9.0" styleClass="browse-label" text="Precedant" textFill="#616161">
                             <font>
                                 <Font name="Rockwell" size="18.0" />
                             </font>
@@ -311,7 +311,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </StackPane>
-                  <Label layoutX="1378.0" layoutY="8.0" styleClass="browse-label" text="Suivant" textFill="#616161">
+                  <Label fx:id="nextLabel" layoutX="1378.0" layoutY="8.0" styleClass="browse-label" text="Suivant" textFill="#616161">
                      <font>
                         <Font name="Rockwell" size="18.0" />
                      </font>

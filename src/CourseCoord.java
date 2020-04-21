@@ -55,6 +55,18 @@ public class CourseCoord
         return cc;
     }
 
+    public CourseCoord getPreviousCourse() throws IOException {
+        if(chapterID == 0 && courseID == 0)
+            return this;
+        if(courseID == 0)
+        {
+            CourseCoord cc = new CourseCoord(chapterID-1, CO.getChapters().get(chapterID-1).getnCourse() - 1);
+            return cc;
+        }
+        CourseCoord cc = new CourseCoord(chapterID, courseID-1);
+        return cc;
+    }
+
     public String getCourseTitle()
     {
         return CO.getChapters().get(chapterID).getCourses().get(courseID);

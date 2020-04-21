@@ -58,6 +58,12 @@ public class LoggedIn_Controller {
     private Label Side_Stats_Label;
 
     @FXML
+    private Label nextLabel;
+
+    @FXML
+    private Label previousLabel;
+
+    @FXML
     private Label Central_Up_Title_Label;
 
     @FXML
@@ -156,8 +162,41 @@ public class LoggedIn_Controller {
             }
         });
 
+        nextLabel.setOnMouseClicked(mouseEvent -> {
+            if(this.diplayingWhat == Settings.DISPLAYING_COURSE)
+            {
+                if(this.courseCoord.isLastCourse())
+                {
+                    // COURSE FINISHED
+                }
+                // here... we still have some courses to go through
+                else
+                {
+                    if(this.courseCoord.isLastCourseWithinChapter())
+                    {
+
+                    }
+                    // Still in the same Chapter
+                    try {
+                        CourseCoord nextCourse = this.courseCoord.getNextCourse();
+                        this.displayCourse(nextCourse.chapterID, nextCourse.courseID);
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+
+            previousLabel.setOnMouseClicked(mouseEvent1 -> {
+                try {
+                    CourseCoord previousCourse = this.courseCoord.getPreviousCourse();
+                    this.displayCourse(previousCourse.chapterID, previousCourse.courseID);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            });
+        });
         this.loadCourseGeneralOverview(); // Course's General Overview shown by default
-       this.viewSidebarChapters();
+        this.viewSidebarChapters();
     }
 
     public void sidebarFocusNewPane(Pane p)
