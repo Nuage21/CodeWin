@@ -10,6 +10,7 @@ import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import org.json.*;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
@@ -94,7 +95,7 @@ public class CoursePane_Controller {
                     double avg_ratio =  0;
                     for(String file : images)
                     {
-                        Image crop = new Image(new FileInputStream(courseImagesFolder + file));
+                        Image crop = new Image(new FileInputStream(getCorrectImageFullpath(file)));
                         avg_ratio += crop.getWidth() / crop.getHeight();
                     }
                     avg_ratio /= images.length;
@@ -103,7 +104,7 @@ public class CoursePane_Controller {
                     {
                         StackPane holder = new StackPane();
                         ImageView img = new ImageView();
-                        Image crop = new Image(new FileInputStream(courseImagesFolder + file));
+                        Image crop = new Image(new FileInputStream(getCorrectImageFullpath(file)));
                         img.setImage(crop);
                         img.setFitHeight(200);
                         img.setFitWidth(200 * avg_ratio);
@@ -163,5 +164,23 @@ public class CoursePane_Controller {
 
     public void setCourseImagesFolder(String chapterFolder) {
         this.courseImagesFolder = chapterFolder;
+    }
+
+    // correct mistyped extensions
+    public String getCorrectImageFullpath(String file)
+    {
+        String suspect = courseImagesFolder + file;
+        if((new File(suspect)).isFile())
+            return suspect;
+        String withoutExtension = courseImagesFolder + file.split("[.]")[0];
+        String extensions[] = {".jpeg", ".jpg", ".png"};
+        String fullPath = "None";
+        for(String x : extensions)
+        {
+            fullPath = withoutExtension + x;
+            if((new File(fullPath)).isFile())
+                return fullPath;
+        }
+        return null;
     }
 }
