@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-
-<?import javafx.scene.layout.*?>
-
-<AnchorPane fx:id="main" prefHeight="35.0" prefWidth="260.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="LogErrorController">
-   <children>
-      <VBox fx:id="msgbox" layoutX="109.0" layoutY="125.0" prefHeight="173.0" prefWidth="291.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="5.0" />
-   </children>
-</AnchorPane>

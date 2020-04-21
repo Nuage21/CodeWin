@@ -1,0 +1,5 @@
+{
+ "courses": ["L’écomobilité -les alternatives à la voiture", "Choisir et entretenir votre véhicule pour réduire votre impact ", "Comment pratiquer l’éco-conduite?" ],
+  "readTimes": [15, 10, 12],
+  "files": ["course1.json", "course2.json", "course3.json"]
+}

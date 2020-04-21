@@ -1,0 +1,5 @@
+{
+  "courses": ["Les documents administratifs", " Le chargement des vĂŠhicules"],
+  "readTimes": [15, 10],
+  "files": ["course1.json", "course2.json"]
+}

@@ -10,4 +10,9 @@ public class Settings {
 
     public Stage appStage;
     public String dataPath = "C:\\Users\\hbais\\Desktop\\P2CP\\CodeWin\\CodeWin\\src\\data\\";
+
+    // display-what modes
+    public static int DISPLAYING_COURSE_OVERVIEW = 0x00;
+    public static int DISPLAYING_CHAPTER_OVERVIEW = 0x01;
+    public static int DISPLAYING_COURSE = 0x02;
 }

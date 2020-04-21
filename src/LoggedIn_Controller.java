@@ -24,13 +24,6 @@ import org.json.JSONObject;
 
 public class LoggedIn_Controller {
 
-    //region FXML declarations
-    @FXML
-    private ResourceBundle resources;
-
-    @FXML
-    private URL location;
-
     @FXML
     private Pane UsernameSignInPane;
 
@@ -69,8 +62,9 @@ public class LoggedIn_Controller {
 
     @FXML
     private Pane side_bar_activated_pane;
-    //endregion
 
+    private int diplayingWhat = Settings.DISPLAYING_COURSE_OVERVIEW; // mainly to decide action to take when previous<->next labels are hit
+    private CourseCoord courseCoord;
 
     private static User user;   // Signed In user
     public static User getUser() {
@@ -206,9 +200,11 @@ public class LoggedIn_Controller {
             controller.setAll(title, nCourses, nQuestions, nQuizes);
 
             Pane holder = controller.getHolderPane();
-            holder.setOnMouseClicked( event -> {
+            int finalI = i;
+            holder.setOnMouseClicked(event -> {
                 try {
-                    this.loadChapterOverview(folder);
+                    this.loadChapterOverview(folder, finalI);
+                    this.diplayingWhat = Settings.DISPLAYING_CHAPTER_OVERVIEW;
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
@@ -264,7 +260,7 @@ public class LoggedIn_Controller {
         sidebarChaptersHolder.getChildren().add(scp);
     }
 
-    public void loadChapterOverview(String folder) throws IOException {
+    public void loadChapterOverview(String folder, int chapterID) throws IOException {
         String json_file = Main.appSettings.dataPath + folder + "Overview.json";
         String jsonOverviewString = Files.readString(Paths.get(json_file), StandardCharsets.UTF_8);
         JSONObject obj = new JSONObject(jsonOverviewString);
@@ -288,12 +284,51 @@ public class LoggedIn_Controller {
             CO_Course_Pane_Controller controller = loader.getController();
             controller.setAll(courseTitle, readTime);
             holder.getChildren().add(coursePane);
+
+            // add mouse click event
+            int finalI = i;
+            coursePane.setOnMouseClicked(mouseEvent -> {
+                try {
+                    this.displayCourse(chapterID, finalI);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            });
         }
         scp.setContent(holder);
         scp.setFitToWidth(true);
         Central_Container_SPane.getChildren().add(scp);
     }
+
+    public void displayCourse(int _chapID, int _courseID) throws IOException {
+        // update Displaying_What
+        this.diplayingWhat = Settings.DISPLAYING_COURSE;
+        CourseCoord.CO = this.courseCO; // static
+        this.courseCoord = new CourseCoord(_chapID, _courseID);
+
+        FXMLLoader coursePaneLoader = new FXMLLoader(getClass().getResource("CoursePane.fxml"));
+        Parent readCourseSPane = null;
+        try {
+            readCourseSPane = coursePaneLoader.load();
+            CoursePane_Controller cPaneController = coursePaneLoader.getController();
+            cPaneController.setCourseImagesFolder(this.courseCoord.imagesPath);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        CoursePane_Controller coursePaneController = coursePaneLoader.getController();
+        try {
+            coursePaneController.displayFromJson(this.courseCoord.filePath);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        Central_Container_SPane.getChildren().clear();
+        Central_Container_SPane.getChildren().add(readCourseSPane);
+        Central_Up_Title_Label.setText(this.courseCoord.getCourseTitle());
+    }
+
     public void setStage(Stage stage) {
         this.stage = stage;
     }
+
+
 }

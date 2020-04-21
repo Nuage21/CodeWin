@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane prefHeight="41.0" prefWidth="1556.0" style="-fx-border-width: 0 0 1 0; -fx-border-color: #dddddd; -fx-background-color: #85def5;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ListElement_Controller">
+   <children>
+      <Label layoutX="27.0" layoutY="-11.0" prefHeight="41.0" prefWidth="22.0" style="-fx-text-fill: #2378aa;" text="." textFill="WHITE">
+         <font>
+            <Font name="Berlin Sans FB Bold" size="37.0" />
+         </font>
+      </Label>
+      <Label fx:id="title" layoutX="63.0" layoutY="3.0" prefHeight="35.0" prefWidth="1167.0" text="Point numero Bla bla bla bla 1">
+         <font>
+            <Font name="Verdana" size="16.0" />
+         </font>
+      </Label>
+   </children>
+</Pane>

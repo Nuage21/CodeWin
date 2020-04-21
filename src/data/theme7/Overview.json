@@ -1,0 +1,5 @@
+{
+ "courses": ["Le piéton dans le Code de la route", "Le cycliste dans le Code de la route", "Les deux-roues motorisés","Le bus dans le Code de la route","Les véhicules d’intérêt général prioritaires","Les véhicules lents, encombrants, et convois exceptionnels","Les poids lourds" ],
+  "readTimes": [15, 10, 12, 20, 7, 5, 10],
+  "files": ["course1.json", "course2.json", "course3.json", "course4.json", "course5.json", "course6.json", "course7.json"]
+}

@@ -1,0 +1,5 @@
+{
+  "courses": ["Les équipements de sécurité des véhicules ", "La sécurité et la prévention routière", "Installation des passagers" ],
+  "readTimes": [15, 10, 12],
+  "files": ["course1.json", "course2.json", "course3.json"]
+}

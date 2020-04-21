@@ -1,0 +1,5 @@
+{
+  "courses": ["Conduire dans des conditions difficiles", "Conduire sur Autoroute", "La traversĂŠe des zones dangereuses"],
+  "readTimes": [15, 10, 12],
+  "files": ["course1.json", "course2.json", "course3.json"]
+}

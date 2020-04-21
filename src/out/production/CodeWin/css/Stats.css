@@ -1,5 +1,0 @@
-.course-pane:hover{
-	-fx-effect: dropshadow(three-pass-box, purple, 10, 0, 0, 0) !important;
-	-fx-background-insets: 10 !important;
-	-fx-background-color: #125699 !important;
-}

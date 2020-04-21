@@ -1,0 +1,5 @@
+{
+ "courses": ["La protection de la zone accidentée", "L’évaluation de l’état des victimes", "Secourir les victimes"],
+  "readTimes": [15, 10, 12],
+  "files": ["course1.json", "course2.json", "course3.json"]
+}
