@@ -21,18 +21,19 @@ import java.util.ResourceBundle;
 
 public class LogErrorController implements Initializable {
     @FXML
-    Pane main ;
+    Pane main;
     @FXML
-    VBox msgbox ;
+    VBox msgbox;
 
-    public static ArrayList<Auth_Controller.Msg> list = new ArrayList<>() ;
+    public static ArrayList<Auth_Controller.Msg> list = new ArrayList<>();
 
-    public  void updMsg(){
+    public void updMsg() {
         msgbox.getChildren().clear();
-        for (Auth_Controller.Msg m :list) {
-            String valid = m.b?"valide":"invalid";
-            Label t = new Label("\t"+m.msg);
-            Image image = new Image(getClass().getResourceAsStream("img/"+valid+".jpg"));
+        for (Auth_Controller.Msg m : list) {
+            String valid = m.b ? "checked" : "unchecked";
+            Label t = new Label("\t" + m.msg);
+            t.setStyle("-fx-text-fill: white");
+            Image image = new Image(getClass().getResourceAsStream("img/" + valid + ".png"));
             ImageView img = new ImageView(image);
             img.setFitHeight(25);
             img.setFitWidth(25);
@@ -47,14 +48,15 @@ public class LogErrorController implements Initializable {
 
     }
 
-    public void errorMsg(){
-        main.setStyle( "-fx-background-size: 1200 900;"+
-                "-fx-background-radius: 18 18 18 18;"+
-                "-fx-border-radius: 18 18 18 18;"+
+    public void errorMsg() {
+        main.setStyle("-fx-background-size: 1200 900;" +
+                "-fx-background-radius: 18 18 18 18;" +
+                "-fx-border-radius: 18 18 18 18;" +
                 "-fx-background-color: #ff1a1a;");
 
-        Label er = new Label("veillez remplir ce champ correctement");
-        Image image = new Image(getClass().getResourceAsStream("img/invalid.jpg"));
+        Label er = new Label("Veuillez remplir ce champ correctement");
+        er.setStyle("-fx-text-fill: white");
+        Image image = new Image(getClass().getResourceAsStream("img/unchecked.jpg"));
         ImageView img = new ImageView(image);
         img.setFitHeight(25);
         img.setFitWidth(25);
@@ -68,10 +70,10 @@ public class LogErrorController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         updMsg();
 
-        main.setStyle( "-fx-background-size: 1200 900;"+
-                "-fx-background-radius: 18 18 18 18;"+
-                "-fx-border-radius: 18 18 18 18;"+
-                "-fx-background-color: #b3b300;");
+        main.setStyle("-fx-background-size: 1200 900;" +
+                "-fx-background-radius: 18 18 18 18;" +
+                "-fx-border-radius: 18 18 18 18;" +
+                "-fx-background-color: #2378ab;");
 
 
     }
