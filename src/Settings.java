@@ -8,6 +8,7 @@ import javafx.stage.StageStyle;
 
 public class Settings {
 
+    public static boolean MOUNIR_MODE = false; // set to true if you're Brazilien working
     public Stage appStage;
     public String dataPath = "C:\\Users\\hbais\\Desktop\\P2CP\\CodeWin\\CodeWin\\src\\data\\";
 

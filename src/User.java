@@ -17,9 +17,8 @@ public class User {
     private boolean darkmode;
     private int lang;
     // pour les stats
-    private TreeMap<Integer,Date> point ;
-    private TreeMap<Integer,Date> activité ;
-
+    private TreeMap<Integer, Date> point;
+    private TreeMap<Integer, Date> activité;
 
 
     // database settings
@@ -69,7 +68,7 @@ public class User {
             ResultSet rs = null;
 
             rs = stmt.executeQuery();
-         //   System.out.println(rs.first());
+            //   System.out.println(rs.first());
             if (rs.first() == false) {
                 return false;
             } else {
@@ -82,22 +81,21 @@ public class User {
     }
 
 
-
-	public static boolean addUser(String firstName, String lastName, String userName, Date dob, String email, String password, String numtel, String photo, String adresse, int langue, boolean darkmod) {
+    public static boolean addUser(String firstName, String lastName, String userName, Date dob, String email, String password, String numtel, String photo, String adresse, int langue, boolean darkmod) {
         String insert = "INSERT INTO users (firstName,lastName,userName,dob,email,password,numtel,photo,adresse,langue,darkmod) VALUES (?,?,?,?,?,?,?,?,?,?,?)";
-         boolean b = false;
+        boolean b = false;
         try {
             Connection conn = getConnection();
             PreparedStatement stmt = conn.prepareStatement(insert);
 
             if (userEmailExiste(email) || userNameExiste(userName)) {
-             //   System.out.println("l'utilisateur existe deja on peut pas l'ajouté");
-            	b = true;
+                //   System.out.println("l'utilisateur existe deja on peut pas l'ajouté");
+				System.out.println("_________________________________USER EXIST_________________________");
+				b = true;
             } else {
-               // String tableQuestions = "CREATE TABLE " + username + " " + "( question text,reponse_1 text DEFAULT NULL,reponse_2 text DEFAULT NULL ,reponse_3 text DEFAULT NULL, reponse_4 text DEFAULT NULL);";
+                // String tableQuestions = "CREATE TABLE " + username + " " + "( question text,reponse_1 text DEFAULT NULL,reponse_2 text DEFAULT NULL ,reponse_3 text DEFAULT NULL, reponse_4 text DEFAULT NULL);";
 
-
-                stmt.setString(1, firstName);
+				stmt.setString(1, firstName);
                 stmt.setString(2, lastName);
                 stmt.setString(3, userName);
                 stmt.setDate(4, dob);
@@ -117,187 +115,182 @@ public class User {
                 stmt.execute();
                 stmt.close();    */
 
-              b=false ;
-            }
+                b = false;
+
+				System.out.println("_________________________________USER INSERTED_________________________");
+			}
         } catch (SQLException e) {
+        	System.out.println("_________________________________SQL ERROR_________________________");
             System.err.println(e);
-        }finally{
-        	return b;
+        } finally {
+            return b;
         }
 
     }
 
 
-	public static boolean updateUserName(User user,String userName){
-  boolean b = false;
-if(User.userNameExiste(userName))
-{
-	return  false;
-}
-else{String update = "UPDATE users SET userName = ? WHERE userName = '" + user.getUserName()+ "'";
-try {
-    Connection conn = getConnection();
-    PreparedStatement stmt = conn.prepareStatement(update);
+    public static boolean updateUserName(User user, String userName) {
+        boolean b = false;
+        if (User.userNameExiste(userName)) {
+            return false;
+        } else {
+            String update = "UPDATE users SET userName = ? WHERE userName = '" + user.getUserName() + "'";
+            try {
+                Connection conn = getConnection();
+                PreparedStatement stmt = conn.prepareStatement(update);
 
 
-        stmt.setString(1, userName);
-        stmt.execute();
-        stmt.close();
+                stmt.setString(1, userName);
+                stmt.execute();
+                stmt.close();
 
-        b = true ;
-} catch (SQLException e) {
-    System.err.println(e);
-}finally{
-	return b;
-}
-}
+                b = true;
+            } catch (SQLException e) {
+                System.err.println(e);
+            } finally {
+                return b;
+            }
+        }
 
-	}
-
-
-	public static boolean updateEmail(User user,String email){
-		  boolean b = false;
-		if(User.userEmailExiste(email))
-		{
-			return  false;
-		}
-		else{String update = "UPDATE users SET email = ? WHERE email = '" + user.getEmail()+ "'";
-		try {
-		    Connection conn = getConnection();
-		    PreparedStatement stmt = conn.prepareStatement(update);
+    }
 
 
-		        stmt.setString(1, email);
-		        stmt.execute();
-		        stmt.close();
-
-		        b = true ;
-		} catch (SQLException e) {
-		    System.err.println(e);
-		}finally{
-			return b;
-		}
-		}
-
-			}
+    public static boolean updateEmail(User user, String email) {
+        boolean b = false;
+        if (User.userEmailExiste(email)) {
+            return false;
+        } else {
+            String update = "UPDATE users SET email = ? WHERE email = '" + user.getEmail() + "'";
+            try {
+                Connection conn = getConnection();
+                PreparedStatement stmt = conn.prepareStatement(update);
 
 
+                stmt.setString(1, email);
+                stmt.execute();
+                stmt.close();
 
-	public static boolean updateFirstName(User user,String firstName){
-		  boolean b = false;
+                b = true;
+            } catch (SQLException e) {
+                System.err.println(e);
+            } finally {
+                return b;
+            }
+        }
 
-		String update = "UPDATE users SET firstName = ? WHERE email = '" + user.getEmail()+ "' and userName = '" + user.getUserName()+"'";
-		try {
-		    Connection conn = getConnection();
-		    PreparedStatement stmt = conn.prepareStatement(update);
-
-
-		        stmt.setString(1, firstName);
-		        stmt.execute();
-		        stmt.close();
-
-		        b = true ;
-		} catch (SQLException e) {
-		    System.err.println(e);
-		}finally{
-			return b;
-		}
-		}
+    }
 
 
-	public static boolean updateLastName(User user,String lastName){
-		  boolean b = false;
+    public static boolean updateFirstName(User user, String firstName) {
+        boolean b = false;
 
-		String update = "UPDATE users SET lastName = ? WHERE email = '" + user.getEmail()+ "' and userName = '" + user.getUserName()+"'";
-		try {
-		    Connection conn = getConnection();
-		    PreparedStatement stmt = conn.prepareStatement(update);
-
-
-		        stmt.setString(1, lastName);
-		        stmt.execute();
-		        stmt.close();
-
-		        b = true ;
-		} catch (SQLException e) {
-		    System.err.println(e);
-		}finally{
-			return b;
-		}
-		}
-
-	public static boolean updateNumtel(User user,String numtel){
-		  boolean b = false;
-
-		String update = "UPDATE users SET numtel = ? WHERE email = '" + user.getEmail()+ "' and userName = '" + user.getUserName()+"'";
-		try {
-		    Connection conn = getConnection();
-		    PreparedStatement stmt = conn.prepareStatement(update);
+        String update = "UPDATE users SET firstName = ? WHERE email = '" + user.getEmail() + "' and userName = '" + user.getUserName() + "'";
+        try {
+            Connection conn = getConnection();
+            PreparedStatement stmt = conn.prepareStatement(update);
 
 
-		        stmt.setString(1, numtel);
-		        stmt.execute();
-		        stmt.close();
+            stmt.setString(1, firstName);
+            stmt.execute();
+            stmt.close();
 
-		        b = true ;
-		} catch (SQLException e) {
-		    System.err.println(e);
-		}finally{
-			return b;
-		}
-		}
-
-	public static boolean updatePassword(User user,String password){
-		  boolean b = false;
-
-		String update = "UPDATE users SET password = ? WHERE email = '" + user.getEmail()+ "' and userName = '" + user.getUserName()+"'";
-		try {
-		    Connection conn = getConnection();
-		    PreparedStatement stmt = conn.prepareStatement(update);
+            b = true;
+        } catch (SQLException e) {
+            System.err.println(e);
+        } finally {
+            return b;
+        }
+    }
 
 
-		        stmt.setString(1, password);
-		        stmt.execute();
-		        stmt.close();
+    public static boolean updateLastName(User user, String lastName) {
+        boolean b = false;
 
-		        b = true ;
-		} catch (SQLException e) {
-		    System.err.println(e);
-		}finally{
-			return b;
-		}
-		}
+        String update = "UPDATE users SET lastName = ? WHERE email = '" + user.getEmail() + "' and userName = '" + user.getUserName() + "'";
+        try {
+            Connection conn = getConnection();
+            PreparedStatement stmt = conn.prepareStatement(update);
 
 
-	public static boolean deleteUser(User user){
-		boolean b = false;
-		if(!((User.userNameExiste(user.getUserName()))||(User.userEmailExiste(user.getEmail()))))
-		{
-			return false;
-		}
-		else
-		{ String del = "DELETE FROM users WHERE email='" + user.getEmail() +"' and userName='"+ user.getUserName() + "'";
-		try {
-		    Connection conn = getConnection();
-		    PreparedStatement stmt = conn.prepareStatement(del);
+            stmt.setString(1, lastName);
+            stmt.execute();
+            stmt.close();
+
+            b = true;
+        } catch (SQLException e) {
+            System.err.println(e);
+        } finally {
+            return b;
+        }
+    }
+
+    public static boolean updateNumtel(User user, String numtel) {
+        boolean b = false;
+
+        String update = "UPDATE users SET numtel = ? WHERE email = '" + user.getEmail() + "' and userName = '" + user.getUserName() + "'";
+        try {
+            Connection conn = getConnection();
+            PreparedStatement stmt = conn.prepareStatement(update);
 
 
+            stmt.setString(1, numtel);
+            stmt.execute();
+            stmt.close();
 
-		        stmt.execute();
-		        stmt.close();
+            b = true;
+        } catch (SQLException e) {
+            System.err.println(e);
+        } finally {
+            return b;
+        }
+    }
 
-		        b = true ;
-		} catch (SQLException e) {
-		    System.err.println(e);
-		}finally{
-			return b;
-		}
+    public static boolean updatePassword(User user, String password) {
+        boolean b = false;
 
-		}
-
-	}
+        String update = "UPDATE users SET password = ? WHERE email = '" + user.getEmail() + "' and userName = '" + user.getUserName() + "'";
+        try {
+            Connection conn = getConnection();
+            PreparedStatement stmt = conn.prepareStatement(update);
 
 
+            stmt.setString(1, password);
+            stmt.execute();
+            stmt.close();
+
+            b = true;
+        } catch (SQLException e) {
+            System.err.println(e);
+        } finally {
+            return b;
+        }
+    }
+
+
+    public static boolean deleteUser(User user) {
+        boolean b = false;
+        if (!((User.userNameExiste(user.getUserName())) || (User.userEmailExiste(user.getEmail())))) {
+            return false;
+        } else {
+            String del = "DELETE FROM users WHERE email='" + user.getEmail() + "' and userName='" + user.getUserName() + "'";
+            try {
+                Connection conn = getConnection();
+                PreparedStatement stmt = conn.prepareStatement(del);
+
+
+                stmt.execute();
+                stmt.close();
+
+                b = true;
+            } catch (SQLException e) {
+                System.err.println(e);
+            } finally {
+                return b;
+            }
+
+        }
+
+    }
 
 
     //les setters et les getters
@@ -309,36 +302,36 @@ try {
 
 
     public String getUserName() {
-		return userName;
-	}
+        return userName;
+    }
 
 
-	public void setUserName(String userName) {
-		this.userName = userName;
-	}
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
 
 
-	public String getLastName() {
-		return lastName;
-	}
+    public String getLastName() {
+        return lastName;
+    }
 
 
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
-	}
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
 
 
-	public String getFirstName() {
-		return firstName;
-	}
+    public String getFirstName() {
+        return firstName;
+    }
 
 
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
-	}
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
 
 
-	public void setTelephone(String telephone) {
+    public void setTelephone(String telephone) {
         this.telephone = telephone;
     }
 
@@ -363,19 +356,17 @@ try {
     }
 
 
-
-
     public String getPhoto() {
-		return photo;
-	}
+        return photo;
+    }
 
 
-	public void setPhoto(String photo) {
-		this.photo = photo;
-	}
+    public void setPhoto(String photo) {
+        this.photo = photo;
+    }
 
 
-	public String getPassword() {
+    public String getPassword() {
         return password;
     }
 
@@ -413,8 +404,6 @@ try {
     public void setLang(int lang) {
         this.lang = lang;
     }
-
-
 
 
 }

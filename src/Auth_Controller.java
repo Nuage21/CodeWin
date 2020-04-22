@@ -191,14 +191,12 @@ public class Auth_Controller {
 
             if(all_is_ok){
                 if(errorStage!=null)errorStage.close();
-               // this.addUser();
+                // this.addUser();
                 Stage stg = Main.appSettings.appStage;
                 Scene sc = new Scene(root);
-
-                //stg.setFullScreen(true);
-
+                if(!Settings.MOUNIR_MODE)
+                    stg.setFullScreen(true);
                 stg.setScene(sc);
-                stg.setFullScreen(true);
                 stg.show();}
 
         });
@@ -362,15 +360,15 @@ public class Auth_Controller {
         boolean num = usr.matches("^.*[0-9].*.[0-9].*");
         boolean spec = usr.matches("^.*(?=.*[*@_;,&çà]).*$");
         LogErrorController.list.clear();
-        LogErrorController.list.add(new Msg("au moin 8 caractéres",lengh));
-        LogErrorController.list.add(new Msg("au moin 2 chiffres",num));
-        LogErrorController.list.add(new Msg("au moin un cara special",spec));
+        LogErrorController.list.add(new Msg("au moins 8 caractéres",lengh));
+        LogErrorController.list.add(new Msg("au moins 2 chiffres",num));
+        LogErrorController.list.add(new Msg("au moins un caractére special",spec));
         return lengh&&num&&spec;
     }
     public boolean notEmpty(TextField t){
         boolean emp = t.getText().length()!=0 ;
         LogErrorController.list.clear();
-        LogErrorController.list.add(new Msg("remplir ce champs",emp));
+        LogErrorController.list.add(new Msg("remplire ce champ",emp));
         return emp ;
     }
     public boolean mailVer(){
@@ -383,13 +381,13 @@ public class Auth_Controller {
         boolean is_not_used = true; // BDD request here
         LogErrorController.list.clear();
         LogErrorController.list.add(new Msg("format de mail valide",valide_mail));
-        LogErrorController.list.add(new Msg("mail non utilisé",is_not_used));
+        LogErrorController.list.add(new Msg("Email non utilisé",is_not_used));
         return valide_mail&&is_not_used ;
     }
     public boolean dateVer(){
         boolean empty = DatePickerField.getValue() != null;
         LogErrorController.list.clear();
-        LogErrorController.list.add(new Msg("selectionnez une date",empty));
+        LogErrorController.list.add(new Msg("Selectionner une date",empty));
         return empty ;
     }
 
