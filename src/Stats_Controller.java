@@ -26,32 +26,34 @@ public class Stats_Controller {
     @FXML
     private AreaChart<String, Number> progressionAreaChart;
 
-    @FXML CategoryAxis activityChartXCategoryAxis;
-    @FXML CategoryAxis progressionChartXCategoryAxis;
+    @FXML
+    CategoryAxis activityChartXCategoryAxis;
+    @FXML
+    CategoryAxis progressionChartXCategoryAxis;
 
-    @FXML NumberAxis activityChartYNumberAxis;
-    @FXML NumberAxis progressionChartYNumberAxis;
+    @FXML
+    NumberAxis activityChartYNumberAxis;
+    @FXML
+    NumberAxis progressionChartYNumberAxis;
     //endregion
-
-
-
 
 
     @FXML
     void initialize() throws ParseException {
-        traceActivity(randomtrace(),activityAreaChart,"code");
-        traceActivity(randomtrace(),progressionAreaChart,"code");
+        traceActivity(randomtrace(), activityAreaChart, "code");
+        traceActivity(randomtrace(), progressionAreaChart, "code");
 
 
     }
+
     //cree un nouveau tracé a partir d une treemap ;
-    public void traceActivity(TreeMap<Integer, Integer> informations,AreaChart chart,String nom) throws ParseException {
+    public void traceActivity(TreeMap<Integer, Integer> informations, AreaChart chart, String nom) throws ParseException {
 
 
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-LLLL-yyyy ");
         XYChart.Series s = new XYChart.Series();
 
-        for(Map.Entry<Integer,Integer> entry : informations.entrySet()){
+        for (Map.Entry<Integer, Integer> entry : informations.entrySet()) {
 
 
             LocalDateTime date = LocalDateTime.ofInstant(Instant.ofEpochSecond(entry.getKey()), ZoneId.systemDefault());
@@ -61,11 +63,12 @@ public class Stats_Controller {
         }
         s.setName(nom);
         chart.getData().add(s);
-        changeLineColor(s,"0,0,255");
+        changeLineColor(s, "0,0,255");
 
 
     }
-    public void changeLineColor(XYChart.Series s,String color){ //color in RGB format
+
+    public void changeLineColor(XYChart.Series s, String color) { //color in RGB format
         Node fill = s.getNode().lookup(".chart-series-area-fill"); // only for AreaChart
         Node line = s.getNode().lookup(".chart-series-area-line");
 
@@ -75,17 +78,14 @@ public class Stats_Controller {
     }
 
 
-
-
-    public TreeMap randomtrace(){
-
-        int j = (int) (new Date().getTime()/1000);
+    public TreeMap randomtrace() {
+        int j = (int) (new Date().getTime() / 1000);
         Random rand = new Random();
         TreeMap tree = new TreeMap();
-        for(int i=0;i<15;i++){
-            tree.put(j-80000*i,rand.nextInt()%100+100) ;
+        for (int i = 0; i < 15; i++) {
+            tree.put(j - 80000 * i, rand.nextInt() % 100 + 100);
         }
-        return tree ;
+        return tree;
     }
 
     // sauveguarde le couple dateActuelle(Da) et value (qui est soit le nb de point today ou le temps passé )
@@ -96,24 +96,22 @@ public class Stats_Controller {
 
 
     // ajout d une nouvelle valeur
-    public String saveTreemapBdd(int value , String chaine_intiale){
-        int j = (int) (new Date().getTime()/1000);
+    public String saveTreemapBdd(int value, String chaine_intiale) {
+        int j = (int) (new Date().getTime() / 1000);
 
-        return chaine_intiale+"-"+Integer.toString(j)+","+Integer.toString(value);
+        return chaine_intiale + "-" + Integer.toString(j) + "," + Integer.toString(value);
     }
 
-    public TreeMap loadTreemapBdd(String chaine_sauvgarde){
-        TreeMap ret = new TreeMap( ) ;
+    public TreeMap loadTreemapBdd(String chaine_sauvgarde) {
+        TreeMap ret = new TreeMap();
 
-        for(String s : chaine_sauvgarde.split("-")){
+        for (String s : chaine_sauvgarde.split("-")) {
             String[] date = s.split(",");
 
-            ret.put(Integer.parseInt(date[0]),Integer.parseInt(date[1]));
+            ret.put(Integer.parseInt(date[0]), Integer.parseInt(date[1]));
         }
-        return ret ;
+        return ret;
     }
-
-
 
 
 }

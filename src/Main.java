@@ -12,18 +12,17 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
+
+        appSettings.appStage = primaryStage;
+
         FXMLLoader loader = new FXMLLoader(getClass().getResource("Authenticator.fxml"));
         Parent root = loader.load();
-        Auth_Controller controller = loader.getController();
-        controller.setStage(primaryStage);
-
         primaryStage.setTitle("CodeWin Sign in/up");
         Scene sc = new Scene(root);
         primaryStage.setScene(sc);
         primaryStage.setResizable(false);
         primaryStage.initStyle(StageStyle.UNDECORATED);
         primaryStage.show();
-        appSettings.appStage = primaryStage;
     }
 
 

@@ -1,4 +1,3 @@
-import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -9,16 +8,13 @@ import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 
 import java.io.IOException;
-import java.net.URL;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
-import java.util.ResourceBundle;
 
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
-import jdk.jfr.Percentage;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -82,7 +78,6 @@ public class LoggedIn_Controller {
 
 
     private CourseOverview courseCO;
-    private Stage stage;
 
     @FXML
     void initialize() throws IOException {
@@ -151,7 +146,7 @@ public class LoggedIn_Controller {
                 accStage.initStyle(StageStyle.UNDECORATED);
                 accStage.setX(accountHolderPane.getLayoutX());
                 accStage.setY(accountHolderPane.getHeight() - 3);
-                accStage.initOwner(this.stage);
+                accStage.initOwner(Main.appSettings.appStage);
                 accStage.setScene(new Scene(root));
                 AccountPane_Controller ctr = loader.getController();
                 ctr.setStage(accStage);
@@ -197,8 +192,13 @@ public class LoggedIn_Controller {
         });
         this.loadCourseGeneralOverview(); // Course's General Overview shown by default
         this.viewSidebarChapters();
-    }
 
+    }
+    public void loadUserParams()
+    {
+        accountUsernameLabel.setText(LoggedIn_Controller.user.getUsername());
+
+    }
     public void sidebarFocusNewPane(Pane p)
     {
         sidebarPaneFocus(p, false);
@@ -364,10 +364,5 @@ public class LoggedIn_Controller {
         Central_Container_SPane.getChildren().add(readCourseSPane);
         Central_Up_Title_Label.setText(this.courseCoord.getCourseTitle());
     }
-
-    public void setStage(Stage stage) {
-        this.stage = stage;
-    }
-
 
 }
