@@ -1,4 +1,3 @@
-import java.sql.Date;
 import java.sql.*;
 import java.util.TreeMap;
 
@@ -130,6 +129,48 @@ public class User {
         }
 
     }
+
+
+	   public static User getUserBDD(String username,String email){
+
+		   User user = null;
+		   String select = "SELECT * From users_info WHERE username = ? and email = ?";
+
+	        try {
+	            Connection conn = getConnection();
+	            PreparedStatement stmt = conn.prepareStatement(select);
+
+	            if (!(userEmailExiste(email) || userNameExiste(username))) {
+
+	               System.out.println("________________________USER OLACH_____________________");
+
+	            } else {
+
+
+	            	 stmt.setString(1, username);
+		             stmt.setString(2, email);
+	            	 ResultSet rs = null ;
+
+	 	            rs = stmt.executeQuery();
+                 rs.first();
+
+      user = new User(username, rs.getString("password"), email, rs.getString("firstname"), rs.getString("lastname"), rs.getDate("dob"), rs.getString("address"),rs.getString("mobile") );
+
+rs.close();
+	            }
+
+
+	        } catch (SQLException e) {
+	            System.out.println("_________________________________SQL ERROR_________________________");
+	            System.err.println(e);
+	        }
+	        finally
+	        {
+	            return user;
+	        }
+
+
+	    }
 
 
     public static boolean updateUserName(User user, String userName) {
