@@ -1,4 +1,15 @@
-import java.net.URL;
+
+import javafx.fxml.FXML;
+import javafx.scene.Node;
+import javafx.scene.chart.AreaChart;
+import javafx.scene.chart.CategoryAxis;
+import javafx.scene.chart.NumberAxis;
+import javafx.scene.chart.XYChart;
+import org.json.JSONObject;
+
+
+import java.io.FileWriter;
+import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.Instant;
@@ -7,24 +18,14 @@ import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
-
-import javafx.beans.property.IntegerProperty;
-import javafx.fxml.FXML;
-import javafx.scene.Node;
-import javafx.scene.chart.AreaChart;
-import javafx.scene.chart.CategoryAxis;
-import javafx.scene.chart.NumberAxis;
-import javafx.scene.chart.XYChart;
-import javafx.scene.paint.Color;
-
 public class Stats_Controller {
 
     //region FXML
     @FXML
-    private AreaChart<String, Number> activityAreaChart;
+    private AreaChart<String, Integer> activityAreaChart;
 
     @FXML
-    private AreaChart<String, Number> progressionAreaChart;
+    private AreaChart<String, Integer> progressionAreaChart;
 
     @FXML
     CategoryAxis activityChartXCategoryAxis;
@@ -40,25 +41,31 @@ public class Stats_Controller {
 
     @FXML
     void initialize() throws ParseException {
-        traceActivity(randomtrace(), activityAreaChart, "code");
-        traceActivity(randomtrace(), progressionAreaChart, "code");
+        traceWeek(randomtrace(), activityAreaChart, "code");
+        traceWeek(randomtrace(), progressionAreaChart, "code");
 
 
     }
+    public void test(){
+        TreeMap<String,Integer> s = new TreeMap() ;
+        s.put("22/04",10);
+        s.put("12/01",20);
+        try {
+            traceMonth(s,progressionAreaChart,"ff");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 
     //cree un nouveau tracé a partir d une treemap ;
-    public void traceActivity(TreeMap<Integer, Integer> informations, AreaChart chart, String nom) throws ParseException {
-
-
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-LLLL-yyyy ");
+    public void traceActivity(Map<String, Integer> informations, AreaChart chart, String nom) throws ParseException {
         XYChart.Series s = new XYChart.Series();
 
-        for (Map.Entry<Integer, Integer> entry : informations.entrySet()) {
+        for (Map.Entry<String, Integer> entry : informations.entrySet()) {
 
 
-            LocalDateTime date = LocalDateTime.ofInstant(Instant.ofEpochSecond(entry.getKey()), ZoneId.systemDefault());
-            String formattedString = date.format(formatter);
-            s.getData().add(new XYChart.Data(formattedString, entry.getValue()));
+
+            s.getData().add(new XYChart.Data(entry.getKey(),entry.getValue()));
 
         }
         s.setName(nom);
@@ -77,44 +84,56 @@ public class Stats_Controller {
         line.setStyle("-fx-stroke: rgba(" + color + ", 1.0);");
     }
 
-
     public TreeMap randomtrace() {
-        int j = (int) (new Date().getTime() / 1000);
+
+
         Random rand = new Random();
+        GregorianCalendar calendar = new GregorianCalendar() ;
+        LocalDate tm  = calendar.toZonedDateTime().toLocalDate();
         TreeMap tree = new TreeMap();
         for (int i = 0; i < 15; i++) {
-            tree.put(j - 80000 * i, rand.nextInt() % 100 + 100);
+            tree.put( tm.minusDays(i).format(DateTimeFormatter.ofPattern("dd/MM")), rand.nextInt() % 50 + 50);
         }
+
         return tree;
     }
 
-    // sauveguarde le couple dateActuelle(Da) et value (qui est soit le nb de point today ou le temps passé )
-    // format du treemap : <date,valeur>
-    // pr le temps passé Tp :  recupérer le temp lors de la connextion avec :
-    //  int j = (int) (new Date().getTime()/1000);
-    //et avant la deconexion recuperer : TP =  (int) (new Date().getTime()/1000) - j ;
 
+    public void traceWeek(Map<String,Integer> data,AreaChart chart,String nom) throws ParseException { // trace the the last 15 days days starting from yesterday
+        GregorianCalendar calendar = new GregorianCalendar() ;
+        TreeMap<String,Integer> map = new TreeMap();
+        LocalDate tm  = calendar.toZonedDateTime().toLocalDate();
+        tm = tm.minusDays(15) ;  // nombre de jours a tracer  :
+        for(int i=0;i<15;i++) {
+            String s = tm.plusDays(i).format(DateTimeFormatter.ofPattern("dd/MM"));
+            if(data.containsKey(s)) map.put(s,data.get(s));
+            else map.put(s,0);
+        }
+        traceActivity(map,chart,nom);
 
-    // ajout d une nouvelle valeur
-    public String saveTreemapBdd(int value, String chaine_intiale) {
-        int j = (int) (new Date().getTime() / 1000);
-
-        return chaine_intiale + "-" + Integer.toString(j) + "," + Integer.toString(value);
     }
 
-    public TreeMap loadTreemapBdd(String chaine_sauvgarde) {
-        TreeMap ret = new TreeMap();
+    public void traceMonth(TreeMap<String,Integer> data,AreaChart chart,String nom) throws ParseException { // trace les 12 derniers mois (fck it au bout d une annees si t as pas ton code cque t est pas sencé l avoire)
+        GregorianCalendar calendar = new GregorianCalendar();
+        LinkedHashMap<String, Integer> map = new LinkedHashMap<>();
+        LocalDate tm = calendar.toZonedDateTime().toLocalDate();
+        tm = tm.minusMonths(11);
+        for (int i = 0; i < 12; i++) {
+            int count = 0 ;
+            String s = tm.plusMonths(i).format(DateTimeFormatter.ofPattern("/MM"));
+            for(int j=1;j<=31;j++){
+                String st = j<10? "0"+Integer.toString(j)+s  :  Integer.toString(j)+s ;
+                if(data.containsKey(st)) count += data.get(st) ;
 
-        for (String s : chaine_sauvgarde.split("-")) {
-            String[] date = s.split(",");
-
-            ret.put(Integer.parseInt(date[0]), Integer.parseInt(date[1]));
+            }
+            map.put(tm.plusMonths(i).getMonth().toString(),count);
         }
-        return ret;
+        traceActivity(map,chart,nom);
     }
 
 
 }
+
 
 
 
