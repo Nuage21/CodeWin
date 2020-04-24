@@ -301,6 +301,7 @@ public class LoggedIn_Controller {
 
     public void loadChapterOverview(String folder, int chapterID) throws IOException {
         String json_file = Main.appSettings.dataPath + folder + "Overview.json";
+        System.out.println(json_file);
         String jsonOverviewString = Files.readString(Paths.get(json_file), StandardCharsets.UTF_8);
         JSONObject obj = new JSONObject(jsonOverviewString);
         JSONArray courses = obj.getJSONArray("courses");
