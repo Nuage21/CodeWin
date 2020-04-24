@@ -33,15 +33,14 @@ public class CourseCoord
     public void setPaths() throws IOException {
         String folder = CO.getChapters().get(chapterID).getFolder();
 
-        String json_file = Main.appSettings.dataPath + folder + "Overview.json";
+        String json_file = Settings.dataPath + folder + "Overview.json";
         String jsonOverviewString = Files.readString(Paths.get(json_file), StandardCharsets.UTF_8);
         JSONObject obj = new JSONObject(jsonOverviewString);
         JSONArray files = obj.getJSONArray("files");
 
-        filePath =  Main.appSettings.dataPath + folder + files.getString(courseID);
+        filePath =  Settings.dataPath + folder + files.getString(courseID);
         String filename = files.getString(courseID);
         String withoutExtension = filename.split("[.]")[0];
-        System.out.println(withoutExtension);
         imagesPath =  Main.appSettings.dataPath + folder + "img\\" + withoutExtension + "\\";
     }
 

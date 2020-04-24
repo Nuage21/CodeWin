@@ -14,6 +14,8 @@ import javafx.scene.control.*;
 
 import java.awt.*;
 import java.awt.event.InputEvent;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
@@ -33,7 +35,12 @@ public class LogErrorController implements Initializable {
             String valid = m.b ? "checked" : "unchecked";
             Label t = new Label("\t" + m.msg);
             t.setStyle("-fx-text-fill: white");
-            Image image = new Image(getClass().getResourceAsStream("img/" + valid + ".png"));
+            Image image = null;
+            try {
+                image = new Image(new FileInputStream(Settings.projectPath + "img\\" + valid + ".png"));
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            }
             ImageView img = new ImageView(image);
             img.setFitHeight(25);
             img.setFitWidth(25);
@@ -56,7 +63,12 @@ public class LogErrorController implements Initializable {
 
         Label er = new Label("Veuillez remplir ce champ correctement");
         er.setStyle("-fx-text-fill: white");
-        Image image = new Image(getClass().getResourceAsStream("img/unchecked.jpg"));
+        Image image = null;
+        try {
+            image = new Image(new FileInputStream("img/unchecked.jpg"));
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
         ImageView img = new ImageView(image);
         img.setFitHeight(25);
         img.setFitWidth(25);
