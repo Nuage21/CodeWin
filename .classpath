@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<classpath>
-	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="lib" path="C:/Users/HOUSSEM TERTAKI/Desktop/CodeWin/CodeWin/lib/mysql-connector-java-5.1.15-bin.jar"/>
-	<classpathentry kind="lib" path="src/libs/org-json.jar"/>
-	<classpathentry kind="output" path="out/production/CodeWin"/>
-</classpath>

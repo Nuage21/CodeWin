@@ -1,5 +1,0 @@
-{
-    "courses": ["L'installation au poste  de conduite", "Les vérifications rapides à faire avant de monter dans sa voiture", "les précautions pour quitter son véhicule"],
-  "readTimes": [15, 10, 12],
-  "files": ["course1.json", "course2.json", "course3.json"]
-}
