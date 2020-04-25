@@ -18,4 +18,6 @@ public class Settings {
     public static int DISPLAYING_COURSE_OVERVIEW = 0x00;
     public static int DISPLAYING_CHAPTER_OVERVIEW = 0x01;
     public static int DISPLAYING_COURSE = 0x02;
+    public static int DISPLAYING_STATISTICS = 0x03;
+    public static int DISPLAYING_PARAMETERS = 0x04;
 }

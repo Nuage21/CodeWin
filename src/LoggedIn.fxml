@@ -73,7 +73,7 @@
                                 </ImageView>
                             </children>
                         </StackPane>
-                        <Label fx:id="accountUsernameLabel" layoutX="78.0" layoutY="13.0" styleClass="accountUsername" text="Barack Obama" textFill="WHITE">
+                        <Label fx:id="accountUsernameLabel" layoutX="78.0" layoutY="13.0" prefHeight="36.0" prefWidth="169.0" scaleShape="false" styleClass="accountUsername" text="Barack Obama" textFill="WHITE">
                             <font>
                                 <Font name="Jokerman" size="23.0" />
                             </font>
@@ -134,7 +134,29 @@
                                 </Pane>
                             </children>
                         </Pane>
-                  <Pane prefHeight="61.0" prefWidth="587.0" />
+                  <Pane prefHeight="61.0" prefWidth="587.0">
+                     <children>
+                        <Pane fx:id="pointsHolderPane" layoutX="266.0" layoutY="6.0" prefHeight="47.0" prefWidth="213.0" style="-fx-background-color: white; -fx-border-color: #1d1d1d; -fx-border-width: 3;">
+                           <children>
+                              <Label fx:id="pointsLabel" layoutX="79.0" style="-fx-background-color: black; -fx-padding: 3;" text="1020" textFill="WHITE">
+                                 <font>
+                                    <Font name="Rockwell Bold" size="32.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Label>
+                              <Label layoutX="14.0" layoutY="14.0" text="Points" underline="true">
+                                 <font>
+                                    <Font name="Rockwell" size="17.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="DEFAULT" />
+                                 </cursor>
+                              </Label>
+                           </children>
+                        </Pane>
+                     </children></Pane>
                   <VBox fx:id="darkmodeVBox" prefHeight="61.0" prefWidth="78.0" style="-fx-padding: 16 0 0 0;" />
                   <Pane prefHeight="61.0" prefWidth="118.0">
                      <children>
@@ -143,7 +165,7 @@
                               <Font name="Rockwell" size="18.0" />
                            </font>
                            <cursor>
-                              <Cursor fx:constant="HAND" />
+                              <Cursor fx:constant="DEFAULT" />
                            </cursor>
                         </Label>
                      </children>

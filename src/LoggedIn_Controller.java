@@ -15,6 +15,7 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.TreeMap;
 
+import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import org.json.JSONArray;
@@ -47,6 +48,9 @@ public class LoggedIn_Controller {
     private Pane Central_Up_Pane;
 
     @FXML
+    private Pane pointsHolderPane;
+
+    @FXML
     private Pane Side_GO_Pane; // sidebar's general overview Pane
 
     @FXML
@@ -60,6 +64,9 @@ public class LoggedIn_Controller {
 
     @FXML
     private Label previousLabel;
+
+    @FXML
+    private Label pointsLabel;
 
     @FXML
     private Label Central_Up_Title_Label;
@@ -89,9 +96,13 @@ public class LoggedIn_Controller {
     @FXML
     void initialize() throws IOException {
 
+        pointsHolderPane.setVisible(false);
         CourseOverview CO = new CourseOverview(Main.appSettings.dataPath + "Overview.json");
         this.courseCO = CO;
         CourseCoord.CO = CO;
+
+        Font fnt = Font.loadFont(getClass().getResource("fonts/ErbosDraco1StNbpRegular-99V5.ttf").toExternalForm(), 75);
+        pointsLabel.setFont(fnt);
 
         SwitchButton modeSwitcher = new SwitchButton();
         darkmodeVBox.getChildren().add(modeSwitcher);
@@ -112,7 +123,7 @@ public class LoggedIn_Controller {
                 this.sidebarFocusNewPane(Side_Stats_Pane);
                 this.sidebarOriginalColor = "transparent";
                 Central_Up_Title_Label.setText("Statistiques");
-
+                this.setDiplayingWhat(Settings.DISPLAYING_STATISTICS);
 
             } catch (IOException e) {
                 e.printStackTrace();
@@ -129,9 +140,9 @@ public class LoggedIn_Controller {
 
                 this.sidebarFocusNewPane(Side_Params_Pane);
                 this.sidebarOriginalColor = "transparent";
-
                 Central_Up_Title_Label.setText("Paramètres du Compte");
 
+                this.setDiplayingWhat(Settings.DISPLAYING_PARAMETERS);
 
             } catch (IOException e) {
                 e.printStackTrace();
@@ -150,6 +161,7 @@ public class LoggedIn_Controller {
             } catch (IOException e) {
                 e.printStackTrace();
             }
+            this.setDiplayingWhat(Settings.DISPLAYING_COURSE_OVERVIEW);
         });
 
         accountUsernameLabel.setOnMouseEntered( (event) -> {
@@ -237,22 +249,21 @@ public class LoggedIn_Controller {
             }
             else if(this.diplayingWhat == Settings.DISPLAYING_CHAPTER_OVERVIEW)
             {
-                ArrayList<CourseOverview.ChapterOverview> chapters = this.courseCO.getChapters();
-                if(chapterID != 0) // no previous chapter
+                if(this.chapterID != 0) // no previous chapter
                 {
+                    ArrayList<CourseOverview.ChapterOverview> chapters = this.courseCO.getChapters();
                     this.SidebarChapterPanesControllersMapper.get(chapterID).unexpand();
                     this.chapterID--;
                     this.SidebarChapterPanesControllersMapper.get(chapterID).expand();
-                    Pane nextChapPane = this.sidebarChaptersPanes.get(chapterID);
+                    Pane prevChapPane = this.sidebarChaptersPanes.get(chapterID);
                     try {
                         this.loadChapterOverview(chapters.get(chapterID).getFolder(), chapterID);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
-                    this.sidebarFocusNewPane(nextChapPane);
+                    this.sidebarFocusNewPane(prevChapPane);
                     this.sidebarOriginalColor = "transparent";
                 }
-
             }
         });
 
@@ -313,7 +324,7 @@ public class LoggedIn_Controller {
                 try {
                     this.loadChapterOverview(folder, finalI);
                     this.sidebarFocusNewPane(this.sidebarChaptersPanes.get(finalI));
-                    this.diplayingWhat = Settings.DISPLAYING_CHAPTER_OVERVIEW;
+                    this.setDiplayingWhat(Settings.DISPLAYING_CHAPTER_OVERVIEW);
 
                     // sidebar focus and expand chapter's pane
                     this.sidebarFocusNewPane(this.sidebarChaptersPanes.get(finalI));
@@ -352,7 +363,6 @@ public class LoggedIn_Controller {
                 int finalI1 = i;
                 root.setOnMouseClicked(mouseEvent -> {
                     this.sidebarFocusNewPane(root);
-                    this.diplayingWhat = Settings.DISPLAYING_CHAPTER_OVERVIEW;
                     this.sidebarOriginalColor = "transparent";
                     try {
                         this.loadChapterOverview(chapter.getFolder(), finalI1);
@@ -404,13 +414,13 @@ public class LoggedIn_Controller {
     }
 
     public void loadChapterOverview(String folder, int chapterID) throws IOException {
-        this.diplayingWhat = Settings.DISPLAYING_CHAPTER_OVERVIEW;
+        this.setDiplayingWhat(Settings.DISPLAYING_CHAPTER_OVERVIEW);
+        this.chapterID = chapterID;
         String json_file = Main.appSettings.dataPath + folder + "Overview.json";
         System.out.println(json_file);
         String jsonOverviewString = Files.readString(Paths.get(json_file), StandardCharsets.UTF_8);
         JSONObject obj = new JSONObject(jsonOverviewString);
         JSONArray courses = obj.getJSONArray("courses");
-        JSONArray files = obj.getJSONArray("files");
         JSONArray readTimes = obj.getJSONArray("readTimes");
         int nCourses = courses.length();
 
@@ -451,7 +461,7 @@ public class LoggedIn_Controller {
 
     public void displayCourse(int _chapID, int _courseID) throws IOException {
         // update Displaying_What
-        this.diplayingWhat = Settings.DISPLAYING_COURSE;
+        this.setDiplayingWhat(Settings.DISPLAYING_COURSE);
         CourseCoord.CO = this.courseCO; // static
         this.courseCoord = new CourseCoord(_chapID, _courseID);
 
@@ -475,4 +485,9 @@ public class LoggedIn_Controller {
         Central_Up_Title_Label.setText(this.courseCoord.getCourseTitle());
     }
 
+    public void setDiplayingWhat(int _mode)
+    {
+        this.pointsHolderPane.setVisible(_mode == Settings.DISPLAYING_COURSE);
+        this.diplayingWhat = _mode;
+    }
 }
