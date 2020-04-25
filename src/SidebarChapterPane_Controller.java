@@ -27,7 +27,7 @@ public class SidebarChapterPane_Controller {
     @FXML
     void initialize() {
         expandStackPane.setOnMouseClicked(event -> {
-            isExpanded = !isExpanded;
+            this.isExpanded = !isExpanded;
             expandablePane.setVisible(isExpanded);
             expandablePane.setManaged(isExpanded);
             try {
@@ -35,7 +35,36 @@ public class SidebarChapterPane_Controller {
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
             }
+            event.consume();
         });
+    }
+
+    public void expand()
+    {
+        if(this.isExpanded)
+            return;
+        this.isExpanded = true;
+        expandablePane.setVisible(true);
+        expandablePane.setManaged(true);
+        try {
+            expanderImageView.setImage(new Image(new FileInputStream(expImages[0]) ));
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void unexpand()
+    {
+        if(!this.isExpanded)
+            return;
+        this.isExpanded = false;
+        expandablePane.setVisible(false);
+        expandablePane.setManaged(false);
+        try {
+            expanderImageView.setImage(new Image(new FileInputStream(expImages[1]) ));
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
     }
 
     public void setTitle(String _title) {

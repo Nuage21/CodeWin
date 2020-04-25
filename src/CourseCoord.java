@@ -6,7 +6,7 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
-public class CourseCoord
+public class CourseCoord implements Comparable<CourseCoord>
 {
     public int chapterID;
     public int courseID;
@@ -71,4 +71,12 @@ public class CourseCoord
         return CO.getChapters().get(chapterID).getCourses().get(courseID);
     }
 
+    @Override
+    public int compareTo(CourseCoord courseCoord) {
+        if(this.chapterID == courseCoord.chapterID && this.courseID == courseCoord.courseID)
+            return  0;
+        if(this.chapterID > courseCoord.chapterID  || (this.chapterID == courseCoord.chapterID && this.courseID > courseCoord.courseID))
+            return 1;
+        return -1;
+    }
 }

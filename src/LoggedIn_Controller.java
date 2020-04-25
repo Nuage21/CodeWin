@@ -12,6 +12,8 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.TreeMap;
 
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
@@ -67,7 +69,11 @@ public class LoggedIn_Controller {
 
     private int diplayingWhat = Settings.DISPLAYING_COURSE_OVERVIEW; // mainly to decide action to take when previous<->next labels are hit
     private CourseCoord courseCoord;
+    private int chapterID;
 
+    private TreeMap<CourseCoord, Pane> SidebarCoursePaneMapper= new TreeMap<>();
+    private TreeMap<Integer, SidebarChapterPane_Controller> SidebarChapterPanesControllersMapper = new TreeMap<>(); // Key: chapterID: ChapterPaneCtr
+    private ArrayList<Pane> sidebarChaptersPanes = new ArrayList<>();
     private static User user;   // Signed In user
     public static User getUser() {
         return user;
@@ -76,11 +82,16 @@ public class LoggedIn_Controller {
         LoggedIn_Controller.user = user;
     }
 
+    private String sidebarOriginalColor = "tranparent";
 
     private CourseOverview courseCO;
 
     @FXML
     void initialize() throws IOException {
+
+        CourseOverview CO = new CourseOverview(Main.appSettings.dataPath + "Overview.json");
+        this.courseCO = CO;
+        CourseCoord.CO = CO;
 
         SwitchButton modeSwitcher = new SwitchButton();
         darkmodeVBox.getChildren().add(modeSwitcher);
@@ -99,6 +110,7 @@ public class LoggedIn_Controller {
                 Central_Container_SPane.getChildren().add(scp);
                 Central_Container_SPane.setPrefHeight(1000);
                 this.sidebarFocusNewPane(Side_Stats_Pane);
+                this.sidebarOriginalColor = "transparent";
                 Central_Up_Title_Label.setText("Statistiques");
 
 
@@ -116,6 +128,7 @@ public class LoggedIn_Controller {
                 Central_Container_SPane.setPrefHeight(1000);
 
                 this.sidebarFocusNewPane(Side_Params_Pane);
+                this.sidebarOriginalColor = "transparent";
 
                 Central_Up_Title_Label.setText("Paramètres du Compte");
 
@@ -131,6 +144,7 @@ public class LoggedIn_Controller {
                 this.loadCourseGeneralOverview();
                 if(side_bar_activated_pane != Side_GO_Pane)
                     this.sidebarFocusNewPane(Side_GO_Pane);
+                    this.sidebarOriginalColor = "transparent";
                 Central_Up_Title_Label.setText("Vue Générale");
 
             } catch (IOException e) {
@@ -174,22 +188,74 @@ public class LoggedIn_Controller {
                     // Still in the same Chapter
                     try {
                         CourseCoord nextCourse = this.courseCoord.getNextCourse();
+                        SidebarChapterPanesControllersMapper.get(courseCoord.chapterID).unexpand();
                         this.displayCourse(nextCourse.chapterID, nextCourse.courseID);
+                        Pane p = SidebarCoursePaneMapper.get(new CourseCoord(nextCourse.chapterID, nextCourse.courseID));
+                        this.sidebarFocusNewPane(p);
+                        this.sidebarOriginalColor = "#abcbdb";
+                        SidebarChapterPanesControllersMapper.get(nextCourse.chapterID).expand();
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
                 }
             }
+            else if(this.diplayingWhat == Settings.DISPLAYING_CHAPTER_OVERVIEW)
+            {
+                ArrayList<CourseOverview.ChapterOverview> chapters = this.courseCO.getChapters();
+                if(chapterID + 1 < chapters.size())
+                {
+                    this.SidebarChapterPanesControllersMapper.get(chapterID).unexpand();
+                    this.chapterID++;
+                    this.SidebarChapterPanesControllersMapper.get(chapterID).expand();
+                    Pane nextChapPane = this.sidebarChaptersPanes.get(chapterID);
+                    try {
+                        this.loadChapterOverview(chapters.get(chapterID).getFolder(), chapterID);
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                    this.sidebarFocusNewPane(nextChapPane);
+                    this.sidebarOriginalColor = "transparent";
+                }
 
-            previousLabel.setOnMouseClicked(mouseEvent1 -> {
+            }
+        });
+
+        previousLabel.setOnMouseClicked(mouseEvent -> {
+            if(this.diplayingWhat == Settings.DISPLAYING_COURSE)
+            {
                 try {
                     CourseCoord previousCourse = this.courseCoord.getPreviousCourse();
+                    SidebarChapterPanesControllersMapper.get(courseCoord.chapterID).unexpand();
                     this.displayCourse(previousCourse.chapterID, previousCourse.courseID);
+                    Pane p = SidebarCoursePaneMapper.get(new CourseCoord(previousCourse.chapterID, previousCourse.courseID));
+                    this.sidebarFocusNewPane(p);
+                    this.sidebarOriginalColor = "#abcbdb";
+                    SidebarChapterPanesControllersMapper.get(previousCourse.chapterID).expand();
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
-            });
+            }
+            else if(this.diplayingWhat == Settings.DISPLAYING_CHAPTER_OVERVIEW)
+            {
+                ArrayList<CourseOverview.ChapterOverview> chapters = this.courseCO.getChapters();
+                if(chapterID != 0) // no previous chapter
+                {
+                    this.SidebarChapterPanesControllersMapper.get(chapterID).unexpand();
+                    this.chapterID--;
+                    this.SidebarChapterPanesControllersMapper.get(chapterID).expand();
+                    Pane nextChapPane = this.sidebarChaptersPanes.get(chapterID);
+                    try {
+                        this.loadChapterOverview(chapters.get(chapterID).getFolder(), chapterID);
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                    this.sidebarFocusNewPane(nextChapPane);
+                    this.sidebarOriginalColor = "transparent";
+                }
+
+            }
         });
+
         this.loadCourseGeneralOverview(); // Course's General Overview shown by default
         this.viewSidebarChapters();
 
@@ -201,6 +267,8 @@ public class LoggedIn_Controller {
     }
     public void sidebarFocusNewPane(Pane p)
     {
+        if(side_bar_activated_pane == p)
+            return;
         sidebarPaneFocus(p, false);
         sidebarPaneFocus(side_bar_activated_pane, true);
         side_bar_activated_pane = p;
@@ -208,17 +276,18 @@ public class LoggedIn_Controller {
 
     public void sidebarPaneFocus(Pane p, boolean unfocus) {
         if (unfocus)
-            p.setStyle("-fx-background-color: transparent; -fx-border-color:  transparent;");
+        {
+            p.setStyle("-fx-border-color:  transparent;");
+            p.setStyle("-fx-background-color: " + sidebarOriginalColor + " !important;");
+        }
         else
-            p.setStyle("-fx-background-color: white !important; -fx-border-color:  #1354a1");
+            p.setStyle("-fx-background-color: white !important; -fx-border-color:  #1354a1 !important;");
 
     }
 
     public void loadCourseGeneralOverview() throws IOException {
 
-        CourseOverview CO = new CourseOverview(Main.appSettings.dataPath + "Overview.json");
-        this.courseCO = CO;
-        ArrayList<CourseOverview.ChapterOverview> chapters = CO.getChapters();
+        ArrayList<CourseOverview.ChapterOverview> chapters = courseCO.getChapters();
 
         VBox vb = new VBox(); // CoursePanes' container (he's inside a ScrollPane)
 
@@ -230,7 +299,7 @@ public class LoggedIn_Controller {
 
             CourseOverview.ChapterOverview chap = chapters.get(i);
 
-            String title = CO.getChapterNomination() + " " + chap.getID() + ": " + chap.getChapterTitle();
+            String title = courseCO.getChapterNomination() + " " + chap.getID() + ": " + chap.getChapterTitle();
             int nCourses = chap.getnCourse();
             int nQuestions = chap.getnQuestions();
             int nQuizes = chap.getnQuizes();
@@ -243,7 +312,13 @@ public class LoggedIn_Controller {
             holder.setOnMouseClicked(event -> {
                 try {
                     this.loadChapterOverview(folder, finalI);
+                    this.sidebarFocusNewPane(this.sidebarChaptersPanes.get(finalI));
                     this.diplayingWhat = Settings.DISPLAYING_CHAPTER_OVERVIEW;
+
+                    // sidebar focus and expand chapter's pane
+                    this.sidebarFocusNewPane(this.sidebarChaptersPanes.get(finalI));
+                    this.SidebarChapterPanesControllersMapper.get(finalI).expand();
+                    this.sidebarOriginalColor = "transparent";
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
@@ -267,10 +342,24 @@ public class LoggedIn_Controller {
             try {
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("SideBarChapterPane.fxml"));
                 Pane root = loader.load();
+
+                this.sidebarChaptersPanes.add(root);
                 CourseOverview.ChapterOverview chapter = courseCO.getChapters().get(i);
                 SidebarChapterPane_Controller ctr = loader.getController();
                 ctr.setTitle(chapter.getChapterTitle());
                 vb.getChildren().add(root);
+
+                int finalI1 = i;
+                root.setOnMouseClicked(mouseEvent -> {
+                    this.sidebarFocusNewPane(root);
+                    this.diplayingWhat = Settings.DISPLAYING_CHAPTER_OVERVIEW;
+                    this.sidebarOriginalColor = "transparent";
+                    try {
+                        this.loadChapterOverview(chapter.getFolder(), finalI1);
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                });
 
                 VBox expandedHolder = new VBox();
 
@@ -282,12 +371,27 @@ public class LoggedIn_Controller {
                     SidebarExpandedChapterPane_Controller expController = expLoader.getController();
                     expController.setTitle("> " + courseTitle);
                     expandedHolder.getChildren().add(expCoursePane);
+
+                    int finalI = i;
+                    int finalJ = j;
+                    expCoursePane.setOnMouseClicked(mouseEvent -> {
+                        try {
+                            this.displayCourse(finalI, finalJ);
+                            this.sidebarFocusNewPane(expCoursePane);
+                            this.sidebarOriginalColor = "#abcbdb";
+
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+                    });
+                    SidebarCoursePaneMapper.put(new CourseCoord(i, j), expCoursePane);
                 }
 
                 ctr.setExpandablePane(expandedHolder);
                 expandedHolder.setManaged(false);
                 expandedHolder.setVisible(false);
                 vb.getChildren().add(expandedHolder);
+                this.SidebarChapterPanesControllersMapper.put(i, ctr); // record Expanded Pane
             }
             catch (IOException e) {
                 e.printStackTrace();
@@ -300,6 +404,7 @@ public class LoggedIn_Controller {
     }
 
     public void loadChapterOverview(String folder, int chapterID) throws IOException {
+        this.diplayingWhat = Settings.DISPLAYING_CHAPTER_OVERVIEW;
         String json_file = Main.appSettings.dataPath + folder + "Overview.json";
         System.out.println(json_file);
         String jsonOverviewString = Files.readString(Paths.get(json_file), StandardCharsets.UTF_8);
@@ -330,6 +435,10 @@ public class LoggedIn_Controller {
             coursePane.setOnMouseClicked(mouseEvent -> {
                 try {
                     this.displayCourse(chapterID, finalI);
+                    this.SidebarChapterPanesControllersMapper.get(chapterID).expand();
+                    Pane sideExpPane = this.SidebarCoursePaneMapper.get(new CourseCoord(chapterID, finalI));
+                    this.sidebarFocusNewPane(sideExpPane);
+                    this.sidebarOriginalColor = "#abcbdb";
                 } catch (IOException e) {
                     e.printStackTrace();
                 }

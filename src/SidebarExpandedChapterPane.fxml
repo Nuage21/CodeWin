@@ -2,15 +2,10 @@
 
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ProgressBar?>
 <?import javafx.scene.layout.Pane?>
 
-<Pane fx:id="holderPane" prefHeight="40.0" prefWidth="283.0" style="-fx-background-color: #abcbdb;" styleClass="expanded-pane" stylesheets="@css/SidebarChapterPane.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="SidebarExpandedChapterPane_Controller">
+<Pane fx:id="holderPane" prefHeight="40.0" prefWidth="283.0" style="-fx-background-color: #abcbdb; -fx-border-width: 0 0 0 5;" styleClass="expanded-pane" stylesheets="@css/SidebarChapterPane.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="SidebarExpandedChapterPane_Controller">
    <children>
-      <ProgressBar opacity="0.55" prefHeight="41.0" prefWidth="283.0" progress="0.0" styleClass="expanded-pane">
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor></ProgressBar>
       <Label fx:id="titleLabel" layoutX="27.0" layoutY="12.0" prefHeight="17.0" prefWidth="229.0" text="Theme 1" textFill="#363636" />
    </children>
    <cursor>

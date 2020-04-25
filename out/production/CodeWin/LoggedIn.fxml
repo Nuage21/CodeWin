@@ -267,7 +267,7 @@
                     <children>
                         <Pane fx:id="Central_Up_Pane" prefHeight="116.0" prefWidth="1570.0">
                             <children>
-                                <Label fx:id="Central_Up_Title_Label" layoutX="24.0" layoutY="16.0" prefHeight="84.0" prefWidth="866.0" text="Code de la Route" textFill="#1e1e1e">
+                                <Label fx:id="Central_Up_Title_Label" layoutX="24.0" layoutY="16.0" prefHeight="84.0" prefWidth="1510.0" text="Code de la Route" textFill="#1e1e1e">
                                     <font>
                                         <Font name="Rockwell" size="47.0" />
                                     </font>
