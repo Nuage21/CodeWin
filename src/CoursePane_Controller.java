@@ -95,6 +95,7 @@ public class CoursePane_Controller {
                     double avg_ratio =  0;
                     for(String file : images)
                     {
+                        System.out.println(file);
                         Image crop = new Image(new FileInputStream(getCorrectImageFullpath(file)));
                         avg_ratio += crop.getWidth() / crop.getHeight();
                     }
