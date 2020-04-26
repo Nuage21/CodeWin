@@ -1,5 +1,5 @@
 {
-  "courses": ["La signalisation routière","Les intersections","Les règles de priorité","La vitesse de circulation","La signalisation routière","Le stationnement et arrêt"],
+  "courses": ["La signalisation routière","Les intersections","Les règles de priorité","La vitesse de circulation","Le croisement et les dépassements","Le stationnement et arrêt"],
   "readTimes": [15, 10, 12, 20, 7, 5],
   "files": ["course1.json", "course2.json", "course3.json", "course4.json", "course5.json", "course6.json"]
 }
