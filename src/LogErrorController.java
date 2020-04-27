@@ -49,7 +49,7 @@ public class LogErrorController implements Initializable {
             msgbox.getChildren().add(t);
 
 
-            Main.appSettings.appStage.requestFocus();
+            Settings.appStage.requestFocus();
 
         }
 

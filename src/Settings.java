@@ -10,7 +10,8 @@ public class Settings {
 
     public static boolean FULLSCREEN_MODE = true; // set to true if you're Brazilien working
     public static boolean ACTIVE_DB_MODE = false; // set to true if you're Brazilien working
-    public Stage appStage;
+    public static Stage appStage;
+
     public static String dataPath = "C:\\Users\\hbais\\Desktop\\P2CP\\CodeWin\\CodeWin\\src\\data\\";
     public static String projectPath = "C:\\Users\\hbais\\Desktop\\P2CP\\CodeWin\\CodeWin\\src\\";
 
@@ -20,4 +21,5 @@ public class Settings {
     public static int DISPLAYING_COURSE = 0x02;
     public static int DISPLAYING_STATISTICS = 0x03;
     public static int DISPLAYING_PARAMETERS = 0x04;
+    public static int DISPLAYING_QUESTION = 0x05;
 }

@@ -1,23 +1,45 @@
 import org.json.JSONArray;
 import org.json.JSONObject;
-
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.ArrayList;
 
 public class CourseCoord implements Comparable<CourseCoord>
 {
     public int chapterID;
     public int courseID;
-    public String filePath;
-    public String imagesPath;
+    private String title;
+    private String filePath;
+    private String imagesPath;
+    private String core;
+    private boolean hasQuestions; // questions about this course ?
+    private ArrayList<Integer> questions = new ArrayList<>(); // Course issued questions
+
     public static CourseOverview CO;
 
     public CourseCoord(int _chapID, int _courseID) throws IOException {
         this.chapterID = _chapID;
         this.courseID = _courseID;
         this.setPaths();
+
+        String jsonCourse = Files.readString(Paths.get(filePath), StandardCharsets.UTF_8);
+        JSONObject obj = new JSONObject(jsonCourse);
+
+        this.title = obj.getString("title");
+        this.core = obj.getString("core");
+
+        this.core = this.core.replace('\n', ' ');
+        this.core = this.core.replace("  ", " ");
+        this.core = this.core.strip();
+
+        this.hasQuestions = obj.getBoolean("hasQuestions");
+
+        String qsts[] = obj.getString("questionsID").split("[~]");
+        for(String q : qsts)
+            this.questions.add(Integer.parseInt(q));
+
     }
 
     public boolean isLastCourseWithinChapter()
@@ -41,7 +63,7 @@ public class CourseCoord implements Comparable<CourseCoord>
         filePath =  Settings.dataPath + folder + files.getString(courseID);
         String filename = files.getString(courseID);
         String withoutExtension = filename.split("[.]")[0];
-        imagesPath =  Main.appSettings.dataPath + folder + "img\\" + withoutExtension + "\\";
+        imagesPath =  Settings.dataPath + folder + "img\\" + withoutExtension + "\\";
     }
 
     public CourseCoord getNextCourse() throws IOException {
@@ -68,7 +90,7 @@ public class CourseCoord implements Comparable<CourseCoord>
 
     public String getCourseTitle()
     {
-        return CO.getChapters().get(chapterID).getCourses().get(courseID);
+        return this.title;
     }
 
     @Override
@@ -79,4 +101,18 @@ public class CourseCoord implements Comparable<CourseCoord>
             return 1;
         return -1;
     }
+
+    public String getImagesPath() {
+        return imagesPath;
+    }
+
+    public String getFilePath() {
+        return filePath;
+    }
+
+    public boolean hasQuestions() {
+        return hasQuestions;
+    }
+
+    public ArrayList<Integer> getQuestions(){ return this.questions; }
 }

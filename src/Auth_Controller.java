@@ -184,7 +184,7 @@ public class Auth_Controller {
             if (all_is_ok) {
                 if (errorStage != null) errorStage.close();
                 this.addUser();
-                Stage stg = Main.appSettings.appStage;
+                Stage stg = Settings.appStage;
                 Scene sc = new Scene(root);
                 stg.setScene(sc);
                 stg.setFullScreen(Settings.FULLSCREEN_MODE);
@@ -400,7 +400,7 @@ public class Auth_Controller {
             stg.setY(p.getY() + 30);
 
             stg.setAlwaysOnTop(true);
-            stg.initOwner(Main.appSettings.appStage);
+            stg.initOwner(Settings.appStage);
             stg.initStyle(StageStyle.TRANSPARENT);
             Scene sc = new Scene(loader.load());
             sc.setFill(Color.TRANSPARENT);

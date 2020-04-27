@@ -8,12 +8,10 @@ import javafx.stage.StageStyle;
 
 public class Main extends Application {
 
-    public static Settings appSettings = new Settings();
-
     @Override
     public void start(Stage primaryStage) throws Exception {
 
-        appSettings.appStage = primaryStage;
+        Settings.appStage = primaryStage;
 
         FXMLLoader loader = new FXMLLoader(getClass().getResource("Authenticator.fxml"));
         Parent root = loader.load();

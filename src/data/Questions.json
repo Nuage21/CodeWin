@@ -1,0 +1,31 @@
+{
+  "Questions": [
+    {
+      "ID": 1,
+      "points": 10,
+      "folder": "theme1\\img\\course1\\",
+      "core": "<!img2.jpg!> Ce marquage en forme de damier indique :",
+      "propositions": ["Un sas pour cyclistes", "Un arrêt de bus", "Une voie de détresse", "Une traversée de voie de bus"],
+      "correct_answers": [0, 0, 0, 1],
+      "note": "Ce dernier blanc au sol indique une traversée de voie de bus. Le dernier peut être franchi, mais ne doit jamais être encombré."
+    },
+    {
+      "ID": 2,
+      "points": 10,
+      "folder": "theme1\\img\\course1\\",
+      "core": "<!img3.jpg!>Dans cette situation :",
+      "propositions": ["Je change de voie", "Je m’arrête", "Je change de voie ou je m’arrête", "Je ne change pas de voie et je ne m’arrête pas"],
+      "correct_answers": [1, 0, 0, 0],
+      "note": "Un véhicule est stationné à cheval sur le trottoir et empiète sur ma voie de circulation. Personne n’est engagé derrière moi sur la voie de droite, je peux donc me changer de voie, après avoir contrôlé dans l’angle mort droit qu’aucun usager ne se trouve à côté de moi."
+    },
+    {
+      "ID": 3,
+      "points": 10,
+      "folder": "theme1\\img\\course1\\",
+      "question": "<!img8.png!> Je passe:",
+      "propositions": ["Oui", "Non"],
+      "correct_answers": [0, 1],
+      "note": "Le feu, qui est passé au jaune va devenir rouge. Aucun véhicule ne me suit de près, et je suis à une distance suffisante du feu pour m’arrêter en sécurité. Je dois donc m’arrêter."
+    }
+  ]
+}

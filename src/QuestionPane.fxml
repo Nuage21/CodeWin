@@ -3,4 +3,9 @@
 <?import javafx.scene.layout.VBox?>
 
 
-<VBox fx:id="holderVBox" prefHeight="1102.0" prefWidth="1556.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="QuestionPane_Controller" />
+<VBox prefHeight="1102.0" prefWidth="1556.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="QuestionPane_Controller">
+   <children>
+      <VBox fx:id="holderVBox" prefHeight="170.0" prefWidth="1556.0" />
+      <VBox fx:id="propositionsHolderVBox" prefHeight="368.0" prefWidth="1556.0" style="-fx-padding: 5 0 0 0;" />
+   </children>
+</VBox>

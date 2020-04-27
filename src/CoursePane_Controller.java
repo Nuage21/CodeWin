@@ -122,7 +122,7 @@ public class CoursePane_Controller {
                     scp.setPrefHeight(270);
                     scp.setMinHeight(270);
                     panes.add((Parent) scp);
-                    i = endex;
+                    i = endex + 1;
                 }
             }
             else
