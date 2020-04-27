@@ -202,29 +202,10 @@ public class LoggedIn_Controller {
 
                     if (this.courseCoord.hasQuestions()) {
                         this.courseQuestions = this.courseCoord.getQuestions();
-                        int questionID = this.courseQuestions.get(questionsOffset);
-                        try {
-                            this.displayQuestion(questionID);
-                        } catch (IOException e) {
-                            e.printStackTrace();
-                        } catch (ParseException e) {
-                            e.printStackTrace();
-                        }
-                        this.questionsOffset++;
-                    } else {
-                        try {
-                            CourseCoord nextCourse = this.courseCoord.getNextCourse();
-                            SidebarChapterPanesControllersMapper.get(courseCoord.chapterID).unexpand();
-                            this.displayCourse(nextCourse.chapterID, nextCourse.courseID);
-                            Pane p = SidebarCoursePaneMapper.get(new CourseCoord(nextCourse.chapterID, nextCourse.courseID));
-                            this.sidebarFocusNewPane(p);
-                            this.sidebarOriginalColor = "#abcbdb";
-                            SidebarChapterPanesControllersMapper.get(nextCourse.chapterID).expand();
-                        } catch (IOException e) {
-                            e.printStackTrace();
-                        }
-
+                        this.displayNextQuestion();
                     }
+                    else
+                        this.displayNextCourse();
                 }
             } else if (this.diplayingWhat == Settings.DISPLAYING_CHAPTER_OVERVIEW) {
                 ArrayList<CourseOverview.ChapterOverview> chapters = this.courseCO.getChapters();
@@ -241,6 +222,13 @@ public class LoggedIn_Controller {
                     this.sidebarFocusNewPane(nextChapPane);
                     this.sidebarOriginalColor = "transparent";
                 }
+            }
+            else if(this.diplayingWhat == Settings.DISPLAYING_QUESTION)
+            {
+                if(this.questionsOffset < this.courseQuestions.size())
+                    displayNextQuestion();
+                else
+                    displayNextCourse();
             }
         });
 
@@ -497,6 +485,35 @@ public class LoggedIn_Controller {
         this.setDiplayingWhat(Settings.DISPLAYING_QUESTION);
     }
 
+    public void displayNextCourse()
+    {
+        this.courseQuestions = null;
+        this.questionsOffset = 0;
+        try {
+            CourseCoord nextCourse = this.courseCoord.getNextCourse();
+            SidebarChapterPanesControllersMapper.get(courseCoord.chapterID).unexpand();
+            this.displayCourse(nextCourse.chapterID, nextCourse.courseID);
+            Pane p = SidebarCoursePaneMapper.get(new CourseCoord(nextCourse.chapterID, nextCourse.courseID));
+            this.sidebarFocusNewPane(p);
+            this.sidebarOriginalColor = "#abcbdb";
+            SidebarChapterPanesControllersMapper.get(nextCourse.chapterID).expand();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void displayNextQuestion()
+    {
+        int questionID = this.courseQuestions.get(questionsOffset);
+        try {
+            this.displayQuestion(questionID);
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        this.questionsOffset++;
+    }
     public void setDiplayingWhat(int _mode) {
         this.pointsHolderPane.setVisible(_mode == Settings.DISPLAYING_COURSE);
         this.diplayingWhat = _mode;

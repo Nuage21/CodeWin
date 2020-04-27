@@ -21,7 +21,7 @@ public class Question {
         String jsonCourse = Files.readString(Paths.get(filename), StandardCharsets.UTF_8);
         JSONObject obj = new JSONObject(jsonCourse);
         JSONArray Questions = obj.getJSONArray("Questions");
-        JSONObject qstObj = Questions.getJSONObject(id);
+        JSONObject qstObj = Questions.getJSONObject(id - 1);
         this.id = id;
         this.points = qstObj.getInt("points");
         this.core = qstObj.getString("core");

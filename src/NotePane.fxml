@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<Pane fx:id="holder" prefHeight="168.0" prefWidth="1556.0" style="-fx-background-color: #eeeeee;" styleClass="proposition" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PropositionPane_Controller">
+   <children>
+      <Label fx:id="propositionLabel" alignment="TOP_LEFT" layoutX="24.0" layoutY="30.0" prefHeight="117.0" prefWidth="1520.0" style="-fx-background-color: #327899; -fx-padding: 15 5 5 20; -fx-background-radius: 10; -fx-border-color: #1d1d1d; -fx-border-radius: 10;" text="Le feu, qui est passé au jaune va devenir rouge. Aucun véhicule ne me suit de près, et je suis à une distance suffisante du feu pour m’arrêter en sécurité. Je dois donc m’arrêter." textFill="WHITE" wrapText="true">
+         <font>
+            <Font name="Rockwell" size="26.0" />
+         </font>
+         <effect>
+            <DropShadow height="56.58" radius="29.2725" width="62.51" />
+         </effect>
+      </Label>
+      <StackPane layoutX="2.0" layoutY="7.0" style="-fx-border-color: #1d1d1d; -fx-border-radius: 50;">
+         <children>
+            <ImageView fitHeight="46.0" fitWidth="46.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@img/icons/info.png" />
+               </image>
+            </ImageView>
+         </children>
+      </StackPane>
+   </children>
+   <cursor>
+      <Cursor fx:constant="HAND" />
+   </cursor>
+   <stylesheets>
+      <URL value="@Proposition.css" />
+      <URL value="@css/Proposition.css" />
+   </stylesheets>
+</Pane>

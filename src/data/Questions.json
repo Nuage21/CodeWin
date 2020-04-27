@@ -22,7 +22,7 @@
       "ID": 3,
       "points": 10,
       "folder": "theme1\\img\\course1\\",
-      "question": "<!img8.png!> Je passe:",
+      "core": "<!img8.png!> Je passe:",
       "propositions": ["Oui", "Non"],
       "correct_answers": [0, 1],
       "note": "Le feu, qui est passé au jaune va devenir rouge. Aucun véhicule ne me suit de près, et je suis à une distance suffisante du feu pour m’arrêter en sécurité. Je dois donc m’arrêter."
