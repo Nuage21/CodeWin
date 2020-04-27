@@ -1,6 +1,7 @@
 .idea/*
 out/*
 Project/*
+src/out.production/*
 .classpath
 .project
 CodeWin.iml
