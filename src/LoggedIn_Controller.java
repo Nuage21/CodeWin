@@ -109,6 +109,7 @@ public class LoggedIn_Controller {
 
         Font fnt = Font.loadFont(getClass().getResource("fonts/ErbosDraco1StNbpRegular-99V5.ttf").toExternalForm(), 75);
         pointsLabel.setFont(fnt);
+        pointsLabel.setText(user.);
 
         SwitchButton modeSwitcher = new SwitchButton();
         darkmodeVBox.getChildren().add(modeSwitcher);

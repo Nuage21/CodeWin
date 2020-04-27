@@ -12,12 +12,15 @@ public class User {
     private String password;
     private java.sql.Date dob;
 
+
     private boolean darkmode; // locally saved
     private String lang; // locally saved
     // pour les stats
     private TreeMap<Integer, Date> point;
-    private TreeMap<Integer, Date> activité;
+    private TreeMap<Integer, Date> activity;
 
+    private TreeMap<Integer, Integer> points; // CourseID: Points Earned
+    private TreeMap<Integer, Coord2D> lastQuestion; // CourseID: lastQuestion properly answered
 
     // database settings
     public static final String USERNAME = "sql7335090";
@@ -434,4 +437,14 @@ rs.close();
         return lang;
     }
 
+    public class Coord2D
+    {
+        public int x;
+        public int y;
+        Coord2D(int _x, int _y)
+        {
+            this.x = _x;
+            this.y = _y;
+        }
+    }
 }
