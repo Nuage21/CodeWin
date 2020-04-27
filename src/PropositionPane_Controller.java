@@ -14,6 +14,11 @@ public class PropositionPane_Controller {
     {
         holder.setOnMouseClicked( mouseEvent -> {
             propositionCheckBox.setSelected(!isChosen()); // toggle selection
+            if(isChosen())
+                holder.setStyle(holder.getStyle() + "-fx-effect: dropshadow(three-pass-box, #2389bb, 10, 0, 0, 0);");
+            else
+                holder.setStyle(holder.getStyle() + "-fx-effect: dropshadow(three-pass-box, transparent, 10, 0, 0, 0);");
+
         });
     }
 
