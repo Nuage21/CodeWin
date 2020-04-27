@@ -80,7 +80,7 @@ public class LoggedIn_Controller {
     private int chapterID;
 
     private ArrayList<Integer> courseQuestions; // when displaying questions - keep record of all <-prev|next-> qsts
-    private int questionsOffset = 0; // keep trace of questions navigation
+    private int questionsOffset = -1; // keep trace of questions navigation
 
     private TreeMap<CourseCoord, Pane> SidebarCoursePaneMapper = new TreeMap<>();
     private TreeMap<Integer, SidebarChapterPane_Controller> SidebarChapterPanesControllersMapper = new TreeMap<>(); // Key: chapterID: ChapterPaneCtr
@@ -199,13 +199,11 @@ public class LoggedIn_Controller {
 
                     }
                     // Still in the same Chapter
-
                     if (this.courseCoord.hasQuestions()) {
                         this.courseQuestions = this.courseCoord.getQuestions();
-                        this.displayNextQuestion();
-                    }
-                    else
-                        this.displayNextCourse();
+                        this.displayNeighborQuestion(true);
+                    } else
+                        this.displayNeighborCourse(true);
                 }
             } else if (this.diplayingWhat == Settings.DISPLAYING_CHAPTER_OVERVIEW) {
                 ArrayList<CourseOverview.ChapterOverview> chapters = this.courseCO.getChapters();
@@ -222,29 +220,17 @@ public class LoggedIn_Controller {
                     this.sidebarFocusNewPane(nextChapPane);
                     this.sidebarOriginalColor = "transparent";
                 }
-            }
-            else if(this.diplayingWhat == Settings.DISPLAYING_QUESTION)
-            {
-                if(this.questionsOffset < this.courseQuestions.size())
-                    displayNextQuestion();
+            } else if (this.diplayingWhat == Settings.DISPLAYING_QUESTION) {
+                if (this.questionsOffset < this.courseQuestions.size())
+                    displayNeighborQuestion(true);
                 else
-                    displayNextCourse();
+                    this.displayNeighborCourse(true);
             }
         });
 
         previousLabel.setOnMouseClicked(mouseEvent -> {
             if (this.diplayingWhat == Settings.DISPLAYING_COURSE) {
-                try {
-                    CourseCoord previousCourse = this.courseCoord.getPreviousCourse();
-                    SidebarChapterPanesControllersMapper.get(courseCoord.chapterID).unexpand();
-                    this.displayCourse(previousCourse.chapterID, previousCourse.courseID);
-                    Pane p = SidebarCoursePaneMapper.get(new CourseCoord(previousCourse.chapterID, previousCourse.courseID));
-                    this.sidebarFocusNewPane(p);
-                    this.sidebarOriginalColor = "#abcbdb";
-                    SidebarChapterPanesControllersMapper.get(previousCourse.chapterID).expand();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
+                displayNeighborCourse(false);
             } else if (this.diplayingWhat == Settings.DISPLAYING_CHAPTER_OVERVIEW) {
                 if (this.chapterID != 0) // no previous chapter
                 {
@@ -260,6 +246,16 @@ public class LoggedIn_Controller {
                     }
                     this.sidebarFocusNewPane(prevChapPane);
                     this.sidebarOriginalColor = "transparent";
+                }
+            } else if (this.diplayingWhat == Settings.DISPLAYING_QUESTION) {
+                if (this.questionsOffset >= 1)
+                    displayNeighborQuestion(false);
+                else {
+                    try {
+                        this.displayCurrentCourse();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
                 }
             }
         });
@@ -480,17 +476,18 @@ public class LoggedIn_Controller {
         Parent root = loader.load();
         QuestionPane_Controller ctr = loader.getController();
         ctr.showQuestion(question);
+        ScrollPane scp = new ScrollPane();
+        scp.setContent(root);
         this.Central_Container_SPane.getChildren().clear();
-        this.Central_Container_SPane.getChildren().add(root);
+        this.Central_Container_SPane.getChildren().add(scp);
         this.setDiplayingWhat(Settings.DISPLAYING_QUESTION);
     }
 
-    public void displayNextCourse()
-    {
+    public void displayNeighborCourse(boolean isNext) {
         this.courseQuestions = null;
-        this.questionsOffset = 0;
+        this.questionsOffset = -1;
         try {
-            CourseCoord nextCourse = this.courseCoord.getNextCourse();
+            CourseCoord nextCourse = isNext ? this.courseCoord.getNextCourse() : this.courseCoord.getPreviousCourse();
             SidebarChapterPanesControllersMapper.get(courseCoord.chapterID).unexpand();
             this.displayCourse(nextCourse.chapterID, nextCourse.courseID);
             Pane p = SidebarCoursePaneMapper.get(new CourseCoord(nextCourse.chapterID, nextCourse.courseID));
@@ -502,8 +499,20 @@ public class LoggedIn_Controller {
         }
     }
 
-    public void displayNextQuestion()
-    {
+    public void displayCurrentCourse() throws IOException {
+        this.displayCourse(courseCoord.chapterID, courseCoord.courseID);
+        Pane p = SidebarCoursePaneMapper.get(new CourseCoord(courseCoord.chapterID, courseCoord.courseID));
+        this.sidebarFocusNewPane(p);
+        this.sidebarOriginalColor = "#abcbdb";
+        SidebarChapterPanesControllersMapper.get(courseCoord.chapterID).expand();
+    }
+
+    public void displayNeighborQuestion(boolean isNext) {
+        if (isNext)
+            this.questionsOffset++;
+        else
+            this.questionsOffset--;
+
         int questionID = this.courseQuestions.get(questionsOffset);
         try {
             this.displayQuestion(questionID);
@@ -512,10 +521,10 @@ public class LoggedIn_Controller {
         } catch (ParseException e) {
             e.printStackTrace();
         }
-        this.questionsOffset++;
     }
+
     public void setDiplayingWhat(int _mode) {
-        this.pointsHolderPane.setVisible(_mode == Settings.DISPLAYING_COURSE);
+        this.pointsHolderPane.setVisible(_mode == Settings.DISPLAYING_COURSE || _mode == Settings.DISPLAYING_QUESTION);
         this.diplayingWhat = _mode;
     }
 }

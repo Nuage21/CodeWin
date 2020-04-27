@@ -109,6 +109,17 @@ public class QuestionPane_Controller {
             this.propositionsHolderVBox.getChildren().add(tmp);
             this.propositionsControllers.add(ctr); // add controller
         }
+
+        // display note
+        if(!question.note.isEmpty())
+        {
+            FXMLLoader loader =  new FXMLLoader(getClass().getResource("NotePane.fxml"));
+            Parent root = loader.load();
+            NotePane_Controller ctr = loader.getController();
+            ctr.setNote(question.note);
+            root.setStyle("-fx-padding: 50 0 0 0 !important;");
+            this.propositionsHolderVBox.getChildren().add(root);
+        }
     }
 
     public Pane appendText(String _txt) throws IOException {
