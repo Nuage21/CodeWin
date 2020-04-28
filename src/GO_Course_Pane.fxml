@@ -9,7 +9,7 @@
 <?import javafx.scene.text.Font?>
 
 
-<BorderPane prefWidth="1345.0" styleClass="overview-chapter" stylesheets="@css/CoursePane.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GO_Course_Pane_Controller">
+<BorderPane styleClass="overview-chapter" stylesheets="@css/CoursePane.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GO_Course_Pane_Controller">
    <center>
       <Pane fx:id="holderPane" prefHeight="180.0">
          <children>

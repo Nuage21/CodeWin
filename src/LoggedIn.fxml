@@ -310,67 +310,85 @@
         </VBox>
     </right>
     <center>
-        <VBox prefHeight="617.0" prefWidth="672.0" BorderPane.alignment="CENTER">
-            <children>
-                <VBox prefHeight="933.0" prefWidth="1308.0">
-                    <children>
-                        <Pane fx:id="Central_Up_Pane" prefHeight="116.0" prefWidth="1570.0">
-                            <children>
-                                <Label fx:id="Central_Up_Title_Label" layoutX="24.0" layoutY="16.0" prefHeight="84.0" prefWidth="1510.0" text="Code de la Route" textFill="#1e1e1e">
-                                    <font>
-                                        <Font name="Rockwell" size="47.0" />
-                                    </font>
-                                </Label>
-                            </children>
-                        </Pane>
-                  <VBox fx:id="Central_Container_SPane" prefHeight="816.0" prefWidth="1570.0" />
-                    </children>
-                </VBox>
-                <Pane prefHeight="41.0" prefWidth="672.0" style="-fx-background-color: #eeeeee;">
-                    <children>
-                        <Label fx:id="previousLabel" layoutX="71.0" layoutY="9.0" styleClass="browse-label" text="Precedant" textFill="#616161">
-                            <font>
-                                <Font name="Rockwell" size="18.0" />
-                            </font>
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
+      <BorderPane BorderPane.alignment="CENTER">
+         <center>
+              <VBox prefHeight="617.0" prefWidth="672.0">
+                  <children>
+                      <VBox prefHeight="933.0" prefWidth="1308.0">
+                          <children>
+                        <VBox fx:id="Central_Container_SPane" prefHeight="844.0" prefWidth="1570.0" />
+                          </children>
+                      </VBox>
+                  </children>
+              </VBox>
+         </center>
+         <top>
+                  <Pane fx:id="Central_Up_Pane" prefHeight="116.0" prefWidth="1570.0" BorderPane.alignment="CENTER">
+                      <children>
+                          <Label fx:id="Central_Up_Title_Label" layoutX="24.0" layoutY="16.0" prefHeight="84.0" prefWidth="1510.0" text="Code de la Route" textFill="#1e1e1e">
+                              <font>
+                                  <Font name="Rockwell" size="47.0" />
+                              </font>
+                          </Label>
+                      </children>
+                  </Pane>
+         </top>
+         <bottom>
+            <BorderPane prefHeight="38.0" prefWidth="1570.0" BorderPane.alignment="CENTER">
+               <left>
+                  <Pane prefHeight="38.0" prefWidth="156.0" style="-fx-background-color: transparent;" BorderPane.alignment="CENTER">
+                     <children>
+                              <Label fx:id="previousLabel" layoutX="50.0" layoutY="7.0" styleClass="browse-label" text="Precedant" textFill="#616161">
+                                  <font>
+                                      <Font name="Rockwell" size="18.0" />
+                                  </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                              </Label>
+                        <StackPane layoutX="7.0" layoutY="1.0" prefHeight="14.0" prefWidth="26.0" style="-fx-background-radius: 30; -fx-background-color: #e1e1e1;">
+                           <children>
+                              <ImageView fitHeight="34.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true" style="-fx-border-radius: 56;">
+                                 <image>
+                                    <Image url="@img/icons/back.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </StackPane>
+                     </children>
+                  </Pane>
+               </left>
+               <right>
+                  <Pane prefHeight="38.0" prefWidth="125.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <StackPane layoutX="76.0" prefHeight="28.0" prefWidth="25.0" style="-fx-background-radius: 30; -fx-background-color: #e1e1e1;">
+                           <children>
+                              <ImageView fitHeight="34.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true" style="-fx-border-radius: 56;">
+                                 <image>
+                                    <Image url="@img/icons/next.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </StackPane>
+                        <Label fx:id="nextLabel" layoutX="8.0" layoutY="7.0" styleClass="browse-label" text="Suivant" textFill="#616161">
+                           <font>
+                              <Font name="Rockwell" size="18.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
                         </Label>
-                  <StackPane layoutX="25.0" layoutY="3.0" prefHeight="14.0" prefWidth="26.0" style="-fx-background-radius: 30; -fx-background-color: #e1e1e1;">
-                     <children>
-                        <ImageView fitHeight="34.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true" style="-fx-border-radius: 56;">
-                           <image>
-                              <Image url="@img/icons/back.png" />
-                           </image>
-                        </ImageView>
                      </children>
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                  </StackPane>
-                  <StackPane layoutX="1454.0" layoutY="3.0" prefHeight="28.0" prefWidth="25.0" style="-fx-background-radius: 30; -fx-background-color: #e1e1e1;">
-                     <children>
-                        <ImageView fitHeight="34.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true" style="-fx-border-radius: 56;">
-                           <image>
-                              <Image url="@img/icons/next.png" />
-                           </image>
-                        </ImageView>
-                     </children>
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                  </StackPane>
-                  <Label fx:id="nextLabel" layoutX="1378.0" layoutY="8.0" styleClass="browse-label" text="Suivant" textFill="#616161">
-                     <font>
-                        <Font name="Rockwell" size="18.0" />
-                     </font>
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                  </Label>
-                    </children>
-                </Pane>
-            </children>
-        </VBox>
+                  </Pane>
+               </right>
+            </BorderPane>
+         </bottom>
+      </BorderPane>
     </center>
 </BorderPane>
