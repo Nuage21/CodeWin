@@ -43,6 +43,15 @@ public class LoggedIn_Controller {
     private Pane Side_Params_Pane;
 
     @FXML
+    private Pane Side_Toggle_Pane;
+
+    @FXML private Label Side_Params_Label;
+    @FXML private Label Side_Stats_Label;
+    @FXML private Label Side_Toggle_Label;
+    @FXML private Label Side_Help_Label;
+    @FXML private Label Side_GO_Label;
+
+    @FXML
     private VBox sidebarChaptersHolder;
 
     @FXML
@@ -52,13 +61,16 @@ public class LoggedIn_Controller {
     private Pane pointsHolderPane;
 
     @FXML
+    private Pane Side_CourseName_Pane;
+
+    @FXML
     private Pane Side_GO_Pane; // sidebar's general overview Pane
 
     @FXML
     private VBox Central_Container_SPane;
 
     @FXML
-    private Label Side_Stats_Label;
+    private VBox Sidebar_VBox;
 
     @FXML
     private Label nextLabel;
@@ -109,7 +121,7 @@ public class LoggedIn_Controller {
 
         Font fnt = Font.loadFont(getClass().getResource("fonts/ErbosDraco1StNbpRegular-99V5.ttf").toExternalForm(), 75);
         pointsLabel.setFont(fnt);
-        pointsLabel.setText(user.);
+        pointsLabel.setText("0000");
 
         SwitchButton modeSwitcher = new SwitchButton();
         darkmodeVBox.getChildren().add(modeSwitcher);
@@ -264,8 +276,43 @@ public class LoggedIn_Controller {
         this.loadCourseGeneralOverview(); // Course's General Overview shown by default
         this.viewSidebarChapters();
 
+        Side_Toggle_Pane.setOnMouseClicked(mouseEvent -> {
+                this.toggleSidebar();
+        });
+
     }
 
+    public void toggleSidebar()
+    {
+        boolean visibility = true;
+        double coeff = 4;
+        if(Settings.SIDEBAR_STATE == Settings.SIDEBAR_OPEN)
+        {
+            coeff = 0.25;
+            visibility = false;
+        }
+
+        this.setNodeVisibility(this.Side_Params_Label, visibility);
+        this.setNodeVisibility(this.Side_Toggle_Label, visibility);
+        this.setNodeVisibility(this.Side_Help_Label, visibility);
+        this.setNodeVisibility(this.Side_Stats_Label, visibility);
+        this.setNodeVisibility(this.Side_GO_Label, visibility);
+        this.setNodeVisibility(this.sidebarChaptersHolder, visibility);
+        this.setNodeVisibility(this.Side_CourseName_Pane, visibility);
+
+
+        double width = Sidebar_VBox.getWidth();
+        Sidebar_VBox.setMaxWidth(width * coeff);
+        Sidebar_VBox.setMinWidth(width * coeff);
+        Sidebar_VBox.setPrefWidth(width * coeff);
+
+        Settings.SIDEBAR_STATE = 1 - Settings.SIDEBAR_STATE;
+    }
+    public void setNodeVisibility(Parent p, boolean visible)
+    {
+        p.setVisible(visible);
+        p.setManaged(visible);
+    }
     public void loadUserParams() {
         accountUsernameLabel.setText(LoggedIn_Controller.user.getUsername());
 
@@ -282,9 +329,9 @@ public class LoggedIn_Controller {
     public void sidebarPaneFocus(Pane p, boolean unfocus) {
         if (unfocus) {
             p.setStyle("-fx-border-color:  transparent;");
-            p.setStyle("-fx-background-color: " + sidebarOriginalColor + " !important;");
+            p.setStyle("-fx-background-color: " + sidebarOriginalColor + ";");
         } else
-            p.setStyle("-fx-background-color: white !important; -fx-border-color:  #1354a1 !important;");
+            p.setStyle("-fx-background-color: white !important; -fx-border-color:  #1354a1;");
 
     }
 
@@ -296,7 +343,7 @@ public class LoggedIn_Controller {
 
         for (int i = 0; i < chapters.size(); ++i) {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("GO_Course_Pane.fxml"));
-            Pane course_pane = loader.load();
+            Parent course_pane = loader.load();
             GO_Course_Pane_Controller controller = loader.getController();
 
             CourseOverview.ChapterOverview chap = chapters.get(i);

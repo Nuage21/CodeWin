@@ -176,9 +176,9 @@
         </BorderPane>
     </top>
     <left>
-        <VBox prefHeight="601.0" prefWidth="283.0" style="-fx-background-color: #e1e1e1;" BorderPane.alignment="CENTER">
+        <VBox fx:id="Sidebar_VBox" style="-fx-background-color: #e1e1e1;" BorderPane.alignment="CENTER">
             <children>
-                <Pane prefHeight="117.0" prefWidth="283.0" styleClass="course-head-pane">
+                <Pane fx:id="Side_CourseName_Pane" prefHeight="117.0" prefWidth="283.0" styleClass="course-head-pane">
                     <children>
                         <Label layoutX="14.0" layoutY="33.0" text="Code de la Route" textFill="#515151">
                             <font>
@@ -192,26 +192,35 @@
                         </Label>
                     </children>
                 </Pane>
-                <Pane fx:id="Side_GO_Pane" prefHeight="64.0" prefWidth="283.0" style="-fx-background-color: white; -fx-border-color: #1354a1;" styleClass="side-left-pane">
+                <Pane fx:id="Side_GO_Pane" prefHeight="63.0" prefWidth="283.0" style="-fx-background-color: white !important;; -fx-border-color: #1354a1;" styleClass="side-left-pane">
                     <children>
-                        <Label layoutX="28.0" layoutY="14.0" text="Vue Générale" textFill="#515151">
+                        <Label fx:id="Side_GO_Label" layoutX="68.0" layoutY="17.0" text="Vue Générale" textFill="#515151">
                             <font>
                                 <Font size="20.0" />
                             </font>
                         </Label>
+                  <StackPane layoutX="12.0" layoutY="11.0" prefHeight="42.0" prefWidth="46.0" style="-fx-background-radius: 30; -fx-background-color: #e1e1e1;" styleClass="sidebar-icon-holder">
+                     <children>
+                        <ImageView fitHeight="45.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true" style="-fx-border-radius: 56;">
+                           <image>
+                              <Image url="@img/icons/index.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </StackPane>
                     </children>
                 </Pane>
-            <VBox fx:id="sidebarChaptersHolder" prefHeight="522.0" prefWidth="283.0" />
-                <VBox prefHeight="245.0" prefWidth="283.0" style="-fx-border-width: 1 0 0 0; -fx-border-color: #c1c1c1;">
+            <VBox fx:id="sidebarChaptersHolder" prefHeight="514.0" prefWidth="283.0" />
+                <VBox prefHeight="265.0" prefWidth="283.0" style="-fx-border-width: 1 0 0 0; -fx-border-color: #c1c1c1;">
                     <children>
-                        <Pane fx:id="Side_Params_Pane" prefHeight="68.0" prefWidth="283.0" styleClass="side-left-pane">
+                        <Pane fx:id="Side_Params_Pane" prefHeight="63.0" prefWidth="283.0" styleClass="side-left-pane">
                             <children>
-                                <Label layoutX="67.0" layoutY="17.0" text="Paramètres " textFill="#515151">
+                                <Label fx:id="Side_Params_Label" layoutX="67.0" layoutY="17.0" text="Paramètres " textFill="#515151">
                                     <font>
                                         <Font size="20.0" />
                                     </font>
                                 </Label>
-                                <StackPane layoutX="7.0" layoutY="6.0" prefHeight="45.0" prefWidth="50.0" style="-fx-background-radius: 30; -fx-background-color: #e1e1e1;">
+                                <StackPane layoutX="7.0" layoutY="6.0" prefHeight="45.0" prefWidth="50.0" style="-fx-background-radius: 30; -fx-background-color: #e1e1e1;" styleClass="sidebar-icon-holder">
                                     <children>
                                         <ImageView fitHeight="45.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true" style="-fx-border-radius: 56;">
                                             <image>
@@ -222,14 +231,14 @@
                                 </StackPane>
                             </children>
                         </Pane>
-                        <Pane fx:id="Side_Stats_Pane" prefHeight="69.0" prefWidth="283.0" styleClass="side-left-pane">
+                        <Pane fx:id="Side_Stats_Pane" prefHeight="65.0" prefWidth="283.0" styleClass="side-left-pane">
                             <children>
                                 <Label fx:id="Side_Stats_Label" layoutX="67.0" layoutY="17.0" text="Statistiques" textFill="#515151">
                                     <font>
                                         <Font size="20.0" />
                                     </font>
                                 </Label>
-                                <StackPane layoutX="7.0" layoutY="6.0" prefHeight="45.0" prefWidth="50.0" style="-fx-background-radius: 30; -fx-background-color: #e1e1e1;">
+                                <StackPane layoutX="7.0" layoutY="6.0" prefHeight="45.0" prefWidth="50.0" style="-fx-background-radius: 30; -fx-background-color: #e1e1e1;" styleClass="sidebar-icon-holder">
                                     <children>
                                         <ImageView fitHeight="45.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true" style="-fx-border-radius: 56;">
                                             <image>
@@ -240,24 +249,42 @@
                                 </StackPane>
                             </children>
                         </Pane>
-                        <Pane prefHeight="64.0" prefWidth="283.0" styleClass="side-left-pane">
+                        <Pane fx:id="Side_Toggle_Pane" prefHeight="61.0" prefWidth="283.0" styleClass="side-left-pane">
                             <children>
-                                <Label layoutX="67.0" layoutY="17.0" text="Aide" textFill="#515151">
+                                <Label fx:id="Side_Toggle_Label" layoutX="67.0" layoutY="13.0" text="Toggle " textFill="#515151">
                                     <font>
                                         <Font size="20.0" />
                                     </font>
                                 </Label>
-                                <StackPane layoutX="7.0" layoutY="6.0" prefHeight="45.0" prefWidth="50.0" style="-fx-background-radius: 30; -fx-background-color: #e1e1e1;">
+                                <StackPane layoutX="7.0" layoutY="6.0" prefHeight="45.0" prefWidth="50.0" style="-fx-background-radius: 30; -fx-background-color: #e1e1e1;" styleClass="sidebar-icon-holder">
                                     <children>
-                                        <ImageView fitHeight="45.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true" style="-fx-border-radius: 56;">
+                                        <ImageView fitHeight="46.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true" style="-fx-border-radius: 56;">
                                             <image>
-                                                <Image url="@img/icons/help.png" />
+                                                <Image url="@img/icons/toggle.png" />
                                             </image>
                                         </ImageView>
                                     </children>
                                 </StackPane>
                             </children>
                         </Pane>
+                  <Pane prefHeight="64.0" prefWidth="283.0" styleClass="side-left-pane">
+                     <children>
+                        <Label fx:id="Side_Help_Label" layoutX="71.0" layoutY="14.0" text="Aide" textFill="#515151">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                        <StackPane layoutX="7.0" layoutY="6.0" prefHeight="45.0" prefWidth="50.0" style="-fx-background-radius: 30; -fx-background-color: #e1e1e1;" styleClass="sidebar-icon-holder">
+                           <children>
+                              <ImageView fitHeight="43.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true" style="-fx-border-radius: 56;">
+                                 <image>
+                                    <Image url="@img/icons/help.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </StackPane>
+                     </children>
+                  </Pane>
                     </children>
                 </VBox>
             </children>

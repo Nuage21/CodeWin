@@ -38,7 +38,7 @@
 }
 
 .side-left-pane{
-	-fx-border-width:  0 0 0 5;
+	-fx-border-width:  0 0 0 3;
 	-fx-cursor: hand;
 	-fx-background-color: transparent;
 }
@@ -68,4 +68,9 @@
 
 .browse-label:hover{
 	-fx-text-fill: #1354a1;
+}
+
+.sidebar-icon-holder{
+	-fx-border-color: #cccccc;
+	-fx-border-radius: 30;
 }

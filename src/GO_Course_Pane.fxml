@@ -3,18 +3,26 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-<Pane fx:id="holderPane" prefHeight="180.0" prefWidth="1562.0" styleClass="overview-chapter" stylesheets="@css/CoursePane.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GO_Course_Pane_Controller">
-   <children>
-      <Label fx:id="titleLabel" layoutX="88.0" layoutY="14.0" prefHeight="64.0" prefWidth="929.0" text="Theme 1: La signalisation routière" textFill="#1e1e1e">
-         <font>
-            <Font name="Rockwell" size="32.0" />
-         </font>
-      </Label>
-      <Pane  layoutX="1245.0" layoutY="7.0" prefHeight="164.0" prefWidth="291.0">
+
+<BorderPane prefWidth="1345.0" styleClass="overview-chapter" stylesheets="@css/CoursePane.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GO_Course_Pane_Controller">
+   <center>
+      <Pane fx:id="holderPane" prefHeight="180.0">
+         <children>
+            <Label fx:id="titleLabel" layoutX="88.0" layoutY="14.0" prefHeight="64.0" prefWidth="929.0" text="Theme 1: La signalisation routière" textFill="#1e1e1e">
+               <font>
+                  <Font name="Rockwell" size="32.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+   </center>
+   <right>
+      <Pane prefHeight="164.0" prefWidth="291.0" BorderPane.alignment="CENTER">
          <children>
             <Label layoutX="76.0" layoutY="19.0" prefHeight="32.0" prefWidth="68.0" text="Cours : " textFill="#1e1e1e">
                <font>
@@ -75,5 +83,5 @@
             </Label>
          </children>
       </Pane>
-   </children>
-</Pane>
+   </right>
+</BorderPane>
