@@ -8,6 +8,7 @@ import javafx.scene.chart.XYChart;
 import org.json.JSONObject;
 
 
+import javax.naming.ldap.Control;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.text.ParseException;
@@ -18,7 +19,7 @@ import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
-public class Stats_Controller {
+public class Stats_Controller implements Controller {
 
     //region FXML
     @FXML
@@ -40,11 +41,9 @@ public class Stats_Controller {
 
 
     @FXML
-    void initialize() throws ParseException {
+    public void initialize() throws ParseException {
         traceWeek(randomtrace(), activityAreaChart, "code");
         traceWeek(randomtrace(), progressionAreaChart, "code");
-
-
     }
     public void test(){
         TreeMap<String,Integer> s = new TreeMap() ;
@@ -131,6 +130,18 @@ public class Stats_Controller {
         traceActivity(map,chart,nom);
     }
 
+    public void resetAreaChartsWidth(double _toadd)
+    {
+        this.__setAreaChartWidth(progressionAreaChart, progressionAreaChart.getWidth()+_toadd);
+        this.__setAreaChartWidth(activityAreaChart, activityAreaChart.getWidth() + _toadd);
+    }
+
+    public void __setAreaChartWidth(AreaChart ac, double width)
+    {
+        ac.setMinWidth(width);
+        ac.setMaxWidth(width);
+        ac.setPrefWidth(width);
+    }
 
 }
 

@@ -111,6 +111,8 @@ public class LoggedIn_Controller {
 
     private CourseOverview courseCO;
 
+    private Controller occupiedController; // Central Pane loaded fxml's controller
+
     @FXML
     void initialize() throws IOException {
 
@@ -131,8 +133,11 @@ public class LoggedIn_Controller {
         Side_Stats_Pane.setOnMouseClicked(event -> {
             Central_Container_SPane.getChildren().clear();
             try {
-                Central_Up_Pane.setPrefHeight(295);
-                Pane newLoadedPane = FXMLLoader.load(getClass().getResource("Stats.fxml"));
+//                Central_Up_Pane.setPrefHeight(295);
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("Stats.fxml"));
+                Pane newLoadedPane = loader.load();
+                Stats_Controller ctr = loader.getController();
+                this.occupiedController = ctr;
                 ScrollPane scp = new ScrollPane();
                 scp.setFitToWidth(true);
                 scp.setContent(newLoadedPane);
@@ -152,7 +157,7 @@ public class LoggedIn_Controller {
         Side_Params_Pane.setOnMouseClicked((event) -> {
             Central_Container_SPane.getChildren().clear();
             try {
-                Central_Up_Pane.setPrefHeight(295);
+//                Central_Up_Pane.setPrefHeight(295);
                 Pane newLoadedPane = FXMLLoader.load(getClass().getResource("Params.fxml"));
                 Central_Container_SPane.getChildren().add(newLoadedPane);
                 Central_Container_SPane.setPrefHeight(1000);
@@ -302,9 +307,18 @@ public class LoggedIn_Controller {
 
 
         double width = Sidebar_VBox.getWidth();
-        Sidebar_VBox.setMaxWidth(width * coeff);
-        Sidebar_VBox.setMinWidth(width * coeff);
-        Sidebar_VBox.setPrefWidth(width * coeff);
+        double newWidth = width * coeff;
+        Sidebar_VBox.setMaxWidth(newWidth);
+        Sidebar_VBox.setMinWidth(newWidth);
+        Sidebar_VBox.setPrefWidth(newWidth);
+
+
+        if(this.diplayingWhat == Settings.DISPLAYING_STATISTICS)
+        {
+            double toadd = width - newWidth;
+            Stats_Controller ctr = (Stats_Controller) this.occupiedController;
+            ctr.resetAreaChartsWidth(toadd);
+        }
 
         Settings.SIDEBAR_STATE = 1 - Settings.SIDEBAR_STATE;
     }
