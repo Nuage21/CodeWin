@@ -1,4 +1,5 @@
 
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.chart.AreaChart;
@@ -44,6 +45,14 @@ public class Stats_Controller implements Controller {
     public void initialize() throws ParseException {
         traceWeek(randomtrace(), activityAreaChart, "code");
         traceWeek(randomtrace(), progressionAreaChart, "code");
+
+        if(Settings.SIDEBAR_STATE == Settings.SIDEBAR_SHRINKED)
+        {
+            double width = Settings.SIDEBAR_WIDTH * (1 - (1 / Settings.SIDEBAR_EXTEND_COEFF));
+            Platform.runLater( ()->{
+                this.resetAreaChartsWidth(width);
+            });
+        }
     }
     public void test(){
         TreeMap<String,Integer> s = new TreeMap() ;

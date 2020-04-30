@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
@@ -18,7 +19,7 @@
             <children>
                 <HBox prefHeight="41.0" prefWidth="1975.0">
                     <children>
-                        <Pane prefHeight="82.0" prefWidth="1219.0">
+                        <Pane prefHeight="37.0" prefWidth="1367.0">
                             <children>
                                 <StackPane layoutX="1045.0" layoutY="7.0" prefHeight="27.0" prefWidth="29.0" style="-fx-background-radius: 30; -fx-background-color: #e1e1e1;">
                                     <children>
@@ -29,29 +30,16 @@
                                         </ImageView>
                                     </children>
                                 </StackPane>
-                                <StackPane layoutX="1097.0" layoutY="8.0" prefHeight="25.0" prefWidth="29.0" style="-fx-background-radius: 30; -fx-background-color: #e1e1e1;">
-                                    <children>
-                                        <ImageView fitHeight="22.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true" style="-fx-border-radius: 56;">
-                                            <image>
-                                                <Image url="@img/icons/social/facebook.png" />
-                                            </image>
-                                        </ImageView>
-                                    </children>
-                                </StackPane>
                                 <Label layoutX="715.0" layoutY="10.0" text="© 2020 CodeWin Inc. All rights reserved." textFill="WHITE">
                                     <font>
                                         <Font size="15.0" />
                                     </font>
                                 </Label>
-                                <StackPane layoutX="1147.0" layoutY="8.0" prefHeight="25.0" prefWidth="29.0" style="-fx-background-radius: 30; -fx-background-color: #e1e1e1;">
-                                    <children>
-                                        <ImageView fitHeight="22.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true" style="-fx-border-radius: 56;">
-                                            <image>
-                                                <Image url="@img/icons/social/twitter.png" />
-                                            </image>
-                                        </ImageView>
-                                    </children>
-                                </StackPane>
+                        <Hyperlink fx:id="githubHyperLink" layoutX="1076.0" layoutY="6.0" text="Check us on Github">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Hyperlink>
                             </children>
                         </Pane>
                     </children>

@@ -12,7 +12,7 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception {
 
         Settings.appStage = primaryStage;
-
+        Settings.application = this;
         FXMLLoader loader = new FXMLLoader(getClass().getResource("Authenticator.fxml"));
         Parent root = loader.load();
         primaryStage.setTitle("CodeWin Sign in/up");

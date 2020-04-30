@@ -1,20 +1,22 @@
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 
 import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.UnsupportedEncodingException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.text.ParseException;
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.TreeMap;
+import java.util.*;
 
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
@@ -24,6 +26,8 @@ import org.json.JSONObject;
 
 public class LoggedIn_Controller {
 
+    @FXML
+    Hyperlink githubHyperLink;
     @FXML
     private Pane UsernameSignInPane;
 
@@ -123,17 +127,19 @@ public class LoggedIn_Controller {
 
         Font fnt = Font.loadFont(getClass().getResource("fonts/ErbosDraco1StNbpRegular-99V5.ttf").toExternalForm(), 75);
         pointsLabel.setFont(fnt);
-        pointsLabel.setText("0000");
+        setLText(pointsLabel, "0000");
 
         SwitchButton modeSwitcher = new SwitchButton();
         darkmodeVBox.getChildren().add(modeSwitcher);
 
         side_bar_activated_pane = Side_GO_Pane;
 
+        githubHyperLink.setOnMouseClicked(mouseEvent -> {
+            Settings.application.getHostServices().showDocument(Settings.githubLink);
+        });
         Side_Stats_Pane.setOnMouseClicked(event -> {
             Central_Container_SPane.getChildren().clear();
             try {
-//                Central_Up_Pane.setPrefHeight(295);
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("Stats.fxml"));
                 Pane newLoadedPane = loader.load();
                 Stats_Controller ctr = loader.getController();
@@ -146,8 +152,9 @@ public class LoggedIn_Controller {
                 Central_Container_SPane.setPrefHeight(1000);
                 this.sidebarFocusNewPane(Side_Stats_Pane);
                 this.sidebarOriginalColor = "transparent";
-                Central_Up_Title_Label.setText("Statistiques");
+                setLText(Central_Up_Title_Label, "Statistiques");
                 this.setDiplayingWhat(Settings.DISPLAYING_STATISTICS);
+                
 
             } catch (IOException e) {
                 e.printStackTrace();
@@ -164,7 +171,7 @@ public class LoggedIn_Controller {
 
                 this.sidebarFocusNewPane(Side_Params_Pane);
                 this.sidebarOriginalColor = "transparent";
-                Central_Up_Title_Label.setText("Paramètres du Compte");
+                setLText(Central_Up_Title_Label, "Paramètres du Compte");
 
                 this.setDiplayingWhat(Settings.DISPLAYING_PARAMETERS);
 
@@ -180,7 +187,7 @@ public class LoggedIn_Controller {
                 if (side_bar_activated_pane != Side_GO_Pane)
                     this.sidebarFocusNewPane(Side_GO_Pane);
                 this.sidebarOriginalColor = "transparent";
-                Central_Up_Title_Label.setText("Vue Générale");
+                setLText(Central_Up_Title_Label, "Vue Générale");
 
             } catch (IOException e) {
                 e.printStackTrace();
@@ -285,15 +292,18 @@ public class LoggedIn_Controller {
                 this.toggleSidebar();
         });
 
+        Platform.runLater( ()-> {
+            Settings.SIDEBAR_WIDTH = this.Sidebar_VBox.getWidth();
+        });
     }
 
     public void toggleSidebar()
     {
         boolean visibility = true;
-        double coeff = 4;
-        if(Settings.SIDEBAR_STATE == Settings.SIDEBAR_OPEN)
+        double coeff = Settings.SIDEBAR_EXTEND_COEFF;
+        if(Settings.SIDEBAR_STATE == Settings.SIDEBAR_EXPANDED)
         {
-            coeff = 0.25;
+            coeff = 1 / coeff;
             visibility = false;
         }
 
@@ -328,7 +338,7 @@ public class LoggedIn_Controller {
         p.setManaged(visible);
     }
     public void loadUserParams() {
-        accountUsernameLabel.setText(LoggedIn_Controller.user.getUsername());
+        setLText(accountUsernameLabel, LoggedIn_Controller.user.getUsername());
 
     }
 
@@ -529,7 +539,7 @@ public class LoggedIn_Controller {
         }
         Central_Container_SPane.getChildren().clear();
         Central_Container_SPane.getChildren().add(readCourseSPane);
-        Central_Up_Title_Label.setText(this.courseCoord.getCourseTitle());
+        setLText(Central_Up_Title_Label, courseCoord.getCourseTitle());
     }
 
     public void displayQuestion(int id) throws IOException, ParseException {
@@ -588,5 +598,20 @@ public class LoggedIn_Controller {
     public void setDiplayingWhat(int _mode) {
         this.pointsHolderPane.setVisible(_mode == Settings.DISPLAYING_COURSE || _mode == Settings.DISPLAYING_QUESTION);
         this.diplayingWhat = _mode;
+    }
+
+    public String __(String s)
+    {
+        try {
+            return new String(s.getBytes("ISO-8859-1"), "UTF-8");
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
+        return "Encoding __ Error None";
+    }
+
+    public void setLText(Label l, String s)
+    {
+        l.setText(__(s));
     }
 }
