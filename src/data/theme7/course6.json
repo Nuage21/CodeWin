@@ -2,7 +2,9 @@
 	"themeID": 7, 
 	"courseID": 6, 
 	"title": " Les véhicules lents, encombrants, et convois exceptionnels", 
-	"core": "Les véhicules lents disposent de feux clignotants de couleur orange (exemple : véhicule d'entretien des voies, d’ordures ménagères...). Ces véhicules marquent souvent un arrêt et il faut les dépasser avec prudence. Les véhicules encombrants ont des dimensions importantes et gênent la visibilité. Ce sont des véhicules à dépasser avec prudence également. Le bon comportement à adopter est de leur faciliter le passage aux intersections ou lors d’insertion sur autoroute. Du fait de leur poids, leurs vitesses sont limitées. Ces limitations sont inscrites à l’arrière des véhicules. Les véhicules qui transportent des matières dangereuses sont identifiables avec cette plaque orange :",
+	"core": "Les véhicules lents disposent de feux clignotants de couleur orange (exemple : véhicule d'entretien des voies, d’ordures ménagères...). Ces véhicules marquent souvent un arrêt et il faut les dépasser prudemment. Les véhicules encombrants ont des dimensions très grandes et gênent la visibilité. Alors il faut les dépasser aussi mais avec prudence. La meilleure manière d'agir est de leur faciliter le passage aux intersections ou lors d’insertion sur autoroute. A cause de leur poids leurs vitesses sont limitées. Ces limitations sont inscrites à l’arrière des véhicules. Les véhicules qui transportent des matières dangereuses sont identifiables avec cette plaque orange :
+
+", 
 	"hasQuestions": true, 
 	"questionsID": "162~163"
 }
