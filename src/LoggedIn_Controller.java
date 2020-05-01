@@ -24,7 +24,7 @@ import javafx.stage.StageStyle;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-public class LoggedIn_Controller {
+public class LoggedIn_Controller implements Controller {
 
     @FXML
     Hyperlink githubHyperLink;
@@ -49,11 +49,16 @@ public class LoggedIn_Controller {
     @FXML
     private Pane Side_Toggle_Pane;
 
-    @FXML private Label Side_Params_Label;
-    @FXML private Label Side_Stats_Label;
-    @FXML private Label Side_Toggle_Label;
-    @FXML private Label Side_Help_Label;
-    @FXML private Label Side_GO_Label;
+    @FXML
+    private Label Side_Params_Label;
+    @FXML
+    private Label Side_Stats_Label;
+    @FXML
+    private Label Side_Toggle_Label;
+    @FXML
+    private Label Side_Help_Label;
+    @FXML
+    private Label Side_GO_Label;
 
     @FXML
     private VBox sidebarChaptersHolder;
@@ -118,7 +123,7 @@ public class LoggedIn_Controller {
     private Controller occupiedController; // Central Pane loaded fxml's controller
 
     @FXML
-    void initialize() throws IOException {
+    public void initialize() throws IOException {
 
         pointsHolderPane.setVisible(false);
         CourseOverview CO = new CourseOverview(Settings.dataPath + "Overview.json");
@@ -154,7 +159,7 @@ public class LoggedIn_Controller {
                 this.sidebarOriginalColor = "transparent";
                 setLText(Central_Up_Title_Label, "Statistiques");
                 this.setDiplayingWhat(Settings.DISPLAYING_STATISTICS);
-                
+
 
             } catch (IOException e) {
                 e.printStackTrace();
@@ -246,10 +251,13 @@ public class LoggedIn_Controller {
                     this.sidebarOriginalColor = "transparent";
                 }
             } else if (this.diplayingWhat == Settings.DISPLAYING_QUESTION) {
-                if (this.questionsOffset < this.courseQuestions.size())
+                if (this.questionsOffset  + 1 < this.courseQuestions.size())
                     displayNeighborQuestion(true);
                 else
+                {
                     this.displayNeighborCourse(true);
+                    this.questionsOffset = 0;
+                }
             }
         });
 
@@ -278,6 +286,7 @@ public class LoggedIn_Controller {
                 else {
                     try {
                         this.displayCurrentCourse();
+                        this.questionsOffset = -1;
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
@@ -289,20 +298,18 @@ public class LoggedIn_Controller {
         this.viewSidebarChapters();
 
         Side_Toggle_Pane.setOnMouseClicked(mouseEvent -> {
-                this.toggleSidebar();
+            this.toggleSidebar();
         });
 
-        Platform.runLater( ()-> {
+        Platform.runLater(() -> {
             Settings.SIDEBAR_WIDTH = this.Sidebar_VBox.getWidth();
         });
     }
 
-    public void toggleSidebar()
-    {
+    public void toggleSidebar() {
         boolean visibility = true;
         double coeff = Settings.SIDEBAR_EXTEND_COEFF;
-        if(Settings.SIDEBAR_STATE == Settings.SIDEBAR_EXPANDED)
-        {
+        if (Settings.SIDEBAR_STATE == Settings.SIDEBAR_EXPANDED) {
             coeff = 1 / coeff;
             visibility = false;
         }
@@ -322,21 +329,30 @@ public class LoggedIn_Controller {
         Sidebar_VBox.setMinWidth(newWidth);
         Sidebar_VBox.setPrefWidth(newWidth);
 
+        double toadd = width - newWidth;
 
-        if(this.diplayingWhat == Settings.DISPLAYING_STATISTICS)
-        {
-            double toadd = width - newWidth;
+        if (this.diplayingWhat == Settings.DISPLAYING_STATISTICS) {
             Stats_Controller ctr = (Stats_Controller) this.occupiedController;
             ctr.resetAreaChartsWidth(toadd);
+        }
+        else if(this.diplayingWhat == Settings.DISPLAYING_COURSE)
+        {
+            CoursePane_Controller ctr = (CoursePane_Controller) occupiedController;
+            double holderWidth = ctr.getHolderVBox().getWidth();
+
+            ctr.getHolderVBox().setMinWidth(holderWidth + toadd);
+            ctr.getHolderVBox().setMaxWidth(holderWidth + toadd);
+            ctr.getHolderVBox().setPrefWidth(holderWidth + toadd);
         }
 
         Settings.SIDEBAR_STATE = 1 - Settings.SIDEBAR_STATE;
     }
-    public void setNodeVisibility(Parent p, boolean visible)
-    {
+
+    public void setNodeVisibility(Parent p, boolean visible) {
         p.setVisible(visible);
         p.setManaged(visible);
     }
+
     public void loadUserParams() {
         setLText(accountUsernameLabel, LoggedIn_Controller.user.getUsername());
 
@@ -475,7 +491,6 @@ public class LoggedIn_Controller {
         this.setDiplayingWhat(Settings.DISPLAYING_CHAPTER_OVERVIEW);
         this.chapterID = chapterID;
         String json_file = Settings.dataPath + folder + "Overview.json";
-        System.out.println(json_file);
         String jsonOverviewString = Files.readString(Paths.get(json_file), StandardCharsets.UTF_8);
         JSONObject obj = new JSONObject(jsonOverviewString);
         JSONArray courses = obj.getJSONArray("courses");
@@ -532,6 +547,7 @@ public class LoggedIn_Controller {
             e.printStackTrace();
         }
         CoursePane_Controller coursePaneController = coursePaneLoader.getController();
+        this.occupiedController = coursePaneController;
         try {
             coursePaneController.displayFromJson(this.courseCoord.getFilePath());
         } catch (IOException e) {
@@ -539,7 +555,7 @@ public class LoggedIn_Controller {
         }
         Central_Container_SPane.getChildren().clear();
         Central_Container_SPane.getChildren().add(readCourseSPane);
-        setLText(Central_Up_Title_Label, courseCoord.getCourseTitle());
+        Central_Up_Title_Label.setText(courseCoord.getCourseTitle());
     }
 
     public void displayQuestion(int id) throws IOException, ParseException {
@@ -600,18 +616,11 @@ public class LoggedIn_Controller {
         this.diplayingWhat = _mode;
     }
 
-    public String __(String s)
-    {
-        try {
-            return new String(s.getBytes("ISO-8859-1"), "UTF-8");
-        } catch (UnsupportedEncodingException e) {
-            e.printStackTrace();
-        }
-        return "Encoding __ Error None";
+    public String __(String s) {
+        return new String(s.getBytes(StandardCharsets.ISO_8859_1));
     }
 
-    public void setLText(Label l, String s)
-    {
+    public void setLText(Label l, String s) {
         l.setText(__(s));
     }
 }

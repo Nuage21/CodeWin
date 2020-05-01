@@ -1,13 +1,19 @@
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
+import javafx.scene.control.CheckBox;
+import javafx.scene.control.ScrollBar;
 import javafx.scene.control.ScrollPane;
+import javafx.scene.control.TextArea;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.Font;
 import org.json.*;
 
 import java.io.File;
@@ -18,13 +24,15 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 
-public class CoursePane_Controller {
+public class CoursePane_Controller implements Controller {
     @FXML
     private VBox holderVBox;
 
     private String courseImagesFolder;
 
-    @FXML void initialize() throws IOException {
+
+    @FXML
+    public void initialize() throws IOException {
     }
 
     public void displayFromJson(String filename) throws IOException {
@@ -44,21 +52,18 @@ public class CoursePane_Controller {
 
         int clng = core.length();
         int i = 0;
-        while(i < clng)
-        {
+        while (i < clng) {
             char c = core.charAt(i);
-            if(c == '#')
-            {
+            if (c == '#') {
                 // append gathered text first
-                if(!gathered.isEmpty())
-                {
-                    Pane p = this.appendText(gathered.strip());
+                if (gathered.length() >= 5) {
+                    Parent p = this.appendText(gathered.strip());
                     panes.add(p);
                     gathered = ""; // empty
                 }
                 int depth = getHeadlineDepth(core, i);
-                int endex = getEndex(core, i+depth, '#');
-                String headline = getHeadline(core, i+depth, endex);
+                int endex = getEndex(core, i + depth, '#');
+                String headline = getHeadline(core, i + depth, endex);
                 // append new Headline
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("H" + depth + ".fxml"));
                 Pane root = loader.load();
@@ -67,13 +72,17 @@ public class CoursePane_Controller {
                 ctr.setTitle(headline);
                 panes.add((Parent) root);
                 i = endex;
-            }
-            else if(c == '-' && i + 1< clng)
-            {
-                if(core.charAt(i + 1) == '>') // element list spotted !
+            } else if (c == '-' && i + 1 < clng) {
+                if (core.charAt(i + 1) == '>') // element list spotted !
                 {
-                    int endex = getEndex(core, i+2, '#');
-                    String list_el = getHeadline(core, i+2, endex);
+                    if (gathered.length() >= 5) {
+                        Parent p = this.appendText(gathered.strip());
+                        panes.add(p);
+                        gathered = ""; // empty
+                    }
+
+                    int endex = getEndex(core, i + 2, '#');
+                    String list_el = getHeadline(core, i + 2, endex);
                     // append new Headline
                     FXMLLoader loader = new FXMLLoader(getClass().getResource("ListElement.fxml"));
                     Pane root = loader.load();
@@ -83,26 +92,34 @@ public class CoursePane_Controller {
                     panes.add((Parent) root);
                     i = endex;
                 }
-            }
-            else if(c == '<' && i + 1< clng)
-            {
-                if(core.charAt(i + 1) == '!') // image-?list spotted !
+            } else if (c == '<' && i + 1 < clng) {
+                if (core.charAt(i + 1) == '!') // image-?list spotted !
                 {
-                    int endex = getEndex(core, i+2, '!');
-                    String list = getHeadline(core, i+2, endex);
-                    String images[] = list.split("~");
+                    if (gathered.length() >= 5) {
+                        Parent p = this.appendText(gathered.strip());
+                        panes.add(p);
+                        gathered = ""; // empty
+                    }
+
+                    int endex = getEndex(core, i + 2, '!');
+                    String list = getHeadline(core, i + 2, endex);
+                    String images[] = list.split("[~]");
                     HBox box = new HBox();
-                    double avg_ratio =  0;
-                    for(String file : images)
-                    {
-                        System.out.println(file);
+                    double avg_ratio = 0;
+
+                    int nImages = 0;
+                    for (String file : images) {
+                        if (!Checker.isImage(file))
+                            continue;
                         Image crop = new Image(new FileInputStream(getCorrectImageFullpath(file)));
                         avg_ratio += crop.getWidth() / crop.getHeight();
-                    }
-                    avg_ratio /= images.length;
+                        nImages++; // different from images.length (there may be img-sources included)
 
-                    for(String file : images)
-                    {
+                    }
+                    avg_ratio /= nImages;
+                    for (String file : images) {
+                        if (!Checker.isImage(file))
+                            continue;
                         StackPane holder = new StackPane();
                         ImageView img = new ImageView();
                         Image crop = new Image(new FileInputStream(getCorrectImageFullpath(file)));
@@ -124,42 +141,46 @@ public class CoursePane_Controller {
                     panes.add((Parent) scp);
                     i = endex + 1;
                 }
-            }
-            else
+            } else
                 gathered += c;
             i++;
         }
-        gathered = gathered.strip();
-        if(!gathered.isEmpty())
-            panes.add(appendText(gathered));
+        if (gathered.length() >= 5) {
+            Parent p = this.appendText(gathered.strip());
+            panes.add(p);
+        }
         holderVBox.getChildren().addAll(panes);
     }
 
-    public Pane appendText(String _txt) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("Text.fxml"));
-        Pane root = loader.load();
-        Text_Controller ctr = loader.getController();
-        ctr.setText(_txt);
-        return root;
+    public Parent appendText(String _txt) throws IOException {
+        TextArea txta = new TextArea(_txt);
+        txta.setFont(new Font("Helvetica", 18));
+        txta.setWrapText(true);
+        txta.setStyle("-fx-padding: 5;");
+        int lng = _txt.length();
+        int rows = 2 + (int) (lng / 167.0);
+        int height = rows * 30;
+        txta.setMinHeight(height);
+        txta.setPrefHeight(height);
+        txta.setMaxHeight(height);
+        txta.setEditable(false); // block edition
+        return txta;
     }
 
-    public static int getHeadlineDepth(String core, int begIndex)
-    {
+    public static int getHeadlineDepth(String core, int begIndex) {
         int counter = 0;
         int length = core.length();
-        for(; begIndex < length && core.charAt(begIndex) == '#'; ++begIndex, ++counter);
+        for (; begIndex < length && core.charAt(begIndex) == '#'; ++begIndex, ++counter) ;
         return counter;
     }
 
-    public static int getEndex(String core, int begIndex, char sep)
-    {
+    public static int getEndex(String core, int begIndex, char sep) {
         int length = core.length();
-        for(; begIndex < length && core.charAt(begIndex) != sep; ++begIndex);
+        for (; begIndex < length && core.charAt(begIndex) != sep; ++begIndex) ;
         return begIndex;
     }
 
-    public static String getHeadline(String core, int beg, int end)
-    {
+    public static String getHeadline(String core, int beg, int end) {
         return core.substring(beg, end).strip();
     }
 
@@ -168,20 +189,22 @@ public class CoursePane_Controller {
     }
 
     // correct mistyped extensions
-    public String getCorrectImageFullpath(String file)
-    {
+    public String getCorrectImageFullpath(String file) {
         String suspect = courseImagesFolder + file;
-        if((new File(suspect)).isFile())
+        if ((new File(suspect)).isFile())
             return suspect;
         String withoutExtension = courseImagesFolder + file.split("[.]")[0];
         String extensions[] = {".jpeg", ".jpg", ".png"};
-        String fullPath = "None";
-        for(String x : extensions)
-        {
-            fullPath = withoutExtension + x;
-            if((new File(fullPath)).isFile())
+        for (String x : extensions) {
+            String fullPath = withoutExtension + x;
+            if ((new File(fullPath)).isFile())
                 return fullPath;
         }
+        Logger.log(Settings.logfile, suspect + "\n");
         return null;
+    }
+
+    public VBox getHolderVBox() {
+        return holderVBox;
     }
 }

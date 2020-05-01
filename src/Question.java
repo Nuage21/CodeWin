@@ -41,7 +41,7 @@ public class Question {
         }
 
         this.note = qstObj.getString("note");
-        this.folder = Settings.dataPath + qstObj.getString("folder");
+        this.folder = Settings.dataPath + "Questions-img\\" +  qstObj.getString("folder");
 
         return this;
     }

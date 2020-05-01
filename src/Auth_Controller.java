@@ -8,10 +8,12 @@ import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Point2D;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.Pane;
+import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
@@ -43,6 +45,8 @@ public class Auth_Controller {
     private Pane UsernamePane;
     @FXML
     private TextField UsernameField;
+
+    @FXML private VBox signupvbox;
 
     @FXML
     private Pane UsernameSignInPane;
@@ -159,9 +163,10 @@ public class Auth_Controller {
 
         signUpBtn.setOnAction((event) -> {
             Parent root = null;
-            LoggedIn_Controller ctr = null;
+            Controller ctr = null;
             try {
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("LoggedIn.fxml"));
+                String fxml = Settings.ACTIVE_EMAIL_CONFIRM?"EmailConfirm.fxml":"LoggedIn.fxml";
+                FXMLLoader loader = new FXMLLoader(getClass().getResource(fxml));
                 root = loader.load();
                 ctr = loader.getController();
             } catch (IOException e) {
@@ -184,11 +189,25 @@ public class Auth_Controller {
             if (all_is_ok) {
                 if (errorStage != null) errorStage.close();
                 this.addUser();
-                Stage stg = Settings.appStage;
-                Scene sc = new Scene(root);
-                stg.setScene(sc);
-                stg.setFullScreen(Settings.FULLSCREEN_MODE);
-                ctr.loadUserParams();
+                if(Settings.ACTIVE_EMAIL_CONFIRM)
+                {
+                    EmailConfirm_Controller controller = (EmailConfirm_Controller) ctr;
+                    for(Node n : signupvbox.getChildren())
+                    {
+                        controller.childrens.add(n);
+                    }
+                    controller.signupvbox = signupvbox;
+                    signupvbox.getChildren().clear();
+                    signupvbox.getChildren().add(root);
+                }
+                else
+                {
+                    Stage stg = Settings.appStage;
+                    Scene sc = new Scene(root);
+                    stg.setScene(sc);
+                    stg.setFullScreen(Settings.FULLSCREEN_MODE);
+                    ((LoggedIn_Controller)ctr).loadUserParams();
+                }
             }
 
         });

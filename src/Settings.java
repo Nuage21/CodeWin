@@ -12,6 +12,7 @@ public class Settings {
 
     public static boolean FULLSCREEN_MODE = true; // set to true if you're Brazilien working
     public static boolean ACTIVE_DB_MODE = false; // set to true if you're Brazilien working
+    public static boolean ACTIVE_EMAIL_CONFIRM = false; // set to true if you're Brazilien working
     public static Stage appStage;
     public static Application application;
     public static int SIDEBAR_STATE = 0;
@@ -33,6 +34,10 @@ public class Settings {
     public static double SIDEBAR_WIDTH = 0;
 
     public static double SIDEBAR_EXTEND_COEFF = 4;
+
     // social
     public static String githubLink = "https://github.com/hbFree/CodeWin";
+
+    // log files
+    public static String logfile = "C:\\Users\\hbais\\Desktop\\P2CP\\CodeWin\\CodeWin\\errors.log";
 }

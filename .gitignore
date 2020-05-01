@@ -2,7 +2,8 @@
 out/*
 Project/*
 src/out.production/*
-srx/out/*
+src/out/*
+src/.idea/*
 .classpath
 .project
 CodeWin.iml
