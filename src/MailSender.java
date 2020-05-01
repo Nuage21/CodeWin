@@ -5,16 +5,15 @@ import java.util.Properties;
 
 public class MailSender {
 
-    private  String mail = "my_mail" ; // entrez l adresse mail de l expediteur , une adresse mail ne peut envoyer que
-                                            //100 mail par jours
-    private  String mdp = "my_mdp" ;
+    private String mail; // sender's email @
+    private String mdp; // sender's pwd
 
-    public MailSender(String adresse , String mdp){
-        this.mail = adresse ;
-        this.mdp = mdp ;
+    public MailSender(String adresse, String mdp) {
+        this.mail = adresse;
+        this.mdp = mdp;
     }
 
-    public  boolean sendConfirmationMail(String mail_destinataire,String num_confirmation){
+    public boolean sendConfirmationMail(String mail_destinataire, String num_confirmation) {
         // Recipient's email ID needs to be mentioned.
         String to = mail_destinataire;
 
@@ -45,7 +44,7 @@ public class MailSender {
         });
 
         // Used to debug SMTP issues
-        session.setDebug(true);
+        session.setDebug(Settings.DEBUG_MODE);
 
         try {
             // Create a default MimeMessage object.
@@ -155,7 +154,7 @@ public class MailSender {
                     "                                                                                    </td>\n" +
                     "                                                                                </tr>\n" +
                     "                                                                                <tr>\n" +
-                    "                                                                                    <td class=\"esd-block-button es-p15t es-p15b es-p10r es-p10l\" align=\"center\"><span class=\"es-button-border\" style=\"border-radius: 20px; background: #191919 none repeat scroll 0% 0%; border-style: solid; border-color: #2cb543; border-width: 0px;\"><a href class=\"es-button\" target=\"_blank\" style=\"border-radius: 20px; font-family: lucida sans unicode,lucida grande,sans-serif; font-weight: normal; font-size: 18px; border-width: 10px 35px; background: #191919 none repeat scroll 0% 0%; border-color: #191919; color: #ffffff;\">"+num_confirmation+"</a></span></td>\n" +
+                    "                                                                                    <td class=\"esd-block-button es-p15t es-p15b es-p10r es-p10l\" align=\"center\"><span class=\"es-button-border\" style=\"border-radius: 20px; background: #191919 none repeat scroll 0% 0%; border-style: solid; border-color: #2cb543; border-width: 0px;\"><a href class=\"es-button\" target=\"_blank\" style=\"border-radius: 20px; font-family: lucida sans unicode,lucida grande,sans-serif; font-weight: normal; font-size: 18px; border-width: 10px 35px; background: #191919 none repeat scroll 0% 0%; border-color: #191919; color: #ffffff;\">" + num_confirmation + "</a></span></td>\n" +
                     "                                                                                </tr>\n" +
                     "                                                                            </tbody>\n" +
                     "                                                                        </table>\n" +
@@ -217,17 +216,14 @@ public class MailSender {
                     html_text,
                     "text/html");
 
-            System.out.println("sending...");
-            // Send message
             Transport.send(message);
-            System.out.println("Sent message successfully....");
+            if (Settings.DEBUG_MODE) System.out.println("Sent message successfully....");
         } catch (MessagingException mex) {
             mex.printStackTrace();
-            return false ;
+            return false;
         }
-        return true ;
+        return true;
     }
-
 
 
 }

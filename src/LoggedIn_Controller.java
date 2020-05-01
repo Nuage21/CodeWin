@@ -125,6 +125,9 @@ public class LoggedIn_Controller implements Controller {
     @FXML
     public void initialize() throws IOException {
 
+        Platform.runLater(()->{
+            loadUserParams();
+        });
         pointsHolderPane.setVisible(false);
         CourseOverview CO = new CourseOverview(Settings.dataPath + "Overview.json");
         this.courseCO = CO;

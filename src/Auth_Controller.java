@@ -192,6 +192,7 @@ public class Auth_Controller {
                 if(Settings.ACTIVE_EMAIL_CONFIRM)
                 {
                     EmailConfirm_Controller controller = (EmailConfirm_Controller) ctr;
+                    controller.setEmail(LoggedIn_Controller.getUser().getEmail());
                     for(Node n : signupvbox.getChildren())
                     {
                         controller.childrens.add(n);
@@ -206,7 +207,6 @@ public class Auth_Controller {
                     Scene sc = new Scene(root);
                     stg.setScene(sc);
                     stg.setFullScreen(Settings.FULLSCREEN_MODE);
-                    ((LoggedIn_Controller)ctr).loadUserParams();
                 }
             }
 

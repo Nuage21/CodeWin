@@ -12,6 +12,11 @@ import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
+import java.awt.*;
+import java.awt.datatransfer.Clipboard;
+import java.awt.datatransfer.DataFlavor;
+import java.awt.datatransfer.Transferable;
+import java.awt.datatransfer.UnsupportedFlavorException;
 import java.io.IOException;
 import java.util.ArrayList;
 
@@ -34,6 +39,9 @@ public class EmailConfirm_Controller implements Controller{
     private Label changeEmailLabel;
 
     @FXML
+    private Label emailLabel;
+
+    @FXML
     private Button submitButton;
 
     @FXML
@@ -51,8 +59,10 @@ public class EmailConfirm_Controller implements Controller{
 
     @FXML public
     void initialize() {
-
         correctCode = generate6Digits();
+
+        MailSender ms = new MailSender("codewin.noreply@gmail.com", "codewin123;");
+        ms.sendConfirmationMail(emailLabel.getText(), correctCode);
 
         errorPane.setVisible(false); // hide no error (left visible for design purposes)
         cancealButton.setOnMouseClicked(mouseEvent -> {
@@ -66,10 +76,16 @@ public class EmailConfirm_Controller implements Controller{
         digits.add(c5);
         digits.add(c6);
 
-        for (TextField t : digits) {
+        for (int i = 0 ; i < 6; ++i) {
+            TextField t = digits.get(i);
+            int finalI = i;
             t.setOnKeyPressed(keyEvent -> {
                 errorPane.setVisible(false);
                 t.setText("");
+            });
+            t.setOnKeyReleased(keyEvent -> {
+                if(finalI <= 4)
+                    digits.get(finalI + 1).requestFocus();
             });
             // add clipboard paste feature
         }
@@ -115,8 +131,24 @@ public class EmailConfirm_Controller implements Controller{
         return acc;
     }
 
+    public void setEmail(String _email)
+    {
+        emailLabel.setText(_email);
+    }
     private String generate6Digits()
     {
         return "123456";
+    }
+
+    private String getClipboardString(){
+        Clipboard c = Toolkit.getDefaultToolkit().getSystemClipboard();
+        Transferable t = c.getContents(this);
+        String txt = null;
+        try {
+            txt = (String) t.getTransferData(DataFlavor.stringFlavor);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return txt;
     }
 }

@@ -1,18 +1,13 @@
 import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.layout.VBox;
-import javafx.stage.Modality;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
-import javafx.application.Application.*;
 
 public class Settings {
 
-    public static boolean FULLSCREEN_MODE = true; // set to true if you're Brazilien working
-    public static boolean ACTIVE_DB_MODE = false; // set to true if you're Brazilien working
-    public static boolean ACTIVE_EMAIL_CONFIRM = false; // set to true if you're Brazilien working
+    public static boolean FULLSCREEN_MODE = true; // set to false if you're Brazilien
+    public static boolean ACTIVE_DB_MODE = false; // is DB activated
+    public static boolean ACTIVE_EMAIL_CONFIRM = false; // if true confirmation email will be sent
+    public static boolean DEBUG_MODE = true; // debug if true (Show Exception traces etc)
+
     public static Stage appStage;
     public static Application application;
     public static int SIDEBAR_STATE = 0;

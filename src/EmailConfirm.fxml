@@ -35,7 +35,7 @@
                               <Font name="Times New Roman" size="24.0" />
                            </font>
                         </Label>
-                        <Label layoutX="159.0" prefHeight="52.0" prefWidth="472.0" text="ih_beldjoudi@esi.dz" textFill="#4370b9">
+                        <Label fx:id="emailLabel" layoutX="159.0" prefHeight="52.0" prefWidth="472.0" text="ih_beldjoudi@esi.dz" textFill="#4370b9">
                            <font>
                               <Font name="Times New Roman" size="22.0" />
                            </font>
