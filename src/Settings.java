@@ -7,6 +7,7 @@ public class Settings {
     public static boolean ACTIVE_DB_MODE = false; // is DB activated
     public static boolean ACTIVE_EMAIL_CONFIRM = false; // if true confirmation email will be sent
     public static boolean DEBUG_MODE = true; // debug if true (Show Exception traces etc)
+    public static boolean SKIP_AUTHENTICATION = true; // skip authentication
 
     public static Stage appStage;
     public static Application application;
@@ -25,6 +26,7 @@ public class Settings {
     // sidebar states
     public static int SIDEBAR_EXPANDED = 0x00;
     public static int SIDEBAR_SHRINKED = 0x01;
+    public static double SIDEBAR_DELTA = 0; // set after LoggedIn initialized (and stage shown)
 
     public static double SIDEBAR_WIDTH = 0;
 

@@ -306,6 +306,7 @@ public class LoggedIn_Controller implements Controller {
 
         Platform.runLater(() -> {
             Settings.SIDEBAR_WIDTH = this.Sidebar_VBox.getWidth();
+            Settings.SIDEBAR_DELTA = Settings.SIDEBAR_WIDTH * (1 - (1 / Settings.SIDEBAR_EXTEND_COEFF));
         });
     }
 
@@ -334,6 +335,8 @@ public class LoggedIn_Controller implements Controller {
 
         double toadd = width - newWidth;
 
+        Settings.SIDEBAR_STATE = 1 - Settings.SIDEBAR_STATE;
+
         if (this.diplayingWhat == Settings.DISPLAYING_STATISTICS) {
             Stats_Controller ctr = (Stats_Controller) this.occupiedController;
             ctr.resetAreaChartsWidth(toadd);
@@ -341,14 +344,14 @@ public class LoggedIn_Controller implements Controller {
         else if(this.diplayingWhat == Settings.DISPLAYING_COURSE)
         {
             CoursePane_Controller ctr = (CoursePane_Controller) occupiedController;
-            double holderWidth = ctr.getHolderVBox().getWidth();
-
-            ctr.getHolderVBox().setMinWidth(holderWidth + toadd);
-            ctr.getHolderVBox().setMaxWidth(holderWidth + toadd);
-            ctr.getHolderVBox().setPrefWidth(holderWidth + toadd);
+            Design.setWidth(ctr.getHolderVBox(),ctr.getHolderVBox().getWidth() + toadd);
+        }
+        else if(this.diplayingWhat == Settings.DISPLAYING_QUESTION)
+        {
+            QuestionPane_Controller ctr = (QuestionPane_Controller) occupiedController;
+            ctr.adjustWidth();
         }
 
-        Settings.SIDEBAR_STATE = 1 - Settings.SIDEBAR_STATE;
     }
 
     public void setNodeVisibility(Parent p, boolean visible) {
@@ -572,6 +575,7 @@ public class LoggedIn_Controller implements Controller {
         this.Central_Container_SPane.getChildren().clear();
         this.Central_Container_SPane.getChildren().add(scp);
         this.setDiplayingWhat(Settings.DISPLAYING_QUESTION);
+        this.occupiedController = ctr;
     }
 
     public void displayNeighborCourse(boolean isNext) {
@@ -612,6 +616,7 @@ public class LoggedIn_Controller implements Controller {
         } catch (ParseException e) {
             e.printStackTrace();
         }
+
     }
 
     public void setDiplayingWhat(int _mode) {

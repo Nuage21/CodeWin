@@ -1,3 +1,4 @@
+import DialogBoxes.ErrorBox_Controller;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -17,7 +18,10 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class QuestionPane_Controller {
+public class QuestionPane_Controller implements Controller{
+
+    @FXML
+    private VBox daddy;
 
     @FXML
     private VBox holderVBox;
@@ -28,13 +32,20 @@ public class QuestionPane_Controller {
     private ArrayList<PropositionPane_Controller> propositionsControllers = new ArrayList<>();
     private Question question;
 
+    private NotePane_Controller notePane_controller;
     @FXML
-    void initialize() {
+    public void initialize() {
 
     }
 
     public void showQuestion(Question question) throws IOException {
 
+        if(Settings.SIDEBAR_STATE == Settings.SIDEBAR_SHRINKED)
+        {
+            Platform.runLater(()->{
+                adjustWidth();
+            });
+        }
         this.question = question;
         String core = question.core;
         int clng = core.length();
@@ -124,8 +135,8 @@ public class QuestionPane_Controller {
         if (!question.note.isEmpty()) {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("NotePane.fxml"));
             Parent root = loader.load();
-            NotePane_Controller ctr = loader.getController();
-            ctr.setNote(question.note);
+            notePane_controller = loader.getController();
+            notePane_controller.setNote(question.note);
             root.setStyle("-fx-padding: 50 0 0 0 !important;");
             this.propositionsHolderVBox.getChildren().add(root);
         }
@@ -178,5 +189,25 @@ public class QuestionPane_Controller {
         return holderVBox;
     }
 
+    public void adjustWidth()
+    {
+        double delta = Settings.SIDEBAR_DELTA;
+        if(Settings.SIDEBAR_STATE == Settings.SIDEBAR_SHRINKED)
+            resetWidth(daddy.getWidth() + delta);
+        else
+            resetWidth(daddy.getWidth() - delta);
+
+    }
+
+    private void resetWidth(double width)
+    {
+
+        Design.setWidth(daddy, width);
+
+        for(PropositionPane_Controller ctr : this.propositionsControllers)
+            ctr.resetWidth(width);
+
+        notePane_controller.resetWidth(width);
+    }
 }
 

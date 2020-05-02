@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.net.URL?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane fx:id="holder" prefHeight="59.0" prefWidth="1556.0" style="-fx-background-color: #eeeeee;" styleClass="proposition" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PropositionPane_Controller">
+<Pane fx:id="holder" prefHeight="59.0" prefWidth="1556.0" style="-fx-background-color: #eeeeee;" styleClass="proposition" stylesheets="@css/Proposition.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PropositionPane_Controller">
    <children>
       <CheckBox fx:id="propositionCheckBox" layoutX="30.0" layoutY="12.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="30.0">
          <font>
@@ -23,8 +22,4 @@
    <cursor>
       <Cursor fx:constant="HAND" />
    </cursor>
-   <stylesheets>
-      <URL value="@Proposition.css" />
-      <URL value="@css/Proposition.css" />
-   </stylesheets>
 </Pane>

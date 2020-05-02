@@ -28,4 +28,10 @@ public class PropositionPane_Controller {
     }
 
     public Boolean isChosen(){ return propositionCheckBox.isSelected(); }
+
+    public void resetWidth(double width)
+    {
+        Design.setWidth(holder, width);
+        propositionLabel.setPrefWidth(width * 0.9);
+    }
 }

@@ -44,6 +44,8 @@ public class ErrorBox_Controller {
         ctr.stage.initStyle(StageStyle.UNDECORATED);
         ctr.stage.initOwner(_owner);
 
+        ctr.stage.centerOnScreen();
+
         ctr.stage.show();
 
         return ctr;

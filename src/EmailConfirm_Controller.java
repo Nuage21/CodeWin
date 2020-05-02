@@ -1,3 +1,4 @@
+import DialogBoxes.ErrorBox_Controller;
 import javafx.application.Platform;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -59,10 +60,6 @@ public class EmailConfirm_Controller implements Controller{
 
     @FXML public
     void initialize() {
-        correctCode = generate6Digits();
-
-        MailSender ms = new MailSender("codewin.noreply@gmail.com", "codewin123;");
-        ms.sendConfirmationMail(emailLabel.getText(), correctCode);
 
         errorPane.setVisible(false); // hide no error (left visible for design purposes)
         cancealButton.setOnMouseClicked(mouseEvent -> {
@@ -102,11 +99,23 @@ public class EmailConfirm_Controller implements Controller{
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
-                Stage stg = Settings.appStage;
-                Scene sc = new Scene(root);
-                stg.setScene(sc);
-                stg.setFullScreen(Settings.FULLSCREEN_MODE);
-                ctr.loadUserParams();
+                boolean isInserted = true;
+                if(Settings.ACTIVE_DB_MODE)
+                {
+                    isInserted = User.addUser(LoggedIn_Controller.getUser());
+                    if(!isInserted)
+                    {
+                        ErrorBox_Controller.showErrorBox(Settings.appStage, "Erreur de Connexion", "Veuillez verifier votre connexion Internet");
+                    }
+                }
+                if(isInserted)
+                {
+                    Stage stg = Settings.appStage;
+                    Scene sc = new Scene(root);
+                    stg.setScene(sc);
+                    stg.setFullScreen(Settings.FULLSCREEN_MODE);
+                    ctr.loadUserParams();
+                }
             }
             else
             {
@@ -138,6 +147,13 @@ public class EmailConfirm_Controller implements Controller{
     private String generate6Digits()
     {
         return "123456";
+    }
+
+    public boolean sendConfEmail(String recipient)
+    {
+        correctCode = generate6Digits();
+        MailSender ms = new MailSender("codewin.noreply@gmail.com", "codewin123;");
+        return ms.sendConfirmationMail(emailLabel.getText(), correctCode);
     }
 
     private String getClipboardString(){

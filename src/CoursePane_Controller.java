@@ -36,10 +36,16 @@ public class CoursePane_Controller implements Controller {
     }
 
     public void displayFromJson(String filename) throws IOException {
+
+        Platform.runLater( () -> {
+            if(Settings.SIDEBAR_STATE == Settings.SIDEBAR_SHRINKED)
+            {
+                Design.setWidth(holderVBox, holderVBox.getWidth() + Settings.SIDEBAR_DELTA);
+            }
+        });
         String jsonCourse = Files.readString(Paths.get(filename), StandardCharsets.UTF_8);
         JSONObject obj = new JSONObject(jsonCourse);
 
-        String title = obj.getString("title");
         String core = obj.getString("core");
 
         // some preprocessing

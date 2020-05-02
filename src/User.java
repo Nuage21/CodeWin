@@ -85,8 +85,8 @@ public class User {
                 return true;
             }
         } catch (SQLException e) {
-            if(Settings.DEBUG_MODE)
-                System.err.println("Error @ User.userNameExiste");
+            Debug.debugMsg("Error @ User.userNameExiste");
+            Debug.debugException(e);
             return true;
         }
     }
@@ -94,14 +94,12 @@ public class User {
 
     public static boolean addUser(User _user) {
         String insert = "INSERT INTO users_info (username, password, email, firstname, lastname, dob, address, mobile, sdate, lqst, stats) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-        boolean b = false;
         try {
             Connection conn = getConnection();
             PreparedStatement stmt = conn.prepareStatement(insert);
 
             if (userEmailExiste(_user.email) || userNameExiste(_user.username)) {
-                if(Settings.DEBUG_MODE)
-                    System.out.println("_________________________________USER EXIST_________________________");
+                ErrorBox_Controller.showErrorBox(Settings.appStage, "Utilisateur Existant", "L'addresse Email ou le Pseudo entres appartiennent deja a des utilisateurs inscris.");
                 return false;
             } else {
                 // String tableQuestions = "CREATE TABLE " + username + " " + "( question text,reponse_1 text DEFAULT NULL,reponse_2 text DEFAULT NULL ,reponse_3 text DEFAULT NULL, reponse_4 text DEFAULT NULL);";
@@ -123,19 +121,15 @@ public class User {
                 stmt.close();
                 conn.close();
 
-                if(Settings.DEBUG_MODE)
-                    System.out.println("_________________________________USER INSERTED_________________________");
+               Debug.debugMsg("_________________________________USER INSERTED_________________________");
+
+                return true;
             }
         } catch (SQLException e) {
-            if(Settings.DEBUG_MODE)
-            {
-                System.out.println("_________________________________SQL ERROR_________________________");
-                e.printStackTrace();
-            }
-        } finally {
-            return b;
+            Debug.debugMsg("_________________________________SQL ERROR_________________________");
+            Debug.debugException(e);
+            return false;
         }
-
     }
 
 
@@ -158,12 +152,14 @@ public class User {
                 if(!rs.getString("password").equals(provided_pwd))
                 {
                     ErrorBox_Controller.showErrorBox(Settings.appStage, "Mot de passe Incorrect", "Veulliez verifier votre mot de passe et reessayer.");
+                    return null;
                 }
                 user = new User(username, rs.getString("password"), rs.getString("email"), rs.getString("firstname"), rs.getString("lastname"), rs.getDate("dob"), rs.getString("address"), rs.getString("mobile"));
+                user.lastAnsweredQuestion = rs.getString("lqst");
+                user.stats = rs.getString("stats");
+                user.signupDate = rs.getDate("sdate");
                 rs.close();
             }
-
-
         } catch (SQLException e) {
             ErrorBox_Controller.showErrorBox(Settings.appStage, "Erreur de Connexion", "Veuillez verifier votre connexion avant d'essayer de vous connecter.");
         } finally {

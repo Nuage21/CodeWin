@@ -118,7 +118,7 @@ public class Auth_Controller {
         UsernameField.setText("Barack_Hawaii_123");
         LastnameField.setText("Obama");
         FirstnameField.setText("Barack");
-        EmailField.setText("obama@wh.gov");
+        EmailField.setText("ih_beldjoudi@esi.dz");
         PwdField.setText("hbdsj1234;");
         DatePickerField.setValue(LocalDate.of(1961, 10, 4));
         AddressField.setText("Honolulu, Hawaii, United States");
@@ -155,10 +155,31 @@ public class Auth_Controller {
             String _pwd = PwdSignInField.getText();
 
             if(!Settings.ACTIVE_DB_MODE)
-                ErrorBox_Controller.showErrorBox(Settings.appStage, "DATABASE NOT ACTIVATED", "Set Settings.ACTIVE_DB_MODE to true before attempting a DB login")
+                Debug.debugDialog("DATABASE NOT ACTIVATED", "Set Settings.ACTIVE_DB_MODE to true before attempting a DB login");
             else
             {
-
+                User u = User.getUserDB(_username, _pwd);
+                if(u != null)
+                {
+                    String fxml = "LoggedIn.fxml";
+                    FXMLLoader loader = new FXMLLoader(getClass().getResource(fxml));
+                    Parent root = null;
+                    try {
+                        root = loader.load();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                    LoggedIn_Controller.setUser(u);
+                    Stage stg = Settings.appStage;
+                    Scene sc = new Scene(root);
+                    stg.setScene(sc);
+                    stg.setFullScreen(Settings.FULLSCREEN_MODE);
+                }
+                else
+                {
+                    UsernameSignInField.setText("");
+                    PwdSignInField.setText("");
+                }
             }
         });
         ArrayList<Control> focusable = new ArrayList<>();
@@ -205,18 +226,25 @@ public class Auth_Controller {
 
             if (all_is_ok) {
                 if (errorStage != null) errorStage.close();
-                this.addUser();
+                User newUser = getUser();
                 if(Settings.ACTIVE_EMAIL_CONFIRM)
                 {
                     EmailConfirm_Controller controller = (EmailConfirm_Controller) ctr;
-                    controller.setEmail(LoggedIn_Controller.getUser().getEmail());
-                    for(Node n : signupvbox.getChildren())
+                    boolean isSent = controller.sendConfEmail(newUser.getEmail());
+                    if(isSent)
                     {
-                        controller.childrens.add(n);
+                        controller.setEmail(newUser.getEmail());
+                        for(Node n : signupvbox.getChildren()) // in case wanted to change email -> redisplay them
+                        {
+                            controller.childrens.add(n);
+                        }
+                        controller.signupvbox = signupvbox;
+                        signupvbox.getChildren().clear();
+                        signupvbox.getChildren().add(root);
+                        LoggedIn_Controller.setUser(newUser);
                     }
-                    controller.signupvbox = signupvbox;
-                    signupvbox.getChildren().clear();
-                    signupvbox.getChildren().add(root);
+                    else
+                        ErrorBox_Controller.showErrorBox(Settings.appStage, "Erreur", "Verifier votre connexion a Internet et Assurez vous de la validite de votre email");
                 }
                 else
                 {
@@ -224,6 +252,7 @@ public class Auth_Controller {
                     Scene sc = new Scene(root);
                     stg.setScene(sc);
                     stg.setFullScreen(Settings.FULLSCREEN_MODE);
+                    LoggedIn_Controller.setUser(newUser);
                 }
             }
 
@@ -376,6 +405,8 @@ public class Auth_Controller {
 
         String usr = UsernameField.getText();
         boolean is_not_taken = true;  // verification au pres de la bdd
+        if(Settings.ACTIVE_DB_MODE)
+            is_not_taken = User.userNameExiste(usr);
         boolean lenght = usr.length() >= 6;
         LogErrorController.list.clear();
         LogErrorController.list.add(new Msg("pseudo non utilisé ", is_not_taken));
@@ -387,10 +418,10 @@ public class Auth_Controller {
         String usr = PwdField.getText();
         boolean lengh = usr.length() >= 8;
         boolean num = usr.matches("^.*[0-9].*.[0-9].*");
-        boolean spec = usr.matches("^.*(?=.*[*@_;,&çà]).*$");
+        boolean spec = usr.matches("^.*(?=.*[*#@_;,&çà]).*$");
         LogErrorController.list.clear();
         LogErrorController.list.add(new Msg("au moins 8 caractéres", lengh));
-        LogErrorController.list.add(new Msg("au moins 2 chiffres", num));
+        LogErrorController.list.add(new Msg("au moins 3 chiffres", num));
         LogErrorController.list.add(new Msg("au moins un caractére special", spec));
         return lengh && num && spec;
     }
@@ -410,6 +441,8 @@ public class Auth_Controller {
 
         boolean valide_mail = match.matches();
         boolean is_not_used = true; // BDD request here
+        if(Settings.ACTIVE_DB_MODE)
+            valide_mail = User.userEmailExiste(email);
         LogErrorController.list.clear();
         LogErrorController.list.add(new Msg("format de mail valide", valide_mail));
         LogErrorController.list.add(new Msg("Email non utilisé", is_not_used));
@@ -477,22 +510,12 @@ public class Auth_Controller {
     }
 
 
-    private void addUser() {   //les variables de la fonction
+    public User getUser()
+    {
         java.sql.Date dob = java.sql.Date.valueOf(DatePickerField.getValue());
         User user = new User(UsernameField.getText(), PwdField.getText(), EmailField.getText(), FirstnameField.getText(), LastnameField.getText(), dob, AddressField.getText(), PhoneField.getText());
-
-        boolean userExist = false;
-        if(Settings.ACTIVE_DB_MODE)
-            userExist = User.addUser(user);
-
-        if (userExist) //s'il existe déja
-        {
-            // username or email already taken - treat here
-            System.out.println("USER ALREADY EXIST ! ________________________");
-        } else
-            LoggedIn_Controller.setUser(user);
+        return user;
     }
-
 
     static class Msg {
         String msg;

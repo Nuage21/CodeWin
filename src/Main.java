@@ -6,6 +6,8 @@ import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
+import java.time.LocalDate;
+
 public class Main extends Application {
 
     @Override
@@ -13,14 +15,29 @@ public class Main extends Application {
 
         Settings.appStage = primaryStage;
         Settings.application = this;
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("Authenticator.fxml"));
-        Parent root = loader.load();
-        primaryStage.setTitle("CodeWin Sign in/up");
-        Scene sc = new Scene(root);
-        primaryStage.setScene(sc);
-        primaryStage.setResizable(false);
-        primaryStage.initStyle(StageStyle.UNDECORATED);
-        primaryStage.show();
+        if(Settings.SKIP_AUTHENTICATION)
+        {
+            User u = new User("Barack_Hawaii_123", "Hakim123l;", "obama@wh.gov", "Barack", "Obama", java.sql.Date.valueOf(LocalDate.of(2000, 11, 9)), "Honolulu, Hawaii, United States", "(860)-231-1234");
+            LoggedIn_Controller.setUser(u);
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("LoggedIn.fxml"));
+            Parent root = loader.load();
+            Scene sc = new Scene(root);
+            primaryStage.setScene(sc);
+            primaryStage.initStyle(StageStyle.UNDECORATED);
+            primaryStage.setFullScreen(Settings.FULLSCREEN_MODE);
+            primaryStage.show();
+        }
+        else
+        {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("Authenticator.fxml"));
+            Parent root = loader.load();
+            primaryStage.setTitle("CodeWin Sign in/up");
+            Scene sc = new Scene(root);
+            primaryStage.setScene(sc);
+            primaryStage.setResizable(false);
+            primaryStage.initStyle(StageStyle.UNDECORATED);
+            primaryStage.show();
+        }
     }
 
 
