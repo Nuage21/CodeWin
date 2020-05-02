@@ -17,6 +17,8 @@ public class User {
     private java.sql.Date signupDate;
     private String lastAnsweredQuestion; // ex: "2/3/30" -> chapterID/courseID/QuestionID
     private String stats;
+    private int points;
+
     private boolean darkmode; // locally saved
     private String lang; // locally saved
 
@@ -62,8 +64,8 @@ public class User {
                 return true;
             }
         } catch (SQLException e) {
-            System.err.println("Error");
-            return true;
+            Debug.debugMsg("Can't check email existence - no connexion");
+            return false;
         }
     }
 
@@ -93,7 +95,7 @@ public class User {
 
 
     public static boolean addUser(User _user) {
-        String insert = "INSERT INTO users_info (username, password, email, firstname, lastname, dob, address, mobile, sdate, lqst, stats) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        String insert = "INSERT INTO users_info (username, password, email, firstname, lastname, dob, address, mobile, sdate, lqst, stats, points) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         try {
             Connection conn = getConnection();
             PreparedStatement stmt = conn.prepareStatement(insert);
@@ -115,6 +117,7 @@ public class User {
                 stmt.setDate(9, java.sql.Date.valueOf(LocalDate.now()));
                 stmt.setString(10, ""); // last answered question
                 stmt.setString(11, ""); // stats
+                stmt.setInt(12, 0); // points
 
 
                 stmt.execute();
@@ -158,6 +161,7 @@ public class User {
                 user.lastAnsweredQuestion = rs.getString("lqst");
                 user.stats = rs.getString("stats");
                 user.signupDate = rs.getDate("sdate");
+                user.points = rs.getInt("points");
                 rs.close();
             }
         } catch (SQLException e) {
