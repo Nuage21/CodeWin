@@ -1,3 +1,4 @@
+import DialogBoxes.ErrorBox_Controller;
 import javafx.animation.KeyFrame;
 import javafx.animation.KeyValue;
 import javafx.animation.PauseTransition;
@@ -41,6 +42,10 @@ public class Auth_Controller {
 
     @FXML
     private Button signUpBtn;
+
+    @FXML
+    private Button signinButton;
+
     @FXML
     private Pane UsernamePane;
     @FXML
@@ -144,6 +149,18 @@ public class Auth_Controller {
 
         });
 
+
+        signinButton.setOnMouseClicked(mouseEvent -> {
+            String _username = UsernameSignInField.getText();
+            String _pwd = PwdSignInField.getText();
+
+            if(!Settings.ACTIVE_DB_MODE)
+                ErrorBox_Controller.showErrorBox(Settings.appStage, "DATABASE NOT ACTIVATED", "Set Settings.ACTIVE_DB_MODE to true before attempting a DB login")
+            else
+            {
+
+            }
+        });
         ArrayList<Control> focusable = new ArrayList<>();
 
         focusable.add(UsernameField);

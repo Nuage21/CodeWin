@@ -1,4 +1,7 @@
+import DialogBoxes.ErrorBox_Controller;
+
 import java.sql.*;
+import java.time.LocalDate;
 import java.util.TreeMap;
 
 public class User {
@@ -11,16 +14,11 @@ public class User {
     private String email;
     private String password;
     private java.sql.Date dob;
-
-
+    private java.sql.Date signupDate;
+    private String lastAnsweredQuestion; // ex: "2/3/30" -> chapterID/courseID/QuestionID
+    private String stats;
     private boolean darkmode; // locally saved
     private String lang; // locally saved
-    // pour les stats
-    private TreeMap<Integer, Date> point;
-    private TreeMap<Integer, Date> activity;
-
-    private TreeMap<Integer, Integer> points; // CourseID: Points Earned
-    private TreeMap<Integer, Coord2D> lastQuestion; // CourseID: lastQuestion properly answered
 
     // database settings
     public static final String USERNAME = "sql7335090";
@@ -87,23 +85,24 @@ public class User {
                 return true;
             }
         } catch (SQLException e) {
-            System.err.println("Error");
+            if(Settings.DEBUG_MODE)
+                System.err.println("Error @ User.userNameExiste");
             return true;
         }
     }
 
 
     public static boolean addUser(User _user) {
-        String insert = "INSERT INTO users_info (username, password, email, firstname, lastname, dob, address, mobile) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+        String insert = "INSERT INTO users_info (username, password, email, firstname, lastname, dob, address, mobile, sdate, lqst, stats) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         boolean b = false;
         try {
             Connection conn = getConnection();
             PreparedStatement stmt = conn.prepareStatement(insert);
 
             if (userEmailExiste(_user.email) || userNameExiste(_user.username)) {
-                //   System.out.println("l'utilisateur existe deja on peut pas l'ajouté");
-                System.out.println("_________________________________USER EXIST_________________________");
-                b = true;
+                if(Settings.DEBUG_MODE)
+                    System.out.println("_________________________________USER EXIST_________________________");
+                return false;
             } else {
                 // String tableQuestions = "CREATE TABLE " + username + " " + "( question text,reponse_1 text DEFAULT NULL,reponse_2 text DEFAULT NULL ,reponse_3 text DEFAULT NULL, reponse_4 text DEFAULT NULL);";
 
@@ -115,65 +114,64 @@ public class User {
                 stmt.setDate(6, _user.dob);
                 stmt.setString(7, _user.address);
                 stmt.setString(8, _user.mobile);
+                stmt.setDate(9, java.sql.Date.valueOf(LocalDate.now()));
+                stmt.setString(10, ""); // last answered question
+                stmt.setString(11, ""); // stats
+
 
                 stmt.execute();
                 stmt.close();
                 conn.close();
 
-                System.out.println("_________________________________USER INSERTED_________________________");
+                if(Settings.DEBUG_MODE)
+                    System.out.println("_________________________________USER INSERTED_________________________");
             }
         } catch (SQLException e) {
-            System.out.println("_________________________________SQL ERROR_________________________");
-            System.err.println(e);
-        }
-        finally
-        {
+            if(Settings.DEBUG_MODE)
+            {
+                System.out.println("_________________________________SQL ERROR_________________________");
+                e.printStackTrace();
+            }
+        } finally {
             return b;
         }
 
     }
 
 
-	   public static User getUserBDD(String username,String email){
+    public static User getUserDB(String username, String provided_pwd) {
 
-		   User user = null;
-		   String select = "SELECT * From users_info WHERE username = ? and email = ?";
+        User user = null;
+        String select = "SELECT * From users_info WHERE username = ?";
 
-	        try {
-	            Connection conn = getConnection();
-	            PreparedStatement stmt = conn.prepareStatement(select);
+        try {
+            Connection conn = getConnection();
+            PreparedStatement stmt = conn.prepareStatement(select);
 
-	            if (!(userEmailExiste(email) || userNameExiste(username))) {
-
-	               System.out.println("________________________USER OLACH_____________________");
-
-	            } else {
-
-
-	            	 stmt.setString(1, username);
-		             stmt.setString(2, email);
-	            	 ResultSet rs = null ;
-
-	 	            rs = stmt.executeQuery();
-                 rs.first();
-
-      user = new User(username, rs.getString("password"), email, rs.getString("firstname"), rs.getString("lastname"), rs.getDate("dob"), rs.getString("address"),rs.getString("mobile") );
-
-rs.close();
-	            }
+            if (!userNameExiste(username))
+                return null;
+            else {
+                stmt.setString(1, username);
+                ResultSet rs = null;
+                rs = stmt.executeQuery();
+                rs.first();
+                if(!rs.getString("password").equals(provided_pwd))
+                {
+                    ErrorBox_Controller.showErrorBox(Settings.appStage, "Mot de passe Incorrect", "Veulliez verifier votre mot de passe et reessayer.");
+                }
+                user = new User(username, rs.getString("password"), rs.getString("email"), rs.getString("firstname"), rs.getString("lastname"), rs.getDate("dob"), rs.getString("address"), rs.getString("mobile"));
+                rs.close();
+            }
 
 
-	        } catch (SQLException e) {
-	            System.out.println("_________________________________SQL ERROR_________________________");
-	            System.err.println(e);
-	        }
-	        finally
-	        {
-	            return user;
-	        }
+        } catch (SQLException e) {
+            ErrorBox_Controller.showErrorBox(Settings.appStage, "Erreur de Connexion", "Veuillez verifier votre connexion avant d'essayer de vous connecter.");
+        } finally {
+            return user;
+        }
 
 
-	    }
+    }
 
 
     public static boolean updateUserName(User user, String userName) {
@@ -437,12 +435,11 @@ rs.close();
         return lang;
     }
 
-    public class Coord2D
-    {
+    public class Coord2D {
         public int x;
         public int y;
-        Coord2D(int _x, int _y)
-        {
+
+        Coord2D(int _x, int _y) {
             this.x = _x;
             this.y = _y;
         }

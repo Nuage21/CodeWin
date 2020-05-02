@@ -1,0 +1,15 @@
+.ok-btn{
+	-fx-background-color: transparent;
+	-fx-cursor: hand;
+}
+
+.ok-btn:hover{
+	-fx-border-color: #ababab;
+	-fx-border-width: 0 0 3 0;
+	-fx-text-fill: #327899;
+}
+
+.holder{
+	-fx-border-color: #d9d9f3;
+	-fx-border-width: 0 5 0 0;
+}

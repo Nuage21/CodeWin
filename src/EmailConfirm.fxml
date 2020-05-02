@@ -4,6 +4,9 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.BoxBlur?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
@@ -89,14 +92,22 @@
                         </Label>
                      </children>
                   </Pane>
-                  <Pane fx:id="errorPane" layoutX="15.0" layoutY="335.0" prefHeight="54.0" prefWidth="869.0" style="-fx-border-color: #ababab;">
+                  <Pane fx:id="errorPane" layoutX="15.0" layoutY="335.0" prefHeight="54.0" prefWidth="869.0" style="-fx-border-color: #ababab; -fx-border-width: 0 0 1 0;">
                      <children>
-                        <Label layoutX="159.0" prefHeight="52.0" prefWidth="620.0" text="Code Incorrect" textFill="#ff4d4d">
+                        <Label layoutX="65.0" layoutY="1.0" prefHeight="52.0" prefWidth="620.0" text="Le code entre est incorrect, veuillez reessayer" textFill="#ff4d4d">
                            <font>
                               <Font name="Times New Roman" size="16.0" />
                            </font>
                         </Label>
+                        <ImageView fitHeight="50.0" fitWidth="40.0" layoutX="8.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/icons/error.png" />
+                           </image>
+                        </ImageView>
                      </children>
+                     <effect>
+                        <BoxBlur height="0.0" iterations="0" width="0.0" />
+                     </effect>
                   </Pane>
                </children>
             </Pane>
