@@ -6,7 +6,7 @@ public class Settings {
     public static boolean FULLSCREEN_MODE = true; // set to false if you're Brazilien
     public static boolean ACTIVE_DB_MODE = false; // is DB activated
     public static boolean ACTIVE_EMAIL_CONFIRM = false; // if true confirmation email will be sent
-    public static boolean DEBUG_MODE = true; // debug if true (Show Exception traces etc)
+    public static boolean DEBUG_MODE = false; // debug if true (Show Exception traces etc)
     public static boolean SKIP_AUTHENTICATION = true; // skip authentication
 
     public static Stage appStage;

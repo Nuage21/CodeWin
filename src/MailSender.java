@@ -217,7 +217,7 @@ public class MailSender {
                     "text/html");
 
             Transport.send(message);
-            if (Settings.DEBUG_MODE) System.out.println("Sent message successfully....");
+            Debug.debugMsg("Sent message successfully....");
         } catch (MessagingException mex) {
             mex.printStackTrace();
             return false;

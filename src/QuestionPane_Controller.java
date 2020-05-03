@@ -18,7 +18,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class QuestionPane_Controller implements Controller{
+public class QuestionPane_Controller implements Controller {
 
     @FXML
     private VBox daddy;
@@ -33,19 +33,13 @@ public class QuestionPane_Controller implements Controller{
     private Question question;
 
     private NotePane_Controller notePane_controller;
+
     @FXML
     public void initialize() {
 
     }
 
     public void showQuestion(Question question) throws IOException {
-
-        if(Settings.SIDEBAR_STATE == Settings.SIDEBAR_SHRINKED)
-        {
-            Platform.runLater(()->{
-                adjustWidth();
-            });
-        }
         this.question = question;
         String core = question.core;
         int clng = core.length();
@@ -140,6 +134,10 @@ public class QuestionPane_Controller implements Controller{
             root.setStyle("-fx-padding: 50 0 0 0 !important;");
             this.propositionsHolderVBox.getChildren().add(root);
         }
+
+        if (Settings.SIDEBAR_STATE == Settings.SIDEBAR_SHRINKED) {
+            adjustWidth();
+        }
     }
 
     public Parent appendText(String _txt) throws IOException {
@@ -175,7 +173,7 @@ public class QuestionPane_Controller implements Controller{
             return suspect;
         String withoutExtension = folder + file.split("[.]")[0];
         String extensions[] = {".jpeg", ".jpg", ".png"};
-        String fullPath = "Error: can't find Image ! - QuestionsPane_Controller -> getCorrectImageFullPath()";
+        String fullPath = null;
         for (String x : extensions) {
             fullPath = withoutExtension + x;
             if ((new File(fullPath)).isFile())
@@ -189,22 +187,21 @@ public class QuestionPane_Controller implements Controller{
         return holderVBox;
     }
 
-    public void adjustWidth()
-    {
-        double delta = Settings.SIDEBAR_DELTA;
-        if(Settings.SIDEBAR_STATE == Settings.SIDEBAR_SHRINKED)
-            resetWidth(daddy.getWidth() + delta);
-        else
-            resetWidth(daddy.getWidth() - delta);
-
+    public void adjustWidth() {
+        Platform.runLater( ()-> {
+            double delta = Settings.SIDEBAR_DELTA;
+            if (Settings.SIDEBAR_STATE == Settings.SIDEBAR_SHRINKED) {
+                resetWidth(daddy.getWidth() + delta);
+            } else
+                resetWidth(daddy.getWidth() - delta);
+        });
     }
 
-    private void resetWidth(double width)
-    {
+    private void resetWidth(double width) {
 
         Design.setWidth(daddy, width);
 
-        for(PropositionPane_Controller ctr : this.propositionsControllers)
+        for (PropositionPane_Controller ctr : this.propositionsControllers)
             ctr.resetWidth(width);
 
         notePane_controller.resetWidth(width);

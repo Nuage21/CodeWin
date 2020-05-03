@@ -1,4 +1,5 @@
 import DialogBoxes.ErrorBox_Controller;
+import javafx.scene.control.CheckBox;
 
 import java.sql.*;
 import java.time.LocalDate;
@@ -70,7 +71,8 @@ public class User {
     }
 
 
-    public static boolean userNameExiste(String userName) {
+    public static int userNameExiste(String userName) {
+        // return 1 if yes, 0 if no, -1 if no internet
         String read = "SELECT * From users_info WHERE username = ?";
 
         try {
@@ -82,14 +84,14 @@ public class User {
             rs = stmt.executeQuery();
             //   System.out.println(rs.first());
             if (rs.first() == false) {
-                return false;
+                return 1;
             } else {
-                return true;
+                return 0;
             }
         } catch (SQLException e) {
             Debug.debugMsg("Error @ User.userNameExiste");
             Debug.debugException(e);
-            return true;
+            return -1;
         }
     }
 
@@ -100,34 +102,28 @@ public class User {
             Connection conn = getConnection();
             PreparedStatement stmt = conn.prepareStatement(insert);
 
-            if (userEmailExiste(_user.email) || userNameExiste(_user.username)) {
-                ErrorBox_Controller.showErrorBox(Settings.appStage, "Utilisateur Existant", "L'addresse Email ou le Pseudo entres appartiennent deja a des utilisateurs inscris.");
-                return false;
-            } else {
-                // String tableQuestions = "CREATE TABLE " + username + " " + "( question text,reponse_1 text DEFAULT NULL,reponse_2 text DEFAULT NULL ,reponse_3 text DEFAULT NULL, reponse_4 text DEFAULT NULL);";
+            // String tableQuestions = "CREATE TABLE " + username + " " + "( question text,reponse_1 text DEFAULT NULL,reponse_2 text DEFAULT NULL ,reponse_3 text DEFAULT NULL, reponse_4 text DEFAULT NULL);";
 
-                stmt.setString(1, _user.username);
-                stmt.setString(2, _user.password);
-                stmt.setString(3, _user.email);
-                stmt.setString(4, _user.firstname);
-                stmt.setString(5, _user.lastname);
-                stmt.setDate(6, _user.dob);
-                stmt.setString(7, _user.address);
-                stmt.setString(8, _user.mobile);
-                stmt.setDate(9, java.sql.Date.valueOf(LocalDate.now()));
-                stmt.setString(10, ""); // last answered question
-                stmt.setString(11, ""); // stats
-                stmt.setInt(12, 0); // points
+            stmt.setString(1, _user.username);
+            stmt.setString(2, _user.password);
+            stmt.setString(3, _user.email);
+            stmt.setString(4, _user.firstname);
+            stmt.setString(5, _user.lastname);
+            stmt.setDate(6, _user.dob);
+            stmt.setString(7, _user.address);
+            stmt.setString(8, _user.mobile);
+            stmt.setDate(9, java.sql.Date.valueOf(LocalDate.now()));
+            stmt.setString(10, ""); // last answered question
+            stmt.setString(11, ""); // stats
+            stmt.setInt(12, 0); // points
 
 
-                stmt.execute();
-                stmt.close();
-                conn.close();
+            stmt.execute();
+            stmt.close();
+            conn.close();
 
-               Debug.debugMsg("_________________________________USER INSERTED_________________________");
-
-                return true;
-            }
+            Debug.debugMsg("_________________________________USER INSERTED_________________________");
+            return true;
         } catch (SQLException e) {
             Debug.debugMsg("_________________________________SQL ERROR_________________________");
             Debug.debugException(e);
@@ -137,35 +133,27 @@ public class User {
 
 
     public static User getUserDB(String username, String provided_pwd) {
-
         User user = null;
         String select = "SELECT * From users_info WHERE username = ?";
-
         try {
             Connection conn = getConnection();
             PreparedStatement stmt = conn.prepareStatement(select);
-
-            if (!userNameExiste(username))
+            stmt.setString(1, username);
+            ResultSet rs = null;
+            rs = stmt.executeQuery();
+            rs.first();
+            if (!rs.getString("password").equals(provided_pwd)) {
+                ErrorBox_Controller.showErrorBox(Settings.appStage, "Mot de passe Incorrect", "Veulliez verifier votre mot de passe et reessayer.");
                 return null;
-            else {
-                stmt.setString(1, username);
-                ResultSet rs = null;
-                rs = stmt.executeQuery();
-                rs.first();
-                if(!rs.getString("password").equals(provided_pwd))
-                {
-                    ErrorBox_Controller.showErrorBox(Settings.appStage, "Mot de passe Incorrect", "Veulliez verifier votre mot de passe et reessayer.");
-                    return null;
-                }
-                user = new User(username, rs.getString("password"), rs.getString("email"), rs.getString("firstname"), rs.getString("lastname"), rs.getDate("dob"), rs.getString("address"), rs.getString("mobile"));
-                user.lastAnsweredQuestion = rs.getString("lqst");
-                user.stats = rs.getString("stats");
-                user.signupDate = rs.getDate("sdate");
-                user.points = rs.getInt("points");
-                rs.close();
             }
+            user = new User(username, rs.getString("password"), rs.getString("email"), rs.getString("firstname"), rs.getString("lastname"), rs.getDate("dob"), rs.getString("address"), rs.getString("mobile"));
+            user.lastAnsweredQuestion = rs.getString("lqst");
+            user.stats = rs.getString("stats");
+            user.signupDate = rs.getDate("sdate");
+            user.points = rs.getInt("points");
+            rs.close();
         } catch (SQLException e) {
-            ErrorBox_Controller.showErrorBox(Settings.appStage, "Erreur de Connexion", "Veuillez verifier votre connexion avant d'essayer de vous connecter.");
+            Checker.showConnexionError();
         } finally {
             return user;
         }
@@ -176,27 +164,19 @@ public class User {
 
     public static boolean updateUserName(User user, String userName) {
         boolean b = false;
-        if (User.userNameExiste(userName)) {
-            return false;
-        } else {
-            String update = "UPDATE users SET userName = ? WHERE userName = '" + user.getUsername() + "'";
-            try {
-                Connection conn = getConnection();
-                PreparedStatement stmt = conn.prepareStatement(update);
-
-
-                stmt.setString(1, userName);
-                stmt.execute();
-                stmt.close();
-
-                b = true;
-            } catch (SQLException e) {
-                System.err.println(e);
-            } finally {
-                return b;
-            }
+        String update = "UPDATE users SET userName = ? WHERE userName = '" + user.getUsername() + "'";
+        try {
+            Connection conn = getConnection();
+            PreparedStatement stmt = conn.prepareStatement(update);
+            stmt.setString(1, userName);
+            stmt.execute();
+            stmt.close();
+            b = true;
+        } catch (SQLException e) {
+            System.err.println(e);
+        } finally {
+            return b;
         }
-
     }
 
 
@@ -314,25 +294,17 @@ public class User {
 
     public static boolean deleteUser(User user) {
         boolean b = false;
-        if (!((User.userNameExiste(user.getUsername())) || (User.userEmailExiste(user.getEmail())))) {
-            return false;
-        } else {
-            String del = "DELETE FROM users WHERE email='" + user.getEmail() + "' and userName='" + user.getUsername() + "'";
-            try {
-                Connection conn = getConnection();
-                PreparedStatement stmt = conn.prepareStatement(del);
-
-
-                stmt.execute();
-                stmt.close();
-
-                b = true;
-            } catch (SQLException e) {
-                System.err.println(e);
-            } finally {
-                return b;
-            }
-
+        String del = "DELETE FROM users WHERE username=" + user.getUsername() + "'";
+        try {
+            Connection conn = getConnection();
+            PreparedStatement stmt = conn.prepareStatement(del);
+            stmt.execute();
+            stmt.close();
+            b = true;
+        } catch (SQLException e) {
+            System.err.println(e);
+        } finally {
+            return b;
         }
 
     }

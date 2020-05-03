@@ -158,28 +158,33 @@ public class Auth_Controller {
                 Debug.debugDialog("DATABASE NOT ACTIVATED", "Set Settings.ACTIVE_DB_MODE to true before attempting a DB login");
             else
             {
-                User u = User.getUserDB(_username, _pwd);
-                if(u != null)
-                {
-                    String fxml = "LoggedIn.fxml";
-                    FXMLLoader loader = new FXMLLoader(getClass().getResource(fxml));
-                    Parent root = null;
-                    try {
-                        root = loader.load();
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                    LoggedIn_Controller.setUser(u);
-                    Stage stg = Settings.appStage;
-                    Scene sc = new Scene(root);
-                    stg.setScene(sc);
-                    stg.setFullScreen(Settings.FULLSCREEN_MODE);
-                }
+                int state = User.userNameExiste(_username);
+                if(state == 0) // username doesn't exist
+                    ErrorBox_Controller.showErrorBox(Settings.appStage, "Utilisateur Introuvable", "Veuillez vous assurez du pseudo entre");
+                else if(state < 0)
+                    Checker.showConnexionError();
                 else
                 {
-                    UsernameSignInField.setText("");
-                    PwdSignInField.setText("");
+                    User u = User.getUserDB(_username, _pwd);
+                    if(u != null)
+                    {
+                        String fxml = "LoggedIn.fxml";
+                        FXMLLoader loader = new FXMLLoader(getClass().getResource(fxml));
+                        Parent root = null;
+                        try {
+                            root = loader.load();
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+                        LoggedIn_Controller.setUser(u);
+                        Stage stg = Settings.appStage;
+                        Scene sc = new Scene(root);
+                        stg.setScene(sc);
+                        stg.setFullScreen(Settings.FULLSCREEN_MODE);
+                    }
                 }
+                UsernameSignInField.setText("");
+                PwdSignInField.setText("");
             }
         });
         ArrayList<Control> focusable = new ArrayList<>();
@@ -244,7 +249,7 @@ public class Auth_Controller {
                         LoggedIn_Controller.setUser(newUser);
                     }
                     else
-                        ErrorBox_Controller.showErrorBox(Settings.appStage, "Erreur", "Verifier votre connexion a Internet et Assurez vous de la validite de votre email");
+                        ErrorBox_Controller.showErrorBox(Settings.appStage,"Erreur", "Verifier votre connexion a Internet et Assurez vous de la validite de votre email");
                 }
                 else
                 {
@@ -406,7 +411,9 @@ public class Auth_Controller {
         String usr = UsernameField.getText();
         boolean is_not_taken = true;  // verification au pres de la bdd
         if(Settings.ACTIVE_DB_MODE)
-            is_not_taken = User.userNameExiste(usr);
+        {
+            // is_not_taken = User.userNameExiste(usr);
+        }
         boolean lenght = usr.length() >= 6;
         LogErrorController.list.clear();
         LogErrorController.list.add(new Msg("pseudo non utilisé ", is_not_taken));
@@ -442,7 +449,9 @@ public class Auth_Controller {
         boolean valide_mail = match.matches();
         boolean is_not_used = true; // BDD request here
         if(Settings.ACTIVE_DB_MODE)
-            valide_mail = User.userEmailExiste(email);
+        {
+            // valide_mail = User.userEmailExiste(email);
+        }
         LogErrorController.list.clear();
         LogErrorController.list.add(new Msg("format de mail valide", valide_mail));
         LogErrorController.list.add(new Msg("Email non utilisé", is_not_used));
