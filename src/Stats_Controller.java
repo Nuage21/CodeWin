@@ -6,19 +6,12 @@ import javafx.scene.chart.AreaChart;
 import javafx.scene.chart.CategoryAxis;
 import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.XYChart;
+import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
-import org.json.JSONObject;
 
 
-import javax.naming.ldap.Control;
-import java.io.FileWriter;
-import java.io.IOException;
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.time.Instant;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
 
@@ -43,14 +36,15 @@ public class Stats_Controller implements Controller {
 
     @FXML
     private AnchorPane daddy;
+
     @FXML
-    Button activity_week ;
+    private Button activity_week;
     @FXML
-    Button activity_month ;
+    private Button activity_month;
     @FXML
-    Button points_week ;
+    private Button points_week;
     @FXML
-    Button points_month ;
+    private Button points_month;
 
     //endregion
 
@@ -63,15 +57,13 @@ public class Stats_Controller implements Controller {
     //  int j = (int) (new Date().getTime()/1000);
     //et avant la deconexion recuperer : TP =  (int) (new Date().getTime()/1000) - j ; ** resultat en seconds
 
-    String stats_points = "29/04,20-28/04,20" ; // intitialisez ces 2 string a partir de la string recupérer dans user
-    String stats_progress ="29/04,20-28/04,20" ;
-
-
+    String stats_points = "29/04,20-28/04,20"; // intitialisez ces 2 string a partir de la string recupérer dans user
+    String stats_progress = "29/04,20-28/04,20";
 
 
     @FXML
     public void initialize() throws ParseException {
-        activity_week.setOnAction(e->{
+        activity_week.setOnAction(e -> {
             activityAreaChart.getData().clear();
             try {
                 traceWeek(ConvertStringTotree(stats_progress), activityAreaChart, "code");
@@ -79,7 +71,7 @@ public class Stats_Controller implements Controller {
                 ex.printStackTrace();
             }
         });
-        activity_month.setOnAction(e->{
+        activity_month.setOnAction(e -> {
             activityAreaChart.getData().clear();
             try {
                 traceMonth(ConvertStringTotree(stats_progress), activityAreaChart, "code");
@@ -87,7 +79,7 @@ public class Stats_Controller implements Controller {
                 ex.printStackTrace();
             }
         });
-        points_week.setOnAction(e->{
+        points_week.setOnAction(e -> {
             progressionAreaChart.getData().clear();
             try {
                 traceWeek(ConvertStringTotree(stats_progress), progressionAreaChart, "code");
@@ -95,10 +87,10 @@ public class Stats_Controller implements Controller {
                 ex.printStackTrace();
             }
         });
-        points_month.setOnAction(e->{
+        points_month.setOnAction(e -> {
             progressionAreaChart.getData().clear();
             try {
-                Thread. currentThread(). sleep(300);
+                Thread.currentThread().sleep(300);
                 traceMonth(ConvertStringTotree(stats_progress), progressionAreaChart, "code");
             } catch (ParseException | InterruptedException ex) {
                 ex.printStackTrace();
@@ -109,8 +101,8 @@ public class Stats_Controller implements Controller {
         traceWeek(ConvertStringTotree(stats_progress), progressionAreaChart, "code");
 
         Platform.runLater(() -> {
-            __setAreaChartWidth(activityAreaChart, daddy.getWidth() * 0.97);
-            __setAreaChartWidth(progressionAreaChart, daddy.getWidth() * 0.97);
+            __setAreaChartWidth(activityAreaChart, Design.CENTRAL_PANE_WIDTH );
+            __setAreaChartWidth(progressionAreaChart, Design.CENTRAL_PANE_WIDTH);
         });
         if (Settings.SIDEBAR_STATE == Settings.SIDEBAR_SHRINKED) {
             double width = Settings.SIDEBAR_WIDTH * (1 - (1 / Settings.SIDEBAR_EXTEND_COEFF));
@@ -215,26 +207,25 @@ public class Stats_Controller implements Controller {
         ac.setPrefWidth(width);
     }
 
-    public String newDay(int value , String chaine_intiale){ // b4 exit call this and save the returned string
-        GregorianCalendar calendar = new GregorianCalendar() ;
-        LocalDate tm  = calendar.toZonedDateTime().toLocalDate();
-        String  s=tm.format(DateTimeFormatter.ofPattern("dd/MM"));
+    public String newDay(int value, String chaine_intiale) { // b4 exit call this and save the returned string
+        GregorianCalendar calendar = new GregorianCalendar();
+        LocalDate tm = calendar.toZonedDateTime().toLocalDate();
+        String s = tm.format(DateTimeFormatter.ofPattern("dd/MM"));
 
 
-
-        return chaine_intiale+"-"+s+","+Integer.toString(value);
+        return chaine_intiale + "-" + s + "," + Integer.toString(value);
     }
 
-    public TreeMap ConvertStringTotree(String chaine_sauvgarde){
-        TreeMap<String,Integer> ret = new TreeMap( ) ;
+    public TreeMap ConvertStringTotree(String chaine_sauvgarde) {
+        TreeMap<String, Integer> ret = new TreeMap();
 
-        for(String s : chaine_sauvgarde.split("-")){
+        for (String s : chaine_sauvgarde.split("-")) {
             String[] date = s.split(",");
 
-            ret.put(date[0],Integer.parseInt(date[1]));
-            System.out.println(date[0]+date[1]);
+            ret.put(date[0], Integer.parseInt(date[1]));
+            System.out.println(date[0] + date[1]);
         }
-        return ret ;
+        return ret;
     }
 
 }

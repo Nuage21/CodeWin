@@ -11,7 +11,7 @@ public class Question {
     int id; // unique ID for avery question
     String folder; // images folder
     String core; // Question declarative text ex: What sign does it represent ?
-    int points; // question reward
+    private int points; // question reward
     ArrayList<String> propositions = new ArrayList<>(); // since all questions are QCMs ~ contains all propositions
     ArrayList<Boolean> answers = new ArrayList<>(); // since all questions are QCMs ~ contains all propositions
 
@@ -59,5 +59,9 @@ public class Question {
         }
         System.out.println("__________________________");
         System.out.println(this.note);
+    }
+
+    public int getPoints() {
+        return points;
     }
 }

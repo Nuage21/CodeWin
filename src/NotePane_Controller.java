@@ -21,10 +21,10 @@ public class NotePane_Controller {
         this.noteLabel.setText(_note);
     }
 
-    public void resetWidth(double width) {
+    public void resetWidth() {
 
-        Design.setWidth(holder, width * 0.98);
-        noteLabel.setPrefWidth(width * 0.96);
+        Design.setWidth(holder, Design.CENTRAL_PANE_WIDTH * 0.95);
+        noteLabel.setPrefWidth(Design.CENTRAL_PANE_WIDTH * 0.94);
     }
 
     public void setVisible(boolean _visible) {

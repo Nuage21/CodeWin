@@ -124,7 +124,7 @@ public class QuestionPane_Controller implements Controller {
             tmp.setStyle("-fx-padding: 4 0 0 0;");
             this.propositionsHolderVBox.getChildren().add(tmp);
             this.propositionsControllers.add(ctr); // add controller
-            ctr.resetWidth(Design.CENTRAL_PANE_WIDTH);
+            ctr.resetWidth();
         }
 
         {
@@ -145,7 +145,7 @@ public class QuestionPane_Controller implements Controller {
             notePane_controller.setNote(question.note);
             root.setStyle("-fx-padding: 50 0 0 0 !important;");
             this.propositionsHolderVBox.getChildren().add(root);
-            notePane_controller.resetWidth(Design.CENTRAL_PANE_WIDTH);
+            notePane_controller.resetWidth();
         }
 
     }
@@ -201,19 +201,19 @@ public class QuestionPane_Controller implements Controller {
         Platform.runLater(() -> {
             double delta = Settings.SIDEBAR_DELTA;
             if (Settings.SIDEBAR_STATE == Settings.SIDEBAR_SHRINKED) {
-                resetWidth(daddy.getWidth() + delta);
+                resetWidth();
             } else
-                resetWidth(daddy.getWidth() - delta);
+                resetWidth();
         });
     }
 
-    private void resetWidth(double width) {
+    private void resetWidth() {
 
         for (PropositionPane_Controller ctr : this.propositionsControllers)
-            ctr.resetWidth(width);
+            ctr.resetWidth();
 
         if (notePane_controller != null)
-            notePane_controller.resetWidth(width);
+            notePane_controller.resetWidth();
     }
 
     public boolean evaluateAnswer() {
@@ -233,6 +233,11 @@ public class QuestionPane_Controller implements Controller {
 
     public NotePane_Controller getNotePane_controller() {
         return notePane_controller;
+    }
+
+    public Question getQuestion()
+    {
+        return question;
     }
 }
 

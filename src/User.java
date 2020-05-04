@@ -17,11 +17,10 @@ public class User {
     private java.sql.Date dob;
     private java.sql.Date signupDate;
     private String lastAnsweredQuestion; // ex: "2/3/30" -> chapterID/courseID/QuestionID
-
     private String stats_points ;
     private String  stats_progression ;
-
     private int points;
+
     private boolean darkmode; // locally saved
     private String lang; // locally saved
 
@@ -150,7 +149,8 @@ public class User {
             }
             user = new User(username, rs.getString("password"), rs.getString("email"), rs.getString("firstname"), rs.getString("lastname"), rs.getDate("dob"), rs.getString("address"), rs.getString("mobile"));
             user.lastAnsweredQuestion = rs.getString("lqst");
-            user.stats = rs.getString("stats");
+            user.stats_points = rs.getString("stats_points");
+            user.stats_progression = rs.getString("stats_progression");
             user.signupDate = rs.getDate("sdate");
             user.points = rs.getInt("points");
             rs.close();
@@ -407,6 +407,42 @@ public class User {
 
     public String getLang() {
         return lang;
+    }
+
+    public String getStats_points() {
+        return stats_points;
+    }
+
+    public void setStats_points(String stats_points) {
+        this.stats_points = stats_points;
+    }
+
+    public String getLastAnsweredQuestion() {
+        return lastAnsweredQuestion;
+    }
+
+    public void setLastAnsweredQuestion(String lastAnsweredQuestion) {
+        this.lastAnsweredQuestion = lastAnsweredQuestion;
+    }
+
+    public Date getSignupDate() {
+        return signupDate;
+    }
+
+    public String getStats_progression() {
+        return stats_progression;
+    }
+
+    public void setStats_progression(String stats_progression) {
+        this.stats_progression = stats_progression;
+    }
+
+    public int getPoints() {
+        return points;
+    }
+
+    public void setPoints(int points) {
+        this.points = points;
     }
 
     public class Coord2D {

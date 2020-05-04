@@ -34,8 +34,8 @@ public class PropositionPane_Controller {
         return propositionCheckBox.isSelected();
     }
 
-    public void resetWidth(double width) {
-        Design.setWidth(holder, width);
-        propositionLabel.setPrefWidth(width * 0.9);
+    public void resetWidth() {
+        Design.setWidth(holder, Design.CENTRAL_PANE_WIDTH * 0.955);
+        propositionLabel.setPrefWidth(Design.CENTRAL_PANE_WIDTH * 0.94);
     }
 }

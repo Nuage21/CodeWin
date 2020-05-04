@@ -155,6 +155,9 @@ public class CoursePane_Controller implements Controller {
             panes.add(p);
         }
         holderVBox.getChildren().addAll(panes);
+        Platform.runLater( ()->{
+            Design.setWidth(holderVBox, Design.CENTRAL_PANE_WIDTH * 0.955);
+        });
     }
 
     public Parent appendText(String _txt) throws IOException {
@@ -212,4 +215,6 @@ public class CoursePane_Controller implements Controller {
     public VBox getHolderVBox() {
         return holderVBox;
     }
+
+
 }

@@ -128,7 +128,7 @@ public class LoggedIn_Controller implements Controller {
 
     private Controller occupiedController; // Central Pane loaded fxml's controller
 
-    private boolean waitSkipped = false; // is true when question evaluated and clicked next (so waiter thread skipped)
+    private static boolean waitSkipped = false; // is true when question evaluated and clicked next (so waiter thread skipped)
     private boolean questionEvalJustFired = false; // is true when question evaluated and clicked next (so waiter thread skipped)
     private boolean questionAnswerFound= false; // found the answer ?
 
@@ -268,6 +268,7 @@ public class LoggedIn_Controller implements Controller {
                 {
                     if(!questionEvalJustFired)
                     {
+                        waitSkipped = false;
                         this.questionEvalJustFired = true;
                         QuestionPane_Controller ctr = (QuestionPane_Controller) occupiedController;
                         boolean eval = ctr.evaluateAnswer();
@@ -276,6 +277,8 @@ public class LoggedIn_Controller implements Controller {
                         {
                             ctr.getAnswerPane_controller().setVisible(true);
                             ctr.getNotePane_controller().setVisible(true);
+
+                            this.updateUserPoints(LoggedIn_Controller.getUser().getPoints() + ctr.getQuestion().getPoints());
                         }
                         else
                         {
@@ -294,11 +297,10 @@ public class LoggedIn_Controller implements Controller {
                                 return null;
                             }
                         };
-                        final boolean skipped = this.waitSkipped;
                         sleeper.setOnSucceeded(new EventHandler<WorkerStateEvent>() {
                             @Override
                             public void handle(WorkerStateEvent event) {
-                                if(!skipped)
+                                if(!waitSkipped)
                                 {
                                     if(eval)
                                         displayNeighborQuestion(true);
@@ -317,6 +319,7 @@ public class LoggedIn_Controller implements Controller {
                     }
                     else
                     {
+                        waitSkipped = true;
                         if(this.questionAnswerFound)
                             displayNeighborQuestion(true);
                         else
@@ -384,7 +387,6 @@ public class LoggedIn_Controller implements Controller {
             Design.setWidth(daddy, Settings.appStage.getWidth());
             Design.setHeight(daddy, Settings.appStage.getHeight());
             Design.CENTRAL_PANE_WIDTH = Central_Container_SPane.getWidth();
-            Debug.debugDialog("Dseing.CENTRALW", "" + Design.CENTRAL_PANE_WIDTH);
         });
     }
 
@@ -642,6 +644,7 @@ public class LoggedIn_Controller implements Controller {
         Central_Container_SPane.getChildren().clear();
         Central_Container_SPane.getChildren().add(readCourseSPane);
         Central_Up_Title_Label.setText(courseCoord.getCourseTitle());
+        this.questionsOffset = -1;
     }
 
     public void displayQuestion(int id) throws IOException, ParseException {
@@ -697,6 +700,7 @@ public class LoggedIn_Controller implements Controller {
         } catch (ParseException e) {
             e.printStackTrace();
         }
+        this.Central_Up_Title_Label.setText(this.courseCO.getCourseTitle() + "| Question " + this.questionsOffset + 1); // + 1 for the user (question 0 lol)
 
     }
 
@@ -716,7 +720,17 @@ public class LoggedIn_Controller implements Controller {
 
     public void resetQuestionGlobalVars()
     {
-        this.waitSkipped = false;
         this.questionEvalJustFired = false;
+    }
+
+    public void updateUserPoints(int points)
+    {
+        LoggedIn_Controller.getUser().setPoints(points);
+        pointsLabel.setText(String.format("%04d", points));
+        if(Settings.ACTIVE_DB_MODE)
+        {
+            // save to DataBase
+
+        }
     }
 }
