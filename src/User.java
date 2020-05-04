@@ -17,9 +17,11 @@ public class User {
     private java.sql.Date dob;
     private java.sql.Date signupDate;
     private String lastAnsweredQuestion; // ex: "2/3/30" -> chapterID/courseID/QuestionID
-    private String stats;
-    private int points;
 
+    private String stats_points ;
+    private String  stats_progression ;
+
+    private int points;
     private boolean darkmode; // locally saved
     private String lang; // locally saved
 
