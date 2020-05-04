@@ -105,9 +105,7 @@ public class EmailConfirm_Controller implements Controller{
                 {
                     isInserted = User.addUser(LoggedIn_Controller.getUser());
                     if(!isInserted)
-                    {
                         ErrorBox_Controller.showErrorBox(Settings.appStage, "Erreur de Connexion", "Veuillez verifier votre connexion Internet");
-                    }
                 }
                 if(isInserted)
                 {

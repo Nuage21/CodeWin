@@ -700,7 +700,7 @@ public class LoggedIn_Controller implements Controller {
         } catch (ParseException e) {
             e.printStackTrace();
         }
-        this.Central_Up_Title_Label.setText(this.courseCO.getCourseTitle() + "| Question " + this.questionsOffset + 1); // + 1 for the user (question 0 lol)
+        this.Central_Up_Title_Label.setText(this.courseCO.getCourseTitle() + "| Question " + (this.questionsOffset + 1)); // + 1 for the user (question 0 lol)
 
     }
 

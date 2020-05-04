@@ -17,8 +17,8 @@ public class User {
     private java.sql.Date dob;
     private java.sql.Date signupDate;
     private String lastAnsweredQuestion; // ex: "2/3/30" -> chapterID/courseID/QuestionID
-    private String stats_points ;
-    private String  stats_progression ;
+    private String stats_points;
+    private String  stats_activity;
     private int points;
 
     private boolean darkmode; // locally saved
@@ -98,7 +98,7 @@ public class User {
 
 
     public static boolean addUser(User _user) {
-        String insert = "INSERT INTO users_info (username, password, email, firstname, lastname, dob, address, mobile, sdate, lqst, stats, points) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        String insert = "INSERT INTO users_info (username, password, email, firstname, lastname, dob, address, mobile, sdate, lqst, stats_points, stats_activity, points) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         try {
             Connection conn = getConnection();
             PreparedStatement stmt = conn.prepareStatement(insert);
@@ -115,9 +115,9 @@ public class User {
             stmt.setString(8, _user.mobile);
             stmt.setDate(9, java.sql.Date.valueOf(LocalDate.now()));
             stmt.setString(10, ""); // last answered question
-            stmt.setString(11, ""); // stats
-            stmt.setInt(12, 0); // points
-
+            stmt.setString(11, ""); // stats_points
+            stmt.setString(12, ""); // stats
+            stmt.setInt(13, 0); // points
 
             stmt.execute();
             stmt.close();
@@ -150,7 +150,7 @@ public class User {
             user = new User(username, rs.getString("password"), rs.getString("email"), rs.getString("firstname"), rs.getString("lastname"), rs.getDate("dob"), rs.getString("address"), rs.getString("mobile"));
             user.lastAnsweredQuestion = rs.getString("lqst");
             user.stats_points = rs.getString("stats_points");
-            user.stats_progression = rs.getString("stats_progression");
+            user.stats_activity = rs.getString("stats_activity");
             user.signupDate = rs.getDate("sdate");
             user.points = rs.getInt("points");
             rs.close();
@@ -429,20 +429,20 @@ public class User {
         return signupDate;
     }
 
-    public String getStats_progression() {
-        return stats_progression;
-    }
-
-    public void setStats_progression(String stats_progression) {
-        this.stats_progression = stats_progression;
-    }
-
     public int getPoints() {
         return points;
     }
 
     public void setPoints(int points) {
         this.points = points;
+    }
+
+    public String getStats_activity() {
+        return stats_activity;
+    }
+
+    public void setStats_activity(String stats_activity) {
+        this.stats_activity = stats_activity;
     }
 
     public class Coord2D {

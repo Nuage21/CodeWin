@@ -46,6 +46,11 @@ public class Stats_Controller implements Controller {
     @FXML
     private Button points_month;
 
+    private int activityShowMode = 0; // 0 -> week (default), 1 -> month
+    private int progressionShowMode = 0; // 0 -> week (default), 1 -> month
+
+    public static int SHOWING_WEEK = 0;
+    public static int SHOWING_MONTH = 1;
     //endregion
 
     // ***** link l id des boutons avec scene builder j arrive pas a compiler ni a ouvrir les xml dunno why , j essaie de trouver une solution
@@ -65,35 +70,55 @@ public class Stats_Controller implements Controller {
     public void initialize() throws ParseException {
         activity_week.setOnAction(e -> {
             activityAreaChart.getData().clear();
-            try {
-                traceWeek(ConvertStringTotree(stats_progress), activityAreaChart, "code");
-            } catch (ParseException ex) {
-                ex.printStackTrace();
+            if(this.activityShowMode == SHOWING_MONTH)
+            {
+                try {
+                    traceWeek(ConvertStringTotree(stats_progress), activityAreaChart, "code");
+                } catch (ParseException ex) {
+                    ex.printStackTrace();
+                }
+                toggleButtons(activity_week, activity_month, activityShowMode);
+                this.activityShowMode = SHOWING_WEEK;
             }
         });
         activity_month.setOnAction(e -> {
-            activityAreaChart.getData().clear();
-            try {
-                traceMonth(ConvertStringTotree(stats_progress), activityAreaChart, "code");
-            } catch (ParseException ex) {
-                ex.printStackTrace();
+            if(this.activityShowMode == SHOWING_WEEK)
+            {
+                activityAreaChart.getData().clear();
+                try {
+                    traceMonth(ConvertStringTotree(stats_progress), activityAreaChart, "code");
+                } catch (ParseException ex) {
+                    ex.printStackTrace();
+                }
+                toggleButtons(activity_week, activity_month, activityShowMode);
+                this.activityShowMode = SHOWING_MONTH;
             }
         });
         points_week.setOnAction(e -> {
-            progressionAreaChart.getData().clear();
-            try {
-                traceWeek(ConvertStringTotree(stats_progress), progressionAreaChart, "code");
-            } catch (ParseException ex) {
-                ex.printStackTrace();
+            if(this.progressionShowMode == SHOWING_MONTH)
+            {
+                progressionAreaChart.getData().clear();
+                try {
+                    traceWeek(ConvertStringTotree(stats_progress), progressionAreaChart, "code");
+                } catch (ParseException ex) {
+                    ex.printStackTrace();
+                }
+                toggleButtons(points_week, points_month, progressionShowMode);
+                this.progressionShowMode = SHOWING_WEEK;
             }
         });
         points_month.setOnAction(e -> {
-            progressionAreaChart.getData().clear();
-            try {
-                Thread.currentThread().sleep(300);
-                traceMonth(ConvertStringTotree(stats_progress), progressionAreaChart, "code");
-            } catch (ParseException | InterruptedException ex) {
-                ex.printStackTrace();
+            if(this.progressionShowMode == SHOWING_WEEK)
+            {
+                progressionAreaChart.getData().clear();
+                try {
+                    Thread.currentThread().sleep(300);
+                    traceMonth(ConvertStringTotree(stats_progress), progressionAreaChart, "code");
+                } catch (ParseException | InterruptedException ex) {
+                    ex.printStackTrace();
+                }
+                toggleButtons(points_week, points_month, progressionShowMode);
+                this.progressionShowMode = SHOWING_MONTH;
             }
         });
         //
@@ -101,16 +126,16 @@ public class Stats_Controller implements Controller {
         traceWeek(ConvertStringTotree(stats_progress), progressionAreaChart, "code");
 
         Platform.runLater(() -> {
-            __setAreaChartWidth(activityAreaChart, Design.CENTRAL_PANE_WIDTH );
-            __setAreaChartWidth(progressionAreaChart, Design.CENTRAL_PANE_WIDTH);
-        });
-        if (Settings.SIDEBAR_STATE == Settings.SIDEBAR_SHRINKED) {
-            double width = Settings.SIDEBAR_WIDTH * (1 - (1 / Settings.SIDEBAR_EXTEND_COEFF));
-            Platform.runLater(() -> {
+            __setAreaChartWidth(activityAreaChart, Design.CENTRAL_PANE_WIDTH * 0.9);
+            __setAreaChartWidth(progressionAreaChart, Design.CENTRAL_PANE_WIDTH * 0.9);
+            if (Settings.SIDEBAR_STATE == Settings.SIDEBAR_SHRINKED)
+            {
+                double width = Settings.SIDEBAR_WIDTH * (1 - (1 / Settings.SIDEBAR_EXTEND_COEFF));
                 this.resetAreaChartsWidth(width);
+
+            }
             });
         }
-    }
 
     public void test() {
         TreeMap<String, Integer> s = new TreeMap();
@@ -228,6 +253,22 @@ public class Stats_Controller implements Controller {
         return ret;
     }
 
+    public void toggleButtons(Button weekBtn, Button monthBtn, int mode)
+    {
+        String weekStyle = "-fx-border-width: 0 !important; -fx-background-color:  #dddddd !important;"; // unselect
+        String monthStyle = "-fx-border-color:  #125699 !important; -fx-border-width: 0 0 0 1 !important; -fx-background-color:  #f3f3f3 !important;"; // select
+        if(mode == SHOWING_WEEK)
+        {
+            weekBtn.setStyle(weekStyle);
+            monthBtn.setStyle(monthStyle);
+        }
+        else
+        {
+            weekBtn.setStyle(monthStyle);
+            monthBtn.setStyle(weekStyle);
+        }
+
+    }
 }
 
 

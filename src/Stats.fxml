@@ -9,7 +9,6 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane id="daddy" fx:id="daddy" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Stats_Controller">
    <children>
       <Pane prefHeight="509.0" prefWidth="1556.0" style="-fx-border-color: #ababab; -fx-border-width: 0 0 1 0;">
@@ -28,13 +27,13 @@
                </font>
             </Label>
             <Button fx:id="activity_week" layoutX="14.0" layoutY="82.0" mnemonicParsing="false" prefHeight="134.0" prefWidth="58.0" style="-fx-background-color: #f3f3f3; -fx-border-width: 0 0 0 1; -fx-border-color: #125699;" text="Sem" />
-            <Button fx:id="activity_month" layoutX="14.0" layoutY="226.0" mnemonicParsing="false" prefHeight="134.0" prefWidth="58.0" style="-fx-background-color: #dddddd;" text="Mois" />
+            <Button fx:id="activity_month" layoutX="14.0" layoutY="226.0" mnemonicParsing="false" prefHeight="134.0" prefWidth="58.0" style="-fx-background-color: #dddddd; -fx-border-color: #125699; -fx-border-width: 0;" text="Mois" />
          </children>
       </Pane>
       <Pane layoutY="509.0" prefHeight="481.0" prefWidth="1556.0">
          <children>
             <Button fx:id="points_week" layoutX="14.0" layoutY="82.0" mnemonicParsing="false" prefHeight="134.0" prefWidth="58.0" style="-fx-background-color: #f3f3f3; -fx-border-width: 0 0 0 1; -fx-border-color: #125699;" text="Sem" />
-            <Button fx:id="points_month" layoutX="14.0" layoutY="226.0" mnemonicParsing="false" prefHeight="134.0" prefWidth="58.0" style="-fx-background-color: #dddddd;" text="Mois" />
+            <Button fx:id="points_month" layoutX="14.0" layoutY="226.0" mnemonicParsing="false" prefHeight="134.0" prefWidth="58.0" style="-fx-background-color: #dddddd; -fx-border-color: #125699; -fx-border-width: 0;" text="Mois" />
             <Label layoutX="81.0" layoutY="17.0" prefHeight="43.0" prefWidth="219.0" text="Progression" underline="true">
                <font>
                   <Font size="25.0" />
