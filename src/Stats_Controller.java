@@ -6,6 +6,7 @@ import javafx.scene.chart.AreaChart;
 import javafx.scene.chart.CategoryAxis;
 import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.XYChart;
+import javafx.scene.layout.AnchorPane;
 import org.json.JSONObject;
 
 
@@ -20,6 +21,7 @@ import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
+
 public class Stats_Controller implements Controller {
 
     //region FXML
@@ -38,6 +40,9 @@ public class Stats_Controller implements Controller {
     NumberAxis activityChartYNumberAxis;
     @FXML
     NumberAxis progressionChartYNumberAxis;
+
+    @FXML
+    private AnchorPane daddy;
     //endregion
 
 
@@ -46,20 +51,24 @@ public class Stats_Controller implements Controller {
         traceWeek(randomtrace(), activityAreaChart, "code");
         traceWeek(randomtrace(), progressionAreaChart, "code");
 
-        if(Settings.SIDEBAR_STATE == Settings.SIDEBAR_SHRINKED)
-        {
+        Platform.runLater(() -> {
+            __setAreaChartWidth(activityAreaChart, daddy.getWidth() * 0.95);
+            __setAreaChartWidth(progressionAreaChart, daddy.getWidth() * 0.95);
+        });
+        if (Settings.SIDEBAR_STATE == Settings.SIDEBAR_SHRINKED) {
             double width = Settings.SIDEBAR_WIDTH * (1 - (1 / Settings.SIDEBAR_EXTEND_COEFF));
-            Platform.runLater( ()->{
+            Platform.runLater(() -> {
                 this.resetAreaChartsWidth(width);
             });
         }
     }
-    public void test(){
-        TreeMap<String,Integer> s = new TreeMap() ;
-        s.put("22/04",10);
-        s.put("12/01",20);
+
+    public void test() {
+        TreeMap<String, Integer> s = new TreeMap();
+        s.put("22/04", 10);
+        s.put("12/01", 20);
         try {
-            traceMonth(s,progressionAreaChart,"ff");
+            traceMonth(s, progressionAreaChart, "ff");
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -72,8 +81,7 @@ public class Stats_Controller implements Controller {
         for (Map.Entry<String, Integer> entry : informations.entrySet()) {
 
 
-
-            s.getData().add(new XYChart.Data(entry.getKey(),entry.getValue()));
+            s.getData().add(new XYChart.Data(entry.getKey(), entry.getValue()));
 
         }
         s.setName(nom);
@@ -96,57 +104,55 @@ public class Stats_Controller implements Controller {
 
 
         Random rand = new Random();
-        GregorianCalendar calendar = new GregorianCalendar() ;
-        LocalDate tm  = calendar.toZonedDateTime().toLocalDate();
+        GregorianCalendar calendar = new GregorianCalendar();
+        LocalDate tm = calendar.toZonedDateTime().toLocalDate();
         TreeMap tree = new TreeMap();
         for (int i = 0; i < 15; i++) {
-            tree.put( tm.minusDays(i).format(DateTimeFormatter.ofPattern("dd/MM")), rand.nextInt() % 50 + 50);
+            tree.put(tm.minusDays(i).format(DateTimeFormatter.ofPattern("dd/MM")), rand.nextInt() % 50 + 50);
         }
 
         return tree;
     }
 
 
-    public void traceWeek(Map<String,Integer> data,AreaChart chart,String nom) throws ParseException { // trace the the last 15 days days starting from yesterday
-        GregorianCalendar calendar = new GregorianCalendar() ;
-        TreeMap<String,Integer> map = new TreeMap();
-        LocalDate tm  = calendar.toZonedDateTime().toLocalDate();
-        tm = tm.minusDays(15) ;  // nombre de jours a tracer  :
-        for(int i=0;i<15;i++) {
+    public void traceWeek(Map<String, Integer> data, AreaChart chart, String nom) throws ParseException { // trace the the last 15 days days starting from yesterday
+        GregorianCalendar calendar = new GregorianCalendar();
+        TreeMap<String, Integer> map = new TreeMap();
+        LocalDate tm = calendar.toZonedDateTime().toLocalDate();
+        tm = tm.minusDays(15);  // nombre de jours a tracer  :
+        for (int i = 0; i < 15; i++) {
             String s = tm.plusDays(i).format(DateTimeFormatter.ofPattern("dd/MM"));
-            if(data.containsKey(s)) map.put(s,data.get(s));
-            else map.put(s,0);
+            if (data.containsKey(s)) map.put(s, data.get(s));
+            else map.put(s, 0);
         }
-        traceActivity(map,chart,nom);
+        traceActivity(map, chart, nom);
 
     }
 
-    public void traceMonth(TreeMap<String,Integer> data,AreaChart chart,String nom) throws ParseException { // trace les 12 derniers mois (fck it au bout d une annees si t as pas ton code cque t est pas sencé l avoire)
+    public void traceMonth(TreeMap<String, Integer> data, AreaChart chart, String nom) throws ParseException { // trace les 12 derniers mois (fck it au bout d une annees si t as pas ton code cque t est pas sencé l avoire)
         GregorianCalendar calendar = new GregorianCalendar();
         LinkedHashMap<String, Integer> map = new LinkedHashMap<>();
         LocalDate tm = calendar.toZonedDateTime().toLocalDate();
         tm = tm.minusMonths(11);
         for (int i = 0; i < 12; i++) {
-            int count = 0 ;
+            int count = 0;
             String s = tm.plusMonths(i).format(DateTimeFormatter.ofPattern("/MM"));
-            for(int j=1;j<=31;j++){
-                String st = j<10? "0"+Integer.toString(j)+s  :  Integer.toString(j)+s ;
-                if(data.containsKey(st)) count += data.get(st) ;
+            for (int j = 1; j <= 31; j++) {
+                String st = j < 10 ? "0" + Integer.toString(j) + s : Integer.toString(j) + s;
+                if (data.containsKey(st)) count += data.get(st);
 
             }
-            map.put(tm.plusMonths(i).getMonth().toString(),count);
+            map.put(tm.plusMonths(i).getMonth().toString(), count);
         }
-        traceActivity(map,chart,nom);
+        traceActivity(map, chart, nom);
     }
 
-    public void resetAreaChartsWidth(double _toadd)
-    {
-        this.__setAreaChartWidth(progressionAreaChart, progressionAreaChart.getWidth()+_toadd);
+    public void resetAreaChartsWidth(double _toadd) {
+        this.__setAreaChartWidth(progressionAreaChart, progressionAreaChart.getWidth() + _toadd);
         this.__setAreaChartWidth(activityAreaChart, activityAreaChart.getWidth() + _toadd);
     }
 
-    public void __setAreaChartWidth(AreaChart ac, double width)
-    {
+    public void __setAreaChartWidth(AreaChart ac, double width) {
         ac.setMinWidth(width);
         ac.setMaxWidth(width);
         ac.setPrefWidth(width);

@@ -84,9 +84,9 @@ public class User {
             rs = stmt.executeQuery();
             //   System.out.println(rs.first());
             if (rs.first() == false) {
-                return 1;
-            } else {
                 return 0;
+            } else {
+                return 1;
             }
         } catch (SQLException e) {
             Debug.debugMsg("Error @ User.userNameExiste");

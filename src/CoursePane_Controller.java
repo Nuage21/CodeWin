@@ -40,10 +40,7 @@ public class CoursePane_Controller implements Controller {
 
         Platform.runLater( () -> {
             if(Settings.SIDEBAR_STATE == Settings.SIDEBAR_SHRINKED)
-            {
-                ErrorBox_Controller.showErrorBox(Settings.appStage, "course Display Shrinked", holderVBox.getWidth() + " delta =" + Settings.SIDEBAR_DELTA);
                 Design.setWidth(holderVBox, holderVBox.getWidth() + Settings.SIDEBAR_DELTA);
-            }
         });
         String jsonCourse = Files.readString(Paths.get(filename), StandardCharsets.UTF_8);
         JSONObject obj = new JSONObject(jsonCourse);

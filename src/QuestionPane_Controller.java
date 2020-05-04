@@ -123,6 +123,9 @@ public class QuestionPane_Controller implements Controller {
             tmp.setStyle("-fx-padding: 4 0 0 0;");
             this.propositionsHolderVBox.getChildren().add(tmp);
             this.propositionsControllers.add(ctr); // add controller
+            Platform.runLater(() -> {
+                ctr.resetWidth(daddy.getWidth());
+            });
         }
 
         // display note
@@ -133,11 +136,11 @@ public class QuestionPane_Controller implements Controller {
             notePane_controller.setNote(question.note);
             root.setStyle("-fx-padding: 50 0 0 0 !important;");
             this.propositionsHolderVBox.getChildren().add(root);
+            Platform.runLater(() -> {
+                notePane_controller.resetWidth(daddy.getWidth());
+            });
         }
 
-        if (Settings.SIDEBAR_STATE == Settings.SIDEBAR_SHRINKED) {
-            adjustWidth();
-        }
     }
 
     public Parent appendText(String _txt) throws IOException {
@@ -188,7 +191,7 @@ public class QuestionPane_Controller implements Controller {
     }
 
     public void adjustWidth() {
-        Platform.runLater( ()-> {
+        Platform.runLater(() -> {
             double delta = Settings.SIDEBAR_DELTA;
             if (Settings.SIDEBAR_STATE == Settings.SIDEBAR_SHRINKED) {
                 resetWidth(daddy.getWidth() + delta);
@@ -199,12 +202,11 @@ public class QuestionPane_Controller implements Controller {
 
     private void resetWidth(double width) {
 
-        Design.setWidth(daddy, width);
-
         for (PropositionPane_Controller ctr : this.propositionsControllers)
             ctr.resetWidth(width);
 
-        notePane_controller.resetWidth(width);
+        if (notePane_controller != null)
+            notePane_controller.resetWidth(width);
     }
 }
 

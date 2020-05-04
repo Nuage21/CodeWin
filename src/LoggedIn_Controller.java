@@ -6,6 +6,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 
@@ -19,6 +20,7 @@ import java.text.ParseException;
 import java.util.*;
 
 import javafx.scene.text.Font;
+import javafx.stage.Screen;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import org.json.JSONArray;
@@ -93,8 +95,9 @@ public class LoggedIn_Controller implements Controller {
     @FXML
     private Label Central_Up_Title_Label;
 
-    @FXML
     private Pane side_bar_activated_pane;
+
+    @FXML private BorderPane daddy;
 
     private int diplayingWhat = Settings.DISPLAYING_COURSE_OVERVIEW; // mainly to decide action to take when previous<->next labels are hit
     private CourseCoord courseCoord;
@@ -307,6 +310,8 @@ public class LoggedIn_Controller implements Controller {
         Platform.runLater(() -> {
             Settings.SIDEBAR_WIDTH = this.Sidebar_VBox.getWidth();
             Settings.SIDEBAR_DELTA = Settings.SIDEBAR_WIDTH * (1 - (1 / Settings.SIDEBAR_EXTEND_COEFF));
+            Design.setWidth(daddy, Settings.appStage.getWidth());
+            Design.setHeight(daddy, Settings.appStage.getHeight());
         });
     }
 
@@ -571,6 +576,7 @@ public class LoggedIn_Controller implements Controller {
         QuestionPane_Controller ctr = loader.getController();
         ctr.showQuestion(question);
         ScrollPane scp = new ScrollPane();
+        scp.setFitToWidth(true);
         scp.setContent(root);
         this.Central_Container_SPane.getChildren().clear();
         this.Central_Container_SPane.getChildren().add(scp);

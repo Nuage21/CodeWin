@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1066.0" prefWidth="1975.0" stylesheets="@css/LoggedIn.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="LoggedIn_Controller">
+<BorderPane fx:id="daddy" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1066.0" prefWidth="1975.0" stylesheets="@css/LoggedIn.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="LoggedIn_Controller">
     <bottom>
         <VBox prefHeight="37.0" prefWidth="1975.0" styleClass="footer" BorderPane.alignment="CENTER">
             <children>
@@ -50,7 +50,7 @@
     <top>
         <BorderPane prefHeight="61.0" prefWidth="1975.0" styleClass="up-pane" BorderPane.alignment="CENTER">
             <right>
-                <Pane fx:id="accountHolderPane" prefHeight="71.0" prefWidth="358.0" BorderPane.alignment="CENTER">
+                <Pane fx:id="accountHolderPane" prefHeight="61.0" prefWidth="306.0" BorderPane.alignment="CENTER">
                     <children>
                         <StackPane layoutX="14.0" layoutY="7.0" prefHeight="47.0" prefWidth="50.0" style="-fx-background-radius: 30; -fx-background-color: #e1e1e1;">
                             <children>
@@ -278,25 +278,6 @@
             </children>
         </VBox>
     </left>
-    <right>
-        <VBox prefHeight="968.0" prefWidth="122.0" style="-fx-background-color: #eeee;" BorderPane.alignment="CENTER">
-            <children>
-                <Pane prefHeight="84.0" prefWidth="347.0" styleClass="course-head-pane">
-                    <children>
-                        <StackPane layoutX="7.0" layoutY="7.0" prefHeight="47.0" prefWidth="50.0" style="-fx-background-radius: 30; -fx-background-color: #e1e1e1;">
-                            <children>
-                                <ImageView fitHeight="33.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true" style="-fx-border-radius: 56;">
-                                    <image>
-                                        <Image url="@img/icons/notification.png" />
-                                    </image>
-                                </ImageView>
-                            </children>
-                        </StackPane>
-                    </children>
-                </Pane>
-            </children>
-        </VBox>
-    </right>
     <center>
       <BorderPane BorderPane.alignment="CENTER">
          <center>
@@ -304,7 +285,7 @@
                   <children>
                       <VBox prefHeight="933.0" prefWidth="1308.0">
                           <children>
-                        <VBox fx:id="Central_Container_SPane" prefHeight="844.0" prefWidth="1570.0" />
+                        <VBox fx:id="Central_Container_SPane" prefHeight="844.0" prefWidth="1480.0" />
                           </children>
                       </VBox>
                   </children>

@@ -6,14 +6,15 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane fx:id="holder" prefHeight="59.0" prefWidth="1556.0" style="-fx-background-color: #eeeeee;" styleClass="proposition" stylesheets="@css/Proposition.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PropositionPane_Controller">
+
+<Pane fx:id="holder" prefHeight="59.0" style="-fx-background-color: #eeeeee;" styleClass="proposition" stylesheets="@css/Proposition.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PropositionPane_Controller">
    <children>
       <CheckBox fx:id="propositionCheckBox" layoutX="30.0" layoutY="12.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="30.0">
          <font>
             <Font size="21.0" />
          </font>
       </CheckBox>
-      <Label fx:id="propositionLabel" layoutX="75.0" layoutY="11.0" prefHeight="36.0" prefWidth="1407.0" text="Je sors" textFill="#404040">
+      <Label fx:id="propositionLabel" layoutX="75.0" layoutY="11.0" prefHeight="36.0" prefWidth="1455.0" text="Je sors" textFill="#404040">
          <font>
             <Font size="25.0" />
          </font>
