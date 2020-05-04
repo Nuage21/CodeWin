@@ -2,6 +2,8 @@ import javafx.scene.layout.Pane;
 
 public class Design {
 
+    public static double CENTRAL_PANE_WIDTH;
+
     public static void setWidth(Pane p, double width)
     {
         p.setMinWidth(width);

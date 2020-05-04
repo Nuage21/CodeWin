@@ -1,4 +1,7 @@
 import javafx.application.Platform;
+import javafx.concurrent.Task;
+import javafx.concurrent.WorkerStateEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -124,6 +127,10 @@ public class LoggedIn_Controller implements Controller {
     private CourseOverview courseCO;
 
     private Controller occupiedController; // Central Pane loaded fxml's controller
+
+    private boolean waitSkipped = false; // is true when question evaluated and clicked next (so waiter thread skipped)
+    private boolean questionEvalJustFired = false; // is true when question evaluated and clicked next (so waiter thread skipped)
+    private boolean questionAnswerFound= false; // found the answer ?
 
     @FXML
     public void initialize() throws IOException {
@@ -258,7 +265,71 @@ public class LoggedIn_Controller implements Controller {
                 }
             } else if (this.diplayingWhat == Settings.DISPLAYING_QUESTION) {
                 if (this.questionsOffset  + 1 < this.courseQuestions.size())
-                    displayNeighborQuestion(true);
+                {
+                    if(!questionEvalJustFired)
+                    {
+                        this.questionEvalJustFired = true;
+                        QuestionPane_Controller ctr = (QuestionPane_Controller) occupiedController;
+                        boolean eval = ctr.evaluateAnswer();
+                        this.questionAnswerFound = eval;
+                        if(eval)
+                        {
+                            ctr.getAnswerPane_controller().setVisible(true);
+                            ctr.getNotePane_controller().setVisible(true);
+                        }
+                        else
+                        {
+                            ctr.getAnswerPane_controller().setToFalseAnswer();
+                            ctr.getAnswerPane_controller().setVisible(true);
+                            ctr.getNotePane_controller().setVisible(true);
+                        }
+
+                        Task<Void> sleeper = new Task<Void>() {
+                            @Override
+                            protected Void call() throws Exception {
+                                try {
+                                    Thread.sleep(4000);
+                                } catch (InterruptedException e) {
+                                }
+                                return null;
+                            }
+                        };
+                        final boolean skipped = this.waitSkipped;
+                        sleeper.setOnSucceeded(new EventHandler<WorkerStateEvent>() {
+                            @Override
+                            public void handle(WorkerStateEvent event) {
+                                if(!skipped)
+                                {
+                                    if(eval)
+                                        displayNeighborQuestion(true);
+                                    else
+                                    {
+                                        try {
+                                            displayCurrentCourse();
+                                        } catch (IOException e) {
+                                            e.printStackTrace();
+                                        }
+                                    }
+                                }
+                            }
+                        });
+                        new Thread(sleeper).start();
+                    }
+                    else
+                    {
+                        if(this.questionAnswerFound)
+                            displayNeighborQuestion(true);
+                        else
+                        {
+                            try {
+                                displayCurrentCourse(); // get them back to the course... need more reading
+                            } catch (IOException e) {
+                                e.printStackTrace();
+                            }
+                        }
+                    }
+
+                }
                 else
                 {
                     this.displayNeighborCourse(true);
@@ -312,6 +383,8 @@ public class LoggedIn_Controller implements Controller {
             Settings.SIDEBAR_DELTA = Settings.SIDEBAR_WIDTH * (1 - (1 / Settings.SIDEBAR_EXTEND_COEFF));
             Design.setWidth(daddy, Settings.appStage.getWidth());
             Design.setHeight(daddy, Settings.appStage.getHeight());
+            Design.CENTRAL_PANE_WIDTH = Central_Container_SPane.getWidth();
+            Debug.debugDialog("Dseing.CENTRALW", "" + Design.CENTRAL_PANE_WIDTH);
         });
     }
 
@@ -339,6 +412,8 @@ public class LoggedIn_Controller implements Controller {
         Sidebar_VBox.setPrefWidth(newWidth);
 
         double toadd = width - newWidth;
+
+        Design.CENTRAL_PANE_WIDTH += toadd;
 
         Settings.SIDEBAR_STATE = 1 - Settings.SIDEBAR_STATE;
 
@@ -627,6 +702,7 @@ public class LoggedIn_Controller implements Controller {
 
     public void setDiplayingWhat(int _mode) {
         this.pointsHolderPane.setVisible(_mode == Settings.DISPLAYING_COURSE || _mode == Settings.DISPLAYING_QUESTION);
+        this.resetQuestionGlobalVars();
         this.diplayingWhat = _mode;
     }
 
@@ -636,5 +712,11 @@ public class LoggedIn_Controller implements Controller {
 
     public void setLText(Label l, String s) {
         l.setText(__(s));
+    }
+
+    public void resetQuestionGlobalVars()
+    {
+        this.waitSkipped = false;
+        this.questionEvalJustFired = false;
     }
 }

@@ -52,8 +52,8 @@ public class Stats_Controller implements Controller {
         traceWeek(randomtrace(), progressionAreaChart, "code");
 
         Platform.runLater(() -> {
-            __setAreaChartWidth(activityAreaChart, daddy.getWidth() * 0.95);
-            __setAreaChartWidth(progressionAreaChart, daddy.getWidth() * 0.95);
+            __setAreaChartWidth(activityAreaChart, daddy.getWidth() * 0.97);
+            __setAreaChartWidth(progressionAreaChart, daddy.getWidth() * 0.97);
         });
         if (Settings.SIDEBAR_STATE == Settings.SIDEBAR_SHRINKED) {
             double width = Settings.SIDEBAR_WIDTH * (1 - (1 / Settings.SIDEBAR_EXTEND_COEFF));

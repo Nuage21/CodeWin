@@ -33,6 +33,7 @@ public class QuestionPane_Controller implements Controller {
     private Question question;
 
     private NotePane_Controller notePane_controller;
+    private AnswerPane_Controller answerPane_controller;
 
     @FXML
     public void initialize() {
@@ -123,9 +124,17 @@ public class QuestionPane_Controller implements Controller {
             tmp.setStyle("-fx-padding: 4 0 0 0;");
             this.propositionsHolderVBox.getChildren().add(tmp);
             this.propositionsControllers.add(ctr); // add controller
-            Platform.runLater(() -> {
-                ctr.resetWidth(daddy.getWidth());
-            });
+            ctr.resetWidth(Design.CENTRAL_PANE_WIDTH);
+        }
+
+        {
+            // add answerPane
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("AnswerPane.fxml"));
+            Parent root = loader.load();
+            AnswerPane_Controller ctr = loader.getController();
+            ctr.setVisible(false);
+            this.propositionsHolderVBox.getChildren().add(root);
+            this.answerPane_controller = ctr;
         }
 
         // display note
@@ -136,9 +145,7 @@ public class QuestionPane_Controller implements Controller {
             notePane_controller.setNote(question.note);
             root.setStyle("-fx-padding: 50 0 0 0 !important;");
             this.propositionsHolderVBox.getChildren().add(root);
-            Platform.runLater(() -> {
-                notePane_controller.resetWidth(daddy.getWidth());
-            });
+            notePane_controller.resetWidth(Design.CENTRAL_PANE_WIDTH);
         }
 
     }
@@ -207,6 +214,25 @@ public class QuestionPane_Controller implements Controller {
 
         if (notePane_controller != null)
             notePane_controller.resetWidth(width);
+    }
+
+    public boolean evaluateAnswer() {
+        int nProp = question.answers.size();
+        for (int i = 0; i < nProp; ++i) {
+            boolean isChecked = this.propositionsControllers.get(i).isChosen();
+            boolean isCorrect = this.question.answers.get(i);
+            if (isChecked != isCorrect)
+                return false;
+        }
+        return true;
+    }
+
+    public AnswerPane_Controller getAnswerPane_controller() {
+        return answerPane_controller;
+    }
+
+    public NotePane_Controller getNotePane_controller() {
+        return notePane_controller;
     }
 }
 
