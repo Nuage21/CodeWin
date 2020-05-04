@@ -43,13 +43,70 @@ public class Stats_Controller implements Controller {
 
     @FXML
     private AnchorPane daddy;
+    @FXML
+    Button activity_week ;
+    @FXML
+    Button activity_month ;
+    @FXML
+    Button points_week ;
+    @FXML
+    Button points_month ;
+
     //endregion
+
+    // ***** link l id des boutons avec scene builder j arrive pas a compiler ni a ouvrir les xml dunno why , j essaie de trouver une solution
+
+
+    // sauveguarde le couple dateActuelle(Da) et value (qui est soit le nb de point today ou le temps passé )
+    // format du treemap : <date,valeur>
+    // pr le temps passé Tp :  recupérer le temp lors de la connextion avec :
+    //  int j = (int) (new Date().getTime()/1000);
+    //et avant la deconexion recuperer : TP =  (int) (new Date().getTime()/1000) - j ; ** resultat en seconds
+
+    String stats_points = "29/04,20-28/04,20" ; // intitialisez ces 2 string a partir de la string recupérer dans user
+    String stats_progress ="29/04,20-28/04,20" ;
+
+
 
 
     @FXML
     public void initialize() throws ParseException {
-        traceWeek(randomtrace(), activityAreaChart, "code");
-        traceWeek(randomtrace(), progressionAreaChart, "code");
+        activity_week.setOnAction(e->{
+            activityAreaChart.getData().clear();
+            try {
+                traceWeek(ConvertStringTotree(stats_progress), activityAreaChart, "code");
+            } catch (ParseException ex) {
+                ex.printStackTrace();
+            }
+        });
+        activity_month.setOnAction(e->{
+            activityAreaChart.getData().clear();
+            try {
+                traceMonth(ConvertStringTotree(stats_progress), activityAreaChart, "code");
+            } catch (ParseException ex) {
+                ex.printStackTrace();
+            }
+        });
+        points_week.setOnAction(e->{
+            progressionAreaChart.getData().clear();
+            try {
+                traceWeek(ConvertStringTotree(stats_progress), progressionAreaChart, "code");
+            } catch (ParseException ex) {
+                ex.printStackTrace();
+            }
+        });
+        points_month.setOnAction(e->{
+            progressionAreaChart.getData().clear();
+            try {
+                Thread. currentThread(). sleep(300);
+                traceMonth(ConvertStringTotree(stats_progress), progressionAreaChart, "code");
+            } catch (ParseException | InterruptedException ex) {
+                ex.printStackTrace();
+            }
+        });
+        //
+        traceWeek(ConvertStringTotree(stats_points), activityAreaChart, "code");
+        traceWeek(ConvertStringTotree(stats_progress), progressionAreaChart, "code");
 
         Platform.runLater(() -> {
             __setAreaChartWidth(activityAreaChart, daddy.getWidth() * 0.95);
@@ -156,6 +213,28 @@ public class Stats_Controller implements Controller {
         ac.setMinWidth(width);
         ac.setMaxWidth(width);
         ac.setPrefWidth(width);
+    }
+
+    public String newDay(int value , String chaine_intiale){ // b4 exit call this and save the returned string
+        GregorianCalendar calendar = new GregorianCalendar() ;
+        LocalDate tm  = calendar.toZonedDateTime().toLocalDate();
+        String  s=tm.format(DateTimeFormatter.ofPattern("dd/MM"));
+
+
+
+        return chaine_intiale+"-"+s+","+Integer.toString(value);
+    }
+
+    public TreeMap ConvertStringTotree(String chaine_sauvgarde){
+        TreeMap<String,Integer> ret = new TreeMap( ) ;
+
+        for(String s : chaine_sauvgarde.split("-")){
+            String[] date = s.split(",");
+
+            ret.put(date[0],Integer.parseInt(date[1]));
+            System.out.println(date[0]+date[1]);
+        }
+        return ret ;
     }
 
 }
