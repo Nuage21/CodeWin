@@ -45,7 +45,7 @@ public class AccountPane_Controller {
 
         signoutPane.setOnMouseClicked(e->{
             if(isMouseEntered){
-
+                stage.close();
                 try {
                     FXMLLoader loader = new FXMLLoader(getClass().getResource("Authenticator.fxml"));
                     Parent root = null ;

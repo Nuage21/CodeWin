@@ -442,8 +442,19 @@ public class LoggedIn_Controller implements Controller {
     }
 
     public void loadUserParams() {
-        setLText(accountUsernameLabel, LoggedIn_Controller.user.getUsername());
+        String username = get12CharUsername(LoggedIn_Controller.user.getUsername());
+        setLText(accountUsernameLabel, username);
+        updateUserPoints(LoggedIn_Controller.getUser().getPoints());
+    }
 
+    private static String get12CharUsername(String s)
+    {
+        int l = s.length();
+        if(l >= 12)
+            return s.substring(0, 12);
+        for(int i =0; i < (12 - l); ++i)
+            s += "_";
+        return s;
     }
 
     public void sidebarFocusNewPane(Pane p) {
