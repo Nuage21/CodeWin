@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
@@ -9,26 +10,35 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
 <BorderPane prefHeight="855.0" prefWidth="1575.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <center>
       <VBox prefHeight="708.0" style="-fx-background-color: white;" stylesheets="@css/Params.css">
          <children>
-            <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="708.0" prefWidth="1570.0" style="-fx-background-color: white;">
+            <VBox prefHeight="770.0" prefWidth="1575.0" style="-fx-padding: 10 0 0 20;">
                <children>
-                  <VBox layoutX="6.0" prefHeight="569.0" prefWidth="1423.0" style="-fx-padding: 10 0 0 20;">
-                     <children>
-                        <Pane prefHeight="67.0" prefWidth="966.0" styleClass="param-pane">
+                  <BorderPane>
+                     <right>
+                        <BorderPane prefHeight="67.0" prefWidth="73.0" style="-fx-padding: 0 10 0 0;">
+                           <center>
+                              <ImageView fitHeight="42.0" fitWidth="41.0" pickOnBounds="true">
+                                 <image>
+                                    <Image url="@img/icons/expand.png" />
+                                 </image>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </ImageView>
+                           </center>
+                        </BorderPane>
+                     </right>
+                     <center>
+                        <Pane prefHeight="67.0" prefWidth="1197.0" styleClass="param-pane" BorderPane.alignment="CENTER">
                            <children>
-                              <Pane layoutX="61.0" layoutY="9.0" prefHeight="35.0" prefWidth="903.0">
-                                 <children>
-                                    <Label layoutX="10.0" layoutY="7.0" prefHeight="28.0" prefWidth="729.0" styleClass="param-label" text="Sécurité et Clé de Produit">
-                                       <font>
-                                          <Font name="Rockwell" size="23.0" />
-                                       </font>
-                                    </Label>
-                                 </children>
-                              </Pane>
+                              <Label layoutX="65.0" layoutY="16.0" prefHeight="28.0" styleClass="param-label" text="Sécurité et Clé de Produit">
+                                 <font>
+                                    <Font name="Rockwell" size="23.0" />
+                                 </font>
+                              </Label>
                               <ImageView fitHeight="42.0" fitWidth="41.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@img/icons/password.png" />
@@ -36,118 +46,185 @@
                               </ImageView>
                            </children>
                         </Pane>
-                        <Pane prefHeight="66.0" prefWidth="966.0" styleClass="param-pane">
+                     </center>
+                  </BorderPane>
+                  <BorderPane>
+                     <right>
+                        <BorderPane prefHeight="67.0" prefWidth="73.0" style="-fx-padding: 0 10 0 0;" />
+                     </right>
+                     <center>
+                        <Pane prefHeight="67.0" prefWidth="1197.0" styleClass="param-pane" BorderPane.alignment="CENTER">
                            <children>
-                              <Pane layoutX="61.0" layoutY="6.0" prefHeight="49.0" prefWidth="870.0">
-                                 <children>
-                                    <Label contentDisplay="CENTER" layoutX="8.0" layoutY="8.0" prefHeight="28.0" prefWidth="740.0" styleClass="param-label" text="Compte" textAlignment="CENTER">
-                                       <font>
-                                          <Font name="Rockwell" size="23.0" />
-                                       </font>
-                                    </Label>
-                                 </children>
-                              </Pane>
-                              <ImageView fitHeight="43.0" fitWidth="48.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+                              <Label layoutX="65.0" layoutY="16.0" prefHeight="28.0" styleClass="param-label" text="Sécurité et Clé de Produit (Extension)">
+                                 <font>
+                                    <Font name="Rockwell" size="23.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </Pane>
+                     </center>
+                  </BorderPane>
+                  <BorderPane>
+                     <right>
+                        <BorderPane prefHeight="67.0" prefWidth="73.0" style="-fx-padding: 0 10 0 0;">
+                           <center>
+                              <ImageView fitHeight="42.0" fitWidth="41.0" pickOnBounds="true">
+                                 <image>
+                                    <Image url="@img/icons/expand.png" />
+                                 </image>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </ImageView>
+                           </center>
+                        </BorderPane>
+                     </right>
+                     <center>
+                        <Pane prefHeight="67.0" prefWidth="1197.0" styleClass="param-pane" BorderPane.alignment="CENTER">
+                           <children>
+                              <Label layoutX="65.0" layoutY="16.0" prefHeight="28.0" styleClass="param-label" text="Compte ">
+                                 <font>
+                                    <Font name="Rockwell" size="23.0" />
+                                 </font>
+                              </Label>
+                              <ImageView fitHeight="42.0" fitWidth="41.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@img/icons/settings.png" />
                                  </image>
                               </ImageView>
                            </children>
                         </Pane>
-                        <Pane prefHeight="67.0" prefWidth="1352.0" styleClass="param-pane">
+                     </center>
+                  </BorderPane>
+                  <BorderPane>
+                     <right>
+                        <BorderPane prefHeight="67.0" prefWidth="73.0" style="-fx-padding: 0 10 0 0;" />
+                     </right>
+                     <center>
+                        <Pane prefHeight="67.0" prefWidth="1197.0" styleClass="param-pane" BorderPane.alignment="CENTER">
                            <children>
-                              <Pane layoutX="62.0" layoutY="8.0" prefHeight="51.0" prefWidth="880.0">
-                                 <children>
-                                    <Label layoutX="10.0" layoutY="12.0" prefHeight="28.0" prefWidth="764.0" styleClass="param-label" text="Notification">
-                                       <font>
-                                          <Font name="Rockwell" size="23.0" />
-                                       </font>
-                                    </Label>
-                                 </children>
-                              </Pane>
-                              <ImageView fitHeight="43.0" fitWidth="41.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@img/icons/notification.png" />
-                                 </image>
-                              </ImageView>
+                              <Label layoutX="65.0" layoutY="16.0" prefHeight="28.0" styleClass="param-label" text="Compte (Extension)">
+                                 <font>
+                                    <Font name="Rockwell" size="23.0" />
+                                 </font>
+                              </Label>
                            </children>
                         </Pane>
-                        <Pane prefHeight="68.0" prefWidth="966.0" styleClass="param-pane">
+                     </center>
+                  </BorderPane>
+                  <BorderPane>
+                     <right>
+                        <BorderPane prefHeight="67.0" prefWidth="73.0" style="-fx-padding: 0 10 0 0;">
+                           <center>
+                              <ImageView fitHeight="42.0" fitWidth="41.0" pickOnBounds="true">
+                                 <image>
+                                    <Image url="@img/icons/expand.png" />
+                                 </image>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </ImageView>
+                           </center>
+                        </BorderPane>
+                     </right>
+                     <center>
+                        <Pane prefHeight="67.0" prefWidth="1197.0" styleClass="param-pane" BorderPane.alignment="CENTER">
                            <children>
-                              <Pane layoutX="60.0" layoutY="8.0" prefHeight="51.0" prefWidth="879.0">
-                                 <children>
-                                    <Label layoutX="14.0" layoutY="12.0" prefHeight="28.0" prefWidth="764.0" styleClass="param-label" text="Apparence et Langue">
-                                       <font>
-                                          <Font name="Rockwell" size="23.0" />
-                                       </font>
-                                    </Label>
-                                 </children>
-                              </Pane>
-                              <ImageView fitHeight="48.0" fitWidth="42.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
+                              <Label layoutX="65.0" layoutY="16.0" prefHeight="28.0" styleClass="param-label" text="Apparence et Langue">
+                                 <font>
+                                    <Font name="Rockwell" size="23.0" />
+                                 </font>
+                              </Label>
+                              <ImageView fitHeight="42.0" fitWidth="41.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@img/icons/apearance.png" />
                                  </image>
                               </ImageView>
                            </children>
                         </Pane>
-                        <Pane prefHeight="62.0" prefWidth="1546.0" styleClass="param-pane">
+                     </center>
+                  </BorderPane>
+                  <BorderPane>
+                     <right>
+                        <BorderPane prefHeight="67.0" prefWidth="73.0" style="-fx-padding: 0 10 0 0;" />
+                     </right>
+                     <center>
+                        <Pane prefHeight="67.0" prefWidth="1197.0" styleClass="param-pane" BorderPane.alignment="CENTER">
                            <children>
-                              <Pane layoutX="53.0" layoutY="13.0" prefHeight="35.0" prefWidth="960.0">
-                                 <children>
-                                    <Label layoutX="14.0" layoutY="4.0" prefHeight="28.0" prefWidth="806.0" styleClass="param-label" text="Confidentialité (info)">
-                                       <font>
-                                          <Font name="Rockwell" size="23.0" />
-                                       </font>
-                                    </Label>
-                                 </children>
-                              </Pane>
-                              <ImageView fitHeight="45.0" fitWidth="41.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+                              <Label layoutX="65.0" layoutY="16.0" prefHeight="28.0" styleClass="param-label" text="Apparence et Langue (Extension)">
+                                 <font>
+                                    <Font name="Rockwell" size="23.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </Pane>
+                     </center>
+                  </BorderPane>
+                  <BorderPane>
+                     <right>
+                        <BorderPane prefHeight="67.0" prefWidth="73.0" style="-fx-padding: 0 10 0 0;" />
+                     </right>
+                     <center>
+                        <Pane prefHeight="67.0" prefWidth="1197.0" styleClass="param-pane" BorderPane.alignment="CENTER">
+                           <children>
+                              <Label layoutX="65.0" layoutY="16.0" prefHeight="28.0" styleClass="param-label" text="Confidentialité (info)">
+                                 <font>
+                                    <Font name="Rockwell" size="23.0" />
+                                 </font>
+                              </Label>
+                              <ImageView fitHeight="42.0" fitWidth="41.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@img/icons/confident.png" />
                                  </image>
                               </ImageView>
                            </children>
                         </Pane>
-                        <Pane prefHeight="67.0" prefWidth="1352.0" styleClass="param-pane">
+                     </center>
+                  </BorderPane>
+                  <BorderPane>
+                     <right>
+                        <BorderPane prefHeight="67.0" prefWidth="73.0" style="-fx-padding: 0 10 0 0;" />
+                     </right>
+                     <center>
+                        <Pane prefHeight="67.0" prefWidth="1197.0" styleClass="param-pane" BorderPane.alignment="CENTER">
                            <children>
-                              <Pane layoutX="62.0" layoutY="8.0" prefHeight="51.0" prefWidth="980.0">
-                                 <children>
-                                    <Label layoutX="14.0" layoutY="12.0" prefHeight="28.0" prefWidth="945.0" styleClass="param-label" text="Aide">
-                                       <font>
-                                          <Font name="Rockwell" size="23.0" />
-                                       </font>
-                                    </Label>
-                                 </children>
-                              </Pane>
-                              <ImageView fitHeight="46.0" fitWidth="43.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@img/icons/help.png" />
-                                 </image>
-                              </ImageView>
-                           </children>
-                        </Pane>
-                        <Pane prefHeight="67.0" prefWidth="1352.0" styleClass="param-pane">
-                           <children>
-                              <Pane layoutX="56.0" layoutY="8.0" prefHeight="51.0" prefWidth="888.0">
-                                 <children>
-                                    <Label layoutX="17.0" layoutY="10.0" prefHeight="28.0" prefWidth="836.0" styleClass="param-label" text="A propos">
-                                       <font>
-                                          <Font name="Rockwell" size="23.0" />
-                                       </font>
-                                    </Label>
-                                 </children>
-                              </Pane>
-                              <ImageView fitHeight="41.0" fitWidth="41.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
+                              <Label layoutX="65.0" layoutY="16.0" prefHeight="28.0" styleClass="param-label" text="A propos">
+                                 <font>
+                                    <Font name="Rockwell" size="23.0" />
+                                 </font>
+                              </Label>
+                              <ImageView fitHeight="42.0" fitWidth="41.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@img/icons/about.png" />
                                  </image>
                               </ImageView>
                            </children>
                         </Pane>
-                     </children>
-                  </VBox>
+                     </center>
+                  </BorderPane>
+                  <BorderPane>
+                     <right>
+                        <BorderPane prefHeight="67.0" prefWidth="73.0" style="-fx-padding: 0 10 0 0;" />
+                     </right>
+                     <center>
+                        <Pane prefHeight="67.0" prefWidth="1197.0" styleClass="param-pane" BorderPane.alignment="CENTER">
+                           <children>
+                              <Label layoutX="65.0" layoutY="16.0" prefHeight="28.0" styleClass="param-label" text="Aide">
+                                 <font>
+                                    <Font name="Rockwell" size="23.0" />
+                                 </font>
+                              </Label>
+                              <ImageView fitHeight="42.0" fitWidth="41.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@img/icons/help.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </Pane>
+                     </center>
+                  </BorderPane>
                </children>
-            </Pane>
+            </VBox>
          </children>
       </VBox>
    </center>
