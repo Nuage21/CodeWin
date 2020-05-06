@@ -37,4 +37,8 @@ public class Settings {
 
     // log files
     public static String logfile = "C:\\Users\\hbais\\Desktop\\P2CP\\CodeWin\\CodeWin\\errors.log";
+
+    // sound
+
+    public static float volume = 0.7f;
 }

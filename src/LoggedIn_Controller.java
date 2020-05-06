@@ -29,6 +29,9 @@ import javafx.stage.StageStyle;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
+
 public class LoggedIn_Controller implements Controller {
 
     @FXML
@@ -100,7 +103,8 @@ public class LoggedIn_Controller implements Controller {
 
     private Pane side_bar_activated_pane;
 
-    @FXML private BorderPane daddy;
+    @FXML
+    private BorderPane daddy;
 
     private int diplayingWhat = Settings.DISPLAYING_COURSE_OVERVIEW; // mainly to decide action to take when previous<->next labels are hit
     private CourseCoord courseCoord;
@@ -130,12 +134,12 @@ public class LoggedIn_Controller implements Controller {
 
     private static boolean waitSkipped = false; // is true when question evaluated and clicked next (so waiter thread skipped)
     private boolean questionEvalJustFired = false; // is true when question evaluated and clicked next (so waiter thread skipped)
-    private boolean questionAnswerFound= false; // found the answer ?
+    private boolean questionAnswerFound = false; // found the answer ?
 
     @FXML
     public void initialize() throws IOException {
 
-        Platform.runLater(()->{
+        Platform.runLater(() -> {
             loadUserParams();
         });
         pointsHolderPane.setVisible(false);
@@ -264,24 +268,20 @@ public class LoggedIn_Controller implements Controller {
                     this.sidebarOriginalColor = "transparent";
                 }
             } else if (this.diplayingWhat == Settings.DISPLAYING_QUESTION) {
-                if (this.questionsOffset  + 1 < this.courseQuestions.size())
-                {
-                    if(!questionEvalJustFired)
-                    {
+                if (this.questionsOffset + 1 < this.courseQuestions.size()) {
+                    if (!questionEvalJustFired) {
                         waitSkipped = false;
                         this.questionEvalJustFired = true;
                         QuestionPane_Controller ctr = (QuestionPane_Controller) occupiedController;
                         boolean eval = ctr.evaluateAnswer();
                         this.questionAnswerFound = eval;
-                        if(eval)
-                        {
+                        if (eval) {
+                            MediaPlayer.playAnswerReaction(MediaPlayer.CORRECT_SOUND);
                             ctr.getAnswerPane_controller().setVisible(true);
                             ctr.getNotePane_controller().setVisible(true);
-
                             this.updateUserPoints(LoggedIn_Controller.getUser().getPoints() + ctr.getQuestion().getPoints());
-                        }
-                        else
-                        {
+                        } else {
+                            MediaPlayer.playAnswerReaction(MediaPlayer.WRONG_SOUND);
                             ctr.getAnswerPane_controller().setToFalseAnswer();
                             ctr.getAnswerPane_controller().setVisible(true);
                             ctr.getNotePane_controller().setVisible(true);
@@ -300,12 +300,10 @@ public class LoggedIn_Controller implements Controller {
                         sleeper.setOnSucceeded(new EventHandler<WorkerStateEvent>() {
                             @Override
                             public void handle(WorkerStateEvent event) {
-                                if(!waitSkipped)
-                                {
-                                    if(eval)
+                                if (!waitSkipped) {
+                                    if (eval)
                                         displayNeighborQuestion(true);
-                                    else
-                                    {
+                                    else {
                                         try {
                                             displayCurrentCourse();
                                         } catch (IOException e) {
@@ -316,14 +314,11 @@ public class LoggedIn_Controller implements Controller {
                             }
                         });
                         new Thread(sleeper).start();
-                    }
-                    else
-                    {
+                    } else {
                         waitSkipped = true;
-                        if(this.questionAnswerFound)
+                        if (this.questionAnswerFound)
                             displayNeighborQuestion(true);
-                        else
-                        {
+                        else {
                             try {
                                 displayCurrentCourse(); // get them back to the course... need more reading
                             } catch (IOException e) {
@@ -332,9 +327,7 @@ public class LoggedIn_Controller implements Controller {
                         }
                     }
 
-                }
-                else
-                {
+                } else {
                     this.displayNeighborCourse(true);
                     this.questionsOffset = 0;
                 }
@@ -422,14 +415,10 @@ public class LoggedIn_Controller implements Controller {
         if (this.diplayingWhat == Settings.DISPLAYING_STATISTICS) {
             Stats_Controller ctr = (Stats_Controller) this.occupiedController;
             ctr.resetAreaChartsWidth(toadd);
-        }
-        else if(this.diplayingWhat == Settings.DISPLAYING_COURSE)
-        {
+        } else if (this.diplayingWhat == Settings.DISPLAYING_COURSE) {
             CoursePane_Controller ctr = (CoursePane_Controller) occupiedController;
-            Design.setWidth(ctr.getHolderVBox(),ctr.getHolderVBox().getWidth() + toadd);
-        }
-        else if(this.diplayingWhat == Settings.DISPLAYING_QUESTION)
-        {
+            Design.setWidth(ctr.getHolderVBox(), ctr.getHolderVBox().getWidth() + toadd);
+        } else if (this.diplayingWhat == Settings.DISPLAYING_QUESTION) {
             QuestionPane_Controller ctr = (QuestionPane_Controller) occupiedController;
             ctr.adjustWidth();
         }
@@ -447,12 +436,11 @@ public class LoggedIn_Controller implements Controller {
         updateUserPoints(LoggedIn_Controller.getUser().getPoints());
     }
 
-    private static String get12CharUsername(String s)
-    {
+    private static String get12CharUsername(String s) {
         int l = s.length();
-        if(l >= 12)
+        if (l >= 12)
             return s.substring(0, 12);
-        for(int i =0; i < (12 - l); ++i)
+        for (int i = 0; i < (12 - l); ++i)
             s += "_";
         return s;
     }
@@ -729,17 +717,14 @@ public class LoggedIn_Controller implements Controller {
         l.setText(__(s));
     }
 
-    public void resetQuestionGlobalVars()
-    {
+    public void resetQuestionGlobalVars() {
         this.questionEvalJustFired = false;
     }
 
-    public void updateUserPoints(int points)
-    {
+    public void updateUserPoints(int points) {
         LoggedIn_Controller.getUser().setPoints(points);
         pointsLabel.setText(String.format("%04d", points));
-        if(Settings.ACTIVE_DB_MODE)
-        {
+        if (Settings.ACTIVE_DB_MODE) {
             // save to DataBase
 
         }
