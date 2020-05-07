@@ -17,4 +17,10 @@ public class Design {
         p.setPrefHeight(height);
         p.setMaxHeight(height);
     }
+
+    public static void setVisible(Pane p, boolean v)
+    {
+        p.setVisible(v);
+        p.setManaged(v);
+    }
 }

@@ -40,7 +40,10 @@ public class AccountPane_Controller {
 
         daddyVBox.setOnMouseExited( event -> {
             if (isMouseEntered);
+            {
+                stage.hide();
                 stage.close();
+            }
         });
 
         signoutPane.setOnMouseClicked(e->{

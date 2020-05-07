@@ -24,3 +24,21 @@
 	-fx-border-width: 0 0 1 0;
 	-fx-border-color: #eeeeee;
 }
+
+.save-btn{
+	-fx-background-color: #3489cd;
+	-fx-text-fill: white;
+	-fx-cursor: hand;
+	-fx-opacity: 1;
+}
+
+.save-btn:hover{
+	-fx-opacity: 0.9;
+}
+
+.expander-img{
+	-fx-opacity: 0.55;
+}
+.expander-img:hover{
+	-fx-opacity: 1;
+}

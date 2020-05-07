@@ -1,247 +1,324 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane prefHeight="855.0" prefWidth="1575.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane prefHeight="1030.0" prefWidth="1575.0" stylesheets="@css/Params.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Params_Controller">
    <center>
-      <VBox prefHeight="708.0" style="-fx-background-color: white;" stylesheets="@css/Params.css">
+      <VBox prefHeight="883.0" prefWidth="1575.0" style="-fx-padding: 10 0 0 20;">
          <children>
-            <VBox prefHeight="770.0" prefWidth="1575.0" style="-fx-padding: 10 0 0 20;">
-               <children>
-                  <BorderPane>
-                     <right>
-                        <BorderPane prefHeight="67.0" prefWidth="73.0" style="-fx-padding: 0 10 0 0;">
-                           <center>
-                              <ImageView fitHeight="42.0" fitWidth="41.0" pickOnBounds="true">
-                                 <image>
-                                    <Image url="@img/icons/expand.png" />
-                                 </image>
-                                 <cursor>
-                                    <Cursor fx:constant="HAND" />
-                                 </cursor>
-                              </ImageView>
-                           </center>
-                        </BorderPane>
-                     </right>
+            <BorderPane>
+               <right>
+                  <BorderPane prefHeight="67.0" prefWidth="73.0" style="-fx-padding: 0 10 0 0;">
                      <center>
-                        <Pane prefHeight="67.0" prefWidth="1197.0" styleClass="param-pane" BorderPane.alignment="CENTER">
-                           <children>
-                              <Label layoutX="65.0" layoutY="16.0" prefHeight="28.0" styleClass="param-label" text="Sécurité et Clé de Produit">
-                                 <font>
-                                    <Font name="Rockwell" size="23.0" />
-                                 </font>
-                              </Label>
-                              <ImageView fitHeight="42.0" fitWidth="41.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@img/icons/password.png" />
-                                 </image>
-                              </ImageView>
-                           </children>
-                        </Pane>
+                        <ImageView fx:id="productKeyExpander" fitHeight="42.0" fitWidth="41.0" pickOnBounds="true" styleClass="expander-img">
+                           <image>
+                              <Image url="@img/icons/expand.png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ImageView>
                      </center>
                   </BorderPane>
-                  <BorderPane>
-                     <right>
-                        <BorderPane prefHeight="67.0" prefWidth="73.0" style="-fx-padding: 0 10 0 0;" />
-                     </right>
+               </right>
+               <center>
+                  <Pane prefHeight="67.0" prefWidth="1197.0" styleClass="param-pane" BorderPane.alignment="CENTER">
+                     <children>
+                        <Label layoutX="65.0" layoutY="16.0" prefHeight="28.0" styleClass="param-label" text="Sécurité et Clé de Produit">
+                           <font>
+                              <Font name="Rockwell" size="23.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="42.0" fitWidth="41.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/icons/password.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+               </center>
+            </BorderPane>
+            <BorderPane fx:id="productKeyExtensionBPane">
+               <right>
+                  <BorderPane prefHeight="67.0" prefWidth="73.0" style="-fx-padding: 0 10 0 0;" />
+               </right>
+               <center>
+                  <Pane prefHeight="67.0" prefWidth="1482.0" styleClass="param-pane" BorderPane.alignment="CENTER">
+                     <children>
+                        <Label layoutX="65.0" layoutY="16.0" prefHeight="28.0" styleClass="param-label" text="Sécurité et Clé de Produit (Extension)">
+                           <font>
+                              <Font name="Rockwell" size="23.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+               </center>
+            </BorderPane>
+            <BorderPane>
+               <right>
+                  <BorderPane prefHeight="67.0" prefWidth="73.0" style="-fx-padding: 0 10 0 0;">
                      <center>
-                        <Pane prefHeight="67.0" prefWidth="1197.0" styleClass="param-pane" BorderPane.alignment="CENTER">
-                           <children>
-                              <Label layoutX="65.0" layoutY="16.0" prefHeight="28.0" styleClass="param-label" text="Sécurité et Clé de Produit (Extension)">
-                                 <font>
-                                    <Font name="Rockwell" size="23.0" />
-                                 </font>
-                              </Label>
-                           </children>
-                        </Pane>
+                        <ImageView fx:id="accountExpander" fitHeight="42.0" fitWidth="41.0" pickOnBounds="true" styleClass="expander-img">
+                           <image>
+                              <Image url="@img/icons/expand.png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ImageView>
                      </center>
                   </BorderPane>
-                  <BorderPane>
-                     <right>
-                        <BorderPane prefHeight="67.0" prefWidth="73.0" style="-fx-padding: 0 10 0 0;">
-                           <center>
-                              <ImageView fitHeight="42.0" fitWidth="41.0" pickOnBounds="true">
-                                 <image>
-                                    <Image url="@img/icons/expand.png" />
-                                 </image>
-                                 <cursor>
-                                    <Cursor fx:constant="HAND" />
-                                 </cursor>
-                              </ImageView>
-                           </center>
-                        </BorderPane>
-                     </right>
+               </right>
+               <center>
+                  <Pane prefHeight="67.0" prefWidth="1197.0" styleClass="param-pane" BorderPane.alignment="CENTER">
+                     <children>
+                        <Label layoutX="65.0" layoutY="16.0" prefHeight="28.0" styleClass="param-label" text="Compte ">
+                           <font>
+                              <Font name="Rockwell" size="23.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="42.0" fitWidth="41.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/icons/settings.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+               </center>
+            </BorderPane>
+            <BorderPane fx:id="accountExtensionBPane" style="-fx-border-color: #3489cd; -fx-border-width: 0 0 0 7;">
+               <right>
+                  <BorderPane prefHeight="67.0" prefWidth="73.0" style="-fx-padding: 0 10 0 0;" />
+               </right>
+               <center>
+                  <Pane prefHeight="392.0" prefWidth="1475.0" styleClass="param-pane" BorderPane.alignment="CENTER">
+                     <children>
+                        <Label layoutX="45.0" layoutY="51.0" prefHeight="28.0" text="Nom:" textFill="#3f59b5" underline="true">
+                           <font>
+                              <Font name="Rockwell" size="23.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="487.0" layoutY="50.0" prefHeight="28.0" text="Prenom" textFill="#3f59b5" underline="true">
+                           <font>
+                              <Font name="Rockwell" size="23.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="44.0" layoutY="144.0" prefHeight="28.0" text="Email" textFill="#3f59b5" underline="true">
+                           <font>
+                              <Font name="Rockwell" size="23.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="emailLabel" layoutX="136.0" layoutY="145.0" prefHeight="28.0" text="ih_beldjoudi@esi.dz">
+                           <font>
+                              <Font name="Times New Roman" size="26.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="surnameLabel" layoutX="139.0" layoutY="51.0" prefHeight="28.0" text="Beldjoudi">
+                           <font>
+                              <Font name="Times New Roman" size="26.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="firstnameLabel" layoutX="631.0" layoutY="48.0" prefHeight="28.0" text="Hakim">
+                           <font>
+                              <Font name="Times New Roman" size="26.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="newEmailTField" layoutX="485.0" layoutY="139.0" prefHeight="40.0" prefWidth="265.0" promptText="Nouvelle Email">
+                           <font>
+                              <Font size="21.0" />
+                           </font>
+                        </TextField>
+                        <Button fx:id="sendCodeButton" layoutX="802.0" layoutY="134.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="134.0" styleClass="save-btn" text="Envoyer">
+                           <font>
+                              <Font name="Rockwell" size="18.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="saveEmailButton" layoutX="1241.0" layoutY="135.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="134.0" styleClass="save-btn" text="Sauvegarder">
+                           <font>
+                              <Font name="Rockwell" size="18.0" />
+                           </font>
+                        </Button>
+                        <Line endX="1308.3333740234375" layoutX="149.0" layoutY="226.0" startX="-100.0" />
+                        <Label layoutX="40.0" layoutY="276.0" prefHeight="28.0" text="Mot de Passe:" textFill="#3f59b5" underline="true">
+                           <font>
+                              <Font name="Rockwell" size="23.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="savePwdButton" layoutX="1240.0" layoutY="259.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="134.0" styleClass="save-btn" text="Sauvegarder">
+                           <font>
+                              <Font name="Rockwell" size="18.0" />
+                           </font>
+                        </Button>
+                        <PasswordField fx:id="ancientPwdPField" layoutX="325.0" layoutY="262.0" prefHeight="54.0" prefWidth="429.0" promptText="Ancien mot de passe">
+                           <font>
+                              <Font size="21.0" />
+                           </font>
+                        </PasswordField>
+                        <PasswordField fx:id="newPwdPField" layoutX="797.0" layoutY="261.0" prefHeight="54.0" prefWidth="396.0" promptText="Nouveau mot de passe">
+                           <font>
+                              <Font size="21.0" />
+                           </font>
+                        </PasswordField>
+                        <Label layoutX="799.0" layoutY="50.0" prefHeight="28.0" text="Telephone:" textFill="#3f59b5" underline="true">
+                           <font>
+                              <Font name="Rockwell" size="23.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="mobileLabel" layoutX="957.0" layoutY="49.0" prefHeight="28.0" text="Hakim">
+                           <font>
+                              <Font name="Times New Roman" size="26.0" />
+                           </font>
+                        </Label>
+                        <PasswordField fx:id="codePField" layoutX="1032.0" layoutY="138.0" prefHeight="45.0" prefWidth="149.0" promptText="Code">
+                           <font>
+                              <Font size="21.0" />
+                           </font>
+                        </PasswordField>
+                     </children>
+                  </Pane>
+               </center>
+            </BorderPane>
+            <BorderPane>
+               <right>
+                  <BorderPane prefHeight="67.0" prefWidth="73.0" style="-fx-padding: 0 10 0 0;">
                      <center>
-                        <Pane prefHeight="67.0" prefWidth="1197.0" styleClass="param-pane" BorderPane.alignment="CENTER">
-                           <children>
-                              <Label layoutX="65.0" layoutY="16.0" prefHeight="28.0" styleClass="param-label" text="Compte ">
-                                 <font>
-                                    <Font name="Rockwell" size="23.0" />
-                                 </font>
-                              </Label>
-                              <ImageView fitHeight="42.0" fitWidth="41.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@img/icons/settings.png" />
-                                 </image>
-                              </ImageView>
-                           </children>
-                        </Pane>
+                        <ImageView fx:id="appearanceExpander" fitHeight="42.0" fitWidth="41.0" pickOnBounds="true" styleClass="expander-img">
+                           <image>
+                              <Image url="@img/icons/expand.png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ImageView>
                      </center>
                   </BorderPane>
-                  <BorderPane>
-                     <right>
-                        <BorderPane prefHeight="67.0" prefWidth="73.0" style="-fx-padding: 0 10 0 0;" />
-                     </right>
-                     <center>
-                        <Pane prefHeight="67.0" prefWidth="1197.0" styleClass="param-pane" BorderPane.alignment="CENTER">
-                           <children>
-                              <Label layoutX="65.0" layoutY="16.0" prefHeight="28.0" styleClass="param-label" text="Compte (Extension)">
-                                 <font>
-                                    <Font name="Rockwell" size="23.0" />
-                                 </font>
-                              </Label>
-                           </children>
-                        </Pane>
-                     </center>
-                  </BorderPane>
-                  <BorderPane>
-                     <right>
-                        <BorderPane prefHeight="67.0" prefWidth="73.0" style="-fx-padding: 0 10 0 0;">
-                           <center>
-                              <ImageView fitHeight="42.0" fitWidth="41.0" pickOnBounds="true">
-                                 <image>
-                                    <Image url="@img/icons/expand.png" />
-                                 </image>
-                                 <cursor>
-                                    <Cursor fx:constant="HAND" />
-                                 </cursor>
-                              </ImageView>
-                           </center>
-                        </BorderPane>
-                     </right>
-                     <center>
-                        <Pane prefHeight="67.0" prefWidth="1197.0" styleClass="param-pane" BorderPane.alignment="CENTER">
-                           <children>
-                              <Label layoutX="65.0" layoutY="16.0" prefHeight="28.0" styleClass="param-label" text="Apparence et Langue">
-                                 <font>
-                                    <Font name="Rockwell" size="23.0" />
-                                 </font>
-                              </Label>
-                              <ImageView fitHeight="42.0" fitWidth="41.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@img/icons/apearance.png" />
-                                 </image>
-                              </ImageView>
-                           </children>
-                        </Pane>
-                     </center>
-                  </BorderPane>
-                  <BorderPane>
-                     <right>
-                        <BorderPane prefHeight="67.0" prefWidth="73.0" style="-fx-padding: 0 10 0 0;" />
-                     </right>
-                     <center>
-                        <Pane prefHeight="67.0" prefWidth="1197.0" styleClass="param-pane" BorderPane.alignment="CENTER">
-                           <children>
-                              <Label layoutX="65.0" layoutY="16.0" prefHeight="28.0" styleClass="param-label" text="Apparence et Langue (Extension)">
-                                 <font>
-                                    <Font name="Rockwell" size="23.0" />
-                                 </font>
-                              </Label>
-                           </children>
-                        </Pane>
-                     </center>
-                  </BorderPane>
-                  <BorderPane>
-                     <right>
-                        <BorderPane prefHeight="67.0" prefWidth="73.0" style="-fx-padding: 0 10 0 0;" />
-                     </right>
-                     <center>
-                        <Pane prefHeight="67.0" prefWidth="1197.0" styleClass="param-pane" BorderPane.alignment="CENTER">
-                           <children>
-                              <Label layoutX="65.0" layoutY="16.0" prefHeight="28.0" styleClass="param-label" text="Confidentialité (info)">
-                                 <font>
-                                    <Font name="Rockwell" size="23.0" />
-                                 </font>
-                              </Label>
-                              <ImageView fitHeight="42.0" fitWidth="41.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@img/icons/confident.png" />
-                                 </image>
-                              </ImageView>
-                           </children>
-                        </Pane>
-                     </center>
-                  </BorderPane>
-                  <BorderPane>
-                     <right>
-                        <BorderPane prefHeight="67.0" prefWidth="73.0" style="-fx-padding: 0 10 0 0;" />
-                     </right>
-                     <center>
-                        <Pane prefHeight="67.0" prefWidth="1197.0" styleClass="param-pane" BorderPane.alignment="CENTER">
-                           <children>
-                              <Label layoutX="65.0" layoutY="16.0" prefHeight="28.0" styleClass="param-label" text="A propos">
-                                 <font>
-                                    <Font name="Rockwell" size="23.0" />
-                                 </font>
-                              </Label>
-                              <ImageView fitHeight="42.0" fitWidth="41.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@img/icons/about.png" />
-                                 </image>
-                              </ImageView>
-                           </children>
-                        </Pane>
-                     </center>
-                  </BorderPane>
-                  <BorderPane>
-                     <right>
-                        <BorderPane prefHeight="67.0" prefWidth="73.0" style="-fx-padding: 0 10 0 0;" />
-                     </right>
-                     <center>
-                        <Pane prefHeight="67.0" prefWidth="1197.0" styleClass="param-pane" BorderPane.alignment="CENTER">
-                           <children>
-                              <Label layoutX="65.0" layoutY="16.0" prefHeight="28.0" styleClass="param-label" text="Aide">
-                                 <font>
-                                    <Font name="Rockwell" size="23.0" />
-                                 </font>
-                              </Label>
-                              <ImageView fitHeight="42.0" fitWidth="41.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@img/icons/help.png" />
-                                 </image>
-                              </ImageView>
-                           </children>
-                        </Pane>
-                     </center>
-                  </BorderPane>
-               </children>
-            </VBox>
+               </right>
+               <center>
+                  <Pane prefHeight="67.0" prefWidth="1197.0" styleClass="param-pane" BorderPane.alignment="CENTER">
+                     <children>
+                        <Label layoutX="65.0" layoutY="16.0" prefHeight="28.0" styleClass="param-label" text="Apparence et Langue">
+                           <font>
+                              <Font name="Rockwell" size="23.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="42.0" fitWidth="41.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/icons/apearance.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+               </center>
+            </BorderPane>
+            <BorderPane fx:id="appearanceExtensionBPane">
+               <right>
+                  <BorderPane prefHeight="67.0" prefWidth="73.0" style="-fx-padding: 0 10 0 0;" />
+               </right>
+               <center>
+                  <Pane prefHeight="67.0" prefWidth="1197.0" styleClass="param-pane" BorderPane.alignment="CENTER">
+                     <children>
+                        <Label layoutX="65.0" layoutY="16.0" prefHeight="28.0" styleClass="param-label" text="Apparence et Langue (Extension)">
+                           <font>
+                              <Font name="Rockwell" size="23.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+               </center>
+            </BorderPane>
+            <BorderPane>
+               <right>
+                  <BorderPane prefHeight="67.0" prefWidth="73.0" style="-fx-padding: 0 10 0 0;" />
+               </right>
+               <center>
+                  <Pane prefHeight="67.0" prefWidth="1197.0" styleClass="param-pane" BorderPane.alignment="CENTER">
+                     <children>
+                        <Label layoutX="65.0" layoutY="16.0" prefHeight="28.0" styleClass="param-label" text="Confidentialité (info)">
+                           <font>
+                              <Font name="Rockwell" size="23.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="42.0" fitWidth="41.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/icons/confident.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+               </center>
+            </BorderPane>
+            <BorderPane>
+               <right>
+                  <BorderPane prefHeight="67.0" prefWidth="73.0" style="-fx-padding: 0 10 0 0;" />
+               </right>
+               <center>
+                  <Pane prefHeight="67.0" prefWidth="1197.0" styleClass="param-pane" BorderPane.alignment="CENTER">
+                     <children>
+                        <Label layoutX="65.0" layoutY="16.0" prefHeight="28.0" styleClass="param-label" text="A propos">
+                           <font>
+                              <Font name="Rockwell" size="23.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="42.0" fitWidth="41.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/icons/about.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+               </center>
+            </BorderPane>
+            <BorderPane>
+               <right>
+                  <BorderPane prefHeight="67.0" prefWidth="73.0" style="-fx-padding: 0 10 0 0;" />
+               </right>
+               <center>
+                  <Pane prefHeight="67.0" prefWidth="1197.0" styleClass="param-pane" BorderPane.alignment="CENTER">
+                     <children>
+                        <Label layoutX="65.0" layoutY="16.0" prefHeight="28.0" styleClass="param-label" text="Aide">
+                           <font>
+                              <Font name="Rockwell" size="23.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="42.0" fitWidth="41.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/icons/help.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+               </center>
+            </BorderPane>
          </children>
       </VBox>
    </center>
    <top>
-      <Pane fx:id="UsernameSignInPane1" prefHeight="60.0" prefWidth="1575.0" style="-fx-background-color: white;" styleClass="param-seek" BorderPane.alignment="CENTER">
-         <children>
-            <TextField layoutX="58.0" layoutY="7.0" prefHeight="45.0" prefWidth="1501.0" promptText="Recherche" style="-fx-background-color: white;" styleClass="search-bar">
+      <BorderPane prefHeight="65.0" prefWidth="1575.0" style="-fx-background-color: white; -fx-padding: 0 0 0 10;" BorderPane.alignment="CENTER">
+         <center>
+            <TextField prefHeight="45.0" prefWidth="1515.0" promptText="Recherche" style="-fx-background-color: white;" styleClass="search-bar">
                <font>
-                  <Font name="Rockwell" size="19.0" />
+                  <Font name="Rockwell" size="22.0" />
                </font>
             </TextField>
-            <ImageView fitHeight="45.0" fitWidth="35.0" layoutX="14.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
+         </center>
+         <left>
+            <ImageView fitHeight="45.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
                <image>
                   <Image url="@img/icons/search.png" />
                </image>
             </ImageView>
-         </children>
-      </Pane>
+         </left>
+      </BorderPane>
    </top>
 </BorderPane>

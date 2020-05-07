@@ -18,7 +18,7 @@ public class User {
     private java.sql.Date signupDate;
     private String lastAnsweredQuestion; // ex: "2/3/30" -> chapterID/courseID/QuestionID
     private String stats_points;
-    private String  stats_activity;
+    private String stats_activity;
     private int points;
 
     private boolean darkmode; // locally saved
@@ -183,28 +183,18 @@ public class User {
 
 
     public static boolean updateEmail(User user, String email) {
-        boolean b = false;
-        if (User.userEmailExiste(email)) {
+        String update = "UPDATE users SET email = ? WHERE email = '" + user.getEmail() + "'";
+        try {
+            Connection conn = getConnection();
+            PreparedStatement stmt = conn.prepareStatement(update);
+            stmt.setString(1, email);
+            stmt.execute();
+            stmt.close();
+            return true;
+        } catch (SQLException e) {
+            Debug.debugException(e);
             return false;
-        } else {
-            String update = "UPDATE users SET email = ? WHERE email = '" + user.getEmail() + "'";
-            try {
-                Connection conn = getConnection();
-                PreparedStatement stmt = conn.prepareStatement(update);
-
-
-                stmt.setString(1, email);
-                stmt.execute();
-                stmt.close();
-
-                b = true;
-            } catch (SQLException e) {
-                System.err.println(e);
-            } finally {
-                return b;
-            }
         }
-
     }
 
 

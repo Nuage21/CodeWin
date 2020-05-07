@@ -143,7 +143,7 @@ public class EmailConfirm_Controller implements Controller{
     {
         emailLabel.setText(_email);
     }
-    private String generate6Digits()
+    public static String generate6Digits()
     {
         // It will generate 6 digit random Number.
         // from 0 to 999999
@@ -157,7 +157,7 @@ public class EmailConfirm_Controller implements Controller{
     public boolean sendConfEmail(String recipient)
     {
         correctCode = generate6Digits();
-        MailSender ms = new MailSender("codewin.noreply@gmail.com", "codewin123;");
+        MailSender ms = new MailSender(Settings.CodeWinEmail, Settings.CodeWinEmailPwd);
         return ms.sendConfirmationMail(emailLabel.getText(), correctCode);
     }
 
