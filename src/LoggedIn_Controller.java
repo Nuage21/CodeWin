@@ -188,8 +188,9 @@ public class LoggedIn_Controller implements Controller {
             try {
 //                Central_Up_Pane.setPrefHeight(295);
                 Pane newLoadedPane = FXMLLoader.load(getClass().getResource("Params.fxml"));
-                Central_Container_SPane.getChildren().add(newLoadedPane);
-                Central_Container_SPane.setPrefHeight(1000);
+                ScrollPane scp = new ScrollPane(newLoadedPane);
+                scp.setFitToWidth(true);
+                Central_Container_SPane.getChildren().add(scp);
 
                 this.sidebarFocusNewPane(Side_Params_Pane);
                 this.sidebarOriginalColor = "transparent";

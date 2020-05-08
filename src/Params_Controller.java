@@ -25,12 +25,18 @@ public class Params_Controller {
     @FXML private Label firstnameLabel;
     @FXML private Label mobileLabel;
     @FXML private Label emailLabel;
+    @FXML private Label deleteAccountLabel;
 
     @FXML private Button sendCodeButton;
     @FXML private Button saveEmailButton;
+    @FXML private Button savePwdButton;
+    @FXML private Button deleteAccountButton;
 
     @FXML private TextField newEmailTField;
     @FXML private PasswordField codePField;
+    @FXML private PasswordField ancientPwdPField;
+    @FXML private PasswordField newPwdPField;
+    @FXML private PasswordField deleteAccountPField;
 
     private ArrayList<ImageView> expanders = new ArrayList<>();
     private ArrayList<BorderPane> extensions = new ArrayList<>();
@@ -83,37 +89,101 @@ public class Params_Controller {
             if(Settings.ACTIVE_EMAIL_CONFIRM)
             {
                 String email = newEmailTField.getText();
-                Boolean isValid = true;
-                if(isValid)
-                {
-                    providedEmail = email;
-                    this.genratedCode = EmailConfirm_Controller.generate6Digits();
-                    MailSender ms = new MailSender(Settings.CodeWinEmail, Settings.CodeWinEmailPwd);
-                    boolean sentState = ms.sendConfirmationMail(email, genratedCode);
-                    if(!sentState)
-                        ErrorBox_Controller.showErrorBox(Settings.appStage, "Erreur", "Une erreur est survenue lors de l'envoi du code de confirmation");
-                }
+                if(email.equals(LoggedIn_Controller.getUser().getEmail()))
+                    ErrorBox_Controller.showErrorBox(Settings.appStage, "Erreur", "L'email que vous avez fourni est le meme que l'ancien. Veuillez choisir un autre!");
                 else
-                    ErrorBox_Controller.showErrorBox(Settings.appStage, "Email invalide!", "Veuillez verifiez l'addresse email entree");
+                {
+                    Boolean isValid = true;
+                    if(isValid)
+                    {
+                        providedEmail = email;
+                        this.genratedCode = EmailConfirm_Controller.generate6Digits();
+                        MailSender ms = new MailSender(Settings.CodeWinEmail, Settings.CodeWinEmailPwd);
+                        boolean sentState = ms.sendConfirmationMail(email, genratedCode);
+                        if(!sentState)
+                            ErrorBox_Controller.showErrorBox(Settings.appStage, "Erreur", "Une erreur est survenue lors de l'envoi du code de confirmation");
+                    }
+                    else
+                        ErrorBox_Controller.showErrorBox(Settings.appStage, "Email invalide!", "Veuillez verifiez l'addresse email entree");
+                }
+
             }
         });
 
         saveEmailButton.setOnMouseClicked(mouseEvent -> {
-            String enteredCode = codePField.getText();
-
-            if(enteredCode.equals(genratedCode))
+            if(providedEmail == null || genratedCode == null)
             {
-                User u = LoggedIn_Controller.getUser();
-                boolean success = true;
-                if(Settings.ACTIVE_DB_MODE)
-                    success = User.updateEmail(u, providedEmail);
-                if(success)
-                    SuccessBox_Controller.showSuccessBox(Settings.appStage, "Succes", "Votre email a ete mise a jour avec succes");
-                else
-                    ErrorBox_Controller.showErrorBox(Settings.appStage, "Erreur", "Une erreur est survenue lors de la mise a jour de votre email");
+
             }
             else
-                ErrorBox_Controller.showErrorBox(Settings.appStage, "Erreur", "Code invalide");
+            {
+                String enteredCode = codePField.getText();
+
+                if(enteredCode.equals(genratedCode))
+                {
+                    User u = LoggedIn_Controller.getUser();
+                    boolean success = true;
+                    if(Settings.ACTIVE_DB_MODE)
+                        success = User.updateEmail(u, providedEmail);
+                    if(success)
+                    {
+                        SuccessBox_Controller.showSuccessBox(Settings.appStage, "Succes", "Votre email a ete mise a jour avec succes");
+                        LoggedIn_Controller.getUser().setEmail(providedEmail);
+                        emailLabel.setText(providedEmail); // empty
+                    }
+                    else
+                        ErrorBox_Controller.showErrorBox(Settings.appStage, "Erreur", "Une erreur est survenue lors de la mise a jour de votre email");
+                }
+                else
+                    ErrorBox_Controller.showErrorBox(Settings.appStage, "Erreur", "Code invalide");
+
+                // empty
+                newEmailTField.setText("");
+                codePField.setText("");
+            }
+
+            providedEmail = null;
+            genratedCode = null;
+        });
+
+        savePwdButton.setOnMouseClicked(mouseEvent -> {
+            String ancientProvided = ancientPwdPField.getText();
+            String newPwd = newPwdPField.getText();
+            User u = LoggedIn_Controller.getUser();
+
+            if(newPwd.equals(u.getPassword()))
+                ErrorBox_Controller.showErrorBox(Settings.appStage, "Erreur", "Le mot de passe fourni est le meme que l'ancien. Veuillez choisir un autre!");
+            else if(ancientProvided.equals(u.getPassword()))
+            {
+                boolean state = User.updatePassword(u, newPwd);
+                if(state)
+                    SuccessBox_Controller.showSuccessBox(Settings.appStage, "Success", "Votre mot de passe a ete mis a jour avec succees!");
+                else
+                    ErrorBox_Controller.showErrorBox(Settings.appStage, "Erreur", "Une erreur est survenue lors de la mise a jour de votre mot de passe. Veuillez Reessayer!");
+            }
+            else
+                Checker.showPwdError();
+
+            ancientPwdPField.setText("");
+            newPwdPField.setText("");
+        });
+
+        deleteAccountButton.setOnMouseClicked(mouseEvent -> {
+            User u = LoggedIn_Controller.getUser();
+            String providedPwd = deleteAccountPField.getText();
+            if(providedPwd.equals(u.getPassword()))
+            {
+                boolean state = User.deleteUser(u);
+                if(state)
+                {
+                    SceneLoader.loadAuthenticator();
+                }
+                else
+                    ErrorBox_Controller.showErrorBox(Settings.appStage, "Erreur", "Une erreur est survenue lors de la suppression de votre compte. Veuillez Reessayer!");
+
+            }
+            else
+                Checker.showPwdError();
         });
 
         Design.setVisible(productKeyExtensionBPane, false);

@@ -15,6 +15,11 @@ public class Checker {
 
     public static void showConnexionError()
     {
-        ErrorBox_Controller.showErrorBox(Settings.appStage, "Probleme de Connexion", "Veuillez verifier votre connexion avant d'essayer de vous connecter.");
+        ErrorBox_Controller.showErrorBox(Settings.appStage, "Probleme de Connexion", "Veuillez verifier votre connexion a Internet");
+    }
+
+    public static void showPwdError()
+    {
+        ErrorBox_Controller.showErrorBox(Settings.appStage, "Mot de Passe icorrecte", "Le mot de passe que vous avez fourni est incorrect. Veuillez reessayer");
     }
 }

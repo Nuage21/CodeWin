@@ -166,7 +166,7 @@ public class User {
 
     public static boolean updateUserName(User user, String userName) {
         boolean b = false;
-        String update = "UPDATE users SET userName = ? WHERE userName = '" + user.getUsername() + "'";
+        String update = "UPDATE users_info SET userName = ? WHERE userName = '" + user.getUsername() + "'";
         try {
             Connection conn = getConnection();
             PreparedStatement stmt = conn.prepareStatement(update);
@@ -183,7 +183,7 @@ public class User {
 
 
     public static boolean updateEmail(User user, String email) {
-        String update = "UPDATE users SET email = ? WHERE email = '" + user.getEmail() + "'";
+        String update = "UPDATE users_info SET email = ? WHERE username = '" + user.getUsername() + "'";
         try {
             Connection conn = getConnection();
             PreparedStatement stmt = conn.prepareStatement(update);
@@ -193,112 +193,39 @@ public class User {
             return true;
         } catch (SQLException e) {
             Debug.debugException(e);
-            return false;
         }
+        return false;
     }
 
-
-    public static boolean updateFirstName(User user, String firstName) {
-        boolean b = false;
-
-        String update = "UPDATE users SET firstName = ? WHERE email = '" + user.getEmail() + "' and userName = '" + user.getUsername() + "'";
-        try {
-            Connection conn = getConnection();
-            PreparedStatement stmt = conn.prepareStatement(update);
-
-
-            stmt.setString(1, firstName);
-            stmt.execute();
-            stmt.close();
-
-            b = true;
-        } catch (SQLException e) {
-            System.err.println(e);
-        } finally {
-            return b;
-        }
-    }
-
-
-    public static boolean updateLastName(User user, String lastName) {
-        boolean b = false;
-
-        String update = "UPDATE users SET lastName = ? WHERE email = '" + user.getEmail() + "' and userName = '" + user.getUsername() + "'";
-        try {
-            Connection conn = getConnection();
-            PreparedStatement stmt = conn.prepareStatement(update);
-
-
-            stmt.setString(1, lastName);
-            stmt.execute();
-            stmt.close();
-
-            b = true;
-        } catch (SQLException e) {
-            System.err.println(e);
-        } finally {
-            return b;
-        }
-    }
-
-    public static boolean updateNumtel(User user, String numtel) {
-        boolean b = false;
-
-        String update = "UPDATE users SET numtel = ? WHERE email = '" + user.getEmail() + "' and userName = '" + user.getUsername() + "'";
-        try {
-            Connection conn = getConnection();
-            PreparedStatement stmt = conn.prepareStatement(update);
-
-
-            stmt.setString(1, numtel);
-            stmt.execute();
-            stmt.close();
-
-            b = true;
-        } catch (SQLException e) {
-            System.err.println(e);
-        } finally {
-            return b;
-        }
-    }
 
     public static boolean updatePassword(User user, String password) {
-        boolean b = false;
-
-        String update = "UPDATE users SET password = ? WHERE email = '" + user.getEmail() + "' and userName = '" + user.getUsername() + "'";
+        String update = "UPDATE users_info SET password = ? WHERE username = '" + user.getUsername() + "'";
         try {
             Connection conn = getConnection();
             PreparedStatement stmt = conn.prepareStatement(update);
-
-
             stmt.setString(1, password);
             stmt.execute();
             stmt.close();
-
-            b = true;
+            return true;
         } catch (SQLException e) {
-            System.err.println(e);
-        } finally {
-            return b;
+            Debug.debugException(e);
         }
+        return false;
     }
 
 
     public static boolean deleteUser(User user) {
-        boolean b = false;
-        String del = "DELETE FROM users WHERE username=" + user.getUsername() + "'";
+        String del = "DELETE FROM users_info WHERE username= '" + user.getUsername() + "'";
         try {
             Connection conn = getConnection();
             PreparedStatement stmt = conn.prepareStatement(del);
             stmt.execute();
             stmt.close();
-            b = true;
+            return true;
         } catch (SQLException e) {
-            System.err.println(e);
-        } finally {
-            return b;
+            Debug.debugException(e);
         }
-
+        return false;
     }
 
 

@@ -41,6 +41,8 @@ public class AccountPane_Controller {
         daddyVBox.setOnMouseExited( event -> {
             if (isMouseEntered);
             {
+                stage.setWidth(0);
+                stage.setHeight(0);
                 stage.hide();
                 stage.close();
             }
@@ -49,18 +51,7 @@ public class AccountPane_Controller {
         signoutPane.setOnMouseClicked(e->{
             if(isMouseEntered){
                 stage.close();
-                try {
-                    FXMLLoader loader = new FXMLLoader(getClass().getResource("Authenticator.fxml"));
-                    Parent root = null ;
-                    root = loader.load();
-                    Stage stg = Settings.appStage;
-                    Scene sc = new Scene(root);
-                    LoggedIn_Controller.setUser(null);
-                    stg.setScene(sc);
-                } catch (IOException ex) {
-                    ex.printStackTrace();
-                }
-
+                SceneLoader.loadAuthenticator();
             }
         });
 
