@@ -13,11 +13,11 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane prefHeight="1030.0" prefWidth="1575.0" stylesheets="@css/Params.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Params_Controller">
+<BorderPane prefHeight="1474.0" prefWidth="1575.0" stylesheets="@css/Params.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Params_Controller">
    <center>
       <VBox prefHeight="883.0" prefWidth="1575.0" style="-fx-padding: 10 0 0 20;">
          <children>
-            <BorderPane>
+            <BorderPane styleClass="param-pane">
                <right>
                   <BorderPane prefHeight="67.0" prefWidth="73.0" style="-fx-padding: 0 10 0 0;">
                      <center>
@@ -33,9 +33,9 @@
                   </BorderPane>
                </right>
                <center>
-                  <Pane prefHeight="67.0" prefWidth="1197.0" styleClass="param-pane" BorderPane.alignment="CENTER">
+                  <Pane prefHeight="67.0" prefWidth="1197.0" BorderPane.alignment="CENTER">
                      <children>
-                        <Label layoutX="65.0" layoutY="16.0" prefHeight="28.0" text="Sécurité et Clé de Produit">
+                        <Label layoutX="65.0" layoutY="16.0" prefHeight="28.0" text="Clé de Produit">
                            <font>
                               <Font name="Rockwell" size="23.0" />
                            </font>
@@ -52,26 +52,99 @@
                   </Pane>
                </center>
             </BorderPane>
-            <BorderPane fx:id="productKeyExtensionBPane">
-               <right>
-                  <BorderPane prefHeight="67.0" prefWidth="73.0" style="-fx-padding: 0 10 0 0;" />
-               </right>
+            <BorderPane fx:id="productKeyExtensionBPane" styleClass="extension-holder">
                <center>
-                  <Pane prefHeight="67.0" prefWidth="1482.0" styleClass="param-pane" BorderPane.alignment="CENTER">
+                  <VBox prefWidth="1525.0" styleClass="extension-pane" BorderPane.alignment="CENTER">
                      <children>
-                        <Label layoutX="65.0" layoutY="16.0" prefHeight="28.0" text="Sécurité et Clé de Produit (Extension)">
-                           <font>
-                              <Font name="Rockwell" size="23.0" />
-                           </font>
-                           <cursor>
-                              <Cursor fx:constant="DEFAULT" />
-                           </cursor>
-                        </Label>
+                        <Pane fx:id="activatedPane" prefHeight="89.0" prefWidth="1521.0" style="-fx-border-color: #eeeeee; -fx-border-width: 0 0 3 0;">
+                           <children>
+                              <Label layoutX="120.0" layoutY="24.0" prefHeight="28.0" text="Votre produit est active avec la Cle de Produit:" textFill="#37975c">
+                                 <font>
+                                    <Font name="Georgia" size="29.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="DEFAULT" />
+                                 </cursor>
+                              </Label>
+                              <ImageView fitHeight="51.0" fitWidth="70.0" layoutX="36.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@img/checked.png" />
+                                 </image>
+                              </ImageView>
+                              <Label fx:id="pKeyLabel" layoutX="785.0" layoutY="22.0" prefHeight="28.0" text="7E20-A2F7-0065-DACE-2F8A" textFill="#295880">
+                                 <font>
+                                    <Font name="Times New Roman" size="30.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="DEFAULT" />
+                                 </cursor>
+                              </Label>
+                           </children>
+                        </Pane>
+                        <Pane fx:id="notActivatedPane" prefHeight="89.0" prefWidth="1521.0" style="-fx-border-color: #eeeeee; -fx-border-width: 0 0 3 0;">
+                           <children>
+                              <Label layoutX="120.0" layoutY="24.0" prefHeight="28.0" text="Votre produit n'est pas encore active ! " textFill="#942a24">
+                                 <font>
+                                    <Font name="Georgia" size="29.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="DEFAULT" />
+                                 </cursor>
+                              </Label>
+                              <ImageView fitHeight="51.0" fitWidth="70.0" layoutX="36.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@img/unchecked.png" />
+                                 </image>
+                              </ImageView>
+                              <Pane fx:id="freetrialPane" layoutX="687.5732421875" layoutY="25.0">
+                                 <children>
+                                    <Label fx:id="freetrialEndLabel" layoutX="311.4267578125" prefHeight="28.0" text="20-01-2020" textFill="#295880" underline="true" wrapText="true">
+                                       <font>
+                                          <Font name="Times New Roman" size="30.0" />
+                                       </font>
+                                       <cursor>
+                                          <Cursor fx:constant="DEFAULT" />
+                                       </cursor>
+                                    </Label>
+                                    <Label layoutX="0.4267578125" layoutY="4.0" prefHeight="28.0" text="Votre essaie prendra fin le:" textFill="#942a24">
+                                       <font>
+                                          <Font name="Georgia" size="23.0" />
+                                       </font>
+                                       <cursor>
+                                          <Cursor fx:constant="DEFAULT" />
+                                       </cursor>
+                                    </Label>
+                                 </children>
+                              </Pane>
+                           </children>
+                        </Pane>
+                        <Pane fx:id="enterKeyPane" prefHeight="80.0" prefWidth="1521.0" style="-fx-border-color: #eeeeee; -fx-border-width: 0 0 3 0;">
+                           <children>
+                              <Label layoutX="40.0" layoutY="26.0" prefHeight="28.0" text="Entrez votre cle de Produit pour activer votre compte:" textFill="#37975c">
+                                 <font>
+                                    <Font name="Georgia" size="29.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="DEFAULT" />
+                                 </cursor>
+                              </Label>
+                              <TextField fx:id="productKeyTField" layoutX="795.0" layoutY="23.0" prefHeight="45.0" prefWidth="382.0" promptText="Cle de Produit">
+                                 <font>
+                                    <Font size="21.0" />
+                                 </font>
+                              </TextField>
+                              <Button fx:id="activateButton" layoutX="1229.0" layoutY="18.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="134.0" styleClass="save-btn" text="Activer">
+                                 <font>
+                                    <Font name="Rockwell" size="18.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </Pane>
                      </children>
-                  </Pane>
+                  </VBox>
                </center>
             </BorderPane>
-            <BorderPane>
+            <BorderPane styleClass="param-pane">
                <right>
                   <BorderPane prefHeight="67.0" prefWidth="73.0" style="-fx-padding: 0 10 0 0;">
                      <center>
@@ -87,7 +160,7 @@
                   </BorderPane>
                </right>
                <center>
-                  <Pane prefHeight="67.0" prefWidth="1197.0" styleClass="param-pane" BorderPane.alignment="CENTER">
+                  <Pane prefHeight="67.0" prefWidth="1197.0" BorderPane.alignment="CENTER">
                      <children>
                         <Label layoutX="65.0" layoutY="16.0" prefHeight="28.0" text="Compte ">
                            <font>
@@ -108,10 +181,10 @@
             </BorderPane>
             <BorderPane fx:id="accountExtensionBPane" style="-fx-padding: 0 0 0 15;">
                <right>
-                  <BorderPane prefHeight="67.0" prefWidth="73.0" style="-fx-padding: 0 10 0 0; -fx-background-color: #f3f3f7;" />
+                  <BorderPane prefHeight="67.0" prefWidth="73.0" styleClass="extension-holder" />
                </right>
                <center>
-                  <Pane prefHeight="447.0" prefWidth="1475.0" style="-fx-background-color: #f3f3f7; -fx-border-color: #3489cd; -fx-border-width: 0 0 0 4;" styleClass="param-pane" BorderPane.alignment="CENTER">
+                  <Pane prefHeight="447.0" prefWidth="1475.0" styleClass="extension-pane" BorderPane.alignment="CENTER">
                      <children>
                         <Label layoutX="47.0" layoutY="41.0" prefHeight="28.0" text="Nom:" textFill="#3f59b5" underline="true">
                            <font>
@@ -218,7 +291,7 @@
                   </Pane>
                </center>
             </BorderPane>
-            <BorderPane>
+            <BorderPane styleClass="param-pane">
                <right>
                   <BorderPane prefHeight="67.0" prefWidth="73.0" style="-fx-padding: 0 10 0 0;">
                      <center>
@@ -234,7 +307,7 @@
                   </BorderPane>
                </right>
                <center>
-                  <Pane prefHeight="67.0" prefWidth="1197.0" styleClass="param-pane" BorderPane.alignment="CENTER">
+                  <Pane prefHeight="67.0" prefWidth="1197.0" BorderPane.alignment="CENTER">
                      <children>
                         <Label layoutX="65.0" layoutY="16.0" prefHeight="28.0" text="Apparence et Langue">
                            <font>
@@ -258,7 +331,7 @@
                   <BorderPane prefHeight="67.0" prefWidth="73.0" style="-fx-padding: 0 10 0 0;" />
                </right>
                <center>
-                  <Pane prefHeight="67.0" prefWidth="1197.0" styleClass="param-pane" BorderPane.alignment="CENTER">
+                  <Pane prefHeight="67.0" prefWidth="1197.0" BorderPane.alignment="CENTER">
                      <children>
                         <Label layoutX="65.0" layoutY="16.0" prefHeight="28.0" text="Apparence et Langue (Extension)">
                            <font>
@@ -272,36 +345,12 @@
                   </Pane>
                </center>
             </BorderPane>
-            <BorderPane>
+            <BorderPane styleClass="param-pane">
                <right>
                   <BorderPane prefHeight="67.0" prefWidth="73.0" style="-fx-padding: 0 10 0 0;" />
                </right>
                <center>
-                  <Pane prefHeight="67.0" prefWidth="1197.0" styleClass="param-pane" BorderPane.alignment="CENTER">
-                     <children>
-                        <Label layoutX="65.0" layoutY="16.0" prefHeight="28.0" text="Confidentialité (info)">
-                           <font>
-                              <Font name="Rockwell" size="23.0" />
-                           </font>
-                           <cursor>
-                              <Cursor fx:constant="DEFAULT" />
-                           </cursor>
-                        </Label>
-                        <ImageView fitHeight="42.0" fitWidth="41.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@img/icons/confident.png" />
-                           </image>
-                        </ImageView>
-                     </children>
-                  </Pane>
-               </center>
-            </BorderPane>
-            <BorderPane>
-               <right>
-                  <BorderPane prefHeight="67.0" prefWidth="73.0" style="-fx-padding: 0 10 0 0;" />
-               </right>
-               <center>
-                  <Pane prefHeight="67.0" prefWidth="1197.0" styleClass="param-pane" BorderPane.alignment="CENTER">
+                  <Pane prefHeight="67.0" prefWidth="1197.0" BorderPane.alignment="CENTER">
                      <children>
                         <Label layoutX="65.0" layoutY="16.0" prefHeight="28.0" text="A propos">
                            <font>
@@ -320,12 +369,12 @@
                   </Pane>
                </center>
             </BorderPane>
-            <BorderPane>
+            <BorderPane styleClass="param-pane">
                <right>
                   <BorderPane prefHeight="67.0" prefWidth="73.0" style="-fx-padding: 0 10 0 0;" />
                </right>
                <center>
-                  <Pane prefHeight="67.0" prefWidth="1197.0" styleClass="param-pane" BorderPane.alignment="CENTER">
+                  <Pane prefHeight="67.0" prefWidth="1197.0" BorderPane.alignment="CENTER">
                      <children>
                         <Label layoutX="65.0" layoutY="16.0" prefHeight="28.0" text="Aide">
                            <font>

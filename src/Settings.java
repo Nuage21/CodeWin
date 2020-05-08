@@ -44,4 +44,7 @@ public class Settings {
     // Mail
     public static String CodeWinEmail = "codewin.noreply@gmail.com";
     public static String CodeWinEmailPwd = "codewin123;";
+
+    // Secret Key
+    public static String SecretKey = ":#:CODEWIN1;3WINCODE?!.";
 }

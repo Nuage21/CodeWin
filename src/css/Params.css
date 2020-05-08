@@ -21,7 +21,7 @@
 }
 
 .param-pane{
-	-fx-border-width: 0 0 1 0;
+	-fx-border-width: 0 0 3 0;
 	-fx-border-color: #eeeeee;
 }
 
@@ -41,4 +41,15 @@
 }
 .expander-img:hover{
 	-fx-opacity: 1;
+}
+
+.extension-pane{
+	-fx-background-color:  #f3f3f7;
+	-fx-border-color:  #3489cd;
+	-fx-border-width:  0 0 0 4;
+}
+
+.extension-holder{
+	-fx-padding: 15 !important;
+	-fx-background-color:  #f3f3f7;
 }

@@ -5,10 +5,15 @@ import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.Pane;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.time.LocalDate;
 import java.util.ArrayList;
+
+import java.sql.Date;
+import java.util.Calendar;
 
 public class Params_Controller {
 
@@ -25,18 +30,26 @@ public class Params_Controller {
     @FXML private Label firstnameLabel;
     @FXML private Label mobileLabel;
     @FXML private Label emailLabel;
-    @FXML private Label deleteAccountLabel;
+    @FXML private Label pKeyLabel;
+    @FXML private Label freetrialEndLabel;
 
     @FXML private Button sendCodeButton;
     @FXML private Button saveEmailButton;
     @FXML private Button savePwdButton;
     @FXML private Button deleteAccountButton;
+    @FXML private Button activateButton;
 
     @FXML private TextField newEmailTField;
+    @FXML private TextField productKeyTField;
     @FXML private PasswordField codePField;
     @FXML private PasswordField ancientPwdPField;
     @FXML private PasswordField newPwdPField;
     @FXML private PasswordField deleteAccountPField;
+
+    @FXML private Pane activatedPane;
+    @FXML private Pane notActivatedPane;
+    @FXML private Pane enterKeyPane;
+    @FXML private Pane freetrialPane;
 
     private ArrayList<ImageView> expanders = new ArrayList<>();
     private ArrayList<BorderPane> extensions = new ArrayList<>();
@@ -101,7 +114,7 @@ public class Params_Controller {
                         MailSender ms = new MailSender(Settings.CodeWinEmail, Settings.CodeWinEmailPwd);
                         boolean sentState = ms.sendConfirmationMail(email, genratedCode);
                         if(!sentState)
-                            ErrorBox_Controller.showErrorBox(Settings.appStage, "Erreur", "Une erreur est survenue lors de l'envoi du code de confirmation");
+                            Checker.showConnexionError();
                     }
                     else
                         ErrorBox_Controller.showErrorBox(Settings.appStage, "Email invalide!", "Veuillez verifiez l'addresse email entree");
@@ -132,7 +145,7 @@ public class Params_Controller {
                         emailLabel.setText(providedEmail); // empty
                     }
                     else
-                        ErrorBox_Controller.showErrorBox(Settings.appStage, "Erreur", "Une erreur est survenue lors de la mise a jour de votre email");
+                        Checker.showConnexionError();
                 }
                 else
                     ErrorBox_Controller.showErrorBox(Settings.appStage, "Erreur", "Code invalide");
@@ -159,7 +172,7 @@ public class Params_Controller {
                 if(state)
                     SuccessBox_Controller.showSuccessBox(Settings.appStage, "Success", "Votre mot de passe a ete mis a jour avec succees!");
                 else
-                    ErrorBox_Controller.showErrorBox(Settings.appStage, "Erreur", "Une erreur est survenue lors de la mise a jour de votre mot de passe. Veuillez Reessayer!");
+                    Checker.showConnexionError();
             }
             else
                 Checker.showPwdError();
@@ -189,6 +202,43 @@ public class Params_Controller {
         Design.setVisible(productKeyExtensionBPane, false);
         Design.setVisible(accountExtensionBPane, false);
         Design.setVisible(appearanceExtensionBPane, false);
+
+        User u = LoggedIn_Controller.getUser();
+        boolean isAccountActivate = u.isAccountActivated();
+
+        Design.setVisible(activatedPane, isAccountActivate);
+        Design.setVisible(notActivatedPane, !isAccountActivate);
+        Design.setVisible(enterKeyPane, !isAccountActivate);
+
+        pKeyLabel.setText(User.getFormattedPKey(u.getPkey()));
+
+        Design.setVisible(freetrialPane, !u.isFreetrialEnded());
+
+        String validPKey = User.generatePKey(u.getUsername());
+        productKeyTField.setText(User.getFormattedPKey(validPKey));
+
+        Date ftEndDate = u.getFreetrialEndDate();
+        freetrialEndLabel.setText(ftEndDate.toLocalDate().getDayOfMonth() + "/" + ftEndDate.toLocalDate().getMonthValue() + "/" + ftEndDate.toLocalDate().getYear());
+
+        activateButton.setOnMouseClicked(mouseEvent -> {
+            String userPKey = User.getFormattedPKey(User.generatePKey(u.getUsername()));
+            String enteredPKey = productKeyTField.getText();
+
+            if(enteredPKey.equals(userPKey) || enteredPKey.equals(validPKey))
+            {
+                boolean state = User.updatePKey(u, validPKey);
+                if(state)
+                {
+                    Design.setVisible(notActivatedPane, false);
+                    Design.setVisible(enterKeyPane, false);
+                    SuccessBox_Controller.showSuccessBox(Settings.appStage, "Succes", "Votre produit a ete active avec succes");
+                }
+                else
+                    Checker.showConnexionError();
+            }
+            else
+                ErrorBox_Controller.showErrorBox(Settings.appStage, "Cle incorrecte", "La Cle de Produit Introduite est erronee. Veuillez Reessayer");
+        });
     }
 
     private boolean getState(ImageView img)
@@ -212,4 +262,5 @@ public class Params_Controller {
         mobileLabel.setText(u.getMobile());
         emailLabel.setText(u.getEmail());
     }
+
 }

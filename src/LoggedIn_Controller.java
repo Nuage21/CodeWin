@@ -186,7 +186,6 @@ public class LoggedIn_Controller implements Controller {
         Side_Params_Pane.setOnMouseClicked((event) -> {
             Central_Container_SPane.getChildren().clear();
             try {
-//                Central_Up_Pane.setPrefHeight(295);
                 Pane newLoadedPane = FXMLLoader.load(getClass().getResource("Params.fxml"));
                 ScrollPane scp = new ScrollPane(newLoadedPane);
                 scp.setFitToWidth(true);
