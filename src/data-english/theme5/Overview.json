@@ -1,0 +1,5 @@
+{
+  "courses": ["The installation to the driving position", "The quick check before getting into his car", "Precautions to leave his vehicle"],
+  "readTimes": [15, 10, 12],
+  "files": ["course1.json", "course2.json", "course3.json"]
+}
