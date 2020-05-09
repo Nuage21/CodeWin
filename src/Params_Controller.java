@@ -17,6 +17,7 @@ import java.util.Calendar;
 
 public class Params_Controller {
 
+    //region fxml declarations
     @FXML private ImageView productKeyExpander;
     @FXML private BorderPane productKeyExtensionBPane;
 
@@ -50,6 +51,7 @@ public class Params_Controller {
     @FXML private Pane notActivatedPane;
     @FXML private Pane enterKeyPane;
     @FXML private Pane freetrialPane;
+    //endregion
 
     private ArrayList<ImageView> expanders = new ArrayList<>();
     private ArrayList<BorderPane> extensions = new ArrayList<>();
@@ -60,6 +62,9 @@ public class Params_Controller {
 
     private String genratedCode;
     private String providedEmail;
+    // attributes for handling verfications popups
+    public LogErrorController main_controller;
+    public Stage errorStage = null;
 
     @FXML public void initialize()
     {
@@ -239,6 +244,32 @@ public class Params_Controller {
             else
                 ErrorBox_Controller.showErrorBox(Settings.appStage, "Cle incorrecte", "La Cle de Produit Introduite est erronee. Veuillez Reessayer");
         });
+        newPwdPField.setOnMouseClicked(e -> {
+            {
+                psswrdVer();
+                onClick(PwdField);
+                main_controller.updMsg();
+            }
+        });
+        newPwdPField.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+                psswrdVer();
+                main_controller.updMsg();
+            }
+        });
+        newEmailTField.setOnMouseClicked(e -> {
+            mailVer();
+            onClick(EmailField);
+            main_controller.updMsg();
+        });
+        newEmailTField.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+                mailVer();
+                main_controller.updMsg();
+            }
+        });
     }
 
     private boolean getState(ImageView img)
@@ -261,6 +292,68 @@ public class Params_Controller {
         surnameLabel.setText(u.getLastname());
         mobileLabel.setText(u.getMobile());
         emailLabel.setText(u.getEmail());
+    }
+
+
+    public void onClick(Control c) {
+        if (errorStage != null) this.errorStage.close();
+        init();
+        errorStage.show();
+        positionner(c);
+    }
+
+    public void positionner(Control c) {
+        Point2D p = c.localToScreen(0.0, 0.0);
+        errorStage.setX(p.getX());
+        errorStage.setY(p.getY() + 30);
+    }
+
+    public void init() {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("LogError.fxml"));
+            errorStage = new Stage();
+            errorStage.setAlwaysOnTop(true);
+            Scene sc = new Scene(loader.load());
+            main_controller = (LogErrorController) loader.getController();
+            sc.setFill(Color.TRANSPARENT);
+            errorStage.initStyle(StageStyle.TRANSPARENT);
+            errorStage.setScene(sc);
+            main_controller.main.setOnMouseClicked(e -> errorStage.close());
+
+        } catch (
+                IOException e) {
+            e.printStackTrace();
+        }
+    }
+    public boolean psswrdVer() {
+        String usr = PwdField.getText();
+        boolean lengh = usr.length() >= 8;
+        boolean num = usr.matches("^.*[0-9].*.[0-9].*");
+        boolean spec = usr.matches("^.*(?=.*[*#@_;,&��]).*$");
+        LogErrorController.list.clear();
+        LogErrorController.list.add(new Msg("au moins 8 caract�res", lengh));
+        LogErrorController.list.add(new Msg("au moins 3 chiffres", num));
+        LogErrorController.list.add(new Msg("au moins un caract�re special", spec));
+        return lengh && num && spec;
+    }
+
+
+    public boolean mailVer() {
+        String email = EmailField.getText();
+        String mail_format = "^[a-zA-Z0-9_!#$%&'*+/=?`{|}~^-]+(?:\\.[a-zA-Z0-9_!#$%&'*+/=?`{|}~^-]+)*@[a-zA-Z0-9-]+(?:\\.[a-zA-Z0-9-]+)*$";
+        Pattern pattern = Pattern.compile(mail_format);
+        Matcher match = pattern.matcher(email);
+
+        boolean valide_mail = match.matches();
+        boolean is_not_used = true; // BDD request here
+        if(Settings.ACTIVE_DB_MODE)
+        {
+            // valide_mail = User.userEmailExiste(email);
+        }
+        LogErrorController.list.clear();
+        LogErrorController.list.add(new Msg("format de mail valide", valide_mail));
+        LogErrorController.list.add(new Msg("Email non utilis�", is_not_used));
+        return valide_mail && is_not_used;
     }
 
 }
