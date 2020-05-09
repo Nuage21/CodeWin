@@ -1,0 +1,5 @@
+{
+  "courses": ["How to drive in difficult conditions", "Driving on Highway", "How to tackle hazardous areas"],
+  "readTimes": [15, 10, 12],
+  "files": ["course1.json", "course2.json", "course3.json"]
+}
