@@ -1,0 +1,5 @@
+{
+ "courses": ["Protecting the hilly area", "The assessment of the status of victims", "Help victims"],
+  "readTimes": [15, 10, 12],
+  "files": ["course1.json", "course2.json", "course3.json"]
+}
