@@ -1,0 +1,5 @@
+{
+ "courses": ["The pedestrian in the Highway Code", "The cyclist in the Highway Code", "The PTW","The buses in the Highway Code","The priority of general interest vehicles","Slow vehicles, bulky, and abnormal loads","The heavy weights" ],
+  "readTimes": [15, 10, 12, 20, 7, 5, 10],
+  "files": ["course1.json", "course2.json", "course3.json", "course4.json", "course5.json", "course6.json", "course7.json"]
+}
