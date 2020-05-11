@@ -66,7 +66,7 @@ if __name__ == "__main__":
                          if(core[i + 1] == '>'): #element list spotted !
                             if len(gathered) >= 5 : 
                                gathered.strip()
-                               translatedGathered= json_translate.translate(gathered,dest='ar').text
+                               translatedGathered= json_translate.translate(gathered).text
                                translatedCore=translatedCore+translatedGathered
                                gathered = "";  #empty
                                translatedGathered=""
