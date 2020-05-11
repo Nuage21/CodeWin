@@ -1,0 +1,1966 @@
+{
+"Questions" : [
+    {
+        "ID": 1,
+        "points": 5,
+        "folder": "theme1\\img\\course1\\",
+        "core": "<!img2.PNG!> Ce marquage en forme de damier indique :",
+        "propositions": ["Un sas pour cyclistes", "Un arrêt de bus", "Une voie de détresse", "Une traversée de voie de bus"],
+        "correct_answers": [0, 0, 0, 1],
+        "note": "Ce damier blanc au sol indique une traversée de voie de bus. Le dernier peut être franchi, mais ne doit jamais être encombré."
+    },
+    {
+        "ID": 2,
+        "points": 10,
+        "folder": "theme1\\img\\course1\\",
+        "core": "<!img3.PNG!>Dans cette situation :",
+        "propositions": ["Je change de voie", "Je m’arrête", "Je change de voie ou je m’arrête", "Je ne change pas de voie et je ne m’arrête pas"],
+        "correct_answers": [1, 0, 0, 0],
+        "note": "Un véhicule est stationné à cheval sur le trottoir et empiète sur ma voie de circulation. Personne n’est engagé derrière moi sur la voie de droite, je peux donc me changer de voie, après avoir contrôlé dans l’angle mort droit qu’aucun usager ne se trouve à côté de moi."
+    },
+    {
+        "ID": 3,
+        "points": 7,
+        "folder": "theme1\\img\\course1\\",
+        "core": "<!img8.PNG!> Je passe:",
+        "propositions": ["Oui", "Non"],
+        "correct_answers": [0, 1],
+        "note": "Le feu, qui est passé au jaune va devenir rouge. Aucun véhicule ne me suit de près, et je suis à une distance suffisante du feu pour m’arrêter en sécurité. Je dois donc m’arrêter."
+    },
+    {
+        "ID" : 4,
+        "points" : 5,
+        "folder": "theme1\\img\\course1\\",
+        "core" : "<!img9.PNG!>Dans cette situation :",
+        "propositions" : ["Je quitte une agglomération", "J’entre dans un département", "Je quitte une agglomération et j’entre dans un département", "Je ne quitte pas une agglomération et je n’entre pas dans un département"],
+        "correct_answers" : [0, 0, 1, 0],
+        "note" : "J’ai aperçu deux panneaux : celui du haut m’indiquait que je quitte une agglomération, celui du bas que j’entre dans un département, l’Ain."
+    },
+    {
+        "ID" : 5,
+        "points" : 10,
+        "folder": "theme1\\img\\course1\\",
+        "core" : "<!img10.PNG!>Dans cette situation :",
+        "propositions" : ["Je laisse ce véhicule continuer sa manoeuvre", "Je klaxonne"],
+        "correct_answers" : [1, 0],
+        "note" : "Ce véhicule est engagé sur ma voie de circulation. Je le laisse terminer sa manoeuvre, d’autant plus que le conducteur ne me regarde pas. J’ai eu le temps de l’anticiper, il n’y a donc pas de danger immédiat.En agglomération, l’usager du Klaxon est interdit, sauf en cas de danger immédiat."
+    },
+    {
+        "ID" : 6,
+        "points" : 8,
+        "folder": "theme1\\img\\course1\\",
+        "core" : "<!img15.PNG!>Pour continuer tout droit : ",
+        "propositions" : ["Je reste dans cette voie", "Je me place à droite"],
+        "correct_answers" : [0, 1],
+        "note" : "Pour continuer tout droit, je dois utiliser la voie la plus à droite. Étant mal placé , je change de voie."
+    },
+    {
+        "ID" : 7,
+        "points" : 5,
+        "folder": "theme1\\img\\course1\\",
+        "core" : "<!img17.PNG!>Je circule sur une route : ",
+        "propositions" : ["Nationale", "Départementale"],
+        "correct_answers" : [1, 0],
+        "note" : "La balise située en dessous du panneau indique que je circule sur le N489, donc sur une route nationale."
+    },
+    {
+        "ID" : 8,
+        "points" : 5,
+        "folder": "theme1\\img\\course1\\",
+        "core" : "<!img17.PNG!>Ce panneau indique que la première sortie se situe à 37km :",
+        "propositions" : ["Oui", "Non"],
+        "correct_answers" : [0, 1],
+        "note" : "Ce panneau indique qu’à 1500 mètres je vais rencontrer la sortie n°37  et la sortie n°36"
+    },
+    {
+        "ID" : 9,
+        "points" : 10,
+        "folder": "theme1\\img\\course1\\",
+        "core" : "<!img40.PNG!>Que signifient les 2 panneaux ?",
+        "propositions" : ["(1) Accès autorisé aux piétons, (2) Seulement les enfants accompagnés d'un adulte peuvent passer par ici", "(1) Accès interdit aux piétons, (2) Accès autorisé aux piétons", "(1) Accès interdit aux piétons, (2) Entrée d'aire piétonne"],
+        "correct_answers" : [0, 0, 1],
+        "note" : "Ni la forme, ni la couleur des panneaux est la même donc ces deux panneaux ne peuvent pas avoir le même sens. Tout panneau rond, rouge-blanc-noir interdit quelque chose, tout panneau carré indique quelque chose à la conduite."
+    },
+    {
+        "ID" : 10,
+        "points" : 5,
+        "folder": "theme1\\img\\course1\\",
+        "core" : "<!img41.PNG!>Quelle est la nature de ce panneau ?",
+        "propositions" : ["C'est  panneau de pré-signalisation", "C'est panneau de position"],
+        "correct_answers" : [1, 0],
+        "note" : "Ce panneau annonce des direction qu'il sera possible de prendre dans 120 m. Donc il pré-signale."
+    },
+    {
+        "ID" : 11,
+        "points" : 6,
+        "folder": "theme1\\img\\course2\\",
+        "core" : "<!img2.PNG!>À hauteur de cette intersection, je peux :",
+        "propositions" : ["Tourner à gauche", "Tourner à droite", "Tourner à gauche ou à droit", "Ne tourner ni à gauche ni à droite"],
+        "correct_answers" : [0, 0, 0, 1],
+        "note" : "Les panneaux d’interdiction indiquent qu’à cette intersection, je ne peux ni tourner à droite , ni tourner à gauche. Je peux seulement continuer tout droit."
+    },
+    {
+        "ID" : 12,
+        "points" : 4,
+        "folder": "theme1\\img\\course2\\",
+        "core" : "Qui a plus d'importance, l'indication d'un feu ou l'indication d'un policier ?",
+        "propositions" : ["L'indications d'un feu", "L'indication d'un policier"],
+        "correct_answers" : [0, 1],
+        "note" : "Le policier a le plus de pouvoir dans la circulation. Même s'il indique le contraire des feux ou des panneaux, il faut suivre ses indications."
+    },
+    {
+        "ID" : 13,
+        "points" : 5,
+        "folder": "theme1\\img\\course2\\",
+        "core" : "<!img4.PNG!>Quelle est la lecture de cette borne ?",
+        "propositions" : ["Vous êtes sur la route nationale N 203 et dans 12 km vous serez sur une rocade", "Vous êtes sur la route nationale N 203 et vous roulez au km 12 de cette même route qui est en même temps la rocade"],
+        "correct_answers" : [0, 1],
+        "note" : "Ce qui peut gêner la compréhension des informations sur une borne ce sont les chiffres. N 203 est le numéro de la route et le chiffre 12 représente le km auquel on se trouve. La rocade est aussi la nature de la route. Autrement, il y aurait un panneau indiquant que dans 12 km il y aurait une rocade."
+    },
+    {
+        "ID" : 14,
+        "points" : 6,
+        "folder": "theme1\\img\\course2\\",
+        "core" : "Quelle est la différence entre un carrefour à sens giratoire et un rond-point ?",
+        "propositions" : ["Il n'y en a pas, c'est la même chose", "Dans le carrefour à sens giratoire il n'y a pas de signalisation alors que dans le rond-point il y en a une", "Dans le carrefour à sens giratoire le panneau Cédez le passage indique les priorités, alors que dans le rond-point c'est la priorité à droite"],
+        "correct_answers" : [0, 0, 1],
+        "note" : "Le carrefour à sens giratoire est annoncé avec un panneau et vous devez céder le passage (parce qu'un panneau vous l'indique), tandis que dans un rond-point c'est la règle de la priorité à droite qui s'applique et la signalisation est absente."
+    },
+    {
+        "ID" : 15,
+        "points" : 5,
+        "folder": "theme1\\img\\course2\\",
+        "core" : "<!img43.PNG!>Ce panneau, que signifie-t-il ?",
+        "propositions" : ["Vous pouvez tourner à droite à la prochaine intersection", "Vous êtes obligés de tourner à droite à la prochaine intersection"],
+        "correct_answers" : [0, 1],
+        "note" : "Il s'agit d'un panneau d'obligation et non pas de possibilité. Si c'était juste possible, ce serait implicite."
+    },
+    {
+        "ID" : 16,
+        "points" : 7,
+        "folder": "theme1\\img\\course2\\",
+        "core" : "<!img44.PNG!>Vous êtes le conducteur de la voiture grise. Vous vous apprêtez à vous insérer sur l'autoroute. Avez-vous la priorité ?",
+        "propositions" : ["Oui, car vous devez vous insérer sur la nouvelle route tôt ou tard", "Non, car vous n'êtes pas prioritaires"],
+        "correct_answers" : [0, 1],
+        "note" : "Vous avez le panneau Cédez le passage, mais cela ne veut pas dire que vous allez rester sur la voie d’insertion longtemps. Vous devez céder le passage, mais ensuite vous insérer"
+    },
+    {
+        "ID" : 17,
+        "points" : 3,
+        "folder": "theme1\\img\\course2\\",
+        "core" : "Quelle est la vitesse à ne pas dépasser dans les carrefours à sens giratoire ?",
+        "propositions" : ["30 km /h", "50 km /h", "70 km /h"],
+        "correct_answers" : [1, 0, 0],
+        "note" : "Etant donné que c'est un carrefour qui est rond, la trajectoire n'est pas droite. La vitesse doit être autour de 30 km /h pour ne pas perdre le contrôle du véhicule."
+    },
+    {
+        "ID" : 18,
+        "points" : 4,
+        "folder": "theme1\\img\\course2\\",
+        "core" : "<!img45.PNG!>Hors agglomération, avec quel type de balises signale-t-on une intersection ?",
+        "propositions" : ["La balise n°1", "La balise n°2"],
+        "correct_answers" : [0, 1],
+        "note" : "La balise n°1 représente les virages."
+    },
+    {
+        "ID" : 19,
+        "points" : 5,
+        "folder": "theme1\\img\\course2\\",
+        "core" : "Vous vous êtes engagés dans un carrefour à sens giratoire, mais vous souhaitez prendre la 3ème sortie et il y en a 4. Où vous placez-vous ?",
+        "propositions" : ["Plutôt au milieu du carrefour", "Plutôt à l'extérieur du carrefour"],
+        "correct_answers" : [1, 0],
+        "note" : "Plus vous sortez loin, plus il faut se placer vers le milieu du carrefour."
+    },
+    {
+        "ID" : 20,
+        "points" : 7,
+        "folder": "theme1\\img\\course2\\",
+        "core" : "La priorité à droite s'applique-t-elle toujours et seulement pour les véhicules venant de droite ?<!img46.PNG!>",
+        "propositions" : ["Oui", "Non"],
+        "correct_answers" : [0, 1],
+        "note" : "En général, la priorité à droite s'applique sur les voitures venant sur votre droite. Mais si vous rejoignez un boulevard périphérique, vous pourriez tomber aussi sur le panneau indiquant la priorité à droite, mais s'appliquant à vous."
+    },
+    {
+        "ID" : 21,
+        "points" : 10,
+        "folder": "theme1\\img\\course3\\",
+        "core" : "<!img7.PNG!>Je peux tourner à droite immédiatement : ",
+        "propositions" : ["Oui", "Non"],
+        "correct_answers" : [0, 1],
+        "note" : "Le marquage au sol indiquant un cédez-le-passage fait toute la largeur de chaussée et signale donc une rue à sens unique pour les usagers venant de droite. Je ne peux pas donc m’engager dans cette rue car elle est en sens interdit pour moi."
+    },
+    {
+        "ID" : 22,
+        "points" : 10,
+        "folder": "theme1\\img\\course3\\",
+        "core" : "<!img47.PNG!>Sur cette photo, d'autres voitures pourraient-elles venir d'en face ",
+        "propositions" : ["Oui", "Non"],
+        "correct_answers" : [0, 1],
+        "note" : "Si tout le monde respecte la signalisation, personne ne devrait venir en face car c'est une rue à sens unique (voir le panneau à droite où une flèche blanche est sur un fond bleu)."
+    },
+    {
+        "ID" : 23,
+        "points" : 9,
+        "folder": "theme1\\img\\course3\\",
+        "core" : "Quel est l'ordre de passage des voitures 1,2 et 3 ?<!img48.PNG!>",
+        "propositions" : ["1,2,3", "1,3,2", "3,2,1", "3,1,2"],
+        "correct_answers" : [0, 0, 1, 0],
+        "note" : "La voiture n°3 ne coupe le chemin à personne. Elle va tout droit. Si vous aussi voulez aller tout droit, vous devez d'abord céder le passage à la voiture n°2 car elle est sur votre droite. Aussi, la voiture n°3 est sur la droite de la voiture n°2. C'est donc à la voiture n°2 de céder le passage à la 3 puis à vous de céder le passage à la n°2."
+    },
+    {
+        "ID" : 24,
+        "points" : 6,
+        "folder": "theme1\\img\\course3\\",
+        "core" : "<!img49.PNG!>Vous souhaitez tourner à gauche et la voiture en face de vous aussi. Qui a la priorité dans cette situation : vous ou la voiture en face ?",
+        "propositions" : ["Vous pouvez tourner quand vous voulez, il n'y a pas de règles de priorité entre vous et la camionnette en face", "C'est la camionnette qui doit tourner en premier, car elle est sur votre droite"],
+        "correct_answers" : [1, 0],
+        "note" : "Il s'agit d'un croisement à l'indonésienne, donc la priorité ne s'applique pas ici. La camionnette tourne à gauche, vous aussi. Vous ne lui coupez pas le chemin. Donc vous pouvez tourner quand la voie est libre et sur la photo elle l'a l'air."
+    },
+    {
+        "ID" : 25,
+        "points" : 12,
+        "folder": "theme1\\img\\course3\\",
+        "core" : "<!img50.PNG!>Dans cette situation, êtes-vous bien placés pour aller tout droit ? Et pour tourner à droite ?",
+        "propositions" : ["Aller tout droit : oui ; Tourner à droite : non", "Aller tout droit : non ; Tourner à droite : non", "Allez tout droit "],
+        "correct_answers" : [0, 1, 0],
+        "note" : "Il faut toujours se placer sur la voie la plus à droite, même si vous voulez allez tout droit. Vous n'êtes pas bien placés pour tourner à droite. Pour ce faire, il faut s'assurer que personne n'est dans votre angle mort, mettre le clignotant et vous déporter sur la voie de droite. Comme tourner à droite est très près de là où vous êtes, la manœuvre risquerait d'être un peu rapide."
+    },
+    {
+        "ID" : 26,
+        "points" : 5,
+        "folder": "theme1\\img\\course3\\",
+        "core" : "<!img51.PNG!>Dans cette situation, pour tourner à gauche, êtes-vous  prioritaires par rapport à la camionnette blanche venant d'en face ?",
+        "propositions" : ["Oui", "Non"],
+        "correct_answers" : [0, 1],
+        "note" : "Vous n'êtes pas prioritaires car vous tournez à gauche et vous coupez le chemin à cette voiture. Vous pouvez tourner une fois que la voie soit libre ou que la voiture venant d'en face soit assez loin pour ne pas l'obliger à changer d'allure."
+    },
+    {
+        "ID" : 27,
+        "points" : 5,
+        "folder": "theme1\\img\\course3\\",
+        "core" : "Les priorités, sont-elles correctement attribuées sur cette photo ?<!img52.PNG!>",
+        "propositions" : ["Oui", "Non"],
+        "correct_answers" : [0, 1],
+        "note" : "Votre voiture n°1 est prioritaire car elle ne coupe le chemin à personne. La priorité se joue entre la voiture n°2 et n°3 car elles tournent toutes les deux et se coupent le chemin. Comme la n°3 se trouve sur la droite de la n°2 alors le bon ordre est 1 puis 3 puis 2."
+    },
+    {
+        "ID" : 28,
+        "points" : 6,
+        "folder": "theme1\\img\\course3\\",
+        "core" : "Lorsque le feu en croix est allumé,<!img53.PNG!> cela signifie-t-il qu'il vous est interdit de tourner à gauche ?",
+        "propositions" : ["Oui", "Non"],
+        "correct_answers" : [0, 1],
+        "note" : "Lorsque le feu en croix est allumé vous pouvez tourner  à gauche. En réalité, lorsque ce feu est allumé il ne fait que vous informer que les voitures venant de l'autre sens sont à l'arrêt. Au contraire, donc ! C'est lorsqu'il s'éteint qu'il faut être vigilant."
+    },
+    {
+        "ID" : 29,
+        "points" : 9,
+        "folder": "theme1\\img\\course3\\",
+        "core" : "Qui a la priorité absolue entre ces 3 voitures ?<!img54.PNG!>",
+        "propositions" : ["La voiture orange qui ne change pas direction", "La voiture qui tourne à droite", "La voiture bleue qui tourne à gauche"],
+        "correct_answers" : [1, 0, 0],
+        "note" : "La voiture orange ne change pas de direction, alors que les 2 autres voitures ont le panneau Stop donc elles doivent attendre que l'orange passe en premier."
+    },
+    {
+        "ID" : 30,
+        "points" : 5,
+        "folder": "theme1\\img\\course3\\",
+        "core" : "Si vous tombez sur l'un de ces 2 panneaux<!img55.PNG!>, est-il possible de faire demi-tour ?",
+        "propositions" : ["Oui", "Non"],
+        "correct_answers" : [1, 0],
+        "note" : "Il s'agit d'une impasse, mais vous pouvez faire le demi-tour si la rue n'est pas trop étroite."
+    },
+    {
+        "ID" : 31,
+        "points" : 5,
+        "folder": "theme1\\img\\course4\\",
+        "core" : "<!img4.PNG!>Dans cette rue, la vitesse est limitée à 50 km/h pour les véhicules de plus de 4 tonnes uniquement :",
+        "propositions" : ["Oui", "Non"],
+        "correct_answers" : [0, 1],
+        "note" : "Cet ensemble de panneaux indique deux interdictions. Le panneau situé en haut interdit de dépasser 50 km/h et celui de bas interdit l’accès aux véhicules de plus de 4 tonnes."
+    },
+    {
+        "ID" : 32,
+        "points" : 5,
+        "folder": "theme1\\img\\course4\\",
+        "core" : "<!img12.PNG!>La distance de sécurité avec le véhicule qui me précède n’est pas suffisante : ",
+        "propositions" : ["Oui", "Non"],
+        "correct_answers" : [1, 0],
+        "note" : "La distance de sécurité sur autoroute doit être environ égale à 2 traits blancs de bande d’arrêt d’urgence. Ce n’est pas le cas ici puisque je ne vis qu’un trait blanc. Je ralentis donc légèrement afin de laisser une distance suffisante."
+    },
+    {
+        "ID" : 33,
+        "points" : 6,
+        "folder": "theme1\\img\\course4\\",
+        "core" : "Je circule à 90km/h. J’accélère pour dépasser le véhicule devant moi :<!img13.PNG!>",
+        "propositions" : ["Oui", "Non"],
+        "correct_answers" : [0, 1],
+        "note" : "La signalisation limite la vitesse des voitures à 90km/h. Je circule déjà donc à la vitesse maximale : je n’accélère donc pas et je ne dépasse pas."
+    },
+    {
+        "ID" : 34,
+        "points" : 9,
+        "folder": "theme1\\img\\course4\\",
+        "core" : "J’ai obtenu mon permis de conduire il y a 9 mois. Sur cette chaussée, ma vitesse maximale autorisée est : <!img20.PNG!>",
+        "propositions" : ["90km/h", "100km/h", "110Km/h"],
+        "correct_answers" : [0, 1, 0],
+        "note" : "J’ai obtenu mon permis de conduire il ya 9 mois : je suis donc en période probatoire. Sur cette route à 2 chaussées, séparées par un terre-plein central, ma vitesse maximale autorisée en tant que conducteur novice est de 100km/h."
+    },
+    {
+        "ID" : 35,
+        "points" : 7,
+        "folder": "theme1\\img\\course4\\",
+        "core" : "<!img56.PNG!>A quoi exactement les 30 km /h s'appliquent-ils ?",
+        "propositions" : ["A toute l'agglomération de Courpière", "Seulement à la rue où ce panneau est implanté"],
+        "correct_answers" : [1, 0],
+        "note" : "Si le panneau relatif à la limitation de vitesse est associé au panneau d'une agglomération (il est collé à lui), alors la limitation concerne toute l'agglomération. S'il y avait 2 panneaux différents, la limitation de vitesse concernerait seulement la rue."
+    },
+    {
+        "ID" : 36,
+        "points" : 4,
+        "folder": "theme1\\img\\course4\\",
+        "core" : "Quelle est la limitation de vitesse sur ce genre de routes ?<!img57.PNG!>",
+        "propositions" : ["A 70 km /h", "A 80 km /h", "A 90 km / h"],
+        "correct_answers" : [0, 0, 1],
+        "note" : "La vitesse est limitée à 90 km/h car il s'agit d'une route à double sens. En revanche, il ne faut pas rouler à 90 km / h car la signalisation vous avertit qu'il y a des virages donc il faut ralentir."
+    },
+    {
+        "ID" : 37,
+        "points" : 8,
+        "folder": "theme1\\img\\course4\\",
+        "core" : "<!img58.PNG!>Dans cette situation que faut-il faire ?",
+        "propositions" : ["Rouler à la même allure", "Ralentir"],
+        "correct_answers" : [0, 1],
+        "note" : "Il faut ralentir car la chaussée est glissante (il faut lire la signalisation temporaire)."
+    },
+    {
+        "ID" : 38,
+        "points" : 5,
+        "folder": "theme1\\img\\course4\\",
+        "core" : "Quelle est la limitation de vitesse dans un lieu-dit ?",
+        "propositions" : ["Elle peut être réglementée de façon spécifique", "Toujours à 50 km/ h"],
+        "correct_answers" : [1, 0],
+        "note" : "Elle peut être réglementée de façon spécifique. Il faut suivre les panneaux. En cas de doute, ralentir."
+    },
+    {
+        "ID" : 39,
+        "points" : 4,
+        "folder": "theme1\\img\\course4\\",
+        "core" : "Si les pneus n'adhèrent pas bien au sol, le freinage va-t-il être rallongé ?",
+        "propositions" : ["Oui", "Non"],
+        "correct_answers" : [1, 0],
+        "note" : "Si les pneus n'épousent pas correctement le sol, la voiture roule toujours."
+    },
+    {
+        "ID" : 40,
+        "points" : 9,
+        "folder": "theme1\\img\\course4\\",
+        "core" : "<!img59.PNG!>A quoi exactement cette limitation de vitesse s'applique-t-elle ?",
+        "propositions" : [ "A toute l'agglomération", "A toute une rue et les rues à côté", "A une rue seulement"],
+        "correct_answers" : [0, 1, 0],
+        "note" : "Il s'agit d'une zone, donc la règle s'applique à la rue où ce panneau est implanté, ainsi qu'aux rues adjacentes."
+    },
+    {
+        "ID" : 41,
+        "points" : 6,
+        "folder": "theme1\\img\\course5\\",
+        "core" : "<!img5.PNG!>Dans cette rue, je peux être amené à  croiser :",
+        "propositions" : ["Des voitures", "Des cyclistes", "Les deux", "Ni des cyclistes ni des voitures"],
+        "correct_answers" : [0, 1, 0, 0],
+        "note" : "Le panneau bleu à droite m'indique que la voie arrivant face à moi est une voie cyclable, ce qui est confirmé par le marquage au sol. Je peux être donc amené à croiser des cyclistes mais pas de voitures."
+    },
+    {
+        "ID" : 42,
+        "points" : 8,
+        "folder": "theme1\\img\\course5\\",
+        "core" : "<!img11.PNG!>Je change de voie maintenant :",
+        "propositions" : ["Oui", "Non"],
+        "correct_answers" : [0, 1],
+        "note" : "Le véhicule derrière moi a indiqué son intention de me dépasser. Je reste donc dans cette voie."
+    },
+    {
+        "ID" : 43,
+        "points" : 7,
+        "folder": "theme1\\img\\course5\\",
+        "core" : "Je ne peux pas suivre le véhicule qui dépasse<!img14.PNG!>",
+        "propositions" : ["Oui", "Non"],
+        "correct_answers" : [1, 0],
+        "note" : "Je ne peux pas suivre le véhicule qui dépasse car une voiture, occupant déjà la voie du milieu, est entrain de me dépasser. Je ralentis donc afin de garder une bonne distance de sécurité avec le véhicule qui me précède."
+    },
+    {
+        "ID" : 44,
+        "points" : 5,
+        "folder": "theme1\\img\\course5\\",
+        "core" : "Je peux suivre le véhicule qui dépasse : <!img18.PNG!>",
+        "propositions" : ["Oui", "Non"],
+        "correct_answers" : [0, 1],
+        "note" : "En fin de journée, il se peut que le soleil éblouisse le conducteur à travers le rétroviseur. La vision du conducteur n’est donc plus parfaite. Dans ce cas-là, j’aperçois une voiture sur la voie de gauche, mais comme je suis ébloui je dois renoncer au dépassement par sécurité"
+    },
+    {
+        "ID" : 45,
+        "points" : 6,
+        "folder": "theme1\\img\\course5\\",
+        "core" : "Sur une route en pente, qu'est-ce qui est plus difficile de faire ?",
+        "propositions" : ["Il est plus difficile de monter", "Il est plus difficile de descendre"],
+        "correct_answers" : [1, 0],
+        "note" : "Monter demande plus de force à déployer et donc le véhicule qui monte est prioritaire en général."
+    },
+    {
+        "ID" : 46,
+        "points" : 6,
+        "folder": "theme1\\img\\course5\\",
+        "core" :"<!img60.PNG!>Sur les routes sinueuses et étroites, peut-on utiliser le klaxon ?",
+        "propositions" : ["Oui", "Non"],
+        "correct_answers" : [1, 0],
+        "note" : "Bien sûr ! Vous êtes invités à utiliser le klaxon pour vous annoncer !"
+    },
+    {
+        "ID" : 47,
+        "points" : 7,
+        "folder": "theme1\\img\\course5\\",
+        "core" : "Avez-vous le droit de dépasser ce cycliste ?<!img61.PNG!>",
+        "propositions" : ["Oui", "Non"],
+        "correct_answers" : [1, 0],
+        "note" : "Même si la ligne est continue, vous pouvez le dépasser car vous ne risquez pas de la franchir. Même si vous la franchissez, ce n'est pas grave. Il faut juste veiller à laisser 1,5 m de distance entre vous et le cycliste car la situation représentée est hors agglomération. La visibilité est très bonne aussi donc toutes les conditions sont réunies pour effectuer ce dépassement."
+    },
+    {
+        "ID" : 48,
+        "points" : 5,
+        "folder": "theme1\\img\\course5\\",
+        "core" : "<!img62.PNG!>Êtes-vous en train de dépasser les véhicules sur la gauche ?",
+        "propositions" : ["Oui", "Non"],
+        "correct_answers" : [0, 1],
+        "note" : "Vous êtes dans votre file de droite, donc ceci n'est pas considéré comme un dépassement."
+    },
+    {
+        "ID" : 49,
+        "points" : 5,
+        "folder": "theme1\\img\\course5\\",
+        "core" : "<!img63.PNG!>Croisez-vous ou dépassez-vous la camionnette ?",
+        "propositions" : ["Vous croisez", "Vous dépassez"],
+        "correct_answers" : [1, 0],
+        "note" : "Il s'agit d'un croisement."
+    },
+    {
+        "ID" : 50,
+        "points" : 10,
+        "folder": "theme1\\img\\course5\\",
+        "core" :"Dans cette situation, avez-vous le droit de dépasser le bus ?<!img64.PNG!>",
+        "propositions" : ["Oui", "Non"],
+        "correct_answers" : [0, 1],
+        "note" : "S'il s'agit d'un élément sur la chaussée ne pouvant pas donner suite à son déplacement dans les minutes qui suivent, vous pouvez dépasser l'obstacle. Un rocher en montagne rentre dans ce cas de figure. Cependant, s'il s'agit d'un camion poubelle ou d'un bus à son arrêt, il est nécessaire d'attendre puisque son arrêt est temporaire. Et ce, même si le bus vient de s'arrêter (clignotant droit est actionné)."
+    },
+    {
+        "ID" : 51,
+        "points" : 9,
+        "folder": "theme1\\img\\course6\\",
+        "core" :"<!img6.PNG!>Je m’arrête à hauteur : ",
+        "propositions" : ["de la première ligne discontinue", "de feu tricolore", "du passage pour piétons"],
+        "correct_answers" : [1, 0, 0],
+        "note" : "La première ligne discontinue est une ligne d’effet du feu. Elle délimite un sas cyclable, zone d’arrêt réservée aux cyclistes.Cela leur permet d’être mieux vus,et de pouvoir changer de direction en sécurité.Je m’arrête donc avant cette ligne."
+    },
+    {
+        "ID" : 52,
+        "points" : 12,
+        "folder": "theme1\\img\\course6\\",
+        "core" : "J’ai un appel urgent à passer. Je m’arrête à droite :<!img16.PNG!>",
+        "propositions" : ["A cheval sur le trottoir", "Complètement sur le trottoir", "Ni à cheval ni complètement sur le trottoir"],
+        "correct_answers" : [0, 0, 1],
+        "note" : "Même urgent, un appel ne doit pas me faire oublier les règles et la sécurité : il est interdit et dangereux de s’arrêter à cheval ou complètement sur le trottoir. Je continue et je trouve un emplacement où je pourrai m’arrêter en sécurité sans gêner d’autres usagers."
+    },
+    {
+        "ID" : 53,
+        "points" : 5,
+        "folder": "theme1\\img\\course6\\",
+        "core" : "<!img65.PNG!>Cette voiture, est-elle en infraction ?",
+        "propositions" : ["Oui", "Non"],
+        "correct_answers" : [1, 0],
+        "note" : "Seulement les bus ont le droit de s'arrêter à cet endroit. Les lignes jaunes en zig zag interdisent aux autres véhicules de s'arrêter. Par conséquent, cette voiture est en infraction."
+    },
+    {
+        "ID" : 54,
+        "points" : 5,
+        "folder": "theme1\\img\\course6\\",
+        "core" : "Lequel de ces 3 panneaux concerne-t-il toute une zone ?<!img66.PNG!>",
+        "propositions" : [ "1", "2", "3"],
+        "correct_answers" : [1, 0, 0],
+        "note" : "Les panneaux carrés avec l'interdiction au milieu (le rond bleu et rouge) s'appliquent à une zone."
+    },
+    {
+        "ID" : 55,
+        "points" : 8,
+        "folder": "theme1\\img\\course6\\",
+        "core" : "Avez-vous le droit de stationner de cette façon (comme les 2 voitures sur la photo) ?<!img67.PNG!>",
+        "propositions" : ["Oui", "Non"],
+        "correct_answers" : [1, 0],
+        "note" : "Vous avez le droit de franchir la ligne de rive pour stationner car vous ne gênez pas la circulation."
+    },
+    {
+        "ID" : 56,
+        "points" : 4,
+        "folder": "theme1\\img\\course6\\",
+        "core" : "Vous êtes garés pendant 8 jours au même endroit sur la voie publique (une place attitrée dans la rue). Est-ce considéré comme stationnement abusif ?",
+        "propositions" : ["Oui", "Non"],
+        "correct_answers" : [1, 0],
+        "note" : "Même si vous avez payé la place (sur la voie publique), le stationnement est considéré comme abusif s'il excède 7 jours consécutifs. Vous risquez une amende."
+    },
+    {
+        "ID" : 57,
+        "points" : 6,
+        "folder": "theme1\\img\\course6\\",
+        "core" : "Ces deux voitures sur la droite, sont-elles en infraction ?<!img68.PNG!>",
+        "propositions" : ["Oui", "Non"],
+        "correct_answers" : [1, 0],
+        "note" : "Aucun panneau ne précise que le stationnement sur le trottoir est autorisé."
+    },
+    {
+        "ID" : 58,
+        "points" : 9,
+        "folder": "theme1\\img\\course6\\",
+        "core" : "Comment s'applique l'interdiction de s'arrêter et de stationner dans cette rue?<!img69.PNG!>",
+        "propositions" : [ "Au-delà du panneau, jusqu'à la prochaine intersection", "Vers la gauche", "Jusqu'à la fin de la rue"],
+        "correct_answers" : [1, 0, 0],
+        "note" : "Pensez à coucher le panneau dans le sens de la marche pour obtenir le bon sens du panonceau !"
+    },
+    {
+        "ID" : 59,
+        "points" : 10,
+        "folder": "theme1\\img\\course6\\",
+        "core" : "<!img70.PNG!>Ces places,  comment sont-elles accessibles ?",
+        "propositions" : ["Les deux sont accessibles à tout moment", "La place avec la ligne discontinue est accessible la nuit", "La place avec la ligne continue est réservée la nuit, mais libre le jour"],
+        "correct_answers" : [0, 1, 0],
+        "note" : "Les places réservées aux livraisons sont accessibles la nuit à condition que la ligne jaune soit discontinue. Dans certaines villes cette règle est applicable entre 20 h et 7 h du matin les dimanches et les jours fériés."
+    },
+    {
+        "ID" : 60,
+        "points" : 7,
+        "folder": "theme1\\img\\course6\\",
+        "core" : "<!img71.PNG!>Ce panneau, interdit-il de s'arrêter ?",
+        "propositions" : ["Oui", "Non"],
+        "correct_answers" : [0, 1],
+        "note" : "Non, ce panneau interdit seulement le stationnement. Conseil mnémotechnique : si le panneau est rayé en croix (des deux côtés) alors il est interdit et de stationner et de s'arrêter et s'il est rayé seulement une fois alors il est juste interdit de stationner."
+    },
+    {
+        "ID" : 61,
+        "points" : 10,
+        "folder": "theme2\\img\\course1\\",
+        "core" : "<!img21.PNG!>Cette voiture freine. Le temps de réaction est 2 fois plus court à 50km/h qu’à 100km/h",
+        "propositions" : ["VRAI", "FAUX"],
+        "correct_answers" : [0, 1],
+        "note" : "Le temps de réaction ne dépend pas de la vitesse à laquelle on roule, mais de la forme du conducteur. En revanche, la distance parcourue pendant le temps de réaction varie avec la vitesse. Ici on ne parle que du temps de réaction du conducteur."
+    },
+    {
+        "ID" : 62,
+        "points" : 10,
+        "folder": "theme2\\img\\course1\\",
+        "core" : "<!img22.PNG!>Le feu est vert : ",
+        "propositions" : ["J’avance jusqu’au passage pour piétons", "Je m’arrête avant le feu"],
+        "correct_answers" : [0, 1],
+        "note" : "La file de véhicule devant moi est à l’arrêt. Je dois donc m’arrêter avant le feu de façon à ne pas gêner la traversée de piétons sur le passage pour piétons"
+    }, 
+    {
+        "ID" : 63,
+        "points" : 5,
+        "folder": "theme2\\img\\course1\\",
+        "core" : "<!img24.PNG!>A vitesse constante, la distance d'arrêt peut être modifiée en fonction :",
+        "propositions" : ["De l'état physique du conducteur", "De l'état du véhicule", "Des deux"],
+        "correct_answers" : [0, 0, 1],
+        "note" : "La distance d'arrêt est la distance totale parcourue pendant le temps de réaction et la distance de freinage. Le temps de réaction dépend de l'état du conducteur. La distance de freinage dépend surtout de l'état du véhicule hormis le facteur vitesse. L distance d'arrêt peut être modifiée en fonction de l'état physique du conducteur et de l'état du véhicule."
+    },
+    {
+        "ID" : 64,
+        "points" : 7,
+        "folder": "theme2\\img\\course1\\",
+        "core" : "Dans cette situation :<!img25.PNG!>",
+        "propositions" : ["Je passe", "Je m'arrête", "Je klaxonne"],
+        "correct_answers" : [0, 1, 0],
+        "note" : "Un piéton est engagé sur le passage pour piétons, je dois lui céder le passage. L'arrêt est donc obligatoire."
+    },
+    {
+        "ID" : 65,
+        "points" : 8,
+        "folder": "theme2\\img\\course1\\",
+        "core" : "Dans cette situation :<!img26.PNG!>",
+        "propositions" : ["Je ralentis et je klaxonne puis je passe", "Je m'arrête", "Je passe directement"],
+        "correct_answers" : [1, 0, 0],
+        "note" : "Mon feu est vert donc automatiquement, le feu pour piétons est rouge. Ce piéton semble ne pas m'avoir vu, ke klaxonne légèrement pour que cela l'interpelle, je ralentis afin de ne pas arriver trop vite sur lui et je passe."
+    },
+    {
+        "ID" : 66,
+        "points" : 12,
+        "folder": "theme2\\img\\course1\\",
+        "core" : "Lorsque le soleil m'éblouit :<!img30.PNG!>",
+        "propositions" : [ "J'abaisse mon pare-soleil", "Je peux maintenir une allure normale", "J'accélère", "Je peux mettre des lunettes de soleil"],
+        "correct_answers" : "1~0~0~1",
+        "note" : "Lorsqu'on est ébloui , il est fortement conseillé d'abaisser son pare-soleil ou de mettre des lunettes de soleil afin de mieux voir les dangers. J'abaisse aussi mon allure et allonge si nécessaire mes distances de sécurité."
+    },
+    {
+        "ID" : 67,
+        "points" : 6,
+        "folder": "theme2\\img\\course1\\",
+        "core" : "La distance de sécurité si je circule à 30km/h avec le véhicule qui me précède:<!img31.PNG!>",
+        "propositions" : ["Oui", "Non"],
+        "correct_answers" : [1, 0],
+        "note" : "À 30km/h , la distance de sécurité doit être environ de 18m. Le calcul est de multiplier la première dizaine de la vitesse par 6. Ma distance de sécurité est donc suffisante."
+    },
+    {
+        "ID" : 68,
+        "points" : 4,
+        "folder": "theme2\\img\\course1\\",
+        "core" : "Mon passager m'incite à accélérer pour passer au feu vert :<!img33.PNG!>",
+        "propositions" : ["Je l'écoute et j'accélère pour passer au plus vite", "Je ne l’écoute pas et je ralentis"],
+        "correct_answers" : [0, 1],
+        "note" : "Je ralentis et n’écoute pas les conseils qui peuvent mettre en danger les autres ou moi-même. En approche d’un feu tricolore au vert je dois toujours ralentir et m’apprêter à freiner pour m’arrêter au feu orange ou rouge."
+    },
+    {
+        "ID" : 69,
+        "points" : 6,
+        "folder": "theme2\\img\\course1\\",
+        "core" : "Pour prendre la direction de l’autoroute :<!img34.PNG!>",
+        "propositions" : ["Je mets mon clignotant droit immédiatement","Je mets mon clignotant droit après la première sortie"],
+        "correct_answers" : [0, 1],
+        "note" : "Pour prendre la direction de l’autoroute, je dois prendre la deuxième sortie. Je ne mets donc pas mon clignotant droit immédiatement mais juste après la première sortie."
+    },
+    {
+        "ID" : 70,
+        "points" : 7,
+        "folder": "theme2\\img\\course1\\",
+        "core" : "<!img35.PNG!>Dans cette situation, pour prendre la prochaine sortie, je reste attentif : ",
+        "propositions" :["Au véhicule arrêté à droite", "Au véhicule qui me suit", "Aux deux véhicules"],
+        "correct_answers" : [0, 0, 1],
+        "note" : "Le véhicule arrêté à droite représente une zone de danger car un de ses passager pourrait à tout moment ouvrir une portière. Je prévois donc de m’écarter de lui et je surveille également la trajectoire et l’allure du véhicule qui me suit."
+    },
+    {
+        "ID" : 71,
+        "points" : 8,
+        "folder": "theme2\\img\\course2\\",
+        "core" : "Cela fait 2h30 que je roule, je ressens de la fatigue, mais je suis bientôt arrivé à destination<!img23.PNG!>",
+        "propositions" : ["Je fais une pause","Je continue en roulant plus vite", "Je continue en roulant moins vite"],
+        "correct_answers" : [1, 0, 0],
+        "note" : "Lorsque les premiers effets de la fatigue se font ressentir, je dois absolument m’arrêter pour faire une pause et me reposer, même si cela vient de retarder mon heure d'arrivée."
+    },
+    {
+        "ID" : 72,
+        "points" : 5,
+        "folder": "theme2\\img\\course2\\",
+        "core" : "La ceinture de sécurité de cette conductrice est bouclé correctement?<!img27.PNG!>",
+        "propositions" : ["Oui", "Non"],
+        "correct_answers" : [1, 0],
+        "note" : "La ceinture de sécurité n'est pas vrillée et est bouclée correctement, cette conductrice peut donc partir en sécurité."
+    },
+    {
+        "ID" : 73,
+        "points" : 4,
+        "folder": "theme2\\img\\course2\\",
+        "core" : "<!img28.PNG!>Transporter des affaires lourdes à l'avant est :",
+        "propositions" : ["Conseillé", "Déconseillé"],
+        "correct_answers" : [0, 1],
+        "note" : "Transporter des affaires lourdes à l'avant du véhicule est fortement déconseillé. En cas de freinage brutal, les affaires seraient projetées vers l'avant et cela pourrait créer une défaillance des airbags."
+    },
+    {
+        "ID" : 74,
+        "points" : 3,
+        "folder": "theme2\\img\\course2\\",
+        "core" : "Si un passager majeur n'attache pas sa ceinture à l'arrière du véhicule, cette action est punie d'une amende :<!img29.PNG!>",
+        "propositions" : ["Aux frais du conducteur", "Aux frais du passage"],
+        "correct_answers" : [0, 1],
+        "note" : "Si un passager majeur n'attache pas sa ceinture à l'arrière du véhicule, cette action est punie d'une amende aux frais du passager."
+    },
+    {
+        "ID" : 75,
+        "points" : 2,
+        "folder": "theme2\\img\\course2\\",
+        "core" : "<!img32.PNG!>Une seconde de distraction en conduite peut provoquer un accident :",
+        "propositions" : ["Oui", "Non"],
+        "correct_answers" : [1, 0],
+        "note" : "En une seconde, même à allure réduite, mon véhicule continue à avancer. Si par exemple un usager devant moi freine brusquement, je risque de ne pas le voir. Je dois donc rester attentif dans toutes les situations."
+    },
+    {
+        "ID" : 76,
+        "points" : 4,
+        "folder": "theme2\\img\\course2\\",
+        "core" : "Le taux d’alcoolémie constituant une infraction et le taux d’alcoolémie constituant un délai sont de : ",
+        "propositions" : ["0.5mg/l d’air expiré , 0.8g/l de sang","0.5mg/l d’air expiré ,  0.5mg/l d’air expiré","0.5g/l de sang , 0.8g/l de sang", "0.5g/l de sang, 0.5mg/l d’air expiré"],
+        "correct_answers" : [0, 0, 0, 1],
+        "note" : "Les bons seuils du délit et de l’infraction sont exprimés en g/l de sang et non dans l’air expiré, soit 0.5g/l de sang pour l’infraction et 0.8g/l de sang 0.5mg/l d’air expiré pour le seuil du délit."
+    },
+    {
+        "ID" : 77,
+        "points" : 6,
+        "folder": "theme2\\img\\course2\\",
+        "core" : "<!img39.PNG!>Avant de tourner à droite : ",
+        "propositions" : ["Je contrôle mon angle droit seulement", "J’actionne mon clignotant seulement", "Je contrôle mon angle droit et J’actionne mon clignotant"],
+        "correct_answers" : [0, 0, 1],
+        "note" : "Je longe une bande cyclable. Même si elle va se terminer, un cycliste pourrait se trouver à côté de moi. Je contrôle donc dans mon angle mort droit avant de tourner mes roues. J’actionne mon clignotant car c’est le seul moyen de prévenir un usager de mon changement de direction.x"
+    },
+    {
+        "ID" : 78,
+        "points" : 4,
+        "folder": "theme2\\img\\course2\\",
+        "core" : "L’acuité visuelle du conducteur doit être, pour conserver son permis B, au moins de :",
+        "propositions" : ["5/10ème sur deux yeux", "6/10ème sur les deux yeux"],
+        "correct_answers" : [1, 0],
+        "note" : "L’acuité visuelle minimum pour conduire un véhicule de la catégorie B,doit être au moins de 5/10ème sur les deux yeux. Si ma vision est quasiment nulle sur un oeil, le second doit avoir au moins 5/10ème."
+    },
+    {
+        "ID" : 79,
+        "points" : 5,
+        "folder": "theme2\\img\\course2\\",
+        "core" : "Si vous avez mélangé la drogue et l'alcool et le dépistage le démontre, que risquez-vous ?",
+        "propositions" : ["Juste une amende", "Une amende avec une peine d'emprisonnement"],
+        "correct_answers" : [0, 1],
+        "note" : "Si vous avez mélangé l'alcool et la drogue, les sanctions sont plus dures. L'amende peut atteindre 9000 euros accompagnée d'une peine d'emprisonnement jusqu'à 3 ans. Eh oui, si vous provoquez un accident et tuez des gens par inadvertance, c'est grave."
+    },
+    {
+        "ID" : 80,
+        "points" : 5,
+        "folder": "theme2\\img\\course2\\",
+        "core" : "Vous avez réalisé que vous avez bu un verre de trop. Si vous mangez un bout, cela vous aidera-t-il à baisser le taux d'alcoolémie dans le sang ?",
+        "propositions" : ["Oui", "Non"],
+        "correct_answers" : [0, 1],
+        "note" : "Avant de prendre la voiture, ne cherchez pas à boire de l'eau pour 'diluer' l'alcool, ni à manger sur le pouce en voulant susciter l'effet éponge. Les bonbons à la menthe ou le café salé ne vous aideront pas non plus."
+    },
+    {
+        "ID" : 81,
+        "points" : 8,
+        "folder": "theme3\\img\\course1\\",
+        "core" : "Pour voir loin la nuit,  quels feux faut-il allumer ?",
+        "propositions" : ["Feux de croisement", "Feux de position", "Feux de route", "Feux de brouillard"],
+        "correct_answers" : [0, 0, 1, 0],
+        "note" : "Pour voir loin, il est plus adapté d'allumer les feux de route."
+    },
+    {
+        "ID" : 82,
+        "points" : 4,
+        "folder": "theme3\\img\\course1\\",
+        "core" : "Les feux de position suffisent-ils la nuit en agglomération  ?",
+        "propositions" : ["Oui", "Non"],
+        "correct_answers" : [1, 0],
+        "note" : "En agglomération les routes sont généralement bien éclairées, donc il faut allumer les feux de position et / ou les feux de croisement."
+    },
+    {
+        "ID" : 83,
+        "points" : 12,
+        "folder": "theme3\\img\\course1\\",
+        "core" : "Par quoi l'aquaplaning peut-il être favorisé  (plusieurs réponses sont possibles) ?",
+        "propositions" : ["Le vent latéral", "La vitesse et l'état des pneus", "Les phares", "L'état de la route"],
+        "correct_answers" : [1, 1, 0, 1],
+        "note" : "Le vent, la vitesse, l'état des pneus ou de la route peuvent contribuer à l'apparition d'aquaplaning."
+    },
+    {
+        "ID" : 84,
+        "points" : 6,
+        "folder": "theme3\\img\\course1\\",
+        "core" : "Si en cas de brouillard la visibilité est inférieure à 50 m, quelle est la vitesse maximale que vous ne devez pas dépasser hors agglomération ?",
+        "propositions" : ["50 km / h", "70 km / h", "80 km / h"],
+        "correct_answers" : [1, 0, 0],
+        "note" : "50 km /h est la vitesse maximale à ne pas dépasser."
+    },
+    {
+        "ID" : 85,
+        "points" : 8,
+        "folder": "theme3\\img\\course1\\",
+        "core" : "Quel est le risque sur la route quand il y a du vent  (plusieurs réponses possibles) ?",
+        "propositions" : ["De faire de l'aquaplaning s'il pleut", "D'être déporté en dépassant un véhicule", "D'allonger la distance de freinage"],
+        "correct_answers" : [1, 1, 0],
+        "note" : "Quand il y a du vent et qu'il pleut vous risquez l'aquaplaning. Il suffit de ralentir pour l'éviter. Concernant le changement de trajectoire, le vent peut l'exercer, donc faites attention aux dépassements des poids-lourds surtout."
+    },
+    {
+        "ID" : 86,
+        "points" : 4,
+        "folder": "theme3\\img\\course2\\",
+        "core" : "Qu'est ce qui n'existe pas sur autoroute ?",
+        "propositions" : ["La signalisation temporaire", "Les virages", "Les intersections"],
+        "correct_answers" : [0, 0, 1],
+        "note" : "Si vous voulez changer de direction, vous devez emprunter une bretelle de sortie."
+    },
+    {
+        "ID" : 87,
+        "points" : 2,
+        "folder": "theme3\\img\\course2\\",
+        "core" :"<!img36.PNG!>Êtes-vous sur l'autoroute A51 ?",
+        "propositions" : ["Oui", "Non"],
+        "correct_answers" : [0, 1],
+        "note" : "Vous n'êtes pas ENCORE sur cette autoroute. Le panneau indique que si vous continuez à rouler sur la même voie (celle où vous vous trouvez actuellement), vous allez rejoindre cette autoroute."
+    },
+    {
+        "ID" : 88,
+        "points" : 2,
+        "folder": "theme3\\img\\course2\\",
+        "core" : "Toutes les autoroutes, sont-elles payantes ?",
+        "propositions" : ["Oui", "Non"],
+        "correct_answers" : [0, 1],
+        "note" : "Certains tronçons d'autoroute ne sont pas payants. Exemple : Nancy - Metz."
+    },
+    {
+        "ID" : 89,
+        "points" : 4,
+        "folder": "theme3\\img\\course2\\",
+        "core" : "<!img37.PNG!>Si vous voulez aller en Avignon sans payer le péage, que devez-vous faire ?",
+        "propositions" : ["Vous déporter à droite", "Rester sur la voie où vous êtes actuellement"],
+        "correct_answers" : [1, 0],
+        "note" : "Si vous ne voulez pas payer le péage, vous avez la possibilité de rejoindre Avignon par la route nationale (RN), mais dans ce cas-là il faut changer de voie (se déporter vers la droite). Le trajet risque d'être plus long car la RN peut traverser les villages ce qui vous obligera à ralentir."
+    },
+    {
+        "ID" : 90,
+        "points" : 3,
+        "folder": "theme3\\img\\course2\\",
+        "core" : "<!img72.PNG!>Quelle est la vitesse maximale sous le n°1 ? Et sur le n°2 ?",
+        "propositions" : ["1. 120 km/h ; 2. 140 km/h", "1. 130 km/h ; 2. 110 km/h", "1. 130 km/h ; 2. 100 km/h"],
+        "correct_answers" : [0, 1, 0],
+        "note" : "C'est 130 km/h pour la première et 110 km/h pour la deuxième"
+    },
+    {
+        "ID" : 91,
+        "points" : 12,
+        "folder": "theme3\\img\\course2\\",
+        "core" : "Sur quelles partie d'autoroute est-il interdit de circuler (plusieurs réponses possibles) ?",
+        "propositions" : ["Le zèbre", "La BAU", "Le terre plein du milieu", "Sur la voie de gauche"],
+        "correct_answers" : [1, 1, 1, 0],
+        "note" : "Vous pouvez circuler sur la gauche si vous dépassez un véhicule. Il n'est donc pas interdit de circuler sur cette voie."
+    },
+    {
+        "ID" : 92,
+        "points" : 6,
+        "folder": "theme3\\img\\course2\\",
+        "core" : "A quel moment les poids lourds de plus de 7,5 tonnes de PTAC (Poids Total Autorisé en Charge) n’ont-ils pas le droit de circuler ?",
+        "propositions" : ["Les weekends quelle que soit l'heure de la journée", "Toute la journée de dimanche"],
+        "correct_answers" : [0, 1],
+        "note" : "Les poids lourds de plus de 7,5 tonnes de PTAC (Poids Total Autorisé en Charge) n’ont pas le droit de circuler :(entre autres) --> le samedi à partir de 22h jusqu’au dimanche 22h."
+    },
+    {
+        "ID" : 93,
+        "points" : 6,
+        "folder": "theme3\\img\\course2\\",
+        "core" : "Sous quelle condition est-il possible d'emprunter la voie des véhicules lents ?",
+        "propositions" : ["Si vous roulez à 70 km /h", "Si vous roulez à 90 km/h"],
+        "correct_answers" : [1, 0],
+        "note" : "Si vous ne roulez pas à plus de 60 km/h, vous devez l'emprunter."
+    },
+    {
+        "ID" : 94,
+        "points" : 5,
+        "folder": "theme3\\img\\course2\\",
+        "core" : "<!img73.PNG!>Ce panneau, qu'annonce-t-il ?",
+        "propositions" : ["Une bifurcation avec voie de décélération", "Une bifurcation avec affectation des voies"],
+        "correct_answers" : [1, 0],
+        "note" : "Il s'agit d'un avertissement avec voie de décélération car la bifurcation annoncée comme sur un arbre les villes en guise de terminus de chaque autoroute."
+    },
+    {
+        "ID" : 95,
+        "points" : 5,
+        "folder": "theme3\\img\\course2\\",
+        "core" : "Comment calcule-t-on les distances de sécurité sur autoroute ?",
+        "propositions" : ["En comptant les 3 traits de la ligne médiane","En comptant les 2 traits de la ligne BAU"],
+        "correct_answers" : [0, 1],
+        "note" : "On peut calculer les distances de sécurité sur autoroute en comptant les 2 traits de la ligne BAU"
+    },
+    {
+        "ID" : 96,
+        "points" : 10,
+        "folder": "theme3\\img\\course3\\",
+        "core" : "<!img74.PNG!>Dans cette situation que faut-il faire ?",
+        "propositions" : ["Garder la même allure car vous avez la priorité", "Vous arrêter", "Ralentir"],
+        "correct_answers" : [0, 0, 1],
+        "note" : "Même si vous avez la priorité, il est préférable de ralentir car la chaussée est rétrécie ( vous pourriez endommager votre véhicule ou être surpris par des trous par exemple) et aussi parce que près des chantiers il y a des hommes qui y travaillent."
+    },
+    {
+        "ID" : 97,
+        "points" : 9,
+        "folder": "theme3\\img\\course3\\",
+        "core" : "Quels feux doivent être allumés à l'entrée d'un tunnel ?",
+        "propositions" : ["Les feux de route", "Les feux de croisement", "Les feux de position"],
+        "correct_answers" : [0, 1, 0],
+        "note" : "Le tunnel est assimilé zone de nuit. Même s'ils sont bien éclairés, il faut allumer les feux de croisement."
+    },
+    {
+        "ID" : 98,
+        "points" : 5,
+        "folder": "theme3\\img\\course3\\",
+        "core" : "Comment calcule-t-on la distance de sécurité dans un tunnel ?",
+        "propositions" : ["En comptant 2 traits de la BAU = 90 m", "En comptant 2 lumières bleues = 150 m"],
+        "correct_answers" : [0, 1],
+        "note" : "2 lumières bleues (diodes) peuvent être prises comme repères car elles représentent 150 m normalement."
+    },
+    {
+        "ID" : 99,
+        "points" : 9,
+        "folder": "theme3\\img\\course3\\",
+        "core" : "Que faut-il faire si la fumée apparaît dans le tunnel devant vous ?",
+        "propositions" : ["Il faut continuer à conduire, car il ne faut pas faire marche arrière", "Il faut se diriger vers l'issue de secours devant soi", "Il faut immobiliser le véhicule et laisser les clés sur le contact. Il faut quitter le tunnel par la sortie la plus proche"],
+        "correct_answers" : [0, 0, 1],
+        "note" : "En cas d'incendie, il faut immobiliser le véhicule et laisser les clés sur le contact. Pour éviter toute inhalation de fumée, il faut se diriger à l'opposé de l'incendie vers l'issue de secours la plus proche."
+    },
+    {
+        "ID" : 100,
+        "points" : 3,
+        "folder": "theme3\\img\\course3\\",
+        "core" : "A combien de mètres se situe cette présignalisation hors agglomération ?<!img75.PNG!>",
+        "propositions" : ["50 m", "100 m", "150 m"],
+        "correct_answers" : [0, 0, 1],
+        "note" : "Hors agglomération, ce panneau annonce un passage à niveau à 150 m et en agglomération il l'annonce à 50m."
+    },
+    {
+        "ID" : 101,
+        "points" : 2,
+        "folder": "theme3\\img\\course3\\",
+        "core" : "Le passage à niveau, peut-il aussi concerner un tramway ?",
+        "propositions" : ["Oui", "Non"],
+        "correct_answers" : [1, 0],
+        "note" : "Le passage à niveau peut concerner un tramway aussi car celui-ci se déplace sur les rails, comme le train."
+    },
+    {
+        "ID" : 102,
+        "points" : 4,
+        "folder": "theme3\\img\\course3\\",
+        "core" : "Si vous restez bloqués sur la voie de train, avez-vous le droit d'enfoncer les barrières ?",
+        "propositions" : ["Oui", "Non"],
+        "correct_answers" : [1, 0],
+        "note" : "Les barrières sont faites pour être enfoncées en cas d'extrême urgence, donc vous pouvez le faire."
+    },
+    {
+        "ID" : 103,
+        "points" : 5,
+        "folder": "theme3\\img\\course3\\",
+        "core" : "Qui a la priorité dans cette situation ?<!img76.PNG!>",
+        "propositions" : ["La voiture", "Le tramway"],
+        "correct_answers" : [0, 1],
+        "note" : "C'est le tramway qui a la priorité sur la voiture."
+    },
+    {
+        "ID" : 104,
+        "points" : 4,
+        "folder": "theme4\\img\\course1\\",
+        "core" : "Si en cas de contrôle de police vous n'êtes pas en mesure de présenter votre permis de conduire (vous l'avez oublié à la maison), que risquez-vous ?",
+        "propositions" : ["1 point de retiré et 11 euros d'amende", "3 points de retirés et 11 euros d'amende", "38 euros d'amende", "65 euros d'amende"],
+        "correct_answers" : [0, 0, 1, 0],
+        "note" : "Vous devez payer 11 euros d'amende, mais vous devez aussi aller à la Préfecture de police pour présenter le document sous 5 jours."
+    },
+    {
+        "ID" : 105,
+        "points" : 8,
+        "folder": "theme4\\img\\course1\\",
+        "core" : "Quels sont les documents facultatifs ? (Plusieurs réponses sont possibles)",
+        "propositions" : ["La carte grise", "Le constat amiable", "Le disque de stationnement"],
+        "correct_answers" : [0, 1, 1],
+        "note" : "La carte grise est un document obligatoire."
+    },
+    {
+        "ID" : 106,
+        "points" : 3,
+        "folder": "theme4\\img\\course1\\",
+        "core" : "Si vous perdrez votre permis de conduire, qu'obtiendriez-vous comme document de substitution ?",
+        "propositions" : ["Le récépissé de permis de conduire", "Le C.E.P.C."],
+        "correct_answers" : [1, 0],
+        "note" : "Vous obtiendrez le récépissé de permis de conduire qui est valable 2 mois, mais il faut faire la démarche auprès de la préfecture pour l'avoir.Le C.E.P.C. (Certificat d'Examen du Permis de Conduire) est obtenu une fois que vous avez réussi votre épreuve pratique"
+    },
+    {
+        "ID" : 107,
+        "points" : 5,
+        "folder": "theme4\\img\\course1\\",
+        "core" : "La date du prochain contrôle technique, où figure-t-elle ?",
+        "propositions" : ["Sur le macaron de la visite technique", "Sur le macaron de la visite technique et sur la carte grise", "Sur le macaron de la visite technique et sur la vignette d'assurance"],
+        "correct_answers" : [0, 1, 0],
+        "note" : "Cette date apparaît sur la carte grise et sur le macaron."
+    },
+    {
+        "ID" : 108,
+        "points" : 4,
+        "folder": "theme4\\img\\course1\\",
+        "core" : "Si vous avez un accident, l'autre conducteur est-il obligé de signer le constat amiable ?",
+        "propositions" : ["Oui", "Non"],
+        "correct_answers" : [0, 1],
+        "note" : "L'autre conducteur peut refuser de signer le constat. Remplissez la partie du constat amiable qui vous concerne et dans la partie observations indiquez que l’autre conducteur a refusé de signer. Vous disposez toujours de 5 jours pour faire parvenir le constat amiable à votre assureur. Si le conducteur ayant refusé de signer ne se manifeste pas auprès de sa compagnie, c’est lui qui sera considéré comme étant en tort."
+    },
+    {
+        "ID" : 109,
+        "points" : 3,
+        "folder": "theme4\\img\\course2\\",
+        "core"  :"La consommation de carburant, augmente-t-elle si la voiture est plus chargée que d'habitude?",
+        "propositions" : ["Oui", "Non"],
+        "correct_answers" : [1, 0],
+        "note" : "La voiture doit mettre plus de force à produire de l'énergie et donc d'avancer. Oui, la consommation du carburant augmente."
+    },
+    {
+        "ID" : 110,
+        "points" : 5,
+        "folder": "theme4\\img\\course2\\",
+        "core" : "Quelle est la dimension du chargement du véhicule en largeur qui ne doit pas être dépassée ?",
+        "propositions" : ["2m", "2,5m", "2,55m"],
+        "correct_answers" : [0, 0, 1],
+        "note" : "La dimension du chargement du véhicule en largeur qui ne doit pas être dépassée est 2,55m."
+    },
+    {
+        "ID" : 111,
+        "points" : 6,
+        "folder": "theme4\\img\\course2\\",
+        "core" : "Si le PTAC de la remorque est égal à 750 kg, quel document devez-vous obtenir ? (Attention, plusieurs réponses sont possibles",
+        "propositions" : ["Une nouvelle plaque d'immatriculation", "Une nouvelle carte grise"],
+        "correct_answers" : [1, 1],
+        "note" : "Si le PTAC de la remorque excède 500 kg, vous devez obtenir sa propre carte grise et sa propre plaque d'immatriculation."
+    },
+    {
+        "ID" : 112,
+        "points" : 3,
+        "folder": "theme4\\img\\course2\\",
+        "core" : "Les 2 catadioptres à l'arrière sur une caravanes sont-ils obligatoires ?",
+        "propositions" : ["Oui", "Non"],
+        "correct_answers" : [1, 0],
+        "note" : "Les deux catadioptres sont obligatoires."
+    },
+    {
+        "ID" : 113,
+        "points" : 5,
+        "folder": "theme4\\img\\course2\\",
+        "core" : "Si vous transportez un vélo et qu'il dissimule votre plaque d'immatriculation, que devez-vous faire ?",
+        "propositions" : ["Vous devez accrocher une deuxième plaque sur le vélo", "Vous devez juste accrocher un catadioptre triangulaire sur le vélo"],
+        "correct_answers" : [1, 0],
+        "note" : "C'est une deuxième plaque qu'il faut accrocher."
+    },
+    {
+        "ID" : 114,
+        "points" : 6,
+        "folder": "theme5\\img\\course1\\",
+        "core" : "De quelle manière le volant doit-il être tenu ?",
+        "propositions" : ["Comme s'il était 10:15", "Comme s'il était 10:10", "Comme s'il était 11:15", "Comme s'il était 9:10"],
+        "correct_answers" : [0, 1, 0, 0],
+        "note" : "10:10 ou 09:15 sont les positions qui permettent de mieux maîtriser la trajectoire du véhicule en cas d'urgence."
+    },
+    {
+        "ID" : 115,
+        "points" : 2,
+        "folder": "theme5\\img\\course1\\",
+        "core" : "Le pied gauche, peut-il être utilisé pour freiner ?",
+        "propositions" : ["Oui", "Non"],
+        "correct_answers" : [0, 1],
+        "note" : "Il ne faut jamais utiliser le pied gauche pour freiner. Ce pied est utilisé seulement si on doit passer la vitesse, c'est-à-dire pour embrayer."
+    },
+    {
+        "ID" : 116,
+        "points" : 5,
+        "folder": "theme5\\img\\course1\\",
+        "core" : "Comment la visibilité optimale s'obtient-elle ?",
+        "propositions" : ["En ouvrant bien les yeux", "En réglant les rétroviseurs intérieurs et extérieurs", "En tirant sur la manette du rétroviseur intérieur", "En disant à l'un des voyageurs assis derrière de se coucher pour vous faciliter la conduite"],
+        "correct_answers" : [0, 1, 0, 0],
+        "note" : "Bien sûr que vous devez bien ouvrir les yeux, mais si vous ne réglez pas correctement les rétroviseurs, vous n'irez pas bien loin. Les voyageurs sur les sièges arrière doivent se sentir à l'aise, mais ne doivent pas être couchés."
+    },
+    {
+        "ID" : 117,
+        "points" : 4,
+        "folder": "theme5\\img\\course1\\",
+        "core" : "Que faut-il faire pour actionner la position 'nuit' sur le rétroviseur intérieur ?",
+        "propositions" : ["Il faut tirer la manette du rétroviseur vers le bas", "Il faut juste incliner le rétroviseur"],
+        "correct_answers" : [1, 0],
+        "note" : "Il faut actionner la manette pour avoir la position 'nuit'."
+    },
+    {
+        "ID" : 118,
+        "points" : 10,
+        "folder": "theme5\\img\\course1\\",
+        "core" : "La direction assistée, pourquoi existe-t-elle ?",
+        "propositions" : ["Pour aider le conducteur à trouver son chemin", "Pour aider le conducteur à freiner plus efficacement en cas d'aquaplaning", "Pour aider le conducteur à passer la vitesse", "Pour aider le conducteur à braquer et à contre braquer le volant"],
+        "correct_answers" : [0, 0, 0, 1],
+        "note" : "Sur pratiquement toutes les voitures aujourd'hui, les volants sont plus facilement maniables (on peut les tourner facilement à gauche et à droite). Donc pour braquer ( lorsque le volant du véhicule est tourné jusqu'à son blocage soit dans le sens horaire soit dans le sens anti-horaire) et pour contre braquer (soit à réaligner les roues perpendiculairement à l'avant du véhicule dans le cas d'un créneau)."
+    },
+    {
+        "ID" : 119,
+        "points" : 3,
+        "folder": "theme5\\img\\course1\\",
+        "core" : "Quelle loi bannit-elle officiellement le port de tongs en conduisant ?",
+        "propositions" : ["Aucune", "Article 223-6 du Code pénal"],
+        "correct_answers" : [1, 0],
+        "note" : "Conduire pieds-nus n'est clairement cité dans aucune loi comme étant interdit. En revanche, si vous vous faites arrêter par un policier qui considère que la manière dont vous êtes chaussés gêne la conduite, vous pourriez être en obligation de payer une contravention de 2ème classe équivalente à une amende maximale de 150 euros. Je vous conseille donc de ne pas tenter le diable, même si vous vous sentez particulièrement à l'aise."
+    },
+    {
+        "ID" : 120,
+        "points" : 7,
+        "folder": "theme5\\img\\course1\\",
+        "core" : "Comment règle-t-on le rétroviseur extérieur côté conducteur ?",
+        "propositions" : ["De manière à y voir son propre visage", "De manière à y voir le poignée de la porte arrière", "De manière à y voir la poignée de la porte avant"],
+        "correct_answers" : [0, 1, 0],
+        "note" : "On règle le rétroviseur extérieur côté conducteur de manière à y voir le poignée de la porte arrière"
+    },
+    {
+        "ID" : 121,
+        "points" : 9,
+        "folder": "theme5\\img\\course1\\",
+        "core" : "Que risque le passager qui a le permis de conduire mais ne porte pas la ceinture ?",
+        "propositions" : ["Il risque de se faire retirer des points de son permis", "Il risque de payer une amende", "Il risque tant de payer une amende que de perdre des points de son permis même si ce n'est pas lui qui est au volant"],
+        "correct_answers" : [0, 1, 0],
+        "note" : "Il risque de payer une amende (soit 90 soit 135 euros) ; on ne lui retirera pas de points."
+    },
+    {
+        "ID" : 122,
+        "points" : 4,
+        "folder": "theme5\\img\\course1\\",
+        "core" : "Les femmes enceintes, sont-elles obligées de boucler la ceinture ?",
+        "propositions" : ["Oui", "Non"],
+        "correct_answers" : [1, 0],
+        "note" : "En cas de grossesse, la loi ne change pas tout comme le nombre de points perdus. Cependant, il est essentiel de bien positionner la ceinture en passant la sangle abdominale et verticale le plus bas possible sous le ventre de la future maman et la sangle diagonale entre la poitrine."
+    },
+    {
+        "ID" : 123,
+        "points" : 3,
+        "folder": "theme5\\img\\course1\\",
+        "core" : "Si vous portez la ceinture, par combien le risque d'être tué en cas d'accident est-il divisé ?",
+        "propositions" : ["Il reste identique au non-port de la ceinture", "Il est divisé par 2","Il est divisé par 4", "Il est divisé par 3"],
+        "correct_answers" : [0, 0, 0, 1],
+        "note" : "Si en cas d'accident vous portez la ceinture, la bonne nouvelle c'est que le risque d'être tués est divisé par 3 et celui d'être éjectés par 10. Ne jouez pas avec Newton !"
+    },
+    {
+        "ID" : 124,
+        "points" : 4,
+        "folder": "theme5\\img\\course2\\",
+        "core" : "<!img77.PNG!>J'actionne les essuie glaces :",
+        "propositions" : ["Avant de partir","Quand je circule sur la route"],
+        "correct_answers" : [1, 0],
+        "note" : "Il est nécessaire que la visibilité soit bonne à l'avant et à l'arrière du véhicule lorsque je circule sur une route. J'actionne donc mes essuie glaces dès maintenant."
+    },
+    {
+        "ID" : 125,
+        "points" : 4,
+        "folder": "theme5\\img\\course2\\",
+        "core" : "<!img78.PNG!>Cette commande permet",
+        "propositions" : ["D'actionner l'essuie glace de la lunette arrière", "De désembuer la lunette arrière"],
+        "correct_answers" : [0, 1],
+        "note" : "J'actionne cette commande afin de dégivrer ou désembuer la lunette arrière du véhicule avant de prendre la route."
+    },
+    {
+        "ID" : 126,
+        "points" : 5,
+        "folder": "theme5\\img\\course2\\",
+        "core" : "<!img79.PNG!>Je peux quitter immédiatement mon stationnement :",
+        "propositions" : ["Oui", "Non"],
+        "correct_answers" : [0, 1],
+        "note" : "Avant de quitter un stationnement, je dois faire en sorte que la visibilité vers l'éxtérieur du véhicule soit la meilleure possible. J'actionne donc mes essuie glaces avant et arrière."
+    },
+    {
+        "ID" : 127,
+        "points" : 10,
+        "folder": "theme5\\img\\course2\\",
+        "core" : "<!img80.PNG!>Avant de prendre la route, il est essentiel de vérifier : ( Attention! Plusieurs réponses sont possibles )",
+        "propositions" : ["Le fonctionnement des ceintures de sécurité", "Le parallélisme", "La présence d'un voyant rouge sur la table de bord"],
+        "correct_answers" : [1, 0 , 1],
+        "note" : "Il est toujours nécessaire de vérifier le bon fonctionnement des ceintures de sécurité pour tous les passagers. Vérifier les témoins sur le tableau de bord peut être nécessaire pour éviter des pannes en cours de route. Le parallélisme est à vérifier lorsqu'on observe une dégradation anormale des pneus."
+    },
+    {
+        "ID" : 128,
+        "points" : 3,
+        "folder": "theme5\\img\\course2\\",
+        "core" : "<!img81.PNG!>Avant de prendre la route, vérifier la propreté de ses vitres est :",
+        "propositions" : ["Inutile", "Nécessaire"],
+        "correct_answers" : [0, 1],
+        "note" : "Une bonne visibilité sur l'extérieur de mon véhicule, me permettra d'éviter de surprendre ou d'être surpris par d'autres usagers. J'utilise si nécessaire le lave glace arrière et avant du véhicule avant de partir."
+    },
+    {
+        "ID" : 129,
+        "points" : 4,
+        "folder": "theme5\\img\\course3\\",
+        "core" : "Vous vous êtes garés dans un parking sous-terrain. Avant de monter dans la voiture, quel est votre comportement ?",
+        "propositions" : ["Vous ne faites rien du tout, votre voiture est en sécurité dans un parking", "Vous vérifiez la carrosserie, les pneus, la distance entre votre voiture et d'éventuels obstacles (autre voiture, mur etc)"],
+        "correct_answers" : [0, 1],
+        "note" : "Que vous soyez garés dans un parking sous-terrain ou sur la voie publique, il convient de toujours vérifier l'aspect extérieur de votre véhicule et de son environnement. Vous allez peut-être découvrir que le voisin s'est mal garé et vous colle ou que vous êtes trop près du mur. Ce premier diagnostique vous aidera à mieux appréhender la conduite par la suite."
+    },
+    {
+        "ID" : 130,
+        "points" : 5,
+        "folder": "theme5\\img\\course3\\",
+        "core" : "A quelle fréquence faut-il changer les essuie-glaces ?",
+        "propositions" :  ["Tous les 6 mois", "Tous les ans"],
+        "correct_answers" : [0, 1],
+        "note" : "Un an est la durée de vie d'un essuie-glace."
+    },
+    {
+        "ID" : 131,
+        "points" : 7,
+        "folder": "theme5\\img\\course3\\",
+        "core" : "Une fois arrêtés pour déposer l'un de vos passagers, vous devez sortir du véhicule pour lui sortir son sac du coffre. Quel est votre comportement ?",
+        "propositions" : ["Vous sortez tout de suite du véhicule, il ne faut pas traîner", "Vous mettez les warnings et vous sortez tout de suite du véhicule. Il ne faut pas traîner", "Vous mettez votre clignotant, vous regardez dans votre rétroviseur 'extérieur' pour vous assurer qu'aucun autre usager ne va vous gêner puis vous sortez", "Vous mettez les warnings, mais vous regardez dans votre rétroviseur 'intérieur' pour vous assurer qu'aucun autre usager ne va vous gêner puis vous sortez"],
+        "correct_answers" : [0, 0, 1, 0],
+        "note" : "Bien entendu, il faut informer les autres usagers de la route que votre arrêt est momentané avec un warning. Cela les aidera à être plus vigilants car ils peuvent s'attendre à ce que vous sortiez de la voiture. Mais le monde ne s'arrête pas pour vous. Ces mêmes usagers continuent à circuler, donc il faut s'assurer dans votre rétroviseur extérieur (car vous sortez sur la chaussée) que personne ne vient juste derrière. Si la circulation est dense, il est même déconseillé de sortir."
+    },
+    {
+        "ID" : 132,
+        "points" : 8,
+        "folder": "theme5\\img\\course3\\",
+        "core" : "Pour vous garer dans une rue à forte pente, que faut-il faire ?",
+        "propositions" : ["Serrer le frein à main et tourner les roues vers le trottoir", "Serrer le frein à main et tourner les roues vers la chaussée", "Serrer le frein à main et laisser les roues en position droite", "Ne rien faire de particulier, la voiture ne peut pas rouler toute seule"],
+        "correct_answers" : [1, 0, 0, 0],
+        "note" : "Si les freins lâchent, la voiture peut rouler toute seule si elle se trouve sur une pente. Si vous tournez les roues vers le trottoir, il servira d'obstacle."
+    },
+    {
+        "ID" : 133,
+        "points" : 4,
+        "folder": "theme5\\img\\course3\\",
+        "core" : "Que risque un chien enfermé dans la voiture plus de 10 minutes à 25 °C ?",
+        "propositions" : ["Il risque de mourir", "Il va juste avoir soif"],
+        "correct_answers" : [1, 0],
+        "note" : "Les chiens peuvent mourir de déshydratation même en 10 minutes !"
+    },
+    {
+        "ID" : 134,
+        "points" : 6,
+        "folder": "theme6\\img\\course1\\",
+        "core" : "Selon les forces de l'ordre, quelle est la principale cause des accidents mortels ?",
+        "propositions" : ["L'excès de vitesse", "La consommation d'alcool", "La consommation de drogues", "La fatigue"],
+        "correct_answers" : [0, 1, 0 ,0],
+        "note" : "Selon les forces de l’ordre, la consommation d'alcool est la cause principale de 28% des accidents mortels."
+    },
+    {
+        "ID" : 135,
+        "points" : 9,
+        "folder": "theme6\\img\\course1\\",
+        "core" : "Qu'est-ce qui est strictement interdit de faire si jamais 2 voitures entrent en collision ?",
+        "propositions" : ["D'enclencher une vitesse avant de quitter le véhicule", "De fumer autour des voitures accidentées", "De débrancher la batterie"],
+        "correct_answers" : [0, 1, 0],
+        "note" : "Une autre mesure à prendre en compte est celle qui consiste à vous protéger d'un éventuel incendie. Une voiture accidentée est une voiture endommagée et donc les risques d'incendie sont plus élevés. Il ne faut surtout pas fumer."
+    },
+    {
+        "ID" : 136,
+        "points" : 2,
+        "folder": "theme6\\img\\course1\\",
+        "core" : "Le numéro 112, comment fonctionne-t-il ?",
+        "propositions" : ["Seulement depuis les bornes", "Depuis n'importe quel téléphone portable, mais à condition que ça capte", "Depuis n'importe quel téléphone portable, mais seulement en France", "Depuis n'importe quel téléphone portable, même s'il n'y a pas de réseau"],
+        "correct_answers" : [0, 0, 0, 1],
+        "note" : "Le numéro 112 fonctionne dans tous les pays européens même si vous n'avez aucun réseau."
+    },
+    {
+        "ID" : 137,
+        "points" : 5,
+        "folder": "theme6\\img\\course1\\",
+        "core" : "<!img82.PNG!>Si vous êtes témoin d'un accident et que la collision a eu lieu avec un véhicule qui porte cette plaque, de quelle matière s'agit-il ?",
+        "propositions" : ["Matière corrosive", "Matière radioactive", "Matière du type liquide inflammable"],
+        "correct_answers" : [0, 0, 1],
+        "note" : "1202 est tout simplement du gazoil, liquide inflammable"
+    },
+    {
+        "ID" : 138,
+        "points" : 3,
+        "folder": "theme6\\img\\course1\\",
+        "core" : "Qui peut passer un E-call ?",
+        "propositions" : ["Tout le monde", "Personne ne le passe en réalité, il se déclenche tout seul en cas d'accident", "Il se déclenche tout seul ou manuellement depuis le véhicule accidenté"],
+        "correct_answers" : [0, 0, 1],
+        "note" : "Certaines voitures disposent de cette option et il s'agit d'un dispositif d'appel d'urgence qui permet d'alerter manuellement ou automatiquement via des capteurs situés dans les air-bags les services de secours en cas d'accident."
+    },
+    {
+        "ID" : 139,
+        "points" : 4,
+        "folder": "theme6\\img\\course2\\",
+        "core" : "Faut-il être formé pour utiliser un défibrillateur ?",
+        "propositions" :["Oui", "Non"],
+        "correct_answers" : [0, 1],
+        "note" : "Si vous avez un défibrillateur à portée de main et qu'une victime demande assistance, vous pouvez agir, vous ne risquez pas de vous tromper.Une fois que vous allumerez l'appareil, vous n'aurez qu'à suivre les instructions données. Le message concernera la démarche à suivre quant aux électrodes à placer sur le corps de la victime. C'est l'appareil qui fait lui-même le diagnostic et délivre le choc si c'est nécessaire."
+    },
+    {
+        "ID" : 140,
+        "points" : 4,
+        "folder": "theme6\\img\\course2\\",
+        "core" : "Avant d'appeler les secours, il est préférable de faire un bref diagnostic des blessés :",
+        "propositions" : ["Oui", "Non"],
+        "correct_answers" : [1, 0],
+        "note" : "En donnant des indicateurs sur l'accident et l'état des blessés aux secours, cela permet une action de ceux-ci plus rapide et mieux organisée."
+    },
+    {
+        "ID" : 141,
+        "points" : 3,
+        "folder": "theme6\\img\\course2\\",
+        "core" : "Une perte de connaissance c'est quand la victime :",
+        "propositions" : ["respire","répond"],
+        "correct_answers" : [1, 0],
+        "note" : "Une victime qui a perdu connaissance respire mais ne répond pas, ni à mes questions ni à ma demande d'effectuer des gestes simples (me serrer la main par exemple)."
+    },
+    {
+        "ID" : 142,
+        "points" : 5,
+        "folder": "theme6\\img\\course2\\",
+        "core" : "En arrivant à un lieu d'un accident, je dois procéder dans l'ordre suivant",
+        "propositions" : ["Appeler les secours puis m'inquiéter de l'état des blessés","M'inquiter de l'état de blessés puis appeler les secours"],
+        "correct_answers" : [0, 1],
+        "note" : "Il est nécessaire de faire un breg diagnostic de l'état des blessés pour renseigner au mieux les secours. De cette façon, ils pourront me donner les bonnes indications sur la démarche à suivre et organiser au mieux leur intervention."
+    },
+    {
+        "ID" : 143,
+        "points" : 6,
+        "folder": "theme6\\img\\course3\\",
+        "core" : "La victime est consciente et demande à boire. Que faites-vous ?",
+        "propositions" : ["Vous lui donnez à boire", "Vous ne lui donnez pas à boire"],
+        "correct_answers" : [0, 1],
+        "note" : "Il ne faut donner ni à boire ni à manger à la victime car elle risque l'asphyxie."
+    },
+    {
+        "ID" : 144,
+        "points" : 10,
+        "folder": "theme6\\img\\course3\\",
+        "core" : "Si lors d'un accident vous retrouvez un blessé en train de saigner du bras (voir la photo ci-dessous), où faut-il appuyer pour diminuer, voire arrêter le saignement ?<!img83.PNG!>",
+        "propositions" :["Vous appuyez sur la poignée, au niveau du pouls", "Vous appuyez en bas de la blessure", "Vous appuyez quelque part entre la blessure et le cœur"],
+        "correct_answers" : [0, 0, 1],
+        "note" : "Si la blessure a lieu sur les bras ou les jambes, il faut appuyer entre la blessure et le cœur pour éviter à ce que la victime saigne davantage."
+    },
+    {
+        "ID" : 145,
+        "points" : 6,
+        "folder": "theme6\\img\\course3\\",
+        "core" :"Si la victime est au sol et qu'elle est allongée sur le ventre, que faut-il faire ?",
+        "propositions" : ["Il ne faut surtout pas la bouger car elle risque de s'asphyxier", "Il faut la placer dans la position latérale sinon elle risque de s'asphyxier"],
+        "correct_answers" : [0, 1],
+        "note" : "Si le blessé se trouve sur la chaussée et qu'il est sur le dos ou sur le ventre, vous pouvez le placer dans la position latérale de sécurité. Ça pourrait lui sauver la vie."
+    },
+    {
+        "ID" : 146,
+        "points" : 8,
+        "folder": "theme6\\img\\course3\\",
+        "core" : "En portant secours à un blessé, je peux : ( Attention! Plusieurs réponses sont possibles )",
+        "propositions" : ["Enlever son casque si le blessé le demande", "Couvrir le blessé pour le réchauffer", "Lui parler pour qu'il reste conscient", "L'aider à se relever"],
+        "correct_answers" : [0, 1, 1, 0],
+        "note" : "Il ne faut pas enlever le casque d'un motard et il n'est pas conseillé de déplacer un blessé. Cela peut provoquer de lésions supplémentaires. En attendant les secours, je peux lui parler et le couvrir."
+    },
+    {
+        "ID" : 147,
+        "points" : 3,
+        "folder": "theme6\\img\\course3\\",
+        "core" : "La formation aux premiers secours de base est :",
+        "propositions" : ["Le PSC1", "Le PSE1", "Le PST1", "Le PSP1"],
+        "correct_answers" : [1, 0, 0, 0],
+        "note" : "La formation aux premiers secours de base s'intitule 'Prévention et Secours Civique de niveau 1'. Cette formation permet de pratiquer les premiers gestes de secours de base sur un blessé."
+    },
+    {
+        "ID" : 148,
+        "points" : 3,
+        "folder": "theme7\\img\\course1\\",
+        "core" : "<!img89.PNG!>Dans cette situation, que faut-il faire ?",
+        "propositions" : ["Ralentir", "S'arrêter", "Continuer à conduire à la même allure"],
+        "correct_answers" : [1, 0, 0],
+        "note" : "L'homme est descendu sur la chaussée, il est donc préférable de ralentir. Il a juste l'air de contourner un obstacle, mais il faut rester vigilant."
+    },
+    {
+        "ID" : 149,
+        "points" : 3,
+        "folder": "theme7\\img\\course1\\",
+        "core" : "Quel est l'angle du champ visuel d'un enfant ?",
+        "propositions" : ["70 °", "100 °", "180 °"],
+        "correct_answers" : [1, 0, 0],
+        "note" : "Les enfants voient moins large que les adultes, alors pensez à rester vigilants en leur présence."
+    },
+    {
+        "ID" : 150,
+        "points" : 3,
+        "folder": "theme7\\img\\course1\\",
+        "core" : "Quelles sont les chances de survie d'un piéton s'il est heurté à 50 km / h ?",
+        "propositions" : ["90 %", "50 %", "20 %"],
+        "correct_answers" : [0, 0, 1],
+        "note" : "50 km /h est la vitesse maximale en agglomération, mais ce n'est pas pour autant qu'il faut l'atteindre. Ne roulez pas vite en ville, encore moins vite dans les zones de rencontres où vous devez rouler à 30 km / h maximum. Si un piéton est heurté à 50 km /h, les chances de survie diminuent."
+    },
+    {
+        "ID" : 151,
+        "points" : 6,
+        "folder": "theme7\\img\\course1\\",
+        "core" : "Où le danger se situe-t-il ? (Attention, plusieurs réponses sont possibles.)<!img90.PNG!>",
+        "propositions" : ["Au niveau du n°1", "Au niveau du n°2", "Au niveau du n°3"],
+        "correct_answers" : [1, 0, 1],
+        "note" : "Le piéton sous le numéro 3 a la posture corporelle telle qu'on dirait qu'il s'apprête à traverser. Le cycliste à l'arrêt pourrait constituer un danger aussi, car nous ne savons pas dans quelle direction il partirait. La voiture ne constitue pas trop le danger, mais elle est peut-être trop près. Le comportement à avoir c'est de ralentir."
+    },
+    {
+        "ID" : 152,
+        "points" : 5,
+        "folder": "theme7\\img\\course2\\",
+        "core" : "Les cyclistes, peuvent-ils aller à contre-sens de la circulation ?",
+        "propositions" : ["Oui", "Non"],
+        "correct_answers" : [1, 0],
+        "note" : "Les cyclistes peuvent  aller à contre-sens de la circulation."
+    },
+    {
+        "ID" : 153,
+        "points" : 5,
+        "folder": "theme7\\img\\course2\\",
+        "core" : "<!img92.PNG!>Dans cette zone de rencontre, les cyclistes sont-ils plus prioritaires que les piétons et/ou les voitures ?",
+        "propositions" : ["Oui", "Non"],
+        "correct_answers" : [0, 1],
+        "note" : "Dans cette zone, les piétons sont autorisés à circuler sur la chaussée sans y rester et bénéficient de la priorité sur les véhicules. La vitesse des véhicules y est limitée à 20 km/h.Toutes les chaussées sont à double sens pour les cyclistes, mais ceci ne rend pas les cyclistes prioritaires.  Il s’agit donc d’un partage de la voirie qui illustre le principe de prudence du plus fort (le véhicule) par rapport au plus faible (le piéton). La faible vitesse des véhicules devrait faciliter également l’usage du vélo et favoriser la cohabitation des modes de déplacement.Les plus prioritaires sont donc les piétons, puis les vélos puis les voitures."
+    },
+    {
+        "ID" : 154,
+        "points" : 5,
+        "folder": "theme7\\img\\course2\\",
+        "core" : "Lorsque les cyclistes circulent à 2, comment doivent-ils se positionner sur la chaussée pour être en règle quelles que soient les conditions de circulation ?",
+        "propositions" : ["En file, l'un derrière l'autre", "L'un à côté de l'autre"],
+        "correct_answers" : [1, 0],
+        "note" : "Les cyclistes peuvent circuler à deux de front sur la chaussée. Ils doivent se mettre en file simple dès la chute du jour et dans tous les cas où les conditions de la circulation l’exigent, notamment quand un véhicule voulant les dépasser annonce son approche."
+    },
+    {
+        "ID" : 155,
+        "points" : 4,
+        "folder": "theme7\\img\\course3\\",
+        "core" : "Une voiture, peut-elle emprunter cette voie ?<!img95.PNG!>",
+        "propositions" : ["Oui, à condition de rouler à moins de 20 km/h", "Non"],
+        "correct_answers" : [0, 1],
+        "note" : "La voie verte est un axe de circulation ouvert à tous les moyens de locomotion non motorisés."
+    },
+    {
+        "ID" : 156,
+        "points" : 5,
+        "folder": "theme7\\img\\course3\\",
+        "core" : "Un motard devra obligatoirement être titulaire du permis de conduire adapté pour circuler :<!img100.PNG!>",
+        "propositions" : ["Oui", "Non"],
+        "correct_answers" : [1, 0],
+        "note" : "Un motard devra obligatoirement être titulaire du permis de conduire adapté pour circuler en toute légalité. Dans le cas contraire, non seulement il s'expose à de lourdes sanctions en cas de contrôle routier, mais il met également en danger l'ensemble des usagers qui croiseront sa route."
+    },
+    {
+        "ID" : 157,
+        "points" : 4,
+        "folder": "theme7\\img\\course4\\",
+        "core" : "<!img93.PNG!>Dans cette situation (le bus est à l'arrêt), que faut-il faire ?",
+        "propositions" :  ["Garder son allure et rester derrière le bus", "Dépasser le bus une fois que le véhicule blanc se barattera ou restera sur la voie de gauche pour dépasser le bus"],
+        "correct_answers" : [1, 0],
+        "note" : "Sur votre gauche, on peut voir des zébras donc vous n'avez pas le droit de circuler dessus.  De plus, il se peut que le bus reparte le temps que vous arrivez derrière lui."
+    },
+    {
+        "ID" : 158,
+        "points" : 6,
+        "folder": "theme7\\img\\course4\\",
+        "core" : "<!img96.PNG!>Je peux m'arrêter sur la voie de droite pour déposer un passager ",
+        "propositions" :["Oui", "Non"],
+        "correct_answers" : [0, 1],
+        "note" : "Sur la voie de droite, un arrêt de bus est délimité. Je ne peux pas donc ni m'arrêter, ni stationner à cet endroit au risque de gêner un bus qui souhaiterait s'arrêter."
+    },
+    {
+        "ID" : 159,
+        "points" : 6,
+        "folder": "theme7\\img\\course4\\",
+        "core" : "<!img99.PNG!>Je suis bien placé pour tourner à droite à la prochaine intersection :",
+        "propositions" : ["Oui", "Non"],
+        "correct_answers" : [1, 0],
+        "note" : "Sur cette chaussée,je circule sur la voie centrale. La voie de droite étant réservée aux bus, je ne peux pas y circuler. Je suis donc bien placé pour tourner à droite à la prochaine intersection."
+    },
+    {
+        "ID" : 160,
+        "points" : 12,
+        "folder": "theme7\\img\\course5\\",
+        "core" : "Qui a la priorité entre ces 3 usagers ? Quel est l'ordre de passage ?<!img91.PNG!>",
+        "propositions" : ["Le tramway, puis la voiture de police, puis la voiture", "La voiture de police, puis le tramway, puis la voiture", "La voiture, puis la voiture de police, puis le tramway"],
+        "correct_answers" : [0, 1, 0],
+        "note" : "Les véhicules d'intervention urgente en mission sont les plus prioritaires de tous. On doit leur céder le passage, et même le tramway. Et comme le tramway est sur une route prioritaire, la voiture doit lui céder le passage."
+    },
+    {
+        "ID" : 161,
+        "points" : 5,
+        "folder": "theme7\\img\\course5\\",
+        "core" : "<!img102.PNG!>Dans les cas de refus de céder la priorité, le conducteur sera sanctionné",
+        "propositions" : ["Oui", "Non"],
+        "correct_answers" : [1, 0],
+        "note" : "Dans les cas de refus de céder la priorité, l’article R415-12 du Code de la route sanctionne le conducteur d'une une contravention de quatrième catégorie qui prend la forme d'une amende forfaitaire d'un montant de 90 €. Cette dernière peut également être assortie d’un retrait de plusieurs points, ainsi que d'une suspension du permis de conduire."
+    },
+    {
+        "ID" : 162,
+        "points" : 4,
+        "folder": "theme7\\img\\course6\\",
+        "core" : "<!img101.PNG!>Je ne souhaite pas dépasser cette voiture,je me rebats à droite :",
+        "propositions" : ["Oui", "Non"],
+        "correct_answers" : [0, 1],
+        "note" : "Même si je ne souhaite pas dépasser cette voiture, je ne dois en aucun cas me rebattre à droite, puisque la voie de droite est réservée aux véhicules lents, c'est-à-dire aux véhicules circulant à 60km/h ou moins."
+    },
+    {
+        "ID" : 163,
+        "points" : 5,
+        "folder": "theme7\\img\\course6\\",
+        "core" : "Comment sont signalés les véhicules lents ou encombrants ?",
+        "propositions" : ["Avec un gyrophare bleu", "Avec un gyrophare jaune"],
+        "correct_answers" : [0, 1],
+        "note" : "Les véhicules lents ou encombrants comme les tracteurs, les véhicules de voirie, les bennes à ordures, sont équipés d'un gyrophare jaune qui signale leur présence."
+    },
+    {
+        "ID" : 164,
+        "points" : 6,
+        "folder": "theme7\\img\\course7\\",
+        "core" : "<!img94.PNG!>Je fais signe au conducteur du camion de s'engager",
+        "propositions" : ["Oui", "Non"],
+        "correct_answers" : [1, 0],
+        "note" : "Devant moi la circulation est arrêtée. Je peux donc céder le passage à ce camion afin de ne pas bloquer sa voie également."
+    },
+    {
+        "ID" : 165,
+        "points" : 5,
+        "folder": "theme7\\img\\course7\\",
+        "core" : "<!img97.PNG!>Je circule sur une autoroute? ",
+        "propositions" : ["Oui", "Non"],
+        "correct_answers" : [0, 1],
+        "note" : "Je ne circule pas sur une autoroute puisqu'un véhicule agricole se trouve sur la droite. Les véhicules agricoles étant interdits sur les autoroutes, je ne circule donc pas sur une portion autoroutière."
+    },
+    {
+        "ID" : 166,
+        "points" : 7,
+        "folder": "theme7\\img\\course7\\",
+        "core" : "<!img98.PNG!>Je roule à la vitesse maximale autorisée : ",
+        "propositions" : ["Je continue le dépassement", "Je me rebats à droite entre les 2 poids-lourds"],
+        "correct_answers" : [1, 0],
+        "note" : "Dans cette situation, en roulant à la vitesse maximale auorisée, je dois continuer le dépassement des poids lourds, puisqu'en général , cs derniers circulent plus lentement. Me rebattre à droite serait dangereux puisque la distance de sécurité serait insuffisante."
+    },
+    {
+        "ID" : 167,
+        "points" : 4,
+        "folder": "theme8\\img\\course1\\",
+        "core" : "Le moteur, assure-t-il tout seul la transmission de la vitesse vers les roues ?",
+        "propositions" : ["Oui", "Non"],
+        "correct_answers" : [0, 1],
+        "note" : "C'est l'embrayage qui assure la transmission vers les roues."
+    },
+    {
+        "ID" : 168,
+        "points" : 5,
+        "folder": "theme8\\img\\course1\\",
+        "core" : "'Débrayer', est-ce associé à la phase d'appuyer sur l'embrayage ou le fait de le lâcher ?",
+        "propositions" : ["Le fait d'appuyer sur la pédale d'embrayage pour passer la vitesse", "Le fait de lâcher la pédale d'embrayage parce que la vitesse a déjà été passée"],
+        "correct_answers" : [1, 0],
+        "note" : "Débrayer c'est le fait d'appuyer sur la pédale d'embrayage pour passer la vitesse."
+    },
+    {
+        "ID" : 169,
+        "points" : 6,
+        "folder": "theme8\\img\\course1\\",
+        "core" : "Quelle vitesse est la plus puissante ?",
+        "propositions" : ["1", "2", "3", "4"],
+        "correct_answers" : [1, 0, 0, 0],
+        "note" : "La 1ère vitesse est la plus puissante car c'est elle qui fait démarrer la voiture."
+    },
+    {
+        "ID" : 170,
+        "points" : 5,
+        "folder": "theme8\\img\\course1\\",
+        "core" : "A quel moment êtes-vous en sur-régime ?",
+        "propositions" : ["Lorsque la vitesse atteinte est moins élevée que la vitesse passée", "Lorsque la vitesse atteinte est plus élevée que la vitesse passée"],
+        "correct_answers" : [0, 1],
+        "note" : "Vous êtes en sur-régime lorsque la vitesse atteinte est plus élevée que la vitesse passée.Exemple : Si vous roulez à 40 km/h et êtes en 2ème, il est temps de passer en 3ème si vous ne comptez pas vous arrêter. Mais imaginons que vous accélérez (passez à 60 km/h) et conservez la même vitesse (2ème toujours) alors que vous devez passer à la 3ème, vous êtes en sur-régime. Votre moteur va 'crier'."
+    },
+    {
+        "ID" : 171,
+        "points" : 6,
+        "folder": "theme8\\img\\course1\\",
+        "core" : "Sur quelle position de clé pouvez-vous écouter de la musique ?",
+        "propositions" : ["Sur la position On", "Sur la position Acc", "Sur la position Lock", "Sur la position Start"],
+        "correct_answers" : [0, 1, 0, 0],
+        "note" : "Acc permet d'écouter la radio car c'est l'abréviation d'Accessoire, donc d'une option qui n'est pas indispensable."
+    },
+    {
+        "ID" : 172,
+        "points" : 6,
+        "folder": "theme8\\img\\course1\\",
+        "core" : "<!img84.PNG!>De quel voyant s'agit-il ?",
+        "propositions" : ["Air conditionné", "Dégivrage", "Aération", "Désembuage"],
+        "correct_answers" : [0, 1, 0 ,0],
+        "note" : " Il s'agit de voyant 'Dégivrage'."
+    },
+    {
+        "ID" : 173,
+        "points" : 5,
+        "folder": "theme8\\img\\course1\\",
+        "core" : "<!img85.PNG!>Quel est le voyant du feu de position ?",
+        "propositions" : ["1", "2", "3", "4", "5"],
+        "correct_answers" : [0, 0, 0, 0, 1],
+        "note" : "le voyant du feu de position est le 5ème"
+    },
+    {
+        "ID" : 174,
+        "points" : 4,
+        "folder": "theme8\\img\\course1\\",
+        "core" : "<!img86.PNG!>On voit les feux Stop actionnés sur la voiture blanche en face. Que se passe-t-il dans la voiture en face ?",
+        "propositions" : ["Le frein à main est actionné","La pédale du frein est actionnée"],
+        "correct_answers" : [0, 1],
+        "note" : "C'est la pédale qui est actionnée."
+    },
+    {
+        "ID" : 175,
+        "points" : 5,
+        "folder": "theme8\\img\\course1\\",
+        "core" : "Quels feux sont-ils blancs quand ils sont actionnés ?",
+        "propositions" : ["Clignotants", "Feux Stop arrière", "Feux arrière"],
+        "correct_answers" : "0~0~1",
+        "note" : "Les feux de marche arrière sont blancs quand ils s'allument."
+    },
+    {
+        "ID" : 176,
+        "points" : 6,
+        "folder": "theme8\\img\\course1\\",
+        "core" : "Lorsqu'un voyant orange (le témoin d'alerte) s'allume pendant la conduite, que pensez-vous faire ?",
+        "propositions" : ["Aller directement au garage car vous pouvez encore rouler quelques kilomètres", "Vous arrêter immédiatement car la conduite est interdite et appeler le garagiste qu'il vienne vous remorquer"],
+        "correct_answers" : [1, 0],
+        "note" : "Lorsque le voyant orange s'allume, vous n'êtes pas en danger extrême, donc vous pouvez encore rouler quelques kilomètres. Allez directement chez le garagiste."
+    },
+    {
+        "ID" : 177,
+        "points" : 8,
+        "folder": "theme8\\img\\course1\\",
+        "core" : "Sur la boite à vitesse automatique, que signifie la position R ?",
+        "propositions" : ["Avancer", "Reculer", "Changer de vitesse"],
+        "correct_answers" : [0, 1, 0],
+        "note" : "R signifie reverse donc reculer."
+    },
+    {
+        "ID" : 178,
+        "points" : 10,
+        "folder": "theme8\\img\\course2\\",
+        "core" : "Si votre voiture est neuve, à quel moment doit avoir lieu le contrôle technique ?",
+        "propositions" : ["Après 2 ans", "Dans les 6 mois avant qu'elle n'accomplisse ses 4 ans"],
+        "correct_answers" : [0, 1],
+        "note" : "Dans les 6 mois avant qu'elle n'accomplisse ses 4 ans"
+    },
+    {
+        "ID" : 179,
+        "points" : 3,
+        "folder": "theme8\\img\\course2\\",
+        "core" :"Si une ampoule grille, devez-vous changer l'autre qui fonctionne correctement ?",
+        "propositions" : ["Oui", "Non"],
+        "correct_answers" : [1, 0],
+        "note" : "Lorsqu'une ampoule grille, vous devez changer les deux, symétriquement, car l'autre est usée et va griller à son tour."
+    },
+    {
+        "ID" : 180,
+        "points" : 6,
+        "folder": "theme8\\img\\course2\\",
+        "core" : "A quelle fréquence les essuie-glaces doivent-ils être remplacés ?",
+        "propositions" : ["Tous les 6 mois", "Tous les ans", "Tous les 2 ans"],
+        "correct_answers" : [0, 1, 0],
+        "note" : "Les essuie-glaces doivent être remplacés tous les ans."
+    },
+    {
+        "ID" : 181,
+        "points" : 4,
+        "folder": "theme8\\img\\course2\\",
+        "core" : "Sur combien de roues le frein à pied agit-il ?",
+        "propositions" : ["2 roues motrices", "4 roues"],
+        "correct_answers" : [0, 1],
+        "note" : "Le frein à pied agit sur 4 roues."
+    },
+    {
+        "ID" : 182,
+        "points" : 6,
+        "folder": "theme8\\img\\course2\\",
+        "core"  :"<!img87.PNG!>Si ce voyant s'allume sur votre tableau de bord, que faut-t-il faire ?",
+        "propositions" : ["Il faut rajouter du lave-glace", "Il faut rajouter du liquide de frein", "Il faut s'arrêter"],
+        "correct_answers" : [0, 0, 1],
+        "note" : "Il s'agit du voyant de liquide de refroidissement qui s'est allumé et donc il faut s'arrêter pour laisser le moteur refroidir pour faire l'appoint."
+    },
+    {
+        "ID" : 183,
+        "points" : 5,
+        "folder": "theme8\\img\\course2\\",
+        "core" : "Pouvez-vous démarrer la voiture à l'aide de votre clé si la batterie est vide ?",
+        "propositions" : ["Oui, sans problèmes","Non ou difficilement"],
+        "correct_answers" : [0, 1],
+        "note" : "Si la batterie est vide, vous aurez du mal à démarrer la voiture à l'aide de la clé. Si cela vous arrive, vous pouvez demander à quelqu'un de vous dépanner avec des pinces."
+    },
+    {
+        "ID" : 184,
+        "points" : 5,
+        "folder": "theme8\\img\\course2\\",
+        "core" : "Comment doivent-être placés les pneus ?",
+        "propositions" : ["Ils doivent avoir les mêmes caractéristiques sur un seul essieu", "Ils doivent avoir les mêmes caractéristiques d'un seul côté"],
+        "correct_answers" : [1, 0],
+        "note" : "Ils doivent avoir les mêmes caractéristiques sur un seul essieu."
+    },
+    {
+        "ID" : 185,
+        "points" : 4,
+        "folder": "theme8\\img\\course2\\",
+        "core" : "Si vos pneus sont gonflés à 1,5 bars sont-ils :",
+        "propositions" : ["Sous-gonflés ?", "Sur-gonflés ?"],
+        "correct_answers" : [1, 0],
+        "note" : "La bonne pression se situe entre 1,8 et 3 bars. Il faut donc les gonfler davantage."
+    },
+    {
+        "ID" : 186,
+        "points" : 10,
+        "folder": "theme8\\img\\course2\\",
+        "core" : "Si vous avez une roue dans le coffre, que faut-il faire si vous crevez sur l'autoroute (roue gauche) ?",
+        "propositions" : ["Changer la roue sur une BAU", "Évacuer le véhicule et appeler la dépanneuse"],
+        "correct_answers" : [0, 1],
+        "note" : "Il ne faut pas changer la roue gauche sur l'autoroute, même en étant sur une BAU car la circulation n'est pas loin de vous. Vous êtes exposés. Même si vous savez changer la roue, ne vous lancez pas dans la démarche, c'est très dangereux."
+    },
+    {
+        "ID" : 187,
+        "points" : 12,
+        "folder": "theme8\\img\\course2\\",
+        "core" : "Mettez les étapes en ordre pour changer une roue.<!img88.PNG!>",
+        "propositions" : ["A,B,C,D", "B,C,A,D", "D,A,B,C", "C,A,D,B"],
+        "correct_answers" : [0, 0, 0, 1],
+        "note" : "C- on dévisse (sens contraire aux aiguilles d'une montre) ; A- roue dévissée ; D-nouvelle roue mise ; B- on visse (sens des aiguilles)."
+    },
+    {
+        "ID" : 188,
+        "points" : 1,
+        "folder": "theme9\\img\\course1\\",
+        "core" : "Combien de temps faut-il pour parcourir 1 km à pied ?",
+        "propositions" : ["15 minutes", "40 minutes", "1 heure", "1h30"],
+        "correct_answers" : [1, 0, 0 ,0],
+        "note" : "Pour faire un 1 km, il faut compter 12-15 minutes de marche à pied."
+    },
+    {
+        "ID" : 189,
+        "points" : 3,
+        "folder": "theme9\\img\\course1\\",
+        "core" : "L'éco-mobilité est-elle bien développée en France ?",
+        "propositions" : ["Oui", "Non"],
+        "correct_answers" : [0, 1],
+        "note" : "En France, 65% de déplacements s'effectuent en voiture, raison pour laquelle l'éco-mobilité est en retard et doit davantage se développer."
+    },
+    {
+        "ID" : 190,
+        "points" : 4,
+        "folder": "theme9\\img\\course1\\",
+        "core" : "Le co-voiturage, permet-il de réduire la pollution ?",
+        "propositions" : ["Oui", "Non"],
+        "correct_answers" : [1, 0],
+        "note" : "Dans la mesure où vous partagez votre voiture avec d'autres usagers ou qu'ils vous la font partager, vous réduisez la pollution."
+    },
+    {
+        "ID" : 191,
+        "points" : 5,
+        "folder": "theme9\\img\\course2\\",
+        "core" : "L'étiquette relative à l'énergie est-elle obligatoirement apposée sur une voiture neuve, prête à être vendue ?",
+        "propositions" : ["Oui", "Non"],
+        "correct_answers" : [1, 0],
+        "note" : "L'étiquette est obligatoirement apposée pour certifier de la consommation énergétique du véhicule."
+    },
+    {
+        "ID" : 192,
+        "points" : 5,
+        "folder": "theme9\\img\\course2\\",
+        "core" : "Les voitures aux boîtes automatiques, consomment-elles moins que les boîtes à vitesses manuelles ?",
+        "propositions" : ["Oui, beaucoup moins", "Non, pas forcément"],
+        "correct_answers" : [0, 1],
+        "note" : "Les nouvelles boîtes automatiques ne consomment pas beaucoup plus que les boîtes manuelles."
+    },
+    {
+        "ID" : 193,
+        "points" : 2,
+        "folder": "theme9\\img\\course2\\",
+        "core" : "Parmi ces pays, lequel produit le plus de voitures dans le monde ?",
+        "propositions" : ["Chine", "Brésil", "Corée du Sud", "Allemagne"],
+        "correct_answers" : [0, 0, 1, 0],
+        "note" : "Au niveau mondial, c'est la Corée du Sud qui a la plus grande usine au monde, derrière elle vient le Brésil et l'Allemagne en 3ème lieu. La France, malheureusement, ne figure pas au top 10. C'est la Pologne avec son usine Fiat qui détient la 7ème place mondiale et c'est le seul pays Européen qui se trouve sur la liste."
+    },
+    {
+        "ID" : 194,
+        "points" : 6,
+        "folder": "theme9\\img\\course3\\",
+        "core" : "Pour pratiquer de l'éco-conduite, en quelle vitesse devriez-vous conduire si vous êtes à 50 km/h pendant un long moment ?",
+        "propositions" : ["En 2ème vitesse", "En 3ème vitesse", "En 4ème vitesse"],
+        "correct_answers" : [0, 0, 1],
+        "note" : "Les 50 km/h est la vitesse maximum pratiquée en ville. Si vous vous arrêtez à chaque coin de rue, vous devez rester en 3ème. Mais si vous allez conduire un kilomètre sans vous arrêter et à 50 km/h, vaut mieux rouler en 4ème vitesse. Vous serez en sous-régime sinon."
+    },
+    {
+        "ID" : 195,
+        "points" : 5,
+        "folder": "theme9\\img\\course3\\",
+        "core" : "Arrêter le moteur au feu rouge ne serait-ce que pendant 20 sec, aide-t-il à moins polluer ?",
+        "propositions" : ["Oui", "Non, cela ne change strictement rien"],
+        "correct_answers" : [1, 0],
+        "note" : "Vous consommez plus de carburant donc vous polluez plus si vous laissez le moteur allumé pendant plus de 20 s, que si vous l'éteignez puis l'allumez à nouveau !"
+    },
+    {
+        "ID" : 196,
+        "points" : 2,
+        "folder": "theme9\\img\\course3\\",
+        "core" : "Si vous roulez 10 km/h de moins que d'habitude, à combien de pourcents la pollution est-elle réduite ?",
+        "propositions" : ["0,2 %", "5 %", "10 %", "12,5 %"],
+        "correct_answers" : [0, 0, 0, 1],
+        "note" : "En cas de pic de pollution, le Préfet du département peut réduire la vitesse maximale autorisée sur certains réseaux. 10 km/h de moins permettent d'économiser jusqu'à 5 l de carburant et de réduire donc la pollution de 12,5%."
+    },
+    {
+        "ID" : 197,
+        "points" : 3,
+        "folder": "theme9\\img\\course3\\",
+        "core" : "La clim, pollue-t-elle plus qu'une fenêtre ouverte ?",
+        "propositions" : ["Oui", "Non"],
+        "correct_answers" : [0, 1],
+        "note" : "Faire fonctionner la clim de façon modérée (maximum 4 à 5°C d'écart avec la température extérieure) est plus écologique que de rouler les vitres baissées"
+    },
+    {
+        "ID" : 198,
+        "points" :6,
+        "folder": "theme9\\img\\course3\\",
+        "core" : "Pour être 'éco-mobile' vous devez contrôler régulièrement: (Attention, plusieurs réponses sont possibles).",
+        "propositions" :  ["L'état des pneus", "L'état des bougies et des filtres à air", "L'état des phares"],
+        "correct_answers" : [1, 1, 0],
+        "note" : "La pression des pneus et l'état des bougies et du filtre à air ont une influence directe sur la consommation du véhicule, mais pas les phares."
+    },
+    {
+        "ID" : 199,
+        "points" : 5,
+        "folder": "theme10\\img\\course1\\",
+        "core" : "Quelle est la fonction de l'ABS ?",
+        "propositions" : ["De garder le contrôle de la direction", "De raccourcir les distances de freinage"],
+        "correct_answers" : [1, 0],
+        "note" : "L'ABS ne peut pas raccourcir la distance de freinage, seulement vous aider à garder le contrôle de la direction."
+    },
+    {
+        "ID" : 200,
+        "points" : 4,
+        "folder": "theme10\\img\\course1\\",
+        "core" : "L'ABS ne peut pas raccourcir la distance de freinage, seulement vous aider à garder le contrôle de la direction.",
+        "propositions" : ["De raccourcir la distance de freinage", "D'amplifier le freinage"],
+        "correct_answers" : [0,1],
+        "note" : "L'AFU est un complément de l'ABS, donc ni l'un ni l'autre ne raccourcissent la distance de freinage."
+    },
+    {
+        "ID" : 201,
+        "points" : 6,
+        "folder": "theme10\\img\\course1\\",
+        "core" : "Quelle est la fonction de l'ESP ? (Attention, plusieurs réponses sont possibles)",
+        "propositions" : ["De raccourcir la distance de freinage", "De ramener la voiture sur la bonne trajectoire en cas de perte d'adhérence", "De repartir automatiquement le freinage sur chacune des roues"],
+        "correct_answers" : [0, 1, 1],
+        "note" : "Programme de Stabilité Électronique (ESP) permet de ramener la voiture sur la bonne trajectoire si jamais vous commencez à glisser. L'ESP détecte l'adhérence et répartit automatiquement le freinage sur chacune des roues pour mieux gérer le dérapage."
+    },
+    {
+        "ID" : 202,
+        "points" : 5,
+        "folder": "theme10\\img\\course1\\",
+        "core" : "Si vous utilisez le régulateur de vitesse, votre temps de réaction est-il raccourci ?",
+        "propositions" : ["Oui", "Non"],
+        "correct_answers" : [0, 1],
+        "note" : "Vos pieds ne sont pas positionnés donc le temps de réaction est forcément plus long."
+    },
+    {
+        "ID" : 203,
+        "points" : 8,
+        "folder": "theme10\\img\\course1\\",
+        "core" : "Si le conducteur a réglé le limitateur de vitesse à 110 km/h, mais souhaite dépasser un véhicule, que doit-il faire avant la manœuvre ? (Attention, plusieurs réponses sont possibles.)",
+        "propositions" : ["Il suffit d'accélérer petit à petit", "Il faut qu'il désactive lui-même le limitateur pour pouvoir accélérer", "Il faut qu'il appuie fortement pour franchir la limite de vitesse fixée"],
+        "correct_answers" : [0, 1, 1],
+        "note" : "Si jamais vous souhaitez accélérer graduellement, la pédale reste inactive. Si vous appuyez brusquement, vous pouvez accélérer momentanément."
+    },
+    {
+        "ID" : 204,
+        "points" : 4,
+        "folder": "theme10\\img\\course1\\",
+        "core" : "Le radar de recul, dans quel situation est-il utilisé ?",
+        "propositions" : ["Pour mieux repérer les autres usagers dans l'angle mort", "Pour repérer les contrôles de vitesse des policiers","Pour mieux se garer"],
+        "correct_answers" : [0, 0, 1],
+        "note" : "Doté d'une caméra à l'avant et à l'arrière de la voiture, ce dispositif vous aide à mieux vous garer car il repère les obstacles et les signale par les bips sonores."
+    },
+    {
+        "ID" : 205,
+        "points" : 4,
+        "folder": "theme10\\img\\course1\\",
+        "core" : "Si vous téléphonez via le Bluetooth, tenez-vous le téléphone en main ?",
+        "propositions" : ["Oui", "Non"],
+        "correct_answers" : [0, 1],
+        "note" : "C'est un dispositif qui vise à sécuriser les appels passés ou reçus car le conducteur n'utilise pas ses mains."
+    },
+    {
+        "ID" : 206,
+        "points" : 10,
+        "folder": "theme10\\img\\course1\\",
+        "core" : "A quelle partie du véhicule la direction assistée fait-elle référence ?",
+        "propositions" : ["Aux roues", "Au volant", "Au moteur", "A la boîte à vitesses"],
+        "correct_answers" : [0, 1, 0, 0],
+        "note" : "C'est le volant qui donne la direction, pas les roues. Elles suivent le message du volant."
+    },
+    {
+        "ID" : 207,
+        "points" : 6,
+        "folder": "theme10\\img\\course1\\",
+        "core" :"Sur les voitures récentes, où se trouve l'avertisseur de l'angle mort ?",
+        "propositions" : ["Sur le rétroviseur intérieur", "Sur le tableau de bord", "Sur les deux rétroviseurs extérieurs"],
+        "correct_answers" : [0, 0, 1],
+        "note" : "Sur les voitures récentes, l'avertisseur de l'angle mort se trouve sur les deux rétroviseurs extérieurs."
+    },
+    {
+        "ID" : 208,
+        "points" : 5,
+        "folder": "theme10\\img\\course1\\",
+        "core" : "Pouvez-vous utiliser le régulateur de vitesse en ville ?",
+        "propositions" :["Oui", "Non"],
+        "correct_answers" : [0, 1],
+        "note" : "L'usage du régulateur de vitesse en ville est inadapté car les arrêts et les démarrages sont fréquents (feux, arrêts au Stop, priorités à droite etc)."
+    },
+    {
+        "ID" : 209,
+        "points" : 5,
+        "folder": "theme10\\img\\course2\\",
+        "core" :"Parmi les actions de la Délégation à la sécurité routière, contrôler et sanctionner les infractions au Code de la route ",
+        "propositions" : ["Oui", "Non"],
+        "correct_answers" : [1, 0],
+        "note" : "Parmi les actions de la Délégation à la sécurité routière, contrôler et sanctionner les infractions au Code de la route."
+    },
+    {
+        "ID" : 210,
+        "points" : 2,
+        "folder": "theme10\\img\\course2\\",
+        "core" : "L’association Prévention Routière n'assure pas la formation des conducteurs, notamment suite à des infractions répétées au Code de la route ",
+        "propositions" : ["Oui", "Non"],
+        "correct_answers" : [0, 1],
+        "note" : "l’association Prévention Routière réalise la formation des conducteurs, notamment suite à des infractions répétées au Code de la route."
+    },
+    {
+        "ID" : 211,
+        "points" : 5,
+        "folder": "theme10\\img\\course3\\",
+        "core" : "Si vous ne portez pas la ceinture, l'accident risque-t-il d'être mortel à 50 km /h ?",
+        "propositions" : ["Oui", "Non"],
+        "correct_answers" : [1, 0],
+        "note" : "Si vous roulez à 50 km / h et avec un accident, vous risquez votre vie."
+    },
+    {
+        "ID" : 212,
+        "points" : 6,
+        "folder": "theme10\\img\\course3\\",
+        "core" : "Que permet la ceinture à un passager en cas d'accident ? ( Attention! Plusieurs réponses sont possibles)",
+        "propositions" : ["De ne pas être secoué dans tous les sens", "De pouvoir s'extraire du véhicule plus rapidement en cas de collision", "De ne pas être contrôlé à l'alcoolémie"],
+        "correct_answers" : [1, 1, 0],
+        "note" : "Le port de la ceinture de sécurité n'épargne pas le dépistage à l'alcool et à la drogue lors d'un accident. Au contraire."
+    },
+    {
+        "ID" : 213,
+        "points" : 5,
+        "folder": "theme10\\img\\course3\\",
+        "core" : "Les air-bags, sont-ils sensibles au poids du passager ?",
+        "propositions" : ["Oui", "Non"],
+        "correct_answers" : [1, 0],
+        "note" : "Si l’icône affichée illustre un air-bag traversé d’un « X », le poids sur le siège ne suffit pas à activer le système et le coussin ne se déploiera pas en cas d’impact frontal."
+    },
+    {
+        "ID" : 214,
+        "points" : 5,
+        "folder": "theme10\\img\\course3\\",
+        "core" : "Si le voyant d'air-bag s'allume, de quel témoin s'agit-il ?",
+        "propositions" : ["Témoin d'alarme", "Témoin d'alerte"],
+        "correct_answers" : [1, 0],
+        "note" : "Il s'agit d'un témoin d'alarme. Ce voyant est plus souvent de couleur rouge."
+    },
+    {
+        "ID" : 215,
+        "points" : 4,
+        "folder": "theme10\\img\\course3\\",
+        "core" : "Le non-port de la ceinture où est-il davantage présent ?",
+        "propositions" : ["A l'avant du véhicule", "A l'arrière du véhicule"],
+        "correct_answers" : [0, 1],
+        "note" : "Le port de la ceinture est respecté à 98% à l'avant, mais moins à l'arrière (80%)."
+    },
+    {
+        "ID" : 216,
+        "points" : 6,
+        "folder": "theme10\\img\\course3\\",
+        "core" : "Un enfant de 8 ans, peut-il être installé à l'avant du véhicule ?",
+        "propositions" : [ "Oui", "Non", "Oui, sous certaines conditions"],
+        "correct_answers" : [0, 0, 1],
+        "note" : "Il est interdit de placer un enfant de moins de 10 ans à l'avant du véhicule, sauf si vous ne disposez pas de places à l'arrière comme dans un utilitaire."
+    },
+    {
+        "ID" : 217,
+        "points" : 6,
+        "folder": "theme10\\img\\course3\\",
+        "core" : "Comment le lit-nacelle doit-il être placé ?",
+        "propositions" : [ "Seulement à l'arrière", "Seulement à l'avant", "Soit à l'avant soit à l'arrière"],
+        "correct_answers" : [0, 0, 1],
+        "note" : "Ils peuvent être transportés dans un porte bébé 'dos vers l'avant' à l'arrière ou à l'avant à l'aide de la ceinture de sécurité"
+    },
+    {
+        "ID" : 218,
+        "points" : 5,
+        "folder": "theme10\\img\\course3\\",
+        "core" :"Le siège homologué (style baquet), pour quelle tranche d'âge est-il conçu ?",
+        "propositions" : ["naissance - 1 an", "9 mois - 5 ans", "3 ans - 12 ans"],
+        "correct_answers" : [0, 1, 0],
+        "note" : "Il s'agit d'un siège pour les enfants entre 9 mois et 5 ans qui ont entre 9 et 18 kg."
+    }
+    ]
+    }
