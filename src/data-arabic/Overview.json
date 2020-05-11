@@ -1,0 +1,104 @@
+{
+  "courseTitle": "Code de la Route",
+  "chapterNomination": "Theme",
+  "chapters": [
+    {
+      "ID": 1,
+      "chapterTitle": "Les Règles de Circulation Routière",
+      "nCourses": 6,
+      "nQuestions": 60,
+      "nQuizes": 1,
+      "folder": "theme1\\",
+      "courses": ["La signalisation routière","Les intersections","Les règles de priorité","La vitesse de circulation","La signalisation routière","Le stationnement et arrêt"]
+    }
+  ,
+    {
+      "ID": 2,
+      "chapterTitle": "Le Conducteur",
+      "nCourses": 2,
+      "nQuestions": 20,
+      "nQuizes": 1,
+      "folder": "theme2\\",
+      "courses": ["Savoir bien conduire - l'attitude du conducteur", "Être en état de conduire"]
+    }
+  ,
+    {
+      "ID": 3,
+      "chapterTitle": "La Route",
+      "nCourses": 3,
+      "nQuestions": 23,
+      "nQuizes": 1,
+      "folder": "theme3\\",
+      "courses": ["Comment conduire dans des conditions difficiles", "Conduire sur Autoroute", "Comment aborder les zones dangereuses"]
+    }
+  ,
+    {
+      "ID": 4,
+      "chapterTitle": "Les Notions Diverses",
+      "nCourses": 2,
+      "nQuestions": 10,
+      "nQuizes": 1,
+      "folder": "theme4\\",
+      "courses": ["Les documents administratifs", " Le chargement des véhicules"]
+    }
+  ,
+    {
+      "ID": 5,
+      "chapterTitle": "Prendre et Quitter son Véhicule",
+      "nCourses": 3,
+      "nQuestions": 15,
+      "nQuizes": 1,
+      "folder": "theme5\\",
+      "courses": ["L'installation au poste  de conduite", "Les vérifications rapides à faire avant de monter dans sa voiture", "les précautions pour quitter son véhicule"]
+    }
+  ,
+    {
+      "ID": 6,
+      "chapterTitle": "Les Premiers Secours",
+      "nCourses": 3,
+      "nQuestions": 10,
+      "nQuizes": 1,
+      "folder": "theme6\\",
+      "courses": ["La protection de la zone accidentée", "L’évaluation de l’état des victimes", "Secourir les victimes"]
+    }
+  ,
+    {
+      "ID": 7,
+      "chapterTitle": "Les Autres Usagers de la Route",
+      "nCourses": 7,
+      "nQuestions": 10,
+      "nQuizes": 1,
+      "folder": "theme7\\",
+      "courses": ["Le piéton dans le Code de la route", "Le cycliste dans le Code de la route", "Les deux-roues motorisés","Le bus dans le Code de la route","Les véhicules d’intérêt général prioritaires","Les véhicules lents, encombrants, et convois exceptionnels","Les poids lourds" ]
+    },
+    {
+      "ID": 8,
+      "chapterTitle": "La Mécanique du Véhicule et ses Équipements",
+      "nCourses": 2,
+      "nQuestions": 10,
+      "nQuizes": 1,
+      "folder": "theme8\\",
+      "courses": ["Comment fonctionne une voiture", "L’entretien et le dépannage du véhicule" ]
+    }
+  ,
+    {
+      "ID": 9,
+      "chapterTitle": "L’Environnement",
+      "nCourses": 3,
+      "nQuestions": 10,
+      "nQuizes": 1,
+      "folder": "theme9\\",
+      "courses": ["L’écomobilité -les alternatives à la voiture", "Choisir et entretenir votre véhicule pour réduire votre impact ", "Comment pratiquer l’éco-conduite?" ]
+    }
+  ,
+    {
+      "ID": 10,
+      "chapterTitle": "La Sécurité du Passager et du Véhicule",
+      "nCourses": 3,
+      "nQuestions": 10,
+      "nQuizes": 1,
+      "folder": "theme10\\",
+      "courses": ["Les équipements de sécurité des véhicules ", "La sécurité et la prévention routière", "Installation des passagers" ]
+    }
+  ]
+}
