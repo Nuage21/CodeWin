@@ -4,26 +4,26 @@
         "ID": 1,
         "points": 5,
         "folder": "theme1\\img\\course1\\",
-        "core": "<!img2.PNG!> Ce marquage en forme de damier indique :",
-        "propositions": ["Un sas pour cyclistes", "Un arrêt de bus", "Une voie de détresse", "Une traversée de voie de bus"],
+        "core": "<!img2.PNG!> This checkerboard marking indicates :",
+        "propositions": ["An airlock for cyclists", "A bus stop", "A distress lane", "A bus lane crossing"],
         "correct_answers": [0, 0, 0, 1],
-        "note": "Ce damier blanc au sol indique une traversée de voie de bus. Le dernier peut être franchi, mais ne doit jamais être encombré."
+        "note": "This white checkerboard on the ground indicates a bus lane crossing. The latter can be crossed, but must never be congested. "
     },
     {
         "ID": 2,
         "points": 10,
         "folder": "theme1\\img\\course1\\",
-        "core": "<!img3.PNG!>Dans cette situation :",
-        "propositions": ["Je change de voie", "Je m’arrête", "Je change de voie ou je m’arrête", "Je ne change pas de voie et je ne m’arrête pas"],
+        "core": "<!img3.PNG!>In this situation :",
+        "propositions": ["I change lanes", "I stop", "I change lanes or I stop", "I do not change lanes and I do not stop"],
         "correct_answers": [1, 0, 0, 0],
-        "note": "Un véhicule est stationné à cheval sur le trottoir et empiète sur ma voie de circulation. Personne n’est engagé derrière moi sur la voie de droite, je peux donc me changer de voie, après avoir contrôlé dans l’angle mort droit qu’aucun usager ne se trouve à côté de moi."
+        "note": "A vehicle is parked astride the sidewalk and encroaches on my traffic lane. No one is behind me in the right lane, so I can change lanes, after checking in the right blind spot that no user is next to me."
     },
     {
         "ID": 3,
         "points": 7,
         "folder": "theme1\\img\\course1\\",
-        "core": "<!img8.PNG!> Je passe:",
-        "propositions": ["Oui", "Non"],
+        "core": "<!img8.PNG!> I pass:",
+        "propositions": ["Yes", "No"],
         "correct_answers": [0, 1],
         "note": "Le feu, qui est passé au jaune va devenir rouge. Aucun véhicule ne me suit de près, et je suis à une distance suffisante du feu pour m’arrêter en sécurité. Je dois donc m’arrêter."
     },
@@ -34,7 +34,7 @@
         "core" : "<!img9.PNG!>Dans cette situation :",
         "propositions" : ["Je quitte une agglomération", "J’entre dans un département", "Je quitte une agglomération et j’entre dans un département", "Je ne quitte pas une agglomération et je n’entre pas dans un département"],
         "correct_answers" : [0, 0, 1, 0],
-        "note" : "J’ai aperçu deux panneaux : celui du haut m’indiquait que je quitte une agglomération, celui du bas que j’entre dans un département, l’Ain."
+        "note" : "I saw two signs: the top one told me that I was leaving a built-up area, the bottom one that I entered a department, Ain."
     },
     {
         "ID" : 5,
@@ -43,34 +43,34 @@
         "core" : "<!img10.PNG!>Dans cette situation :",
         "propositions" : ["Je laisse ce véhicule continuer sa manoeuvre", "Je klaxonne"],
         "correct_answers" : [1, 0],
-        "note" : "Ce véhicule est engagé sur ma voie de circulation. Je le laisse terminer sa manoeuvre, d’autant plus que le conducteur ne me regarde pas. J’ai eu le temps de l’anticiper, il n’y a donc pas de danger immédiat.En agglomération, l’usager du Klaxon est interdit, sauf en cas de danger immédiat."
+        "note": "This vehicle is on my taxiway. I let it finish its maneuver, especially since the driver is not looking at me. I had time to anticipate it, there is therefore no immediate danger. In built-up areas, the user of the Horn is prohibited, except in the event of immediate danger."
     },
     {
         "ID" : 6,
         "points" : 8,
         "folder": "theme1\\img\\course1\\",
-        "core" : "<!img15.PNG!>Pour continuer tout droit : ",
-        "propositions" : ["Je reste dans cette voie", "Je me place à droite"],
-        "correct_answers" : [0, 1],
-        "note" : "Pour continuer tout droit, je dois utiliser la voie la plus à droite. Étant mal placé , je change de voie."
+        "core" : "<!img15.PNG!>To continue straight: ",
+        "propositions": ["I stay on this path", "I place myself on the right"],
+        "correct_answers": [0, 1],
+        "note": "To continue straight, I must use the right-most lane. Being in the wrong place, I change lanes."
     },
     {
         "ID" : 7,
         "points" : 5,
         "folder": "theme1\\img\\course1\\",
-        "core" : "<!img17.PNG!>Je circule sur une route : ",
-        "propositions" : ["Nationale", "Départementale"],
-        "correct_answers" : [1, 0],
-        "note" : "La balise située en dessous du panneau indique que je circule sur le N489, donc sur une route nationale."
+        "core" : "<!img17.PNG!>I am driving on a road: ",
+        "propositions": ["National", "Departmental"],
+        "correct_answers": [1, 0],
+        "note": "The tag located below the panel indicates that I am driving on the N489, therefore on a national road."
     },
     {
         "ID" : 8,
         "points" : 5,
         "folder": "theme1\\img\\course1\\",
-        "core" : "<!img17.PNG!>Ce panneau indique que la première sortie se situe à 37km :",
-        "propositions" : ["Oui", "Non"],
-        "correct_answers" : [0, 1],
-        "note" : "Ce panneau indique qu’à 1500 mètres je vais rencontrer la sortie n°37  et la sortie n°36"
+        "core" : "<!img17.PNG!>Ce panneau indique que la première sortie se situe à 37 km: ",
+        "propositions": ["Oui", "Non"],
+        "correct_answers": [0, 1],
+        "note": "Ce panneau indique qu'à 1500 mètres je vais rencontrer la sortie n ° 37 et la sortie n ° 36"
     },
     {
         "ID" : 9,
