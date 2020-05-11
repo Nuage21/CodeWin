@@ -50,10 +50,10 @@ if __name__ == "__main__":
                          gathered = "";  #empty
                          translatedGathered=""
                       i=i+1
-                      if core[i]=="#"
+                      if core[i]=="#":
                          translatedCore=translatedCore+"#"
                          i=i+1
-                         if core[i]=="#"
+                         if core[i]=="#":
                             translatedCore=translatedCore+"#"
                       endex = getEndex(core, i , '#')
                       headline = getHeadline(core, i , endex)
@@ -91,7 +91,7 @@ if __name__ == "__main__":
                                i = endex+1
                             else:
                                gathered= gathered + c
-                    i = i+1
+                   i = i+1
                 #Last sentence
                 translatedGathered=json_translate.translate(gathered).text
                 translatedCore=translatedCore+translatedGathered
