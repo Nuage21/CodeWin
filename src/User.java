@@ -45,6 +45,11 @@ public class User {
         this.dob = _dob;
         this.address = _address;
         this.mobile = _mobile;
+        this.points = 0;
+        this.stats_activity = "";
+        this.stats_points = "";
+        this.pkey = "None";
+        this.signupDate = java.sql.Date.valueOf(LocalDate.now());
     }
 
 
@@ -117,11 +122,11 @@ public class User {
             stmt.setString(7, _user.address);
             stmt.setString(8, _user.mobile);
             stmt.setDate(9, java.sql.Date.valueOf(LocalDate.now()));
-            stmt.setString(10, ""); // last answered question
-            stmt.setString(11, ""); // stats_points
-            stmt.setString(12, ""); // stats_activity
-            stmt.setString(12, "None"); // stats_activity
-            stmt.setInt(14, 0); // points
+            stmt.setString(10, _user.lastAnsweredQuestion); // last answered question
+            stmt.setString(11, _user.stats_points); // stats_points
+            stmt.setString(12, _user.stats_activity); // stats_activity
+            stmt.setString(12, _user.pkey); // stats_activity
+            stmt.setInt(14, _user.points); // points
 
             stmt.execute();
             stmt.close();

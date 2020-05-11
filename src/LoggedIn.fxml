@@ -35,7 +35,7 @@
                                         <Font size="15.0" />
                                     </font>
                                 </Label>
-                        <Hyperlink fx:id="githubHyperLink" layoutX="1076.0" layoutY="6.0" text="Check us on Github">
+                        <Hyperlink fx:id="githubHyperLink" layoutX="1076.0" layoutY="6.0" style="-fx-border-color: transparent;" text="Check us on Github">
                            <font>
                               <Font size="15.0" />
                            </font>

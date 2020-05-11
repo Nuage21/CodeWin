@@ -1,14 +1,20 @@
 import DialogBoxes.ErrorBox_Controller;
 import DialogBoxes.SuccessBox_Controller;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
+import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
@@ -32,6 +38,7 @@ public class Params_Controller {
     @FXML private Label emailLabel;
     @FXML private Label pKeyLabel;
     @FXML private Label freetrialEndLabel;
+    @FXML private Label aboutLabel;
 
     @FXML private Button sendCodeButton;
     @FXML private Button saveEmailButton;
@@ -197,6 +204,23 @@ public class Params_Controller {
             }
             else
                 Checker.showPwdError();
+        });
+
+        aboutLabel.setOnMouseClicked(mouseEvent -> {
+            Stage aboutStage = new Stage(StageStyle.UNDECORATED);
+            aboutStage.initOwner(Settings.appStage);
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("AboutUs.fxml"));
+            Parent root = null;
+            try {
+                root = loader.load();
+            } catch (IOException e) {
+                Debug.debugException(e);
+            }
+            AboutUs_Controller ctr = loader.getController();
+            ctr.setStage(aboutStage);
+            aboutStage.setScene(new Scene(root));
+            aboutStage.centerOnScreen();
+            aboutStage.show();
         });
 
         Design.setVisible(productKeyExtensionBPane, false);

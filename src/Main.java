@@ -28,16 +28,7 @@ public class Main extends Application {
             primaryStage.show();
         }
         else
-        {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("Authenticator.fxml"));
-            Parent root = loader.load();
-            primaryStage.setTitle("CodeWin Sign in/up");
-            Scene sc = new Scene(root);
-            primaryStage.setScene(sc);
-            primaryStage.setResizable(false);
-            primaryStage.initStyle(StageStyle.UNDECORATED);
-            primaryStage.show();
-        }
+            SceneLoader.loadAuthenticator();
     }
 
 

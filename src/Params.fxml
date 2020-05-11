@@ -141,6 +141,9 @@
                            </children>
                         </Pane>
                      </children>
+                     <cursor>
+                        <Cursor fx:constant="DEFAULT" />
+                     </cursor>
                   </VBox>
                </center>
             </BorderPane>
@@ -288,8 +291,14 @@
                         </Button>
                         <Line endX="1308.3333740234375" layoutX="143.0" layoutY="106.0" startX="-100.0" />
                      </children>
+                     <cursor>
+                        <Cursor fx:constant="DEFAULT" />
+                     </cursor>
                   </Pane>
                </center>
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
             </BorderPane>
             <BorderPane styleClass="param-pane">
                <right>
@@ -352,7 +361,7 @@
                <center>
                   <Pane prefHeight="67.0" prefWidth="1197.0" BorderPane.alignment="CENTER">
                      <children>
-                        <Label layoutX="65.0" layoutY="16.0" prefHeight="28.0" text="A propos">
+                        <Label fx:id="aboutLabel" layoutX="65.0" layoutY="16.0" prefHeight="28.0" styleClass="param-label" text="A propos">
                            <font>
                               <Font name="Rockwell" size="23.0" />
                            </font>

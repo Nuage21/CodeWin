@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="573.0" prefWidth="855.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="AboutUs_Controller">
+   <children>
+      <ImageView fitHeight="232.0" fitWidth="271.0" layoutX="537.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@img/guy.png" />
+         </image>
+      </ImageView>
+      <Line endX="425.0" layoutX="101.0" layoutY="93.0" startX="-100.0" />
+      <ImageView fitHeight="176.0" fitWidth="192.0" layoutX="14.0" layoutY="224.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@img/logo.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="101.0" fitWidth="48.0" layoutX="229.0" layoutY="399.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@img/icons/social/github.png" />
+         </image>
+      </ImageView>
+      <Hyperlink fx:id="githubHLink" layoutX="285.0" layoutY="409.0" style="-fx-border-color: transparent;" text="Check us on Github">
+         <font>
+            <Font size="14.0" />
+         </font></Hyperlink>
+      <Line endX="747.0" endY="6.0" layoutX="108.0" layoutY="479.0" startX="-108.0" startY="6.0" />
+      <Button fx:id="quitButton" layoutX="654.0" layoutY="505.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="164.0" style="-fx-background-color: white;" text="Return to App">
+         <effect>
+            <InnerShadow color="#3b8dda" />
+         </effect>
+         <font>
+            <Font size="16.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Label layoutX="22.0" layoutY="25.0" text="About Us" textFill="#084b8a">
+         <font>
+            <Font name="Dosis Bold" size="44.0" />
+         </font>
+      </Label>
+      <Label alignment="TOP_LEFT" layoutX="30.0" layoutY="116.0" prefHeight="107.0" prefWidth="494.0" text="Un groupe de 6 étudiants de l'Ecole Nationale Superieure d'Informpatique, ESI, a pour intention de réussir un projet d'étude. Et cela en réalisant cette application qui aide les utilisateurs à apprendre et comprendre le code de la route. " textFill="#575757" wrapText="true">
+         <font>
+            <Font name="Times New Roman" size="17.0" />
+         </font>
+      </Label>
+      <Label alignment="TOP_LEFT" layoutX="235.0" layoutY="256.0" prefHeight="107.0" prefWidth="494.0" text="Notre application CodeWin vous aide à obtenir votre examen du code de la route avec plus de 33 cours et 218 questions, tous bien rédigés et assurés par des moniteurs d'auto école certifiés et à jour selon la mise à jour du code de la route,datant de Avril 2020. " textFill="#575757" wrapText="true">
+         <font>
+            <Font name="Times New Roman" size="17.0" />
+         </font>
+      </Label>
+      <Label alignment="TOP_LEFT" layoutX="235.0" layoutY="353.0" prefHeight="18.0" prefWidth="494.0" text="Cet outil est destine a un usage exclusif d'un etudiant" textFill="#195690" wrapText="true">
+         <font>
+            <Font name="Times New Roman Bold" size="17.0" />
+         </font>
+      </Label>
+   </children>
+   <effect>
+      <InnerShadow choke="0.31" color="#51aad7" height="83.27" radius="47.805" width="109.95" />
+   </effect>
+</Pane>
