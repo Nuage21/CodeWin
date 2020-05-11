@@ -20,7 +20,7 @@ import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
-public class Stats_Controller  {
+public class Stats_Controller  implements Controller{
 
     //region FXML
     @FXML
@@ -107,6 +107,17 @@ public class Stats_Controller  {
         traceWeek(ConvertStringTotree(stats_points), progressionAreaChart, "code");
         traceWeek(ConvertStringTotree(stats_temps), activityAreaChart, "code");
 
+
+        Platform.runLater(() -> {
+            __setAreaChartWidth(activityAreaChart, Design.CENTRAL_PANE_WIDTH * 0.9);
+            __setAreaChartWidth(progressionAreaChart, Design.CENTRAL_PANE_WIDTH * 0.9);
+            if (Settings.SIDEBAR_STATE == Settings.SIDEBAR_SHRINKED)
+            {
+                double width = Settings.SIDEBAR_WIDTH * (1 - (1 / Settings.SIDEBAR_EXTEND_COEFF));
+                this.resetAreaChartsWidth(width);
+
+            }
+        });
 
         }
 
@@ -231,6 +242,22 @@ public class Stats_Controller  {
     }
 
 
+//    public void toggleButtons(Button weekBtn, Button monthBtn, int mode)
+//    {
+//        String weekStyle = "-fx-border-width: 0 !important; -fx-background-color:  #dddddd !important;"; // unselect
+//        String monthStyle = "-fx-border-color:  #125699 !important; -fx-border-width: 0 0 0 1 !important; -fx-background-color:  #f3f3f3 !important;"; // select
+//        if(mode == SHOWING_WEEK)
+//        {
+//            weekBtn.setStyle(weekStyle);
+//            monthBtn.setStyle(monthStyle);
+//        }
+//        else
+//        {
+//            weekBtn.setStyle(monthStyle);
+//            monthBtn.setStyle(weekStyle);
+//        }
+//
+//    }
 
 }
 
