@@ -67,28 +67,28 @@
         "ID" : 8,
         "points" : 5,
         "folder": "theme1\\img\\course1\\",
-        "core" : "<!img17.PNG!>Ce panneau indique que la première sortie se situe à 37 km: ",
-        "propositions": ["Oui", "Non"],
+        "core" : "<!img17.PNG!>This sign indicates that the first exit is 37 km away:",
+        "propositions": ["Yes", "No"],
         "correct_answers": [0, 1],
-        "note": "Ce panneau indique qu'à 1500 mètres je vais rencontrer la sortie n ° 37 et la sortie n ° 36"
+        "note": "This sign indicates that at 1500 meters I will meet exit n ° 37 and exit n ° 36"
     },
     {
         "ID" : 9,
         "points" : 10,
         "folder": "theme1\\img\\course1\\",
-        "core" : "<!img40.PNG!>Que signifient les 2 panneaux ?",
-        "propositions" : ["(1) Accès autorisé aux piétons, (2) Seulement les enfants accompagnés d'un adulte peuvent passer par ici", "(1) Accès interdit aux piétons, (2) Accès autorisé aux piétons", "(1) Accès interdit aux piétons, (2) Entrée d'aire piétonne"],
+        "core" : "<!img40.PNG!>What do the 2 panels mean?",
+        "propositions" : ["(1) Authorized access for pedestrians, (2) Only children accompanied by an adult can pass through here", "(1) Access prohibited for pedestrians, (2) Access authorized for pedestrians", "(1) Access prohibited to pedestrians, (2) Entrance to pedestrian area "],
         "correct_answers" : [0, 0, 1],
-        "note" : "Ni la forme, ni la couleur des panneaux est la même donc ces deux panneaux ne peuvent pas avoir le même sens. Tout panneau rond, rouge-blanc-noir interdit quelque chose, tout panneau carré indique quelque chose à la conduite."
+        "note" : "Neither the shape nor the color of the panels is the same so these two panels cannot have the same meaning. Any round, red-white-black sign prohibits something, any square sign indicates something to driving."
     },
     {
         "ID" : 10,
         "points" : 5,
         "folder": "theme1\\img\\course1\\",
-        "core" : "<!img41.PNG!>Quelle est la nature de ce panneau ?",
-        "propositions" : ["C'est  panneau de pré-signalisation", "C'est panneau de position"],
+        "core" : "<!img41.PNG!>What is the nature of this sign?",
+        "propositions" : ["It is warning sign", "It is position sign"],
         "correct_answers" : [1, 0],
-        "note" : "Ce panneau annonce des direction qu'il sera possible de prendre dans 120 m. Donc il pré-signale."
+        "note" : "This sign announces directions that it will be possible to take in 120 m. So he pre-signals. "
     },
     {
         "ID" : 11,
