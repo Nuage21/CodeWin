@@ -57,6 +57,10 @@ public class AccountPane_Controller {
 
     }
 
+    public Pane getParamsPane()
+    {
+        return paramsPane;
+    }
     public void setStage(Stage stage) {
         this.stage = stage;
     }

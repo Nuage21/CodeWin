@@ -48,6 +48,7 @@ public class User {
         this.points = 0;
         this.stats_activity = "";
         this.stats_points = "";
+        this.lastAnsweredQuestion = "None";
         this.pkey = "None";
         this.signupDate = java.sql.Date.valueOf(LocalDate.now());
     }
@@ -173,22 +174,34 @@ public class User {
 
     }
 
-
-    public static boolean updateUserName(User user, String userName) {
-        boolean b = false;
-        String update = "UPDATE users_info SET userName = ? WHERE userName = '" + user.getUsername() + "'";
+    public static boolean updatePoints(User user, int points) {
+        String update = "UPDATE users_info SET points = ? WHERE username = '" + user.getUsername() + "'";
         try {
             Connection conn = getConnection();
             PreparedStatement stmt = conn.prepareStatement(update);
-            stmt.setString(1, userName);
+            stmt.setInt(1, points);
             stmt.execute();
             stmt.close();
-            b = true;
+            return true;
         } catch (SQLException e) {
-            System.err.println(e);
-        } finally {
-            return b;
+            Debug.debugException(e);
         }
+        return false;
+    }
+
+    public static boolean updateLastQuestion(User user, String qst) {
+        String update = "UPDATE users_info SET lqst = ? WHERE username = '" + user.getUsername() + "'";
+        try {
+            Connection conn = getConnection();
+            PreparedStatement stmt = conn.prepareStatement(update);
+            stmt.setString(1, qst);
+            stmt.execute();
+            stmt.close();
+            return true;
+        } catch (SQLException e) {
+            Debug.debugException(e);
+        }
+        return false;
     }
 
 
@@ -450,5 +463,43 @@ public class User {
             formatted += _pkey.charAt(i);
         }
         return formatted;
+    }
+
+    public boolean isQuesationAnswered(int qstID)
+    {
+        if(this.lastAnsweredQuestion == null || this.lastAnsweredQuestion.isEmpty())
+            return false;
+
+        int lastQstId = Integer.parseInt(this.lastAnsweredQuestion.split("[/]")[2]);
+        if(lastQstId < 0)
+            lastQstId = -lastQstId;
+
+        return qstID <= lastQstId;
+    }
+
+    public boolean wasReadingCourse()
+    {
+        int lastQstId = Integer.parseInt(this.lastAnsweredQuestion.split("[/]")[2]);
+        return lastQstId <= 0;
+    }
+
+    public int lastCourseChapter()
+    {
+        return Integer.parseInt(this.lastAnsweredQuestion.split("[/]")[0]);
+    }
+
+    public int lastCourseID()
+    {
+        return Integer.parseInt(this.lastAnsweredQuestion.split("[/]")[1]);
+    }
+
+    public int lastQuestionID()
+    {
+        return Integer.parseInt(this.lastAnsweredQuestion.split("[/]")[2]);
+    }
+
+    public boolean neverReadACourse()
+    {
+        return lastAnsweredQuestion.equals("None");
     }
 }

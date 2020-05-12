@@ -239,5 +239,11 @@ public class QuestionPane_Controller implements Controller {
     {
         return question;
     }
+
+    public ArrayList<PropositionPane_Controller> getPropositionsControllers()
+    {
+        return propositionsControllers;
+    }
+
 }
 

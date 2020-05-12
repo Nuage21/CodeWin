@@ -3,9 +3,10 @@
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
-
 
 <Pane fx:id="holder" prefHeight="59.0" style="-fx-background-color: #eeeeee;" styleClass="proposition" stylesheets="@css/Proposition.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PropositionPane_Controller">
    <children>
@@ -19,6 +20,11 @@
             <Font size="25.0" />
          </font>
       </Label>
+      <ImageView fx:id="checkImageView" fitHeight="59.0" fitWidth="47.0" layoutX="14.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@img/checked.png" />
+         </image>
+      </ImageView>
    </children>
    <cursor>
       <Cursor fx:constant="HAND" />

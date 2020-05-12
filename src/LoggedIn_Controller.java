@@ -179,27 +179,12 @@ public class LoggedIn_Controller implements Controller {
 
 
             } catch (IOException e) {
-                e.printStackTrace();
+                Debug.debugException(e);
             }
         });
 
         Side_Params_Pane.setOnMouseClicked((event) -> {
-            Central_Container_SPane.getChildren().clear();
-            try {
-                Pane newLoadedPane = FXMLLoader.load(getClass().getResource("Params.fxml"));
-                ScrollPane scp = new ScrollPane(newLoadedPane);
-                scp.setFitToWidth(true);
-                Central_Container_SPane.getChildren().add(scp);
-
-                this.sidebarFocusNewPane(Side_Params_Pane);
-                this.sidebarOriginalColor = "transparent";
-                setLText(Central_Up_Title_Label, "Paramètres du Compte");
-
-                this.setDiplayingWhat(Settings.DISPLAYING_PARAMETERS);
-
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+            displayParams();
         });
 
         Side_GO_Pane.setOnMouseClicked((event) -> {
@@ -212,7 +197,7 @@ public class LoggedIn_Controller implements Controller {
                 setLText(Central_Up_Title_Label, "Vue Générale");
 
             } catch (IOException e) {
-                e.printStackTrace();
+                Debug.debugException(e);
             }
             this.setDiplayingWhat(Settings.DISPLAYING_COURSE_OVERVIEW);
         });
@@ -228,30 +213,31 @@ public class LoggedIn_Controller implements Controller {
                 accStage.initOwner(Settings.appStage);
                 accStage.setScene(new Scene(root));
                 AccountPane_Controller ctr = loader.getController();
+                ctr.getParamsPane().setOnMouseClicked(mouseEvent -> { displayParams(); });
                 ctr.setStage(accStage);
                 accStage.show();
             } catch (IOException e) {
-                e.printStackTrace();
+                Debug.debugException(e);
             }
         });
 
         nextLabel.setOnMouseClicked(mouseEvent -> {
             if (this.diplayingWhat == Settings.DISPLAYING_COURSE) {
-                if (this.courseCoord.isLastCourse()) {
-                    // COURSE FINISHED
-                }
-                // here... we still have some courses to go through
-                else {
-                    if (this.courseCoord.isLastCourseWithinChapter()) {
-
-                    }
-                    // Still in the same Chapter
-                    if (this.courseCoord.hasQuestions()) {
-                        this.courseQuestions = this.courseCoord.getQuestions();
-                        this.displayNeighborQuestion(true);
-                    } else
-                        this.displayNeighborCourse(true);
-                }
+//                if (this.courseCoord.isLastCourse()) {
+//                    // COURSE FINISHED
+//                }
+//                // here... we still have some courses to go through
+//                else {
+//                    if (this.courseCoord.isLastCourseWithinChapter()) {
+//
+//                    }
+//                    // Still in the same Chapter
+                if (this.courseCoord.hasQuestions()) {
+                    this.courseQuestions = this.courseCoord.getQuestions();
+                    this.displayNeighborQuestion(true);
+                } else
+                    this.displayNeighborCourse(true);
+//                }
             } else if (this.diplayingWhat == Settings.DISPLAYING_CHAPTER_OVERVIEW) {
                 ArrayList<CourseOverview.ChapterOverview> chapters = this.courseCO.getChapters();
                 if (chapterID + 1 < chapters.size()) {
@@ -262,13 +248,17 @@ public class LoggedIn_Controller implements Controller {
                     try {
                         this.loadChapterOverview(chapters.get(chapterID).getFolder(), chapterID);
                     } catch (IOException e) {
-                        e.printStackTrace();
+                        Debug.debugException(e);
                     }
                     this.sidebarFocusNewPane(nextChapPane);
                     this.sidebarOriginalColor = "transparent";
                 }
             } else if (this.diplayingWhat == Settings.DISPLAYING_QUESTION) {
-                if (this.questionsOffset + 1 < this.courseQuestions.size()) {
+                User u = LoggedIn_Controller.getUser();
+                boolean alreadyAnswered = u.isQuesationAnswered(this.courseQuestions.get(questionsOffset));
+                if (alreadyAnswered)
+                    displayNeighborQuestion(true);
+                else {
                     if (!questionEvalJustFired) {
                         waitSkipped = false;
                         this.questionEvalJustFired = true;
@@ -301,13 +291,22 @@ public class LoggedIn_Controller implements Controller {
                             @Override
                             public void handle(WorkerStateEvent event) {
                                 if (!waitSkipped) {
-                                    if (eval)
-                                        displayNeighborQuestion(true);
-                                    else {
+                                    if (eval) {
+                                        if (questionsOffset + 1 < courseQuestions.size()) // not last question within chapter
+                                        {
+                                            displayNeighborQuestion(true);
+                                            updateLastQuestion(false);
+                                        }
+                                        else
+                                        {
+                                            displayNeighborCourse(true);
+                                            updateLastQuestion(true);
+                                        }
+                                    } else {
                                         try {
                                             displayCurrentCourse();
                                         } catch (IOException e) {
-                                            e.printStackTrace();
+                                            Debug.debugException(e);
                                         }
                                     }
                                 }
@@ -322,14 +321,10 @@ public class LoggedIn_Controller implements Controller {
                             try {
                                 displayCurrentCourse(); // get them back to the course... need more reading
                             } catch (IOException e) {
-                                e.printStackTrace();
+                                Debug.debugException(e);
                             }
                         }
                     }
-
-                } else {
-                    this.displayNeighborCourse(true);
-                    this.questionsOffset = 0;
                 }
             }
         });
@@ -348,7 +343,7 @@ public class LoggedIn_Controller implements Controller {
                     try {
                         this.loadChapterOverview(chapters.get(chapterID).getFolder(), chapterID);
                     } catch (IOException e) {
-                        e.printStackTrace();
+                        Debug.debugException(e);
                     }
                     this.sidebarFocusNewPane(prevChapPane);
                     this.sidebarOriginalColor = "transparent";
@@ -361,7 +356,7 @@ public class LoggedIn_Controller implements Controller {
                         this.displayCurrentCourse();
                         this.questionsOffset = -1;
                     } catch (IOException e) {
-                        e.printStackTrace();
+                        Debug.debugException(e);
                     }
                 }
             }
@@ -380,6 +375,39 @@ public class LoggedIn_Controller implements Controller {
             Design.setWidth(daddy, Settings.appStage.getWidth());
             Design.setHeight(daddy, Settings.appStage.getHeight());
             Design.CENTRAL_PANE_WIDTH = Central_Container_SPane.getWidth();
+        });
+
+        Platform.runLater( () -> {
+            User u = LoggedIn_Controller.getUser();
+            if (!u.neverReadACourse()) {
+                int chapterID = u.lastCourseChapter();
+                int courseID = u.lastCourseID();
+                if (u.wasReadingCourse()) {
+                    try {
+                        displayCourse(chapterID, courseID);
+                    } catch (IOException e) {
+                        Debug.debugException(e);
+                    }
+                } else {
+                    int questionID = u.lastQuestionID();
+                    try {
+                        try {
+                            this.courseCoord = new CourseCoord(chapterID, courseID);
+                        } catch (IOException e) {
+                            Debug.debugException(e);
+                        }
+                        this.questionsOffset = courseCoord.getQuestions().indexOf(questionID);
+                        this.courseQuestions = courseCoord.getQuestions();
+                        try {
+                            displayQuestion(questionID);
+                        } catch (IOException e) {
+                            Debug.debugException(e);
+                        }
+                    } catch (ParseException e) {
+                        Debug.debugException(e);
+                    }
+                }
+            }
         });
     }
 
@@ -496,7 +524,7 @@ public class LoggedIn_Controller implements Controller {
                     this.SidebarChapterPanesControllersMapper.get(finalI).expand();
                     this.sidebarOriginalColor = "transparent";
                 } catch (IOException e) {
-                    e.printStackTrace();
+                    Debug.debugException(e);
                 }
             });
 
@@ -530,7 +558,7 @@ public class LoggedIn_Controller implements Controller {
                     try {
                         this.loadChapterOverview(chapter.getFolder(), finalI1);
                     } catch (IOException e) {
-                        e.printStackTrace();
+                        Debug.debugException(e);
                     }
                 });
 
@@ -553,7 +581,7 @@ public class LoggedIn_Controller implements Controller {
                             this.sidebarOriginalColor = "#abcbdb";
 
                         } catch (IOException e) {
-                            e.printStackTrace();
+                            Debug.debugException(e);
                         }
                     });
                     SidebarCoursePaneMapper.put(new CourseCoord(i, j), expCoursePane);
@@ -565,7 +593,7 @@ public class LoggedIn_Controller implements Controller {
                 vb.getChildren().add(expandedHolder);
                 this.SidebarChapterPanesControllersMapper.put(i, ctr); // record Expanded Pane
             } catch (IOException e) {
-                e.printStackTrace();
+                Debug.debugException(e);
             }
         }
         ScrollPane scp = new ScrollPane();
@@ -609,7 +637,7 @@ public class LoggedIn_Controller implements Controller {
                     this.sidebarFocusNewPane(sideExpPane);
                     this.sidebarOriginalColor = "#abcbdb";
                 } catch (IOException e) {
-                    e.printStackTrace();
+                    Debug.debugException(e);
                 }
             });
         }
@@ -619,7 +647,12 @@ public class LoggedIn_Controller implements Controller {
     }
 
     public void displayCourse(int _chapID, int _courseID) throws IOException {
+
         // update Displaying_What
+        User u = LoggedIn_Controller.getUser();
+        if(u.neverReadACourse())
+            User.updateLastQuestion(u, "0/0/0");
+
         this.setDiplayingWhat(Settings.DISPLAYING_COURSE);
         CourseCoord.CO = this.courseCO; // static
         this.courseCoord = new CourseCoord(_chapID, _courseID);
@@ -631,14 +664,14 @@ public class LoggedIn_Controller implements Controller {
             CoursePane_Controller cPaneController = coursePaneLoader.getController();
             cPaneController.setCourseImagesFolder(this.courseCoord.getImagesPath());
         } catch (IOException e) {
-            e.printStackTrace();
+            Debug.debugException(e);
         }
         CoursePane_Controller coursePaneController = coursePaneLoader.getController();
         this.occupiedController = coursePaneController;
         try {
             coursePaneController.displayFromJson(this.courseCoord.getFilePath());
         } catch (IOException e) {
-            e.printStackTrace();
+            Debug.debugException(e);
         }
         Central_Container_SPane.getChildren().clear();
         Central_Container_SPane.getChildren().add(readCourseSPane);
@@ -659,6 +692,13 @@ public class LoggedIn_Controller implements Controller {
         this.Central_Container_SPane.getChildren().add(scp);
         this.setDiplayingWhat(Settings.DISPLAYING_QUESTION);
         this.occupiedController = ctr;
+
+        User u = LoggedIn_Controller.getUser();
+        if (u.isQuesationAnswered(id)) {
+            int i = 0;
+            for (PropositionPane_Controller pctr : ctr.getPropositionsControllers())
+                pctr.validate(question.answers.get(i++));
+        }
     }
 
     public void displayNeighborCourse(boolean isNext) {
@@ -673,7 +713,7 @@ public class LoggedIn_Controller implements Controller {
             this.sidebarOriginalColor = "#abcbdb";
             SidebarChapterPanesControllersMapper.get(nextCourse.chapterID).expand();
         } catch (IOException e) {
-            e.printStackTrace();
+            Debug.debugException(e);
         }
     }
 
@@ -695,9 +735,9 @@ public class LoggedIn_Controller implements Controller {
         try {
             this.displayQuestion(questionID);
         } catch (IOException e) {
-            e.printStackTrace();
+            Debug.debugException(e);
         } catch (ParseException e) {
-            e.printStackTrace();
+            Debug.debugException(e);
         }
         this.Central_Up_Title_Label.setText(this.courseCO.getCourseTitle() + "| Question " + (this.questionsOffset + 1)); // + 1 for the user (question 0 lol)
 
@@ -722,11 +762,40 @@ public class LoggedIn_Controller implements Controller {
     }
 
     public void updateUserPoints(int points) {
-        LoggedIn_Controller.getUser().setPoints(points);
+        User u = LoggedIn_Controller.getUser();
+        u.setPoints(points);
         pointsLabel.setText(String.format("%04d", points));
+
         if (Settings.ACTIVE_DB_MODE) {
             // save to DataBase
+            User.updatePoints(u, points);
+        }
+    }
 
+    public void updateLastQuestion(boolean isCourse) {
+        User u = LoggedIn_Controller.getUser();
+        String newLQst = courseCoord.chapterID + "/" + courseCoord.courseID + "/" + (isCourse?"-":"") + courseQuestions.get(questionsOffset);
+        u.setLastAnsweredQuestion(newLQst);
+        if (Settings.ACTIVE_DB_MODE) {
+            User.updateLastQuestion(u, newLQst);
+        }
+    }
+
+    public void displayParams()
+    {
+        Central_Container_SPane.getChildren().clear();
+        try {
+            Pane newLoadedPane = FXMLLoader.load(getClass().getResource("Params.fxml"));
+            ScrollPane scp = new ScrollPane(newLoadedPane);
+            scp.setFitToWidth(true);
+            Central_Container_SPane.getChildren().add(scp);
+            this.sidebarFocusNewPane(Side_Params_Pane);
+            this.sidebarOriginalColor = "transparent";
+            setLText(Central_Up_Title_Label, "Paramètres du Compte");
+            this.setDiplayingWhat(Settings.DISPLAYING_PARAMETERS);
+
+        } catch (IOException e) {
+            Debug.debugException(e);
         }
     }
 }
