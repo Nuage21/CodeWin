@@ -12,7 +12,7 @@ public class Settings {
     public static Stage appStage;
     public static Application application;
     public static int SIDEBAR_STATE = 0;
-    public static String dataPath = "C:\\Users\\hbais\\Desktop\\P2CP\\CodeWin\\CodeWin\\src\\data-english\\";
+    public static String dataPath = "C:\\Users\\hbais\\Desktop\\P2CP\\CodeWin\\CodeWin\\src\\data\\";
     public static String projectPath = "C:\\Users\\hbais\\Desktop\\P2CP\\CodeWin\\CodeWin\\src\\";
 
     // display-what modes
