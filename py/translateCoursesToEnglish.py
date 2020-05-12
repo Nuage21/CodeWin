@@ -3,14 +3,6 @@ import googletrans #import the googletrans module
 import os
 from googletrans import Translator #import the Translator class from googletrans module
 
-def getHeadlineDepth(core,begIndex):
- counter = 0
- length = len(core)
- while ((begIndex < length) and (core[begIndex] == '#')):
-       counter = counter+1
-       begIndex = begIndex+1
- return counter
-    
 def  getEndex(core, begIndex, sep):
   length = len(core)
   while ( begIndex < length and core[begIndex] != sep):
@@ -52,14 +44,19 @@ if __name__ == "__main__":
                    c = core[i]
                    if c == '#':
                       # append gathered text first
-                      if len(gathered) != 0 : #not empty
+                      if len(gathered) >=5 : 
                          translatedGathered= json_translate.translate(gathered).text
                          translatedCore=translatedCore+translatedGathered
                          gathered = "";  #empty
                          translatedGathered=""
-                      depth = getHeadlineDepth(core, i)
-                      endex = getEndex(core, i+depth, '#')
-                      headline = getHeadline(core, i+depth, endex)
+                      i=i+1
+                      if core[i]=="#":
+                         translatedCore=translatedCore+"#"
+                         i=i+1
+                         if core[i]=="#":
+                            translatedCore=translatedCore+"#"
+                      endex = getEndex(core, i , '#')
+                      headline = getHeadline(core, i , endex)
                       #append new Headline
                       translatedHeadline=json_translate.translate(headline).text
                       translatedCore=translatedCore+translatedHeadline+'#'
@@ -67,8 +64,14 @@ if __name__ == "__main__":
                    else:
                       if (c == '-' and (i + 1)< clng):
                          if(core[i + 1] == '>'): #element list spotted !
+                            if len(gathered) >= 5 : 
+                               gathered.strip()
+                               translatedGathered= json_translate.translate(gathered).text
+                               translatedCore=translatedCore+translatedGathered
+                               gathered = "";  #empty
+                               translatedGathered=""
                             endex = getEndex(core, i+2, '#')
-                            list_el = getHeadline(core, i+2, endex)
+                            list_el = getHeadline(core, i+2, endex-1)
                             #append new Headline
                             translatedList_el = json_translate.translate(list_el)
                             translatedCore=translatedCore+"->"+translatedList_el.text+"#"
@@ -76,15 +79,22 @@ if __name__ == "__main__":
                       else:
                          if ( c=='<' and (i+1)< clng):
                             if(core[i + 1] == '!'): # image-?list spotted !
-                               endex = getEndex(core, i+1, '!')
+                               if len(gathered) >= 5 : 
+                                  gathered.strip()
+                                  translatedGathered= json_translate.translate(gathered).text
+                                  translatedCore=translatedCore+translatedGathered
+                                  gathered = "";  #empty
+                                  translatedGathered=""
+                               endex = getEndex(core, i+2, '!')
                                list = getHeadline(core, i+2, endex)
-                               list=list.strip()
-                               #list.replace(" I","i")
                                translatedCore=translatedCore+"<!"+list+"!>"
-                               i = endex
+                               i = endex+1
                             else:
                                gathered= gathered + c
-                               i = i+1
+                   i = i+1
+                #Last sentence
+                translatedGathered=json_translate.translate(gathered).text
+                translatedCore=translatedCore+translatedGathered
                 filename2=newfolderpath+"/"+file
                 data["core"] = translatedCore
                 data["title"] = translatedTitle
