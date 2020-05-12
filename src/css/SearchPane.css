@@ -1,0 +1,7 @@
+.search{
+	-fx-cursor: hand;
+}
+
+.search:hover{
+	-fx-background-color: #2389bc !important;
+}

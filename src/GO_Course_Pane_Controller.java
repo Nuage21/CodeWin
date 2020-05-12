@@ -13,9 +13,6 @@ public class GO_Course_Pane_Controller {
     @FXML
     private Label nQuestionsLabel;
 
-    @FXML
-    private Label nQuizesLabel;
-
     @FXML private Pane holderPane;
 
     @FXML
@@ -26,7 +23,6 @@ public class GO_Course_Pane_Controller {
         titleLabel.setText(title);
         nCoursesLabel.setText("" + nCourse);
         nQuestionsLabel.setText("" + nQuestions);
-        nQuizesLabel.setText("" + nQuizes);
     }
 
     public Pane getHolderPane() {

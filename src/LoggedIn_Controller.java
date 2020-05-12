@@ -4,11 +4,13 @@ import javafx.concurrent.WorkerStateEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Bounds;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
@@ -78,6 +80,11 @@ public class LoggedIn_Controller implements Controller {
     private Pane pointsHolderPane;
 
     @FXML
+    private ScrollPane searchSPane;
+
+    @FXML private VBox searchVBox;
+
+    @FXML
     private Pane Side_CourseName_Pane;
 
     @FXML
@@ -101,6 +108,8 @@ public class LoggedIn_Controller implements Controller {
     @FXML
     private Label Central_Up_Title_Label;
 
+    @FXML
+    private TextField searchField;
     private Pane side_bar_activated_pane;
 
     @FXML
@@ -213,7 +222,9 @@ public class LoggedIn_Controller implements Controller {
                 accStage.initOwner(Settings.appStage);
                 accStage.setScene(new Scene(root));
                 AccountPane_Controller ctr = loader.getController();
-                ctr.getParamsPane().setOnMouseClicked(mouseEvent -> { displayParams(); });
+                ctr.getParamsPane().setOnMouseClicked(mouseEvent -> {
+                    displayParams();
+                });
                 ctr.setStage(accStage);
                 accStage.show();
             } catch (IOException e) {
@@ -296,9 +307,7 @@ public class LoggedIn_Controller implements Controller {
                                         {
                                             displayNeighborQuestion(true);
                                             updateLastQuestion(false);
-                                        }
-                                        else
-                                        {
+                                        } else {
                                             displayNeighborCourse(true);
                                             updateLastQuestion(true);
                                         }
@@ -377,7 +386,7 @@ public class LoggedIn_Controller implements Controller {
             Design.CENTRAL_PANE_WIDTH = Central_Container_SPane.getWidth();
         });
 
-        Platform.runLater( () -> {
+        Platform.runLater(() -> {
             User u = LoggedIn_Controller.getUser();
             if (!u.neverReadACourse()) {
                 int chapterID = u.lastCourseChapter();
@@ -409,6 +418,38 @@ public class LoggedIn_Controller implements Controller {
                 }
             }
         });
+
+        searchField.setOnKeyReleased(keyEvent -> {
+            String query = searchField.getText();
+            ArrayList<CourseCoord> courses = getCoursesThatContains(query);
+            showFrom(courses);
+        });
+
+        searchSPane.setOnMouseExited(mouseEvent -> {
+            searchSPane.setVisible(false);
+        });
+    }
+
+    public ArrayList<CourseCoord> getCoursesThatContains(String fetchQuery) {
+        ArrayList<CourseCoord> ret = new ArrayList<>();
+        ArrayList<CourseOverview.ChapterOverview> chapters = courseCO.getChapters();
+        for (int i = 0; i < chapters.size(); i++) {
+            CourseOverview.ChapterOverview chapter = chapters.get(i);
+            ArrayList<String> courses = chapter.getCourses();
+            for (int j = 0; j < courses.size(); ++j) {
+                String course = courses.get(j);
+                if (course.toLowerCase().contains(fetchQuery.toLowerCase())) {
+                    try {
+                        System.out.println("Chapter = " + i + " -- " + j + " -- " + chapter.getFolder() + "size= " + chapter.getnCourse());
+                        CourseCoord cc = new CourseCoord(i, j);
+                        ret.add(cc);
+                    } catch (IOException e) {
+                        Debug.debugException(e);
+                    }
+                }
+            }
+        }
+        return ret;
     }
 
     public void toggleSidebar() {
@@ -451,6 +492,7 @@ public class LoggedIn_Controller implements Controller {
             ctr.adjustWidth();
         }
 
+        searchSPane.setLayoutX(searchSPane.getLayoutX() + toadd);
     }
 
     public void setNodeVisibility(Parent p, boolean visible) {
@@ -650,7 +692,7 @@ public class LoggedIn_Controller implements Controller {
 
         // update Displaying_What
         User u = LoggedIn_Controller.getUser();
-        if(u.neverReadACourse())
+        if (u.neverReadACourse())
             User.updateLastQuestion(u, "0/0/0");
 
         this.setDiplayingWhat(Settings.DISPLAYING_COURSE);
@@ -774,15 +816,14 @@ public class LoggedIn_Controller implements Controller {
 
     public void updateLastQuestion(boolean isCourse) {
         User u = LoggedIn_Controller.getUser();
-        String newLQst = courseCoord.chapterID + "/" + courseCoord.courseID + "/" + (isCourse?"-":"") + courseQuestions.get(questionsOffset);
+        String newLQst = courseCoord.chapterID + "/" + courseCoord.courseID + "/" + (isCourse ? "-" : "") + courseQuestions.get(questionsOffset);
         u.setLastAnsweredQuestion(newLQst);
         if (Settings.ACTIVE_DB_MODE) {
             User.updateLastQuestion(u, newLQst);
         }
     }
 
-    public void displayParams()
-    {
+    public void displayParams() {
         Central_Container_SPane.getChildren().clear();
         try {
             Pane newLoadedPane = FXMLLoader.load(getClass().getResource("Params.fxml"));
@@ -796,6 +837,32 @@ public class LoggedIn_Controller implements Controller {
 
         } catch (IOException e) {
             Debug.debugException(e);
+        }
+    }
+
+    public void showFrom(ArrayList<CourseCoord> list)
+    {
+        searchVBox.getChildren().clear();
+        searchSPane.setVisible(true);
+        for(CourseCoord course : list)
+        {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("SearchInsidePane.fxml"));
+            Parent root = null;
+            try {
+                root = loader.load();
+            } catch (IOException e) {
+                Debug.debugException(e);
+            }
+            SearchInside_Controller ctr = loader.getController();
+            ctr.setTitle(course.getCourseTitle());
+            ctr.getHolder().setOnMouseClicked(mouseEvent -> {
+                try {
+                    displayCourse(course.chapterID, course.courseID);
+                } catch (IOException e) {
+                    Debug.debugException(e);
+                }
+            });
+            searchVBox.getChildren().add(root);
         }
     }
 }

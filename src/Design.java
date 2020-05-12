@@ -1,3 +1,4 @@
+import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.Pane;
 
 public class Design {
@@ -16,6 +17,13 @@ public class Design {
         p.setMinHeight(height);
         p.setPrefHeight(height);
         p.setMaxHeight(height);
+    }
+
+    public static void setWidth(ScrollPane p, double width)
+    {
+        p.setMinWidth(width);
+        p.setPrefWidth(width);
+        p.setMaxWidth(width);
     }
 
     public static void setVisible(Pane p, boolean v)

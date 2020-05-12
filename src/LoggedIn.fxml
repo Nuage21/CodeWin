@@ -3,6 +3,7 @@
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -113,7 +114,7 @@
                                                 <Image url="@img/icons/search.png" />
                                             </image>
                                         </ImageView>
-                                        <TextField layoutX="54.0" layoutY="1.0" prefHeight="35.0" prefWidth="368.0" promptText="Recherche sur CodeWin" style="-fx-background-color: transparent;">
+                                        <TextField fx:id="searchField" layoutX="54.0" layoutY="1.0" prefHeight="35.0" prefWidth="368.0" promptText="Recherche sur CodeWin" style="-fx-background-color: transparent;">
                                             <font>
                                                 <Font name="Rockwell" size="17.0" />
                                             </font>
@@ -299,6 +300,11 @@
                                   <Font name="Rockwell" size="47.0" />
                               </font>
                           </Label>
+                  <ScrollPane fx:id="searchSPane" hbarPolicy="NEVER" layoutX="-9.0" layoutY="2.0" maxHeight="220.0" visible="false">
+                    <content>
+                        <VBox fx:id="searchVBox" prefWidth="600.0" style="-fx-background-color: white;" />
+                    </content>
+                  </ScrollPane>
                       </children>
                   </Pane>
          </top>

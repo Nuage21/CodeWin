@@ -8,8 +8,7 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-
-<BorderPane styleClass="overview-chapter" stylesheets="@css/CoursePane.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GO_Course_Pane_Controller">
+<BorderPane prefHeight="125.0" prefWidth="1308.0" styleClass="overview-chapter" stylesheets="@css/CoursePane.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GO_Course_Pane_Controller">
    <center>
       <Pane fx:id="holderPane" prefHeight="180.0">
          <children>
@@ -34,11 +33,6 @@
                   <Font name="Rockwell" size="17.0" />
                </font>
             </Label>
-            <Label layoutX="76.0" layoutY="116.0" prefHeight="32.0" prefWidth="89.0" text="Quizes:" textFill="#1e1e1e">
-               <font>
-                  <Font name="Rockwell" size="17.0" />
-               </font>
-            </Label>
             <StackPane layoutX="10.0" layoutY="11.0" prefHeight="47.0" prefWidth="50.0" style="-fx-background-radius: 30; -fx-background-color: #e1e1e1;">
                <children>
                   <ImageView fitHeight="33.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true" style="-fx-border-radius: 56;">
@@ -57,26 +51,12 @@
                   </ImageView>
                </children>
             </StackPane>
-            <StackPane layoutX="10.0" layoutY="108.0" prefHeight="47.0" prefWidth="50.0" style="-fx-background-radius: 30; -fx-background-color: #e1e1e1;">
-               <children>
-                  <ImageView fitHeight="33.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true" style="-fx-border-radius: 56;">
-                     <image>
-                        <Image url="@img/icons/quiz.png" />
-                     </image>
-                  </ImageView>
-               </children>
-            </StackPane>
             <Label fx:id="nCoursesLabel" layoutX="189.0" layoutY="18.0" prefHeight="32.0" prefWidth="68.0" text="15" textFill="#1e1e1e">
                <font>
                   <Font name="Cambria" size="27.0" />
                </font>
             </Label>
             <Label fx:id="nQuestionsLabel" layoutX="190.0" layoutY="66.0" prefHeight="32.0" prefWidth="65.0" text="4" textFill="#1e1e1e">
-               <font>
-                  <Font name="Cambria" size="27.0" />
-               </font>
-            </Label>
-            <Label fx:id="nQuizesLabel" layoutX="189.0" layoutY="115.0" prefHeight="34.0" prefWidth="67.0" text="1" textFill="#1e1e1e">
                <font>
                   <Font name="Cambria" size="27.0" />
                </font>
