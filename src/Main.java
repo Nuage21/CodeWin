@@ -14,14 +14,6 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-
-        try {
-            String path =  new File(Main.class.getProtectionDomain().getCodeSource().getLocation().toURI()).getPath() + "\\";
-            Settings.setPaths(path, path + "data\\");
-        } catch (URISyntaxException e) {
-            e.printStackTrace();
-        }
-
         Settings.appStage = primaryStage;
         Settings.application = this;
         if(Settings.SKIP_AUTHENTICATION)
@@ -51,6 +43,7 @@ public class Main extends Application {
 
 
     public static void main(String[] args) {
+
         launch(args);
     }
 
