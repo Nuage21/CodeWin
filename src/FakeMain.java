@@ -13,7 +13,6 @@ public class FakeMain {
                 path += s + "\\";
             }
             Settings.setPaths(path, path + "data\\");
-//            System.out.println("PATH = " + path);
         } catch (URISyntaxException e) {
             Debug.debugException(e);
         }

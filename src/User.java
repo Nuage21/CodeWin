@@ -28,9 +28,9 @@ public class User {
     private String lang; // locally saved
 
     // database settings
-    public static final String USERNAME = "sql7335090";
-    public static final String PASSWORD = "3Wzzy8jQpe";
-    public static final String CONN = "jdbc:mysql://sql7.freemysqlhosting.net:3306/sql7335090";
+    public static final String USERNAME = "sql7340244";
+    public static final String PASSWORD = "EKPJX9ShWJ";
+    public static final String CONN = "jdbc:mysql://sql7.freemysqlhosting.net:3306/sql7340244";
 
     public User() {
 
@@ -61,38 +61,45 @@ public class User {
 
     public static boolean userEmailExiste(String email) {
         String read = "SELECT * From users_info WHERE email = ?";
-
+        Connection conn = null;
         try {
-            Connection conn = getConnection();
+            conn = getConnection();
             PreparedStatement stmt = conn.prepareStatement(read);
             stmt.setString(1, email);
             ResultSet rs = null;
 
             rs = stmt.executeQuery();
-            if (rs.first() == false) {
-                return false;
-            } else {
-                return true;
-            }
+            closeConnection(conn);
+            return rs.first();
         } catch (SQLException e) {
             Debug.debugMsg("Can't check email existence - no connexion");
+            closeConnection(conn);
             return false;
         }
     }
 
-
+    public static void closeConnection(Connection c)
+    {
+        if(c != null) {
+            try {
+                c.close();
+            } catch (SQLException e) {
+                Debug.debugException(e);
+            }
+        }
+    }
     public static int userNameExiste(String userName) {
         // return 1 if yes, 0 if no, -1 if no internet
         String read = "SELECT * From users_info WHERE username = ?";
-
+        Connection conn = null;
         try {
-            Connection conn = getConnection();
+            conn = getConnection();
             PreparedStatement stmt = conn.prepareStatement(read);
             stmt.setString(1, userName);
             ResultSet rs = null;
 
             rs = stmt.executeQuery();
-            //   System.out.println(rs.first());
+            closeConnection(conn);
             if (rs.first() == false) {
                 return 0;
             } else {
@@ -101,6 +108,7 @@ public class User {
         } catch (SQLException e) {
             Debug.debugMsg("Error @ User.userNameExiste");
             Debug.debugException(e);
+            closeConnection(conn);
             return -1;
         }
     }
@@ -108,8 +116,9 @@ public class User {
 
     public static boolean addUser(User _user) {
         String insert = "INSERT INTO users_info (username, password, email, firstname, lastname, dob, address, mobile, sdate, lqst, stats_points, stats_activity, pkey, points) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        Connection conn = null;
         try {
-            Connection conn = getConnection();
+            conn = getConnection();
             PreparedStatement stmt = conn.prepareStatement(insert);
 
             // String tableQuestions = "CREATE TABLE " + username + " " + "( question text,reponse_1 text DEFAULT NULL,reponse_2 text DEFAULT NULL ,reponse_3 text DEFAULT NULL, reponse_4 text DEFAULT NULL);";
@@ -131,13 +140,14 @@ public class User {
 
             stmt.execute();
             stmt.close();
-            conn.close();
+           closeConnection(conn);
 
             Debug.debugMsg("_________________________________USER INSERTED_________________________");
             return true;
         } catch (SQLException e) {
             Debug.debugMsg("_________________________________SQL ERROR_________________________");
             Debug.debugException(e);
+            closeConnection(conn);
             return false;
         }
     }
@@ -146,8 +156,9 @@ public class User {
     public static User getUserDB(String username, String provided_pwd) {
         User user = null;
         String select = "SELECT * From users_info WHERE username = ?";
+        Connection conn = null;
         try {
-            Connection conn = getConnection();
+            conn = getConnection();
             PreparedStatement stmt = conn.prepareStatement(select);
             stmt.setString(1, username);
             ResultSet rs = null;
@@ -155,6 +166,7 @@ public class User {
             rs.first();
             if (!rs.getString("password").equals(provided_pwd)) {
                 ErrorBox_Controller.showErrorBox(Settings.appStage, "Mot de passe Incorrect", "Veulliez verifier votre mot de passe et reessayer.");
+                closeConnection(conn);
                 return null;
             }
             user = new User(username, rs.getString("password"), rs.getString("email"), rs.getString("firstname"), rs.getString("lastname"), rs.getDate("dob"), rs.getString("address"), rs.getString("mobile"));
@@ -163,10 +175,11 @@ public class User {
             user.stats_activity = rs.getString("stats_activity");
             user.pkey = rs.getString("pkey");
             user.signupDate = rs.getDate("sdate");
-            user.points = rs.getInt("points");
             rs.close();
+            closeConnection(conn);
         } catch (SQLException e) {
             Checker.showConnexionError();
+            closeConnection(conn);
         } finally {
             return user;
         }
@@ -177,15 +190,18 @@ public class User {
     public static boolean updateStatsPoints(User user, String statsPointsString) {
         user.stats_points = statsPointsString;
         String update = "UPDATE users_info SET stats_points = ? WHERE username = '" + user.getUsername() + "'";
+        Connection conn = null;
         try {
-            Connection conn = getConnection();
+            conn = getConnection();
             PreparedStatement stmt = conn.prepareStatement(update);
             stmt.setString(1, user.getStats_points());
             stmt.execute();
             stmt.close();
+            closeConnection(conn);
             return true;
         } catch (SQLException e) {
             Debug.debugException(e);
+            closeConnection(conn);
         }
         return false;
     }
@@ -193,14 +209,17 @@ public class User {
     public static boolean updateStatsActivity(User user, String statsActivityString) {
         user.stats_activity = statsActivityString;
         String update = "UPDATE users_info SET stats_activity = ? WHERE username = '" + user.getUsername() + "'";
+        Connection conn = null;
         try {
-            Connection conn = getConnection();
+            conn = getConnection();
             PreparedStatement stmt = conn.prepareStatement(update);
             stmt.setString(1, user.getStats_activity());
             stmt.execute();
             stmt.close();
+            closeConnection(conn);
             return true;
         } catch (SQLException e) {
+            closeConnection(conn);
             Debug.debugException(e);
         }
         return false;
@@ -208,14 +227,17 @@ public class User {
 
     public static boolean updatePoints(User user, int points) {
         String update = "UPDATE users_info SET points = ? WHERE username = '" + user.getUsername() + "'";
+        Connection conn = null;
         try {
-            Connection conn = getConnection();
+            conn = getConnection();
             PreparedStatement stmt = conn.prepareStatement(update);
             stmt.setInt(1, points);
             stmt.execute();
             stmt.close();
+            closeConnection(conn);
             return true;
         } catch (SQLException e) {
+            closeConnection(conn);
             Debug.debugException(e);
         }
         return false;
@@ -223,15 +245,18 @@ public class User {
 
     public static boolean updateLastQuestion(User user, String qst) {
         String update = "UPDATE users_info SET lqst = ? WHERE username = '" + user.getUsername() + "'";
+        Connection conn = null;
         try {
-            Connection conn = getConnection();
+            conn = getConnection();
             PreparedStatement stmt = conn.prepareStatement(update);
             stmt.setString(1, qst);
             stmt.execute();
             stmt.close();
+            closeConnection(conn);
             return true;
         } catch (SQLException e) {
             Debug.debugException(e);
+            closeConnection(conn);
         }
         return false;
     }
@@ -239,30 +264,36 @@ public class User {
 
     public static boolean updateEmail(User user, String email) {
         String update = "UPDATE users_info SET email = ? WHERE username = '" + user.getUsername() + "'";
+        Connection conn = null;
         try {
-            Connection conn = getConnection();
+            conn = getConnection();
             PreparedStatement stmt = conn.prepareStatement(update);
             stmt.setString(1, email);
             stmt.execute();
             stmt.close();
+            closeConnection(conn);
             return true;
         } catch (SQLException e) {
             Debug.debugException(e);
+            closeConnection(conn);
         }
         return false;
     }
 
     public static boolean updatePKey(User user, String _pKey) {
         String update = "UPDATE users_info SET pkey = ? WHERE username = '" + user.getUsername() + "'";
+        Connection conn = null;
         try {
-            Connection conn = getConnection();
+            conn = getConnection();
             PreparedStatement stmt = conn.prepareStatement(update);
             stmt.setString(1, _pKey);
             stmt.execute();
             stmt.close();
+            closeConnection(conn);
             return true;
         } catch (SQLException e) {
             Debug.debugException(e);
+            closeConnection(conn);
         }
         return false;
     }
@@ -270,15 +301,18 @@ public class User {
 
     public static boolean updatePassword(User user, String password) {
         String update = "UPDATE users_info SET password = ? WHERE username = '" + user.getUsername() + "'";
+        Connection conn = null;
         try {
-            Connection conn = getConnection();
+            conn = getConnection();
             PreparedStatement stmt = conn.prepareStatement(update);
             stmt.setString(1, password);
             stmt.execute();
             stmt.close();
+            closeConnection(conn);
             return true;
         } catch (SQLException e) {
             Debug.debugException(e);
+            closeConnection(conn);
         }
         return false;
     }
@@ -286,14 +320,17 @@ public class User {
 
     public static boolean deleteUser(User user) {
         String del = "DELETE FROM users_info WHERE username= '" + user.getUsername() + "'";
+        Connection conn = null;
         try {
-            Connection conn = getConnection();
+            conn = getConnection();
             PreparedStatement stmt = conn.prepareStatement(del);
             stmt.execute();
             stmt.close();
+            closeConnection(conn);
             return true;
         } catch (SQLException e) {
             Debug.debugException(e);
+            closeConnection(conn);
         }
         return false;
     }

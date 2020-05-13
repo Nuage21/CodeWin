@@ -119,7 +119,12 @@ public class Params_Controller {
                 int expanderID = expanders.indexOf(img);
                 boolean isExpanded = getState(img);
                 String newImgPath = "img\\icons\\" + (isExpanded ? "expand.png" : "unexpand.png");
-                Image image = new Image(getClass().getResourceAsStream(newImgPath));
+                Image image = null;
+                try {
+                    image = new Image(new FileInputStream(Settings.projectPath + newImgPath));
+                } catch (FileNotFoundException e) {
+                    Debug.debugException(e);
+                }
                 img.setImage(image);
                 BorderPane ext = getExtension(img);
                 Design.setVisible(ext, !isExpanded);

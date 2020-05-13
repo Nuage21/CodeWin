@@ -31,7 +31,12 @@ public class SidebarChapterPane_Controller {
             this.isExpanded = !isExpanded;
             expandablePane.setVisible(isExpanded);
             expandablePane.setManaged(isExpanded);
-            Image image = new Image(getClass().getResourceAsStream(expImages[isExpanded ? 0 : 1]));
+            Image image = null;
+            try {
+                image = new Image(new FileInputStream(Settings.projectPath + expImages[isExpanded ? 0 : 1]));
+            } catch (FileNotFoundException e) {
+                Debug.debugException(e);
+            }
             expanderImageView.setImage(image);
             event.consume();
         });
@@ -43,7 +48,13 @@ public class SidebarChapterPane_Controller {
         this.isExpanded = true;
         expandablePane.setVisible(true);
         expandablePane.setManaged(true);
-        expanderImageView.setImage(new Image(getClass().getResourceAsStream(expImages[0])));
+        Image image = null;
+        try {
+            image = new Image(new FileInputStream(Settings.projectPath + expImages[0]));
+            expanderImageView.setImage(image);
+        } catch (FileNotFoundException e) {
+            Debug.debugException(e);
+        }
     }
 
     public void unexpand() {
@@ -52,7 +63,13 @@ public class SidebarChapterPane_Controller {
         this.isExpanded = false;
         expandablePane.setVisible(false);
         expandablePane.setManaged(false);
-        expanderImageView.setImage(new Image(getClass().getResourceAsStream(expImages[1])));
+        Image image = null;
+        try {
+            image = new Image(new FileInputStream(Settings.projectPath + expImages[1]));
+            expanderImageView.setImage(image);
+        } catch (FileNotFoundException e) {
+            Debug.debugException(e);
+        }
     }
 
     public void setTitle(String _title) {

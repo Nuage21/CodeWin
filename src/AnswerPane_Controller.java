@@ -26,7 +26,12 @@ public class AnswerPane_Controller {
     }
 
     public void setToFalseAnswer() {
-        Image image = new Image(getClass().getResourceAsStream("img\\unchecked.png"));
+        Image image = null;
+        try {
+            image = new Image(new FileInputStream(Settings.projectPath + "img\\unchecked.png"));
+        } catch (FileNotFoundException e) {
+            Debug.debugException(e);
+        }
         answerImageView.setImage(image);
         answerLabel.setText("Reponse Fausse !");
         ((DropShadow) holder.getEffect()).setColor(Color.valueOf("#892312"));

@@ -18,6 +18,7 @@ import java.awt.event.InputEvent;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.net.URL;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
@@ -36,7 +37,12 @@ public class LogErrorController implements Initializable {
             String valid = m.b ? "checked" : "unchecked";
             Label t = new Label("\t" + m.msg);
             t.setStyle("-fx-text-fill: white");
-            Image image = new Image(getClass().getResourceAsStream("img\\" + valid + ".png"));
+            Image image = null;
+            try {
+                image = new Image(new FileInputStream(Settings.projectPath + "img\\" + valid + ".png"));
+            } catch (FileNotFoundException e) {
+                Debug.debugException(e);
+            }
             ImageView img = new ImageView(image);
             img.setFitHeight(25);
             img.setFitWidth(25);

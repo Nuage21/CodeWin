@@ -281,7 +281,7 @@ public class LoggedIn_Controller implements Controller {
                             MediaPlayer.playAnswerReaction(MediaPlayer.CORRECT_SOUND);
                             ctr.getAnswerPane_controller().setVisible(true);
                             ctr.getNotePane_controller().setVisible(true);
-                            this.updateUserPoints(LoggedIn_Controller.getUser().getPoints() + ctr.getQuestion().getPoints());
+                            this.updateUserPoints(LoggedIn_Controller.getUser().getPoints() + ctr.getQuestion().getPoints(), true);
                         } else {
                             MediaPlayer.playAnswerReaction(MediaPlayer.WRONG_SOUND);
                             ctr.getAnswerPane_controller().setToFalseAnswer();
@@ -504,7 +504,7 @@ public class LoggedIn_Controller implements Controller {
     public void loadUserParams() {
         String username = get12CharUsername(LoggedIn_Controller.user.getUsername());
         setLText(accountUsernameLabel, username);
-        updateUserPoints(LoggedIn_Controller.getUser().getPoints());
+        updateUserPoints(LoggedIn_Controller.getUser().getPoints(), false);
     }
 
     private static String get12CharUsername(String s) {
@@ -799,7 +799,7 @@ public class LoggedIn_Controller implements Controller {
     }
 
     public String __(String s) {
-        return new String(s.getBytes(StandardCharsets.ISO_8859_1));
+        return new String(s.getBytes(StandardCharsets.UTF_8));
     }
 
     public void setLText(Label l, String s) {
@@ -810,12 +810,12 @@ public class LoggedIn_Controller implements Controller {
         this.questionEvalJustFired = false;
     }
 
-    public void updateUserPoints(int points) {
+    public void updateUserPoints(int points, boolean savetoBD) {
         User u = LoggedIn_Controller.getUser();
         u.setPoints(points);
         pointsLabel.setText(String.format("%04d", points));
 
-        if (Settings.ACTIVE_DB_MODE) {
+        if (Settings.ACTIVE_DB_MODE && savetoBD) {
             // save to DataBase
             User.updatePoints(u, points);
         }

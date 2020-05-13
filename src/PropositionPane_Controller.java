@@ -43,7 +43,11 @@ public class PropositionPane_Controller {
         propositionCheckBox.setVisible(false);
         if (!isRight) {
             Image imgFalse = null;
-            imgFalse = new Image(getClass().getResourceAsStream("img\\unchecked.png"));
+            try {
+                imgFalse = new Image(new FileInputStream(Settings.projectPath + "img\\unchecked.png"));
+            } catch (FileNotFoundException e) {
+                Debug.debugException(e);
+            }
             checkImageView.setImage(imgFalse);
         }
         checkImageView.setVisible(true);
