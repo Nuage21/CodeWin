@@ -4,1459 +4,1459 @@
         "ID": 1,
         "points": 5,
         "folder": "theme1\\img\\course1\\",
-        "core": "<!img2.PNG!> Ce marquage en forme de damier indique :",
-        "propositions": ["Un sas pour cyclistes", "Un arrêt de bus", "Une voie de détresse", "Une traversée de voie de bus"],
+        "core": "<!img2.PNG!> This checkerboard marking indicates:",
+        "propositions": ["An airlock for cyclists", "A bus stop", "A distress lane", "A bus lane crossing"],
         "correct_answers": [0, 0, 0, 1],
-        "note": "Ce damier blanc au sol indique une traversée de voie de bus. Le dernier peut être franchi, mais ne doit jamais être encombré."
+        "note": "This white checkerboard on the ground indicates a bus lane crossing. The latter can be crossed, but should never be crowded."
     },
     {
         "ID": 2,
         "points": 10,
         "folder": "theme1\\img\\course1\\",
-        "core": "<!img3.PNG!>Dans cette situation :",
-        "propositions": ["Je change de voie", "Je m’arrête", "Je change de voie ou je m’arrête", "Je ne change pas de voie et je ne m’arrête pas"],
+        "core": "<!img3.PNG!>In this situation :",
+        "propositions": ["I change lanes", "I stop", "I change lanes or I stop", "I do not change lanes and I do not stop"],
         "correct_answers": [1, 0, 0, 0],
-        "note": "Un véhicule est stationné à cheval sur le trottoir et empiète sur ma voie de circulation. Personne n’est engagé derrière moi sur la voie de droite, je peux donc me changer de voie, après avoir contrôlé dans l’angle mort droit qu’aucun usager ne se trouve à côté de moi."
+        "note": "A vehicle is parked astride the sidewalk and encroaches on my traffic lane. No one is behind me on the right lane, so I can change lanes, after checking in the right blind spot that no user is next to me. "
     },
     {
         "ID": 3,
         "points": 7,
         "folder": "theme1\\img\\course1\\",
-        "core": "<!img8.PNG!> Je passe:",
-        "propositions": ["Oui", "Non"],
+        "core": "<!img8.PNG!> I pass:",
+        "propositions": ["Yes", "No"],
         "correct_answers": [0, 1],
-        "note": "Le feu, qui est passé au jaune va devenir rouge. Aucun véhicule ne me suit de près, et je suis à une distance suffisante du feu pour m’arrêter en sécurité. Je dois donc m’arrêter."
+        "note": "The light, which has turned yellow, will turn red. No vehicle is following me closely, and I am far enough from the traffic light to stop safely. So I have to stop."
     },
     {
         "ID" : 4,
         "points" : 5,
         "folder": "theme1\\img\\course1\\",
-        "core" : "<!img9.PNG!>Dans cette situation :",
-        "propositions" : ["Je quitte une agglomération", "J’entre dans un département", "Je quitte une agglomération et j’entre dans un département", "Je ne quitte pas une agglomération et je n’entre pas dans un département"],
+        "core" : "<!img9.PNG!> In this situation :",
+        "propositions" : ["I leave an agglomeration", "I enter a department", "I leave a conurbation and I enter a department", "I do not leave a conurbation and I do not enter a department"],
         "correct_answers" : [0, 0, 1, 0],
-        "note" : "J’ai aperçu deux panneaux : celui du haut m’indiquait que je quitte une agglomération, celui du bas que j’entre dans un département, l’Ain."
+        "note" : "I saw two signs: the top one told me that I was leaving a built-up area, the bottom one that I entered a department, Ain."
     },
     {
         "ID" : 5,
         "points" : 10,
         "folder": "theme1\\img\\course1\\",
-        "core" : "<!img10.PNG!>Dans cette situation :",
-        "propositions" : ["Je laisse ce véhicule continuer sa manoeuvre", "Je klaxonne"],
+        "core" : "<!img10.PNG!>In this situation :",
+        "propositions" : ["I let this vehicle continue its maneuver", "I honk"],
         "correct_answers" : [1, 0],
-        "note" : "Ce véhicule est engagé sur ma voie de circulation. Je le laisse terminer sa manoeuvre, d’autant plus que le conducteur ne me regarde pas. J’ai eu le temps de l’anticiper, il n’y a donc pas de danger immédiat.En agglomération, l’usager du Klaxon est interdit, sauf en cas de danger immédiat."
+        "note" : "This vehicle is engaged on my lane. I let him finish his maneuver, especially since the driver is not looking at me. I had time to anticipate it, so there is no immediate danger. In built-up areas, the use of the Horn is prohibited, except in the event of immediate danger. "
     },
     {
         "ID" : 6,
         "points" : 8,
         "folder": "theme1\\img\\course1\\",
-        "core" : "<!img15.PNG!>Pour continuer tout droit : ",
-        "propositions" : ["Je reste dans cette voie", "Je me place à droite"],
+        "core" : "<!img15.PNG!> To continue straight:",
+        "propositions" : ["I stay on this path", "I place myself on the right"],
         "correct_answers" : [0, 1],
-        "note" : "Pour continuer tout droit, je dois utiliser la voie la plus à droite. Étant mal placé , je change de voie."
+        "note" : "To continue straight, I must use the right-most lane. Being in the wrong place, I change lanes."
     },
     {
         "ID" : 7,
         "points" : 5,
         "folder": "theme1\\img\\course1\\",
-        "core" : "<!img17.PNG!>Je circule sur une route : ",
-        "propositions" : ["Nationale", "Départementale"],
+        "core" : "<!img17.PNG!> I am driving on a road:",
+        "propositions" : ["National", "Departmental"],
         "correct_answers" : [1, 0],
-        "note" : "La balise située en dessous du panneau indique que je circule sur le N489, donc sur une route nationale."
+        "note" : "The beacon located below the panel indicates that I am driving on the N489, therefore on a national road."
     },
     {
         "ID" : 8,
         "points" : 5,
         "folder": "theme1\\img\\course1\\",
-        "core" : "<!img17.PNG!>Ce panneau indique que la première sortie se situe à 37km :",
-        "propositions" : ["Oui", "Non"],
+        "core" : "<!img17.PNG!> This sign indicates that the first exit is 37km away:",
+        "propositions" : ["Yes", "No"],
         "correct_answers" : [0, 1],
-        "note" : "Ce panneau indique qu’à 1500 mètres je vais rencontrer la sortie n°37  et la sortie n°36"
+        "note" : "This sign indicates that at 1500 meters I will meet exit 37 and exit 36"
     },
     {
         "ID" : 9,
         "points" : 10,
         "folder": "theme1\\img\\course1\\",
-        "core" : "<!img40.PNG!>Que signifient les 2 panneaux ?",
-        "propositions" : ["(1) Accès autorisé aux piétons, (2) Seulement les enfants accompagnés d'un adulte peuvent passer par ici", "(1) Accès interdit aux piétons, (2) Accès autorisé aux piétons", "(1) Accès interdit aux piétons, (2) Entrée d'aire piétonne"],
+        "core" : "<!img40.PNG!>What do the 2 panels mean?",
+        "propositions" : ["(1) Authorized access for pedestrians, (2) Only children accompanied by an adult can pass through here", "(1) Access prohibited for pedestrians, (2) Access authorized for pedestrians", "(1) Access prohibited to pedestrians, (2) Entrance to pedestrian area "],
         "correct_answers" : [0, 0, 1],
-        "note" : "Ni la forme, ni la couleur des panneaux est la même donc ces deux panneaux ne peuvent pas avoir le même sens. Tout panneau rond, rouge-blanc-noir interdit quelque chose, tout panneau carré indique quelque chose à la conduite."
+        "note" : "Neither the shape nor the color of the panels is the same so these two panels cannot have the same meaning. Any round, red-white-black panel prohibits anything, any square panel indicates something to driving."
     },
     {
         "ID" : 10,
         "points" : 5,
         "folder": "theme1\\img\\course1\\",
-        "core" : "<!img41.PNG!>Quelle est la nature de ce panneau ?",
-        "propositions" : ["C'est  panneau de pré-signalisation", "C'est panneau de position"],
+        "core" : "<!img41.PNG!> What is the nature of this sign?",
+        "propositions" : ["It is warning sign", "It is position sign"],
         "correct_answers" : [1, 0],
-        "note" : "Ce panneau annonce des direction qu'il sera possible de prendre dans 120 m. Donc il pré-signale."
+        "note" : "This sign announces directions that it will be possible to take in 120 m. So he pre-reports."
     },
     {
         "ID" : 11,
         "points" : 6,
         "folder": "theme1\\img\\course2\\",
-        "core" : "<!img2.PNG!>À hauteur de cette intersection, je peux :",
-        "propositions" : ["Tourner à gauche", "Tourner à droite", "Tourner à gauche ou à droit", "Ne tourner ni à gauche ni à droite"],
+        "core" : "<!img2.PNG!> At this intersection, I can:",
+        "propositions" : ["Turn left", "Turn right", "Turn left or right", "Do not turn left or right"],
         "correct_answers" : [0, 0, 0, 1],
-        "note" : "Les panneaux d’interdiction indiquent qu’à cette intersection, je ne peux ni tourner à droite , ni tourner à gauche. Je peux seulement continuer tout droit."
+        "note" : "Prohibition signs indicate that at this intersection, I cannot turn right or turn left. I can only go straight."
     },
     {
         "ID" : 12,
         "points" : 4,
         "folder": "theme1\\img\\course2\\",
-        "core" : "Qui a plus d'importance, l'indication d'un feu ou l'indication d'un policier ?",
-        "propositions" : ["L'indications d'un feu", "L'indication d'un policier"],
+        "core" : "Who is more important, the indication of a fire or the indication of a police officer?",
+        "propositions" : ["The indications of a fire", "The indication of a policeman"],
         "correct_answers" : [0, 1],
-        "note" : "Le policier a le plus de pouvoir dans la circulation. Même s'il indique le contraire des feux ou des panneaux, il faut suivre ses indications."
+        "note" : "The police have the most power in traffic. Even if it indicates the opposite of lights or signs, you must follow its indications."
     },
     {
         "ID" : 13,
         "points" : 5,
         "folder": "theme1\\img\\course2\\",
-        "core" : "<!img4.PNG!>Quelle est la lecture de cette borne ?",
-        "propositions" : ["Vous êtes sur la route nationale N 203 et dans 12 km vous serez sur une rocade", "Vous êtes sur la route nationale N 203 et vous roulez au km 12 de cette même route qui est en même temps la rocade"],
+        "core" : "<!img4.PNG!>What is the reading of this terminal?",
+        "propositions" : ["You are on the national road N 203 and in 12 km you will be on a ring road", "You are on the national road N 203 and you drive at km 12 of this same road which is at the same time the ring road"],
         "correct_answers" : [0, 1],
-        "note" : "Ce qui peut gêner la compréhension des informations sur une borne ce sont les chiffres. N 203 est le numéro de la route et le chiffre 12 représente le km auquel on se trouve. La rocade est aussi la nature de la route. Autrement, il y aurait un panneau indiquant que dans 12 km il y aurait une rocade."
+        "note" : "What can hinder the understanding of information on a terminal are the numbers. N 203 is the road number and the number 12 represents the km we are at. The ring road is also the nature of the road. Otherwise, there would be a sign indicating that in 12 km there would be a ring road. "
     },
     {
         "ID" : 14,
         "points" : 6,
         "folder": "theme1\\img\\course2\\",
-        "core" : "Quelle est la différence entre un carrefour à sens giratoire et un rond-point ?",
-        "propositions" : ["Il n'y en a pas, c'est la même chose", "Dans le carrefour à sens giratoire il n'y a pas de signalisation alors que dans le rond-point il y en a une", "Dans le carrefour à sens giratoire le panneau Cédez le passage indique les priorités, alors que dans le rond-point c'est la priorité à droite"],
+        "core" : "What is the difference between a roundabout and a roundabout?",
+        "propositions" : ["There is none, it's the same thing", "In the roundabout there is no signage while in the roundabout there is one", "In the crossroads in a roundabout, the yield sign indicates the priorities, while in the roundabout it is the priority on the right "],
         "correct_answers" : [0, 0, 1],
-        "note" : "Le carrefour à sens giratoire est annoncé avec un panneau et vous devez céder le passage (parce qu'un panneau vous l'indique), tandis que dans un rond-point c'est la règle de la priorité à droite qui s'applique et la signalisation est absente."
+        "note" : "The roundabout is announced with a sign and you must give way (because a sign indicates it), while in a roundabout the priority rule on the right applies and signaling is absent."
     },
     {
         "ID" : 15,
         "points" : 5,
         "folder": "theme1\\img\\course2\\",
-        "core" : "<!img43.PNG!>Ce panneau, que signifie-t-il ?",
-        "propositions" : ["Vous pouvez tourner à droite à la prochaine intersection", "Vous êtes obligés de tourner à droite à la prochaine intersection"],
+        "core" : "<!img43.PNG!> What does this sign mean?",
+        "propositions" : ["You can turn right at the next intersection", "You have to turn right at the next intersection"],
         "correct_answers" : [0, 1],
-        "note" : "Il s'agit d'un panneau d'obligation et non pas de possibilité. Si c'était juste possible, ce serait implicite."
+        "note" : "It is a sign of obligation and not of possibility. If it were just possible, it would be implied."
     },
     {
         "ID" : 16,
         "points" : 7,
         "folder": "theme1\\img\\course2\\",
-        "core" : "<!img44.PNG!>Vous êtes le conducteur de la voiture grise. Vous vous apprêtez à vous insérer sur l'autoroute. Avez-vous la priorité ?",
-        "propositions" : ["Oui, car vous devez vous insérer sur la nouvelle route tôt ou tard", "Non, car vous n'êtes pas prioritaires"],
+        "core" : "<!img44.PNG!>You are the driver of the gray car. You are about to enter the highway. Do you have priority? ",
+        "propositions" : ["Yes, because you have to get on the new route sooner or later", "No, because you don't have priority"],
         "correct_answers" : [0, 1],
-        "note" : "Vous avez le panneau Cédez le passage, mais cela ne veut pas dire que vous allez rester sur la voie d’insertion longtemps. Vous devez céder le passage, mais ensuite vous insérer"
+        "note" : "You have the Give way sign, but that doesn’t mean you’ll stay on the path long. You must give way, but then insert yourself"
     },
     {
         "ID" : 17,
         "points" : 3,
         "folder": "theme1\\img\\course2\\",
-        "core" : "Quelle est la vitesse à ne pas dépasser dans les carrefours à sens giratoire ?",
+        "core" : "What is the speed not to be exceeded in roundabouts?",
         "propositions" : ["30 km /h", "50 km /h", "70 km /h"],
         "correct_answers" : [1, 0, 0],
-        "note" : "Etant donné que c'est un carrefour qui est rond, la trajectoire n'est pas droite. La vitesse doit être autour de 30 km /h pour ne pas perdre le contrôle du véhicule."
+        "note" : "Since it is a roundabout which is round, the trajectory is not straight. The speed must be around 30 km / h so as not to lose control of the vehicle."
     },
     {
         "ID" : 18,
         "points" : 4,
         "folder": "theme1\\img\\course2\\",
-        "core" : "<!img45.PNG!>Hors agglomération, avec quel type de balises signale-t-on une intersection ?",
-        "propositions" : ["La balise n°1", "La balise n°2"],
+        "core" : "<!img45.PNG!>Outside built-up areas, with what type of beacons do you signal an intersection?",
+        "propositions" : ["The tag n ° 1", "The tag n ° 2"],
         "correct_answers" : [0, 1],
-        "note" : "La balise n°1 représente les virages."
+        "note" : " Tag n° 1 represents the turns."
     },
     {
         "ID" : 19,
         "points" : 5,
         "folder": "theme1\\img\\course2\\",
-        "core" : "Vous vous êtes engagés dans un carrefour à sens giratoire, mais vous souhaitez prendre la 3ème sortie et il y en a 4. Où vous placez-vous ?",
-        "propositions" : ["Plutôt au milieu du carrefour", "Plutôt à l'extérieur du carrefour"],
+        "core" : "You are engaged in a roundabout, but you want to take the 3rd exit and there are 4. Where are you located?",
+        "propositions" : ["Rather in the middle of the crossroads "," Rather outside the crossroads"],
         "correct_answers" : [1, 0],
-        "note" : "Plus vous sortez loin, plus il faut se placer vers le milieu du carrefour."
+        "note" : "The further you go out, the more you have to go towards the middle of the crossroads."
     },
     {
         "ID" : 20,
         "points" : 7,
         "folder": "theme1\\img\\course2\\",
-        "core" : "La priorité à droite s'applique-t-elle toujours et seulement pour les véhicules venant de droite ?<!img46.PNG!>",
-        "propositions" : ["Oui", "Non"],
+        "core" : "Does right priority always apply and only for vehicles coming from the right?<!img46.PNG!>",
+        "propositions" : ["Yes", "No"],
         "correct_answers" : [0, 1],
-        "note" : "En général, la priorité à droite s'applique sur les voitures venant sur votre droite. Mais si vous rejoignez un boulevard périphérique, vous pourriez tomber aussi sur le panneau indiquant la priorité à droite, mais s'appliquant à vous."
+        "note" : "In general, priority on the right applies to cars coming on your right. But if you join a ring road, you could also fall on the sign indicating the priority on the right, but applying to you."
     },
     {
         "ID" : 21,
         "points" : 10,
         "folder": "theme1\\img\\course3\\",
-        "core" : "<!img7.PNG!>Je peux tourner à droite immédiatement : ",
-        "propositions" : ["Oui", "Non"],
+        "core" : "<!img7.PNG!>I can turn right immediately: ",
+        "propositions" : ["Yes", "No"],
         "correct_answers" : [0, 1],
-        "note" : "Le marquage au sol indiquant un cédez-le-passage fait toute la largeur de chaussée et signale donc une rue à sens unique pour les usagers venant de droite. Je ne peux pas donc m’engager dans cette rue car elle est en sens interdit pour moi."
+        "note" : "The markings on the ground indicating a yield gives the whole width of the roadway and therefore signals a one-way street for users coming from the right. So I can’t enter this street because it is prohibited for me. "
     },
     {
         "ID" : 22,
         "points" : 10,
         "folder": "theme1\\img\\course3\\",
-        "core" : "<!img47.PNG!>Sur cette photo, d'autres voitures pourraient-elles venir d'en face ",
-        "propositions" : ["Oui", "Non"],
+        "core" : "<!img47.PNG!>In this photo, could other cars come from opposite ",
+        "propositions" : ["Yes", "No"],
         "correct_answers" : [0, 1],
-        "note" : "Si tout le monde respecte la signalisation, personne ne devrait venir en face car c'est une rue à sens unique (voir le panneau à droite où une flèche blanche est sur un fond bleu)."
+        "note" : "If everyone respects the signs, nobody should come opposite because it is a one-way street (see the sign on the right where a white arrow is on a blue background). "
     },
     {
         "ID" : 23,
         "points" : 9,
         "folder": "theme1\\img\\course3\\",
-        "core" : "Quel est l'ordre de passage des voitures 1,2 et 3 ?<!img48.PNG!>",
+        "core" : "<!img48.PNG!> What is the order of passage for cars 1,2 and 3?",
         "propositions" : ["1,2,3", "1,3,2", "3,2,1", "3,1,2"],
         "correct_answers" : [0, 0, 1, 0],
-        "note" : "La voiture n°3 ne coupe le chemin à personne. Elle va tout droit. Si vous aussi voulez aller tout droit, vous devez d'abord céder le passage à la voiture n°2 car elle est sur votre droite. Aussi, la voiture n°3 est sur la droite de la voiture n°2. C'est donc à la voiture n°2 de céder le passage à la 3 puis à vous de céder le passage à la n°2."
+        "note" : "Car n° 3 does not cut anyone off. She goes straight. If you also want to go straight, you must first give way to car no. 2 because it is on your right. Also, car n° 3 is on the right of car n° 2. So it's up to car number 2 to give way to number 3 and then it's up to you to give way to number 2. "
     },
     {
         "ID" : 24,
         "points" : 6,
         "folder": "theme1\\img\\course3\\",
-        "core" : "<!img49.PNG!>Vous souhaitez tourner à gauche et la voiture en face de vous aussi. Qui a la priorité dans cette situation : vous ou la voiture en face ?",
-        "propositions" : ["Vous pouvez tourner quand vous voulez, il n'y a pas de règles de priorité entre vous et la camionnette en face", "C'est la camionnette qui doit tourner en premier, car elle est sur votre droite"],
+        "core" : "<!img49.PNG!>You want to turn left and the car in front of you too. Who has priority in this situation: you or thehh car opposite?",
+        "propositions" : ["You can turn when you want, there are no priority rules between you and the van opposite", "It is the van that must turn first, because it is on your right"],
         "correct_answers" : [1, 0],
-        "note" : "Il s'agit d'un croisement à l'indonésienne, donc la priorité ne s'applique pas ici. La camionnette tourne à gauche, vous aussi. Vous ne lui coupez pas le chemin. Donc vous pouvez tourner quand la voie est libre et sur la photo elle l'a l'air."
+        "note" : "This is an Indonesian crossover, so priority doesn't apply here. The van turns left, too. You don't cut it off. So you can turn when the road is clear and in the photo she looks. "
     },
     {
         "ID" : 25,
         "points" : 12,
         "folder": "theme1\\img\\course3\\",
-        "core" : "<!img50.PNG!>Dans cette situation, êtes-vous bien placés pour aller tout droit ? Et pour tourner à droite ?",
-        "propositions" : ["Aller tout droit : oui ; Tourner à droite : non", "Aller tout droit : non ; Tourner à droite : non", "Allez tout droit "],
+        "core" : "<!img50.PNG!>In this situation, are you in a good position to go straight? And to turn right?",
+        "propositions" : ["Go straight: then; Turn right: no", "Go straight: no; Turn right: no", "Go straight"],
         "correct_answers" : [0, 1, 0],
-        "note" : "Il faut toujours se placer sur la voie la plus à droite, même si vous voulez allez tout droit. Vous n'êtes pas bien placés pour tourner à droite. Pour ce faire, il faut s'assurer que personne n'est dans votre angle mort, mettre le clignotant et vous déporter sur la voie de droite. Comme tourner à droite est très près de là où vous êtes, la manœuvre risquerait d'être un peu rapide."
+        "note" : "Always place yourself on the right-most lane, even if you want to go straight. You are not in a good position to turn right. To do this, you have to make sure that nobody is in your blind spot, put the flashing light and move to the right lane. As turning right is very close to where you are, the maneuver may be a bit quick."
     },
     {
         "ID" : 26,
         "points" : 5,
         "folder": "theme1\\img\\course3\\",
-        "core" : "<!img51.PNG!>Dans cette situation, pour tourner à gauche, êtes-vous  prioritaires par rapport à la camionnette blanche venant d'en face ?",
-        "propositions" : ["Oui", "Non"],
+        "core" : "<!img51.PNG!>In this situation, to turn left, do you have priority over the white van coming from opposite?",
+        "propositions" : ["Yes", "No"],
         "correct_answers" : [0, 1],
-        "note" : "Vous n'êtes pas prioritaires car vous tournez à gauche et vous coupez le chemin à cette voiture. Vous pouvez tourner une fois que la voie soit libre ou que la voiture venant d'en face soit assez loin pour ne pas l'obliger à changer d'allure."
+        "note" : "You do not have priority because you turn left and you cut the way to this car. You can turn once the lane is clear or the car coming opposite is far enough not to force it to change gears."
     },
     {
         "ID" : 27,
         "points" : 5,
         "folder": "theme1\\img\\course3\\",
-        "core" : "Les priorités, sont-elles correctement attribuées sur cette photo ?<!img52.PNG!>",
-        "propositions" : ["Oui", "Non"],
+        "core" : "Are the priorities correctly assigned in this photo?<!img52.PNG!>",
+        "propositions" : ["Yes", "No"],
         "correct_answers" : [0, 1],
-        "note" : "Votre voiture n°1 est prioritaire car elle ne coupe le chemin à personne. La priorité se joue entre la voiture n°2 et n°3 car elles tournent toutes les deux et se coupent le chemin. Comme la n°3 se trouve sur la droite de la n°2 alors le bon ordre est 1 puis 3 puis 2."
+        "note" : "Your car n°1 has priority because it does not cut anyone off. Priority is played between car n ° 2 and n ° 3 because they both turn and cross their path. As n ° 3 is on the right of n ° 2 then the correct order is 1 then 3 then 2. "
     },
     {
         "ID" : 28,
         "points" : 6,
         "folder": "theme1\\img\\course3\\",
-        "core" : "Lorsque le feu en croix est allumé,<!img53.PNG!> cela signifie-t-il qu'il vous est interdit de tourner à gauche ?",
-        "propositions" : ["Oui", "Non"],
+        "core" : "When the cross light is on, <!img 53.PNG!> Does this mean that you are forbidden to turn left?",
+        "propositions" : ["Yes", "No"],
         "correct_answers" : [0, 1],
-        "note" : "Lorsque le feu en croix est allumé vous pouvez tourner  à gauche. En réalité, lorsque ce feu est allumé il ne fait que vous informer que les voitures venant de l'autre sens sont à l'arrêt. Au contraire, donc ! C'est lorsqu'il s'éteint qu'il faut être vigilant."
+        "note" : "When the cross fire is on you can turn left. In reality, when this light is on it only informs you that the cars coming from the other direction are stopped. On the contrary, therefore! It is when it goes out that you have to be vigilant."
     },
     {
         "ID" : 29,
         "points" : 9,
         "folder": "theme1\\img\\course3\\",
-        "core" : "Qui a la priorité absolue entre ces 3 voitures ?<!img54.PNG!>",
-        "propositions" : ["La voiture orange qui ne change pas direction", "La voiture qui tourne à droite", "La voiture bleue qui tourne à gauche"],
+        "core" : "Who has absolute priority between these 3 cars?<!img54.PNG!>",
+        "propositions" : ["The orange car that does not change direction", "The car that turns right", "The blue car that turns left"],
         "correct_answers" : [1, 0, 0],
-        "note" : "La voiture orange ne change pas de direction, alors que les 2 autres voitures ont le panneau Stop donc elles doivent attendre que l'orange passe en premier."
+        "note" : "The orange car does not change direction, while the other 2 cars have the Stop sign so they have to wait for the orange to go first."
     },
     {
         "ID" : 30,
         "points" : 5,
         "folder": "theme1\\img\\course3\\",
-        "core" : "Si vous tombez sur l'un de ces 2 panneaux<!img55.PNG!>, est-il possible de faire demi-tour ?",
-        "propositions" : ["Oui", "Non"],
+        "core" : "If you come across one of these 2 signs <!img55.PNG!>, Is it possible to turn around?",
+        "propositions" : ["Yes", "No"],
         "correct_answers" : [1, 0],
-        "note" : "Il s'agit d'une impasse, mais vous pouvez faire le demi-tour si la rue n'est pas trop étroite."
+        "note" : "It's a dead end, but you can turn around if the street isn't too narrow."
     },
     {
         "ID" : 31,
         "points" : 5,
         "folder": "theme1\\img\\course4\\",
-        "core" : "<!img4.PNG!>Dans cette rue, la vitesse est limitée à 50 km/h pour les véhicules de plus de 4 tonnes uniquement :",
-        "propositions" : ["Oui", "Non"],
+        "core" : "<!img4.PNG!>In this street, the speed is limited to 50 km / h for vehicles over 4 tonnes only:",
+        "propositions" : ["Yes", "No"],
         "correct_answers" : [0, 1],
-        "note" : "Cet ensemble de panneaux indique deux interdictions. Le panneau situé en haut interdit de dépasser 50 km/h et celui de bas interdit l’accès aux véhicules de plus de 4 tonnes."
+        "note" : "This set of signs indicates two prohibitions. The top panel prohibits exceeding 50 km / h and the bottom panel prohibits access to vehicles over 4 tonnes. "
     },
     {
         "ID" : 32,
         "points" : 5,
         "folder": "theme1\\img\\course4\\",
-        "core" : "<!img12.PNG!>La distance de sécurité avec le véhicule qui me précède n’est pas suffisante : ",
-        "propositions" : ["Oui", "Non"],
+        "core" : "<!img12.PNG!>The safety distance from the vehicle in front of me is not sufficient:",
+        "propositions" : ["Yes", "No"],
         "correct_answers" : [1, 0],
-        "note" : "La distance de sécurité sur autoroute doit être environ égale à 2 traits blancs de bande d’arrêt d’urgence. Ce n’est pas le cas ici puisque je ne vis qu’un trait blanc. Je ralentis donc légèrement afin de laisser une distance suffisante."
+        "note" : "The safety distance on the motorway should be approximately equal to 2 white lines of the emergency stop strip. This is not the case here since I only live by a white line. So I slow down slightly to leave enough distance."
     },
     {
         "ID" : 33,
         "points" : 6,
         "folder": "theme1\\img\\course4\\",
-        "core" : "Je circule à 90km/h. J’accélère pour dépasser le véhicule devant moi :<!img13.PNG!>",
-        "propositions" : ["Oui", "Non"],
+        "core" : "<I travel at 90 km / h. I accelerate to overtake the vehicle in front of me:!img13.PNG!>",
+        "propositions" : ["Yes", "No"],
         "correct_answers" : [0, 1],
-        "note" : "La signalisation limite la vitesse des voitures à 90km/h. Je circule déjà donc à la vitesse maximale : je n’accélère donc pas et je ne dépasse pas."
+        "note" : "Signs limit the speed of cars to 90km / h. So I’m already traveling at maximum speed: I’m not accelerating and I’m not overtaking."
     },
     {
         "ID" : 34,
         "points" : 9,
         "folder": "theme1\\img\\course4\\",
-        "core" : "J’ai obtenu mon permis de conduire il y a 9 mois. Sur cette chaussée, ma vitesse maximale autorisée est : <!img20.PNG!>",
+        "core" : " I got my driver's license 9 months ago. On this road, my maximum authorized speed is:<!img20.PNG!>",
         "propositions" : ["90km/h", "100km/h", "110Km/h"],
         "correct_answers" : [0, 1, 0],
-        "note" : "J’ai obtenu mon permis de conduire il ya 9 mois : je suis donc en période probatoire. Sur cette route à 2 chaussées, séparées par un terre-plein central, ma vitesse maximale autorisée en tant que conducteur novice est de 100km/h."
+        "note" : "I got my driver's license 9 months ago, so I'm on probation. On this 2-lane road, separated by a central reservation, my maximum authorized speed as a novice driver is 100km / h."
     },
     {
         "ID" : 35,
         "points" : 7,
         "folder": "theme1\\img\\course4\\",
-        "core" : "<!img56.PNG!>A quoi exactement les 30 km /h s'appliquent-ils ?",
-        "propositions" : ["A toute l'agglomération de Courpière", "Seulement à la rue où ce panneau est implanté"],
+        "core" : "<!img56.PNG!>What exactly do 30 km / h apply to?",
+        "propositions" : ["To the whole agglomeration of Courpière "," Only at the street where this sign is located "],
         "correct_answers" : [1, 0],
-        "note" : "Si le panneau relatif à la limitation de vitesse est associé au panneau d'une agglomération (il est collé à lui), alors la limitation concerne toute l'agglomération. S'il y avait 2 panneaux différents, la limitation de vitesse concernerait seulement la rue."
+        "note" : "If the speed limit sign is associated with the agglomeration panel (it is stuck to it), then the limitation concerns the entire agglomeration. If there were 2 different signs, the speed limit would only apply to the street. "
     },
     {
         "ID" : 36,
         "points" : 4,
         "folder": "theme1\\img\\course4\\",
-        "core" : "Quelle est la limitation de vitesse sur ce genre de routes ?<!img57.PNG!>",
+        "core" : "What is the speed limit on this kind of road?<!img57.PNG!>",
         "propositions" : ["A 70 km /h", "A 80 km /h", "A 90 km / h"],
         "correct_answers" : [0, 0, 1],
-        "note" : "La vitesse est limitée à 90 km/h car il s'agit d'une route à double sens. En revanche, il ne faut pas rouler à 90 km / h car la signalisation vous avertit qu'il y a des virages donc il faut ralentir."
+        "note" : "The speed is limited to 90 km / h because it is a two-way road. On the other hand, you shouldn't drive at 90 km / h because the signs warn you that there are turns so you have to slow down. "
     },
     {
         "ID" : 37,
         "points" : 8,
         "folder": "theme1\\img\\course4\\",
-        "core" : "<!img58.PNG!>Dans cette situation que faut-il faire ?",
-        "propositions" : ["Rouler à la même allure", "Ralentir"],
+        "core" : "<!img58.PNG!>In this situation what should be done?",
+        "propositions" : ["Drive at the same speed", "Slow down"],
         "correct_answers" : [0, 1],
-        "note" : "Il faut ralentir car la chaussée est glissante (il faut lire la signalisation temporaire)."
+        "note" : "You have to slow down because the road is slippery (read the temporary signs)."
     },
     {
         "ID" : 38,
         "points" : 5,
         "folder": "theme1\\img\\course4\\",
-        "core" : "Quelle est la limitation de vitesse dans un lieu-dit ?",
-        "propositions" : ["Elle peut être réglementée de façon spécifique", "Toujours à 50 km/ h"],
+        "core" : "What is the speed limit in a locality?",
+        "propositions" : ["It can be regulated in a specific way", "Always at 50 km / h"],
         "correct_answers" : [1, 0],
-        "note" : "Elle peut être réglementée de façon spécifique. Il faut suivre les panneaux. En cas de doute, ralentir."
+        "note" : "It can be specifically regulated. You have to follow the signs. If in doubt, slow down."
     },
     {
         "ID" : 39,
         "points" : 4,
         "folder": "theme1\\img\\course4\\",
-        "core" : "Si les pneus n'adhèrent pas bien au sol, le freinage va-t-il être rallongé ?",
-        "propositions" : ["Oui", "Non"],
+        "core" : "If the tires do not adhere well to the ground, will the braking be extended?",
+        "propositions" : ["Yes", "No"],
         "correct_answers" : [1, 0],
-        "note" : "Si les pneus n'épousent pas correctement le sol, la voiture roule toujours."
+        "note" : "If the tires don't match the ground properly, the car is still driving."
     },
     {
         "ID" : 40,
         "points" : 9,
         "folder": "theme1\\img\\course4\\",
-        "core" : "<!img59.PNG!>A quoi exactement cette limitation de vitesse s'applique-t-elle ?",
-        "propositions" : [ "A toute l'agglomération", "A toute une rue et les rues à côté", "A une rue seulement"],
+        "core" : "<!img59.PNG!>What exactly does this speed limit apply to?",
+        "propositions" : ["To the whole town", "To a whole street and the streets next to it", "To one street only"],
         "correct_answers" : [0, 1, 0],
-        "note" : "Il s'agit d'une zone, donc la règle s'applique à la rue où ce panneau est implanté, ainsi qu'aux rues adjacentes."
+        "note" : "It is an area, so the rule applies to the street where this sign is located, as well as to adjacent streets. "
     },
     {
         "ID" : 41,
         "points" : 6,
         "folder": "theme1\\img\\course5\\",
-        "core" : "<!img5.PNG!>Dans cette rue, je peux être amené à  croiser :",
-        "propositions" : ["Des voitures", "Des cyclistes", "Les deux", "Ni des cyclistes ni des voitures"],
+        "core" : "<!img5.PNG! In this street, I may come across:>",
+        "propositions" : ["Cars", "Cyclists", "Both", "Neither cyclists nor cars"],
         "correct_answers" : [0, 1, 0, 0],
-        "note" : "Le panneau bleu à droite m'indique que la voie arrivant face à moi est une voie cyclable, ce qui est confirmé par le marquage au sol. Je peux être donc amené à croiser des cyclistes mais pas de voitures."
+        "note" : "The blue sign on the right indicates to me that the lane arriving in front of me is a cycle lane, which is confirmed by the markings on the ground. So I may come across cyclists but not cars. "
     },
     {
         "ID" : 42,
         "points" : 8,
         "folder": "theme1\\img\\course5\\",
-        "core" : "<!img11.PNG!>Je change de voie maintenant :",
-        "propositions" : ["Oui", "Non"],
+        "core" : "<!img11.PNG!>I'm changing lanes now:",
+        "propositions" : ["Yes", "No"],
         "correct_answers" : [0, 1],
-        "note" : "Le véhicule derrière moi a indiqué son intention de me dépasser. Je reste donc dans cette voie."
+        "note" : "The vehicle behind me has indicated its intention to overtake me. So I stay on this path."
     },
     {
         "ID" : 43,
         "points" : 7,
         "folder": "theme1\\img\\course5\\",
-        "core" : "Je ne peux pas suivre le véhicule qui dépasse<!img14.PNG!>",
-        "propositions" : ["Oui", "Non"],
+        "core" : "I cannot follow the passing vehicle<!img14.PNG!>",
+        "propositions" : ["Yes", "No"],
         "correct_answers" : [1, 0],
-        "note" : "Je ne peux pas suivre le véhicule qui dépasse car une voiture, occupant déjà la voie du milieu, est entrain de me dépasser. Je ralentis donc afin de garder une bonne distance de sécurité avec le véhicule qui me précède."
+        "note" : "I cannot follow the passing vehicle because a car, already occupying the middle lane, is overtaking me. I therefore slow down in order to keep a good safety distance with the vehicle in front."
     },
     {
         "ID" : 44,
         "points" : 5,
         "folder": "theme1\\img\\course5\\",
-        "core" : "Je peux suivre le véhicule qui dépasse : <!img18.PNG!>",
-        "propositions" : ["Oui", "Non"],
+        "core" : "I can follow the vehicle passing:<!img18.PNG!>",
+        "propositions" : ["Yes", "No"],
         "correct_answers" : [0, 1],
-        "note" : "En fin de journée, il se peut que le soleil éblouisse le conducteur à travers le rétroviseur. La vision du conducteur n’est donc plus parfaite. Dans ce cas-là, j’aperçois une voiture sur la voie de gauche, mais comme je suis ébloui je dois renoncer au dépassement par sécurité"
+        "note" : "At the end of the day, the sun may dazzle the driver through the rear-view mirror. The driver's vision is therefore no longer perfect. In this case, I see a car in the left lane, but like I'm dazzled I have to give up overtaking for safety "
     },
     {
         "ID" : 45,
         "points" : 6,
         "folder": "theme1\\img\\course5\\",
-        "core" : "Sur une route en pente, qu'est-ce qui est plus difficile de faire ?",
-        "propositions" : ["Il est plus difficile de monter", "Il est plus difficile de descendre"],
+        "core" : "On a sloping road, what is more difficult to do?",
+        "propositions" : ["It is more difficult to go up", "It is more difficult to go down"],
         "correct_answers" : [1, 0],
-        "note" : "Monter demande plus de force à déployer et donc le véhicule qui monte est prioritaire en général."
+        "note" : "Climbing requires more force to deploy and therefore the vehicle that climbs has priority in general."
     },
     {
         "ID" : 46,
         "points" : 6,
         "folder": "theme1\\img\\course5\\",
-        "core" :"<!img60.PNG!>Sur les routes sinueuses et étroites, peut-on utiliser le klaxon ?",
-        "propositions" : ["Oui", "Non"],
+        "core" :"<!img60.PNG!>On winding and narrow roads, can we use the horn?",
+        "propositions" : ["Yes", "No"],
         "correct_answers" : [1, 0],
-        "note" : "Bien sûr ! Vous êtes invités à utiliser le klaxon pour vous annoncer !"
+        "note" : "Of course ! You are invited to use the horn to announce yourself! "
     },
     {
         "ID" : 47,
         "points" : 7,
         "folder": "theme1\\img\\course5\\",
-        "core" : "Avez-vous le droit de dépasser ce cycliste ?<!img61.PNG!>",
-        "propositions" : ["Oui", "Non"],
+        "core" : "Do you have the right to overtake this cyclist?<!img61.PNG!>",
+        "propositions" : ["Yes", "No"],
         "correct_answers" : [1, 0],
-        "note" : "Même si la ligne est continue, vous pouvez le dépasser car vous ne risquez pas de la franchir. Même si vous la franchissez, ce n'est pas grave. Il faut juste veiller à laisser 1,5 m de distance entre vous et le cycliste car la situation représentée est hors agglomération. La visibilité est très bonne aussi donc toutes les conditions sont réunies pour effectuer ce dépassement."
+        "note" : "Even if the line is continuous, you can pass it because you are not likely to cross it. Even if you cross it, it does not matter. Just make sure to leave 1.5 m distance between you and the cyclist because the situation represented is outside built-up areas. Visibility is very good too so all the conditions are met to make this overtaking. "
     },
     {
         "ID" : 48,
         "points" : 5,
         "folder": "theme1\\img\\course5\\",
-        "core" : "<!img62.PNG!>Êtes-vous en train de dépasser les véhicules sur la gauche ?",
-        "propositions" : ["Oui", "Non"],
+        "core" : "<!img62.PNG!>Are you passing the vehicles on the left?",
+        "propositions" : ["Yes", "No"],
         "correct_answers" : [0, 1],
-        "note" : "Vous êtes dans votre file de droite, donc ceci n'est pas considéré comme un dépassement."
+        "note" : "You are in your right lane, so this is not considered an overshoot."
     },
     {
         "ID" : 49,
         "points" : 5,
         "folder": "theme1\\img\\course5\\",
-        "core" : "<!img63.PNG!>Croisez-vous ou dépassez-vous la camionnette ?",
-        "propositions" : ["Vous croisez", "Vous dépassez"],
+        "core" : "<!img63.PNG!Do you meet or pass the van?>",
+        "propositions" : ["You cross", "You pass"],
         "correct_answers" : [1, 0],
-        "note" : "Il s'agit d'un croisement."
+        "note" : "It is a cross."
     },
     {
         "ID" : 50,
         "points" : 10,
         "folder": "theme1\\img\\course5\\",
-        "core" :"Dans cette situation, avez-vous le droit de dépasser le bus ?<!img64.PNG!>",
-        "propositions" : ["Oui", "Non"],
+        "core" :"In this situation, do you have the right to overtake the bus?<!img64.PNG!>",
+        "propositions" : ["Yes", "No"],
         "correct_answers" : [0, 1],
-        "note" : "S'il s'agit d'un élément sur la chaussée ne pouvant pas donner suite à son déplacement dans les minutes qui suivent, vous pouvez dépasser l'obstacle. Un rocher en montagne rentre dans ce cas de figure. Cependant, s'il s'agit d'un camion poubelle ou d'un bus à son arrêt, il est nécessaire d'attendre puisque son arrêt est temporaire. Et ce, même si le bus vient de s'arrêter (clignotant droit est actionné)."
+        "note" : "If it is an element on the roadway that cannot follow its movement in the minutes that follow, you can pass the obstacle. A mountain rock fits into this scenario. However, if it is a garbage truck or a bus at its stop, it is necessary to wait since its stop is temporary. Even if the bus has just stopped (right turn signal is activated). "
     },
     {
         "ID" : 51,
         "points" : 9,
         "folder": "theme1\\img\\course6\\",
-        "core" :"<!img6.PNG!>Je m’arrête à hauteur : ",
-        "propositions" : ["de la première ligne discontinue", "de feu tricolore", "du passage pour piétons"],
+        "core" :"<!img6.PNG!>I stop at height:",
+        "propositions" : ["of the first broken line", "of traffic light", "of the pedestrian crossing"],
         "correct_answers" : [1, 0, 0],
-        "note" : "La première ligne discontinue est une ligne d’effet du feu. Elle délimite un sas cyclable, zone d’arrêt réservée aux cyclistes.Cela leur permet d’être mieux vus,et de pouvoir changer de direction en sécurité.Je m’arrête donc avant cette ligne."
+        "note" : "The first broken line is a fire effect line. It defines a cycle lock, a stop area reserved for cyclists. This allows them to be better seen, and to be able to change direction in safety. I therefore stop before this line. "
     },
     {
         "ID" : 52,
         "points" : 12,
         "folder": "theme1\\img\\course6\\",
-        "core" : "J’ai un appel urgent à passer. Je m’arrête à droite :<!img16.PNG!>",
-        "propositions" : ["A cheval sur le trottoir", "Complètement sur le trottoir", "Ni à cheval ni complètement sur le trottoir"],
+        "core" : "I have an urgent call to make. I stop on the right:<!img16.PNG!>",
+        "propositions" : ["On the sidewalk", "Completely on the sidewalk", "Neither on horseback nor completely on the sidewalk"],
         "correct_answers" : [0, 0, 1],
-        "note" : "Même urgent, un appel ne doit pas me faire oublier les règles et la sécurité : il est interdit et dangereux de s’arrêter à cheval ou complètement sur le trottoir. Je continue et je trouve un emplacement où je pourrai m’arrêter en sécurité sans gêner d’autres usagers."
+        "note" : "Even urgent, a call should not make me forget the rules and safety: it is forbidden and dangerous to stop on horseback or completely on the sidewalk. I continue and I find a place where I can stop safely without bothering other users."
     },
     {
         "ID" : 53,
         "points" : 5,
         "folder": "theme1\\img\\course6\\",
-        "core" : "<!img65.PNG!>Cette voiture, est-elle en infraction ?",
-        "propositions" : ["Oui", "Non"],
+        "core" : "<!img65.PNG!Is this car in violation?>",
+        "propositions" : ["Yes", "No"],
         "correct_answers" : [1, 0],
-        "note" : "Seulement les bus ont le droit de s'arrêter à cet endroit. Les lignes jaunes en zig zag interdisent aux autres véhicules de s'arrêter. Par conséquent, cette voiture est en infraction."
+        "note" : "Only buses are allowed to stop at this location. The yellow zigzag lines prohibit other vehicles from stopping. Therefore, this car is in violation. "
     },
     {
         "ID" : 54,
         "points" : 5,
         "folder": "theme1\\img\\course6\\",
-        "core" : "Lequel de ces 3 panneaux concerne-t-il toute une zone ?<!img66.PNG!>",
+        "core" : "Which of these 3 panels covers an entire area?<!img66.PNG!>",
         "propositions" : [ "1", "2", "3"],
         "correct_answers" : [1, 0, 0],
-        "note" : "Les panneaux carrés avec l'interdiction au milieu (le rond bleu et rouge) s'appliquent à une zone."
+        "note" : "The square signs with the prohibition in the middle (the blue and red circle) apply to an area."
     },
     {
         "ID" : 55,
         "points" : 8,
         "folder": "theme1\\img\\course6\\",
-        "core" : "Avez-vous le droit de stationner de cette façon (comme les 2 voitures sur la photo) ?<!img67.PNG!>",
-        "propositions" : ["Oui", "Non"],
+        "core" : "Are you allowed to park this way (like the 2 cars in the photo)?<!img67.PNG!>",
+        "propositions" : ["Yes", "No"],
         "correct_answers" : [1, 0],
-        "note" : "Vous avez le droit de franchir la ligne de rive pour stationner car vous ne gênez pas la circulation."
+        "note" : "You have the right to cross the shore line to park because you do not obstruct traffic."
     },
     {
         "ID" : 56,
         "points" : 4,
         "folder": "theme1\\img\\course6\\",
-        "core" : "Vous êtes garés pendant 8 jours au même endroit sur la voie publique (une place attitrée dans la rue). Est-ce considéré comme stationnement abusif ?",
-        "propositions" : ["Oui", "Non"],
+        "core" : "You are parked for 8 days in the same place on the public highway (a regular place in the street). Is this considered excessive parking?",
+        "propositions" : ["Yes", "No"],
         "correct_answers" : [1, 0],
-        "note" : "Même si vous avez payé la place (sur la voie publique), le stationnement est considéré comme abusif s'il excède 7 jours consécutifs. Vous risquez une amende."
+        "note" : "Even if you have paid for the space (on the public highway), parking is considered excessive if it exceeds 7 consecutive days. You risk a fine."
     },
     {
         "ID" : 57,
         "points" : 6,
         "folder": "theme1\\img\\course6\\",
-        "core" : "Ces deux voitures sur la droite, sont-elles en infraction ?<!img68.PNG!>",
-        "propositions" : ["Oui", "Non"],
+        "core" : "These two cars on the right, are they in violation?<!img68.PNG!>",
+        "propositions" : ["Yes", "No"],
         "correct_answers" : [1, 0],
-        "note" : "Aucun panneau ne précise que le stationnement sur le trottoir est autorisé."
+        "note" : "There is no sign stating that parking on the sidewalk is allowed."
     },
     {
         "ID" : 58,
         "points" : 9,
         "folder": "theme1\\img\\course6\\",
-        "core" : "Comment s'applique l'interdiction de s'arrêter et de stationner dans cette rue?<!img69.PNG!>",
-        "propositions" : [ "Au-delà du panneau, jusqu'à la prochaine intersection", "Vers la gauche", "Jusqu'à la fin de la rue"],
+        "core" : "How does the ban on stopping and parking on this street apply?<!img69.PNG!>",
+        "propositions" : ["Beyond the sign, to the next intersection", "To the left", "Until the end of the street"],
         "correct_answers" : [1, 0, 0],
-        "note" : "Pensez à coucher le panneau dans le sens de la marche pour obtenir le bon sens du panonceau !"
+        "note" : "Remember to lay the sign in the direction of travel to get the right direction of the sign!"
     },
     {
         "ID" : 59,
         "points" : 10,
         "folder": "theme1\\img\\course6\\",
-        "core" : "<!img70.PNG!>Ces places,  comment sont-elles accessibles ?",
-        "propositions" : ["Les deux sont accessibles à tout moment", "La place avec la ligne discontinue est accessible la nuit", "La place avec la ligne continue est réservée la nuit, mais libre le jour"],
+        "core" : "<!img70.PNG!>How are these places accessible?",
+        "propositions" : ["Both are accessible at any time", "The place with the broken line is accessible at night", "The place with the continuous line is reserved at night, but free during the day"],
         "correct_answers" : [0, 1, 0],
-        "note" : "Les places réservées aux livraisons sont accessibles la nuit à condition que la ligne jaune soit discontinue. Dans certaines villes cette règle est applicable entre 20 h et 7 h du matin les dimanches et les jours fériés."
+        "note" : "The places reserved for deliveries are accessible at night provided that the yellow line is broken. In some cities this rule is applicable between 8 p.m. and 7 a.m. on Sundays and public holidays."
     },
     {
         "ID" : 60,
         "points" : 7,
         "folder": "theme1\\img\\course6\\",
-        "core" : "<!img71.PNG!>Ce panneau, interdit-il de s'arrêter ?",
-        "propositions" : ["Oui", "Non"],
+        "core" : "<!img71.PNG!>Does this sign prohibit stopping?",
+        "propositions" : ["Yes", "No"],
         "correct_answers" : [0, 1],
-        "note" : "Non, ce panneau interdit seulement le stationnement. Conseil mnémotechnique : si le panneau est rayé en croix (des deux côtés) alors il est interdit et de stationner et de s'arrêter et s'il est rayé seulement une fois alors il est juste interdit de stationner."
+        "note" : "No, this sign only prohibits parking. Mnemonic advice: if the panel is crossed in a cross (on both sides) then it is forbidden to park and stop and if it is scratched only once then it is just forbidden to park."
     },
     {
         "ID" : 61,
         "points" : 10,
         "folder": "theme2\\img\\course1\\",
-        "core" : "<!img21.PNG!>Cette voiture freine. Le temps de réaction est 2 fois plus court à 50km/h qu’à 100km/h",
-        "propositions" : ["VRAI", "FAUX"],
+        "core" : "<!img21.PNG!>This car is braking. The reaction time is 2 times shorter at 50km / h than at 100km / h",
+        "propositions" : ["TRUE", "FALSE"],
         "correct_answers" : [0, 1],
-        "note" : "Le temps de réaction ne dépend pas de la vitesse à laquelle on roule, mais de la forme du conducteur. En revanche, la distance parcourue pendant le temps de réaction varie avec la vitesse. Ici on ne parle que du temps de réaction du conducteur."
+        "note" : "The reaction time does not depend on the speed at which one drives, but on the shape of the conductor. In contrast, the distance traveled during the reaction time varies with speed. Here we only talk about the reaction time of the driver."
     },
     {
         "ID" : 62,
         "points" : 10,
         "folder": "theme2\\img\\course1\\",
-        "core" : "<!img22.PNG!>Le feu est vert : ",
-        "propositions" : ["J’avance jusqu’au passage pour piétons", "Je m’arrête avant le feu"],
+        "core" : "<!img22.PNG!>The light is green:",
+        "propositions" : ["I am going to the pedestrian crossing", "I stop before the traffic lights"],
         "correct_answers" : [0, 1],
-        "note" : "La file de véhicule devant moi est à l’arrêt. Je dois donc m’arrêter avant le feu de façon à ne pas gêner la traversée de piétons sur le passage pour piétons"
+        "note" : "The line of vehicles in front of me is stopped. So I have to stop before the traffic light so as not to hinder the crossing of pedestrians on the pedestrian crossing"
     }, 
     {
         "ID" : 63,
         "points" : 5,
         "folder": "theme2\\img\\course1\\",
-        "core" : "<!img24.PNG!>A vitesse constante, la distance d'arrêt peut être modifiée en fonction :",
-        "propositions" : ["De l'état physique du conducteur", "De l'état du véhicule", "Des deux"],
+        "core" : "<!img24.PNG!>At constant speed, the stopping distance can be modified according to:",
+        "propositions" : ["Driver's physical condition", "Vehicle condition", "Both"],
         "correct_answers" : [0, 0, 1],
-        "note" : "La distance d'arrêt est la distance totale parcourue pendant le temps de réaction et la distance de freinage. Le temps de réaction dépend de l'état du conducteur. La distance de freinage dépend surtout de l'état du véhicule hormis le facteur vitesse. L distance d'arrêt peut être modifiée en fonction de l'état physique du conducteur et de l'état du véhicule."
+        "note" : "The stopping distance is the total distance traveled during the reaction time and the braking distance. The reaction time depends on the state of the conductor. The braking distance depends mainly on the condition of the vehicle except for the speed factor. The stopping distance can be changed depending on the physical condition of the driver and the condition of the vehicle."
     },
     {
         "ID" : 64,
         "points" : 7,
         "folder": "theme2\\img\\course1\\",
-        "core" : "Dans cette situation :<!img25.PNG!>",
-        "propositions" : ["Je passe", "Je m'arrête", "Je klaxonne"],
+        "core" : "<!img25.PNG!>In this situation :",
+        "propositions" : ["I pass", "I stop", "I honk"],
         "correct_answers" : [0, 1, 0],
-        "note" : "Un piéton est engagé sur le passage pour piétons, je dois lui céder le passage. L'arrêt est donc obligatoire."
+        "note" : "A pedestrian is engaged on the pedestrian crossing, I must give him the passage. The stop is therefore compulsory."
     },
     {
         "ID" : 65,
         "points" : 8,
         "folder": "theme2\\img\\course1\\",
-        "core" : "Dans cette situation :<!img26.PNG!>",
-        "propositions" : ["Je ralentis et je klaxonne puis je passe", "Je m'arrête", "Je passe directement"],
+        "core" : "In this situation :<!img26.PNG!>",
+        "propositions" : ["I slow down and I honk my horn then I pass", "I stop", "I pass directly"],
         "correct_answers" : [1, 0, 0],
-        "note" : "Mon feu est vert donc automatiquement, le feu pour piétons est rouge. Ce piéton semble ne pas m'avoir vu, ke klaxonne légèrement pour que cela l'interpelle, je ralentis afin de ne pas arriver trop vite sur lui et je passe."
+        "note" : "My light is green so automatically, the pedestrian light is red. This pedestrian does not seem to have seen me, ke honking slightly so that it calls to him, I slow down so as not to get too fast on him and I pass. "
     },
     {
         "ID" : 66,
         "points" : 12,
         "folder": "theme2\\img\\course1\\",
-        "core" : "Lorsque le soleil m'éblouit :<!img30.PNG!>",
-        "propositions" : [ "J'abaisse mon pare-soleil", "Je peux maintenir une allure normale", "J'accélère", "Je peux mettre des lunettes de soleil"],
+        "core" : "When the sun dazzles me:<!img30.PNG!>",
+        "propositions" : ["I lower my sun visor", "I can maintain a normal pace", "I accelerate", "I can put on sunglasses"],
         "correct_answers" : "1~0~0~1",
-        "note" : "Lorsqu'on est ébloui , il est fortement conseillé d'abaisser son pare-soleil ou de mettre des lunettes de soleil afin de mieux voir les dangers. J'abaisse aussi mon allure et allonge si nécessaire mes distances de sécurité."
+        "note" : "When you are dazzled, it is strongly advised to lower your sun visor or put on sunglasses to better see the dangers. I also lower my gait and lengthen my safety distances if necessary."
     },
     {
         "ID" : 67,
         "points" : 6,
         "folder": "theme2\\img\\course1\\",
-        "core" : "La distance de sécurité si je circule à 30km/h avec le véhicule qui me précède:<!img31.PNG!>",
-        "propositions" : ["Oui", "Non"],
+        "core" : "The safety distance if I travel at 30 km / h with the vehicle in front of me:<!img31.PNG!>",
+        "propositions" : ["Yes", "No"],
         "correct_answers" : [1, 0],
-        "note" : "À 30km/h , la distance de sécurité doit être environ de 18m. Le calcul est de multiplier la première dizaine de la vitesse par 6. Ma distance de sécurité est donc suffisante."
+        "note" : "At 30km / h, the safety distance should be around 18m. The calculation is to multiply the first ten of the speed by 6. My safety distance is therefore sufficient. "
     },
     {
         "ID" : 68,
         "points" : 4,
         "folder": "theme2\\img\\course1\\",
-        "core" : "Mon passager m'incite à accélérer pour passer au feu vert :<!img33.PNG!>",
-        "propositions" : ["Je l'écoute et j'accélère pour passer au plus vite", "Je ne l’écoute pas et je ralentis"],
+        "core" : "My passenger encourages me to accelerate to go to the green light:<!img33.PNG!>",
+        "propositions" : ["I listen to it and I accelerate to pass quickly", "I do not listen to it and I slow down"],
         "correct_answers" : [0, 1],
-        "note" : "Je ralentis et n’écoute pas les conseils qui peuvent mettre en danger les autres ou moi-même. En approche d’un feu tricolore au vert je dois toujours ralentir et m’apprêter à freiner pour m’arrêter au feu orange ou rouge."
+        "note" : "I slow down and don't listen to advice that can endanger others or myself. When approaching a traffic light in green I always have to slow down and get ready to brake to stop at the orange or red light . "
     },
     {
         "ID" : 69,
         "points" : 6,
         "folder": "theme2\\img\\course1\\",
-        "core" : "Pour prendre la direction de l’autoroute :<!img34.PNG!>",
-        "propositions" : ["Je mets mon clignotant droit immédiatement","Je mets mon clignotant droit après la première sortie"],
+        "core" : "To take the direction of the highway:<!img34.PNG!>",
+        "propositions" : ["I put my right turn signal immediately", "I put my right turn signal after the first outing"],
         "correct_answers" : [0, 1],
-        "note" : "Pour prendre la direction de l’autoroute, je dois prendre la deuxième sortie. Je ne mets donc pas mon clignotant droit immédiatement mais juste après la première sortie."
+        "note" : "To take the direction of the highway, I have to take the second exit. So I don't put my right turn signal immediately but just after the first exit."
     },
     {
         "ID" : 70,
         "points" : 7,
         "folder": "theme2\\img\\course1\\",
-        "core" : "<!img35.PNG!>Dans cette situation, pour prendre la prochaine sortie, je reste attentif : ",
-        "propositions" :["Au véhicule arrêté à droite", "Au véhicule qui me suit", "Aux deux véhicules"],
+        "core" : "<!img35.PNG!>In this situation, to take the next exit, I remain attentive:",
+        "propositions" :["To the vehicle stopped on the right", "To the vehicle following me", "To the two vehicles"],
         "correct_answers" : [0, 0, 1],
-        "note" : "Le véhicule arrêté à droite représente une zone de danger car un de ses passager pourrait à tout moment ouvrir une portière. Je prévois donc de m’écarter de lui et je surveille également la trajectoire et l’allure du véhicule qui me suit."
+        "note" : "The vehicle stopped on the right represents a danger zone because one of its passengers could open a door at any time. So I plan to move away from him and I also monitor the trajectory and the pace of the vehicle following me."
     },
     {
         "ID" : 71,
         "points" : 8,
         "folder": "theme2\\img\\course2\\",
-        "core" : "Cela fait 2h30 que je roule, je ressens de la fatigue, mais je suis bientôt arrivé à destination<!img23.PNG!>",
-        "propositions" : ["Je fais une pause","Je continue en roulant plus vite", "Je continue en roulant moins vite"],
+        "core" : "I've been driving for 2 and a half hours, I'm feeling tired, but I soon arrived at my destination<!img23.PNG!>",
+        "propositions" : ["I take a break", "I continue driving faster", "I continue driving slower"],
         "correct_answers" : [1, 0, 0],
-        "note" : "Lorsque les premiers effets de la fatigue se font ressentir, je dois absolument m’arrêter pour faire une pause et me reposer, même si cela vient de retarder mon heure d'arrivée."
+        "note" : "When the first effects of fatigue are felt, I absolutely must stop to take a break and rest, even if it just delayed my arrival time. "
     },
     {
         "ID" : 72,
         "points" : 5,
         "folder": "theme2\\img\\course2\\",
-        "core" : "La ceinture de sécurité de cette conductrice est bouclé correctement?<!img27.PNG!>",
-        "propositions" : ["Oui", "Non"],
+        "core" : "Is this driver's seat belt fastened correctly?<!img27.PNG!>",
+        "propositions" : ["Yes", "No"],
         "correct_answers" : [1, 0],
-        "note" : "La ceinture de sécurité n'est pas vrillée et est bouclée correctement, cette conductrice peut donc partir en sécurité."
+        "note" : "The seat belt is not twisted and is fastened correctly, so this driver can leave in safety."
     },
     {
         "ID" : 73,
         "points" : 4,
         "folder": "theme2\\img\\course2\\",
-        "core" : "<!img28.PNG!>Transporter des affaires lourdes à l'avant est :",
-        "propositions" : ["Conseillé", "Déconseillé"],
+        "core" : "<!img28.PNG!>Transporting heavy stuff to the front is:",
+        "propositions" : ["Recommended", "Not recommended"],
         "correct_answers" : [0, 1],
-        "note" : "Transporter des affaires lourdes à l'avant du véhicule est fortement déconseillé. En cas de freinage brutal, les affaires seraient projetées vers l'avant et cela pourrait créer une défaillance des airbags."
+        "note" : "Carrying heavy items in front of the vehicle is strongly discouraged. In the event of hard braking, the items would be thrown forward and this could cause the airbags to fail."
     },
     {
         "ID" : 74,
         "points" : 3,
         "folder": "theme2\\img\\course2\\",
-        "core" : "Si un passager majeur n'attache pas sa ceinture à l'arrière du véhicule, cette action est punie d'une amende :<!img29.PNG!>",
-        "propositions" : ["Aux frais du conducteur", "Aux frais du passage"],
+        "core" : "If an adult passenger does not fasten their seat belt to the rear of the vehicle, this action is punishable by a fine:<!img29.PNG!>",
+        "propositions" : ["At the driver's expense", "At the driver's expense"],
         "correct_answers" : [0, 1],
-        "note" : "Si un passager majeur n'attache pas sa ceinture à l'arrière du véhicule, cette action est punie d'une amende aux frais du passager."
+        "note" : ""If a adult passenger does not fasten their seat belt to the rear of the vehicle, this action is punishable by a fine at the passenger's expense.
     },
     {
         "ID" : 75,
         "points" : 2,
         "folder": "theme2\\img\\course2\\",
-        "core" : "<!img32.PNG!>Une seconde de distraction en conduite peut provoquer un accident :",
-        "propositions" : ["Oui", "Non"],
+        "core" : "<!img32.PNG!>A second of distraction while driving can cause an accident:",
+        "propositions" : ["Yes", "No"],
         "correct_answers" : [1, 0],
-        "note" : "En une seconde, même à allure réduite, mon véhicule continue à avancer. Si par exemple un usager devant moi freine brusquement, je risque de ne pas le voir. Je dois donc rester attentif dans toutes les situations."
+        "note" : "In a second, even at reduced speed, my vehicle continues to move forward. If, for example, a user in front of me brakes suddenly, I may not be able to see him. I must therefore remain attentive in all situations."
     },
     {
         "ID" : 76,
         "points" : 4,
         "folder": "theme2\\img\\course2\\",
-        "core" : "Le taux d’alcoolémie constituant une infraction et le taux d’alcoolémie constituant un délai sont de : ",
-        "propositions" : ["0.5mg/l d’air expiré , 0.8g/l de sang","0.5mg/l d’air expiré ,  0.5mg/l d’air expiré","0.5g/l de sang , 0.8g/l de sang", "0.5g/l de sang, 0.5mg/l d’air expiré"],
+        "core" : "The blood alcohol level constituting an offense and the blood alcohol level constituting a delay are:",
+        "propositions" : ["0.5mg / l of exhaled air, 0.8g / l of blood", "0.5mg / l of exhaled air, 0.5mg / l of exhaled air", "0.5g / l of blood, 0.8g / l of blood "," 0.5g / l of blood, 0.5mg / l of exhaled air "],
         "correct_answers" : [0, 0, 0, 1],
-        "note" : "Les bons seuils du délit et de l’infraction sont exprimés en g/l de sang et non dans l’air expiré, soit 0.5g/l de sang pour l’infraction et 0.8g/l de sang 0.5mg/l d’air expiré pour le seuil du délit."
+        "note" : "The correct thresholds for the offense and the offense are expressed in g / l of blood and not in the expired air, ie 0.5g / l of blood for the offense and 0.8g / l of blood 0.5mg / l d air expired for the threshold of the offense. "
     },
     {
         "ID" : 77,
         "points" : 6,
         "folder": "theme2\\img\\course2\\",
-        "core" : "<!img39.PNG!>Avant de tourner à droite : ",
-        "propositions" : ["Je contrôle mon angle droit seulement", "J’actionne mon clignotant seulement", "Je contrôle mon angle droit et J’actionne mon clignotant"],
+        "core" : "<!img39.PNG!> Before turning right:",
+        "propositions" : ["I control my right angle only", "I operate my turn signal only", "I control my right angle and I operate my turn signal"],
         "correct_answers" : [0, 0, 1],
-        "note" : "Je longe une bande cyclable. Même si elle va se terminer, un cycliste pourrait se trouver à côté de moi. Je contrôle donc dans mon angle mort droit avant de tourner mes roues. J’actionne mon clignotant car c’est le seul moyen de prévenir un usager de mon changement de direction.x"
+        "note" : "I follow a cycle lane. Even if it ends, a cyclist could be next to me. So I control in my right blind spot before turning my wheels. I activate my turn signal because it is the only way to warn a user of my change of direction"
     },
     {
         "ID" : 78,
         "points" : 4,
         "folder": "theme2\\img\\course2\\",
-        "core" : "L’acuité visuelle du conducteur doit être, pour conserver son permis B, au moins de :",
-        "propositions" : ["5/10ème sur deux yeux", "6/10ème sur les deux yeux"],
+        "core" : "To maintain his B license, the driver's visual acuity must be at least:",
+        "propositions" : ["5 / 10th on two eyes", "6 / 10th on both eyes"],
         "correct_answers" : [1, 0],
-        "note" : "L’acuité visuelle minimum pour conduire un véhicule de la catégorie B,doit être au moins de 5/10ème sur les deux yeux. Si ma vision est quasiment nulle sur un oeil, le second doit avoir au moins 5/10ème."
+        "note" : "The minimum visual acuity to drive a vehicle of category B, must be at least 5 / 10th on both eyes. If my vision is almost zero on one eye, the second must be at least 5 / 10th. "
     },
     {
         "ID" : 79,
         "points" : 5,
         "folder": "theme2\\img\\course2\\",
-        "core" : "Si vous avez mélangé la drogue et l'alcool et le dépistage le démontre, que risquez-vous ?",
-        "propositions" : ["Juste une amende", "Une amende avec une peine d'emprisonnement"],
+        "core" : "If you have mixed drugs and alcohol and testing shows this, what do you risk?",
+        "propositions" : ["Just a fine", "A fine with a prison sentence"],
         "correct_answers" : [0, 1],
-        "note" : "Si vous avez mélangé l'alcool et la drogue, les sanctions sont plus dures. L'amende peut atteindre 9000 euros accompagnée d'une peine d'emprisonnement jusqu'à 3 ans. Eh oui, si vous provoquez un accident et tuez des gens par inadvertance, c'est grave."
+        "note" : "If you have mixed alcohol and drugs, the sanctions are harsher. The fine can reach 9000 euros accompanied by a prison sentence of up to 3 years. Yes, if you cause an accident and kill people inadvertently, this is serious. "
     },
     {
         "ID" : 80,
         "points" : 5,
         "folder": "theme2\\img\\course2\\",
-        "core" : "Vous avez réalisé que vous avez bu un verre de trop. Si vous mangez un bout, cela vous aidera-t-il à baisser le taux d'alcoolémie dans le sang ?",
-        "propositions" : ["Oui", "Non"],
+        "core" : "You have realized that you have had too much. If you eat a tip, will it help you lower your blood alcohol level?",
+        "propositions" : ["Yes", "No"],
         "correct_answers" : [0, 1],
-        "note" : "Avant de prendre la voiture, ne cherchez pas à boire de l'eau pour 'diluer' l'alcool, ni à manger sur le pouce en voulant susciter l'effet éponge. Les bonbons à la menthe ou le café salé ne vous aideront pas non plus."
+        "note" : "Before taking the car, do not try to drink water to 'dilute' alcohol, or eat on the go while wanting to cause the sponge effect. Mint candies or salty coffee won't help you either. "
     },
     {
         "ID" : 81,
         "points" : 8,
         "folder": "theme3\\img\\course1\\",
-        "core" : "Pour voir loin la nuit,  quels feux faut-il allumer ?",
-        "propositions" : ["Feux de croisement", "Feux de position", "Feux de route", "Feux de brouillard"],
+        "core" : "To see far at night, what lights should you light?",
+        "propositions" : ["Low beam", "Position light", "Main beam", "Fog light"],
         "correct_answers" : [0, 0, 1, 0],
-        "note" : "Pour voir loin, il est plus adapté d'allumer les feux de route."
+        "note" : "To see far, it is more suitable to turn on the high beams."
     },
     {
         "ID" : 82,
         "points" : 4,
         "folder": "theme3\\img\\course1\\",
-        "core" : "Les feux de position suffisent-ils la nuit en agglomération  ?",
-        "propositions" : ["Oui", "Non"],
+        "core" : "Are the position lights sufficient at night in built-up areas?",
+        "propositions" : ["Yes", "No"],
         "correct_answers" : [1, 0],
-        "note" : "En agglomération les routes sont généralement bien éclairées, donc il faut allumer les feux de position et / ou les feux de croisement."
+        "note" : "In built-up areas the roads are generally well lit, so you have to turn on the side lights and / or the low beams."
     },
     {
         "ID" : 83,
         "points" : 12,
         "folder": "theme3\\img\\course1\\",
-        "core" : "Par quoi l'aquaplaning peut-il être favorisé  (plusieurs réponses sont possibles) ?",
-        "propositions" : ["Le vent latéral", "La vitesse et l'état des pneus", "Les phares", "L'état de la route"],
+        "core" : "How can aquaplaning be promoted (several answers are possible)?",
+        "propositions" : ["The side wind", "The speed and condition of the tires", "The headlights", "The state of the road"],
         "correct_answers" : [1, 1, 0, 1],
-        "note" : "Le vent, la vitesse, l'état des pneus ou de la route peuvent contribuer à l'apparition d'aquaplaning."
+        "note" : "Wind, speed, tire or road conditions can contribute to the appearance of aquaplaning."
     },
     {
         "ID" : 84,
         "points" : 6,
         "folder": "theme3\\img\\course1\\",
-        "core" : "Si en cas de brouillard la visibilité est inférieure à 50 m, quelle est la vitesse maximale que vous ne devez pas dépasser hors agglomération ?",
+        "core" : "If the visibility is less than 50 m in the event of fog, what is the maximum speed that you must not exceed outside built-up areas?" ,
         "propositions" : ["50 km / h", "70 km / h", "80 km / h"],
         "correct_answers" : [1, 0, 0],
-        "note" : "50 km /h est la vitesse maximale à ne pas dépasser."
+        "note" : "50 km /h is the maximum speed not to be exceeded."
     },
     {
         "ID" : 85,
         "points" : 8,
         "folder": "theme3\\img\\course1\\",
-        "core" : "Quel est le risque sur la route quand il y a du vent  (plusieurs réponses possibles) ?",
-        "propositions" : ["De faire de l'aquaplaning s'il pleut", "D'être déporté en dépassant un véhicule", "D'allonger la distance de freinage"],
+        "core" : "What is the risk on the road when there is wind (several answers possible)?",
+        "propositions" : ["To do aquaplaning if it rains", "To be deported when passing a vehicle", "To extend the braking distance"],
         "correct_answers" : [1, 1, 0],
-        "note" : "Quand il y a du vent et qu'il pleut vous risquez l'aquaplaning. Il suffit de ralentir pour l'éviter. Concernant le changement de trajectoire, le vent peut l'exercer, donc faites attention aux dépassements des poids-lourds surtout."
+        "note" : "When there is wind and it rains you risk aquaplaning. Just slow down to avoid it. Concerning the change of trajectory, the wind can exert it, so watch out for overtaking by heavy goods vehicles especially . "
     },
     {
         "ID" : 86,
         "points" : 4,
         "folder": "theme3\\img\\course2\\",
-        "core" : "Qu'est ce qui n'existe pas sur autoroute ?",
-        "propositions" : ["La signalisation temporaire", "Les virages", "Les intersections"],
+        "core" : "What doesn’t exist on the highway?",
+        "propositions" : ["Temporary signage", "Turns", "Intersections"],
         "correct_answers" : [0, 0, 1],
-        "note" : "Si vous voulez changer de direction, vous devez emprunter une bretelle de sortie."
+        "note" : "If you want to change direction, you have to take an exit ramp."
     },
     {
         "ID" : 87,
         "points" : 2,
         "folder": "theme3\\img\\course2\\",
-        "core" :"<!img36.PNG!>Êtes-vous sur l'autoroute A51 ?",
-        "propositions" : ["Oui", "Non"],
+        "core" :"<!img36.PNG!>Are you on the A51 motorway ?",
+        "propositions" : ["Yes", "No"],
         "correct_answers" : [0, 1],
-        "note" : "Vous n'êtes pas ENCORE sur cette autoroute. Le panneau indique que si vous continuez à rouler sur la même voie (celle où vous vous trouvez actuellement), vous allez rejoindre cette autoroute."
+        "note" : "You are NOT YET on this highway. The sign indicates that if you continue to drive on the same lane (the one where you are currently), you will join this highway. "
     },
     {
         "ID" : 88,
         "points" : 2,
         "folder": "theme3\\img\\course2\\",
-        "core" : "Toutes les autoroutes, sont-elles payantes ?",
-        "propositions" : ["Oui", "Non"],
+        "core" : "Are all motorways chargeable?",
+        "propositions" : ["Yes", "No"],
         "correct_answers" : [0, 1],
-        "note" : "Certains tronçons d'autoroute ne sont pas payants. Exemple : Nancy - Metz."
+        "note" : "Some sections of motorway are not chargeable. Example: Nancy - Metz."
     },
     {
         "ID" : 89,
         "points" : 4,
         "folder": "theme3\\img\\course2\\",
-        "core" : "<!img37.PNG!>Si vous voulez aller en Avignon sans payer le péage, que devez-vous faire ?",
-        "propositions" : ["Vous déporter à droite", "Rester sur la voie où vous êtes actuellement"],
+        "core" : "<!img37.PNG!>If you want to go to Avignon without paying the toll, what should you do?",
+        "propositions" : ["Deport you to the right", "Stay on the path where you are currently"],
         "correct_answers" : [1, 0],
-        "note" : "Si vous ne voulez pas payer le péage, vous avez la possibilité de rejoindre Avignon par la route nationale (RN), mais dans ce cas-là il faut changer de voie (se déporter vers la droite). Le trajet risque d'être plus long car la RN peut traverser les villages ce qui vous obligera à ralentir."
+        "note" : "If you do not want to pay the toll, you have the possibility of joining Avignon by the national road (RN), but in this case it is necessary to change lane (to deport to the right). The journey may be longer because the RN can cross the villages which will force you to slow down. "
     },
     {
         "ID" : 90,
         "points" : 3,
         "folder": "theme3\\img\\course2\\",
-        "core" : "<!img72.PNG!>Quelle est la vitesse maximale sous le n°1 ? Et sur le n°2 ?",
+        "core" : "<!img72.PNG!> What is the maximum speed under No. 1? And on the n°2 ?",
         "propositions" : ["1. 120 km/h ; 2. 140 km/h", "1. 130 km/h ; 2. 110 km/h", "1. 130 km/h ; 2. 100 km/h"],
         "correct_answers" : [0, 1, 0],
-        "note" : "C'est 130 km/h pour la première et 110 km/h pour la deuxième"
+        "note" : "It is 130 km / h for the first and 110 km / h for the second"
     },
     {
         "ID" : 91,
         "points" : 12,
         "folder": "theme3\\img\\course2\\",
-        "core" : "Sur quelles partie d'autoroute est-il interdit de circuler (plusieurs réponses possibles) ?",
-        "propositions" : ["Le zèbre", "La BAU", "Le terre plein du milieu", "Sur la voie de gauche"],
+        "core" : " On which part of the motorway it is forbidden to drive (several answers possible) ?",
+        "propositions" : ["The zebra", "The BAU", "The land full of the middle", "On the left path"],
         "correct_answers" : [1, 1, 1, 0],
-        "note" : "Vous pouvez circuler sur la gauche si vous dépassez un véhicule. Il n'est donc pas interdit de circuler sur cette voie."
+        "note" : "You can drive on the left if you pass a vehicle. It is therefore not prohibited to drive on this route."
     },
     {
         "ID" : 92,
         "points" : 6,
         "folder": "theme3\\img\\course2\\",
-        "core" : "A quel moment les poids lourds de plus de 7,5 tonnes de PTAC (Poids Total Autorisé en Charge) n’ont-ils pas le droit de circuler ?",
-        "propositions" : ["Les weekends quelle que soit l'heure de la journée", "Toute la journée de dimanche"],
+        "core" : "When are heavy goods vehicles over 7.5 tonnes of GVWR (Permitted Total Weight) not allowed to travel?",
+        "propositions" : ["Weekends whatever the time of day", "All day Sunday"],
         "correct_answers" : [0, 1],
-        "note" : "Les poids lourds de plus de 7,5 tonnes de PTAC (Poids Total Autorisé en Charge) n’ont pas le droit de circuler :(entre autres) --> le samedi à partir de 22h jusqu’au dimanche 22h."
+        "note" : "Heavy goods vehicles weighing more than 7.5 tonnes of GVWR (Total Permissible Loaded Weight) are not allowed to travel: (among others) -> Saturdays from 10 p.m. until Sunday 10 p.m."
     },
     {
         "ID" : 93,
         "points" : 6,
         "folder": "theme3\\img\\course2\\",
-        "core" : "Sous quelle condition est-il possible d'emprunter la voie des véhicules lents ?",
-        "propositions" : ["Si vous roulez à 70 km /h", "Si vous roulez à 90 km/h"],
+        "core" : "Under what condition is it possible to take the slow vehicle lane?",
+        "propositions" : ["If you are traveling at 70 km / h", "If you are traveling at 90 km / h"],
         "correct_answers" : [1, 0],
-        "note" : "Si vous ne roulez pas à plus de 60 km/h, vous devez l'emprunter."
+        "note" : "If you are not traveling at more than 60 km / h, you must take it."
     },
     {
         "ID" : 94,
         "points" : 5,
         "folder": "theme3\\img\\course2\\",
-        "core" : "<!img73.PNG!>Ce panneau, qu'annonce-t-il ?",
-        "propositions" : ["Une bifurcation avec voie de décélération", "Une bifurcation avec affectation des voies"],
+        "core" : "<!img73.PNG!>What does this panel announce?",
+        "propositions" : ["A bifurcation with deceleration lane", "A bifurcation with lane allocation"],
         "correct_answers" : [1, 0],
-        "note" : "Il s'agit d'un avertissement avec voie de décélération car la bifurcation annoncée comme sur un arbre les villes en guise de terminus de chaque autoroute."
+        "note" : "It is a warning with deceleration lane because the bifurcation announced as on a tree the cities as terminus of each highway."
     },
     {
         "ID" : 95,
         "points" : 5,
         "folder": "theme3\\img\\course2\\",
-        "core" : "Comment calcule-t-on les distances de sécurité sur autoroute ?",
-        "propositions" : ["En comptant les 3 traits de la ligne médiane","En comptant les 2 traits de la ligne BAU"],
+        "core" : "How are safety distances on the highway calculated?",
+        "propositions" : ["By counting the 3 lines of the middle line", "By counting the 2 lines of the BAU line"],
         "correct_answers" : [0, 1],
-        "note" : "On peut calculer les distances de sécurité sur autoroute en comptant les 2 traits de la ligne BAU"
+        "note" : "We can calculate the safety distances on motorways by counting the 2 lines of the line BAU"
     },
     {
         "ID" : 96,
         "points" : 10,
         "folder": "theme3\\img\\course3\\",
-        "core" : "<!img74.PNG!>Dans cette situation que faut-il faire ?",
-        "propositions" : ["Garder la même allure car vous avez la priorité", "Vous arrêter", "Ralentir"],
+        "core" : "<!img74.PNG!> In this situation what should be done?",
+        "propositions" : ["Keep the same pace because you have priority", "Stop", "Slow down"],
         "correct_answers" : [0, 0, 1],
-        "note" : "Même si vous avez la priorité, il est préférable de ralentir car la chaussée est rétrécie ( vous pourriez endommager votre véhicule ou être surpris par des trous par exemple) et aussi parce que près des chantiers il y a des hommes qui y travaillent."
+        "note" : "Even if you have priority, it is better to slow down because the road is narrowed (you could damage your vehicle or be surprised by holes for example) and also because near the construction sites there are men who work there."
     },
     {
         "ID" : 97,
         "points" : 9,
         "folder": "theme3\\img\\course3\\",
-        "core" : "Quels feux doivent être allumés à l'entrée d'un tunnel ?",
-        "propositions" : ["Les feux de route", "Les feux de croisement", "Les feux de position"],
+        "core" : "What lights should be lit at the entrance to a tunnel?",
+        "propositions" : ["High beam", "Low beam", "Position light"],
         "correct_answers" : [0, 1, 0],
-        "note" : "Le tunnel est assimilé zone de nuit. Même s'ils sont bien éclairés, il faut allumer les feux de croisement."
+        "note" : "The tunnel is assimilated to the night zone. Even if they are well lit, you must turn on the low beams."
     },
     {
         "ID" : 98,
         "points" : 5,
         "folder": "theme3\\img\\course3\\",
-        "core" : "Comment calcule-t-on la distance de sécurité dans un tunnel ?",
-        "propositions" : ["En comptant 2 traits de la BAU = 90 m", "En comptant 2 lumières bleues = 150 m"],
+        "core" : "How do you calculate the safety distance in a tunnel?",
+        "propositions" : ["By counting 2 lines of BAU = 90 m", "By counting 2 blue lights = 150 m"],
         "correct_answers" : [0, 1],
-        "note" : "2 lumières bleues (diodes) peuvent être prises comme repères car elles représentent 150 m normalement."
+        "note" : "2 blue lights (diodes) can be taken as benchmarks because they represent 150 m normally."
     },
     {
         "ID" : 99,
         "points" : 9,
         "folder": "theme3\\img\\course3\\",
-        "core" : "Que faut-il faire si la fumée apparaît dans le tunnel devant vous ?",
-        "propositions" : ["Il faut continuer à conduire, car il ne faut pas faire marche arrière", "Il faut se diriger vers l'issue de secours devant soi", "Il faut immobiliser le véhicule et laisser les clés sur le contact. Il faut quitter le tunnel par la sortie la plus proche"],
+        "core" : "What to do if smoke appears in the tunnel in front of you?",
+        "propositions" : ["You must continue driving, because you must not reverse", "You must go towards the emergency exit in front of you", "You must immobilize the vehicle and leave the keys on the ignition. You must leave the tunnel by the nearest exit "],
         "correct_answers" : [0, 0, 1],
-        "note" : "En cas d'incendie, il faut immobiliser le véhicule et laisser les clés sur le contact. Pour éviter toute inhalation de fumée, il faut se diriger à l'opposé de l'incendie vers l'issue de secours la plus proche."
+        "note" : "In the event of a fire, immobilize the vehicle and leave the keys in the ignition. To avoid any inhalation of smoke, you must go away from the fire to the nearest emergency exit."
     },
     {
         "ID" : 100,
         "points" : 3,
         "folder": "theme3\\img\\course3\\",
-        "core" : "A combien de mètres se situe cette présignalisation hors agglomération ?<!img75.PNG!>",
+        "core" : "How many meters away is this early warning outside the built-up area?<!img75.PNG!>",
         "propositions" : ["50 m", "100 m", "150 m"],
         "correct_answers" : [0, 0, 1],
-        "note" : "Hors agglomération, ce panneau annonce un passage à niveau à 150 m et en agglomération il l'annonce à 50m."
+        "note" : "Outside built-up areas, this sign announces a level crossing at 150 m and in built-up areas it announces it at 50 m."
     },
     {
         "ID" : 101,
         "points" : 2,
         "folder": "theme3\\img\\course3\\",
-        "core" : "Le passage à niveau, peut-il aussi concerner un tramway ?",
-        "propositions" : ["Oui", "Non"],
+        "core" : "Can the level crossing also concern a tram?",
+        "propositions" : ["Yes", "No"],
         "correct_answers" : [1, 0],
-        "note" : "Le passage à niveau peut concerner un tramway aussi car celui-ci se déplace sur les rails, comme le train."
+        "note" : "The level crossing can also concern a tramway because it travels on rails, like the train."
     },
     {
         "ID" : 102,
         "points" : 4,
         "folder": "theme3\\img\\course3\\",
-        "core" : "Si vous restez bloqués sur la voie de train, avez-vous le droit d'enfoncer les barrières ?",
-        "propositions" : ["Oui", "Non"],
+        "core" : "If you get stuck on the train track, are you allowed to break down the barriers?",
+        "propositions" : ["Yes", "No"],
         "correct_answers" : [1, 0],
-        "note" : "Les barrières sont faites pour être enfoncées en cas d'extrême urgence, donc vous pouvez le faire."
+        "note" : "The barriers are made to be broken down in an emergency, so you can do it."
     },
     {
         "ID" : 103,
         "points" : 5,
         "folder": "theme3\\img\\course3\\",
-        "core" : "Qui a la priorité dans cette situation ?<!img76.PNG!>",
-        "propositions" : ["La voiture", "Le tramway"],
+        "core" : "Who has priority in this situation?<!img76.PNG!>",
+        "propositions" : ["The car", "The tram" "The car", "The tram"],
         "correct_answers" : [0, 1],
-        "note" : "C'est le tramway qui a la priorité sur la voiture."
+        "note" : "The tram has priority over the car."
     },
     {
         "ID" : 104,
         "points" : 4,
         "folder": "theme4\\img\\course1\\",
-        "core" : "Si en cas de contrôle de police vous n'êtes pas en mesure de présenter votre permis de conduire (vous l'avez oublié à la maison), que risquez-vous ?",
-        "propositions" : ["1 point de retiré et 11 euros d'amende", "3 points de retirés et 11 euros d'amende", "38 euros d'amende", "65 euros d'amende"],
+        "core" : "If in the event of a police check you are unable to present your driving license (you forgot it at home), what do you risk?",
+        "propositions" : ["1 point to withdraw and 11 euros fine", "3 points to withdraw and 11 euros fine", "38 euros fine", "65 euros fine"],
         "correct_answers" : [0, 0, 1, 0],
-        "note" : "Vous devez payer 11 euros d'amende, mais vous devez aussi aller à la Préfecture de police pour présenter le document sous 5 jours."
+        "note" : "You have to pay a fine of 11 euros, but you also have to go to the Police Prefecture to present the document within 5 days."
     },
     {
         "ID" : 105,
         "points" : 8,
         "folder": "theme4\\img\\course1\\",
-        "core" : "Quels sont les documents facultatifs ? (Plusieurs réponses sont possibles)",
-        "propositions" : ["La carte grise", "Le constat amiable", "Le disque de stationnement"],
+        "core" : "What are the optional documents? (Many answers are possible)",
+        "propositions" : ["The gray card", "The amicable report", "The parking disc"],
         "correct_answers" : [0, 1, 1],
-        "note" : "La carte grise est un document obligatoire."
+        "note" : "The gray card is a compulsory document."
     },
     {
         "ID" : 106,
         "points" : 3,
         "folder": "theme4\\img\\course1\\",
-        "core" : "Si vous perdrez votre permis de conduire, qu'obtiendriez-vous comme document de substitution ?",
-        "propositions" : ["Le récépissé de permis de conduire", "Le C.E.P.C."],
+        "core" : "If you lose your driver's license, what would you expect as a replacement document?",
+        "propositions" : ["The driving license receipt", "The C.E.P.C."],
         "correct_answers" : [1, 0],
-        "note" : "Vous obtiendrez le récépissé de permis de conduire qui est valable 2 mois, mais il faut faire la démarche auprès de la préfecture pour l'avoir.Le C.E.P.C. (Certificat d'Examen du Permis de Conduire) est obtenu une fois que vous avez réussi votre épreuve pratique"
+        "note" : "You will get the driving license receipt which is valid for 2 months, but you must approach the prefecture to have it. (Driving License Examination Certificate) is obtained once you have passed your practical test "
     },
     {
         "ID" : 107,
         "points" : 5,
         "folder": "theme4\\img\\course1\\",
-        "core" : "La date du prochain contrôle technique, où figure-t-elle ?",
-        "propositions" : ["Sur le macaron de la visite technique", "Sur le macaron de la visite technique et sur la carte grise", "Sur le macaron de la visite technique et sur la vignette d'assurance"],
+        "core" : "The date of the next technical inspection, where does it appear?",
+        "propositions" : ["On the badge for the technical inspection", "On the badge for the technical inspection and on the registration card", "On the badge for the technical inspection and on the insurance sticker"],
         "correct_answers" : [0, 1, 0],
-        "note" : "Cette date apparaît sur la carte grise et sur le macaron."
+        "note" : "This date appears on the registration card and on the badge."
     },
     {
         "ID" : 108,
         "points" : 4,
         "folder": "theme4\\img\\course1\\",
-        "core" : "Si vous avez un accident, l'autre conducteur est-il obligé de signer le constat amiable ?",
-        "propositions" : ["Oui", "Non"],
+        "core" : "If you have an accident, is the other driver obliged to sign the joint report?",
+        "propositions" : ["Yes", "No"],
         "correct_answers" : [0, 1],
-        "note" : "L'autre conducteur peut refuser de signer le constat. Remplissez la partie du constat amiable qui vous concerne et dans la partie observations indiquez que l’autre conducteur a refusé de signer. Vous disposez toujours de 5 jours pour faire parvenir le constat amiable à votre assureur. Si le conducteur ayant refusé de signer ne se manifeste pas auprès de sa compagnie, c’est lui qui sera considéré comme étant en tort."
+        "note" : "The other driver can refuse to sign the report. Fill in the section of the joint report that concerns you and in the comments section indicate that the other driver refused to sign. You always have 5 days to send the amicable report to your insurer. If the driver who refused to sign does not come to his company, he will be considered to be at fault. "
     },
     {
         "ID" : 109,
         "points" : 3,
         "folder": "theme4\\img\\course2\\",
-        "core"  :"La consommation de carburant, augmente-t-elle si la voiture est plus chargée que d'habitude?",
-        "propositions" : ["Oui", "Non"],
+        "core"  :"Does fuel consumption increase if the car is more loaded than usual?",
+        "propositions" : ["Yes", "No"],
         "correct_answers" : [1, 0],
-        "note" : "La voiture doit mettre plus de force à produire de l'énergie et donc d'avancer. Oui, la consommation du carburant augmente."
+        "note" : "The car must put more force to produce energy and therefore to move forward. Yes, fuel consumption is increasing."
     },
     {
         "ID" : 110,
         "points" : 5,
         "folder": "theme4\\img\\course2\\",
-        "core" : "Quelle est la dimension du chargement du véhicule en largeur qui ne doit pas être dépassée ?",
+        "core" : "What is the dimension of the loading of the vehicle in width which must not be exceeded?",
         "propositions" : ["2m", "2,5m", "2,55m"],
         "correct_answers" : [0, 0, 1],
-        "note" : "La dimension du chargement du véhicule en largeur qui ne doit pas être dépassée est 2,55m."
+        "note" : "The dimension of the loading of the vehicle in width which must not be exceeded is 2.55m."
     },
     {
         "ID" : 111,
         "points" : 6,
         "folder": "theme4\\img\\course2\\",
-        "core" : "Si le PTAC de la remorque est égal à 750 kg, quel document devez-vous obtenir ? (Attention, plusieurs réponses sont possibles",
-        "propositions" : ["Une nouvelle plaque d'immatriculation", "Une nouvelle carte grise"],
+        "core" : "If the gross vehicle weight of the trailer is 750 kg, which document should you obtain? (Attention, several answers are possible",
+        "propositions" : ["A new license plate", "A new registration card"],
         "correct_answers" : [1, 1],
-        "note" : "Si le PTAC de la remorque excède 500 kg, vous devez obtenir sa propre carte grise et sa propre plaque d'immatriculation."
+        "note" : "If the gross vehicle weight of the trailer exceeds 500 kg, you must obtain its own registration card and its own registration plate."
     },
     {
         "ID" : 112,
         "points" : 3,
         "folder": "theme4\\img\\course2\\",
-        "core" : "Les 2 catadioptres à l'arrière sur une caravanes sont-ils obligatoires ?",
-        "propositions" : ["Oui", "Non"],
+        "core" : "Are the 2 retro reflectors on the back of a caravan compulsory?",
+        "propositions" : ["Yes", "No"],
         "correct_answers" : [1, 0],
-        "note" : "Les deux catadioptres sont obligatoires."
+        "note" : "Both reflectors are compulsory."
     },
     {
         "ID" : 113,
         "points" : 5,
         "folder": "theme4\\img\\course2\\",
-        "core" : "Si vous transportez un vélo et qu'il dissimule votre plaque d'immatriculation, que devez-vous faire ?",
-        "propositions" : ["Vous devez accrocher une deuxième plaque sur le vélo", "Vous devez juste accrocher un catadioptre triangulaire sur le vélo"],
+        "core" : "If you are carrying a bicycle and it hides your license plate, what should you do?",
+        "propositions" : ["You have to hang a second plate on the bike", "You just have to hang a triangular reflector on the bike"],
         "correct_answers" : [1, 0],
-        "note" : "C'est une deuxième plaque qu'il faut accrocher."
+        "note" : ""
     },
     {
         "ID" : 114,
         "points" : 6,
         "folder": "theme5\\img\\course1\\",
-        "core" : "De quelle manière le volant doit-il être tenu ?",
-        "propositions" : ["Comme s'il était 10:15", "Comme s'il était 10:10", "Comme s'il était 11:15", "Comme s'il était 9:10"],
+        "core" : "How should the steering wheel be held?",
+        "propositions" : ["As if it were 10:15", "As if it was 10:10", "As if it was 11:15", "As if it was 9:10"],
         "correct_answers" : [0, 1, 0, 0],
-        "note" : "10:10 ou 09:15 sont les positions qui permettent de mieux maîtriser la trajectoire du véhicule en cas d'urgence."
+        "note" : "10:10 or 09:15 are the positions that allow you to better control the trajectory of the vehicle in an emergency."
     },
     {
         "ID" : 115,
         "points" : 2,
         "folder": "theme5\\img\\course1\\",
-        "core" : "Le pied gauche, peut-il être utilisé pour freiner ?",
-        "propositions" : ["Oui", "Non"],
+        "core" : "Can the left foot be used to brake?",
+        "propositions" : ["Yes", "No"],
         "correct_answers" : [0, 1],
-        "note" : "Il ne faut jamais utiliser le pied gauche pour freiner. Ce pied est utilisé seulement si on doit passer la vitesse, c'est-à-dire pour embrayer."
+        "note" : "Never use your left foot to brake. This foot is used only if you have to shift speed, that is to say to engage."
     },
     {
         "ID" : 116,
         "points" : 5,
         "folder": "theme5\\img\\course1\\",
-        "core" : "Comment la visibilité optimale s'obtient-elle ?",
-        "propositions" : ["En ouvrant bien les yeux", "En réglant les rétroviseurs intérieurs et extérieurs", "En tirant sur la manette du rétroviseur intérieur", "En disant à l'un des voyageurs assis derrière de se coucher pour vous faciliter la conduite"],
+        "core" : "How is optimal visibility obtained?",
+        "propositions" : ["By opening your eyes well", "By adjusting the interior and exterior mirrors", "By pulling the handle of the interior mirror", "By telling one of the passengers sitting behind to lie down to facilitate your driving"],
         "correct_answers" : [0, 1, 0, 0],
-        "note" : "Bien sûr que vous devez bien ouvrir les yeux, mais si vous ne réglez pas correctement les rétroviseurs, vous n'irez pas bien loin. Les voyageurs sur les sièges arrière doivent se sentir à l'aise, mais ne doivent pas être couchés."
+        "note" : "Of course you have to open your eyes, but if you don't adjust the mirrors correctly, you won't get far. Travelers in the rear seats should feel comfortable, but should not be lying down."
     },
     {
         "ID" : 117,
         "points" : 4,
         "folder": "theme5\\img\\course1\\",
-        "core" : "Que faut-il faire pour actionner la position 'nuit' sur le rétroviseur intérieur ?",
-        "propositions" : ["Il faut tirer la manette du rétroviseur vers le bas", "Il faut juste incliner le rétroviseur"],
+        "core" : "What must be done to activate the 'night' position on the interior mirror?",
+        "propositions" : ["You have to pull the handle of the mirror down", "You just have to tilt the mirror"],
         "correct_answers" : [1, 0],
-        "note" : "Il faut actionner la manette pour avoir la position 'nuit'."
+        "note" : "The joystick must be actuated to have the 'night' position."
     },
     {
         "ID" : 118,
         "points" : 10,
         "folder": "theme5\\img\\course1\\",
-        "core" : "La direction assistée, pourquoi existe-t-elle ?",
-        "propositions" : ["Pour aider le conducteur à trouver son chemin", "Pour aider le conducteur à freiner plus efficacement en cas d'aquaplaning", "Pour aider le conducteur à passer la vitesse", "Pour aider le conducteur à braquer et à contre braquer le volant"],
+        "core" : "Power steering, why does it exist?",
+        "propositions" : ["To help the driver find his way", "To help the driver brake more efficiently in the event of aquaplaning", "To help the driver shift up", "To help the driver steer and reverse the steering wheel "],
         "correct_answers" : [0, 0, 0, 1],
-        "note" : "Sur pratiquement toutes les voitures aujourd'hui, les volants sont plus facilement maniables (on peut les tourner facilement à gauche et à droite). Donc pour braquer ( lorsque le volant du véhicule est tourné jusqu'à son blocage soit dans le sens horaire soit dans le sens anti-horaire) et pour contre braquer (soit à réaligner les roues perpendiculairement à l'avant du véhicule dans le cas d'un créneau)."
+        "note" : "On almost all cars today, the steering wheels are more easily maneuverable (they can be easily turned left and right). So to steer (when the steering wheel of the vehicle is turned until it is locked either clockwise or counterclockwise) and to counter steer (or to realign the wheels perpendicular to the front of the vehicle in the case of 'a niche)."
     },
     {
         "ID" : 119,
         "points" : 3,
         "folder": "theme5\\img\\course1\\",
-        "core" : "Quelle loi bannit-elle officiellement le port de tongs en conduisant ?",
-        "propositions" : ["Aucune", "Article 223-6 du Code pénal"],
+        "core" : "What law does it officially punish for wearing flip-flops while driving?",
+        "propositions" : ["None", "Article 223-6 of the Criminal Code"],
         "correct_answers" : [1, 0],
-        "note" : "Conduire pieds-nus n'est clairement cité dans aucune loi comme étant interdit. En revanche, si vous vous faites arrêter par un policier qui considère que la manière dont vous êtes chaussés gêne la conduite, vous pourriez être en obligation de payer une contravention de 2ème classe équivalente à une amende maximale de 150 euros. Je vous conseille donc de ne pas tenter le diable, même si vous vous sentez particulièrement à l'aise."
+        "note" : "Barefoot driving is not clearly cited in any law as prohibited. On the other hand, if you are arrested by a police officer who considers that the way in which you are wearing obstructs driving, you may be required to pay a 2nd class fine equivalent to a maximum fine of 150 euros. So I advise you not to try the devil, even if you feel particularly comfortable."
     },
     {
         "ID" : 120,
         "points" : 7,
         "folder": "theme5\\img\\course1\\",
-        "core" : "Comment règle-t-on le rétroviseur extérieur côté conducteur ?",
-        "propositions" : ["De manière à y voir son propre visage", "De manière à y voir le poignée de la porte arrière", "De manière à y voir la poignée de la porte avant"],
+        "core" : "How do you adjust the driver's side door mirror?",
+        "propositions" : ["So that you can see your own face", "So that you can see the handle of the rear door", "So that you can see the handle of the front door"],
         "correct_answers" : [0, 1, 0],
-        "note" : "On règle le rétroviseur extérieur côté conducteur de manière à y voir le poignée de la porte arrière"
+        "note" : "Adjust the driver's side exterior mirror so you can see the rear door handle"
     },
     {
         "ID" : 121,
         "points" : 9,
         "folder": "theme5\\img\\course1\\",
-        "core" : "Que risque le passager qui a le permis de conduire mais ne porte pas la ceinture ?",
-        "propositions" : ["Il risque de se faire retirer des points de son permis", "Il risque de payer une amende", "Il risque tant de payer une amende que de perdre des points de son permis même si ce n'est pas lui qui est au volant"],
+        "core" : "What is the risk for a passenger who has a driving license but does not wear a seat belt?",
+        "propositions" : ["He risks losing points from his license", "He risks paying a fine", "He risks paying a fine as much as losing points from his license even if he is not the one steering wheel "],
         "correct_answers" : [0, 1, 0],
-        "note" : "Il risque de payer une amende (soit 90 soit 135 euros) ; on ne lui retirera pas de points."
+        "note" : "He risks paying a fine (either 90 or 135 euros); no points will be taken from it."
     },
     {
         "ID" : 122,
         "points" : 4,
         "folder": "theme5\\img\\course1\\",
-        "core" : "Les femmes enceintes, sont-elles obligées de boucler la ceinture ?",
-        "propositions" : ["Oui", "Non"],
+        "core" : "Are pregnant women forced to buckle up?",
+        "propositions" : ["Yes", "No"],
         "correct_answers" : [1, 0],
-        "note" : "En cas de grossesse, la loi ne change pas tout comme le nombre de points perdus. Cependant, il est essentiel de bien positionner la ceinture en passant la sangle abdominale et verticale le plus bas possible sous le ventre de la future maman et la sangle diagonale entre la poitrine."
+        "note" : "In case of pregnancy, the law does not change as does the number of points lost. However, it is essential to correctly position the belt by passing the abdominal and vertical strap as low as possible under the belly of the future mother and the diagonal strap between the chest."
     },
     {
         "ID" : 123,
         "points" : 3,
         "folder": "theme5\\img\\course1\\",
-        "core" : "Si vous portez la ceinture, par combien le risque d'être tué en cas d'accident est-il divisé ?",
-        "propositions" : ["Il reste identique au non-port de la ceinture", "Il est divisé par 2","Il est divisé par 4", "Il est divisé par 3"],
+        "core" : "If you wear a seatbelt, by what is the risk of being killed in an accident divided?",
+        "propositions" : ["It remains identical to the non-wearing of the belt", "It is divided by 2", "It is divided by 4", "It is divided by 3"],
         "correct_answers" : [0, 0, 0, 1],
-        "note" : "Si en cas d'accident vous portez la ceinture, la bonne nouvelle c'est que le risque d'être tués est divisé par 3 et celui d'être éjectés par 10. Ne jouez pas avec Newton !"
+        "note" : "If in the event of an accident you wear the belt, the good news is that the risk of being killed is divided by 3 and that of being ejected by 10. Do not play with Newton!"
     },
     {
         "ID" : 124,
         "points" : 4,
         "folder": "theme5\\img\\course2\\",
-        "core" : "<!img77.PNG!>J'actionne les essuie glaces :",
-        "propositions" : ["Avant de partir","Quand je circule sur la route"],
+        "core" : "<!img77.PNG!> I operate the wipers:",
+        "propositions" : ["Before leaving", "When I drive on the road"],
         "correct_answers" : [1, 0],
-        "note" : "Il est nécessaire que la visibilité soit bonne à l'avant et à l'arrière du véhicule lorsque je circule sur une route. J'actionne donc mes essuie glaces dès maintenant."
+        "note" : "It is necessary that visibility is good at the front and rear of the vehicle when I am driving on a road. So I start my wipers right now."
     },
     {
         "ID" : 125,
         "points" : 4,
         "folder": "theme5\\img\\course2\\",
-        "core" : "<!img78.PNG!>Cette commande permet",
-        "propositions" : ["D'actionner l'essuie glace de la lunette arrière", "De désembuer la lunette arrière"],
+        "core" : "<!img78.PNG!>This command allows",
+        "propositions" : ["To activate the rear window wiper", "To demist the rear window"],
         "correct_answers" : [0, 1],
-        "note" : "J'actionne cette commande afin de dégivrer ou désembuer la lunette arrière du véhicule avant de prendre la route."
+        "note" : "I activate this command in order to defrost or demist the rear window of the vehicle before setting off."
     },
     {
         "ID" : 126,
         "points" : 5,
         "folder": "theme5\\img\\course2\\",
-        "core" : "<!img79.PNG!>Je peux quitter immédiatement mon stationnement :",
-        "propositions" : ["Oui", "Non"],
+        "core" : "<!img79.PNG!>I can immediately leave my parking lot:",
+        "propositions" : ["Yes", "No"],
         "correct_answers" : [0, 1],
-        "note" : "Avant de quitter un stationnement, je dois faire en sorte que la visibilité vers l'éxtérieur du véhicule soit la meilleure possible. J'actionne donc mes essuie glaces avant et arrière."
+        "note" : "Before leaving a parking lot, I must ensure that the visibility to the outside of the vehicle is the best possible. So I operate my front and rear wipers."
     },
     {
         "ID" : 127,
         "points" : 10,
         "folder": "theme5\\img\\course2\\",
-        "core" : "<!img80.PNG!>Avant de prendre la route, il est essentiel de vérifier : ( Attention! Plusieurs réponses sont possibles )",
-        "propositions" : ["Le fonctionnement des ceintures de sécurité", "Le parallélisme", "La présence d'un voyant rouge sur la table de bord"],
+        "core" : "<!img80.PNG!> Before hitting the road, it is essential to check: (Attention! Several answers are possible)",
+        "propositions" : ["The functioning of seat belts", "Parallelism", "The presence of a red light on the dashboard"],
         "correct_answers" : [1, 0 , 1],
-        "note" : "Il est toujours nécessaire de vérifier le bon fonctionnement des ceintures de sécurité pour tous les passagers. Vérifier les témoins sur le tableau de bord peut être nécessaire pour éviter des pannes en cours de route. Le parallélisme est à vérifier lorsqu'on observe une dégradation anormale des pneus."
+        "note" : "It is always necessary to check the correct functioning of the seat belts for all passengers. Checking the warning lights on the dashboard may be necessary to avoid breakdowns en route. Parallelism should be checked when abnormal tire degradation is observed."
     },
     {
         "ID" : 128,
         "points" : 3,
         "folder": "theme5\\img\\course2\\",
-        "core" : "<!img81.PNG!>Avant de prendre la route, vérifier la propreté de ses vitres est :",
-        "propositions" : ["Inutile", "Nécessaire"],
+        "core" : "<!img81.PNG!>Before hitting the road, checking the cleanliness of your windows is:",
+        "propositions" : ["Useless", "Necessary"],
         "correct_answers" : [0, 1],
-        "note" : "Une bonne visibilité sur l'extérieur de mon véhicule, me permettra d'éviter de surprendre ou d'être surpris par d'autres usagers. J'utilise si nécessaire le lave glace arrière et avant du véhicule avant de partir."
+        "note" : "Good visibility on the outside of my vehicle will allow me to avoid surprising or being surprised by other users. If necessary, I use the rear and front window washer of the vehicle before leaving."
     },
     {
         "ID" : 129,
         "points" : 4,
         "folder": "theme5\\img\\course3\\",
-        "core" : "Vous vous êtes garés dans un parking sous-terrain. Avant de monter dans la voiture, quel est votre comportement ?",
-        "propositions" : ["Vous ne faites rien du tout, votre voiture est en sécurité dans un parking", "Vous vérifiez la carrosserie, les pneus, la distance entre votre voiture et d'éventuels obstacles (autre voiture, mur etc)"],
+        "core" : "You parked in an underground parking lot. Before getting into the car, what is your behavior?",
+        "propositions" : ["You do nothing at all, your car is safe in a parking lot", "You check the bodywork, the tires, the distance between your car and any obstacles (other car, wall etc)"],
         "correct_answers" : [0, 1],
-        "note" : "Que vous soyez garés dans un parking sous-terrain ou sur la voie publique, il convient de toujours vérifier l'aspect extérieur de votre véhicule et de son environnement. Vous allez peut-être découvrir que le voisin s'est mal garé et vous colle ou que vous êtes trop près du mur. Ce premier diagnostique vous aidera à mieux appréhender la conduite par la suite."
+        "note" : "Whether you are parked in an underground car park or on a public road, you should always check the exterior appearance of your vehicle and its environment. You may discover that the neighbor has parked incorrectly and is sticking to you or that you are too close to the wall. This initial diagnosis will help you to better understand driving afterwards."
     },
     {
         "ID" : 130,
         "points" : 5,
         "folder": "theme5\\img\\course3\\",
-        "core" : "A quelle fréquence faut-il changer les essuie-glaces ?",
-        "propositions" :  ["Tous les 6 mois", "Tous les ans"],
+        "core" : "How often should the wipers be changed?",
+        "propositions" :  ["Every 6 months", "Every year"],
         "correct_answers" : [0, 1],
-        "note" : "Un an est la durée de vie d'un essuie-glace."
+        "note" : "One year is the life of a wiper."
     },
     {
         "ID" : 131,
         "points" : 7,
         "folder": "theme5\\img\\course3\\",
-        "core" : "Une fois arrêtés pour déposer l'un de vos passagers, vous devez sortir du véhicule pour lui sortir son sac du coffre. Quel est votre comportement ?",
-        "propositions" : ["Vous sortez tout de suite du véhicule, il ne faut pas traîner", "Vous mettez les warnings et vous sortez tout de suite du véhicule. Il ne faut pas traîner", "Vous mettez votre clignotant, vous regardez dans votre rétroviseur 'extérieur' pour vous assurer qu'aucun autre usager ne va vous gêner puis vous sortez", "Vous mettez les warnings, mais vous regardez dans votre rétroviseur 'intérieur' pour vous assurer qu'aucun autre usager ne va vous gêner puis vous sortez"],
+        "core" : "Once stopped to drop off one of your passengers, you must get out of the vehicle to take their bag out of the trunk. What is your behavior?",
+        "propositions" : ["You get out of the vehicle right away, you mustn't hang around", "You put the warnings and you get out of the vehicle right away. You don't have to hang around", "You put your flashing light, you look in your outside mirror 'to make sure that no other user is going to bother you then you go out "," You put the warnings, but you look in your' inside 'rear view mirror to make sure that no other user is going to bother you then you go out "],
         "correct_answers" : [0, 0, 1, 0],
-        "note" : "Bien entendu, il faut informer les autres usagers de la route que votre arrêt est momentané avec un warning. Cela les aidera à être plus vigilants car ils peuvent s'attendre à ce que vous sortiez de la voiture. Mais le monde ne s'arrête pas pour vous. Ces mêmes usagers continuent à circuler, donc il faut s'assurer dans votre rétroviseur extérieur (car vous sortez sur la chaussée) que personne ne vient juste derrière. Si la circulation est dense, il est même déconseillé de sortir."
+        "note" : "Of course, you must inform other road users that your stop is temporary with a warning. This will help them be more vigilant as they can expect you to get out of the car. But the world does not stop for you. These same users continue to circulate, so make sure in your outside mirror (because you are going out on the road) that nobody comes just behind. If the traffic is heavy, it is not even advisable to go outside."
     },
     {
         "ID" : 132,
         "points" : 8,
         "folder": "theme5\\img\\course3\\",
-        "core" : "Pour vous garer dans une rue à forte pente, que faut-il faire ?",
-        "propositions" : ["Serrer le frein à main et tourner les roues vers le trottoir", "Serrer le frein à main et tourner les roues vers la chaussée", "Serrer le frein à main et laisser les roues en position droite", "Ne rien faire de particulier, la voiture ne peut pas rouler toute seule"],
+        "core" : "What is the best way to park on a steep street?",
+        "propositions" : ["Apply the handbrake and turn the wheels toward the curb", "Apply the handbrake and turn the wheels toward the roadway", "Apply the handbrake and leave the wheels in the upright position", "Do nothing the car cannot drive on its own "],
         "correct_answers" : [1, 0, 0, 0],
-        "note" : "Si les freins lâchent, la voiture peut rouler toute seule si elle se trouve sur une pente. Si vous tournez les roues vers le trottoir, il servira d'obstacle."
+        "note" : "If the brakes are released, the car can drive on its own if it is on a slope. If you turn the wheels toward the sidewalk, it will act as an obstacle."
     },
     {
         "ID" : 133,
         "points" : 4,
         "folder": "theme5\\img\\course3\\",
-        "core" : "Que risque un chien enfermé dans la voiture plus de 10 minutes à 25 °C ?",
-        "propositions" : ["Il risque de mourir", "Il va juste avoir soif"],
+        "core" : "What is the risk of a dog locked in the car for more than 10 minutes at 25 ° C?",
+        "propositions" : ["He may die", "He will just be thirsty"],
         "correct_answers" : [1, 0],
-        "note" : "Les chiens peuvent mourir de déshydratation même en 10 minutes !"
+        "note" : "Dogs can die from dehydration even in 10 minutes!"
     },
     {
         "ID" : 134,
         "points" : 6,
         "folder": "theme6\\img\\course1\\",
-        "core" : "Selon les forces de l'ordre, quelle est la principale cause des accidents mortels ?",
-        "propositions" : ["L'excès de vitesse", "La consommation d'alcool", "La consommation de drogues", "La fatigue"],
+        "core" : "According to the police, what is the main cause of fatal accidents?",
+        "propositions" : ["Speeding", "Alcohol use", "Drug use", "Fatigue"],
         "correct_answers" : [0, 1, 0 ,0],
-        "note" : "Selon les forces de l’ordre, la consommation d'alcool est la cause principale de 28% des accidents mortels."
+        "note" : "According to law enforcement, alcohol consumption is the main cause of 28% of fatal accidents."
     },
     {
         "ID" : 135,
         "points" : 9,
         "folder": "theme6\\img\\course1\\",
-        "core" : "Qu'est-ce qui est strictement interdit de faire si jamais 2 voitures entrent en collision ?",
-        "propositions" : ["D'enclencher une vitesse avant de quitter le véhicule", "De fumer autour des voitures accidentées", "De débrancher la batterie"],
+        "core" : "What is strictly forbidden to do if 2 cars collide?",
+        "propositions" : ["Shift into gear before leaving the vehicle", "Smoke around damaged cars", "Disconnect the battery"],
         "correct_answers" : [0, 1, 0],
-        "note" : "Une autre mesure à prendre en compte est celle qui consiste à vous protéger d'un éventuel incendie. Une voiture accidentée est une voiture endommagée et donc les risques d'incendie sont plus élevés. Il ne faut surtout pas fumer."
+        "note" : "Another measure to take into account is that of protecting yourself from a possible fire. An accidental car is a damaged car and therefore the risk of fire is higher. Do not smoke."
     },
     {
         "ID" : 136,
         "points" : 2,
         "folder": "theme6\\img\\course1\\",
-        "core" : "Le numéro 112, comment fonctionne-t-il ?",
-        "propositions" : ["Seulement depuis les bornes", "Depuis n'importe quel téléphone portable, mais à condition que ça capte", "Depuis n'importe quel téléphone portable, mais seulement en France", "Depuis n'importe quel téléphone portable, même s'il n'y a pas de réseau"],
+        "core" : "The number 112, how does it work?",
+        "propositions" : ["Only from the terminals", "From any mobile phone, but on condition that it picks up", "From any mobile phone, but only in France", "From any mobile phone, even if 'there is no network'],
         "correct_answers" : [0, 0, 0, 1],
-        "note" : "Le numéro 112 fonctionne dans tous les pays européens même si vous n'avez aucun réseau."
+        "note" : "The 112 number works in all European countries even if you have no network."
     },
     {
         "ID" : 137,
         "points" : 5,
         "folder": "theme6\\img\\course1\\",
-        "core" : "<!img82.PNG!>Si vous êtes témoin d'un accident et que la collision a eu lieu avec un véhicule qui porte cette plaque, de quelle matière s'agit-il ?",
-        "propositions" : ["Matière corrosive", "Matière radioactive", "Matière du type liquide inflammable"],
+        "core" : "<!img82.PNG!>If you witness an accident and the collision took place with a vehicle bearing this plate, what material is it?",
+        "propositions" : ["Corrosive material", "Radioactive material", "Material of the flammable liquid type"],
         "correct_answers" : [0, 0, 1],
-        "note" : "1202 est tout simplement du gazoil, liquide inflammable"
+        "note" : "1202 is simply diesel, flammable liquid"
     },
     {
         "ID" : 138,
         "points" : 3,
         "folder": "theme6\\img\\course1\\",
-        "core" : "Qui peut passer un E-call ?",
-        "propositions" : ["Tout le monde", "Personne ne le passe en réalité, il se déclenche tout seul en cas d'accident", "Il se déclenche tout seul ou manuellement depuis le véhicule accidenté"],
+        "core" : "Who can make an E-call?",
+        "propositions" : ["Everyone", "Nobody actually passes it, it is triggered by itself in the event of an accident", "It is triggered by itself or manually from the accident vehicle"],
         "correct_answers" : [0, 0, 1],
-        "note" : "Certaines voitures disposent de cette option et il s'agit d'un dispositif d'appel d'urgence qui permet d'alerter manuellement ou automatiquement via des capteurs situés dans les air-bags les services de secours en cas d'accident."
+        "note" : "Some cars have this option and it is an emergency call device that allows manual or automatic alerting via sensors located in the air bags of the emergency services in the event of an accident."
     },
     {
         "ID" : 139,
         "points" : 4,
         "folder": "theme6\\img\\course2\\",
-        "core" : "Faut-il être formé pour utiliser un défibrillateur ?",
-        "propositions" :["Oui", "Non"],
+        "core" : "Do you need to be trained to use a defibrillator?",
+        "propositions" :["Yes", "No"],
         "correct_answers" : [0, 1],
-        "note" : "Si vous avez un défibrillateur à portée de main et qu'une victime demande assistance, vous pouvez agir, vous ne risquez pas de vous tromper.Une fois que vous allumerez l'appareil, vous n'aurez qu'à suivre les instructions données. Le message concernera la démarche à suivre quant aux électrodes à placer sur le corps de la victime. C'est l'appareil qui fait lui-même le diagnostic et délivre le choc si c'est nécessaire."
+        "note" : "If you have a defibrillator on hand and a victim requests assistance, you can take action, you are not likely to be wrong. Once you turn on the device, you only have to follow the instructions given. The message will concern the procedure to follow regarding the electrodes to be placed on the victim's body. It is the device which makes the diagnosis itself and delivers the shock if necessary."
     },
     {
         "ID" : 140,
         "points" : 4,
         "folder": "theme6\\img\\course2\\",
-        "core" : "Avant d'appeler les secours, il est préférable de faire un bref diagnostic des blessés :",
-        "propositions" : ["Oui", "Non"],
+        "core" : "Before calling for help, it is best to make a brief diagnosis of the injured:",
+        "propositions" : ["Yes", "No"],
         "correct_answers" : [1, 0],
-        "note" : "En donnant des indicateurs sur l'accident et l'état des blessés aux secours, cela permet une action de ceux-ci plus rapide et mieux organisée."
+        "note" : "By giving indicators on the accident and the state of the injured to the emergency services, this allows a faster and better organized action."
     },
     {
         "ID" : 141,
         "points" : 3,
         "folder": "theme6\\img\\course2\\",
-        "core" : "Une perte de connaissance c'est quand la victime :",
-        "propositions" : ["respire","répond"],
+        "core" : "Loss of consciousness is when the victim:",
+        "propositions" : ["breathe", "respond"],
         "correct_answers" : [1, 0],
-        "note" : "Une victime qui a perdu connaissance respire mais ne répond pas, ni à mes questions ni à ma demande d'effectuer des gestes simples (me serrer la main par exemple)."
+        "note" : "A victim who has lost consciousness breathes but does not answer either my questions or my request to perform simple gestures (shake my hand for example)."
     },
     {
         "ID" : 142,
         "points" : 5,
         "folder": "theme6\\img\\course2\\",
-        "core" : "En arrivant à un lieu d'un accident, je dois procéder dans l'ordre suivant",
-        "propositions" : ["Appeler les secours puis m'inquiéter de l'état des blessés","M'inquiter de l'état de blessés puis appeler les secours"],
+        "core" : "When arriving at an accident site, I must proceed in the following order",
+        "propositions" : ["Call for help then worry about the condition of the injured", "Worry about the condition of the injured then call for help"],
         "correct_answers" : [0, 1],
-        "note" : "Il est nécessaire de faire un breg diagnostic de l'état des blessés pour renseigner au mieux les secours. De cette façon, ils pourront me donner les bonnes indications sur la démarche à suivre et organiser au mieux leur intervention."
+        "note" : "It is necessary to make a breg diagnosis of the condition of the injured to better inform the emergency services. In this way, they will be able to give me the right indications on the approach to follow and organize their intervention as best as possible."
     },
     {
         "ID" : 143,
         "points" : 6,
         "folder": "theme6\\img\\course3\\",
-        "core" : "La victime est consciente et demande à boire. Que faites-vous ?",
-        "propositions" : ["Vous lui donnez à boire", "Vous ne lui donnez pas à boire"],
+        "core" : "The victim is conscious and asks for a drink. What are you doing ?",
+        "propositions" : ["You give him a drink", "You don't give him a drink"],
         "correct_answers" : [0, 1],
-        "note" : "Il ne faut donner ni à boire ni à manger à la victime car elle risque l'asphyxie."
+        "note" : "The victim should not be given anything to drink or eat as they risk suffocation."
     },
     {
         "ID" : 144,
         "points" : 10,
         "folder": "theme6\\img\\course3\\",
-        "core" : "Si lors d'un accident vous retrouvez un blessé en train de saigner du bras (voir la photo ci-dessous), où faut-il appuyer pour diminuer, voire arrêter le saignement ?<!img83.PNG!>",
-        "propositions" :["Vous appuyez sur la poignée, au niveau du pouls", "Vous appuyez en bas de la blessure", "Vous appuyez quelque part entre la blessure et le cœur"],
+        "core" : "If during an accident you find an injured person bleeding from the arm (see photo below), where should you press to decrease or even stop the bleeding?<!img83.PNG!>",
+        "propositions" :["You press the handle at the pulse level", "You press at the bottom of the wound", "You press somewhere between the wound and the heart"],
         "correct_answers" : [0, 0, 1],
-        "note" : "Si la blessure a lieu sur les bras ou les jambes, il faut appuyer entre la blessure et le cœur pour éviter à ce que la victime saigne davantage."
+        "note" : "If the injury takes place on the arms or legs, you should press between the wound and the heart to prevent the victim from bleeding more. "
     },
     {
         "ID" : 145,
         "points" : 6,
         "folder": "theme6\\img\\course3\\",
-        "core" :"Si la victime est au sol et qu'elle est allongée sur le ventre, que faut-il faire ?",
-        "propositions" : ["Il ne faut surtout pas la bouger car elle risque de s'asphyxier", "Il faut la placer dans la position latérale sinon elle risque de s'asphyxier"],
+        "core" :"If the victim is on the ground and lying on his stomach, what should be done?",
+        "propositions" : ["Above all, do not move it because it may suffocate "," It must be placed in the lateral position otherwise it may suffocate "],
         "correct_answers" : [0, 1],
-        "note" : "Si le blessé se trouve sur la chaussée et qu'il est sur le dos ou sur le ventre, vous pouvez le placer dans la position latérale de sécurité. Ça pourrait lui sauver la vie."
+        "note" : "If the injured person is on the road and is on his back or stomach, you can place him in the lateral safety position. It could save his life."
     },
     {
         "ID" : 146,
         "points" : 8,
         "folder": "theme6\\img\\course3\\",
-        "core" : "En portant secours à un blessé, je peux : ( Attention! Plusieurs réponses sont possibles )",
-        "propositions" : ["Enlever son casque si le blessé le demande", "Couvrir le blessé pour le réchauffer", "Lui parler pour qu'il reste conscient", "L'aider à se relever"],
+        "core" : "By helping a wounded person, I can: (Attention! Several answers are possible)",
+        "propositions" : ["Take off his helmet if the injured person requests it", "Cover the injured person to warm him up", "Talk to him so that he remains conscious", "Help him get up"],
         "correct_answers" : [0, 1, 1, 0],
-        "note" : "Il ne faut pas enlever le casque d'un motard et il n'est pas conseillé de déplacer un blessé. Cela peut provoquer de lésions supplémentaires. En attendant les secours, je peux lui parler et le couvrir."
+        "note" : "Do not remove the helmet of a biker and it is not advisable to move an injured person. This can cause additional damage. While waiting for help, I can speak to him and cover him."
     },
     {
         "ID" : 147,
         "points" : 3,
         "folder": "theme6\\img\\course3\\",
-        "core" : "La formation aux premiers secours de base est :",
-        "propositions" : ["Le PSC1", "Le PSE1", "Le PST1", "Le PSP1"],
+        "core" : "Basic first aid training is:",
+        "propositions" : ["The PCA1", "The PEA1", "The PTA1", "The PPA1"],
         "correct_answers" : [1, 0, 0, 0],
-        "note" : "La formation aux premiers secours de base s'intitule 'Prévention et Secours Civique de niveau 1'. Cette formation permet de pratiquer les premiers gestes de secours de base sur un blessé."
+        "note" : "Basic first aid training is called 'Prevention and Civic Aid Level 1'. This training allows you to practice the first basic emergency actions on an injured person."
     },
     {
         "ID" : 148,
         "points" : 3,
         "folder": "theme7\\img\\course1\\",
-        "core" : "<!img89.PNG!>Dans cette situation, que faut-il faire ?",
-        "propositions" : ["Ralentir", "S'arrêter", "Continuer à conduire à la même allure"],
+        "core" : "<!img89.PNG!>In this situation, what should be done?",
+        "propositions" : ["Slow down", "Stop", "Continue to drive at the same speed"],
         "correct_answers" : [1, 0, 0],
-        "note" : "L'homme est descendu sur la chaussée, il est donc préférable de ralentir. Il a juste l'air de contourner un obstacle, mais il faut rester vigilant."
+        "note" : "The man is down on the road, so it's best to slow down. He just seems to be going around an obstacle, but you have to be careful."
     },
     {
         "ID" : 149,
         "points" : 3,
         "folder": "theme7\\img\\course1\\",
-        "core" : "Quel est l'angle du champ visuel d'un enfant ?",
+        "core" : "What is the angle of a child's visual field?",
         "propositions" : ["70 °", "100 °", "180 °"],
         "correct_answers" : [1, 0, 0],
-        "note" : "Les enfants voient moins large que les adultes, alors pensez à rester vigilants en leur présence."
+        "note" : "Children see less wide than adults, so remember to be vigilant in their presence."
     },
     {
         "ID" : 150,
         "points" : 3,
         "folder": "theme7\\img\\course1\\",
-        "core" : "Quelles sont les chances de survie d'un piéton s'il est heurté à 50 km / h ?",
+        "core" : "What are the chances of survival of a pedestrian if he is hit at 50 km / h?",
         "propositions" : ["90 %", "50 %", "20 %"],
         "correct_answers" : [0, 0, 1],
-        "note" : "50 km /h est la vitesse maximale en agglomération, mais ce n'est pas pour autant qu'il faut l'atteindre. Ne roulez pas vite en ville, encore moins vite dans les zones de rencontres où vous devez rouler à 30 km / h maximum. Si un piéton est heurté à 50 km /h, les chances de survie diminuent."
+        "note" : "50 km / h is the maximum speed in built-up areas, but that doesn't have to be reached. Do not drive fast in town, even slower in meeting areas where you have to drive at 30 km / h maximum. If a pedestrian is hit at 50 km / h, the chances of survival decrease."
     },
     {
         "ID" : 151,
         "points" : 6,
         "folder": "theme7\\img\\course1\\",
-        "core" : "Où le danger se situe-t-il ? (Attention, plusieurs réponses sont possibles.)<!img90.PNG!>",
-        "propositions" : ["Au niveau du n°1", "Au niveau du n°2", "Au niveau du n°3"],
+        "core" : "Where is the danger? (Attention, several answers are possible.)<!img90.PNG!>",
+        "propositions" : ["At level 1", "At level 2", "At level 3"],
         "correct_answers" : [1, 0, 1],
-        "note" : "Le piéton sous le numéro 3 a la posture corporelle telle qu'on dirait qu'il s'apprête à traverser. Le cycliste à l'arrêt pourrait constituer un danger aussi, car nous ne savons pas dans quelle direction il partirait. La voiture ne constitue pas trop le danger, mais elle est peut-être trop près. Le comportement à avoir c'est de ralentir."
+        "note" : "The pedestrian under number 3 has the body posture as it looks like he is about to cross. The stationary cyclist could also be a danger, as we do not know which direction he would leave. The car is not too dangerous, but it may be too close. The behavior to have is to slow down."
     },
     {
         "ID" : 152,
         "points" : 5,
         "folder": "theme7\\img\\course2\\",
-        "core" : "Les cyclistes, peuvent-ils aller à contre-sens de la circulation ?",
-        "propositions" : ["Oui", "Non"],
+        "core" : "Can cyclists go against the flow of traffic?",
+        "propositions" : ["Yes", "No"],
         "correct_answers" : [1, 0],
-        "note" : "Les cyclistes peuvent  aller à contre-sens de la circulation."
+        "note" : "Cyclists can go against the flow of traffic."
     },
     {
         "ID" : 153,
         "points" : 5,
         "folder": "theme7\\img\\course2\\",
-        "core" : "<!img92.PNG!>Dans cette zone de rencontre, les cyclistes sont-ils plus prioritaires que les piétons et/ou les voitures ?",
-        "propositions" : ["Oui", "Non"],
+        "core" : "<!img92.PNG!>In this meeting area, are cyclists more priority than pedestrians and / or cars?",
+        "propositions" : ["Yes", "No"],
         "correct_answers" : [0, 1],
-        "note" : "Dans cette zone, les piétons sont autorisés à circuler sur la chaussée sans y rester et bénéficient de la priorité sur les véhicules. La vitesse des véhicules y est limitée à 20 km/h.Toutes les chaussées sont à double sens pour les cyclistes, mais ceci ne rend pas les cyclistes prioritaires.  Il s’agit donc d’un partage de la voirie qui illustre le principe de prudence du plus fort (le véhicule) par rapport au plus faible (le piéton). La faible vitesse des véhicules devrait faciliter également l’usage du vélo et favoriser la cohabitation des modes de déplacement.Les plus prioritaires sont donc les piétons, puis les vélos puis les voitures."
+        "note" : "In this zone, pedestrians are allowed to travel on the road without staying there and have priority over vehicles. Vehicle speed is limited to 20 km / h. All roads are two-way for cyclists, but this does not make cyclists a priority. It is therefore a sharing of the roads which illustrates the principle of prudence of the strongest (the vehicle) compared to the weakest (the pedestrian). The low speed of vehicles should also facilitate the use of bicycles and encourage coexistence of modes of transport, so the highest priority is pedestrians, then bicycles and then cars."
     },
     {
         "ID" : 154,
         "points" : 5,
         "folder": "theme7\\img\\course2\\",
-        "core" : "Lorsque les cyclistes circulent à 2, comment doivent-ils se positionner sur la chaussée pour être en règle quelles que soient les conditions de circulation ?",
-        "propositions" : ["En file, l'un derrière l'autre", "L'un à côté de l'autre"],
+        "core" : "When cyclists travel in pairs, how should they position themselves on the road to be in good standing whatever the traffic conditions?",
+        "propositions" : ["In line, one behind the other", "One next to the other"],
         "correct_answers" : [1, 0],
-        "note" : "Les cyclistes peuvent circuler à deux de front sur la chaussée. Ils doivent se mettre en file simple dès la chute du jour et dans tous les cas où les conditions de la circulation l’exigent, notamment quand un véhicule voulant les dépasser annonce son approche."
+        "note" : "Cyclists can ride two on the road. They must line up as soon as day breaks and in all cases where traffic conditions require, especially when a vehicle wishing to overtake them announces its approach."
     },
     {
         "ID" : 155,
         "points" : 4,
         "folder": "theme7\\img\\course3\\",
-        "core" : "Une voiture, peut-elle emprunter cette voie ?<!img95.PNG!>",
-        "propositions" : ["Oui, à condition de rouler à moins de 20 km/h", "Non"],
+        "core" : "Can a car take this route?<!img95.PNG!>",
+        "propositions" : ["Yes, provided you drive at less than 20 km / h "," No "],
         "correct_answers" : [0, 1],
-        "note" : "La voie verte est un axe de circulation ouvert à tous les moyens de locomotion non motorisés."
+        "note" : "The greenway is a traffic route open to all non-motorized means of transport."
     },
     {
         "ID" : 156,
         "points" : 5,
         "folder": "theme7\\img\\course3\\",
-        "core" : "Un motard devra obligatoirement être titulaire du permis de conduire adapté pour circuler :<!img100.PNG!>",
-        "propositions" : ["Oui", "Non"],
+        "core" : "A biker must necessarily hold a driving license adapted to circulate:<!img100.PNG!>",
+        "propositions" : ["Yes", "No"],
         "correct_answers" : [1, 0],
-        "note" : "Un motard devra obligatoirement être titulaire du permis de conduire adapté pour circuler en toute légalité. Dans le cas contraire, non seulement il s'expose à de lourdes sanctions en cas de contrôle routier, mais il met également en danger l'ensemble des usagers qui croiseront sa route."
+        "note" : "A motorcyclist must obligatorily hold a driving license adapted to circulate legally. Otherwise, not only will he be subject to heavy penalties in the event of roadside checks, but he will also endanger all users who cross his path."
     },
     {
         "ID" : 157,
         "points" : 4,
         "folder": "theme7\\img\\course4\\",
-        "core" : "<!img93.PNG!>Dans cette situation (le bus est à l'arrêt), que faut-il faire ?",
-        "propositions" :  ["Garder son allure et rester derrière le bus", "Dépasser le bus une fois que le véhicule blanc se barattera ou restera sur la voie de gauche pour dépasser le bus"],
+        "core" : "<!img93.PNG!>In this situation (the bus is stopped), what should be done?",
+        "propositions" :  ["Keep your pace and stay behind the bus", "Pass the bus once the white vehicle is churning or stay in the left lane to pass the bus"],
         "correct_answers" : [1, 0],
-        "note" : "Sur votre gauche, on peut voir des zébras donc vous n'avez pas le droit de circuler dessus.  De plus, il se peut que le bus reparte le temps que vous arrivez derrière lui."
+        "note" : "On your left, you can see zebras so you are not allowed to drive on them. In addition, the bus may leave by the time you arrive behind it."
     },
     {
         "ID" : 158,
         "points" : 6,
         "folder": "theme7\\img\\course4\\",
-        "core" : "<!img96.PNG!>Je peux m'arrêter sur la voie de droite pour déposer un passager ",
-        "propositions" :["Oui", "Non"],
+        "core" : "<!img96.PNG!> I can stop in the right lane to drop off a passenger ",
+        "propositions" :["Yes", "No"],
         "correct_answers" : [0, 1],
-        "note" : "Sur la voie de droite, un arrêt de bus est délimité. Je ne peux pas donc ni m'arrêter, ni stationner à cet endroit au risque de gêner un bus qui souhaiterait s'arrêter."
+        "note" : "In the right lane, a bus stop is marked out. So I can neither stop nor park there at the risk of hindering a bus that wishes to stop."
     },
     {
         "ID" : 159,
         "points" : 6,
         "folder": "theme7\\img\\course4\\",
-        "core" : "<!img99.PNG!>Je suis bien placé pour tourner à droite à la prochaine intersection :",
-        "propositions" : ["Oui", "Non"],
+        "core" : "<!img99.PNG!>I am well placed to turn right at the next intersection:",
+        "propositions" : ["Yes", "No"],
         "correct_answers" : [1, 0],
-        "note" : "Sur cette chaussée,je circule sur la voie centrale. La voie de droite étant réservée aux bus, je ne peux pas y circuler. Je suis donc bien placé pour tourner à droite à la prochaine intersection."
+        "note" : "On this road, I drive on the central lane. Since the right lane is reserved for buses, I cannot drive there. I am therefore well placed to turn right at the next intersection."
     },
     {
         "ID" : 160,
         "points" : 12,
         "folder": "theme7\\img\\course5\\",
-        "core" : "Qui a la priorité entre ces 3 usagers ? Quel est l'ordre de passage ?<!img91.PNG!>",
-        "propositions" : ["Le tramway, puis la voiture de police, puis la voiture", "La voiture de police, puis le tramway, puis la voiture", "La voiture, puis la voiture de police, puis le tramway"],
+        "core" : "Who has priority among these 3 users? What is the order of passage?<!img91.PNG!>",
+        "propositions" : ["The tram, then the police car, then the car", "The police car, then the tram, then the car", "The car, then the police car, then the tram"],
         "correct_answers" : [0, 1, 0],
-        "note" : "Les véhicules d'intervention urgente en mission sont les plus prioritaires de tous. On doit leur céder le passage, et même le tramway. Et comme le tramway est sur une route prioritaire, la voiture doit lui céder le passage."
+        "note" : "Emergency response vehicles on mission are the highest priority of all. We have to give them the way, and even the tram. And since the tram is on a priority road, the car must give way to it."
     },
     {
         "ID" : 161,
         "points" : 5,
         "folder": "theme7\\img\\course5\\",
-        "core" : "<!img102.PNG!>Dans les cas de refus de céder la priorité, le conducteur sera sanctionné",
-        "propositions" : ["Oui", "Non"],
+        "core" : "<!img102.PNG!>In the event of refusal to assign priority, the driver will be penalized?",
+        "propositions" : ["Yes", "No"],
         "correct_answers" : [1, 0],
-        "note" : "Dans les cas de refus de céder la priorité, l’article R415-12 du Code de la route sanctionne le conducteur d'une une contravention de quatrième catégorie qui prend la forme d'une amende forfaitaire d'un montant de 90 €. Cette dernière peut également être assortie d’un retrait de plusieurs points, ainsi que d'une suspension du permis de conduire."
+        "note" : "In the event of refusal to assign priority, article R415-12 of the Highway Code sanctions the driver for a fourth category violation which takes the form of a lump sum fine of € 90. The latter may also be accompanied by a withdrawal of several points, as well as a suspension of the driving license."
     },
     {
         "ID" : 162,
         "points" : 4,
         "folder": "theme7\\img\\course6\\",
-        "core" : "<!img101.PNG!>Je ne souhaite pas dépasser cette voiture,je me rebats à droite :",
-        "propositions" : ["Oui", "Non"],
+        "core" : "<!img101.PNG!>I do not want to overtake this car, I turn to the right:",
+        "propositions" : ["Oui", "No"],
         "correct_answers" : [0, 1],
-        "note" : "Même si je ne souhaite pas dépasser cette voiture, je ne dois en aucun cas me rebattre à droite, puisque la voie de droite est réservée aux véhicules lents, c'est-à-dire aux véhicules circulant à 60km/h ou moins."
+        "note" : "Even if I do not want to overtake this car, I must in no case go back to the right, since the right lane is reserved for slow vehicles, that is to say vehicles traveling at 60km / h or less."
     },
     {
         "ID" : 163,
@@ -1480,487 +1480,487 @@
         "ID" : 165,
         "points" : 5,
         "folder": "theme7\\img\\course7\\",
-        "core" : "<!img97.PNG!>Je circule sur une autoroute? ",
-        "propositions" : ["Oui", "Non"],
+        "core" : "<!img97.PNG!>Do I drive on a highway?",
+        "propositions" : ["Yes", "No"],
         "correct_answers" : [0, 1],
-        "note" : "Je ne circule pas sur une autoroute puisqu'un véhicule agricole se trouve sur la droite. Les véhicules agricoles étant interdits sur les autoroutes, je ne circule donc pas sur une portion autoroutière."
+        "note" : "I am not driving on a highway since an agricultural vehicle is on the right. Agricultural vehicles are prohibited on highways, so I do not travel on a highway portion."
     },
     {
         "ID" : 166,
         "points" : 7,
         "folder": "theme7\\img\\course7\\",
-        "core" : "<!img98.PNG!>Je roule à la vitesse maximale autorisée : ",
-        "propositions" : ["Je continue le dépassement", "Je me rebats à droite entre les 2 poids-lourds"],
+        "core" : "<!img98.PNG!> I drive at the maximum authorized speed:",
+        "propositions" : ["I continue to overtake", "I turn right between the 2 heavyweights"],
         "correct_answers" : [1, 0],
-        "note" : "Dans cette situation, en roulant à la vitesse maximale auorisée, je dois continuer le dépassement des poids lourds, puisqu'en général , cs derniers circulent plus lentement. Me rebattre à droite serait dangereux puisque la distance de sécurité serait insuffisante."
+        "note" : "In this situation, when traveling at the maximum authorized speed, I must continue to overtake the heavyweights, since in general, the latter circulate more slowly. Fighting to the right would be dangerous since the safety distance would be insufficient."
     },
     {
         "ID" : 167,
         "points" : 4,
         "folder": "theme8\\img\\course1\\",
-        "core" : "Le moteur, assure-t-il tout seul la transmission de la vitesse vers les roues ?",
-        "propositions" : ["Oui", "Non"],
+        "core" : "Does the motor alone transmit speed to the wheels?",
+        "propositions" : ["Yes", "No"],
         "correct_answers" : [0, 1],
-        "note" : "C'est l'embrayage qui assure la transmission vers les roues."
+        "note" : "The clutch ensures transmission to the wheels."
     },
     {
         "ID" : 168,
         "points" : 5,
         "folder": "theme8\\img\\course1\\",
-        "core" : "'Débrayer', est-ce associé à la phase d'appuyer sur l'embrayage ou le fait de le lâcher ?",
-        "propositions" : ["Le fait d'appuyer sur la pédale d'embrayage pour passer la vitesse", "Le fait de lâcher la pédale d'embrayage parce que la vitesse a déjà été passée"],
+        "core" : "'Disengage', is this associated with the phase of pressing the clutch or releasing it?",
+        "propositions" : ["Pressing the clutch pedal to shift the gear", "Releasing the clutch pedal because the gear has already been shifted"],
         "correct_answers" : [1, 0],
-        "note" : "Débrayer c'est le fait d'appuyer sur la pédale d'embrayage pour passer la vitesse."
+        "note" : "Disengaging is the act of depressing the clutch pedal to shift gear."
     },
     {
         "ID" : 169,
         "points" : 6,
         "folder": "theme8\\img\\course1\\",
-        "core" : "Quelle vitesse est la plus puissante ?",
+        "core" : "Which speed is more powerful?",
         "propositions" : ["1", "2", "3", "4"],
         "correct_answers" : [1, 0, 0, 0],
-        "note" : "La 1ère vitesse est la plus puissante car c'est elle qui fait démarrer la voiture."
+        "note" : "1st gear is the most powerful because it is what starts the car."
     },
     {
         "ID" : 170,
         "points" : 5,
         "folder": "theme8\\img\\course1\\",
-        "core" : "A quel moment êtes-vous en sur-régime ?",
-        "propositions" : ["Lorsque la vitesse atteinte est moins élevée que la vitesse passée", "Lorsque la vitesse atteinte est plus élevée que la vitesse passée"],
+        "core" : "When are you overweight?",
+        "propositions" : ["When the speed reached is lower than the speed passed", "When the speed reached is higher than the speed passed"],
         "correct_answers" : [0, 1],
-        "note" : "Vous êtes en sur-régime lorsque la vitesse atteinte est plus élevée que la vitesse passée.Exemple : Si vous roulez à 40 km/h et êtes en 2ème, il est temps de passer en 3ème si vous ne comptez pas vous arrêter. Mais imaginons que vous accélérez (passez à 60 km/h) et conservez la même vitesse (2ème toujours) alors que vous devez passer à la 3ème, vous êtes en sur-régime. Votre moteur va 'crier'."
+        "note" : "You are overspeed when the speed reached is higher than the speed passed. Example: If you are traveling at 40 km / h and are in 2nd gear, it is time to go into 3rd gear if you do not plan to stop. But imagine that you accelerate (go to 60 km / h) and keep the same speed (2nd always) when you have to go to 3rd, you are over-revving. Your engine will 'scream'. "
     },
     {
         "ID" : 171,
         "points" : 6,
         "folder": "theme8\\img\\course1\\",
-        "core" : "Sur quelle position de clé pouvez-vous écouter de la musique ?",
-        "propositions" : ["Sur la position On", "Sur la position Acc", "Sur la position Lock", "Sur la position Start"],
+        "core" : "What key position can you listen to music on?",
+        "propositions" : ["On position", "On Acc position", "On Lock position", "On Start position"],
         "correct_answers" : [0, 1, 0, 0],
-        "note" : "Acc permet d'écouter la radio car c'est l'abréviation d'Accessoire, donc d'une option qui n'est pas indispensable."
+        "note" : "Acc allows you to listen to the radio because it is the abbreviation of Accessory, therefore an option which is not essential."
     },
     {
         "ID" : 172,
         "points" : 6,
         "folder": "theme8\\img\\course1\\",
-        "core" : "<!img84.PNG!>De quel voyant s'agit-il ?",
-        "propositions" : ["Air conditionné", "Dégivrage", "Aération", "Désembuage"],
+        "core" : "<!img84.PNG!>What light is it?",
+        "propositions" : ["Air conditioning", "Defrosting", "Aeration", "Defogging"],
         "correct_answers" : [0, 1, 0 ,0],
-        "note" : " Il s'agit de voyant 'Dégivrage'."
+        "note" : "This is the 'Defrost' light."
     },
     {
         "ID" : 173,
         "points" : 5,
         "folder": "theme8\\img\\course1\\",
-        "core" : "<!img85.PNG!>Quel est le voyant du feu de position ?",
+        "core" : "<!img85.PNG!>What is the indicator for the position light?",
         "propositions" : ["1", "2", "3", "4", "5"],
         "correct_answers" : [0, 0, 0, 0, 1],
-        "note" : "le voyant du feu de position est le 5ème"
+        "note" : "the position light indicator is the 5th"
     },
     {
         "ID" : 174,
         "points" : 4,
         "folder": "theme8\\img\\course1\\",
-        "core" : "<!img86.PNG!>On voit les feux Stop actionnés sur la voiture blanche en face. Que se passe-t-il dans la voiture en face ?",
-        "propositions" : ["Le frein à main est actionné","La pédale du frein est actionnée"],
+        "core" : "<!img86.PNG!>We see the stop lights activated on the white car opposite. What's going on in the car opposite?",
+        "propositions" : ["The handbrake is activated", "The brake pedal is actuated"],
         "correct_answers" : [0, 1],
-        "note" : "C'est la pédale qui est actionnée."
+        "note" : "The pedal is actuated."
     },
     {
         "ID" : 175,
         "points" : 5,
         "folder": "theme8\\img\\course1\\",
-        "core" : "Quels feux sont-ils blancs quand ils sont actionnés ?",
-        "propositions" : ["Clignotants", "Feux Stop arrière", "Feux arrière"],
+        "core" : "What lights are white when activated?",
+        "propositions" : ["Turn signals", "Rear stop lights", "Rear lights"],
         "correct_answers" : "0~0~1",
-        "note" : "Les feux de marche arrière sont blancs quand ils s'allument."
+        "note" : "The reverse lights are white when they come on."
     },
     {
         "ID" : 176,
         "points" : 6,
         "folder": "theme8\\img\\course1\\",
-        "core" : "Lorsqu'un voyant orange (le témoin d'alerte) s'allume pendant la conduite, que pensez-vous faire ?",
-        "propositions" : ["Aller directement au garage car vous pouvez encore rouler quelques kilomètres", "Vous arrêter immédiatement car la conduite est interdite et appeler le garagiste qu'il vienne vous remorquer"],
+        "core" : "When an orange light (the warning light) comes on while driving, what do you think you will do?",
+        "propositions" : ["Go directly to the garage because you can still drive a few kilometers", "Stop immediately because driving is prohibited and call the mechanic to come tow you"],
         "correct_answers" : [1, 0],
-        "note" : "Lorsque le voyant orange s'allume, vous n'êtes pas en danger extrême, donc vous pouvez encore rouler quelques kilomètres. Allez directement chez le garagiste."
+        "note" : "When the orange light comes on, you are not in extreme danger, so you can still drive a few kilometers. Go directly to the garage."
     },
     {
         "ID" : 177,
         "points" : 8,
         "folder": "theme8\\img\\course1\\",
-        "core" : "Sur la boite à vitesse automatique, que signifie la position R ?",
-        "propositions" : ["Avancer", "Reculer", "Changer de vitesse"],
+        "core" : "What does the R position mean on the automatic gearbox?",
+        "propositions" : ["Forward", "Reverse", "Change speed"],
         "correct_answers" : [0, 1, 0],
-        "note" : "R signifie reverse donc reculer."
+        "note" : "R means reverse therefore back off."
     },
     {
         "ID" : 178,
         "points" : 10,
         "folder": "theme8\\img\\course2\\",
-        "core" : "Si votre voiture est neuve, à quel moment doit avoir lieu le contrôle technique ?",
-        "propositions" : ["Après 2 ans", "Dans les 6 mois avant qu'elle n'accomplisse ses 4 ans"],
+        "core" : "If your car is new, when should the technical inspection take place?",
+        "propositions" : ["After 2 years", "Within 6 months before she turns 4"],
         "correct_answers" : [0, 1],
-        "note" : "Dans les 6 mois avant qu'elle n'accomplisse ses 4 ans"
+        "note" : "Within 6 months before she turns 4"
     },
     {
         "ID" : 179,
         "points" : 3,
         "folder": "theme8\\img\\course2\\",
-        "core" :"Si une ampoule grille, devez-vous changer l'autre qui fonctionne correctement ?",
-        "propositions" : ["Oui", "Non"],
+        "core" :"If one bulb burns out, should you change the other one that is working properly?",
+        "propositions" : ["Yes", "No"],
         "correct_answers" : [1, 0],
-        "note" : "Lorsqu'une ampoule grille, vous devez changer les deux, symétriquement, car l'autre est usée et va griller à son tour."
+        "note" : "When one bulb burns out, you must change both, symmetrically, because the other is worn out and will burn out in turn."
     },
     {
         "ID" : 180,
         "points" : 6,
         "folder": "theme8\\img\\course2\\",
-        "core" : "A quelle fréquence les essuie-glaces doivent-ils être remplacés ?",
-        "propositions" : ["Tous les 6 mois", "Tous les ans", "Tous les 2 ans"],
+        "core" : "How often should the wipers be replaced?",
+        "propositions" : ["Every 6 months", "Every year", "Every 2 years"],
         "correct_answers" : [0, 1, 0],
-        "note" : "Les essuie-glaces doivent être remplacés tous les ans."
+        "note" : "The wipers should be replaced annually."
     },
     {
         "ID" : 181,
         "points" : 4,
         "folder": "theme8\\img\\course2\\",
-        "core" : "Sur combien de roues le frein à pied agit-il ?",
-        "propositions" : ["2 roues motrices", "4 roues"],
+        "core" : "How many wheels does the foot brake work on?",
+        "propositions" : ["2 wheel drive", "4 wheel"],
         "correct_answers" : [0, 1],
-        "note" : "Le frein à pied agit sur 4 roues."
+        "note" : "The foot brake acts on 4 wheels. The foot brake acts on 4 wheels."
     },
     {
         "ID" : 182,
         "points" : 6,
         "folder": "theme8\\img\\course2\\",
-        "core"  :"<!img87.PNG!>Si ce voyant s'allume sur votre tableau de bord, que faut-t-il faire ?",
-        "propositions" : ["Il faut rajouter du lave-glace", "Il faut rajouter du liquide de frein", "Il faut s'arrêter"],
+        "core"  :"<!img87.PNG!>If this indicator lights up on your dashboard, what should you do?",
+        "propositions" : ["You have to add windshield washer", "You have to add brake fluid", "You have to stop"],
         "correct_answers" : [0, 0, 1],
-        "note" : "Il s'agit du voyant de liquide de refroidissement qui s'est allumé et donc il faut s'arrêter pour laisser le moteur refroidir pour faire l'appoint."
+        "note" : "This is the coolant light that has come on, so stop to let the engine cool to top up."
     },
     {
         "ID" : 183,
         "points" : 5,
         "folder": "theme8\\img\\course2\\",
-        "core" : "Pouvez-vous démarrer la voiture à l'aide de votre clé si la batterie est vide ?",
-        "propositions" : ["Oui, sans problèmes","Non ou difficilement"],
+        "core" : "Can you start the car using your key if the battery is empty?",
+        "propositions" : ["Yes, without problems", "No or hardly"],
         "correct_answers" : [0, 1],
-        "note" : "Si la batterie est vide, vous aurez du mal à démarrer la voiture à l'aide de la clé. Si cela vous arrive, vous pouvez demander à quelqu'un de vous dépanner avec des pinces."
+        "note" : "If the battery is empty, you will have trouble starting the car with the key. If this happens to you, you can ask someone to help you out with pliers. "
     },
     {
         "ID" : 184,
         "points" : 5,
         "folder": "theme8\\img\\course2\\",
-        "core" : "Comment doivent-être placés les pneus ?",
-        "propositions" : ["Ils doivent avoir les mêmes caractéristiques sur un seul essieu", "Ils doivent avoir les mêmes caractéristiques d'un seul côté"],
+        "core" : "How should the tires be placed?",
+        "propositions" : ["They must have the same characteristics on one axle", "They must have the same characteristics on one side"],
         "correct_answers" : [1, 0],
-        "note" : "Ils doivent avoir les mêmes caractéristiques sur un seul essieu."
+        "note" : "They must have the same characteristics on one axle."
     },
     {
         "ID" : 185,
         "points" : 4,
         "folder": "theme8\\img\\course2\\",
-        "core" : "Si vos pneus sont gonflés à 1,5 bars sont-ils :",
-        "propositions" : ["Sous-gonflés ?", "Sur-gonflés ?"],
+        "core" : "If your tires are inflated to 1.5 bars are they:",
+        "propositions" : ["Under-inflated?", "Over-inflated?"],
         "correct_answers" : [1, 0],
-        "note" : "La bonne pression se situe entre 1,8 et 3 bars. Il faut donc les gonfler davantage."
+        "note" : "The right pressure is between 1.8 and 3 bars. They must therefore be inflated more."
     },
     {
         "ID" : 186,
         "points" : 10,
         "folder": "theme8\\img\\course2\\",
-        "core" : "Si vous avez une roue dans le coffre, que faut-il faire si vous crevez sur l'autoroute (roue gauche) ?",
-        "propositions" : ["Changer la roue sur une BAU", "Évacuer le véhicule et appeler la dépanneuse"],
+        "core" : " If you have a wheel in the trunk, what to do if you puncture on the highway (left wheel)?",
+        "propositions" : ["Change the wheel on a BAU", "Evacuate the vehicle and call the tow truck"],
         "correct_answers" : [0, 1],
-        "note" : "Il ne faut pas changer la roue gauche sur l'autoroute, même en étant sur une BAU car la circulation n'est pas loin de vous. Vous êtes exposés. Même si vous savez changer la roue, ne vous lancez pas dans la démarche, c'est très dangereux."
+        "note" : "Do not change the left wheel on the highway, even while on a BAU because the traffic is not far from you. You are exposed. Even if you know how to change the wheel, do not embark on the process, it is very dangerous."
     },
     {
         "ID" : 187,
         "points" : 12,
         "folder": "theme8\\img\\course2\\",
-        "core" : "Mettez les étapes en ordre pour changer une roue.<!img88.PNG!>",
+        "core" : "Put the steps in order to change a wheel.<!img88.PNG!>",
         "propositions" : ["A,B,C,D", "B,C,A,D", "D,A,B,C", "C,A,D,B"],
         "correct_answers" : [0, 0, 0, 1],
-        "note" : "C- on dévisse (sens contraire aux aiguilles d'une montre) ; A- roue dévissée ; D-nouvelle roue mise ; B- on visse (sens des aiguilles)."
+        "note" : "C- we unscrew (counterclockwise); A- unscrewed wheel; D-new wheel put; B- we screw (clockwise)."
     },
     {
         "ID" : 188,
         "points" : 1,
         "folder": "theme9\\img\\course1\\",
-        "core" : "Combien de temps faut-il pour parcourir 1 km à pied ?",
-        "propositions" : ["15 minutes", "40 minutes", "1 heure", "1h30"],
+        "core" : "How long does it take to travel 1 km on foot?",
+        "propositions" : ["15 minutes", "40 minutes", "1 hour", "1:30"],
         "correct_answers" : [1, 0, 0 ,0],
-        "note" : "Pour faire un 1 km, il faut compter 12-15 minutes de marche à pied."
+        "note" : "To make a 1 km, it takes 12-15 minutes of walking."
     },
     {
         "ID" : 189,
         "points" : 3,
         "folder": "theme9\\img\\course1\\",
-        "core" : "L'éco-mobilité est-elle bien développée en France ?",
-        "propositions" : ["Oui", "Non"],
+        "core" : "Is eco-mobility well developed in France?",
+        "propositions" : ["Yes", "No"],
         "correct_answers" : [0, 1],
-        "note" : "En France, 65% de déplacements s'effectuent en voiture, raison pour laquelle l'éco-mobilité est en retard et doit davantage se développer."
+        "note" : "In France, 65% of trips are made by car, which is why eco-mobility is behind schedule and needs to develop further. "
     },
     {
         "ID" : 190,
         "points" : 4,
         "folder": "theme9\\img\\course1\\",
-        "core" : "Le co-voiturage, permet-il de réduire la pollution ?",
-        "propositions" : ["Oui", "Non"],
+        "core" : "Does carpooling help reduce pollution?",
+        "propositions" : ["Yes", "No"],
         "correct_answers" : [1, 0],
-        "note" : "Dans la mesure où vous partagez votre voiture avec d'autres usagers ou qu'ils vous la font partager, vous réduisez la pollution."
+        "note" : "By sharing your car with other users or having them share it with you, you reduce pollution."
     },
     {
         "ID" : 191,
         "points" : 5,
         "folder": "theme9\\img\\course2\\",
-        "core" : "L'étiquette relative à l'énergie est-elle obligatoirement apposée sur une voiture neuve, prête à être vendue ?",
-        "propositions" : ["Oui", "Non"],
+        "core" : "Is the energy label obligatorily affixed on a new car, ready to be sold?",
+        "propositions" : ["Yes", "No"],
         "correct_answers" : [1, 0],
-        "note" : "L'étiquette est obligatoirement apposée pour certifier de la consommation énergétique du véhicule."
+        "note" : "The label must be affixed to certify the energy consumption of the vehicle."
     },
     {
         "ID" : 192,
         "points" : 5,
         "folder": "theme9\\img\\course2\\",
-        "core" : "Les voitures aux boîtes automatiques, consomment-elles moins que les boîtes à vitesses manuelles ?",
-        "propositions" : ["Oui, beaucoup moins", "Non, pas forcément"],
+        "core" : "Do cars with automatic gearboxes consume less than manual gearboxes?",
+        "propositions" : ["Yes, much less", "No, not necessarily"],
         "correct_answers" : [0, 1],
-        "note" : "Les nouvelles boîtes automatiques ne consomment pas beaucoup plus que les boîtes manuelles."
+        "note" : "New automatic transmissions do not consume much more than manual transmissions."
     },
     {
         "ID" : 193,
         "points" : 2,
         "folder": "theme9\\img\\course2\\",
-        "core" : "Parmi ces pays, lequel produit le plus de voitures dans le monde ?",
-        "propositions" : ["Chine", "Brésil", "Corée du Sud", "Allemagne"],
+        "core" : "Which of these countries produces the most cars in the world?",
+        "propositions" : ["China", "Brazil", "South Korea", "Germany"],
         "correct_answers" : [0, 0, 1, 0],
-        "note" : "Au niveau mondial, c'est la Corée du Sud qui a la plus grande usine au monde, derrière elle vient le Brésil et l'Allemagne en 3ème lieu. La France, malheureusement, ne figure pas au top 10. C'est la Pologne avec son usine Fiat qui détient la 7ème place mondiale et c'est le seul pays Européen qui se trouve sur la liste."
+        "note" : "Globally, South Korea has the largest factory in the world, behind it comes Brazil and Germany in third place. France, unfortunately, is not in the top 10. It is Poland with its Fiat factory which holds the 7th place in the world and it is the only European country which is on the list."
     },
     {
         "ID" : 194,
         "points" : 6,
         "folder": "theme9\\img\\course3\\",
-        "core" : "Pour pratiquer de l'éco-conduite, en quelle vitesse devriez-vous conduire si vous êtes à 50 km/h pendant un long moment ?",
-        "propositions" : ["En 2ème vitesse", "En 3ème vitesse", "En 4ème vitesse"],
+        "core" : "To practice eco-driving, what speed should you drive if you are at 50 km / h for a long time?",
+        "propositions" : ["In 2nd gear", "In 3rd gear", "In 4th gear"],
         "correct_answers" : [0, 0, 1],
-        "note" : "Les 50 km/h est la vitesse maximum pratiquée en ville. Si vous vous arrêtez à chaque coin de rue, vous devez rester en 3ème. Mais si vous allez conduire un kilomètre sans vous arrêter et à 50 km/h, vaut mieux rouler en 4ème vitesse. Vous serez en sous-régime sinon."
+        "note" : "The 50 km / h is the maximum speed practiced in town. If you stop at every corner, you must stay in 3rd. But if you are going to drive a kilometer without stopping and at 50 km / h, it is better to drive in 4th speed. Otherwise, you will be on a diet. "
     },
     {
         "ID" : 195,
         "points" : 5,
         "folder": "theme9\\img\\course3\\",
-        "core" : "Arrêter le moteur au feu rouge ne serait-ce que pendant 20 sec, aide-t-il à moins polluer ?",
-        "propositions" : ["Oui", "Non, cela ne change strictement rien"],
+        "core" : "Stopping the engine at red light for just 20 seconds, does it help to pollute less?",
+        "propositions" : ["Yes", "No, it changes absolutely nothing"],
         "correct_answers" : [1, 0],
-        "note" : "Vous consommez plus de carburant donc vous polluez plus si vous laissez le moteur allumé pendant plus de 20 s, que si vous l'éteignez puis l'allumez à nouveau !"
+        "note" : "You consume more fuel so you pollute more if you leave the engine running for more than 20 s, than if you turn it off then turn it on again!"
     },
     {
         "ID" : 196,
         "points" : 2,
         "folder": "theme9\\img\\course3\\",
-        "core" : "Si vous roulez 10 km/h de moins que d'habitude, à combien de pourcents la pollution est-elle réduite ?",
+        "core" : "If you drive 10 km / h less than usual, how many percent of pollution is reduced?",
         "propositions" : ["0,2 %", "5 %", "10 %", "12,5 %"],
         "correct_answers" : [0, 0, 0, 1],
-        "note" : "En cas de pic de pollution, le Préfet du département peut réduire la vitesse maximale autorisée sur certains réseaux. 10 km/h de moins permettent d'économiser jusqu'à 5 l de carburant et de réduire donc la pollution de 12,5%."
+        "note" : "In the event of a peak in pollution, the Prefect of the department can reduce the maximum speed allowed on certain networks. 10 km / h less can save up to 5 l of fuel and therefore reduce pollution by 12.5% . "
     },
     {
         "ID" : 197,
         "points" : 3,
         "folder": "theme9\\img\\course3\\",
-        "core" : "La clim, pollue-t-elle plus qu'une fenêtre ouverte ?",
-        "propositions" : ["Oui", "Non"],
+        "core" : "Does air conditioning pollute more than an open window?",
+        "propositions" : ["Yes", "No"],
         "correct_answers" : [0, 1],
-        "note" : "Faire fonctionner la clim de façon modérée (maximum 4 à 5°C d'écart avec la température extérieure) est plus écologique que de rouler les vitres baissées"
+        "note" : "Operating the air conditioning moderately (maximum 4 to 5 ° C difference with the outside temperature) is more ecological than rolling the windows down."
     },
     {
         "ID" : 198,
         "points" :6,
         "folder": "theme9\\img\\course3\\",
-        "core" : "Pour être 'éco-mobile' vous devez contrôler régulièrement: (Attention, plusieurs réponses sont possibles).",
-        "propositions" :  ["L'état des pneus", "L'état des bougies et des filtres à air", "L'état des phares"],
+        "core" : "To be 'eco-mobile' you must regularly check: (Attention, several answers are possible).",
+        "propositions" :  ["The condition of the tires", "The condition of the spark plugs and air filters", "The condition of the headlights"],
         "correct_answers" : [1, 1, 0],
-        "note" : "La pression des pneus et l'état des bougies et du filtre à air ont une influence directe sur la consommation du véhicule, mais pas les phares."
+        "note" : "Tire pressure and the condition of spark plugs and the air filter have a direct influence on vehicle consumption, but not the headlights."
     },
     {
         "ID" : 199,
         "points" : 5,
         "folder": "theme10\\img\\course1\\",
-        "core" : "Quelle est la fonction de l'ABS ?",
-        "propositions" : ["De garder le contrôle de la direction", "De raccourcir les distances de freinage"],
+        "core" : "What is the function of ABS?",
+        "propositions" : ["To keep control of the direction", "To shorten the braking distances"],
         "correct_answers" : [1, 0],
-        "note" : "L'ABS ne peut pas raccourcir la distance de freinage, seulement vous aider à garder le contrôle de la direction."
+        "note" : "ABS cannot shorten the braking distance, only help you keep control of the steering."
     },
     {
         "ID" : 200,
         "points" : 4,
         "folder": "theme10\\img\\course1\\",
-        "core" : "L'ABS ne peut pas raccourcir la distance de freinage, seulement vous aider à garder le contrôle de la direction.",
-        "propositions" : ["De raccourcir la distance de freinage", "D'amplifier le freinage"],
+        "core" : "ABS cannot shorten the braking distance, only help you keep control of the steering.",
+        "propositions" : ["To shorten the braking distance", "To increase the braking"],
         "correct_answers" : [0,1],
-        "note" : "L'AFU est un complément de l'ABS, donc ni l'un ni l'autre ne raccourcissent la distance de freinage."
+        "note" : "AFU is a complement to ABS, so neither shortens the braking distance."
     },
     {
         "ID" : 201,
         "points" : 6,
         "folder": "theme10\\img\\course1\\",
-        "core" : "Quelle est la fonction de l'ESP ? (Attention, plusieurs réponses sont possibles)",
-        "propositions" : ["De raccourcir la distance de freinage", "De ramener la voiture sur la bonne trajectoire en cas de perte d'adhérence", "De repartir automatiquement le freinage sur chacune des roues"],
+        "core" : "What is the function of ESP? (Attention, several answers are possible)",
+        "propositions" : ["To shorten the braking distance", "To bring the car back on the correct trajectory in the event of loss of grip", "To automatically restart the braking on each of the wheels"],
         "correct_answers" : [0, 1, 1],
-        "note" : "Programme de Stabilité Électronique (ESP) permet de ramener la voiture sur la bonne trajectoire si jamais vous commencez à glisser. L'ESP détecte l'adhérence et répartit automatiquement le freinage sur chacune des roues pour mieux gérer le dérapage."
+        "note" : "Electronic Stability Program (ESP) allows you to get the car back on the right path if you ever start to slide. The ESP detects grip and automatically distributes braking on each of the wheels to better manage the skid."
     },
     {
         "ID" : 202,
         "points" : 5,
         "folder": "theme10\\img\\course1\\",
-        "core" : "Si vous utilisez le régulateur de vitesse, votre temps de réaction est-il raccourci ?",
-        "propositions" : ["Oui", "Non"],
+        "core" : "If you use cruise control, is your reaction time shortened?",
+        "propositions" : ["Yes", "No"],
         "correct_answers" : [0, 1],
-        "note" : "Vos pieds ne sont pas positionnés donc le temps de réaction est forcément plus long."
+        "note" : "Your feet are not positioned so the reaction time is necessarily longer."
     },
     {
         "ID" : 203,
         "points" : 8,
         "folder": "theme10\\img\\course1\\",
-        "core" : "Si le conducteur a réglé le limitateur de vitesse à 110 km/h, mais souhaite dépasser un véhicule, que doit-il faire avant la manœuvre ? (Attention, plusieurs réponses sont possibles.)",
-        "propositions" : ["Il suffit d'accélérer petit à petit", "Il faut qu'il désactive lui-même le limitateur pour pouvoir accélérer", "Il faut qu'il appuie fortement pour franchir la limite de vitesse fixée"],
+        "core" : "If the driver has set the speed limiter to 110 km / h, but wishes to overtake a vehicle, what should he do before the maneuver? (Attention, several answers are possible.)",
+        "propositions" : ["It is enough to accelerate little by little", "It is necessary that it activates itself the limiter to be able to accelerate", "It is necessary that it presses strongly to cross the fixed speed limit"],
         "correct_answers" : [0, 1, 1],
-        "note" : "Si jamais vous souhaitez accélérer graduellement, la pédale reste inactive. Si vous appuyez brusquement, vous pouvez accélérer momentanément."
+        "note" : "If you ever want to accelerate gradually, the pedal remains inactive. If you press hard, you can accelerate momentarily."
     },
     {
         "ID" : 204,
         "points" : 4,
         "folder": "theme10\\img\\course1\\",
-        "core" : "Le radar de recul, dans quel situation est-il utilisé ?",
-        "propositions" : ["Pour mieux repérer les autres usagers dans l'angle mort", "Pour repérer les contrôles de vitesse des policiers","Pour mieux se garer"],
+        "core" : "The reversing radar, in which situation is it used?",
+        "propositions" : ["To better identify other users in the blind spot", "To identify police speed controls", "To park better"],
         "correct_answers" : [0, 0, 1],
-        "note" : "Doté d'une caméra à l'avant et à l'arrière de la voiture, ce dispositif vous aide à mieux vous garer car il repère les obstacles et les signale par les bips sonores."
+        "note" : "With a camera at the front and rear of the car, this device helps you park better because it identifies obstacles and signals them with audible beeps."
     },
     {
         "ID" : 205,
         "points" : 4,
         "folder": "theme10\\img\\course1\\",
-        "core" : "Si vous téléphonez via le Bluetooth, tenez-vous le téléphone en main ?",
-        "propositions" : ["Oui", "Non"],
+        "core" : "If you are calling via Bluetooth, are you holding the phone in your hand?",
+        "propositions" : ["Yes", "No"],
         "correct_answers" : [0, 1],
-        "note" : "C'est un dispositif qui vise à sécuriser les appels passés ou reçus car le conducteur n'utilise pas ses mains."
+        "note" : "It is a device that aims to secure calls made or received because the driver does not use his hands."
     },
     {
         "ID" : 206,
         "points" : 10,
         "folder": "theme10\\img\\course1\\",
-        "core" : "A quelle partie du véhicule la direction assistée fait-elle référence ?",
-        "propositions" : ["Aux roues", "Au volant", "Au moteur", "A la boîte à vitesses"],
+        "core" : "Which part of the vehicle does the power steering refer to?",
+        "propositions" : ["To the wheels", "To the steering wheel", "To the engine", "To the gearbox"],
         "correct_answers" : [0, 1, 0, 0],
-        "note" : "C'est le volant qui donne la direction, pas les roues. Elles suivent le message du volant."
+        "note" : "It is the steering wheel that gives direction, not the wheels. They follow the message from the steering wheel."
     },
     {
         "ID" : 207,
         "points" : 6,
         "folder": "theme10\\img\\course1\\",
-        "core" :"Sur les voitures récentes, où se trouve l'avertisseur de l'angle mort ?",
-        "propositions" : ["Sur le rétroviseur intérieur", "Sur le tableau de bord", "Sur les deux rétroviseurs extérieurs"],
+        "core" :"On recent cars, where is the blind spot warning?",
+        "propositions" : ["On the interior mirror", "On the dashboard", "On the two exterior mirrors"],
         "correct_answers" : [0, 0, 1],
-        "note" : "Sur les voitures récentes, l'avertisseur de l'angle mort se trouve sur les deux rétroviseurs extérieurs."
+        "note" : "On recent cars, the blind spot warning is on the two exterior mirrors."
     },
     {
         "ID" : 208,
         "points" : 5,
         "folder": "theme10\\img\\course1\\",
-        "core" : "Pouvez-vous utiliser le régulateur de vitesse en ville ?",
-        "propositions" :["Oui", "Non"],
+        "core" : "Can you use cruise control in town?",
+        "propositions" :["Yes", "No"],
         "correct_answers" : [0, 1],
-        "note" : "L'usage du régulateur de vitesse en ville est inadapté car les arrêts et les démarrages sont fréquents (feux, arrêts au Stop, priorités à droite etc)."
+        "note" : "The use of cruise control in town is unsuitable because stops and starts are frequent (lights, stops at stop, priorities to the right, etc.)."
     },
     {
         "ID" : 209,
         "points" : 5,
         "folder": "theme10\\img\\course2\\",
-        "core" :"Parmi les actions de la Délégation à la sécurité routière, contrôler et sanctionner les infractions au Code de la route ",
-        "propositions" : ["Oui", "Non"],
+        "core" :"Among the actions of the Delegation for road safety, control and punish violations of the Highway Code",
+        "propositions" : ["Yes", "No"],
         "correct_answers" : [1, 0],
-        "note" : "Parmi les actions de la Délégation à la sécurité routière, contrôler et sanctionner les infractions au Code de la route."
+        "note" : "Among the actions of the Delegation for road safety, control and punish violations of the Highway Code."
     },
     {
         "ID" : 210,
         "points" : 2,
         "folder": "theme10\\img\\course2\\",
-        "core" : "L’association Prévention Routière n'assure pas la formation des conducteurs, notamment suite à des infractions répétées au Code de la route ",
-        "propositions" : ["Oui", "Non"],
+        "core" : "The Prévention Routière association does not provide driver training, in particular following repeated violations of the Highway Code",
+        "propositions" : ["Yes", "No"],
         "correct_answers" : [0, 1],
-        "note" : "l’association Prévention Routière réalise la formation des conducteurs, notamment suite à des infractions répétées au Code de la route."
+        "note" : "the Prévention Routière association provides driver training, in particular following repeated violations of the Highway Code."
     },
     {
         "ID" : 211,
         "points" : 5,
         "folder": "theme10\\img\\course3\\",
-        "core" : "Si vous ne portez pas la ceinture, l'accident risque-t-il d'être mortel à 50 km /h ?",
-        "propositions" : ["Oui", "Non"],
+        "core" : "If you don't wear the seat belt, is there a risk of a fatal accident at 50 km / h?",
+        "propositions" : ["Yes", "No"],
         "correct_answers" : [1, 0],
-        "note" : "Si vous roulez à 50 km / h et avec un accident, vous risquez votre vie."
+        "note" : "If you drive at 50 km / h and have an accident, you risk your life."
     },
     {
         "ID" : 212,
         "points" : 6,
         "folder": "theme10\\img\\course3\\",
-        "core" : "Que permet la ceinture à un passager en cas d'accident ? ( Attention! Plusieurs réponses sont possibles)",
-        "propositions" : ["De ne pas être secoué dans tous les sens", "De pouvoir s'extraire du véhicule plus rapidement en cas de collision", "De ne pas être contrôlé à l'alcoolémie"],
+        "core" : "What does the seat belt allow a passenger in the event of an accident? (Attention! Several answers are possible)",
+        "propositions" : ["Not to be shaken in all directions", "To be able to get out of the vehicle faster in the event of a collision", "Not to be checked for alcohol"],
         "correct_answers" : [1, 1, 0],
-        "note" : "Le port de la ceinture de sécurité n'épargne pas le dépistage à l'alcool et à la drogue lors d'un accident. Au contraire."
+        "note" : "Wearing a seat belt does not spare you from alcohol and drug testing in an accident. On the contrary."
     },
     {
         "ID" : 213,
         "points" : 5,
         "folder": "theme10\\img\\course3\\",
-        "core" : "Les air-bags, sont-ils sensibles au poids du passager ?",
-        "propositions" : ["Oui", "Non"],
+        "core" : "Are the airbags sensitive to the weight of the passenger?",
+        "propositions" : ["Yes", "No"],
         "correct_answers" : [1, 0],
-        "note" : "Si l’icône affichée illustre un air-bag traversé d’un « X », le poids sur le siège ne suffit pas à activer le système et le coussin ne se déploiera pas en cas d’impact frontal."
+        "note" : "If the icon displayed shows an air bag crossed with an "X", the weight on the seat is not enough to activate the system and the cushion will not deploy in the event of a frontal impact."
     },
     {
         "ID" : 214,
         "points" : 5,
         "folder": "theme10\\img\\course3\\",
-        "core" : "Si le voyant d'air-bag s'allume, de quel témoin s'agit-il ?",
-        "propositions" : ["Témoin d'alarme", "Témoin d'alerte"],
+        "core" : "If the air bag warning light comes on, which warning light is this?",
+        "propositions" : ["Warning lamp", "Warning lamp"],
         "correct_answers" : [1, 0],
-        "note" : "Il s'agit d'un témoin d'alarme. Ce voyant est plus souvent de couleur rouge."
+        "note" : "It is an alarm light. This indicator is more often red."
     },
     {
         "ID" : 215,
         "points" : 4,
         "folder": "theme10\\img\\course3\\",
-        "core" : "Le non-port de la ceinture où est-il davantage présent ?",
-        "propositions" : ["A l'avant du véhicule", "A l'arrière du véhicule"],
+        "core" : "The non-wearing of the belt where is it more present?",
+        "propositions" : ["At the front of the vehicle", "At the rear of the vehicle"],
         "correct_answers" : [0, 1],
-        "note" : "Le port de la ceinture est respecté à 98% à l'avant, mais moins à l'arrière (80%)."
+        "note" : "The belt is 98% respected at the front, but less at the rear (80%)."
     },
     {
         "ID" : 216,
         "points" : 6,
         "folder": "theme10\\img\\course3\\",
-        "core" : "Un enfant de 8 ans, peut-il être installé à l'avant du véhicule ?",
-        "propositions" : [ "Oui", "Non", "Oui, sous certaines conditions"],
+        "core" : "Can an 8 year old child be installed in the front of the vehicle?",
+        "propositions" : ["Yes", "No", "Yes, under certain conditions"],
         "correct_answers" : [0, 0, 1],
-        "note" : "Il est interdit de placer un enfant de moins de 10 ans à l'avant du véhicule, sauf si vous ne disposez pas de places à l'arrière comme dans un utilitaire."
+        "note" : "It is forbidden to place a child under the age of 10 in the front of the vehicle, unless you do not have places in the back as in a utility vehicle."
     },
     {
         "ID" : 217,
         "points" : 6,
         "folder": "theme10\\img\\course3\\",
-        "core" : "Comment le lit-nacelle doit-il être placé ?",
-        "propositions" : [ "Seulement à l'arrière", "Seulement à l'avant", "Soit à l'avant soit à l'arrière"],
+        "core" : "How should the cot be placed?",
+        "propositions" : ["Only at the back", "Only at the front", "Either at the front or at the rear"],
         "correct_answers" : [0, 0, 1],
-        "note" : "Ils peuvent être transportés dans un porte bébé 'dos vers l'avant' à l'arrière ou à l'avant à l'aide de la ceinture de sécurité"
+        "note" : "They can be transported in a baby carrier 'back forwards' at the back or at the front using the seat belt"
     },
     {
         "ID" : 218,
         "points" : 5,
         "folder": "theme10\\img\\course3\\",
-        "core" :"Le siège homologué (style baquet), pour quelle tranche d'âge est-il conçu ?",
-        "propositions" : ["naissance - 1 an", "9 mois - 5 ans", "3 ans - 12 ans"],
+        "core" :"The approved seat (bucket style), for what age group is it designed?",
+        "propositions" : ["birth - 1 year", "9 months - 5 years", "3 years - 12 years"],
         "correct_answers" : [0, 1, 0],
-        "note" : "Il s'agit d'un siège pour les enfants entre 9 mois et 5 ans qui ont entre 9 et 18 kg."
+        "note" : "It is a seat for children between 9 months and 5 years who weigh between 9 and 18 kg."
     }
     ]
     }
