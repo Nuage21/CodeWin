@@ -23,48 +23,36 @@ public class SidebarChapterPane_Controller {
 
     private boolean isExpanded = false;
 
-    public static String[] expImages = {"C:\\Users\\hbais\\Desktop\\test_loggedin\\src\\sample\\img\\icons\\unexpand.png", "C:\\Users\\hbais\\Desktop\\test_loggedin\\src\\sample\\img\\icons\\expand.png"};
+    public static String[] expImages = {"\\img\\icons\\unexpand.png", "\\img\\icons\\expand.png"};
+
     @FXML
     void initialize() {
         expandStackPane.setOnMouseClicked(event -> {
             this.isExpanded = !isExpanded;
             expandablePane.setVisible(isExpanded);
             expandablePane.setManaged(isExpanded);
-            try {
-                expanderImageView.setImage(new Image(new FileInputStream(expImages[isExpanded?0:1]) ));
-            } catch (FileNotFoundException e) {
-                e.printStackTrace();
-            }
+            Image image = new Image(getClass().getResourceAsStream(expImages[isExpanded ? 0 : 1]));
+            expanderImageView.setImage(image);
             event.consume();
         });
     }
 
-    public void expand()
-    {
-        if(this.isExpanded)
+    public void expand() {
+        if (this.isExpanded)
             return;
         this.isExpanded = true;
         expandablePane.setVisible(true);
         expandablePane.setManaged(true);
-        try {
-            expanderImageView.setImage(new Image(new FileInputStream(expImages[0]) ));
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
+        expanderImageView.setImage(new Image(getClass().getResourceAsStream(expImages[0])));
     }
 
-    public void unexpand()
-    {
-        if(!this.isExpanded)
+    public void unexpand() {
+        if (!this.isExpanded)
             return;
         this.isExpanded = false;
         expandablePane.setVisible(false);
         expandablePane.setManaged(false);
-        try {
-            expanderImageView.setImage(new Image(new FileInputStream(expImages[1]) ));
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
+        expanderImageView.setImage(new Image(getClass().getResourceAsStream(expImages[1])));
     }
 
     public void setTitle(String _title) {

@@ -20,14 +20,15 @@ public class PropositionPane_Controller {
     @FXML
     private Pane holder;
 
-    @FXML private ImageView checkImageView;
+    @FXML
+    private ImageView checkImageView;
 
     private boolean isAnswered = false;
+
     @FXML
     public void initialize() {
         holder.setOnMouseClicked(mouseEvent -> {
-            if(!isAnswered)
-            {
+            if (!isAnswered) {
                 propositionCheckBox.setSelected(!isChosen()); // toggle selection
                 if (isChosen())
                     holder.setStyle(holder.getStyle() + "-fx-effect: dropshadow(three-pass-box, #2389bb, 10, 0, 0, 0);");
@@ -37,23 +38,17 @@ public class PropositionPane_Controller {
         });
     }
 
-    public void validate(boolean isRight)
-    {
+    public void validate(boolean isRight) {
         this.isAnswered = true;
         propositionCheckBox.setVisible(false);
-        if(!isRight)
-        {
+        if (!isRight) {
             Image imgFalse = null;
-            try {
-                imgFalse = new Image(new FileInputStream(Settings.projectPath + "img\\unchecked.png"));
-            } catch (FileNotFoundException e) {
-                Debug.debugException(e);
-            }
+            imgFalse = new Image(getClass().getResourceAsStream("img\\unchecked.png"));
             checkImageView.setImage(imgFalse);
         }
         checkImageView.setVisible(true);
         propositionLabel.setMinWidth(Region.USE_PREF_SIZE);
-        if(isRight)
+        if (isRight)
             holder.setStyle(holder.getStyle() + "-fx-effect: dropshadow(three-pass-box, #23bb89, 10, 0, 0, 0);");
         else
             holder.setStyle(holder.getStyle() + "-fx-effect: dropshadow(three-pass-box, darkred, 10, 0, 0, 0);");

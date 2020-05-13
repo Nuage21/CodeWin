@@ -174,7 +174,7 @@ public class Auth_Controller {
                         try {
                             root = loader.load();
                         } catch (IOException e) {
-                            e.printStackTrace();
+                            Debug.debugException(e);
                         }
                         LoggedIn_Controller.setUser(u);
                         Stage stg = Settings.appStage;

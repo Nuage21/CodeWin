@@ -26,19 +26,13 @@ public class AnswerPane_Controller {
     }
 
     public void setToFalseAnswer() {
-        Image image = null;
-        try {
-            image = new Image(new FileInputStream(Settings.projectPath + "img\\unchecked.png"));
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
+        Image image = new Image(getClass().getResourceAsStream("img\\unchecked.png"));
         answerImageView.setImage(image);
         answerLabel.setText("Reponse Fausse !");
         ((DropShadow) holder.getEffect()).setColor(Color.valueOf("#892312"));
     }
 
-    public void setVisible(boolean _visible)
-    {
+    public void setVisible(boolean _visible) {
         holder.setVisible(_visible);
         holder.setManaged(_visible);
     }

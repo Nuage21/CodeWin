@@ -23,40 +23,68 @@ import java.util.Calendar;
 
 public class Params_Controller {
 
-    @FXML private ImageView productKeyExpander;
-    @FXML private BorderPane productKeyExtensionBPane;
+    @FXML
+    private ImageView productKeyExpander;
+    @FXML
+    private BorderPane productKeyExtensionBPane;
 
-    @FXML private ImageView accountExpander;
-    @FXML private BorderPane accountExtensionBPane;
+    @FXML
+    private ImageView accountExpander;
+    @FXML
+    private BorderPane accountExtensionBPane;
 
-    @FXML private ImageView appearanceExpander;
-    @FXML private BorderPane appearanceExtensionBPane;
+    @FXML
+    private ImageView appearanceExpander;
+    @FXML
+    private BorderPane appearanceExtensionBPane;
 
-    @FXML private Label surnameLabel;
-    @FXML private Label firstnameLabel;
-    @FXML private Label mobileLabel;
-    @FXML private Label emailLabel;
-    @FXML private Label pKeyLabel;
-    @FXML private Label freetrialEndLabel;
-    @FXML private Label aboutLabel;
+    @FXML
+    private Label surnameLabel;
+    @FXML
+    private Label firstnameLabel;
+    @FXML
+    private Label mobileLabel;
+    @FXML
+    private Label emailLabel;
+    @FXML
+    private Label pKeyLabel;
+    @FXML
+    private Label freetrialEndLabel;
+    @FXML
+    private Label aboutLabel;
 
-    @FXML private Button sendCodeButton;
-    @FXML private Button saveEmailButton;
-    @FXML private Button savePwdButton;
-    @FXML private Button deleteAccountButton;
-    @FXML private Button activateButton;
+    @FXML
+    private Button sendCodeButton;
+    @FXML
+    private Button saveEmailButton;
+    @FXML
+    private Button savePwdButton;
+    @FXML
+    private Button deleteAccountButton;
+    @FXML
+    private Button activateButton;
 
-    @FXML private TextField newEmailTField;
-    @FXML private TextField productKeyTField;
-    @FXML private PasswordField codePField;
-    @FXML private PasswordField ancientPwdPField;
-    @FXML private PasswordField newPwdPField;
-    @FXML private PasswordField deleteAccountPField;
+    @FXML
+    private TextField newEmailTField;
+    @FXML
+    private TextField productKeyTField;
+    @FXML
+    private PasswordField codePField;
+    @FXML
+    private PasswordField ancientPwdPField;
+    @FXML
+    private PasswordField newPwdPField;
+    @FXML
+    private PasswordField deleteAccountPField;
 
-    @FXML private Pane activatedPane;
-    @FXML private Pane notActivatedPane;
-    @FXML private Pane enterKeyPane;
-    @FXML private Pane freetrialPane;
+    @FXML
+    private Pane activatedPane;
+    @FXML
+    private Pane notActivatedPane;
+    @FXML
+    private Pane enterKeyPane;
+    @FXML
+    private Pane freetrialPane;
 
     private ArrayList<ImageView> expanders = new ArrayList<>();
     private ArrayList<BorderPane> extensions = new ArrayList<>();
@@ -68,8 +96,8 @@ public class Params_Controller {
     private String genratedCode;
     private String providedEmail;
 
-    @FXML public void initialize()
-    {
+    @FXML
+    public void initialize() {
 
         syncUserInfos();
 
@@ -86,18 +114,12 @@ public class Params_Controller {
         expandersState.add(false);
         expandersState.add(false);
 
-        for(ImageView img : expanders)
-        {
+        for (ImageView img : expanders) {
             img.setOnMouseClicked(mouseEvent -> {
                 int expanderID = expanders.indexOf(img);
                 boolean isExpanded = getState(img);
-                String newImgPath = Settings.projectPath + "img\\icons\\" + (isExpanded?"expand.png":"unexpand.png");
-                Image image = null;
-                try {
-                    image = new Image(new FileInputStream(newImgPath));
-                } catch (FileNotFoundException e) {
-                    e.printStackTrace();
-                }
+                String newImgPath = "img\\icons\\" + (isExpanded ? "expand.png" : "unexpand.png");
+                Image image = new Image(getClass().getResourceAsStream(newImgPath));
                 img.setImage(image);
                 BorderPane ext = getExtension(img);
                 Design.setVisible(ext, !isExpanded);
@@ -106,24 +128,20 @@ public class Params_Controller {
         }
 
         sendCodeButton.setOnMouseClicked(mouseEvent -> {
-            if(Settings.ACTIVE_EMAIL_CONFIRM)
-            {
+            if (Settings.ACTIVE_EMAIL_CONFIRM) {
                 String email = newEmailTField.getText();
-                if(email.equals(LoggedIn_Controller.getUser().getEmail()))
+                if (email.equals(LoggedIn_Controller.getUser().getEmail()))
                     ErrorBox_Controller.showErrorBox(Settings.appStage, "Erreur", "L'email que vous avez fourni est le meme que l'ancien. Veuillez choisir un autre!");
-                else
-                {
+                else {
                     Boolean isValid = true;
-                    if(isValid)
-                    {
+                    if (isValid) {
                         providedEmail = email;
                         this.genratedCode = EmailConfirm_Controller.generate6Digits();
                         MailSender ms = new MailSender(Settings.CodeWinEmail, Settings.CodeWinEmailPwd);
                         boolean sentState = ms.sendConfirmationMail(email, genratedCode);
-                        if(!sentState)
+                        if (!sentState)
                             Checker.showConnexionError();
-                    }
-                    else
+                    } else
                         ErrorBox_Controller.showErrorBox(Settings.appStage, "Email invalide!", "Veuillez verifiez l'addresse email entree");
                 }
 
@@ -131,30 +149,23 @@ public class Params_Controller {
         });
 
         saveEmailButton.setOnMouseClicked(mouseEvent -> {
-            if(providedEmail == null || genratedCode == null)
-            {
+            if (providedEmail == null || genratedCode == null) {
 
-            }
-            else
-            {
+            } else {
                 String enteredCode = codePField.getText();
 
-                if(enteredCode.equals(genratedCode))
-                {
+                if (enteredCode.equals(genratedCode)) {
                     User u = LoggedIn_Controller.getUser();
                     boolean success = true;
-                    if(Settings.ACTIVE_DB_MODE)
+                    if (Settings.ACTIVE_DB_MODE)
                         success = User.updateEmail(u, providedEmail);
-                    if(success)
-                    {
+                    if (success) {
                         SuccessBox_Controller.showSuccessBox(Settings.appStage, "Succes", "Votre email a ete mise a jour avec succes");
                         LoggedIn_Controller.getUser().setEmail(providedEmail);
                         emailLabel.setText(providedEmail); // empty
-                    }
-                    else
+                    } else
                         Checker.showConnexionError();
-                }
-                else
+                } else
                     ErrorBox_Controller.showErrorBox(Settings.appStage, "Erreur", "Code invalide");
 
                 // empty
@@ -171,17 +182,15 @@ public class Params_Controller {
             String newPwd = newPwdPField.getText();
             User u = LoggedIn_Controller.getUser();
 
-            if(newPwd.equals(u.getPassword()))
+            if (newPwd.equals(u.getPassword()))
                 ErrorBox_Controller.showErrorBox(Settings.appStage, "Erreur", "Le mot de passe fourni est le meme que l'ancien. Veuillez choisir un autre!");
-            else if(ancientProvided.equals(u.getPassword()))
-            {
+            else if (ancientProvided.equals(u.getPassword())) {
                 boolean state = User.updatePassword(u, newPwd);
-                if(state)
+                if (state)
                     SuccessBox_Controller.showSuccessBox(Settings.appStage, "Success", "Votre mot de passe a ete mis a jour avec succees!");
                 else
                     Checker.showConnexionError();
-            }
-            else
+            } else
                 Checker.showPwdError();
 
             ancientPwdPField.setText("");
@@ -191,18 +200,14 @@ public class Params_Controller {
         deleteAccountButton.setOnMouseClicked(mouseEvent -> {
             User u = LoggedIn_Controller.getUser();
             String providedPwd = deleteAccountPField.getText();
-            if(providedPwd.equals(u.getPassword()))
-            {
+            if (providedPwd.equals(u.getPassword())) {
                 boolean state = User.deleteUser(u);
-                if(state)
-                {
+                if (state) {
                     SceneLoader.loadAuthenticator();
-                }
-                else
+                } else
                     ErrorBox_Controller.showErrorBox(Settings.appStage, "Erreur", "Une erreur est survenue lors de la suppression de votre compte. Veuillez Reessayer!");
 
-            }
-            else
+            } else
                 Checker.showPwdError();
         });
 
@@ -248,37 +253,30 @@ public class Params_Controller {
             String userPKey = User.getFormattedPKey(User.generatePKey(u.getUsername()));
             String enteredPKey = productKeyTField.getText();
 
-            if(enteredPKey.equals(userPKey) || enteredPKey.equals(validPKey))
-            {
+            if (enteredPKey.equals(userPKey) || enteredPKey.equals(validPKey)) {
                 boolean state = User.updatePKey(u, validPKey);
-                if(state)
-                {
+                if (state) {
                     Design.setVisible(notActivatedPane, false);
                     Design.setVisible(enterKeyPane, false);
                     SuccessBox_Controller.showSuccessBox(Settings.appStage, "Succes", "Votre produit a ete active avec succes");
-                }
-                else
+                } else
                     Checker.showConnexionError();
-            }
-            else
+            } else
                 ErrorBox_Controller.showErrorBox(Settings.appStage, "Cle incorrecte", "La Cle de Produit Introduite est erronee. Veuillez Reessayer");
         });
     }
 
-    private boolean getState(ImageView img)
-    {
+    private boolean getState(ImageView img) {
         int i = expanders.indexOf(img);
         return expandersState.get(i);
     }
 
-    private BorderPane getExtension(ImageView img)
-    {
+    private BorderPane getExtension(ImageView img) {
         int i = expanders.indexOf(img);
         return extensions.get(i);
     }
 
-    private void syncUserInfos()
-    {
+    private void syncUserInfos() {
         User u = LoggedIn_Controller.getUser();
 
         firstnameLabel.setText(u.getFirstname());

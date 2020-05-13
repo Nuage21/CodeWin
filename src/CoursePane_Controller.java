@@ -24,6 +24,7 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class CoursePane_Controller implements Controller {
     @FXML
@@ -42,7 +43,13 @@ public class CoursePane_Controller implements Controller {
             if(Settings.SIDEBAR_STATE == Settings.SIDEBAR_SHRINKED)
                 Design.setWidth(holderVBox, holderVBox.getWidth() + Settings.SIDEBAR_DELTA);
         });
-        String jsonCourse = Files.readString(Paths.get(filename), StandardCharsets.UTF_8);
+
+//        String jsonCourse = Files.readString(Paths.get(filename), StandardCharsets.UTF_8); JAVA-11 !
+
+        Scanner scanner = new Scanner( new File(filename), "UTF-8" );
+        String jsonCourse = scanner.useDelimiter("\\A").next();
+        scanner.close(); // Put this call in a finally block
+
         JSONObject obj = new JSONObject(jsonCourse);
 
         String core = obj.getString("core");
@@ -50,7 +57,8 @@ public class CoursePane_Controller implements Controller {
         // some preprocessing
         core = core.replace('\n', ' ');
         core = core.replace("  ", " ");
-        core = core.strip();
+//        core = core.strip();
+        core = core.trim();
 
         ArrayList<Parent> panes = new ArrayList<>();
         String gathered = "";
@@ -62,7 +70,8 @@ public class CoursePane_Controller implements Controller {
             if (c == '#') {
                 // append gathered text first
                 if (gathered.length() >= 5) {
-                    Parent p = this.appendText(gathered.strip());
+//                    Parent p = this.appendText(gathered.strip());
+                    Parent p = this.appendText(gathered.trim());
                     panes.add(p);
                     gathered = ""; // empty
                 }
@@ -81,7 +90,8 @@ public class CoursePane_Controller implements Controller {
                 if (core.charAt(i + 1) == '>') // element list spotted !
                 {
                     if (gathered.length() >= 5) {
-                        Parent p = this.appendText(gathered.strip());
+//                        Parent p = this.appendText(gathered.strip());
+                        Parent p = this.appendText(gathered.trim());
                         panes.add(p);
                         gathered = ""; // empty
                     }
@@ -101,7 +111,8 @@ public class CoursePane_Controller implements Controller {
                 if (core.charAt(i + 1) == '!') // image-?list spotted !
                 {
                     if (gathered.length() >= 5) {
-                        Parent p = this.appendText(gathered.strip());
+//                        Parent p = this.appendText(gathered.strip());
+                        Parent p = this.appendText(gathered.trim());
                         panes.add(p);
                         gathered = ""; // empty
                     }
@@ -151,7 +162,8 @@ public class CoursePane_Controller implements Controller {
             i++;
         }
         if (gathered.length() >= 5) {
-            Parent p = this.appendText(gathered.strip());
+//            Parent p = this.appendText(gathered.strip());
+            Parent p = this.appendText(gathered.trim());
             panes.add(p);
         }
         holderVBox.getChildren().addAll(panes);
@@ -189,7 +201,8 @@ public class CoursePane_Controller implements Controller {
     }
 
     public static String getHeadline(String core, int beg, int end) {
-        return core.substring(beg, end).strip();
+//        return core.substring(beg, end).strip();
+        return core.substring(beg, end).trim();
     }
 
     public void setCourseImagesFolder(String chapterFolder) {

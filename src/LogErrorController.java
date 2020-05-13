@@ -12,6 +12,7 @@ import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.scene.control.*;
 
+import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.event.InputEvent;
 import java.io.FileInputStream;
@@ -35,12 +36,7 @@ public class LogErrorController implements Initializable {
             String valid = m.b ? "checked" : "unchecked";
             Label t = new Label("\t" + m.msg);
             t.setStyle("-fx-text-fill: white");
-            Image image = null;
-            try {
-                image = new Image(new FileInputStream(Settings.projectPath + "img\\" + valid + ".png"));
-            } catch (FileNotFoundException e) {
-                e.printStackTrace();
-            }
+            Image image = new Image(getClass().getResourceAsStream("img\\" + valid + ".png"));
             ImageView img = new ImageView(image);
             img.setFitHeight(25);
             img.setFitWidth(25);

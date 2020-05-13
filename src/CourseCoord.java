@@ -1,10 +1,13 @@
 import org.json.JSONArray;
 import org.json.JSONObject;
+
+import java.io.File;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class CourseCoord implements Comparable<CourseCoord>
 {
@@ -24,7 +27,10 @@ public class CourseCoord implements Comparable<CourseCoord>
         this.courseID = _courseID;
         this.setPaths();
 
-        String jsonCourse = Files.readString(Paths.get(filePath), StandardCharsets.UTF_8);
+        Scanner scanner = new Scanner( new File(filePath), "UTF-8" );
+        String jsonCourse = scanner.useDelimiter("\\A").next();
+        scanner.close(); // Put this call in a finally block
+
         JSONObject obj = new JSONObject(jsonCourse);
 
         this.title = obj.getString("title");
@@ -32,7 +38,8 @@ public class CourseCoord implements Comparable<CourseCoord>
 
         this.core = this.core.replace('\n', ' ');
         this.core = this.core.replace("  ", " ");
-        this.core = this.core.strip();
+//        this.core = this.core.strip();
+        this.core = this.core.trim();
 
         this.hasQuestions = obj.getBoolean("hasQuestions");
 
@@ -56,7 +63,12 @@ public class CourseCoord implements Comparable<CourseCoord>
         String folder = CO.getChapters().get(chapterID).getFolder();
 
         String json_file = Settings.dataPath + folder + "Overview.json";
-        String jsonOverviewString = Files.readString(Paths.get(json_file), StandardCharsets.UTF_8);
+//        String jsonOverviewString = Files.readString(Paths.get(json_file), StandardCharsets.UTF_8);  JAVA-11 !
+
+        Scanner scanner = new Scanner( new File(json_file), "UTF-8" );
+        String jsonOverviewString = scanner.useDelimiter("\\A").next();
+        scanner.close(); // Put this call in a finally block
+
         JSONObject obj = new JSONObject(jsonOverviewString);
         JSONArray files = obj.getJSONArray("files");
 

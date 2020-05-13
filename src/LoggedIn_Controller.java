@@ -15,6 +15,7 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
@@ -584,7 +585,7 @@ public class LoggedIn_Controller implements Controller {
         VBox vb = new VBox();
         for (int i = 0; i < courseCO.getChapters().size(); ++i) {
             try {
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("SideBarChapterPane.fxml"));
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("SidebarChapterPane.fxml"));
                 Pane root = loader.load();
 
                 this.sidebarChaptersPanes.add(root);
@@ -648,7 +649,13 @@ public class LoggedIn_Controller implements Controller {
         this.setDiplayingWhat(Settings.DISPLAYING_CHAPTER_OVERVIEW);
         this.chapterID = chapterID;
         String json_file = Settings.dataPath + folder + "Overview.json";
-        String jsonOverviewString = Files.readString(Paths.get(json_file), StandardCharsets.UTF_8);
+
+//        String jsonOverviewString = Files.readString(Paths.get(json_file), StandardCharsets.UTF_8);
+
+        Scanner scanner = new Scanner( new File(json_file), "UTF-8" );
+        String jsonOverviewString = scanner.useDelimiter("\\A").next();
+        scanner.close(); // Put this call in a finally block
+
         JSONObject obj = new JSONObject(jsonOverviewString);
         JSONArray courses = obj.getJSONArray("courses");
         JSONArray readTimes = obj.getJSONArray("readTimes");

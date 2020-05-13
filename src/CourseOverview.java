@@ -1,11 +1,13 @@
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import java.io.File;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class CourseOverview {
 
@@ -33,7 +35,12 @@ public class CourseOverview {
     public void parseFromJson(String filename) throws IOException {
 
         System.out.println(filename);
-        String jsonOverviewCourse = Files.readString(Paths.get(filename), StandardCharsets.UTF_8);
+//        String jsonOverviewCourse = Files.readString(Paths.get(filename), StandardCharsets.UTF_8);
+
+        Scanner scanner = new Scanner( new File(filename), "UTF-8" );
+        String jsonOverviewCourse = scanner.useDelimiter("\\A").next();
+        scanner.close(); // Put this call in a finally block
+
         JSONObject obj = new JSONObject(jsonOverviewCourse);
 
         this.courseTitle = obj.getString("courseTitle");

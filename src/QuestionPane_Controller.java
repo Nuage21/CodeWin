@@ -55,7 +55,8 @@ public class QuestionPane_Controller implements Controller {
                 if (core.charAt(i + 1) == '!') // image-?list spotted !
                 {
                     if (gathered.length() >= 5) {
-                        Parent p = this.appendText(gathered.strip());
+//                        Parent p = this.appendText(gathered.strip());
+                        Parent p = this.appendText(gathered.trim());
                         panes.add(p);
                         gathered = ""; // empty
                     }
@@ -107,7 +108,8 @@ public class QuestionPane_Controller implements Controller {
         }
 
         if (gathered.length() >= 5) {
-            Parent p = this.appendText(gathered.strip());
+//            Parent p = this.appendText(gathered.strip());
+            Parent p = this.appendText(gathered.trim());
             panes.add(p);
         }
         holderVBox.getChildren().addAll(panes);
@@ -172,7 +174,8 @@ public class QuestionPane_Controller implements Controller {
     }
 
     public static String getHeadline(String core, int beg, int end) {
-        return core.substring(beg, end).strip();
+//        return core.substring(beg, end).strip();
+        return core.substring(beg, end).trim();
     }
 
 

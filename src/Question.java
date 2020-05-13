@@ -1,11 +1,13 @@
 import org.json.*;
 
+import java.io.File;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.text.ParseException;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Question {
     int id; // unique ID for avery question
@@ -18,7 +20,10 @@ public class Question {
     String note; // foot note
 
     public Question loadFromJson(String filename, int id) throws IOException, ParseException {
-        String jsonCourse = Files.readString(Paths.get(filename), StandardCharsets.UTF_8);
+        Scanner scanner = new Scanner( new File(filename), "UTF-8" );
+        String jsonCourse = scanner.useDelimiter("\\A").next();
+        scanner.close(); // Put this call in a finally block
+
         JSONObject obj = new JSONObject(jsonCourse);
         JSONArray Questions = obj.getJSONArray("Questions");
         JSONObject qstObj = Questions.getJSONObject(id - 1);
