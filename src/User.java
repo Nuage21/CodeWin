@@ -188,6 +188,10 @@ public class User {
     }
 
     public static boolean updateStatsPoints(User user, String statsPointsString) {
+
+
+
+
         user.stats_points = statsPointsString;
         String update = "UPDATE users_info SET stats_points = ? WHERE username = '" + user.getUsername() + "'";
         Connection conn = null;
@@ -207,6 +211,10 @@ public class User {
     }
 
     public static boolean updateStatsActivity(User user, String statsActivityString) {
+
+
+
+
         user.stats_activity = statsActivityString;
         String update = "UPDATE users_info SET stats_activity = ? WHERE username = '" + user.getUsername() + "'";
         Connection conn = null;
