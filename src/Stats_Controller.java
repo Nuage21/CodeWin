@@ -1,4 +1,3 @@
-
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
@@ -20,7 +19,7 @@ import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
-public class Stats_Controller  implements Controller{
+public class Stats_Controller  {
 
     //region FXML
     @FXML
@@ -49,19 +48,29 @@ public class Stats_Controller  implements Controller{
     Button points_month ;
 
     //endregion
-    // sauveguarde le couple dateActuelle(Da) et value (qui est soit le nb de point today ou le temps passé )
-    // format du treemap : <date,valeur>
-    // pr le temps passé Tp :  recupérer le temp lors de la connextion avec :
-    //  int j = (int) (new Date().getTime()/1000);
+
+
+    // pr le temps passé Tp :  recupérer le temp lors de la connextion avec : int j = (int) (new Date().getTime()/1000);
     //et avant la deconexion recuperer : TP =  (int) (new Date().getTime()/1000) - j ; ** resultat en seconds
 
-   String stats_points = "29/04,20-27/04,20-15/03,40" ; // intitialisez ces 2 string a partir de la string recupérer dans user
-   String stats_temps ="29/04,20-28/04,20" ;
+    // a la deconexxion (ou a n importe quel moment ) call updateStat(int point ,String stat)
+    //  pour recevoir le string update des stats
+    // il suffit donc par ex de fair user.stats_point =  updateStat(point,user.statspoint) quand il a une bonne rep ,ce qui permet
+    //d avoir les stats qui s actualise en temp reel
+    //
+    // du coup le sync avec la bdd peux se fair a n importe quell moment , il suffit jsute de call la fnc qui est dans user
+
+    String stats_points = "05/12,20-05/09,20-15/03,40-05/13,100" ; // intitialisez ces 2 string a partir de la string recupérer dans user
+    String stats_temps ="" ;
 
 
 
     @FXML
     public void initialize() throws ParseException {
+
+        stats_points = LoggedIn.getUser().getStats_points();
+        stats_temps =  LoggedIn.getUser().getStats_activity();
+
 
         progressionChartXCategoryAxis.setAnimated(false);
         progressionChartYNumberAxis.setAnimated(true);
@@ -107,7 +116,6 @@ public class Stats_Controller  implements Controller{
         traceWeek(ConvertStringTotree(stats_points), progressionAreaChart, "code");
         traceWeek(ConvertStringTotree(stats_temps), activityAreaChart, "code");
 
-
         Platform.runLater(() -> {
             __setAreaChartWidth(activityAreaChart, Design.CENTRAL_PANE_WIDTH * 0.9);
             __setAreaChartWidth(progressionAreaChart, Design.CENTRAL_PANE_WIDTH * 0.9);
@@ -119,7 +127,7 @@ public class Stats_Controller  implements Controller{
             }
         });
 
-        }
+    }
 
     public void test(){
         TreeMap<String,Integer> s = new TreeMap() ;
@@ -167,7 +175,7 @@ public class Stats_Controller  implements Controller{
         LocalDate tm  = calendar.toZonedDateTime().toLocalDate();
         TreeMap tree = new TreeMap();
         for (int i = 0; i < 15; i++) {
-            tree.put( tm.minusDays(i).format(DateTimeFormatter.ofPattern("dd/MM")), rand.nextInt() % 50 + 50);
+            tree.put( tm.minusDays(i).format(DateTimeFormatter.ofPattern("MM/dd")), rand.nextInt() % 50 + 50);
         }
 
         return tree;
@@ -178,9 +186,9 @@ public class Stats_Controller  implements Controller{
         GregorianCalendar calendar = new GregorianCalendar() ;
         TreeMap<String,Integer> map = new TreeMap();
         LocalDate tm  = calendar.toZonedDateTime().toLocalDate();
-        tm = tm.minusDays(15) ;  // nombre de jours a tracer  :
+        // tm = tm.minusDays(15) ;  // nombre de jours a tracer  :
         for(int i=0;i<15;i++) {
-            String s = tm.plusDays(i).format(DateTimeFormatter.ofPattern("dd/MM"));
+            String s = tm.minusDays(i).format(DateTimeFormatter.ofPattern("MM/dd"));
             if(data.containsKey(s)) map.put(s,data.get(s));
             else map.put(s,0);
         }
@@ -195,9 +203,9 @@ public class Stats_Controller  implements Controller{
         tm = tm.minusMonths(11);
         for (int i = 0; i < 12; i++) {
             int count = 0 ;
-            String s = tm.plusMonths(i).format(DateTimeFormatter.ofPattern("/MM"));
+            String s = tm.plusMonths(i).format(DateTimeFormatter.ofPattern("MM/"));
             for(int j=1;j<=31;j++){
-                String st = j<10? "0"+Integer.toString(j)+s  :  Integer.toString(j)+s ;
+                String st = j<10? s+"0"+Integer.toString(j)  :  s+Integer.toString(j);
                 if(data.containsKey(st)) count += data.get(st) ;
 
             }
@@ -219,11 +227,19 @@ public class Stats_Controller  implements Controller{
         ac.setPrefWidth(width);
     }
 
-    public String newDay(int value , String chaine_intiale){ // b4 exit call this and save the returned string
+    // call this whenever you want to update a certain string
+    public static String updateStat(int value , String chaine_intiale){
         GregorianCalendar calendar = new GregorianCalendar() ;
         LocalDate tm  = calendar.toZonedDateTime().toLocalDate();
-        String  s=tm.format(DateTimeFormatter.ofPattern("dd/MM"));
+        String  s=tm.format(DateTimeFormatter.ofPattern("MM/dd"));
+        if(chaine_intiale.contains(s)){
+            int last = Integer.parseInt(chaine_intiale.substring(chaine_intiale.lastIndexOf(s)+6));
+            chaine_intiale = chaine_intiale.substring(0,chaine_intiale.indexOf(s)-1);
+            value+=last ;
 
+
+        }
+        System.out.println(chaine_intiale+"-"+s+","+Integer.toString(value));
 
 
         return chaine_intiale+"-"+s+","+Integer.toString(value);
@@ -231,12 +247,13 @@ public class Stats_Controller  implements Controller{
 
     public TreeMap ConvertStringTotree(String chaine_sauvgarde){
         TreeMap<String,Integer> ret = new TreeMap( ) ;
+        if(chaine_sauvgarde.length()>4) {
+            for (String s : chaine_sauvgarde.split("-")) {
+                String[] date = s.split(",");
 
-        for(String s : chaine_sauvgarde.split("-")){
-            String[] date = s.split(",");
-
-            ret.put(date[0],Integer.parseInt(date[1]));
-            System.out.println(date[0]+"  "+date[1]);
+                ret.put(date[0], Integer.parseInt(date[1]));
+                // System.out.println(date[0]+"  "+date[1]);
+            }
         }
         return ret ;
     }
@@ -258,11 +275,3 @@ public class Stats_Controller  implements Controller{
 //        }
 //
 //    }
-
-}
-
-
-
-
-
-
