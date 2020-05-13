@@ -113,18 +113,6 @@ public class Auth_Controller {
     @FXML
     private void initialize() {
 
-        //region remplissage
-
-        UsernameField.setText("Barack_Hawaii_123");
-        LastnameField.setText("Obama");
-        FirstnameField.setText("Barack");
-        EmailField.setText("ih_beldjoudi@esi.dz");
-        PwdField.setText("hbdsj1234;");
-        DatePickerField.setValue(LocalDate.of(1961, 10, 4));
-        AddressField.setText("Honolulu, Hawaii, United States");
-        PhoneField.setText("(860)-231-1234");
-        //endregion
-
         applyTabStyle(signupTab, true);
 
         signInCancealBtn.setOnAction((event) -> {

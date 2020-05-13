@@ -174,6 +174,36 @@ public class User {
 
     }
 
+    public static boolean updateStatsPoints(User user) {
+        String update = "UPDATE users_info SET stats_points = ? WHERE username = '" + user.getUsername() + "'";
+        try {
+            Connection conn = getConnection();
+            PreparedStatement stmt = conn.prepareStatement(update);
+            stmt.setString(1, user.getStats_points());
+            stmt.execute();
+            stmt.close();
+            return true;
+        } catch (SQLException e) {
+            Debug.debugException(e);
+        }
+        return false;
+    }
+
+    public static boolean updateStatsActivity(User user, int points) {
+        String update = "UPDATE users_info SET stats_activity = ? WHERE username = '" + user.getUsername() + "'";
+        try {
+            Connection conn = getConnection();
+            PreparedStatement stmt = conn.prepareStatement(update);
+            stmt.setString(1, user.getStats_activity());
+            stmt.execute();
+            stmt.close();
+            return true;
+        } catch (SQLException e) {
+            Debug.debugException(e);
+        }
+        return false;
+    }
+
     public static boolean updatePoints(User user, int points) {
         String update = "UPDATE users_info SET points = ? WHERE username = '" + user.getUsername() + "'";
         try {

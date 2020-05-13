@@ -12,8 +12,8 @@ public class Settings {
     public static Stage appStage;
     public static Application application;
     public static int SIDEBAR_STATE = 0;
-    public static String dataPath = "C:\\Users\\hbais\\Desktop\\P2CP\\CodeWin\\CodeWin\\src\\data\\";
-    public static String projectPath = "C:\\Users\\hbais\\Desktop\\P2CP\\CodeWin\\CodeWin\\src\\";
+    public static String dataPath;
+    public static String projectPath;
 
     // display-what modes
     public static int DISPLAYING_COURSE_OVERVIEW = 0x00;
@@ -47,4 +47,10 @@ public class Settings {
 
     // Secret Key
     public static String SecretKey = ":#:CODEWIN1;3WINCODE?!.";
+
+    public static void setPaths(String _projectPath, String _dataPath)
+    {
+        dataPath = _dataPath;
+        projectPath = _projectPath;
+    }
 }

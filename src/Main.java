@@ -6,12 +6,21 @@ import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
+import java.io.File;
+import java.net.URISyntaxException;
 import java.time.LocalDate;
 
 public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
+
+        try {
+            String path =  new File(Main.class.getProtectionDomain().getCodeSource().getLocation().toURI()).getPath() + "\\";
+            Settings.setPaths(path, path + "data\\");
+        } catch (URISyntaxException e) {
+            e.printStackTrace();
+        }
 
         Settings.appStage = primaryStage;
         Settings.application = this;
