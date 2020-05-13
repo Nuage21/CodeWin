@@ -664,7 +664,7 @@
         "core" : "If an adult passenger does not fasten their seat belt to the rear of the vehicle, this action is punishable by a fine:<!img29.PNG!>",
         "propositions" : ["At the driver's expense", "At the driver's expense"],
         "correct_answers" : [0, 1],
-        "note" : ""If a adult passenger does not fasten their seat belt to the rear of the vehicle, this action is punishable by a fine at the passenger's expense.
+        "note" : "If an adult passenger does not fasten their seat belt to the rear of the vehicle, this action is punishable by a fine at the passenger's expense."
     },
     {
         "ID" : 75,
