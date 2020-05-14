@@ -15,7 +15,7 @@ def  getHeadline(core, beg,end):
 
 if __name__ == "__main__":
  json_translate = Translator() #create an object
- filename="../src/data/Questions.json"
+ filename="../data/data/Questions.json"
  i=0
  with open(filename, encoding="utf8") as f:
      data = json.load(f)
@@ -58,7 +58,7 @@ if __name__ == "__main__":
          translatedNote=json_translate.translate(note, dest='ar').text
          note=translatedNote
          i=i+1
-     filename2="../src/data-arabic/Questions.json"
+     filename2="../data/data-arabic/Questions.json"
      with codecs.open(filename2, 'w', encoding='utf-8') as f2:
          json.dump(data, f2, indent=4,ensure_ascii=False)
     
