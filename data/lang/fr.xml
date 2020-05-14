@@ -96,7 +96,7 @@
         <pwdError title="Mot de Passe icorrecte">Le mot de passe que vous avez fourni est incorrect. Veuillez reessayer</pwdError>
         <emailSameError title="Erreur">L'email que vous avez fourni est le meme que l'ancien. Veuillez choisir un autre!</emailSameError>
         <pwdSameError title="Erreur">Le mot de passe fourni est le meme que l'ancien. Veuillez choisir un autre!</pwdSameError>
-        <emailInvalidError title="Email invalide!">Veuillez verifiez l'addresse email entree</emailInvalidError>
+        <emailInvalidError title="Email invalide!">Veuillez verifier l'addresse email entree</emailInvalidError>
         <codeInvalidError title="Erreur">Code invalide"</codeInvalidError>
         <accountDelError title="Erreur">Une erreur est survenue lors de la suppression de votre compte. Veuillez Reessayer!</accountDelError>
         <pkeyError title="Cle incorrecte">La Cle de Produit Introduite est erronee. Veuillez Reessayer</pkeyError>
