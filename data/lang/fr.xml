@@ -101,8 +101,8 @@
         <accountDelError title="Erreur">Une erreur est survenue lors de la suppression de votre compte. Veuillez Reessayer!</accountDelError>
         <pkeyError title="Cle incorrecte">La Cle de Produit Introduite est erronee. Veuillez Reessayer</pkeyError>
         <!-- SUCCESS BOXES -->
-        <pwdUpdateSuccess title="Success">Votre mot de passe a ete mis a jour avec succees!</pwdUpdateSuccess>
-        <emailUpdateSuccess title="Success">Votre email a ete mise a jour avec succes</emailUpdateSuccess>
-        <productActivatedSuccess title="Success">Votre produit a ete active avec succes</productActivatedSuccess>
+        <pwdUpdateSuccess title="Succes">Votre mot de passe a ete mis a jour avec succes!</pwdUpdateSuccess>
+        <emailUpdateSuccess title="Succes">Votre email a ete mise a jour avec succes</emailUpdateSuccess>
+        <productActivatedSuccess title="Succes">Votre produit a ete active avec succes</productActivatedSuccess>
     </dialogs>
 </content>
