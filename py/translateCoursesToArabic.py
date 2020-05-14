@@ -16,12 +16,12 @@ def  getHeadline(core, beg,end):
 
 if __name__ == "__main__": 
  json_translate = Translator() #create an object
- newDirectory="../src/data-arabic"
+ newDirectory="../data/data-arabic"
  os.mkdir(newDirectory)
  for folder in os.listdir('../src/data'):
       if folder.endswith('.json')==0: #Not a json file i.e a folder
-         folderpath='../src/data/'+folder
-         newfolderpath="../src/data-arabic/"+folder
+         folderpath='../data/data/'+folder
+         newfolderpath="../data/data-arabic/"+folder
          os.mkdir(newfolderpath) #Themex
          for file in os.listdir(folderpath):
             if file.endswith('.json') and file !="Overview.json": #just coursex.json
