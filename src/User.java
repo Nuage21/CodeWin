@@ -485,20 +485,11 @@ public class User {
         this.pkey = pkey;
     }
 
-    public class Coord2D {
-        public int x;
-        public int y;
-
-        Coord2D(int _x, int _y) {
-            this.x = _x;
-            this.y = _y;
-        }
-    }
-
     public Date getFreetrialEndDate()
     {
         return addDays(signupDate, 3);
     }
+
     public boolean isFreetrialEnded()
     {
         Date sdate = signupDate, today = java.sql.Date.valueOf(LocalDate.now());
