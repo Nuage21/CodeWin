@@ -18,7 +18,7 @@ if __name__ == "__main__":
  json_translate = Translator() #create an object
  newDirectory="../data/data-arabic"
  os.mkdir(newDirectory)
- for folder in os.listdir('../src/data'):
+ for folder in os.listdir('../data/data'):
       if folder.endswith('.json')==0: #Not a json file i.e a folder
          folderpath='../data/data/'+folder
          newfolderpath="../data/data-arabic/"+folder
