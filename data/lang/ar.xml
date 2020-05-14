@@ -33,7 +33,7 @@
         <Label id="nextLabel">التالي</Label>
         <Label id="darkmodeLabel">الوضع الداكن</Label>
         <Label id="pointsDescLabel">النقاط</Label>
-        <HyperLink id="githubHyperLink">Github تفضل بزيارتنا على </HyperLink>
+        <HyperLink id="githubHyperLink">Github تفضل بزيارتنا على</HyperLink>
         <TextField id="searchField">ابحث عن درس</TextField>
     </loggedin>
     <params>
@@ -79,8 +79,13 @@
     </stats>
     <about>
         <Label id="aboutusLabel">حول</Label>
-        <Label id="text1">تعتزم مجموعة من 6 طلاب من المدرسة الوطنية العليا للاعلام الالي  ، لإكمال مشروع الدراسة بنجاح. وذلك من خلال إنشاء هذا التطبيق الذي يساعد المستخدمين على تعلم وفهم قواعد الطريق.</Label>
-        <Label id="text2">يساعدك تطبيق كودوين على الحصول على امتحان رمز الطريق السريع الخاص بك مع أكثر من 33 درسًا و 218 سؤالًا ، وكلها مكتوبة جيدًا ومقدمة من قبل معلمي مدارس القيادة المعتمدين وحتى الآن وفقًا لتحديث رمز الطريق السريع ، تعود إلى أبريل 2020.</Label>
+        <Label id="text1">تعتزم مجموعة من 6 طلاب من المدرسة الوطنية العليا للاعلام الالي ، لإكمال مشروع الدراسة بنجاح.
+            وذلك من خلال إنشاء هذا التطبيق الذي يساعد المستخدمين على تعلم وفهم قواعد الطريق.
+        </Label>
+        <Label id="text2">يساعدك تطبيق كودوين على الحصول على امتحان رمز الطريق السريع الخاص بك مع أكثر من 33 درسًا و 218
+            سؤالًا ، وكلها مكتوبة جيدًا ومقدمة من قبل معلمي مدارس القيادة المعتمدين وحتى الآن وفقًا لتحديث رمز الطريق
+            السريع ، تعود إلى أبريل 2020.
+        </Label>
         <Label id="thisTool">هذه الأداة مخصصة للاستخدام الحصري للطالب</Label>
         <HyperLink id="githubHLink">Github تفضل بزيارتنا على</HyperLink>
         <Button id="quitButton">إرجاع</Button>
@@ -91,18 +96,18 @@
         <Label id="quitLabel">المغادرة</Label>
     </account>
     <dialogs>
-        <userNotFound title="الرجاء التأكد من إدخال اللقب"<"المستخدم غير موجود "</userNotFound>
-        <cnxError title="الرجاء التحقق من اتصال الانترنت الخاص بك<"مشكل في الاتصال</cnxError>
-        <pwdError title="كلمة المرور التي قدمتها غير صحيحة. المرجو اعادة المحاول,<"كلمة سر خاطئة</pwdError>
-        <emailSameError title="البريد الإلكتروني الذي قدمته هو نفسه البريد الإلكتروني القديم. الرجاء اختيار آخر!<"خطأ</emailSameError>
-        <pwdSameError title="كلمة المرور المقدمة هي نفسها كلمة المرور القديمة. الرجاء اختيار آخر!<"خطأ</pwdSameError>
-        <emailInvalidError title="يرجى التحقق من عنوان البريد الإلكتروني الذي تم إدخاله<"بريد إلكتروني غيرصالح"</emailInvalidError>
-        <codeInvalidError title="الرمز غير صحيح<"خطأ"</codeInvalidError>
-        <accountDelError title="خحدث خطأ أثناء حذف حسابك. المرجو اعادة المحاولة!>"خطأ</accountDelError>
-        <pkeyError title="مفتاح المنتج الذي تم إدخاله غير صحيح. المرجو اعادة المحاولة<"المفتاح خطا</pkeyError>
+        <userNotFound title="الرجاء التأكد من إدخال اللقب">"المستخدم غير موجود</userNotFound>
+        <cnxError title="الرجاء التحقق من اتصال الانترنت الخاص بك">مشكل في الاتصال</cnxError>
+        <pwdError title="كلمة المرور التي قدمتها غير صحيحة. المرجو اعادة المحاول">كلمة سر خاطئة</pwdError>
+        <emailSameError title="البريد الإلكتروني الذي قدمته هو نفسه البريد الإلكتروني القديم. الرجاء اختيار آخر!">خطأ</emailSameError>
+        <pwdSameError title="كلمة المرور المقدمة هي نفسها كلمة المرور القديمة. الرجاء اختيار آخر!">خطأ</pwdSameError>
+        <emailInvalidError title="يرجى التحقق من عنوان البريد الإلكتروني الذي تم إدخاله">بريد إلكتروني غيرصالح</emailInvalidError>
+        <codeInvalidError title="الرمز غير صحيح">خطأ</codeInvalidError>
+        <accountDelError title="خحدث خطأ أثناء حذف حسابك. المرجو اعادة المحاولة!">خطأ</accountDelError>
+        <pkeyError title="مفتاح المنتج الذي تم إدخاله غير صحيح. المرجو اعادة المحاولة">المفتاح خطا</pkeyError>
         <!-- SUCCESS BOXES -->
-        <pwdUpdateSuccess title="لقد تم تحديث كلمة السر الخاصة بك بنجاح!>"نجاح</pwdUpdateSuccess>
-        <emailUpdateSuccess title="تم تحديث بريدك الإلكتروني بنجاح>"نجاح</emailUpdateSuccess>
-        <productActivatedSuccess title="تم تنشيط منتجك بنجاح<"نجاح</productActivatedSuccess>
+        <pwdUpdateSuccess title="لقد تم تحديث كلمة السر الخاصة بك بنجاح!">نجاح</pwdUpdateSuccess>
+        <emailUpdateSuccess title="تم تحديث بريدك الإلكتروني بنجاح">نجاح</emailUpdateSuccess>
+        <productActivatedSuccess title="تم تنشيط منتجك بنجاح">نجاح</productActivatedSuccess>
     </dialogs>
 </content>

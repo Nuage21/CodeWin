@@ -118,7 +118,7 @@ public class Params_Controller {
             img.setOnMouseClicked(mouseEvent -> {
                 int expanderID = expanders.indexOf(img);
                 boolean isExpanded = getState(img);
-                String newImgPath = "img\\icons\\" + (isExpanded ? "expand.png" : "unexpand.png");
+                String newImgPath = "img\\" + (isExpanded ? "expand.png" : "unexpand.png");
                 Image image = null;
                 try {
                     image = new Image(new FileInputStream(Settings.projectPath + newImgPath));

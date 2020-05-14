@@ -23,7 +23,7 @@ public class SidebarChapterPane_Controller {
 
     private boolean isExpanded = false;
 
-    public static String[] expImages = {"\\img\\icons\\unexpand.png", "\\img\\icons\\expand.png"};
+    public static String[] expImages = {"\\img\\unexpand.png", "\\img\\expand.png"};
 
     @FXML
     void initialize() {

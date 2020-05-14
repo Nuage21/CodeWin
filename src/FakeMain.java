@@ -16,6 +16,9 @@ public class FakeMain {
         } catch (URISyntaxException e) {
             Debug.debugException(e);
         }
+
+        LanguageManager.loadInstalledLanguages();
+
         Main.main(args);
     }
 }

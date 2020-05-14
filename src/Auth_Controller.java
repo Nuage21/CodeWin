@@ -361,7 +361,18 @@ public class Auth_Controller {
             }
         });
 
-        //endregion
+        Platform.runLater( () -> {
+            String langs[] = {"En", "Ar", "Fr"};
+            FXMLLoader loader = LanguageManager.authenticatorLoader;
+            for(String l : langs)
+            {
+                Label lab = (Label) loader.getNamespace().get("go" + l + "Label");
+                lab.setOnMouseClicked(mouseEvent -> {
+                    LanguageManager.loadLangData(Settings.projectPath + "\\lang\\" + l.toLowerCase() + ".xml");
+                    LanguageManager.resyncLanguage(loader, "authenticator");
+                });
+            }
+        });
     }
 
 

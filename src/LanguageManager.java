@@ -1,17 +1,26 @@
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.*;
+import org.json.JSONArray;
+import org.json.JSONObject;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.Scanner;
 
 public class LanguageManager {
 
     // loaders (for lang sync)
     public static Document langXmler;
     public static FXMLLoader authenticatorLoader;
+
+    public static ArrayList<String> installed_languages = new ArrayList<>();
+    public static ArrayList<String> installed_languages_files = new ArrayList<>();
 
     public static void loadLangData(String xmlfile)
     {
@@ -64,6 +73,30 @@ public class LanguageManager {
             }
         } catch (Exception e) {
             Debug.debugException(e);
+        }
+    }
+
+    public static void loadInstalledLanguages()
+    {
+        String filePath = Settings.projectPath + "\\lang\\installed_langs.json";
+        Scanner scanner = null;
+        try {
+            scanner = new Scanner( new File(filePath), "UTF-8" );
+        } catch (FileNotFoundException e) {
+            Debug.debugException(e);
+        }
+        String jsonInner = scanner.useDelimiter("\\A").next();
+        scanner.close(); // Put this call in a finally block
+
+        JSONObject obj = new JSONObject(jsonInner);
+
+        JSONArray langs = obj.getJSONArray("langs");
+        JSONArray files = obj.getJSONArray("files");
+
+        for(int i = 0; i < langs.length(); ++i)
+        {
+            installed_languages.add(langs.getString(i));
+            installed_languages_files.add(files.getString(i));
         }
     }
 }
