@@ -19,7 +19,7 @@ import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
-public class Stats_Controller  {
+public class Stats_Controller implements Controller {
 
     //region FXML
     @FXML
@@ -39,13 +39,13 @@ public class Stats_Controller  {
     NumberAxis progressionChartYNumberAxis;
 
     @FXML
-    Button activity_week ;
+    Button activity_week;
     @FXML
-    Button activity_month ;
+    Button activity_month;
     @FXML
-    Button points_week ;
+    Button points_week;
     @FXML
-    Button points_month ;
+    Button points_month;
 
     //endregion
 
@@ -60,16 +60,15 @@ public class Stats_Controller  {
     //
     // du coup le sync avec la bdd peux se fair a n importe quell moment , il suffit jsute de call la fnc qui est dans user
 
-    String stats_points = "05/12,20-05/09,20-15/03,40-05/13,100" ; // intitialisez ces 2 string a partir de la string recupérer dans user
-    String stats_temps ="" ;
-
+    String stats_points = "05/12,20-05/09,20-15/03,40-05/13,100"; // intitialisez ces 2 string a partir de la string recupérer dans user
+    String stats_temps = "";
 
 
     @FXML
     public void initialize() throws ParseException {
 
-        stats_points = LoggedIn.getUser().getStats_points();
-        stats_temps =  LoggedIn.getUser().getStats_activity();
+        stats_points = LoggedIn_Controller.getUser().getStats_points();
+        stats_temps = LoggedIn_Controller.getUser().getStats_activity();
 
 
         progressionChartXCategoryAxis.setAnimated(false);
@@ -77,7 +76,7 @@ public class Stats_Controller  {
         activityChartXCategoryAxis.setAnimated(true);
         activityChartXCategoryAxis.setAnimated(false);
 
-        activity_week.setOnAction(e->{
+        activity_week.setOnAction(e -> {
             activityAreaChart.getData().clear();
             try {
                 traceWeek(ConvertStringTotree(stats_temps), activityAreaChart, "code");
@@ -85,7 +84,7 @@ public class Stats_Controller  {
                 ex.printStackTrace();
             }
         });
-        activity_month.setOnAction(e->{
+        activity_month.setOnAction(e -> {
             activityAreaChart.getData().clear();
             try {
                 traceMonth(ConvertStringTotree(stats_temps), activityAreaChart, "code");
@@ -95,7 +94,7 @@ public class Stats_Controller  {
                 ex.printStackTrace();
             }
         });
-        points_week.setOnAction(e->{
+        points_week.setOnAction(e -> {
             progressionAreaChart.getData().clear();
             try {
                 traceWeek(ConvertStringTotree(stats_points), progressionAreaChart, "code");
@@ -103,10 +102,10 @@ public class Stats_Controller  {
                 ex.printStackTrace();
             }
         });
-        points_month.setOnAction(e->{
+        points_month.setOnAction(e -> {
             progressionAreaChart.getData().clear();
             try {
-                Thread. currentThread(). sleep(300);
+                Thread.currentThread().sleep(300);
                 traceMonth(ConvertStringTotree(stats_points), progressionAreaChart, "code");
             } catch (ParseException | InterruptedException ex) {
                 ex.printStackTrace();
@@ -119,8 +118,7 @@ public class Stats_Controller  {
         Platform.runLater(() -> {
             __setAreaChartWidth(activityAreaChart, Design.CENTRAL_PANE_WIDTH * 0.9);
             __setAreaChartWidth(progressionAreaChart, Design.CENTRAL_PANE_WIDTH * 0.9);
-            if (Settings.SIDEBAR_STATE == Settings.SIDEBAR_SHRINKED)
-            {
+            if (Settings.SIDEBAR_STATE == Settings.SIDEBAR_SHRINKED) {
                 double width = Settings.SIDEBAR_WIDTH * (1 - (1 / Settings.SIDEBAR_EXTEND_COEFF));
                 this.resetAreaChartsWidth(width);
 
@@ -129,12 +127,12 @@ public class Stats_Controller  {
 
     }
 
-    public void test(){
-        TreeMap<String,Integer> s = new TreeMap() ;
-        s.put("22/04",10);
-        s.put("12/01",20);
+    public void test() {
+        TreeMap<String, Integer> s = new TreeMap();
+        s.put("22/04", 10);
+        s.put("12/01", 20);
         try {
-            traceMonth(s,progressionAreaChart,"ff");
+            traceMonth(s, progressionAreaChart, "ff");
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -147,8 +145,7 @@ public class Stats_Controller  {
         for (Map.Entry<String, Integer> entry : informations.entrySet()) {
 
 
-
-            s.getData().add(new XYChart.Data(entry.getKey(),entry.getValue()));
+            s.getData().add(new XYChart.Data(entry.getKey(), entry.getValue()));
 
         }
         s.setName(nom);
@@ -171,83 +168,81 @@ public class Stats_Controller  {
 
 
         Random rand = new Random();
-        GregorianCalendar calendar = new GregorianCalendar() ;
-        LocalDate tm  = calendar.toZonedDateTime().toLocalDate();
+        GregorianCalendar calendar = new GregorianCalendar();
+        LocalDate tm = calendar.toZonedDateTime().toLocalDate();
         TreeMap tree = new TreeMap();
         for (int i = 0; i < 15; i++) {
-            tree.put( tm.minusDays(i).format(DateTimeFormatter.ofPattern("MM/dd")), rand.nextInt() % 50 + 50);
+            tree.put(tm.minusDays(i).format(DateTimeFormatter.ofPattern("MM/dd")), rand.nextInt() % 50 + 50);
         }
 
         return tree;
     }
 
 
-    public void traceWeek(Map<String,Integer> data,AreaChart chart,String nom) throws ParseException { // trace the the last 15 days days starting from yesterday
-        GregorianCalendar calendar = new GregorianCalendar() ;
-        TreeMap<String,Integer> map = new TreeMap();
-        LocalDate tm  = calendar.toZonedDateTime().toLocalDate();
+    public void traceWeek(Map<String, Integer> data, AreaChart chart, String nom) throws ParseException { // trace the the last 15 days days starting from yesterday
+        GregorianCalendar calendar = new GregorianCalendar();
+        TreeMap<String, Integer> map = new TreeMap();
+        LocalDate tm = calendar.toZonedDateTime().toLocalDate();
         // tm = tm.minusDays(15) ;  // nombre de jours a tracer  :
-        for(int i=0;i<15;i++) {
+        for (int i = 0; i < 15; i++) {
             String s = tm.minusDays(i).format(DateTimeFormatter.ofPattern("MM/dd"));
-            if(data.containsKey(s)) map.put(s,data.get(s));
-            else map.put(s,0);
+            if (data.containsKey(s)) map.put(s, data.get(s));
+            else map.put(s, 0);
         }
-        traceActivity(map,chart,nom);
+        traceActivity(map, chart, nom);
 
     }
 
-    public void traceMonth(TreeMap<String,Integer> data,AreaChart chart,String nom) throws ParseException { // trace les 12 derniers mois (fck it au bout d une annees si t as pas ton code cque t est pas sencé l avoire)
+    public void traceMonth(TreeMap<String, Integer> data, AreaChart chart, String nom) throws ParseException { // trace les 12 derniers mois (fck it au bout d une annees si t as pas ton code cque t est pas sencé l avoire)
         GregorianCalendar calendar = new GregorianCalendar();
         LinkedHashMap<String, Integer> map = new LinkedHashMap<>();
         LocalDate tm = calendar.toZonedDateTime().toLocalDate();
         tm = tm.minusMonths(11);
         for (int i = 0; i < 12; i++) {
-            int count = 0 ;
+            int count = 0;
             String s = tm.plusMonths(i).format(DateTimeFormatter.ofPattern("MM/"));
-            for(int j=1;j<=31;j++){
-                String st = j<10? s+"0"+Integer.toString(j)  :  s+Integer.toString(j);
-                if(data.containsKey(st)) count += data.get(st) ;
+            for (int j = 1; j <= 31; j++) {
+                String st = j < 10 ? s + "0" + Integer.toString(j) : s + Integer.toString(j);
+                if (data.containsKey(st)) count += data.get(st);
 
             }
-            map.put(tm.plusMonths(i).getMonth().toString(),count);
+            map.put(tm.plusMonths(i).getMonth().toString(), count);
         }
-        traceActivity(map,chart,nom);
+        traceActivity(map, chart, nom);
     }
 
-    public void resetAreaChartsWidth(double _toadd)
-    {
-        this.__setAreaChartWidth(progressionAreaChart, progressionAreaChart.getWidth()+_toadd);
+    public void resetAreaChartsWidth(double _toadd) {
+        this.__setAreaChartWidth(progressionAreaChart, progressionAreaChart.getWidth() + _toadd);
         this.__setAreaChartWidth(activityAreaChart, activityAreaChart.getWidth() + _toadd);
     }
 
-    public void __setAreaChartWidth(AreaChart ac, double width)
-    {
+    public void __setAreaChartWidth(AreaChart ac, double width) {
         ac.setMinWidth(width);
         ac.setMaxWidth(width);
         ac.setPrefWidth(width);
     }
 
     // call this whenever you want to update a certain string
-    public static String updateStat(int value , String chaine_intiale){
-        GregorianCalendar calendar = new GregorianCalendar() ;
-        LocalDate tm  = calendar.toZonedDateTime().toLocalDate();
-        String  s=tm.format(DateTimeFormatter.ofPattern("MM/dd"));
-        if(chaine_intiale.contains(s)){
-            int last = Integer.parseInt(chaine_intiale.substring(chaine_intiale.lastIndexOf(s)+6));
-            chaine_intiale = chaine_intiale.substring(0,chaine_intiale.indexOf(s)-1);
-            value+=last ;
+    public static String updateStat(int value, String chaine_intiale) {
+        GregorianCalendar calendar = new GregorianCalendar();
+        LocalDate tm = calendar.toZonedDateTime().toLocalDate();
+        String s = tm.format(DateTimeFormatter.ofPattern("MM/dd"));
+        if (chaine_intiale.contains(s)) {
+            int last = Integer.parseInt(chaine_intiale.substring(chaine_intiale.lastIndexOf(s) + 6));
+            chaine_intiale = chaine_intiale.substring(0, chaine_intiale.indexOf(s) - 1);
+            value += last;
 
 
         }
-        System.out.println(chaine_intiale+"-"+s+","+Integer.toString(value));
+        Debug.debugMsg(chaine_intiale + "-" + s + "," + Integer.toString(value));
 
 
-        return chaine_intiale+"-"+s+","+Integer.toString(value);
+        return chaine_intiale + "-" + s + "," + value;
     }
 
-    public TreeMap ConvertStringTotree(String chaine_sauvgarde){
-        TreeMap<String,Integer> ret = new TreeMap( ) ;
-        if(chaine_sauvgarde.length()>4) {
+    public TreeMap ConvertStringTotree(String chaine_sauvgarde) {
+        TreeMap<String, Integer> ret = new TreeMap();
+        if (chaine_sauvgarde.length() > 4) {
             for (String s : chaine_sauvgarde.split("-")) {
                 String[] date = s.split(",");
 
@@ -255,8 +250,9 @@ public class Stats_Controller  {
                 // System.out.println(date[0]+"  "+date[1]);
             }
         }
-        return ret ;
+        return ret;
     }
+}
 
 
 //    public void toggleButtons(Button weekBtn, Button monthBtn, int mode)

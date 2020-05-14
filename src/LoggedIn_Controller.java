@@ -83,7 +83,8 @@ public class LoggedIn_Controller implements Controller {
     @FXML
     private ScrollPane searchSPane;
 
-    @FXML private VBox searchVBox;
+    @FXML
+    private VBox searchVBox;
 
     @FXML
     private Pane Side_CourseName_Pane;
@@ -174,6 +175,7 @@ public class LoggedIn_Controller implements Controller {
             try {
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("Stats.fxml"));
                 Pane newLoadedPane = loader.load();
+                LanguageManager.resyncLanguage(loader, "stats");
                 Stats_Controller ctr = loader.getController();
                 this.occupiedController = ctr;
                 ScrollPane scp = new ScrollPane();
@@ -216,6 +218,7 @@ public class LoggedIn_Controller implements Controller {
             try {
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("AccountPane.fxml"));
                 Parent root = loader.load();
+                LanguageManager.resyncLanguage(loader, "account");
                 Stage accStage = new Stage();
                 accStage.initStyle(StageStyle.UNDECORATED);
                 accStage.setX(accountHolderPane.getLayoutX());
@@ -652,7 +655,7 @@ public class LoggedIn_Controller implements Controller {
 
 //        String jsonOverviewString = Files.readString(Paths.get(json_file), StandardCharsets.UTF_8);
 
-        Scanner scanner = new Scanner( new File(json_file), "UTF-8" );
+        Scanner scanner = new Scanner(new File(json_file), "UTF-8");
         String jsonOverviewString = scanner.useDelimiter("\\A").next();
         scanner.close(); // Put this call in a finally block
 
@@ -673,7 +676,7 @@ public class LoggedIn_Controller implements Controller {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("CO_Course_Pane.fxml"));
             Pane coursePane = loader.load();
             CO_Course_Pane_Controller controller = loader.getController();
-            controller.setAll(courseTitle, readTime);
+            controller.setAll(__(courseTitle), readTime);
             holder.getChildren().add(coursePane);
 
             // add mouse click event
@@ -799,11 +802,12 @@ public class LoggedIn_Controller implements Controller {
     }
 
     public String __(String s) {
-        return new String(s.getBytes(StandardCharsets.UTF_8));
+        return s;
+//        return new String(s.getBytes(StandardCharsets.UTF_8));
     }
 
     public void setLText(Label l, String s) {
-        l.setText(__(s));
+        l.setText(s);
     }
 
     public void resetQuestionGlobalVars() {
@@ -833,7 +837,9 @@ public class LoggedIn_Controller implements Controller {
     public void displayParams() {
         Central_Container_SPane.getChildren().clear();
         try {
-            Pane newLoadedPane = FXMLLoader.load(getClass().getResource("Params.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("Params.fxml"));
+            Pane newLoadedPane = loader.load();
+            LanguageManager.resyncLanguage(loader, "params");
             ScrollPane scp = new ScrollPane(newLoadedPane);
             scp.setFitToWidth(true);
             Central_Container_SPane.getChildren().add(scp);
@@ -847,12 +853,11 @@ public class LoggedIn_Controller implements Controller {
         }
     }
 
-    public void showFrom(ArrayList<CourseCoord> list)
-    {
+    public void showFrom(ArrayList<CourseCoord> list) {
+        // search Bar related
         searchVBox.getChildren().clear();
         searchSPane.setVisible(true);
-        for(CourseCoord course : list)
-        {
+        for (CourseCoord course : list) {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("SearchInsidePane.fxml"));
             Parent root = null;
             try {

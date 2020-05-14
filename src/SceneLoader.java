@@ -10,8 +10,9 @@ public class SceneLoader {
     {
         try {
             FXMLLoader loader = new FXMLLoader(SceneLoader.class.getResource("Authenticator.fxml"));
-            Parent root = null;
-            root = loader.load();
+            LanguageManager.authenticatorLoader = loader;
+            Parent root = loader.load();
+            LanguageManager.resyncLanguage(loader, "authenticator");
             Stage stg = Settings.appStage;
             stg.centerOnScreen();
             Scene sc = new Scene(root);

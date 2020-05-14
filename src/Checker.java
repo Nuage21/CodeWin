@@ -15,11 +15,12 @@ public class Checker {
 
     public static void showConnexionError()
     {
-        ErrorBox_Controller.showErrorBox(Settings.appStage, "Probleme de Connexion", "Veuillez verifier votre connexion a Internet");
+        DialogLauncher.launchDialog("cnxError", DialogLauncher.ERROR_BOX);
     }
 
     public static void showPwdError()
     {
-        ErrorBox_Controller.showErrorBox(Settings.appStage, "Mot de Passe icorrecte", "Le mot de passe que vous avez fourni est incorrect. Veuillez reessayer");
+        DialogLauncher.launchDialog("pwdError", DialogLauncher.ERROR_BOX);
+
     }
 }

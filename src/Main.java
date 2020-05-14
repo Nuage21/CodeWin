@@ -2,6 +2,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.TextField;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
@@ -16,12 +17,15 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception {
         Settings.appStage = primaryStage;
         Settings.application = this;
+        LanguageManager.loadLangData(Settings.projectPath + "\\lang\\fr.xml");
+
         if(Settings.SKIP_AUTHENTICATION)
         {
             User u = new User("Barack_Hawaii_123", "Hakim123l;", "obama@wh.gov", "Barack", "Obama", java.sql.Date.valueOf(LocalDate.of(2000, 11, 9)), "Honolulu, Hawaii, United States", "(860)-231-1234");
             LoggedIn_Controller.setUser(u);
             FXMLLoader loader = new FXMLLoader(getClass().getResource("LoggedIn.fxml"));
             Parent root = loader.load();
+            LanguageManager.resyncLanguage(loader, "loggedin");
             Scene sc = new Scene(root);
             primaryStage.setScene(sc);
             primaryStage.initStyle(StageStyle.UNDECORATED);
@@ -32,6 +36,8 @@ public class Main extends Application {
         {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("Authenticator.fxml"));
             Parent root = loader.load();
+            LanguageManager.authenticatorLoader = loader;
+            LanguageManager.resyncLanguage(loader, "authenticator");
             primaryStage.setTitle("CodeWin Sign in/up");
             Scene sc = new Scene(root);
             primaryStage.setScene(sc);

@@ -53,7 +53,7 @@
                                  <children>
                                     <Pane prefHeight="64.0" prefWidth="950.0" style="-fx-background-color: white;" styleClass="sign-top">
                                        <children>
-                                          <Label layoutX="763.0" prefHeight="64.0" prefWidth="187.0" text="Sign up" textFill="#3f5986">
+                                          <Label fx:id="signupTitleLabel" layoutX="744.0" layoutY="-1.0" prefHeight="64.0" text="Sign up" textFill="#3f5986">
                                              <font>
                                                 <Font name="Jokerman" size="32.0" />
                                              </font>
@@ -185,18 +185,9 @@
                                                             <Image url="@img/icons/dob.png" />
                                                          </image>
                                                       </ImageView>
-                                                      <DatePicker fx:id="DatePickerField" layoutX="62.0" layoutY="9.0" prefHeight="28.0" prefWidth="364.0" styleClass="datepicker" />
+                                                      <DatePicker fx:id="DatePickerField" layoutX="62.0" layoutY="9.0" pickOnBounds="false" prefHeight="28.0" prefWidth="364.0" styleClass="datepicker" />
                                                    </children>
                                                 </Pane>
-                                             </children>
-                                          </Pane>
-                                          <Pane prefHeight="45.0" prefWidth="894.0">
-                                             <children>
-                                                <CheckBox layoutX="23.0" layoutY="14.0" mnemonicParsing="false" text="By clicking Submit, you agree to our Terms and Data Policy">
-                                                   <font>
-                                                      <Font size="15.0" />
-                                                   </font>
-                                                </CheckBox>
                                              </children>
                                           </Pane>
                                           <Pane prefHeight="71.0" prefWidth="894.0">
@@ -237,7 +228,7 @@
                            <children>
                               <Pane prefHeight="64.0" prefWidth="950.0" styleClass="sign-top">
                                  <children>
-                                    <Label layoutX="763.0" prefHeight="64.0" prefWidth="187.0" text="Sign in" textFill="#3f5986">
+                                    <Label fx:id="signinTitleLabel" layoutX="741.0" layoutY="-1.0" prefHeight="64.0" text="Sign in" textFill="#3f5986">
                                        <font>
                                           <Font name="Jokerman" size="32.0" />
                                        </font>

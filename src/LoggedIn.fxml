@@ -135,7 +135,7 @@
                                     <Cursor fx:constant="HAND" />
                                  </cursor>
                               </Label>
-                              <Label layoutX="14.0" layoutY="14.0" text="Points" underline="true">
+                              <Label fx:id="pointsDescLabel" layoutX="14.0" layoutY="14.0" text="Points" underline="true">
                                  <font>
                                     <Font name="Rockwell" size="17.0" />
                                  </font>
@@ -149,7 +149,7 @@
                   <VBox fx:id="darkmodeVBox" prefHeight="61.0" prefWidth="78.0" style="-fx-padding: 16 0 0 0;" />
                   <Pane prefHeight="61.0" prefWidth="118.0">
                      <children>
-                        <Label layoutX="10.0" layoutY="18.0" text="Darkmode" textFill="WHITE">
+                        <Label fx:id="darkmodeLabel" layoutX="10.0" layoutY="18.0" text="Darkmode" textFill="WHITE">
                            <font>
                               <Font name="Rockwell" size="18.0" />
                            </font>

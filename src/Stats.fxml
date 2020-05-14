@@ -21,7 +21,7 @@
                 <NumberAxis fx:id="activityChartYNumberAxis" side="LEFT" />
               </yAxis>
             </AreaChart>
-            <Label layoutX="80.0" layoutY="26.0" prefHeight="43.0" prefWidth="91.0" text="Activite" underline="true">
+            <Label fx:id="activityLabel" layoutX="80.0" layoutY="26.0" prefHeight="43.0" prefWidth="91.0" text="Activite" underline="true">
                <font>
                   <Font size="25.0" />
                </font>
@@ -34,7 +34,7 @@
          <children>
             <Button fx:id="points_week" layoutX="14.0" layoutY="82.0" mnemonicParsing="false" prefHeight="134.0" prefWidth="58.0" style="-fx-background-color: #f3f3f3; -fx-border-width: 0 0 0 1; -fx-border-color: #125699;" text="Sem" />
             <Button fx:id="points_month" layoutX="14.0" layoutY="226.0" mnemonicParsing="false" prefHeight="134.0" prefWidth="58.0" style="-fx-background-color: #dddddd; -fx-border-color: #125699; -fx-border-width: 0;" text="Mois" />
-            <Label layoutX="81.0" layoutY="17.0" prefHeight="43.0" prefWidth="219.0" text="Progression" underline="true">
+            <Label fx:id="progressionLabel" layoutX="81.0" layoutY="17.0" prefHeight="43.0" prefWidth="219.0" text="Progression" underline="true">
                <font>
                   <Font size="25.0" />
                </font>

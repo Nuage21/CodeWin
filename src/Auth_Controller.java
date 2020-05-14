@@ -19,7 +19,15 @@ import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import javafx.util.Duration;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.NodeList;
+import org.xml.sax.SAXException;
 
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+import java.io.File;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -51,7 +59,8 @@ public class Auth_Controller {
     @FXML
     private TextField UsernameField;
 
-    @FXML private VBox signupvbox;
+    @FXML
+    private VBox signupvbox;
 
     @FXML
     private Pane UsernameSignInPane;
@@ -142,25 +151,23 @@ public class Auth_Controller {
             String _username = UsernameSignInField.getText();
             String _pwd = PwdSignInField.getText();
 
-            if(!Settings.ACTIVE_DB_MODE)
+            if (!Settings.ACTIVE_DB_MODE)
                 Debug.debugDialog("DATABASE NOT ACTIVATED", "Set Settings.ACTIVE_DB_MODE to true before attempting a DB login");
-            else
-            {
+            else {
                 int state = User.userNameExiste(_username);
-                if(state == 0) // username doesn't exist
-                    ErrorBox_Controller.showErrorBox(Settings.appStage, "Utilisateur Introuvable", "Veuillez vous assurez du pseudo entre");
-                else if(state < 0)
+                if (state == 0) // username doesn't exist
+                    DialogLauncher.launchDialog("userNotFound", DialogLauncher.ERROR_BOX);
+                else if (state < 0)
                     Checker.showConnexionError();
-                else
-                {
+                else {
                     User u = User.getUserDB(_username, _pwd);
-                    if(u != null)
-                    {
+                    if (u != null) {
                         String fxml = "LoggedIn.fxml";
                         FXMLLoader loader = new FXMLLoader(getClass().getResource(fxml));
                         Parent root = null;
                         try {
                             root = loader.load();
+                            LanguageManager.resyncLanguage(loader, "loggedin");
                         } catch (IOException e) {
                             Debug.debugException(e);
                         }
@@ -196,9 +203,11 @@ public class Auth_Controller {
             Parent root = null;
             Controller ctr = null;
             try {
-                String fxml = Settings.ACTIVE_EMAIL_CONFIRM?"EmailConfirm.fxml":"LoggedIn.fxml";
+                String fxml = Settings.ACTIVE_EMAIL_CONFIRM ? "EmailConfirm.fxml" : "LoggedIn.fxml";
+                String section = Settings.ACTIVE_EMAIL_CONFIRM ? "email" : "loggedin";
                 FXMLLoader loader = new FXMLLoader(getClass().getResource(fxml));
                 root = loader.load();
+                LanguageManager.resyncLanguage(loader, section);
                 ctr = loader.getController();
             } catch (IOException e) {
                 e.printStackTrace();
@@ -220,14 +229,12 @@ public class Auth_Controller {
             if (all_is_ok) {
                 if (errorStage != null) errorStage.close();
                 User newUser = getUser();
-                if(Settings.ACTIVE_EMAIL_CONFIRM)
-                {
+                if (Settings.ACTIVE_EMAIL_CONFIRM) {
                     EmailConfirm_Controller controller = (EmailConfirm_Controller) ctr;
                     boolean isSent = controller.sendConfEmail(newUser.getEmail());
-                    if(isSent)
-                    {
+                    if (isSent) {
                         controller.setEmail(newUser.getEmail());
-                        for(Node n : signupvbox.getChildren()) // in case wanted to change email -> redisplay them
+                        for (Node n : signupvbox.getChildren()) // in case wanted to change email -> redisplay them
                         {
                             controller.childrens.add(n);
                         }
@@ -235,12 +242,9 @@ public class Auth_Controller {
                         signupvbox.getChildren().clear();
                         signupvbox.getChildren().add(root);
                         LoggedIn_Controller.setUser(newUser);
-                    }
-                    else
-                        ErrorBox_Controller.showErrorBox(Settings.appStage,"Erreur", "Verifier votre connexion a Internet et Assurez vous de la validite de votre email");
-                }
-                else
-                {
+                    } else
+                        Checker.showConnexionError();
+                } else {
                     Stage stg = Settings.appStage;
                     Scene sc = new Scene(root);
                     stg.setScene(sc);
@@ -398,8 +402,7 @@ public class Auth_Controller {
 
         String usr = UsernameField.getText();
         boolean is_not_taken = true;  // verification au pres de la bdd
-        if(Settings.ACTIVE_DB_MODE)
-        {
+        if (Settings.ACTIVE_DB_MODE) {
             // is_not_taken = User.userNameExiste(usr);
         }
         boolean lenght = usr.length() >= 6;
@@ -436,8 +439,7 @@ public class Auth_Controller {
 
         boolean valide_mail = match.matches();
         boolean is_not_used = true; // BDD request here
-        if(Settings.ACTIVE_DB_MODE)
-        {
+        if (Settings.ACTIVE_DB_MODE) {
             // valide_mail = User.userEmailExiste(email);
         }
         LogErrorController.list.clear();
@@ -507,8 +509,7 @@ public class Auth_Controller {
     }
 
 
-    public User getUser()
-    {
+    public User getUser() {
         java.sql.Date dob = java.sql.Date.valueOf(DatePickerField.getValue());
         User user = new User(UsernameField.getText(), PwdField.getText(), EmailField.getText(), FirstnameField.getText(), LastnameField.getText(), dob, AddressField.getText(), PhoneField.getText());
         return user;

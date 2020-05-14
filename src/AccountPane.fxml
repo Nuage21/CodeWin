@@ -12,7 +12,7 @@
    <children>
       <Pane fx:id="paramsPane" prefHeight="49.0" prefWidth="286.0" styleClass="not-quit">
          <children>
-            <Label layoutX="75.0" layoutY="13.0" text="Parametres">
+            <Label fx:id="paramsLabel" layoutX="75.0" layoutY="13.0" text="Parametres">
                <font>
                   <Font name="Rockwell" size="18.0" />
                </font>
@@ -30,7 +30,7 @@
       </Pane>
       <Pane fx:id="signoutPane" prefHeight="55.0" prefWidth="286.0" style="-fx-border-width: 0 0 1 0; -fx-border-color: #aaaaaa;" styleClass="not-quit">
          <children>
-            <Label layoutX="74.0" layoutY="18.0" text="Deconnexion">
+            <Label fx:id="logoutLabel" layoutX="74.0" layoutY="18.0" text="Deconnexion">
                <font>
                   <Font name="Rockwell" size="17.0" />
                </font>
@@ -48,7 +48,7 @@
       </Pane>
       <Pane fx:id="quitPane" prefHeight="50.0" prefWidth="286.0" styleClass="quit">
          <children>
-            <Label layoutX="75.0" layoutY="14.0" text="Quit">
+            <Label fx:id="quitLabel" layoutX="75.0" layoutY="14.0" text="Quit">
                <font>
                   <Font name="Rockwell" size="17.0" />
                </font>

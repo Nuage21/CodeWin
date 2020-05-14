@@ -45,22 +45,22 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Label layoutX="22.0" layoutY="25.0" text="About Us" textFill="#084b8a">
+      <Label fx:id="aboutusLabel" layoutX="22.0" layoutY="25.0" text="About Us" textFill="#084b8a">
          <font>
             <Font name="Dosis Bold" size="44.0" />
          </font>
       </Label>
-      <Label alignment="TOP_LEFT" layoutX="30.0" layoutY="116.0" prefHeight="107.0" prefWidth="494.0" text="Un groupe de 6 étudiants de l'Ecole Nationale Superieure d'Informpatique, ESI, a pour intention de réussir un projet d'étude. Et cela en réalisant cette application qui aide les utilisateurs à apprendre et comprendre le code de la route. " textFill="#575757" wrapText="true">
+      <Label fx:id="text1" alignment="TOP_LEFT" layoutX="30.0" layoutY="116.0" prefHeight="107.0" prefWidth="494.0" text="Un groupe de 6 étudiants de l'Ecole Nationale Superieure d'Informpatique, ESI, a pour intention de réussir un projet d'étude. Et cela en réalisant cette application qui aide les utilisateurs à apprendre et comprendre le code de la route. " textFill="#575757" wrapText="true">
          <font>
             <Font name="Times New Roman" size="17.0" />
          </font>
       </Label>
-      <Label alignment="TOP_LEFT" layoutX="235.0" layoutY="256.0" prefHeight="107.0" prefWidth="494.0" text="Notre application CodeWin vous aide à obtenir votre examen du code de la route avec plus de 33 cours et 218 questions, tous bien rédigés et assurés par des moniteurs d'auto école certifiés et à jour selon la mise à jour du code de la route,datant de Avril 2020. " textFill="#575757" wrapText="true">
+      <Label fx:id="text2" alignment="TOP_LEFT" layoutX="235.0" layoutY="256.0" prefHeight="107.0" prefWidth="494.0" text="Notre application CodeWin vous aide à obtenir votre examen du code de la route avec plus de 33 cours et 218 questions, tous bien rédigés et assurés par des moniteurs d'auto école certifiés et à jour selon la mise à jour du code de la route,datant de Avril 2020. " textFill="#575757" wrapText="true">
          <font>
             <Font name="Times New Roman" size="17.0" />
          </font>
       </Label>
-      <Label alignment="TOP_LEFT" layoutX="235.0" layoutY="353.0" prefHeight="18.0" prefWidth="494.0" text="Cet outil est destine a un usage exclusif d'un etudiant" textFill="#195690" wrapText="true">
+      <Label fx:id="thisTool" alignment="TOP_LEFT" layoutX="235.0" layoutY="353.0" prefHeight="18.0" text="Cet outil est destine a un usage exclusif d'un etudiant" textFill="#195690" wrapText="true">
          <font>
             <Font name="Times New Roman Bold" size="17.0" />
          </font>

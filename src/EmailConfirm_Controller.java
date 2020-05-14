@@ -97,6 +97,7 @@ public class EmailConfirm_Controller implements Controller{
                 Parent root = null;
                 try {
                     root = loader.load();
+                    LanguageManager.resyncLanguage(loader, "loggedin");
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
@@ -105,7 +106,7 @@ public class EmailConfirm_Controller implements Controller{
                 {
                     isInserted = User.addUser(LoggedIn_Controller.getUser());
                     if(!isInserted)
-                        ErrorBox_Controller.showErrorBox(Settings.appStage, "Erreur de Connexion", "Veuillez verifier votre connexion Internet");
+                        Checker.showConnexionError();
                 }
                 if(isInserted)
                 {

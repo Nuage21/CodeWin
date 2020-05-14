@@ -28,9 +28,9 @@ public class User {
     private String lang; // locally saved
 
     // database settings
-    public static final String USERNAME = "sql7340244";
-    public static final String PASSWORD = "EKPJX9ShWJ";
-    public static final String CONN = "jdbc:mysql://sql7.freemysqlhosting.net:3306/sql7340244";
+    public static final String USERNAME = "codewiners";
+    public static final String PASSWORD = "CodeWin25;";
+    public static final String CONN = "jdbc:mysql://db4free.net:3306/codewin_database?characterEncoding=latin1&useConfigs=maxPerformance";
 
     public User() {
 
@@ -165,7 +165,7 @@ public class User {
             rs = stmt.executeQuery();
             rs.first();
             if (!rs.getString("password").equals(provided_pwd)) {
-                ErrorBox_Controller.showErrorBox(Settings.appStage, "Mot de passe Incorrect", "Veulliez verifier votre mot de passe et reessayer.");
+                Checker.showPwdError();
                 closeConnection(conn);
                 return null;
             }

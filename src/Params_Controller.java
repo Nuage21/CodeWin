@@ -136,7 +136,7 @@ public class Params_Controller {
             if (Settings.ACTIVE_EMAIL_CONFIRM) {
                 String email = newEmailTField.getText();
                 if (email.equals(LoggedIn_Controller.getUser().getEmail()))
-                    ErrorBox_Controller.showErrorBox(Settings.appStage, "Erreur", "L'email que vous avez fourni est le meme que l'ancien. Veuillez choisir un autre!");
+                    DialogLauncher.launchDialog("emailSameError", DialogLauncher.ERROR_BOX);
                 else {
                     Boolean isValid = true;
                     if (isValid) {
@@ -147,7 +147,8 @@ public class Params_Controller {
                         if (!sentState)
                             Checker.showConnexionError();
                     } else
-                        ErrorBox_Controller.showErrorBox(Settings.appStage, "Email invalide!", "Veuillez verifiez l'addresse email entree");
+                        DialogLauncher.launchDialog("emailInvalidError", DialogLauncher.ERROR_BOX);
+
                 }
 
             }
@@ -165,13 +166,13 @@ public class Params_Controller {
                     if (Settings.ACTIVE_DB_MODE)
                         success = User.updateEmail(u, providedEmail);
                     if (success) {
-                        SuccessBox_Controller.showSuccessBox(Settings.appStage, "Succes", "Votre email a ete mise a jour avec succes");
+                        DialogLauncher.launchDialog("emailUpdateSuccess", DialogLauncher.SUCCESS_BOX);
                         LoggedIn_Controller.getUser().setEmail(providedEmail);
                         emailLabel.setText(providedEmail); // empty
                     } else
                         Checker.showConnexionError();
                 } else
-                    ErrorBox_Controller.showErrorBox(Settings.appStage, "Erreur", "Code invalide");
+                    DialogLauncher.launchDialog("codeInvalidError", DialogLauncher.ERROR_BOX);
 
                 // empty
                 newEmailTField.setText("");
@@ -188,11 +189,11 @@ public class Params_Controller {
             User u = LoggedIn_Controller.getUser();
 
             if (newPwd.equals(u.getPassword()))
-                ErrorBox_Controller.showErrorBox(Settings.appStage, "Erreur", "Le mot de passe fourni est le meme que l'ancien. Veuillez choisir un autre!");
+                DialogLauncher.launchDialog("pwdSameError", DialogLauncher.ERROR_BOX);
             else if (ancientProvided.equals(u.getPassword())) {
                 boolean state = User.updatePassword(u, newPwd);
                 if (state)
-                    SuccessBox_Controller.showSuccessBox(Settings.appStage, "Success", "Votre mot de passe a ete mis a jour avec succees!");
+                    DialogLauncher.launchDialog("pwdUpdateSuccess", DialogLauncher.SUCCESS_BOX);
                 else
                     Checker.showConnexionError();
             } else
@@ -210,7 +211,7 @@ public class Params_Controller {
                 if (state) {
                     SceneLoader.loadAuthenticator();
                 } else
-                    ErrorBox_Controller.showErrorBox(Settings.appStage, "Erreur", "Une erreur est survenue lors de la suppression de votre compte. Veuillez Reessayer!");
+                    DialogLauncher.launchDialog("accountDelError", DialogLauncher.ERROR_BOX);
 
             } else
                 Checker.showPwdError();
@@ -223,6 +224,7 @@ public class Params_Controller {
             Parent root = null;
             try {
                 root = loader.load();
+                LanguageManager.resyncLanguage(loader, "about");
             } catch (IOException e) {
                 Debug.debugException(e);
             }
@@ -263,11 +265,11 @@ public class Params_Controller {
                 if (state) {
                     Design.setVisible(notActivatedPane, false);
                     Design.setVisible(enterKeyPane, false);
-                    SuccessBox_Controller.showSuccessBox(Settings.appStage, "Succes", "Votre produit a ete active avec succes");
+                    DialogLauncher.launchDialog("productActivatedSuccess", DialogLauncher.SUCCESS_BOX);
                 } else
                     Checker.showConnexionError();
             } else
-                ErrorBox_Controller.showErrorBox(Settings.appStage, "Cle incorrecte", "La Cle de Produit Introduite est erronee. Veuillez Reessayer");
+                DialogLauncher.launchDialog("pkeyError", DialogLauncher.ERROR_BOX);
         });
     }
 
