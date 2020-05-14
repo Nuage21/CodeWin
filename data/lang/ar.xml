@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<content>
+    <authenticator>
+        <Label id="signupTitleLabel">سجل</Label>
+        <TextField id="UsernameField">إسم المستخدم</TextField>
+        <TextField id="PwdField">كلمة السر</TextField>
+        <TextField id="FirstnameField">الاسم الاول</TextField>
+        <TextField id="LastnameField">الكنية</TextField>
+        <TextField id="PhoneField">الهاتف</TextField>
+        <TextField id="AddressField">العنوان</TextField>
+
+        <Button id="signUpBtn">سجل</Button>
+        <Button id="signUpCancealBtn">الإلغاء</Button>
+
+        <!-- Sign in Tab-->
+        <Label id="signinTitleLabel">تسجيل الدخول</Label>
+        <TextField id="UsernameSignInField">إسم المستخدم</TextField>
+        <TextField id="PwdSignInField">كلمة السر</TextField>
+        <Button id="signinButton">تسجيل الدخول</Button>
+        <Button id="signInCancealBtn">الإلغاء</Button>
+
+        <!-- Tabs-->
+        <Tab id="signupTab">سجل</Tab>
+        <Tab id="signinTab">تسجيل الدخول</Tab>
+    </authenticator>
+    <loggedin>
+        <Label id="Side_GO_Label">نظرة عامة</Label>
+        <Label id="Side_Params_Label">الإعدادات</Label>
+        <Label id="Side_Stats_Label">الإحصاء</Label>
+        <Label id="Side_Toggle_Label">التبديل</Label>
+        <Label id="Side_Help_Label">مساعدة</Label>
+        <Label id="previousLabel">السابق</Label>
+        <Label id="nextLabel">التالي</Label>
+        <Label id="darkmodeLabel">الوضع الداكن</Label>
+        <Label id="pointsDescLabel">النقاط</Label>
+        <HyperLink id="githubHyperLink">Github تفضل بزيارتنا على </HyperLink>
+        <TextField id="searchField">ابحث عن درس</TextField>
+    </loggedin>
+    <params>
+        <Label id="pKeyTitleLabel">مفتاح المنتج</Label>
+        <Label id="accountTitleLabel">الحساب</Label>
+        <Label id="langTitleLabel">لغة</Label>
+        <Label id="aboutLabel">حول</Label>
+        <Label id="helpTitleLabel">مساعدة</Label>
+        <Label id="pActivatedLabel">:منتجك نشط باستخدام مفتاح المنتج</Label>
+        <Label id="pNotActivatedLabel">!لم يتم تنشيط منتجك بعد</Label>
+        <Label id="enterPKeyLabel">:أدخل مفتاح المنتج الخاص بك لتنشيط حسابك</Label>
+        <Label id="lastnameTitleLabel">:الكنية</Label>
+        <Label id="firstnameTitleLabel">:الاسم الاول</Label>
+        <Label id="mobileTitleLabel">:الهاتف</Label>
+        <Label id="emailTitleLabel">:البريد الإلكتروني</Label>
+        <Label id="pwdChangeTitleLabel">:كلمة السر(تغيير)</Label>
+        <Label id="accountDeleteTitleLabel">حذف هذا الحساب</Label>
+        <Label id="trialWillEndLabel">:محاولتك ستنتهي</Label>
+
+        <TextField id="productKeyTField">مفتاح المنتج</TextField>
+        <TextField id="searchField">بحث</TextField>
+        <TextField id="newEmailTField">بريد إلكتروني جديد</TextField>
+        <TextField id="codePField">كود</TextField>
+        <TextField id="codePField">كود</TextField>
+        <TextField id="ancientPwdPField">كلمة سر قديمة</TextField>
+        <TextField id="newPwdPField">كلمة مرور جديدة</TextField>
+        <TextField id="deleteAccountPField">أكد رقمك السري</TextField>
+
+        <Button id="activateButton">تفعيل</Button>
+        <Button id="sendCodeButton">أرسل</Button>
+        <Button id="saveEmailButton">حفظ</Button>
+        <Button id="savePwdButton">حفظ</Button>
+        <Button id="deleteAccountButton">إزالة</Button>
+    </params>
+    <stats>
+        <Label id="activityLabel">النشاط</Label>
+        <Label id="progressionLabel">التقدم</Label>
+
+        <Button id="activity_week">اسبوع</Button>
+        <Button id="activity_month">شهر</Button>
+        <Button id="points_week">شهر</Button>
+        <Button id="points_month">شهر</Button>
+    </stats>
+    <about>
+        <Label id="aboutusLabel">حول</Label>
+        <Label id="text1">تعتزم مجموعة من 6 طلاب من المدرسة الوطنية العليا للاعلام الالي  ، لإكمال مشروع الدراسة بنجاح. وذلك من خلال إنشاء هذا التطبيق الذي يساعد المستخدمين على تعلم وفهم قواعد الطريق.</Label>
+        <Label id="text2">يساعدك تطبيق كودوين على الحصول على امتحان رمز الطريق السريع الخاص بك مع أكثر من 33 درسًا و 218 سؤالًا ، وكلها مكتوبة جيدًا ومقدمة من قبل معلمي مدارس القيادة المعتمدين وحتى الآن وفقًا لتحديث رمز الطريق السريع ، تعود إلى أبريل 2020.</Label>
+        <Label id="thisTool">هذه الأداة مخصصة للاستخدام الحصري للطالب</Label>
+        <HyperLink id="githubHLink">Github تفضل بزيارتنا على</HyperLink>
+        <Button id="quitButton">إرجاع</Button>
+    </about>
+    <account>
+        <Label id="paramsLabel">الإعدادات</Label>
+        <Label id="logoutLabel">تسجيل الخروج</Label>
+        <Label id="quitLabel">المغادرة</Label>
+    </account>
+    <dialogs>
+        <userNotFound title="الرجاء التأكد من إدخال اللقب"<"المستخدم غير موجود "</userNotFound>
+        <cnxError title="الرجاء التحقق من اتصال الانترنت الخاص بك<"مشكل في الاتصال</cnxError>
+        <pwdError title="كلمة المرور التي قدمتها غير صحيحة. المرجو اعادة المحاول,<"كلمة سر خاطئة</pwdError>
+        <emailSameError title="البريد الإلكتروني الذي قدمته هو نفسه البريد الإلكتروني القديم. الرجاء اختيار آخر!<"خطأ</emailSameError>
+        <pwdSameError title="كلمة المرور المقدمة هي نفسها كلمة المرور القديمة. الرجاء اختيار آخر!<"خطأ</pwdSameError>
+        <emailInvalidError title="يرجى التحقق من عنوان البريد الإلكتروني الذي تم إدخاله<"بريد إلكتروني غيرصالح"</emailInvalidError>
+        <codeInvalidError title="الرمز غير صحيح<"خطأ"</codeInvalidError>
+        <accountDelError title="خحدث خطأ أثناء حذف حسابك. المرجو اعادة المحاولة!>"خطأ</accountDelError>
+        <pkeyError title="مفتاح المنتج الذي تم إدخاله غير صحيح. المرجو اعادة المحاولة<"المفتاح خطا</pkeyError>
+        <!-- SUCCESS BOXES -->
+        <pwdUpdateSuccess title="لقد تم تحديث كلمة السر الخاصة بك بنجاح!>"نجاح</pwdUpdateSuccess>
+        <emailUpdateSuccess title="تم تحديث بريدك الإلكتروني بنجاح>"نجاح</emailUpdateSuccess>
+        <productActivatedSuccess title="تم تنشيط منتجك بنجاح<"نجاح</productActivatedSuccess>
+    </dialogs>
+</content>
