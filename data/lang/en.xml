@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<content>
+    <authenticator>
+        <Label id="signupTitleLabel">Register</Label>
+        <TextField id="UsernameField">Username</TextField>
+        <TextField id="PwdField">Password</TextField>
+        <TextField id="FirstnameField">First name</TextField>
+        <TextField id="LastnameField">Last name</TextField>
+        <TextField id="PhoneField">Phone</TextField>
+        <TextField id="AddressField">Address</TextField>
+
+        <Button id="signUpBtn">Register</Button>
+        <Button id="signUpCancealBtn">To cancel</Button>
+
+        <!-- Sign in Tab-->
+        <Label id="signinTitleLabel">Connexion</Label>
+        <TextField id="UsernameSignInField">Username</TextField>
+        <TextField id="PwdSignInField">Password</TextField>
+        <Button id="signinButton">Connexion</Button>
+        <Button id="signInCancealBtn">To cancel</Button>
+
+        <!-- Tabs-->
+        <Tab id="signupTab">Register</Tab>
+        <Tab id="signinTab">Connexion</Tab>
+    </authenticator>
+    <loggedin>
+        <Label id="Side_GO_Label">General View</Label>
+        <Label id="Side_Params_Label">Settings</Label>
+        <Label id="Side_Stats_Label">Statistics</Label>
+        <Label id="Side_Toggle_Label">To toggle</Label>
+        <Label id="Side_Help_Label">Help</Label>
+        <Label id="previousLabel">Previous</Label>
+        <Label id="nextLabel">Next</Label>
+        <Label id="darkmodeLabel">Dark Mode</Label>
+        <Label id="pointsDescLabel">Points</Label>
+        <HyperLink id="githubHyperLink">Visit us on Github</HyperLink>
+        <TextField id="searchField">Find a Course</TextField>
+    </loggedin>
+    <params>
+        <Label id="pKeyTitleLabel">Product key</Label>
+        <Label id="accountTitleLabel">Account</Label>
+        <Label id="langTitleLabel">Language</Label>
+        <Label id="aboutLabel">About</Label>
+        <Label id="helpTitleLabel">Help</Label>
+        <Label id="pActivatedLabel">Your product is activated with the Product Key:</Label>
+        <Label id="pNotActivatedLabel">Your product is not yet activated!</Label>
+        <Label id="enterPKeyLabel">Enter your Product key to activate your account:</Label>
+        <Label id="lastnameTitleLabel">Last name:</Label>
+        <Label id="firstnameTitleLabel">First name:</Label>
+        <Label id="mobileTitleLabel">Phone:</Label>
+        <Label id="emailTitleLabel">E-mail:</Label>
+        <Label id="pwdChangeTitleLabel">Password (Change):</Label>
+        <Label id="accountDeleteTitleLabel">Delete This Account</Label>
+        <Label id="trialWillEndLabel">Your trial will end on:</Label>
+
+        <TextField id="productKeyTField">Product key</TextField>
+        <TextField id="searchField">Search</TextField>
+        <TextField id="newEmailTField">New Email</TextField>
+        <TextField id="codePField">Code</TextField>
+        <TextField id="codePField">Code</TextField>
+        <TextField id="ancientPwdPField">Old password</TextField>
+        <TextField id="newPwdPField">New Password</TextField>
+        <TextField id="deleteAccountPField">Confirm your password</TextField>
+
+        <Button id="activateButton">Activate</Button>
+        <Button id="sendCodeButton">Send</Button>
+        <Button id="saveEmailButton">Save</Button>
+        <Button id="savePwdButton">Save</Button>
+        <Button id="deleteAccountButton">Remove</Button>
+    </params>
+    <stats>
+        <Label id="activityLabel">Activity</Label>
+        <Label id="progressionLabel">Progression</Label>
+
+        <Button id="activity_week">Week</Button>
+        <Button id="activity_month">Month</Button>
+        <Button id="points_week">Month</Button>
+        <Button id="points_month">Month</Button>
+    </stats>
+    <about>
+        <Label id="aboutusLabel">About</Label>
+        <Label id="text1">A group of 6 students from the Ecole Nationale Superieure d'Informpatique, ESI, intends to successfully complete a study project. And this by creating this application which helps users to learn and understand the rules of the road.</Label>
+        <Label id="text2">Our CodeWin app helps you get your highway code exam with over 33 lessons and 218 questions, all well written and provided by certified driving school instructors and up to date according to the highway code update, dating from April 2020.</Label>
+        <Label id="thisTool">This tool is intended for the exclusive use of a student</Label>
+        <HyperLink id="githubHLink">Visit us on Github</HyperLink>
+        <Button id="quitButton">Return</Button>
+    </about>
+    <account>
+        <Label id="paramsLabel">Settings</Label>
+        <Label id="logoutLabel">Logout</Label>
+        <Label id="quitLabel">Quit</Label>
+    </account>
+    <dialogs>
+        <userNotFound title="User Not Found">"Please make sure you have the nickname between"</userNotFound>
+        <cnxError title="Connection problem">Please check your Internet connection</cnxError>
+        <pwdError title="Invalid password">The password you provided is incorrect. Try Again</pwdError>
+        <emailSameError title="Error">The email you provided is the same as the old one. Please choose another!</emailSameError>
+        <pwdSameError title="Error">The password provided is the same as the old one. Please choose another!</pwdSameError>
+        <emailInvalidError title="Invalid email!">Please check the entered email address</emailInvalidError>
+        <codeInvalidError title="Error">Invalid code"</codeInvalidError>
+        <accountDelError title="Error">An error occurred while deleting your account. Try Again!</accountDelError>
+        <pkeyError title="Wrong key">The Product Key entered is incorrect. Try Again</pkeyError>
+        <!-- SUCCESS BOXES -->
+        <pwdUpdateSuccess title="Success">Your password has been successfully updated!</pwdUpdateSuccess>
+        <emailUpdateSuccess title="Success">Your email has been successfully updated</emailUpdateSuccess>
+        <productActivatedSuccess title="Success">Your product has been successfully activated</productActivatedSuccess>
+    </dialogs>
+</content>
