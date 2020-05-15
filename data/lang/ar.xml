@@ -100,21 +100,19 @@
     </account>
     <dialogs>
 
-        <userNotFound title="الرجاء التأكد من إدخال اللقب">المستخد غير موجود</userNotFound>
-        <cnxError title="الرجاء التحقق من اتصال الانترنت الخاص بك">مشكل في الاتصال</cnxError>
-        <pwdError title="كلمة المرور التي قدمتها غير صحيحة. المرجو اعادة المحاول">كلمة سر خاطئة</pwdError>
-        <emailSameError title="البريد الإلكتروني الذي قدمته هو نفسه البريد الإلكتروني القديم. الرجاء اختيار آخر!">خطأ
-        </emailSameError>
-        <pwdSameError title="كلمة المرور المقدمة هي نفسها كلمة المرور القديمة. الرجاء اختيار آخر!">خطأ</pwdSameError>
-        <emailInvalidError title="يرجى التحقق من عنوان البريد الإلكتروني الذي تم إدخاله>">بريد إلكتروني غير صالح
-        </emailInvalidError>
-        <codeInvalidError title="الرمز غير صحيح">خطأ</codeInvalidError>
-        <accountDelError title="حدث خطأ أثناء حذف حسابك. المرجو اعادة المحاولة!">خطأ</accountDelError>
-        <pkeyError title="مفتاح المنتج الذي تم إدخاله غير صحيح. المرجو اعادة المحاولة">المفتاح خطا</pkeyError>
+        <userNotFound title="لمستخد غير موجود">االرجاء التأكد من إدخال اللقب</userNotFound>
+        <cnxError title="مشكل في الاتصال">الرجاء التحقق من اتصال الانترنت الخاص بك</cnxError>
+        <pwdError title="كلمة سر خاطئة">كلمة المرور التي قدمتها غير صحيحة. المرجو اعادة المحاول </pwdError>
+        <emailSameError title="خطأ"> البريد الإلكتروني الذي قدمته هو نفسه البريد الإلكتروني القديم. الرجاء اختيار آخر!</emailSameError>
+        <pwdSameError title="خطأ">كلمة المرور المقدمة هي نفسها كلمة المرور القديمة. الرجاء اختيار آخر!</pwdSameError>
+        <emailInvalidError title="بريد إلكتروني غير صالح"> يرجى التحقق من عنوان البريد الإلكتروني الذي تم إدخاله</emailInvalidError>
+        <codeInvalidError title="خطأ">الرمز غير صحيح</codeInvalidError>
+        <accountDelError title="خطأ">حدث خطأ أثناء حذف حسابك. المرجو اعادة المحاولة!</accountDelError>
+        <pkeyError title="المفتاح خطا">مفتاح المنتج الذي تم إدخاله غير صحيح. المرجو اعادة المحاولة</pkeyError>
         <!-- SUCCESS BOXES -->
-        <pwdUpdateSuccess title="لقد تم تحديث كلمة السر الخاصة بك بنجاح!">نجاح</pwdUpdateSuccess>
-        <emailUpdateSuccess title="تم تحديث بريدك الإلكتروني بنجاح">نجاح</emailUpdateSuccess>
-        <productActivatedSuccess title="تم تنشيط منتجك بنجاح">نجاح</productActivatedSuccess>
+        <pwdUpdateSuccess title="نجاح"> لقد تم تحديث كلمة السر الخاصة بك بنجاح!</pwdUpdateSuccess>
+        <emailUpdateSuccess title="نجاح">تم تحديث بريدك الإلكتروني بنجاح </emailUpdateSuccess>
+        <productActivatedSuccess title="نجاح"> تم تنشيط منتجك بنجاح</productActivatedSuccess>
         <langUpdateSuccess title="Succès">La langue des Cours a été mise à jour avec succès</langUpdateSuccess>
 
     </dialogs>
