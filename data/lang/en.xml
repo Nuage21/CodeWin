@@ -34,6 +34,7 @@
         <Label id="pointsDescLabel">Points</Label>
         <HyperLink id="githubHyperLink">Visit us on Github</HyperLink>
         <TextField id="searchField">Find a Course</TextField>
+        <Label id="muteSoundLabel">Mute Sound</Label>
     </loggedin>
     <params>
         <Label id="pKeyTitleLabel">Product key</Label>

@@ -34,6 +34,7 @@
         <Label id="pointsDescLabel">النقاط</Label>
         <HyperLink id="githubHyperLink">Github تفضل بزيارتنا على</HyperLink>
         <TextField id="searchField">ابحث عن درس</TextField>
+        <Label id="muteSoundLabel">Mute Sound</Label>
     </loggedin>
     <params>
         <Label id="pKeyTitleLabel">مفتاح المنتج</Label>
