@@ -4,9 +4,9 @@
         <Label id="signupTitleLabel">S'inscrire</Label>
         <TextField id="UsernameField">Nom d'utilisateur</TextField>
         <TextField id="PwdField">Mot de passe</TextField>
-        <TextField id="FirstnameField">Prenom</TextField>
+        <TextField id="FirstnameField">Prénom</TextField>
         <TextField id="LastnameField">Nom</TextField>
-        <TextField id="PhoneField">Telephone</TextField>
+        <TextField id="PhoneField">Téléphone</TextField>
         <TextField id="AddressField">Addresse</TextField>
 
         <Button id="signUpBtn">S'inscrire</Button>
@@ -24,40 +24,40 @@
         <Tab id="signinTab">Connexion</Tab>
     </authenticator>
     <loggedin>
-        <Label id="Side_GO_Label">Vue Generale</Label>
+        <Label id="Side_GO_Label">Vue Générale</Label>
         <Label id="Side_Params_Label">Paramètres</Label>
         <Label id="Side_Stats_Label">Statistiques</Label>
         <Label id="Side_Toggle_Label">Basculer</Label>
         <Label id="Side_Help_Label">Aide</Label>
-        <Label id="previousLabel">Precedant</Label>
+        <Label id="previousLabel">Précédant</Label>
         <Label id="nextLabel">Suivant</Label>
         <Label id="pointsDescLabel">Points</Label>
         <HyperLink id="githubHyperLink">Nous Visiter sur Github</HyperLink>
         <TextField id="searchField">Rechercher un Cours</TextField>
     </loggedin>
     <params>
-        <Label id="pKeyTitleLabel">Cle de Produit</Label>
+        <Label id="pKeyTitleLabel">Clê de Produit</Label>
         <Label id="accountTitleLabel">Compte</Label>
         <Label id="langTitleLabel">Langue</Label>
-        <Label id="aboutLabel">A Propos</Label>
+        <Label id="aboutLabel">À Propos</Label>
         <Label id="helpTitleLabel">Aide</Label>
-        <Label id="pActivatedLabel">Votre produit est active avec la Cle de Produit:</Label>
-        <Label id="pNotActivatedLabel">Votre produit n'est pas encore active !</Label>
-        <Label id="enterPKeyLabel">Entrez votre cle de Produit pour activer votre compte:</Label>
+        <Label id="pActivatedLabel">Votre produit est activé avec la Clé de Produit:</Label>
+        <Label id="pNotActivatedLabel">Votre produit n'est pas encore activé !</Label>
+        <Label id="enterPKeyLabel">Entrez votre clé de Produit pour activer votre compte:</Label>
         <Label id="lastnameTitleLabel">Nom:</Label>
-        <Label id="firstnameTitleLabel">Prenom:</Label>
-        <Label id="mobileTitleLabel">Telephone:</Label>
+        <Label id="firstnameTitleLabel">Prénom:</Label>
+        <Label id="mobileTitleLabel">Téléphone:</Label>
         <Label id="emailTitleLabel">Email:</Label>
         <Label id="pwdChangeTitleLabel">Mot de Passe(Changer):</Label>
         <Label id="accountDeleteTitleLabel">Supprimer Ce Compte</Label>
         <Label id="trialWillEndLabel">Votre essaie prendra fin le:</Label>
 
-        <TextField id="productKeyTField">Cle de Produit</TextField>
+        <TextField id="productKeyTField">Clé de Produit</TextField>
         <TextField id="searchField">Recherche</TextField>
         <TextField id="newEmailTField">Nouvelle Email</TextField>
         <TextField id="codePField">Code</TextField>
         <TextField id="codePField">Code</TextField>
-        <TextField id="ancientPwdPField">Ancient mot de passe</TextField>
+        <TextField id="ancientPwdPField">Ancien mot de passe</TextField>
         <TextField id="newPwdPField">Nouveau mot de passe</TextField>
         <TextField id="deleteAccountPField">Confirmer votre mot de passe</TextField>
 
@@ -68,40 +68,40 @@
         <Button id="deleteAccountButton">Supprimer</Button>
     </params>
     <stats>
-        <Label id="activityLabel">Activite</Label>
+        <Label id="activityLabel">Activité</Label>
         <Label id="progressionLabel">Progression</Label>
 
-        <Button id="activity_week">Sem</Button>
+        <Button id="activity_week">Semaine</Button>
         <Button id="activity_month">Mois</Button>
         <Button id="points_week">Mois</Button>
         <Button id="points_month">Mois</Button>
     </stats>
     <about>
-        <Label id="aboutusLabel">A Propos</Label>
+        <Label id="aboutusLabel">À Propos</Label>
         <Label id="text1">Un groupe de 6 étudiants de l'Ecole Nationale Superieure d'Informpatique, ESI, a pour intention de réussir un projet d'étude. Et cela en réalisant cette application qui aide les utilisateurs à apprendre et comprendre le code de la route. </Label>
         <Label id="text2">Notre application CodeWin vous aide à obtenir votre examen du code de la route avec plus de 33 cours et 218 questions, tous bien rédigés et assurés par des moniteurs d'auto école certifiés et à jour selon la mise à jour du code de la route,datant de Avril 2020. </Label>
-        <Label id="thisTool">Cet outil est destine a un usage exclusif d'un etudiant</Label>
+        <Label id="thisTool">Cet outil est destine a un usage exclusif d'un êtudiant</Label>
         <HyperLink id="githubHLink">Nous Visiter sur Github</HyperLink>
         <Button id="quitButton">Retourner</Button>
     </about>
     <account>
-        <Label id="paramsLabel">Parametres</Label>
-        <Label id="logoutLabel">Deconnexion</Label>
+        <Label id="paramsLabel">Paramètres</Label>
+        <Label id="logoutLabel">Déconnexion</Label>
         <Label id="quitLabel">Quitter</Label>
     </account>
     <dialogs>
-        <userNotFound title="Utilisateur Introuvable">"Veuillez vous assurez du pseudo entre"</userNotFound>
-        <cnxError title="Probleme de Connexion">Veuillez verifier votre connexion a Internet</cnxError>
-        <pwdError title="Mot de Passe icorrecte">Le mot de passe que vous avez fourni est incorrect. Veuillez reessayer</pwdError>
-        <emailSameError title="Erreur">L'email que vous avez fourni est le meme que l'ancien. Veuillez choisir un autre!</emailSameError>
-        <pwdSameError title="Erreur">Le mot de passe fourni est le meme que l'ancien. Veuillez choisir un autre!</pwdSameError>
-        <emailInvalidError title="Email invalide!">Veuillez verifier l'addresse email entree</emailInvalidError>
+        <userNotFound title="Utilisateur Introuvable">"Veuillez vous assurer du pseudo entré"</userNotFound>
+        <cnxError title="Probleme de Connexion">Veuillez vérifier votre connexion à Internet</cnxError>
+        <pwdError title="Mot de Passe icorrecte">Le mot de passe que vous avez fourni est incorrect. Veuillez réessayer</pwdError>
+        <emailSameError title="Erreur">L'email que vous avez fourni est le même que l'ancien. Veuillez choisir un autre!</emailSameError>
+        <pwdSameError title="Erreur">Le mot de passe fourni est le même que l'ancien. Veuillez choisir un autre!</pwdSameError>
+        <emailInvalidError title="Email invalide!">Veuillez vérifier l'adresse email entrée</emailInvalidError>
         <codeInvalidError title="Erreur">Code invalide"</codeInvalidError>
-        <accountDelError title="Erreur">Une erreur est survenue lors de la suppression de votre compte. Veuillez Reessayer!</accountDelError>
-        <pkeyError title="Cle incorrecte">La Cle de Produit Introduite est erronee. Veuillez Reessayer</pkeyError>
+        <accountDelError title="Erreur">Une erreur est survenue lors de la suppression de votre compte. Veuillez Réessayer!</accountDelError>
+        <pkeyError title="Clé incorrecte">La Clé de Produit Introduite est erronée. Veuillez Réessayer</pkeyError>
         <!-- SUCCESS BOXES -->
-        <pwdUpdateSuccess title="Succes">Votre mot de passe a ete mis a jour avec succes!</pwdUpdateSuccess>
-        <emailUpdateSuccess title="Succes">Votre email a ete mise a jour avec succes</emailUpdateSuccess>
-        <productActivatedSuccess title="Succes">Votre produit a ete active avec succes</productActivatedSuccess>
+        <pwdUpdateSuccess title="Succès">Votre mot de passe a été mis à jour avec succès!</pwdUpdateSuccess>
+        <emailUpdateSuccess title="Succès">Votre email a été mise à jour avec succès</emailUpdateSuccess>
+        <productActivatedSuccess title="Succès">Votre produit a été activé avec succès</productActivatedSuccess>
     </dialogs>
 </content>
