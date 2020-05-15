@@ -66,6 +66,9 @@
         <Button id="saveEmailButton">Save</Button>
         <Button id="savePwdButton">Save</Button>
         <Button id="deleteAccountButton">Remove</Button>
+		
+		<Button id="saveLangButton">Save</Button>
+        <Label id="chooseLabel">Choose</Label>
     </params>
     <stats>
         <Label id="activityLabel">Activity</Label>

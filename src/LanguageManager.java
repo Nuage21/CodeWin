@@ -22,7 +22,7 @@ public class LanguageManager {
     public static FXMLLoader loggedinLoader;
 
     public static ArrayList<String> installed_languages = new ArrayList<>();
-    public static ArrayList<String> installed_languages_files = new ArrayList<>();
+    public static ArrayList<String> installed_languages_folders = new ArrayList<>();
 
     public static void loadLangData(String xmlfile)
     {
@@ -95,7 +95,7 @@ public class LanguageManager {
 
     public static void loadInstalledLanguages()
     {
-        String filePath = Settings.projectPath + "\\lang\\installed_langs.json";
+        String filePath = Settings.projectPath + "\\courses\\installed_langs.json";
         Scanner scanner = null;
         try {
             scanner = new Scanner( new File(filePath), "UTF-8" );
@@ -108,12 +108,12 @@ public class LanguageManager {
         JSONObject obj = new JSONObject(jsonInner);
 
         JSONArray langs = obj.getJSONArray("langs");
-        JSONArray files = obj.getJSONArray("files");
+        JSONArray fld = obj.getJSONArray("folders");
 
         for(int i = 0; i < langs.length(); ++i)
         {
             installed_languages.add(langs.getString(i));
-            installed_languages_files.add(files.getString(i));
+            installed_languages_folders.add(fld.getString(i));
         }
     }
 }

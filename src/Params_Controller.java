@@ -63,6 +63,10 @@ public class Params_Controller {
     private Button deleteAccountButton;
     @FXML
     private Button activateButton;
+    @FXML
+    private Button saveLangButton;
+
+    @FXML private ComboBox<String> langCBox;
 
     @FXML
     private TextField newEmailTField;
@@ -100,6 +104,13 @@ public class Params_Controller {
     public void initialize() {
 
         syncUserInfos();
+
+        for(String l : LanguageManager.installed_languages)
+            langCBox.getItems().add(l);
+
+        saveLangButton.setOnMouseClicked(mouseEvent -> {
+
+        });
 
         expanders.add(productKeyExpander);
         extensions.add(productKeyExtensionBPane);

@@ -2,6 +2,7 @@
 
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
@@ -318,7 +319,7 @@
                <center>
                   <Pane prefHeight="67.0" prefWidth="1197.0" BorderPane.alignment="CENTER">
                      <children>
-                        <Label fx:id="langTitleLabel" layoutX="65.0" layoutY="16.0" prefHeight="28.0" text="Apparence et Langue">
+                        <Label fx:id="langTitleLabel" layoutX="65.0" layoutY="16.0" prefHeight="28.0" text="Langue des Cours">
                            <font>
                               <Font name="Rockwell" size="23.0" />
                            </font>
@@ -328,7 +329,7 @@
                         </Label>
                         <ImageView fitHeight="42.0" fitWidth="41.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@img/icons/apearance.png" />
+                              <Image url="@img/icons/lang.png" />
                            </image>
                         </ImageView>
                      </children>
@@ -340,9 +341,9 @@
                   <BorderPane prefHeight="67.0" prefWidth="73.0" style="-fx-padding: 0 10 0 0;" />
                </right>
                <center>
-                  <Pane prefHeight="67.0" prefWidth="1197.0" BorderPane.alignment="CENTER">
+                  <Pane prefHeight="61.0" prefWidth="1482.0" BorderPane.alignment="CENTER">
                      <children>
-                        <Label layoutX="65.0" layoutY="16.0" prefHeight="28.0" text="Apparence et Langue (Extension)">
+                        <Label layoutX="105.0" layoutY="18.0" prefHeight="28.0" text="Choisir:">
                            <font>
                               <Font name="Rockwell" size="23.0" />
                            </font>
@@ -350,6 +351,12 @@
                               <Cursor fx:constant="DEFAULT" />
                            </cursor>
                         </Label>
+                        <ComboBox fx:id="langCBox" layoutX="270.0" layoutY="20.0" prefHeight="32.0" prefWidth="247.0" visibleRowCount="5" />
+                        <Button fx:id="saveLangButton" layoutX="585.0" layoutY="14.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="134.0" styleClass="save-btn" text="Save">
+                           <font>
+                              <Font name="Rockwell" size="18.0" />
+                           </font>
+                        </Button>
                      </children>
                   </Pane>
                </center>

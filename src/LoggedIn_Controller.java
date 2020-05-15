@@ -46,6 +46,9 @@ public class LoggedIn_Controller implements Controller {
     private Pane accountHolderPane;
 
     @FXML
+    private Pane volumeHolder;
+
+    @FXML
     private Label accountUsernameLabel;
 
     @FXML
@@ -437,6 +440,10 @@ public class LoggedIn_Controller implements Controller {
 
             LanguageManager.resyncLanguage(loader, "loggedin");
         });
+
+        SwitchButton sw = new SwitchButton();
+        volumeHolder.getChildren().add(sw);
+        sw.setOnMouseClicked(mouseEvent -> Settings.volume = 0.6f - Settings.volume);
     }
 
     public ArrayList<CourseCoord> getCoursesThatContains(String fetchQuery) {

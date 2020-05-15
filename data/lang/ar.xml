@@ -66,6 +66,9 @@
         <Button id="saveEmailButton">حفظ</Button>
         <Button id="savePwdButton">حفظ</Button>
         <Button id="deleteAccountButton">إزالة</Button>
+
+        <Button id="saveLangButton">حفظ</Button>
+        <Label id="chooseLabel">Choose</Label>
     </params>
     <stats>
         <Label id="activityLabel">النشاط</Label>
