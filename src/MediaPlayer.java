@@ -61,7 +61,7 @@ public class MediaPlayer implements Runnable {
         isPlayingFlag = true;
 
         if (filename.toLowerCase().endsWith(".txt")) {
-            System.out.println("Text Files Not Supported!");
+            Debug.debugMsg("" + "Text Files Not Supported!");
         } else //if (filename.toLowerCase().endsWith(".mp3") || filename.toLowerCase().endsWith(".ogg"))
         {
 
@@ -76,7 +76,7 @@ public class MediaPlayer implements Runnable {
                     baseFormat.getChannels() * 2,
                     baseFormat.getSampleRate(),
                     false);
-            //System.out.println("Channels : " + baseFormat.getChannels());
+            //Debug.debugMsg("" + "Channels : " + baseFormat.getChannels());
             audioStream = AudioSystem.getAudioInputStream(audioFormat, in);
             final byte[] data = new byte[4096];
             try {
@@ -85,7 +85,7 @@ public class MediaPlayer implements Runnable {
                 res = (SourceDataLine) AudioSystem.getLine(info);
                 res.open(audioFormat);
                 sourceLine = res;
-                //System.out.println("Entering ...");
+                //Debug.debugMsg("" + "Entering ...");
 
                 // Start
                 onPlay();
@@ -101,13 +101,13 @@ public class MediaPlayer implements Runnable {
                             }
                             sourceLine.write(data, 0, nBytesRead);
                             //nBytesWritten = sourceLine.write(data, 0, nBytesRead);
-                            //System.out.println("... -->" + data[0] + " bytesWritten:" + nBytesWritten);
+                            //Debug.debugMsg("" + "... -->" + data[0] + " bytesWritten:" + nBytesWritten);
                         }
                     } else {
                         isPlayingFlag = false;
                     }
                 }
-                //System.out.println("Done ...");
+                //Debug.debugMsg("" + "Done ...");
 
                 // Stop
                 sourceLine.drain();
@@ -115,7 +115,7 @@ public class MediaPlayer implements Runnable {
                 sourceLine.close();
                 audioStream.close();
             } catch (LineUnavailableException e) {
-                e.printStackTrace();
+                Debug.debugException(e);
             }
             in.close();
 
@@ -134,16 +134,16 @@ public class MediaPlayer implements Runnable {
             playSound();
         } catch (FileNotFoundException e) {
             // TODO Auto-generated catch block
-            e.printStackTrace();
+            Debug.debugException(e);
         } catch (UnsupportedAudioFileException e) {
             // TODO Auto-generated catch block
-            e.printStackTrace();
+            Debug.debugException(e);
         } catch (IOException e) {
             // TODO Auto-generated catch block
-            e.printStackTrace();
+            Debug.debugException(e);
         } catch (LineUnavailableException e) {
             // TODO Auto-generated catch block
-            e.printStackTrace();
+            Debug.debugException(e);
         }
     }
 

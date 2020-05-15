@@ -64,14 +64,14 @@ public class QuestionPane_Controller implements Controller {
                     int endex = getEndex(core, i + 2, '!');
                     String list = getHeadline(core, i + 2, endex);
                     String images[] = list.split("~");
-                    System.out.println(images.length);
+                    Debug.debugMsg("" + images.length);
                     HBox box = new HBox();
                     double avg_ratio = 0;
                     int nImages = 0;
                     for (String file : images) {
                         if (!Checker.isImage(file))
                             continue;
-                        System.out.println(getCorrectImageFullpath(question.folder, file));
+                        Debug.debugMsg("" + getCorrectImageFullpath(question.folder, file));
                         Image crop = new Image(new FileInputStream(getCorrectImageFullpath(question.folder, file)));
                         avg_ratio += crop.getWidth() / crop.getHeight();
                         nImages++; // may be different from images.length (there may be img-sources included)

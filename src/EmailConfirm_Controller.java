@@ -99,7 +99,7 @@ public class EmailConfirm_Controller implements Controller{
                     root = loader.load();
                     LanguageManager.resyncLanguage(loader, "loggedin");
                 } catch (IOException e) {
-                    e.printStackTrace();
+                    Debug.debugException(e);
                 }
                 boolean isInserted = true;
                 if(Settings.ACTIVE_DB_MODE)
@@ -169,7 +169,7 @@ public class EmailConfirm_Controller implements Controller{
         try {
             txt = (String) t.getTransferData(DataFlavor.stringFlavor);
         } catch (Exception e) {
-            e.printStackTrace();
+            Debug.debugException(e);
         }
         return txt;
     }

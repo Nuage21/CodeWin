@@ -34,7 +34,7 @@ public class CourseOverview {
 
     public void parseFromJson(String filename) throws IOException {
 
-        System.out.println(filename);
+        Debug.debugMsg("" + filename);
 //        String jsonOverviewCourse = Files.readString(Paths.get(filename), StandardCharsets.UTF_8);
 
         Scanner scanner = new Scanner( new File(filename), "UTF-8" );

@@ -35,9 +35,9 @@ public class InfosSuplementaires implements Serializable {
 
 
         } catch (IOException e) {
-            e.printStackTrace();
+            Debug.debugException(e);
         } catch (ClassNotFoundException e) {
-            e.printStackTrace();
+            Debug.debugException(e);
         }
     }
 

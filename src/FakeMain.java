@@ -38,14 +38,14 @@ public class FakeMain {
             User.USERNAME = username;
             User.PASSWORD = pwd;
 
-            System.out.println(server);
-            System.out.println(username);
-            System.out.println(database);
-            System.out.println(pwd);
-            System.out.println(port);
+            Debug.debugMsg("" + server);
+            Debug.debugMsg("" + username);
+            Debug.debugMsg("" + database);
+            Debug.debugMsg("" + pwd);
+            Debug.debugMsg("" + port);
 
         } catch (Exception e) {
-            e.printStackTrace();
+            Debug.debugException(e);
         }
 
         try {
@@ -54,7 +54,7 @@ public class FakeMain {
             Settings.appLang = sc.nextLine().split("[=]")[1].trim();
             Settings.dataPath += sc.nextLine().split("[=]")[1].trim() + "\\";
         } catch (Exception e) {
-            e.printStackTrace();
+            Debug.debugException(e);
         }
 
 

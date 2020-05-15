@@ -71,7 +71,7 @@ public class User {
             closeConnection(conn);
             return rs.first();
         } catch (SQLException e) {
-            Debug.debugMsg("Can't check email existence - no connexion");
+            Debug.debugMsg("" + "Can't check email existence - no connexion");
             closeConnection(conn);
             return false;
         }
@@ -105,7 +105,7 @@ public class User {
                 return 1;
             }
         } catch (SQLException e) {
-            Debug.debugMsg("Error @ User.userNameExiste");
+            Debug.debugMsg("" + "Error @ User.userNameExiste");
             Debug.debugException(e);
             closeConnection(conn);
             return -1;
@@ -141,10 +141,10 @@ public class User {
             stmt.close();
             closeConnection(conn);
 
-            Debug.debugMsg("_________________________________USER INSERTED_________________________");
+            Debug.debugMsg("" + "_________________________________USER INSERTED_________________________");
             return true;
         } catch (SQLException e) {
-            Debug.debugMsg("_________________________________SQL ERROR_________________________");
+            Debug.debugMsg("" + "_________________________________SQL ERROR_________________________");
             Debug.debugException(e);
             closeConnection(conn);
             return false;

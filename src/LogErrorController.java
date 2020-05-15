@@ -69,7 +69,7 @@ public class LogErrorController implements Initializable {
         try {
             image = new Image(new FileInputStream("img/unchecked.jpg"));
         } catch (FileNotFoundException e) {
-            e.printStackTrace();
+            Debug.debugException(e);
         }
         ImageView img = new ImageView(image);
         img.setFitHeight(25);

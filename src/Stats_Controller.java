@@ -134,7 +134,7 @@ public class Stats_Controller implements Controller {
         try {
             traceMonth(s, progressionAreaChart, "ff");
         } catch (Exception e) {
-            e.printStackTrace();
+            Debug.debugException(e);
         }
     }
 
@@ -234,7 +234,7 @@ public class Stats_Controller implements Controller {
 
 
         }
-        Debug.debugMsg(chaine_intiale + "-" + s + "," + Integer.toString(value));
+        Debug.debugMsg("" + chaine_intiale + "-" + s + "," + Integer.toString(value));
 
 
         return chaine_intiale + "-" + s + "," + value;
@@ -247,7 +247,7 @@ public class Stats_Controller implements Controller {
                 String[] date = s.split(",");
 
                 ret.put(date[0], Integer.parseInt(date[1]));
-                // System.out.println(date[0]+"  "+date[1]);
+                // Debug.debugMsg("" + date[0]+"  "+date[1]);
             }
         }
         return ret;

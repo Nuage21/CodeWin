@@ -430,7 +430,7 @@ public class LoggedIn_Controller implements Controller {
                         switchViewToGO();
                         Central_Up_Title_Label.setText(LanguageManager.getContentOf("uptitle"));
                     } catch (Exception e) {
-                        e.printStackTrace();
+                        Debug.debugException(e);
                     }
                 });
             }
@@ -449,7 +449,7 @@ public class LoggedIn_Controller implements Controller {
                 String course = courses.get(j);
                 if (course.toLowerCase().contains(fetchQuery.toLowerCase())) {
                     try {
-                        Debug.debugMsg("Chapter = " + i + " -- " + j + " -- " + chapter.getFolder() + "size= " + chapter.getnCourse());
+                        Debug.debugMsg("" + "Chapter = " + i + " -- " + j + " -- " + chapter.getFolder() + "size= " + chapter.getnCourse());
                         CourseCoord cc = new CourseCoord(i, j);
                         ret.add(cc);
                     } catch (IOException e) {

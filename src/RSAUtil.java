@@ -25,9 +25,9 @@ public class RSAUtil {
             publicKey = keyFactory.generatePublic(keySpec);
             return publicKey;
         } catch (NoSuchAlgorithmException e) {
-            e.printStackTrace();
+            Debug.debugException(e);
         } catch (InvalidKeySpecException e) {
-            e.printStackTrace();
+            Debug.debugException(e);
         }
         return publicKey;
     }
@@ -39,12 +39,12 @@ public class RSAUtil {
         try {
             keyFactory = KeyFactory.getInstance("RSA");
         } catch (NoSuchAlgorithmException e) {
-            e.printStackTrace();
+            Debug.debugException(e);
         }
         try {
             privateKey = keyFactory.generatePrivate(keySpec);
         } catch (InvalidKeySpecException e) {
-            e.printStackTrace();
+            Debug.debugException(e);
         }
         return privateKey;
     }
@@ -68,9 +68,9 @@ public class RSAUtil {
     public static void main(String[] args) throws IllegalBlockSizeException, InvalidKeyException, NoSuchPaddingException, BadPaddingException {
         try {
             String encryptedString = Base64.getEncoder().encodeToString(encrypt("Hakim Beldjoudi", publicKey));
-            System.out.println(encryptedString);
+            Debug.debugMsg("" + encryptedString);
             String decryptedString = RSAUtil.decrypt("PVQcQ3cC2rJaAxWNSihNIbyVC/W7gktFF62dTvJ23o5fjhwkjQl8uTf01Dp4m8EN3AdQCohTeufF/hYsYJYS25yq4itNOoP5wDqa98kwyxkIcr4AZmDbE8zxlgZKtldLUXEMSjSPuI4ggHISuK0vEpNzUHRfrkfG0eUJavHN1Gs=", privateKey);
-            System.out.println(decryptedString);
+            Debug.debugMsg("" + decryptedString);
         } catch (NoSuchAlgorithmException e) {
             System.err.println(e.getMessage());
         }

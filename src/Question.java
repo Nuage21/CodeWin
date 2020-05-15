@@ -57,13 +57,13 @@ public class Question {
 
     public void show() // DEBUG_ONLY
     {
-        System.out.println(this.core);
-        System.out.println("__________________________");
+        Debug.debugMsg("" + this.core);
+        Debug.debugMsg("" + "__________________________");
         for (int i = 0; i < propositions.size(); ++i) {
-            System.out.println(i + ". " + propositions.get(i) + " | isCorrect = " + answers.get(i));
+            Debug.debugMsg("" + i + ". " + propositions.get(i) + " | isCorrect = " + answers.get(i));
         }
-        System.out.println("__________________________");
-        System.out.println(this.note);
+        Debug.debugMsg("" + "__________________________");
+        Debug.debugMsg("" + this.note);
     }
 
     public int getPoints() {

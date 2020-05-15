@@ -133,6 +133,10 @@ public class Auth_Controller {
             Platform.exit();
         });
 
+        signinTab.setOnSelectionChanged(event -> {
+            if(errorStage != null)
+                errorStage.close();
+        });
         signupTab.setOnSelectionChanged((event) -> { //swap tabs
 
             signCase = (signCase == SignCase.signUp) ? SignCase.signIn : SignCase.signUp; // toggle sign case
@@ -213,7 +217,7 @@ public class Auth_Controller {
                 LanguageManager.resyncLanguage(loader, section);
                 ctr = loader.getController();
             } catch (IOException e) {
-                e.printStackTrace();
+                Debug.debugException(e);
             }
             //l'ajout de user ici
 
@@ -410,7 +414,7 @@ public class Auth_Controller {
 
         } catch (
                 IOException e) {
-            e.printStackTrace();
+            Debug.debugException(e);
         }
     }
 
@@ -506,7 +510,7 @@ public class Auth_Controller {
             stg.show();
         } catch (
                 IOException e) {
-            e.printStackTrace();
+            Debug.debugException(e);
         }
     }
 
