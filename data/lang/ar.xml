@@ -99,7 +99,6 @@
         <Label id="quitLabel">المغادرة</Label>
     </account>
     <dialogs>
-
         <userNotFound title="لمستخد غير موجود">االرجاء التأكد من إدخال اللقب</userNotFound>
         <cnxError title="مشكل في الاتصال">الرجاء التحقق من اتصال الانترنت الخاص بك</cnxError>
         <pwdError title="كلمة سر خاطئة">كلمة المرور التي قدمتها غير صحيحة. المرجو اعادة المحاول </pwdError>
@@ -114,7 +113,6 @@
         <emailUpdateSuccess title="نجاح">تم تحديث بريدك الإلكتروني بنجاح </emailUpdateSuccess>
         <productActivatedSuccess title="نجاح"> تم تنشيط منتجك بنجاح</productActivatedSuccess>
         <langUpdateSuccess title="Succès">La langue des Cours a été mise à jour avec succès</langUpdateSuccess>
-
     </dialogs>
     <coverview>
         <Label id="readLabel">وقت القراءة</Label>
