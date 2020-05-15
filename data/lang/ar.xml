@@ -26,7 +26,7 @@
     <loggedin>
         <Label id="Side_GO_Label">نظرة عامة</Label>
         <Label id="Side_Params_Label">الإعدادات</Label>
-        <Label id="Side_Stats_Label">الإحصاء</Label>
+        <Label id="Side_Stats_Label">الإحصائيات</Label>
         <Label id="Side_Toggle_Label">التبديل</Label>
         <Label id="Side_Help_Label">مساعدة</Label>
         <Label id="previousLabel">السابق</Label>
@@ -38,7 +38,7 @@
     <params>
         <Label id="pKeyTitleLabel">مفتاح المنتج</Label>
         <Label id="accountTitleLabel">الحساب</Label>
-        <Label id="langTitleLabel">لغة</Label>
+        <Label id="langTitleLabel">اللغة</Label>
         <Label id="aboutLabel">حول</Label>
         <Label id="helpTitleLabel">مساعدة</Label>
         <Label id="pActivatedLabel">:منتجك نشط باستخدام مفتاح المنتج</Label>
@@ -48,7 +48,7 @@
         <Label id="firstnameTitleLabel">:الاسم الاول</Label>
         <Label id="mobileTitleLabel">:الهاتف</Label>
         <Label id="emailTitleLabel">:البريد الإلكتروني</Label>
-        <Label id="pwdChangeTitleLabel">:كلمة السر(تغيير)</Label>
+        <Label id="pwdChangeTitleLabel">:(كلمة السر(تغيير</Label>
         <Label id="accountDeleteTitleLabel">حذف هذا الحساب</Label>
         <Label id="trialWillEndLabel">:محاولتك ستنتهي</Label>
 
@@ -98,31 +98,31 @@
         <Label id="quitLabel">المغادرة</Label>
     </account>
     <dialogs>
-        <userNotFound title="الرجاء التأكد من إدخال اللقب">"المستخدم غير موجود</userNotFound>
-        <cnxError title="الرجاء التحقق من اتصال الانترنت الخاص بك">مشكل في الاتصال</cnxError>
-        <pwdError title="كلمة المرور التي قدمتها غير صحيحة. المرجو اعادة المحاول">كلمة سر خاطئة</pwdError>
-        <emailSameError title="البريد الإلكتروني الذي قدمته هو نفسه البريد الإلكتروني القديم. الرجاء اختيار آخر!">خطأ</emailSameError>
-        <pwdSameError title="كلمة المرور المقدمة هي نفسها كلمة المرور القديمة. الرجاء اختيار آخر!">خطأ</pwdSameError>
-        <emailInvalidError title="يرجى التحقق من عنوان البريد الإلكتروني الذي تم إدخاله">بريد إلكتروني غيرصالح</emailInvalidError>
-        <codeInvalidError title="الرمز غير صحيح">خطأ</codeInvalidError>
-        <accountDelError title="خحدث خطأ أثناء حذف حسابك. المرجو اعادة المحاولة!">خطأ</accountDelError>
-        <pkeyError title="مفتاح المنتج الذي تم إدخاله غير صحيح. المرجو اعادة المحاولة">المفتاح خطا</pkeyError>
+        <userNotFound title="الرجاء التأكد من إدخال اللقب>"المستخدم غير موجود</userNotFound>
+        <cnxError title="الرجاء التحقق من اتصال الانترنت الخاص بك>"مشكل في الاتصال</cnxError>
+        <pwdError title="كلمة المرور التي قدمتها غير صحيحة. المرجو اعادة المحاول>"كلمة سر خاطئة</pwdError>
+        <emailSameError title="البريد الإلكتروني الذي قدمته هو نفسه البريد الإلكتروني القديم. الرجاء اختيار آخر!>"خطأ</emailSameError>
+        <pwdSameError title="كلمة المرور المقدمة هي نفسها كلمة المرور القديمة. الرجاء اختيار آخر!>"خطأ</pwdSameError>
+        <emailInvalidError title="يرجى التحقق من عنوان البريد الإلكتروني الذي تم إدخاله>"بريد إلكتروني غير صالح</emailInvalidError>
+        <codeInvalidError title="الرمز غير صحيح>"خطأ</codeInvalidError>
+        <accountDelError title="حدث خطأ أثناء حذف حسابك. المرجو اعادة المحاولة!>"خطأ</accountDelError>
+        <pkeyError title="مفتاح المنتج الذي تم إدخاله غير صحيح. المرجو اعادة المحاولة>"المفتاح خطا</pkeyError>
         <!-- SUCCESS BOXES -->
-        <pwdUpdateSuccess title="لقد تم تحديث كلمة السر الخاصة بك بنجاح!">نجاح</pwdUpdateSuccess>
-        <emailUpdateSuccess title="تم تحديث بريدك الإلكتروني بنجاح">نجاح</emailUpdateSuccess>
-        <productActivatedSuccess title="تم تنشيط منتجك بنجاح">نجاح</productActivatedSuccess>
+        <pwdUpdateSuccess title="لقد تم تحديث كلمة السر الخاصة بك بنجاح!>"نجاح</pwdUpdateSuccess>
+        <emailUpdateSuccess title="تم تحديث بريدك الإلكتروني بنجاح>"نجاح</emailUpdateSuccess>
+        <productActivatedSuccess title="تم تنشيط منتجك بنجاح>"نجاح</productActivatedSuccess>
     </dialogs>
     <coverview>
-        <Label id="readLabel">Read Time</Label>
+        <Label id="readLabel">وقت القراءة</Label>
     </coverview>
     <goverview>
-        <label id="courseLabel">Courses</label>
-        <label id="questionLabel">Questions</label>
+        <label id="courseLabel">الدروس</label>
+        <label id="questionLabel">الاسئلة</label>
     </goverview>
     <miscellaneous>
         <uptitle>قواعد المرور</uptitle>
-        <statsTitle>Statistics</statsTitle>
-        <generalOverview>General Overview</generalOverview>
-        <paramsTitle>Parameters</paramsTitle>
+        <statsTitle>الاحصائيات</statsTitle>
+        <generalOverview>نظرة عامة</generalOverview>
+        <paramsTitle>الاعدادات</paramsTitle>
     </miscellaneous>
 </content>
