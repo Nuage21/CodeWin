@@ -102,7 +102,7 @@
         <pwdSameError title="كلمة المرور المقدمة هي نفسها كلمة المرور القديمة. الرجاء اختيار آخر!>"خطأ</pwdSameError>
         <emailInvalidError title="يرجى التحقق من عنوان البريد الإلكتروني الذي تم إدخاله>"بريد إلكتروني غير صالح</emailInvalidError>
         <codeInvalidError title="الرمز غير صحيح>"خطأ</codeInvalidError>
-        <accountDelError title="خحدث خطأ أثناء حذف حسابك. المرجو اعادة المحاولة!>"خطأ</accountDelError>
+        <accountDelError title="حدث خطأ أثناء حذف حسابك. المرجو اعادة المحاولة!>"خطأ</accountDelError>
         <pkeyError title="مفتاح المنتج الذي تم إدخاله غير صحيح. المرجو اعادة المحاولة>"المفتاح خطا</pkeyError>
         <!-- SUCCESS BOXES -->
         <pwdUpdateSuccess title="لقد تم تحديث كلمة السر الخاصة بك بنجاح!>"نجاح</pwdUpdateSuccess>
