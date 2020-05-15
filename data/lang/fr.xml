@@ -7,7 +7,7 @@
         <TextField id="FirstnameField">Prénom</TextField>
         <TextField id="LastnameField">Nom</TextField>
         <TextField id="PhoneField">Téléphone</TextField>
-        <TextField id="AddressField">Addresse</TextField>
+        <TextField id="AddressField">Adresse</TextField>
 
         <Button id="signUpBtn">S'inscrire</Button>
         <Button id="signUpCancealBtn">Annuler</Button>
