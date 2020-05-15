@@ -343,7 +343,7 @@
                <center>
                   <Pane prefHeight="61.0" prefWidth="1482.0" BorderPane.alignment="CENTER">
                      <children>
-                        <Label layoutX="105.0" layoutY="18.0" prefHeight="28.0" text="Choisir:">
+                        <Label fx:id="chooseLabel" layoutX="105.0" layoutY="18.0" prefHeight="28.0" text="Choisir:">
                            <font>
                               <Font name="Rockwell" size="23.0" />
                            </font>
