@@ -34,7 +34,7 @@
         <Label id="pointsDescLabel">النقاط</Label>
         <HyperLink id="githubHyperLink">Github تفضل بزيارتنا على</HyperLink>
         <TextField id="searchField">ابحث عن درس</TextField>
-        <Label id="muteSoundLabel">Mute Sound</Label>
+        <Label id="muteSoundLabel">الوضع الصامت</Label>
     </loggedin>
     <params>
         <Label id="pKeyTitleLabel">مفتاح المنتج</Label>
@@ -69,7 +69,7 @@
         <Button id="deleteAccountButton">إزالة</Button>
 
         <Button id="saveLangButton">حفظ</Button>
-        <Label id="chooseLabel">Choose</Label>
+        <Label id="chooseLabel">اختيار</Label>
     </params>
     <stats>
         <Label id="activityLabel">النشاط</Label>
