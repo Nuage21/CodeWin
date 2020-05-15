@@ -17,7 +17,8 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception {
         Settings.appStage = primaryStage;
         Settings.application = this;
-        LanguageManager.loadLangData(Settings.projectPath + "\\lang\\fr.xml");
+
+        LanguageManager.loadLangData(Settings.projectPath + "\\lang\\" +  Settings.appLang + ".xml");
 
         if(Settings.SKIP_AUTHENTICATION)
         {

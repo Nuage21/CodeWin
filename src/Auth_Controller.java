@@ -372,6 +372,8 @@ public class Auth_Controller {
                     LanguageManager.resyncLanguage(loader, "authenticator");
                 });
             }
+
+            LanguageManager.resyncLanguage(loader, "authenticator");
         });
     }
 

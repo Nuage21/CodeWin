@@ -31,7 +31,6 @@
         <Label id="Side_Help_Label">مساعدة</Label>
         <Label id="previousLabel">السابق</Label>
         <Label id="nextLabel">التالي</Label>
-        <Label id="darkmodeLabel">الوضع الداكن</Label>
         <Label id="pointsDescLabel">النقاط</Label>
         <HyperLink id="githubHyperLink">Github تفضل بزيارتنا على</HyperLink>
         <TextField id="searchField">ابحث عن درس</TextField>

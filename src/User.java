@@ -24,13 +24,12 @@ public class User {
     private String pkey; // product key
     private int points;
 
-    private boolean darkmode; // locally saved
     private String lang; // locally saved
 
     // database settings
-    public static final String USERNAME = "codewiners";
-    public static final String PASSWORD = "CodeWin25;";
-    public static final String CONN = "jdbc:mysql://db4free.net:3306/codewin_database?characterEncoding=latin1&useConfigs=maxPerformance";
+    public static String USERNAME = "codewiners";
+    public static String PASSWORD = "CodeWin25;";
+    public static String CONN = "jdbc:mysql://db4free.net:3306/codewin_database?characterEncoding=latin1&useConfigs=maxPerformance";
 
     public User() {
 
@@ -78,9 +77,8 @@ public class User {
         }
     }
 
-    public static void closeConnection(Connection c)
-    {
-        if(c != null) {
+    public static void closeConnection(Connection c) {
+        if (c != null) {
             try {
                 c.close();
             } catch (SQLException e) {
@@ -88,6 +86,7 @@ public class User {
             }
         }
     }
+
     public static int userNameExiste(String userName) {
         // return 1 if yes, 0 if no, -1 if no internet
         String read = "SELECT * From users_info WHERE username = ?";
@@ -140,7 +139,7 @@ public class User {
 
             stmt.execute();
             stmt.close();
-           closeConnection(conn);
+            closeConnection(conn);
 
             Debug.debugMsg("_________________________________USER INSERTED_________________________");
             return true;
@@ -190,8 +189,6 @@ public class User {
     public static boolean updateStatsPoints(User user, String statsPointsString) {
 
 
-
-
         user.stats_points = statsPointsString;
         String update = "UPDATE users_info SET stats_points = ? WHERE username = '" + user.getUsername() + "'";
         Connection conn = null;
@@ -211,8 +208,6 @@ public class User {
     }
 
     public static boolean updateStatsActivity(User user, String statsActivityString) {
-
-
 
 
         user.stats_activity = statsActivityString;
@@ -426,17 +421,6 @@ public class User {
         this.dob = dob;
     }
 
-
-    public boolean isDarkmode() {
-        return darkmode;
-    }
-
-
-    public void setDarkmode(boolean darkmode) {
-        this.darkmode = darkmode;
-    }
-
-
     public String getLang() {
         return lang;
     }
@@ -485,20 +469,17 @@ public class User {
         this.pkey = pkey;
     }
 
-    public Date getFreetrialEndDate()
-    {
+    public Date getFreetrialEndDate() {
         return addDays(signupDate, 3);
     }
 
-    public boolean isFreetrialEnded()
-    {
+    public boolean isFreetrialEnded() {
         Date sdate = signupDate, today = java.sql.Date.valueOf(LocalDate.now());
         Date final_date = addDays(sdate, 3);
         return today.compareTo(final_date) > 0; // ended only if today > final_date
     }
 
-    public boolean isAccountActivated()
-    {
+    public boolean isAccountActivated() {
         return !this.pkey.equals("None");
     }
 
@@ -509,8 +490,7 @@ public class User {
         return new Date(c.getTimeInMillis());
     }
 
-    public static String generatePKey(String _username)
-    {
+    public static String generatePKey(String _username) {
         try {
             String fullPKey = Hasher.getSHA256_Of(_username + Settings.SecretKey);
             return fullPKey.substring(0, 20).toUpperCase();
@@ -520,54 +500,46 @@ public class User {
         return null;
     }
 
-    public static String getFormattedPKey(String _pkey)
-    {
+    public static String getFormattedPKey(String _pkey) {
         int l = _pkey.length();
         String formatted = "";
-        for(int i = 0; i < l; ++i)
-        {
-            if(i % 4 == 0 && i > 0)
+        for (int i = 0; i < l; ++i) {
+            if (i % 4 == 0 && i > 0)
                 formatted += '-'; // separator
             formatted += _pkey.charAt(i);
         }
         return formatted;
     }
 
-    public boolean isQuesationAnswered(int qstID)
-    {
-        if(this.lastAnsweredQuestion == null || this.lastAnsweredQuestion.isEmpty())
+    public boolean isQuesationAnswered(int qstID) {
+        if (this.lastAnsweredQuestion == null || this.lastAnsweredQuestion.isEmpty())
             return false;
 
         int lastQstId = Integer.parseInt(this.lastAnsweredQuestion.split("[/]")[2]);
-        if(lastQstId < 0)
+        if (lastQstId < 0)
             lastQstId = -lastQstId;
 
         return qstID <= lastQstId;
     }
 
-    public boolean wasReadingCourse()
-    {
+    public boolean wasReadingCourse() {
         int lastQstId = Integer.parseInt(this.lastAnsweredQuestion.split("[/]")[2]);
         return lastQstId <= 0;
     }
 
-    public int lastCourseChapter()
-    {
+    public int lastCourseChapter() {
         return Integer.parseInt(this.lastAnsweredQuestion.split("[/]")[0]);
     }
 
-    public int lastCourseID()
-    {
+    public int lastCourseID() {
         return Integer.parseInt(this.lastAnsweredQuestion.split("[/]")[1]);
     }
 
-    public int lastQuestionID()
-    {
+    public int lastQuestionID() {
         return Integer.parseInt(this.lastAnsweredQuestion.split("[/]")[2]);
     }
 
-    public boolean neverReadACourse()
-    {
+    public boolean neverReadACourse() {
         return lastAnsweredQuestion.equals("None");
     }
 }

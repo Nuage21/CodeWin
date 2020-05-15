@@ -31,7 +31,6 @@
         <Label id="Side_Help_Label">Help</Label>
         <Label id="previousLabel">Previous</Label>
         <Label id="nextLabel">Next</Label>
-        <Label id="darkmodeLabel">Dark Mode</Label>
         <Label id="pointsDescLabel">Points</Label>
         <HyperLink id="githubHyperLink">Visit us on Github</HyperLink>
         <TextField id="searchField">Find a Course</TextField>

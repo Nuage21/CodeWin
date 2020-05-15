@@ -52,9 +52,6 @@ public class LoggedIn_Controller implements Controller {
     private Pane Side_Stats_Pane;
 
     @FXML
-    private VBox darkmodeVBox;
-
-    @FXML
     private Pane Side_Params_Pane;
 
     @FXML
@@ -161,9 +158,6 @@ public class LoggedIn_Controller implements Controller {
         Font fnt = Font.loadFont(getClass().getResource("fonts/ErbosDraco1StNbpRegular-99V5.ttf").toExternalForm(), 75);
         pointsLabel.setFont(fnt);
         setLText(pointsLabel, "0000");
-
-        SwitchButton modeSwitcher = new SwitchButton();
-        darkmodeVBox.getChildren().add(modeSwitcher);
 
         side_bar_activated_pane = Side_GO_Pane;
 

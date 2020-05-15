@@ -20,9 +20,9 @@
             <children>
                 <HBox prefHeight="41.0" prefWidth="1975.0">
                     <children>
-                        <Pane prefHeight="37.0" prefWidth="1367.0">
+                        <Pane prefHeight="37.0" prefWidth="1790.0">
                             <children>
-                                <StackPane layoutX="1045.0" layoutY="7.0" prefHeight="27.0" prefWidth="29.0" style="-fx-background-radius: 30; -fx-background-color: #e1e1e1;">
+                                <StackPane layoutX="980.0" layoutY="5.0" prefHeight="27.0" prefWidth="29.0" style="-fx-background-radius: 30; -fx-background-color: #e1e1e1;">
                                     <children>
                                         <ImageView fitHeight="22.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true" style="-fx-border-radius: 56;">
                                             <image>
@@ -31,16 +31,67 @@
                                         </ImageView>
                                     </children>
                                 </StackPane>
-                                <Label layoutX="715.0" layoutY="10.0" text="© 2020 CodeWin Inc. All rights reserved." textFill="WHITE">
+                                <Label layoutX="615.0" layoutY="10.0" text="© 2020 CodeWin Inc. All rights reserved." textFill="WHITE">
                                     <font>
                                         <Font size="15.0" />
                                     </font>
                                 </Label>
-                        <Hyperlink fx:id="githubHyperLink" layoutX="1076.0" layoutY="6.0" style="-fx-border-color: transparent;" text="Check us on Github">
+                        <Hyperlink fx:id="githubHyperLink" layoutX="1013.0" layoutY="4.0" style="-fx-border-color: transparent;" text="Check us on Github">
                            <font>
                               <Font size="15.0" />
                            </font>
                         </Hyperlink>
+                        <StackPane layoutX="1254.0" prefHeight="31.0" prefWidth="25.0" style="-fx-padding: 10; -fx-background-color: black; -fx-background-radius: 20;">
+                           <children>
+                              <ImageView fitHeight="15.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@img/flags/uk.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </StackPane>
+                        <StackPane layoutX="1393.0" prefHeight="31.0" prefWidth="25.0" style="-fx-padding: 10; -fx-background-color: black; -fx-background-radius: 20;">
+                           <children>
+                              <ImageView fitHeight="15.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@img/flags/france.gif" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </StackPane>
+                        <StackPane layoutX="1530.0" prefHeight="31.0" prefWidth="25.0" style="-fx-padding: 10; -fx-background-color: black; -fx-background-radius: 20;">
+                           <children>
+                              <ImageView fitHeight="15.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@img/flags/arab.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </StackPane>
+                        <Label fx:id="goEnLabel" layoutX="1307.0" layoutY="10.0" styleClass="lng-selector" text="English" textFill="WHITE" textOverrun="CENTER_WORD_ELLIPSIS">
+                           <font>
+                              <Font name="Tahoma Bold" size="13.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Label>
+                        <Label fx:id="goFrLabel" layoutX="1447.0" layoutY="10.0" styleClass="lng-selector" text="Français" textFill="WHITE" textOverrun="CENTER_WORD_ELLIPSIS">
+                           <font>
+                              <Font name="Tahoma Bold" size="13.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Label>
+                        <Label fx:id="goArLabel" layoutX="1580.0" layoutY="10.0" styleClass="lng-selector" text="العربية" textFill="WHITE" textOverrun="CENTER_WORD_ELLIPSIS">
+                           <font>
+                              <Font name="Tahoma Bold" size="13.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Label>
                             </children>
                         </Pane>
                     </children>
@@ -146,19 +197,6 @@
                            </children>
                         </Pane>
                      </children></Pane>
-                  <VBox fx:id="darkmodeVBox" prefHeight="61.0" prefWidth="78.0" style="-fx-padding: 16 0 0 0;" />
-                  <Pane prefHeight="61.0" prefWidth="118.0">
-                     <children>
-                        <Label fx:id="darkmodeLabel" layoutX="10.0" layoutY="18.0" text="Darkmode" textFill="WHITE">
-                           <font>
-                              <Font name="Rockwell" size="18.0" />
-                           </font>
-                           <cursor>
-                              <Cursor fx:constant="DEFAULT" />
-                           </cursor>
-                        </Label>
-                     </children>
-                  </Pane>
                     </children>
                 </HBox>
             </center>

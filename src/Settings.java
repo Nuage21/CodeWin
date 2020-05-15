@@ -1,11 +1,5 @@
 import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
-import org.w3c.dom.Document;
-
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.ParserConfigurationException;
 
 public class Settings {
 
@@ -13,7 +7,7 @@ public class Settings {
     public static boolean ACTIVE_DB_MODE = true; // is DB activated
     public static boolean ACTIVE_EMAIL_CONFIRM = true; // if true confirmation email will be sent
     public static boolean DEBUG_MODE = true; // debug if true (Show Exception traces etc)
-    public static boolean SKIP_AUTHENTICATION = false; // skip authentication
+    public static boolean SKIP_AUTHENTICATION = true; // skip authentication
 
     public static Stage appStage;
     public static Application application;
@@ -53,6 +47,9 @@ public class Settings {
 
     // Secret Key
     public static String SecretKey = ":#:CODEWIN1;3WINCODE?!.";
+
+    // lang
+    public static String appLang;
 
     public static void setPaths(String _projectPath, String _dataPath)
     {
