@@ -37,7 +37,7 @@
         <Label id="muteSoundLabel">Couper le Son</Label>
     </loggedin>
     <params>
-        <Label id="pKeyTitleLabel">Clê de Produit</Label>
+        <Label id="pKeyTitleLabel">Clé de Produit</Label>
         <Label id="accountTitleLabel">Compte</Label>
         <Label id="langTitleLabel">Langue</Label>
         <Label id="aboutLabel">À Propos</Label>
@@ -117,7 +117,7 @@
     <miscellaneous>
         <uptitle>Code de la Route</uptitle>
         <statsTitle>Statistiques</statsTitle>
-        <generalOverview>Vue Generale</generalOverview>
-        <paramsTitle>Parametres</paramsTitle>
+        <generalOverview>Vue Générale</generalOverview>
+        <paramsTitle>Paramètres</paramsTitle>
     </miscellaneous>
 </content>
