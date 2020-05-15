@@ -10,14 +10,14 @@
         <TextField id="AddressField">Address</TextField>
 
         <Button id="signUpBtn">Register</Button>
-        <Button id="signUpCancealBtn">To cancel</Button>
+        <Button id="signUpCancealBtn">Cancel</Button>
 
         <!-- Sign in Tab-->
         <Label id="signinTitleLabel">Connexion</Label>
         <TextField id="UsernameSignInField">Username</TextField>
         <TextField id="PwdSignInField">Password</TextField>
         <Button id="signinButton">Connexion</Button>
-        <Button id="signInCancealBtn">To cancel</Button>
+        <Button id="signInCancealBtn">Cancel</Button>
 
         <!-- Tabs-->
         <Tab id="signupTab">Register</Tab>
@@ -27,7 +27,7 @@
         <Label id="Side_GO_Label">General View</Label>
         <Label id="Side_Params_Label">Settings</Label>
         <Label id="Side_Stats_Label">Statistics</Label>
-        <Label id="Side_Toggle_Label">To toggle</Label>
+        <Label id="Side_Toggle_Label">Toggle</Label>
         <Label id="Side_Help_Label">Help</Label>
         <Label id="previousLabel">Previous</Label>
         <Label id="nextLabel">Next</Label>
