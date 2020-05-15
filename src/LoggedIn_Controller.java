@@ -155,6 +155,7 @@ public class LoggedIn_Controller implements Controller {
         });
         pointsHolderPane.setVisible(false);
         CourseOverview CO = new CourseOverview(Settings.dataPath + "Overview.json");
+
         this.courseCO = CO;
         CourseCoord.CO = CO;
 
@@ -598,6 +599,7 @@ public class LoggedIn_Controller implements Controller {
 
     @FXML
     public void viewSidebarChapters() {
+        sidebarChaptersHolder.getChildren().clear();
         VBox vb = new VBox();
         for (int i = 0; i < courseCO.getChapters().size(); ++i) {
             try {
@@ -805,7 +807,7 @@ public class LoggedIn_Controller implements Controller {
         } catch (ParseException e) {
             Debug.debugException(e);
         }
-        this.Central_Up_Title_Label.setText(this.courseCO.getCourseTitle() + "| Question " + (this.questionsOffset + 1)); // + 1 for the user (question 0 lol)
+        this.Central_Up_Title_Label.setText(this.courseCoord.getCourseTitle() + "| Question " + (this.questionsOffset + 1)); // + 1 for the user (question 0 lol)
 
     }
 
@@ -906,5 +908,14 @@ public class LoggedIn_Controller implements Controller {
             Debug.debugException(e);
         }
         this.setDiplayingWhat(Settings.DISPLAYING_COURSE_OVERVIEW);
+    }
+
+    public void loadCourseOverview()
+    {
+        try {
+            this.courseCO= new CourseOverview(Settings.dataPath + "Overview.json");
+        } catch (IOException e) {
+            Debug.debugException(e);
+        }
     }
 }

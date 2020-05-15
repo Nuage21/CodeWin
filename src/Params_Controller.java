@@ -118,9 +118,13 @@ public class Params_Controller {
                 String folder = LanguageManager.installed_languages_folders.get(i);
                 if(!folder.equals(Settings.courseLang))
                 {
-                    Settings.dataPath = Settings.projectPath + "\\courses\\" + folder;
+                    Settings.dataPath = Settings.projectPath + "\\courses\\" + folder + "\\";
                     Settings.courseLang = folder;
                     DialogLauncher.launchDialog("langUpdateSuccess", DialogLauncher.SUCCESS_BOX);
+                    LoggedIn_Controller ctr = LanguageManager.loggedinLoader.getController();
+                    ctr.loadCourseOverview();
+                    ctr.viewSidebarChapters();
+                    ctr.switchViewToGO();
                 }
             }
         });
