@@ -205,7 +205,7 @@
                   </VBox>
                   <Pane prefHeight="61.0" prefWidth="164.0">
                      <children>
-                        <Label fx:id="muteSoundLabel" layoutX="19.0" layoutY="21.0" text="Mute Sound" textFill="WHITE">
+                        <Label fx:id="muteSoundLabel" layoutX="14.0" layoutY="22.0" text="Mute Sound" textFill="WHITE" underline="true">
                            <font>
                               <Font name="Verdana" size="13.0" />
                            </font>

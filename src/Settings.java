@@ -50,6 +50,7 @@ public class Settings {
 
     // lang
     public static String appLang;
+    public static String courseLang;
 
     public static void setPaths(String _projectPath, String _dataPath)
     {

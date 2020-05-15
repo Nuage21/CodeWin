@@ -107,6 +107,7 @@
         <pwdUpdateSuccess title="Success">Your password has been successfully updated!</pwdUpdateSuccess>
         <emailUpdateSuccess title="Success">Your email has been successfully updated</emailUpdateSuccess>
         <productActivatedSuccess title="Success">Your product has been successfully activated</productActivatedSuccess>
+        <langUpdateSuccess title="Success">Courses Language has been updated</langUpdateSuccess>
     </dialogs>
     <coverview>
         <Label id="readLabel">Read Time</Label>

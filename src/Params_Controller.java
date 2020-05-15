@@ -105,11 +105,24 @@ public class Params_Controller {
 
         syncUserInfos();
 
+        langCBox.setValue(LanguageManager.installed_languages.get(LanguageManager.installed_languages_folders.indexOf(Settings.courseLang)));
+
         for(String l : LanguageManager.installed_languages)
             langCBox.getItems().add(l);
 
         saveLangButton.setOnMouseClicked(mouseEvent -> {
-
+            String txtLang = langCBox.getValue();
+            int i = LanguageManager.installed_languages.indexOf(txtLang);
+            if(i >= 0)
+            {
+                String folder = LanguageManager.installed_languages_folders.get(i);
+                if(!folder.equals(Settings.courseLang))
+                {
+                    Settings.dataPath = Settings.projectPath + "\\courses\\" + folder;
+                    Settings.courseLang = folder;
+                    DialogLauncher.launchDialog("langUpdateSuccess", DialogLauncher.SUCCESS_BOX);
+                }
+            }
         });
 
         expanders.add(productKeyExpander);

@@ -34,7 +34,7 @@
         <Label id="pointsDescLabel">Points</Label>
         <HyperLink id="githubHyperLink">Nous Visiter sur Github</HyperLink>
         <TextField id="searchField">Rechercher un Cours</TextField>
-        <Label id="muteSoundLabel">Couple le Son</Label>
+        <Label id="muteSoundLabel">Couper le Son</Label>
     </loggedin>
     <params>
         <Label id="pKeyTitleLabel">Clê de Produit</Label>
@@ -105,6 +105,7 @@
         <pwdUpdateSuccess title="Succès">Votre mot de passe a été mis à jour avec succès!</pwdUpdateSuccess>
         <emailUpdateSuccess title="Succès">Votre email a été mise à jour avec succès</emailUpdateSuccess>
         <productActivatedSuccess title="Succès">Votre produit a été activé avec succès</productActivatedSuccess>
+        <langUpdateSuccess title="Succès">La langue des Cours a été mise à jour avec succès</langUpdateSuccess>
     </dialogs>
     <coverview>
         <Label id="readLabel">Temps de Lecture</Label>

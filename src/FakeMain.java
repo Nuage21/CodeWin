@@ -52,7 +52,8 @@ public class FakeMain {
             File file = new File(Settings.projectPath + "\\user.inf");
             Scanner sc = new Scanner(file);
             Settings.appLang = sc.nextLine().split("[=]")[1].trim();
-            Settings.dataPath += sc.nextLine().split("[=]")[1].trim() + "\\";
+            Settings.courseLang = sc.nextLine().split("[=]")[1].trim();
+            Settings.dataPath += Settings.courseLang+ "\\";
         } catch (Exception e) {
             Debug.debugException(e);
         }

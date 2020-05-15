@@ -5,7 +5,7 @@ public class Debug {
     public static void debugException(Exception e)
     {
         if(Settings.DEBUG_MODE)
-            Debug.debugException(e);
+            e.printStackTrace();
     }
 
     public static void debugDialog(String _title, String _core)
