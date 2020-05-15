@@ -104,4 +104,17 @@
         <emailUpdateSuccess title="Success">Your email has been successfully updated</emailUpdateSuccess>
         <productActivatedSuccess title="Success">Your product has been successfully activated</productActivatedSuccess>
     </dialogs>
+    <coverview>
+        <Label id="readLabel">Read Time</Label>
+    </coverview>
+    <goverview>
+        <Label id="courseLabel">Courses</Label>
+        <Label id="questionLabel">Questions</Label>
+    </goverview>
+    <miscellaneous>
+        <uptitle>The Rules of The Road</uptitle>
+        <statsTitle>Statistics</statsTitle>
+        <generalOverview>General Overview</generalOverview>
+        <paramsTitle>Parameters</paramsTitle>
+    </miscellaneous>
 </content>

@@ -95,13 +95,26 @@
         <pwdError title="Mot de Passe icorrecte">Le mot de passe que vous avez fourni est incorrect. Veuillez reessayer</pwdError>
         <emailSameError title="Erreur">L'email que vous avez fourni est le meme que l'ancien. Veuillez choisir un autre!</emailSameError>
         <pwdSameError title="Erreur">Le mot de passe fourni est le meme que l'ancien. Veuillez choisir un autre!</pwdSameError>
-        <emailInvalidError title="Email invalide!">Veuillez verifier l'addresse email entree</emailInvalidError>
+        <emailInvalidError title="Email invalide!">Veuillez verifiez l'addresse email entree</emailInvalidError>
         <codeInvalidError title="Erreur">Code invalide"</codeInvalidError>
         <accountDelError title="Erreur">Une erreur est survenue lors de la suppression de votre compte. Veuillez Reessayer!</accountDelError>
         <pkeyError title="Cle incorrecte">La Cle de Produit Introduite est erronee. Veuillez Reessayer</pkeyError>
         <!-- SUCCESS BOXES -->
-        <pwdUpdateSuccess title="Succes">Votre mot de passe a ete mis a jour avec succes!</pwdUpdateSuccess>
-        <emailUpdateSuccess title="Succes">Votre email a ete mise a jour avec succes</emailUpdateSuccess>
-        <productActivatedSuccess title="Succes">Votre produit a ete active avec succes</productActivatedSuccess>
+        <pwdUpdateSuccess title="Success">Votre mot de passe a ete mis a jour avec succees!</pwdUpdateSuccess>
+        <emailUpdateSuccess title="Success">Votre email a ete mise a jour avec succes</emailUpdateSuccess>
+        <productActivatedSuccess title="Success">Votre produit a ete active avec succes</productActivatedSuccess>
     </dialogs>
+    <coverview>
+        <Label id="readLabel">Temps de Lecture</Label>
+    </coverview>
+    <goverview>
+        <label id="courseLabel">Cours</label>
+        <label id="questionLabel">Questions</label>
+    </goverview>
+    <miscellaneous>
+        <uptitle>Code de la Route</uptitle>
+        <statsTitle>Statistiques</statsTitle>
+        <generalOverview>Vue Generale</generalOverview>
+        <paramsTitle>Parametres</paramsTitle>
+    </miscellaneous>
 </content>

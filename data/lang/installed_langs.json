@@ -1,0 +1,4 @@
+{
+	"langs": ["English", "Arabic", "Francais"],
+	"files": ["en.xml", "ar.xml", "fr.xml"]
+}

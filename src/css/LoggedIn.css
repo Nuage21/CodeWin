@@ -74,3 +74,9 @@
 	-fx-border-color: #cccccc;
 	-fx-border-radius: 30;
 }
+
+.lng-selector:hover
+{
+	-fx-cursor: hand;
+	-fx-text-fill: #2389bc;
+}

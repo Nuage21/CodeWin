@@ -23,12 +23,12 @@
    <right>
       <Pane prefHeight="164.0" prefWidth="291.0" BorderPane.alignment="CENTER">
          <children>
-            <Label layoutX="76.0" layoutY="19.0" prefHeight="32.0" prefWidth="68.0" text="Cours : " textFill="#1e1e1e">
+            <Label fx:id="courseLabel" layoutX="76.0" layoutY="19.0" prefHeight="32.0" prefWidth="68.0" text="Cours : " textFill="#1e1e1e">
                <font>
                   <Font name="Rockwell" size="17.0" />
                </font>
             </Label>
-            <Label layoutX="77.0" layoutY="67.0" prefHeight="32.0" prefWidth="89.0" text="Questions:" textFill="#1e1e1e">
+            <Label fx:id="questionLabel" layoutX="77.0" layoutY="67.0" prefHeight="32.0" prefWidth="89.0" text="Questions:" textFill="#1e1e1e">
                <font>
                   <Font name="Rockwell" size="17.0" />
                </font>

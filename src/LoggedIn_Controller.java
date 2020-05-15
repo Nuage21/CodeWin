@@ -180,7 +180,7 @@ public class LoggedIn_Controller implements Controller {
                 Central_Container_SPane.setPrefHeight(1000);
                 this.sidebarFocusNewPane(Side_Stats_Pane);
                 this.sidebarOriginalColor = "transparent";
-                setLText(Central_Up_Title_Label, "Statistiques");
+                setLText(Central_Up_Title_Label, LanguageManager.getContentOf("statsTitle"));
                 this.setDiplayingWhat(Settings.DISPLAYING_STATISTICS);
 
 
@@ -194,18 +194,7 @@ public class LoggedIn_Controller implements Controller {
         });
 
         Side_GO_Pane.setOnMouseClicked((event) -> {
-            Central_Container_SPane.getChildren().clear();
-            try {
-                this.loadCourseGeneralOverview();
-                if (side_bar_activated_pane != Side_GO_Pane)
-                    this.sidebarFocusNewPane(Side_GO_Pane);
-                this.sidebarOriginalColor = "transparent";
-                setLText(Central_Up_Title_Label, "Vue Générale");
-
-            } catch (IOException e) {
-                Debug.debugException(e);
-            }
-            this.setDiplayingWhat(Settings.DISPLAYING_COURSE_OVERVIEW);
+            switchViewToGO();
         });
 
         accountUsernameLabel.setOnMouseEntered((event) -> {
@@ -426,6 +415,28 @@ public class LoggedIn_Controller implements Controller {
         searchSPane.setOnMouseExited(mouseEvent -> {
             searchSPane.setVisible(false);
         });
+
+        Platform.runLater( () -> {
+            String langs[] = {"En", "Ar", "Fr"};
+            FXMLLoader loader = LanguageManager.loggedinLoader;
+            for(String l : langs)
+            {
+                Label lab = (Label) loader.getNamespace().get("go" + l + "Label");
+                lab.setOnMouseClicked(mouseEvent -> {
+                    LanguageManager.loadLangData(Settings.projectPath + "\\lang\\" + l.toLowerCase() + ".xml");
+                    Settings.appLang = l.toLowerCase();
+                    LanguageManager.resyncLanguage(loader, "loggedin");
+                    try {
+                        switchViewToGO();
+                        Central_Up_Title_Label.setText(LanguageManager.getContentOf("uptitle"));
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                });
+            }
+
+            LanguageManager.resyncLanguage(loader, "loggedin");
+        });
     }
 
     public ArrayList<CourseCoord> getCoursesThatContains(String fetchQuery) {
@@ -438,7 +449,7 @@ public class LoggedIn_Controller implements Controller {
                 String course = courses.get(j);
                 if (course.toLowerCase().contains(fetchQuery.toLowerCase())) {
                     try {
-                        System.out.println("Chapter = " + i + " -- " + j + " -- " + chapter.getFolder() + "size= " + chapter.getnCourse());
+                        Debug.debugMsg("Chapter = " + i + " -- " + j + " -- " + chapter.getFolder() + "size= " + chapter.getnCourse());
                         CourseCoord cc = new CourseCoord(i, j);
                         ret.add(cc);
                     } catch (IOException e) {
@@ -539,6 +550,7 @@ public class LoggedIn_Controller implements Controller {
         for (int i = 0; i < chapters.size(); ++i) {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("GO_Course_Pane.fxml"));
             Parent course_pane = loader.load();
+            LanguageManager.resyncLanguage(loader, "goverview");
             GO_Course_Pane_Controller controller = loader.getController();
 
             CourseOverview.ChapterOverview chap = chapters.get(i);
@@ -669,6 +681,7 @@ public class LoggedIn_Controller implements Controller {
             int readTime = readTimes.getInt(i);
             FXMLLoader loader = new FXMLLoader(getClass().getResource("CO_Course_Pane.fxml"));
             Pane coursePane = loader.load();
+            LanguageManager.resyncLanguage(loader, "coverview");
             CO_Course_Pane_Controller controller = loader.getController();
             controller.setAll(__(courseTitle), readTime);
             holder.getChildren().add(coursePane);
@@ -839,7 +852,7 @@ public class LoggedIn_Controller implements Controller {
             Central_Container_SPane.getChildren().add(scp);
             this.sidebarFocusNewPane(Side_Params_Pane);
             this.sidebarOriginalColor = "transparent";
-            setLText(Central_Up_Title_Label, "Paramètres du Compte");
+            setLText(Central_Up_Title_Label, LanguageManager.getContentOf("paramsTitle"));
             this.setDiplayingWhat(Settings.DISPLAYING_PARAMETERS);
 
         } catch (IOException e) {
@@ -870,5 +883,21 @@ public class LoggedIn_Controller implements Controller {
             });
             searchVBox.getChildren().add(root);
         }
+    }
+
+    public void switchViewToGO()
+    {
+        Central_Container_SPane.getChildren().clear();
+        try {
+            this.loadCourseGeneralOverview();
+            if (side_bar_activated_pane != Side_GO_Pane)
+                this.sidebarFocusNewPane(Side_GO_Pane);
+            this.sidebarOriginalColor = "transparent";
+            setLText(Central_Up_Title_Label, LanguageManager.getContentOf("generalOverview"));
+
+        } catch (IOException e) {
+            Debug.debugException(e);
+        }
+        this.setDiplayingWhat(Settings.DISPLAYING_COURSE_OVERVIEW);
     }
 }

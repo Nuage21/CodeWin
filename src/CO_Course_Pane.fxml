@@ -9,12 +9,11 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-
 <BorderPane prefHeight="78.0" style="-fx-background-color: #f1f1f1; -fx-border-color: #777777; -fx-border-width: 0 0 1 0;" styleClass="overview-chapter" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CO_Course_Pane_Controller">
    <right>
       <Pane prefHeight="78.0" prefWidth="447.0" BorderPane.alignment="CENTER">
          <children>
-            <Label layoutX="142.0" layoutY="22.0" prefHeight="32.0" prefWidth="162.0" text="Temps de Lecture:">
+            <Label fx:id="readLabel" layoutX="142.0" layoutY="22.0" prefHeight="32.0" prefWidth="162.0" text="Temps de Lecture:">
                <font>
                   <Font name="Rockwell" size="17.0" />
                </font>

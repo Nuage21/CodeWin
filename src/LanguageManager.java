@@ -17,7 +17,9 @@ public class LanguageManager {
 
     // loaders (for lang sync)
     public static Document langXmler;
+
     public static FXMLLoader authenticatorLoader;
+    public static FXMLLoader loggedinLoader;
 
     public static ArrayList<String> installed_languages = new ArrayList<>();
     public static ArrayList<String> installed_languages_files = new ArrayList<>();
@@ -51,8 +53,16 @@ public class LanguageManager {
                     }
                     else if (nodeName.equals("Label"))
                     {
-                        Label t = (Label) loader.getNamespace().get(nodeID);
-                        t.setText(nodeContent);
+                        try{
+                            Label t = (Label) loader.getNamespace().get(nodeID);
+                            t.setText(nodeContent);
+                        }
+                        catch (Exception e)
+                        {
+                            Debug.debugDialog("LManager", nodeID);
+                            Debug.debugException(e);
+                        }
+
                     }
                     else if (nodeName.equals("Button"))
                     {
@@ -74,6 +84,13 @@ public class LanguageManager {
         } catch (Exception e) {
             Debug.debugException(e);
         }
+    }
+
+    public static String getContentOf(String id)
+    {
+        Element docEle = langXmler.getDocumentElement();
+        Element nl = (Element) docEle.getElementsByTagName(id).item(0);
+        return nl.getTextContent();
     }
 
     public static void loadInstalledLanguages()

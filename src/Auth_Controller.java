@@ -164,6 +164,7 @@ public class Auth_Controller {
                     if (u != null) {
                         String fxml = "LoggedIn.fxml";
                         FXMLLoader loader = new FXMLLoader(getClass().getResource(fxml));
+                        LanguageManager.loggedinLoader = loader;
                         Parent root = null;
                         try {
                             root = loader.load();
@@ -206,6 +207,8 @@ public class Auth_Controller {
                 String fxml = Settings.ACTIVE_EMAIL_CONFIRM ? "EmailConfirm.fxml" : "LoggedIn.fxml";
                 String section = Settings.ACTIVE_EMAIL_CONFIRM ? "email" : "loggedin";
                 FXMLLoader loader = new FXMLLoader(getClass().getResource(fxml));
+                if(!Settings.ACTIVE_EMAIL_CONFIRM)
+                    LanguageManager.loggedinLoader = loader;
                 root = loader.load();
                 LanguageManager.resyncLanguage(loader, section);
                 ctr = loader.getController();
@@ -369,6 +372,7 @@ public class Auth_Controller {
                 Label lab = (Label) loader.getNamespace().get("go" + l + "Label");
                 lab.setOnMouseClicked(mouseEvent -> {
                     LanguageManager.loadLangData(Settings.projectPath + "\\lang\\" + l.toLowerCase() + ".xml");
+                    Settings.appLang = l.toLowerCase();
                     LanguageManager.resyncLanguage(loader, "authenticator");
                 });
             }

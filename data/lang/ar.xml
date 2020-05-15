@@ -109,4 +109,17 @@
         <emailUpdateSuccess title="تم تحديث بريدك الإلكتروني بنجاح">نجاح</emailUpdateSuccess>
         <productActivatedSuccess title="تم تنشيط منتجك بنجاح">نجاح</productActivatedSuccess>
     </dialogs>
+    <coverview>
+        <Label id="readLabel">Read Time</Label>
+    </coverview>
+    <goverview>
+        <label id="courseLabel">Courses</label>
+        <label id="questionLabel">Questions</label>
+    </goverview>
+    <miscellaneous>
+        <uptitle>قواعد المرور</uptitle>
+        <statsTitle>Statistics</statsTitle>
+        <generalOverview>General Overview</generalOverview>
+        <paramsTitle>Parameters</paramsTitle>
+    </miscellaneous>
 </content>
