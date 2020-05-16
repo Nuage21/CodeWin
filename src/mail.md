@@ -87,7 +87,7 @@
                                                                                 </tr>
                                                                                 <tr>
                                                                                     <td class="esd-block-text es-p10l" align="center">
-                                                                                        <p style="color: #242424;">Salutation,plus qu'une dernière étape avant l'activation de votre compte CodeWin ,il vous suffit&nbsp;<br>d'enter ce code dans le champ prévu à cet effet au sein de notre application<br></p>
+                                                                                        <p style="color: #242424;">Salutations! Plus qu'une dernière étape avant l'activation de votre compte CodeWin ,il vous suffit&nbsp;<br>d'enter ce code dans le champ prévu à cet effet au sein de notre application<br></p>
                                                                                     </td>
                                                                                 </tr>
                                                                                 <tr>
@@ -123,7 +123,7 @@
                                                                             <tbody>
                                                                                 <tr>
                                                                                     <td align="left" class="esd-block-text">
-                                                                                        <p>Cette adresse a etait ultilisée pour la création d'un compte au sein de notre application, si cela a etait fait à votre insu contactez notre support&nbsp;<br></p>
+                                                                                        <p>Cette adresse a etait ultilisée pour la création d'un compte au sein de notre application. Si cela a etait fait à votre insu, veuillez contacter notre support&nbsp;<br></p>
                                                                                     </td>
                                                                                 </tr>
                                                                             </tbody>
