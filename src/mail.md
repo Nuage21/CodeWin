@@ -123,7 +123,7 @@
                                                                             <tbody>
                                                                                 <tr>
                                                                                     <td align="left" class="esd-block-text">
-                                                                                        <p>Cette adresse a etait ultilisée pour la création d'un compte au sein de notre application. Si cela a etait fait à votre insu, veuillez contacter notre support&nbsp;<br></p>
+                                                                                        <p>Cette adresse a etait utilisée pour la création d'un compte au sein de notre application. Si cela a etait fait à votre insu, veuillez contacter notre support&nbsp;<br></p>
                                                                                     </td>
                                                                                 </tr>
                                                                             </tbody>
