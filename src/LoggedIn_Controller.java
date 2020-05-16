@@ -429,6 +429,7 @@ public class LoggedIn_Controller implements Controller {
                 lab.setOnMouseClicked(mouseEvent -> {
                     LanguageManager.loadLangData(Settings.projectPath + "\\lang\\" + l.toLowerCase() + ".xml");
                     Settings.appLang = l.toLowerCase();
+                    LanguageManager.writeLanguages();
                     LanguageManager.resyncLanguage(loader, "loggedin");
                     try {
                         switchViewToGO();

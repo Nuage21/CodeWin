@@ -10,6 +10,7 @@ import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -24,8 +25,7 @@ public class LanguageManager {
     public static ArrayList<String> installed_languages = new ArrayList<>();
     public static ArrayList<String> installed_languages_folders = new ArrayList<>();
 
-    public static void loadLangData(String xmlfile)
-    {
+    public static void loadLangData(String xmlfile) {
         DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
         try {
             DocumentBuilder documentBuilder = dbf.newDocumentBuilder();
@@ -35,7 +35,7 @@ public class LanguageManager {
         }
     }
 
-    public static void resyncLanguage(FXMLLoader loader, String section){
+    public static void resyncLanguage(FXMLLoader loader, String section) {
         try {
             Element docEle = langXmler.getDocumentElement();
             NodeList nl = docEle.getElementsByTagName(section).item(0).getChildNodes();
@@ -46,36 +46,25 @@ public class LanguageManager {
                     String nodeName = el.getNodeName();
                     String nodeID = el.getAttribute("id");
                     String nodeContent = el.getTextContent();
-                    if (nodeName.equals("TextField") || nodeName.equals("PasswordField"))
-                    {
+                    if (nodeName.equals("TextField") || nodeName.equals("PasswordField")) {
                         TextField t = (TextField) loader.getNamespace().get(nodeID);
                         t.setPromptText(nodeContent);
-                    }
-                    else if (nodeName.equals("Label"))
-                    {
-                        try{
+                    } else if (nodeName.equals("Label")) {
+                        try {
                             Label t = (Label) loader.getNamespace().get(nodeID);
                             t.setText(nodeContent);
-                        }
-                        catch (Exception e)
-                        {
+                        } catch (Exception e) {
                             Debug.debugDialog("LManager", nodeID);
                             Debug.debugException(e);
                         }
 
-                    }
-                    else if (nodeName.equals("Button"))
-                    {
+                    } else if (nodeName.equals("Button")) {
                         Button t = (Button) loader.getNamespace().get(nodeID);
                         t.setText(nodeContent);
-                    }
-                    else if (nodeName.equals("Tab"))
-                    {
+                    } else if (nodeName.equals("Tab")) {
                         Tab t = (Tab) loader.getNamespace().get(nodeID);
                         t.setText(nodeContent);
-                    }
-                    else if (nodeName.equals("HyperLink"))
-                    {
+                    } else if (nodeName.equals("HyperLink")) {
                         Hyperlink t = (Hyperlink) loader.getNamespace().get(nodeID);
                         t.setText(nodeContent);
                     }
@@ -86,19 +75,17 @@ public class LanguageManager {
         }
     }
 
-    public static String getContentOf(String id)
-    {
+    public static String getContentOf(String id) {
         Element docEle = langXmler.getDocumentElement();
         Element nl = (Element) docEle.getElementsByTagName(id).item(0);
         return nl.getTextContent();
     }
 
-    public static void loadInstalledLanguages()
-    {
+    public static void loadInstalledLanguages() {
         String filePath = Settings.projectPath + "\\courses\\installed_langs.json";
         Scanner scanner = null;
         try {
-            scanner = new Scanner( new File(filePath), "UTF-8" );
+            scanner = new Scanner(new File(filePath), "UTF-8");
         } catch (FileNotFoundException e) {
             Debug.debugException(e);
         }
@@ -110,10 +97,23 @@ public class LanguageManager {
         JSONArray langs = obj.getJSONArray("langs");
         JSONArray fld = obj.getJSONArray("folders");
 
-        for(int i = 0; i < langs.length(); ++i)
-        {
+        for (int i = 0; i < langs.length(); ++i) {
             installed_languages.add(langs.getString(i));
             installed_languages_folders.add(fld.getString(i));
+        }
+    }
+
+    public static void writeLanguages() {
+        try {
+            FileWriter myWriter = new FileWriter(Settings.projectPath + "\\user.inf");
+            myWriter.write("appLang = " + Settings.appLang + "\n");
+            myWriter.write("courseLang = " + Settings.courseLang + "\n");
+            myWriter.write("firstTime = 0");
+
+        }
+        catch (Exception e)
+        {
+            Debug.debugException(e);
         }
     }
 }

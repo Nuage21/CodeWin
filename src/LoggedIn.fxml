@@ -14,90 +14,93 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="daddy" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1066.0" prefWidth="1975.0" stylesheets="@css/LoggedIn.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="LoggedIn_Controller">
+<BorderPane fx:id="daddy" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" stylesheets="@css/LoggedIn.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="LoggedIn_Controller">
     <bottom>
-        <VBox prefHeight="37.0" prefWidth="1975.0" styleClass="footer" BorderPane.alignment="CENTER">
-            <children>
-                <HBox prefHeight="41.0" prefWidth="1975.0">
-                    <children>
-                        <Pane prefHeight="37.0" prefWidth="1790.0">
-                            <children>
-                                <StackPane layoutX="943.0" layoutY="6.0" prefHeight="27.0" prefWidth="29.0" style="-fx-background-radius: 30; -fx-background-color: #e1e1e1;">
-                                    <children>
-                                        <ImageView fitHeight="22.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true" style="-fx-border-radius: 56;">
-                                            <image>
-                                                <Image url="@img/icons/social/github.png" />
-                                            </image>
-                                        </ImageView>
-                                    </children>
-                                </StackPane>
-                                <Label layoutX="615.0" layoutY="10.0" text="© 2020 CodeWin Inc. All rights reserved." textFill="WHITE">
-                                    <font>
-                                        <Font size="15.0" />
-                                    </font>
-                                </Label>
-                        <Hyperlink fx:id="githubHyperLink" layoutX="976.0" layoutY="5.0" style="-fx-border-color: transparent;" text="Check us on Github">
-                           <font>
-                              <Font size="15.0" />
-                           </font>
-                        </Hyperlink>
-                        <StackPane layoutX="1193.0" layoutY="1.0" prefHeight="31.0" prefWidth="25.0" style="-fx-padding: 10; -fx-background-color: black; -fx-background-radius: 20;">
-                           <children>
-                              <ImageView fitHeight="15.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@img/flags/uk.png" />
-                                 </image>
-                              </ImageView>
-                           </children>
-                        </StackPane>
-                        <StackPane layoutX="1332.0" layoutY="1.0" prefHeight="31.0" prefWidth="25.0" style="-fx-padding: 10; -fx-background-color: black; -fx-background-radius: 20;">
-                           <children>
-                              <ImageView fitHeight="15.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@img/flags/france.gif" />
-                                 </image>
-                              </ImageView>
-                           </children>
-                        </StackPane>
-                        <StackPane layoutX="1469.0" layoutY="1.0" prefHeight="31.0" prefWidth="25.0" style="-fx-padding: 10; -fx-background-color: black; -fx-background-radius: 20;">
-                           <children>
-                              <ImageView fitHeight="15.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@img/flags/arab.png" />
-                                 </image>
-                              </ImageView>
-                           </children>
-                        </StackPane>
-                        <Label fx:id="goEnLabel" layoutX="1246.0" layoutY="11.0" styleClass="lng-selector" text="English" textFill="WHITE" textOverrun="CENTER_WORD_ELLIPSIS">
-                           <font>
-                              <Font name="Tahoma Bold" size="13.0" />
-                           </font>
-                           <cursor>
-                              <Cursor fx:constant="HAND" />
-                           </cursor>
-                        </Label>
-                        <Label fx:id="goFrLabel" layoutX="1386.0" layoutY="11.0" styleClass="lng-selector" text="Français" textFill="WHITE" textOverrun="CENTER_WORD_ELLIPSIS">
-                           <font>
-                              <Font name="Tahoma Bold" size="13.0" />
-                           </font>
-                           <cursor>
-                              <Cursor fx:constant="HAND" />
-                           </cursor>
-                        </Label>
-                        <Label fx:id="goArLabel" layoutX="1519.0" layoutY="11.0" styleClass="lng-selector" text="العربية" textFill="WHITE" textOverrun="CENTER_WORD_ELLIPSIS">
-                           <font>
-                              <Font name="Tahoma Bold" size="13.0" />
-                           </font>
-                           <cursor>
-                              <Cursor fx:constant="HAND" />
-                           </cursor>
-                        </Label>
-                            </children>
-                        </Pane>
-                    </children>
-                </HBox>
-            </children>
-        </VBox>
+      <BorderPane style="-fx-background-color: #1d1d1d;" BorderPane.alignment="CENTER">
+         <left>
+                  <Pane prefHeight="37.0" prefWidth="1790.0" style="-fx-background-color: #1d1d1d;" BorderPane.alignment="CENTER">
+                      <children>
+                          <StackPane layoutX="865.0" layoutY="6.0" prefHeight="27.0" prefWidth="29.0" style="-fx-background-radius: 30; -fx-background-color: #e1e1e1;">
+                              <children>
+                                  <ImageView fitHeight="22.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true" style="-fx-border-radius: 56;">
+                                      <image>
+                                          <Image url="@img/icons/social/github.png" />
+                                      </image>
+                                  </ImageView>
+                              </children>
+                          </StackPane>
+                          <Label layoutX="580.0" layoutY="10.0" text="© 2020 CodeWin Inc. All rights reserved." textFill="WHITE">
+                              <font>
+                                  <Font size="13.0" />
+                              </font>
+                          </Label>
+                  <Hyperlink fx:id="githubHyperLink" layoutX="895.0" layoutY="8.0" style="-fx-border-color: transparent;" text="Check us on Github" />
+                  <StackPane layoutX="1061.0" layoutY="1.0" prefHeight="31.0" prefWidth="25.0" style="-fx-padding: 10; -fx-background-color: black; -fx-background-radius: 20;">
+                     <children>
+                        <ImageView fitHeight="15.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/flags/uk.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </StackPane>
+                  <StackPane layoutX="1176.0" layoutY="1.0" prefHeight="31.0" prefWidth="25.0" style="-fx-padding: 10; -fx-background-color: black; -fx-background-radius: 20;">
+                     <children>
+                        <ImageView fitHeight="15.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/flags/france.gif" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </StackPane>
+                  <StackPane layoutX="1290.0" prefHeight="31.0" prefWidth="25.0" style="-fx-padding: 10; -fx-background-color: black; -fx-background-radius: 20;">
+                     <children>
+                        <ImageView fitHeight="15.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/flags/arab.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </StackPane>
+                  <Label fx:id="goEnLabel" layoutX="1105.0" layoutY="11.0" styleClass="lng-selector" text="English" textFill="WHITE" textOverrun="CENTER_WORD_ELLIPSIS">
+                     <font>
+                        <Font name="Tahoma Bold" size="13.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Label>
+                  <Label fx:id="goFrLabel" layoutX="1219.0" layoutY="11.0" styleClass="lng-selector" text="Français" textFill="WHITE" textOverrun="CENTER_WORD_ELLIPSIS">
+                     <font>
+                        <Font name="Tahoma Bold" size="13.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Label>
+                  <Label fx:id="goArLabel" layoutX="1330.0" layoutY="10.0" styleClass="lng-selector" text="العربية" textFill="WHITE" textOverrun="CENTER_WORD_ELLIPSIS">
+                     <font>
+                        <Font name="Tahoma Bold" size="13.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Label>
+                  <Label fx:id="muteSoundLabel" layoutX="396.0" layoutY="12.0" text="Mute Sound" textFill="WHITE" underline="true">
+                     <font>
+                        <Font name="Verdana" size="11.0" />
+                     </font>
+                  </Label>
+                  <VBox layoutX="476.0" layoutY="5.0" prefHeight="28.0" prefWidth="91.0">
+                     <children>
+                        <Pane prefHeight="0.0" prefWidth="91.0" style="-fx-padding: 2 0 0 0;" />
+                        <Pane fx:id="volumeHolder" prefHeight="55.0" prefWidth="91.0" style="-fx-padding: 15 0 0 0;" />
+                     </children>
+                  </VBox>
+                      </children>
+                  </Pane>
+         </left>
+      </BorderPane>
     </bottom>
     <top>
         <BorderPane prefHeight="61.0" prefWidth="1975.0" styleClass="up-pane" BorderPane.alignment="CENTER">
@@ -174,163 +177,157 @@
                                 </Pane>
                             </children>
                         </Pane>
-                  <Pane prefHeight="61.0" prefWidth="587.0">
-                     <children>
-                        <Pane fx:id="pointsHolderPane" layoutX="266.0" layoutY="6.0" prefHeight="47.0" prefWidth="213.0" style="-fx-background-color: white; -fx-border-color: #1d1d1d; -fx-border-width: 3;">
+                  <BorderPane prefHeight="61.0" prefWidth="458.0">
+                     <center>
+                        <Pane BorderPane.alignment="CENTER">
                            <children>
-                              <Label fx:id="pointsLabel" layoutX="79.0" style="-fx-background-color: black; -fx-padding: 3;" text="1020" textFill="WHITE">
-                                 <font>
-                                    <Font name="Rockwell Bold" size="32.0" />
-                                 </font>
-                                 <cursor>
-                                    <Cursor fx:constant="HAND" />
-                                 </cursor>
-                              </Label>
-                              <Label fx:id="pointsDescLabel" layoutX="14.0" layoutY="14.0" text="Points" underline="true">
-                                 <font>
-                                    <Font name="Rockwell" size="17.0" />
-                                 </font>
-                                 <cursor>
-                                    <Cursor fx:constant="DEFAULT" />
-                                 </cursor>
-                              </Label>
+                              <Pane fx:id="pointsHolderPane" layoutX="133.0" layoutY="7.0" prefHeight="46.0" prefWidth="152.0" style="-fx-background-color: white;">
+                                 <children>
+                                    <Label fx:id="pointsLabel" layoutX="65.0" style="-fx-background-color: black; -fx-padding: 3;" text="1020" textFill="WHITE">
+                                       <font>
+                                          <Font name="Rockwell Bold" size="32.0" />
+                                       </font>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </Label>
+                                    <Label fx:id="pointsDescLabel" layoutX="7.0" layoutY="13.0" text="Points" underline="true">
+                                       <font>
+                                          <Font name="Rockwell" size="17.0" />
+                                       </font>
+                                       <cursor>
+                                          <Cursor fx:constant="DEFAULT" />
+                                       </cursor>
+                                    </Label>
+                                 </children>
+                              </Pane>
                            </children>
                         </Pane>
-                     </children></Pane>
-                  <VBox prefHeight="61.0" prefWidth="91.0">
-                     <children>
-                        <Pane prefHeight="17.0" prefWidth="104.0" style="-fx-padding: 15 0 0 0;" />
-                        <Pane fx:id="volumeHolder" prefHeight="32.0" prefWidth="104.0" style="-fx-padding: 15 0 0 0;" />
-                     </children>
-                  </VBox>
-                  <Pane prefHeight="61.0" prefWidth="164.0">
-                     <children>
-                        <Label fx:id="muteSoundLabel" layoutX="14.0" layoutY="22.0" text="Mute Sound" textFill="WHITE" underline="true">
-                           <font>
-                              <Font name="Verdana" size="13.0" />
-                           </font>
-                        </Label>
-                     </children>
-                  </Pane>
+                     </center>
+                  </BorderPane>
                     </children>
                 </HBox>
             </center>
         </BorderPane>
     </top>
     <left>
-        <VBox fx:id="Sidebar_VBox" style="-fx-background-color: #e1e1e1;" BorderPane.alignment="CENTER">
-            <children>
-                <Pane fx:id="Side_CourseName_Pane" prefHeight="117.0" prefWidth="283.0" styleClass="course-head-pane">
-                    <children>
-                        <Label layoutX="14.0" layoutY="33.0" text="Code de la Route" textFill="#515151">
-                            <font>
-                                <Font size="20.0" />
-                            </font>
-                        </Label>
-                        <Label layoutX="14.0" layoutY="64.0" text="~ CodeWin" textFill="#515151">
-                            <font>
-                                <Font name="System Italic" size="15.0" />
-                            </font>
-                        </Label>
-                    </children>
-                </Pane>
-                <Pane fx:id="Side_GO_Pane" prefHeight="63.0" prefWidth="283.0" style="-fx-background-color: white !important;; -fx-border-color: #1354a1;" styleClass="side-left-pane">
-                    <children>
-                        <Label fx:id="Side_GO_Label" layoutX="68.0" layoutY="17.0" text="Vue Générale" textFill="#515151">
-                            <font>
-                                <Font size="20.0" />
-                            </font>
-                        </Label>
-                  <StackPane layoutX="12.0" layoutY="11.0" prefHeight="42.0" prefWidth="46.0" style="-fx-background-radius: 30; -fx-background-color: #e1e1e1;" styleClass="sidebar-icon-holder">
-                     <children>
-                        <ImageView fitHeight="45.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true" style="-fx-border-radius: 56;">
-                           <image>
-                              <Image url="@img/icons/index.png" />
-                           </image>
-                        </ImageView>
-                     </children>
-                  </StackPane>
-                    </children>
-                </Pane>
-            <VBox fx:id="sidebarChaptersHolder" prefHeight="514.0" prefWidth="283.0" />
-                <VBox prefHeight="265.0" prefWidth="283.0" style="-fx-border-width: 1 0 0 0; -fx-border-color: #c1c1c1;">
-                    <children>
-                        <Pane fx:id="Side_Params_Pane" prefHeight="63.0" prefWidth="283.0" styleClass="side-left-pane">
-                            <children>
-                                <Label fx:id="Side_Params_Label" layoutX="67.0" layoutY="17.0" text="Paramètres " textFill="#515151">
-                                    <font>
-                                        <Font size="20.0" />
-                                    </font>
-                                </Label>
-                                <StackPane layoutX="7.0" layoutY="6.0" prefHeight="45.0" prefWidth="50.0" style="-fx-background-radius: 30; -fx-background-color: #e1e1e1;" styleClass="sidebar-icon-holder">
-                                    <children>
-                                        <ImageView fitHeight="45.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true" style="-fx-border-radius: 56;">
-                                            <image>
-                                                <Image url="@img/icons/settings.png" />
-                                            </image>
-                                        </ImageView>
-                                    </children>
-                                </StackPane>
-                            </children>
-                        </Pane>
-                        <Pane fx:id="Side_Stats_Pane" prefHeight="65.0" prefWidth="283.0" styleClass="side-left-pane">
-                            <children>
-                                <Label fx:id="Side_Stats_Label" layoutX="67.0" layoutY="17.0" text="Statistiques" textFill="#515151">
-                                    <font>
-                                        <Font size="20.0" />
-                                    </font>
-                                </Label>
-                                <StackPane layoutX="7.0" layoutY="6.0" prefHeight="45.0" prefWidth="50.0" style="-fx-background-radius: 30; -fx-background-color: #e1e1e1;" styleClass="sidebar-icon-holder">
-                                    <children>
-                                        <ImageView fitHeight="45.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true" style="-fx-border-radius: 56;">
-                                            <image>
-                                                <Image url="@img/icons/stats.png" />
-                                            </image>
-                                        </ImageView>
-                                    </children>
-                                </StackPane>
-                            </children>
-                        </Pane>
-                        <Pane fx:id="Side_Toggle_Pane" prefHeight="61.0" prefWidth="283.0" styleClass="side-left-pane">
-                            <children>
-                                <Label fx:id="Side_Toggle_Label" layoutX="67.0" layoutY="13.0" text="Toggle " textFill="#515151">
-                                    <font>
-                                        <Font size="20.0" />
-                                    </font>
-                                </Label>
-                                <StackPane layoutX="7.0" layoutY="6.0" prefHeight="45.0" prefWidth="50.0" style="-fx-background-radius: 30; -fx-background-color: #e1e1e1;" styleClass="sidebar-icon-holder">
-                                    <children>
-                                        <ImageView fitHeight="46.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true" style="-fx-border-radius: 56;">
-                                            <image>
-                                                <Image url="@img/icons/toggle.png" />
-                                            </image>
-                                        </ImageView>
-                                    </children>
-                                </StackPane>
-                            </children>
-                        </Pane>
-                  <Pane prefHeight="64.0" prefWidth="283.0" styleClass="side-left-pane">
-                     <children>
-                        <Label fx:id="Side_Help_Label" layoutX="71.0" layoutY="14.0" text="Aide" textFill="#515151">
-                           <font>
-                              <Font size="20.0" />
-                           </font>
-                        </Label>
-                        <StackPane layoutX="7.0" layoutY="6.0" prefHeight="45.0" prefWidth="50.0" style="-fx-background-radius: 30; -fx-background-color: #e1e1e1;" styleClass="sidebar-icon-holder">
+      <ScrollPane hbarPolicy="NEVER" style="-fx-background-color: #eeeeee;" BorderPane.alignment="CENTER">
+         <content>
+              <VBox fx:id="Sidebar_VBox" style="-fx-background-color: #e1e1e1;">
+                  <children>
+                      <Pane fx:id="Side_CourseName_Pane" prefHeight="117.0" prefWidth="283.0" styleClass="course-head-pane">
+                          <children>
+                              <Label layoutX="14.0" layoutY="33.0" text="Code de la Route" textFill="#515151">
+                                  <font>
+                                      <Font size="20.0" />
+                                  </font>
+                              </Label>
+                              <Label layoutX="14.0" layoutY="64.0" text="~ CodeWin" textFill="#515151">
+                                  <font>
+                                      <Font name="System Italic" size="15.0" />
+                                  </font>
+                              </Label>
+                          </children>
+                      </Pane>
+                      <Pane fx:id="Side_GO_Pane" prefHeight="63.0" prefWidth="283.0" style="-fx-background-color: white !important;; -fx-border-color: #1354a1;" styleClass="side-left-pane">
+                          <children>
+                              <Label fx:id="Side_GO_Label" layoutX="68.0" layoutY="17.0" text="Vue Générale" textFill="#515151">
+                                  <font>
+                                      <Font size="20.0" />
+                                  </font>
+                              </Label>
+                        <StackPane layoutX="12.0" layoutY="11.0" prefHeight="42.0" prefWidth="46.0" style="-fx-background-radius: 30; -fx-background-color: #e1e1e1;" styleClass="sidebar-icon-holder">
                            <children>
-                              <ImageView fitHeight="43.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true" style="-fx-border-radius: 56;">
+                              <ImageView fitHeight="45.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true" style="-fx-border-radius: 56;">
                                  <image>
-                                    <Image url="@img/icons/help.png" />
+                                    <Image url="@img/icons/index.png" />
                                  </image>
                               </ImageView>
                            </children>
                         </StackPane>
-                     </children>
-                  </Pane>
-                    </children>
-                </VBox>
-            </children>
-        </VBox>
+                          </children>
+                      </Pane>
+                  <VBox fx:id="sidebarChaptersHolder" prefHeight="514.0" prefWidth="283.0" />
+                      <VBox prefHeight="265.0" prefWidth="283.0" style="-fx-border-width: 1 0 0 0; -fx-border-color: #c1c1c1;">
+                          <children>
+                              <Pane fx:id="Side_Params_Pane" prefHeight="63.0" prefWidth="283.0" styleClass="side-left-pane">
+                                  <children>
+                                      <Label fx:id="Side_Params_Label" layoutX="67.0" layoutY="17.0" text="Paramètres " textFill="#515151">
+                                          <font>
+                                              <Font size="20.0" />
+                                          </font>
+                                      </Label>
+                                      <StackPane layoutX="7.0" layoutY="6.0" prefHeight="45.0" prefWidth="50.0" style="-fx-background-radius: 30; -fx-background-color: #e1e1e1;" styleClass="sidebar-icon-holder">
+                                          <children>
+                                              <ImageView fitHeight="45.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true" style="-fx-border-radius: 56;">
+                                                  <image>
+                                                      <Image url="@img/icons/settings.png" />
+                                                  </image>
+                                              </ImageView>
+                                          </children>
+                                      </StackPane>
+                                  </children>
+                              </Pane>
+                              <Pane fx:id="Side_Stats_Pane" prefHeight="65.0" prefWidth="283.0" styleClass="side-left-pane">
+                                  <children>
+                                      <Label fx:id="Side_Stats_Label" layoutX="67.0" layoutY="17.0" text="Statistiques" textFill="#515151">
+                                          <font>
+                                              <Font size="20.0" />
+                                          </font>
+                                      </Label>
+                                      <StackPane layoutX="7.0" layoutY="6.0" prefHeight="45.0" prefWidth="50.0" style="-fx-background-radius: 30; -fx-background-color: #e1e1e1;" styleClass="sidebar-icon-holder">
+                                          <children>
+                                              <ImageView fitHeight="45.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true" style="-fx-border-radius: 56;">
+                                                  <image>
+                                                      <Image url="@img/icons/stats.png" />
+                                                  </image>
+                                              </ImageView>
+                                          </children>
+                                      </StackPane>
+                                  </children>
+                              </Pane>
+                              <Pane fx:id="Side_Toggle_Pane" prefHeight="61.0" prefWidth="283.0" styleClass="side-left-pane">
+                                  <children>
+                                      <Label fx:id="Side_Toggle_Label" layoutX="67.0" layoutY="13.0" text="Toggle " textFill="#515151">
+                                          <font>
+                                              <Font size="20.0" />
+                                          </font>
+                                      </Label>
+                                      <StackPane layoutX="7.0" layoutY="6.0" prefHeight="45.0" prefWidth="50.0" style="-fx-background-radius: 30; -fx-background-color: #e1e1e1;" styleClass="sidebar-icon-holder">
+                                          <children>
+                                              <ImageView fitHeight="46.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true" style="-fx-border-radius: 56;">
+                                                  <image>
+                                                      <Image url="@img/icons/toggle.png" />
+                                                  </image>
+                                              </ImageView>
+                                          </children>
+                                      </StackPane>
+                                  </children>
+                              </Pane>
+                        <Pane prefHeight="64.0" prefWidth="283.0" styleClass="side-left-pane">
+                           <children>
+                              <Label fx:id="Side_Help_Label" layoutX="71.0" layoutY="14.0" text="Aide" textFill="#515151">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Label>
+                              <StackPane layoutX="7.0" layoutY="6.0" prefHeight="45.0" prefWidth="50.0" style="-fx-background-radius: 30; -fx-background-color: #e1e1e1;" styleClass="sidebar-icon-holder">
+                                 <children>
+                                    <ImageView fitHeight="43.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true" style="-fx-border-radius: 56;">
+                                       <image>
+                                          <Image url="@img/icons/help.png" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                              </StackPane>
+                           </children>
+                        </Pane>
+                          </children>
+                      </VBox>
+                  </children>
+              </VBox>
+         </content>
+      </ScrollPane>
     </left>
     <center>
       <BorderPane BorderPane.alignment="CENTER">

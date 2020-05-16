@@ -2,13 +2,8 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.TextField;
-import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
-
-import java.io.File;
-import java.net.URISyntaxException;
 import java.time.LocalDate;
 
 public class Main extends Application {
@@ -27,9 +22,9 @@ public class Main extends Application {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("LoggedIn.fxml"));
             LanguageManager.loggedinLoader = loader;
             Parent root = loader.load();
+
             LanguageManager.resyncLanguage(loader, "loggedin");
-            Scene sc = new Scene(root);
-            primaryStage.setScene(sc);
+            primaryStage.setScene(new Scene(root));
             primaryStage.initStyle(StageStyle.UNDECORATED);
             primaryStage.setFullScreen(Settings.FULLSCREEN_MODE);
             primaryStage.show();

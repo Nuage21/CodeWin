@@ -120,6 +120,7 @@ public class Params_Controller {
                 {
                     Settings.dataPath = Settings.projectPath + "\\courses\\" + folder + "\\";
                     Settings.courseLang = folder;
+                    LanguageManager.writeLanguages();
                     DialogLauncher.launchDialog("langUpdateSuccess", DialogLauncher.SUCCESS_BOX);
                     LoggedIn_Controller ctr = LanguageManager.loggedinLoader.getController();
                     ctr.loadCourseOverview();

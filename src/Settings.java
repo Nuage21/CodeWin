@@ -7,7 +7,7 @@ public class Settings {
     public static boolean ACTIVE_DB_MODE = true; // is DB activated
     public static boolean ACTIVE_EMAIL_CONFIRM = true; // if true confirmation email will be sent
     public static boolean DEBUG_MODE = true; // debug if true (Show Exception traces etc)
-    public static boolean SKIP_AUTHENTICATION = true; // skip authentication
+    public static boolean SKIP_AUTHENTICATION = false; // skip authentication
 
     public static Stage appStage;
     public static Application application;
@@ -49,8 +49,8 @@ public class Settings {
     public static String SecretKey = ":#:CODEWIN1;3WINCODE?!.";
 
     // lang
-    public static String appLang;
-    public static String courseLang;
+    public static String appLang = "fr";
+    public static String courseLang = "fr";
 
     public static void setPaths(String _projectPath, String _dataPath)
     {
