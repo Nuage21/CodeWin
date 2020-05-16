@@ -67,7 +67,7 @@ public class LogErrorController implements Initializable {
         er.setStyle("-fx-text-fill: white");
         Image image = null;
         try {
-            image = new Image(new FileInputStream("img/unchecked.jpg"));
+            image = new Image(new FileInputStream(Settings.projectPath + "\\img\\unchecked.jpg"));
         } catch (FileNotFoundException e) {
             Debug.debugException(e);
         }

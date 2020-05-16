@@ -41,6 +41,6 @@
          </children></Pane>
    </bottom>
    <effect>
-      <InnerShadow color="#9c1414" height="37.86" radius="18.6625" width="38.79" />
+      <InnerShadow color="#1d768f" height="38.56" radius="18.8375" width="38.79" />
    </effect>
 </BorderPane>

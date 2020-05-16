@@ -79,7 +79,7 @@ public class Stats_Controller implements Controller {
         activity_week.setOnAction(e -> {
             activityAreaChart.getData().clear();
             try {
-                traceWeek(ConvertStringTotree(stats_temps), activityAreaChart, "code");
+                traceWeek(ConvertStringTotree(stats_temps), activityAreaChart, LanguageManager.getContentOf("uptitle"));
             } catch (ParseException ex) {
                 ex.printStackTrace();
             }
@@ -87,7 +87,7 @@ public class Stats_Controller implements Controller {
         activity_month.setOnAction(e -> {
             activityAreaChart.getData().clear();
             try {
-                traceMonth(ConvertStringTotree(stats_temps), activityAreaChart, "code");
+                traceMonth(ConvertStringTotree(stats_temps), activityAreaChart, LanguageManager.getContentOf("uptitle"));
 
 
             } catch (ParseException ex) {
@@ -97,7 +97,7 @@ public class Stats_Controller implements Controller {
         points_week.setOnAction(e -> {
             progressionAreaChart.getData().clear();
             try {
-                traceWeek(ConvertStringTotree(stats_points), progressionAreaChart, "code");
+                traceWeek(ConvertStringTotree(stats_points), progressionAreaChart, LanguageManager.getContentOf("uptitle"));
             } catch (ParseException ex) {
                 ex.printStackTrace();
             }
@@ -106,14 +106,14 @@ public class Stats_Controller implements Controller {
             progressionAreaChart.getData().clear();
             try {
                 Thread.currentThread().sleep(300);
-                traceMonth(ConvertStringTotree(stats_points), progressionAreaChart, "code");
+                traceMonth(ConvertStringTotree(stats_points), progressionAreaChart, LanguageManager.getContentOf("uptitle"));
             } catch (ParseException | InterruptedException ex) {
                 ex.printStackTrace();
             }
         });
         //
-        traceWeek(ConvertStringTotree(stats_points), progressionAreaChart, "code");
-        traceWeek(ConvertStringTotree(stats_temps), activityAreaChart, "code");
+        traceWeek(ConvertStringTotree(stats_points), progressionAreaChart, LanguageManager.getContentOf("uptitle"));
+        traceWeek(ConvertStringTotree(stats_temps), activityAreaChart, LanguageManager.getContentOf("uptitle"));
 
         Platform.runLater(() -> {
             __setAreaChartWidth(activityAreaChart, Design.CENTRAL_PANE_WIDTH * 0.9);

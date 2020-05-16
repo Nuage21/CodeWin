@@ -54,7 +54,6 @@
         <Label id="trialWillEndLabel">:محاولتك ستنتهي</Label>
 
         <TextField id="productKeyTField">مفتاح المنتج</TextField>
-        <TextField id="searchField">بحث</TextField>
         <TextField id="newEmailTField">بريد إلكتروني جديد</TextField>
         <TextField id="codePField">كود</TextField>
         <TextField id="codePField">كود</TextField>
@@ -97,6 +96,7 @@
         <Label id="paramsLabel">الإعدادات</Label>
         <Label id="logoutLabel">تسجيل الخروج</Label>
         <Label id="quitLabel">المغادرة</Label>
+        <Label id="minimizeLabel">قلص</Label>
     </account>
     <dialogs>
         <userNotFound title="لمستخد غير موجود">االرجاء التأكد من إدخال اللقب</userNotFound>
@@ -112,19 +112,21 @@
         <pwdUpdateSuccess title="نجاح"> لقد تم تحديث كلمة السر الخاصة بك بنجاح!</pwdUpdateSuccess>
         <emailUpdateSuccess title="نجاح">تم تحديث بريدك الإلكتروني بنجاح </emailUpdateSuccess>
         <productActivatedSuccess title="نجاح"> تم تنشيط منتجك بنجاح</productActivatedSuccess>
-        <langUpdateSuccess title="Succès">La langue des Cours a été mise à jour avec succès</langUpdateSuccess>
+        <langUpdateSuccess title="Succès">تم تحديث لغة الدروس بنجاح</langUpdateSuccess>
+        <activateAccountPlease title="الحساب غير مفعل">يرجى تفعيل حسابك !</activateAccountPlease>
     </dialogs>
     <coverview>
         <Label id="readLabel">وقت القراءة</Label>
     </coverview>
     <goverview>
-        <label id="courseLabel">الدروس</label>
-        <label id="questionLabel">الاسئلة</label>
+        <Label id="courseLabel">الدروس</Label>
+        <Label id="questionLabel">الاسئلة</Label>
     </goverview>
     <miscellaneous>
         <uptitle>قواعد المرور</uptitle>
         <statsTitle>الاحصائيات</statsTitle>
         <generalOverview>نظرة عامة</generalOverview>
         <paramsTitle>الاعدادات</paramsTitle>
+        <chooseProfilePhoto>اختر صورة ملف شخصي</chooseProfilePhoto>
     </miscellaneous>
 </content>

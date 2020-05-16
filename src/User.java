@@ -68,8 +68,9 @@ public class User {
             ResultSet rs = null;
 
             rs = stmt.executeQuery();
+            Boolean b = rs.first();
             closeConnection(conn);
-            return rs.first();
+            return b;
         } catch (SQLException e) {
             Debug.debugMsg("" + "Can't check email existence - no connexion");
             closeConnection(conn);
@@ -98,8 +99,9 @@ public class User {
             ResultSet rs = null;
 
             rs = stmt.executeQuery();
+            Boolean b = rs.first();
             closeConnection(conn);
-            if (rs.first() == false) {
+            if (b == false) {
                 return 0;
             } else {
                 return 1;
@@ -134,7 +136,7 @@ public class User {
             stmt.setString(10, _user.lastAnsweredQuestion); // last answered question
             stmt.setString(11, _user.stats_points); // stats_points
             stmt.setString(12, _user.stats_activity); // stats_activity
-            stmt.setString(12, _user.pkey); // stats_activity
+            stmt.setString(13, _user.pkey); // stats_activity
             stmt.setInt(14, _user.points); // points
 
             stmt.execute();
@@ -174,7 +176,7 @@ public class User {
             user.stats_activity = rs.getString("stats_activity");
             user.pkey = rs.getString("pkey");
             user.signupDate = rs.getDate("sdate");
-            rs.close();
+
             closeConnection(conn);
         } catch (SQLException e) {
             Checker.showConnexionError();

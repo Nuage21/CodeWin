@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox fx:id="daddyVBox" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="158.0" prefWidth="288.0" style="-fx-border-width: 1; -fx-border-color: #999999; -fx-background-color: #eeeeee;" stylesheets="@css/AccountPane.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="AccountPane_Controller">
+<VBox fx:id="daddyVBox" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="197.0" prefWidth="288.0" style="-fx-border-width: 1; -fx-border-color: #999999; -fx-background-color: #eeeeee;" stylesheets="@css/AccountPane.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="AccountPane_Controller">
    <children>
       <Pane fx:id="paramsPane" prefHeight="49.0" prefWidth="286.0" styleClass="not-quit">
          <children>
@@ -40,6 +40,24 @@
                   <ImageView fitHeight="24.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" style="-fx-border-radius: 56;">
                      <image>
                         <Image url="@img/icons/signout.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </StackPane>
+         </children>
+      </Pane>
+      <Pane fx:id="minimizePane" prefHeight="55.0" prefWidth="286.0" style="-fx-border-width: 0 0 1 0; -fx-border-color: #aaaaaa;" styleClass="not-quit">
+         <children>
+            <Label fx:id="minimizeLabel" layoutX="74.0" layoutY="18.0" text="Minimize">
+               <font>
+                  <Font name="Rockwell" size="17.0" />
+               </font>
+            </Label>
+            <StackPane layoutX="14.0" layoutY="10.0" prefHeight="35.0" prefWidth="39.0" style="-fx-background-radius: 30; -fx-background-color: #e1e1e1;">
+               <children>
+                  <ImageView fitHeight="24.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" style="-fx-border-radius: 56;">
+                     <image>
+                        <Image url="@img/icons/minimize.png" />
                      </image>
                   </ImageView>
                </children>

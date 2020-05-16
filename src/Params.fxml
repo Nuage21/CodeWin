@@ -412,22 +412,4 @@
          </children>
       </VBox>
    </center>
-   <top>
-      <BorderPane prefHeight="65.0" prefWidth="1575.0" style="-fx-background-color: white; -fx-padding: 0 0 0 10;" BorderPane.alignment="CENTER">
-         <center>
-            <TextField fx:id="searchField" prefHeight="45.0" prefWidth="1515.0" promptText="Recherche" style="-fx-background-color: white;" styleClass="search-bar">
-               <font>
-                  <Font name="Rockwell" size="22.0" />
-               </font>
-            </TextField>
-         </center>
-         <left>
-            <ImageView fitHeight="45.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
-               <image>
-                  <Image url="@img/icons/search.png" />
-               </image>
-            </ImageView>
-         </left>
-      </BorderPane>
-   </top>
 </BorderPane>

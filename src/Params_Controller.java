@@ -275,12 +275,12 @@ public class Params_Controller {
         Design.setVisible(notActivatedPane, !isAccountActivate);
         Design.setVisible(enterKeyPane, !isAccountActivate);
 
-        pKeyLabel.setText(User.getFormattedPKey(u.getPkey()));
+        if(Settings.DEBUG_MODE)
+            pKeyLabel.setText(User.getFormattedPKey(u.getPkey()));
 
         Design.setVisible(freetrialPane, !u.isFreetrialEnded());
 
         String validPKey = User.generatePKey(u.getUsername());
-        productKeyTField.setText(User.getFormattedPKey(validPKey));
 
         Date ftEndDate = u.getFreetrialEndDate();
         freetrialEndLabel.setText(ftEndDate.toLocalDate().getDayOfMonth() + "/" + ftEndDate.toLocalDate().getMonthValue() + "/" + ftEndDate.toLocalDate().getYear());

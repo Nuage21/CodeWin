@@ -54,7 +54,6 @@
         <Label id="trialWillEndLabel">Your trial will end on:</Label>
 
         <TextField id="productKeyTField">Product key</TextField>
-        <TextField id="searchField">Search</TextField>
         <TextField id="newEmailTField">New Email</TextField>
         <TextField id="codePField">Code</TextField>
         <TextField id="codePField">Code</TextField>
@@ -92,6 +91,7 @@
         <Label id="paramsLabel">Settings</Label>
         <Label id="logoutLabel">Logout</Label>
         <Label id="quitLabel">Quit</Label>
+        <Label id="minimizeLabel">Minimize</Label>
     </account>
     <dialogs>
         <userNotFound title="User Not Found">"Please make sure you have the nickname between"</userNotFound>
@@ -108,6 +108,7 @@
         <emailUpdateSuccess title="Success">Your email has been successfully updated</emailUpdateSuccess>
         <productActivatedSuccess title="Success">Your product has been successfully activated</productActivatedSuccess>
         <langUpdateSuccess title="Success">Courses Language has been updated</langUpdateSuccess>
+        <activateAccountPlease title="Account not Activated">Please activate your Account</activateAccountPlease>
     </dialogs>
     <coverview>
         <Label id="readLabel">Read Time</Label>
@@ -121,6 +122,7 @@
         <statsTitle>Statistics</statsTitle>
         <generalOverview>General Overview</generalOverview>
         <paramsTitle>Parameters</paramsTitle>
+        <chooseProfilePhoto>Choose a Profile Photo</chooseProfilePhoto>
     </miscellaneous>
 </content>
 

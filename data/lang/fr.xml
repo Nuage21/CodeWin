@@ -54,7 +54,6 @@
         <Label id="trialWillEndLabel">Votre essaie prendra fin le:</Label>
 
         <TextField id="productKeyTField">Clé de Produit</TextField>
-        <TextField id="searchField">Recherche</TextField>
         <TextField id="newEmailTField">Nouvelle Email</TextField>
         <TextField id="codePField">Code</TextField>
         <TextField id="codePField">Code</TextField>
@@ -89,6 +88,7 @@
         <Label id="paramsLabel">Paramètres</Label>
         <Label id="logoutLabel">Déconnexion</Label>
         <Label id="quitLabel">Quitter</Label>
+        <Label id="minimizeLabel">Réduire</Label>
     </account>
     <dialogs>
 
@@ -106,6 +106,7 @@
         <emailUpdateSuccess title="Succès">Votre email a été mise à jour avec succès</emailUpdateSuccess>
         <productActivatedSuccess title="Succès">Votre produit a été activé avec succès</productActivatedSuccess>
         <langUpdateSuccess title="Succès">La langue des Cours a été mise à jour avec succès</langUpdateSuccess>
+        <activateAccountPlease title="Compte désactivé">Veuillez activer votre compte !</activateAccountPlease>
     </dialogs>
     <coverview>
         <Label id="readLabel">Temps de Lecture</Label>
@@ -119,5 +120,6 @@
         <statsTitle>Statistiques</statsTitle>
         <generalOverview>Vue Générale</generalOverview>
         <paramsTitle>Paramètres</paramsTitle>
+        <chooseProfilePhoto>Choisir une photo de profile</chooseProfilePhoto>
     </miscellaneous>
 </content>

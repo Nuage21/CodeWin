@@ -378,6 +378,7 @@ public class Auth_Controller {
                     LanguageManager.loadLangData(Settings.projectPath + "\\lang\\" + l.toLowerCase() + ".xml");
                     Settings.appLang = l.toLowerCase();
                     LanguageManager.resyncLanguage(loader, "authenticator");
+                    LanguageManager.writeLanguages();
                 });
             }
 

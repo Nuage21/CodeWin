@@ -20,6 +20,8 @@ public class AccountPane_Controller {
     @FXML
     Pane quitPane;
 
+    @FXML Pane minimizePane;
+
     @FXML
     VBox daddyVBox;
 
@@ -30,10 +32,16 @@ public class AccountPane_Controller {
     @FXML void initialize()
     {
         quitPane.setOnMouseClicked( event -> {
-            Platform.exit();
+            stage.close();
+            Settings.appStage.close();
             System.exit(0);
+            Platform.exit();
         });
 
+        minimizePane.setOnMouseClicked(mouseEvent -> {
+            stage.close();
+            Settings.appStage.setIconified(true);
+        });
         daddyVBox.setOnMouseEntered(event -> {
             isMouseEntered = true;
         });

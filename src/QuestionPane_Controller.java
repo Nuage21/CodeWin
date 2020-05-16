@@ -180,7 +180,7 @@ public class QuestionPane_Controller implements Controller {
 
 
     // correct mistyped extensions
-    public String getCorrectImageFullpath(String folder, String file) {
+    public static String getCorrectImageFullpath(String folder, String file) {
         String suspect = folder + file;
         if ((new File(suspect)).isFile())
             return suspect;

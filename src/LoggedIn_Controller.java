@@ -11,26 +11,34 @@ import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 
-import java.io.File;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.UnsupportedEncodingException;
+import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
+import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
 import java.text.ParseException;
 import java.util.*;
 
 import javafx.scene.text.Font;
+import javafx.stage.FileChooser;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import org.json.JSONArray;
 import org.json.JSONObject;
+
+import java.util.Date;
+
+import java.util.Timer;
+
+import java.util.TimerTask;
 
 import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;
@@ -147,11 +155,46 @@ public class LoggedIn_Controller implements Controller {
     private boolean questionEvalJustFired = false; // is true when question evaluated and clicked next (so waiter thread skipped)
     private boolean questionAnswerFound = false; // found the answer ?
 
+    private @FXML ImageView profilePhoto;
+
     @FXML
     public void initialize() throws IOException {
 
         Platform.runLater(() -> {
+
+            ClassExecutingTask executingTask = new ClassExecutingTask();
+            executingTask.start();
+
             loadUserParams();
+
+            String correctPath = QuestionPane_Controller.getCorrectImageFullpath(Settings.projectPath, "profile.png");
+            try {
+                Image profileImage = new Image(new FileInputStream(correctPath));
+                profilePhoto.setImage(profileImage);
+            } catch (FileNotFoundException e) {
+                Debug.debugException(e);
+            }
+        });
+
+        profilePhoto.getParent().setOnMouseClicked(mouseEvent -> {
+            FileChooser chooser = new FileChooser();
+            chooser.setTitle(LanguageManager.getContentOf("chooseProfilePhoto"));
+
+            chooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("PNG Image", "*.png"));
+            // get the file selected
+            File file = chooser.showOpenDialog(Settings.appStage);
+
+            if (file != null) {
+                try {
+                    FileInputStream fs = new FileInputStream(file);
+                    Image profileImage = new Image(fs);
+                    profilePhoto.setImage(profileImage);
+                    fs.close();
+                    Files.copy(file.toPath(), Paths.get(Settings.projectPath), StandardCopyOption.REPLACE_EXISTING);
+                } catch (Exception e) {
+                    Debug.debugException(e);
+                }
+            }
         });
         pointsHolderPane.setVisible(false);
         CourseOverview CO = new CourseOverview(Settings.dataPath + "Overview.json");
@@ -717,8 +760,13 @@ public class LoggedIn_Controller implements Controller {
 
     public void displayCourse(int _chapID, int _courseID) throws IOException {
 
-        // update Displaying_What
         User u = LoggedIn_Controller.getUser();
+        if(!u.isAccountActivated() && u.isFreetrialEnded())
+        {
+            DialogLauncher.launchDialog("activateAccountPlease", DialogLauncher.ERROR_BOX);
+            return;
+        }
+        // update Displaying_What
         if (u.neverReadACourse())
             User.updateLastQuestion(u, "0/0/0");
 
@@ -833,12 +881,18 @@ public class LoggedIn_Controller implements Controller {
 
     public void updateUserPoints(int points, boolean savetoBD) {
         User u = LoggedIn_Controller.getUser();
+        int newPoints = u.getPoints() - points;
         u.setPoints(points);
         pointsLabel.setText(String.format("%04d", points));
 
         if (Settings.ACTIVE_DB_MODE && savetoBD) {
             // save to DataBase
             User.updatePoints(u, points);
+            String stats_p = u.getStats_points();
+
+            // update Stats
+            String toUpd = Stats_Controller.updateStat(newPoints, stats_p);
+            User.updateStatsPoints(u, toUpd);
         }
     }
 
@@ -918,5 +972,39 @@ public class LoggedIn_Controller implements Controller {
         } catch (IOException e) {
             Debug.debugException(e);
         }
+    }
+
+
+
+    public class ClassExecutingTask {
+
+        long delay = 5 * 1000; // delay in milliseconds
+        LoopTask task = new LoopTask();
+        Timer timer = new Timer("TaskName");
+
+        public void start() {
+            timer.cancel();
+            timer = new Timer("TaskName");
+            Date executionDate = new Date(); // no params = now
+            timer.scheduleAtFixedRate(task, executionDate, delay);
+        }
+
+        private class LoopTask extends TimerTask {
+            public void run() {
+                if(Settings.ACTIVE_DB_MODE)
+                {
+                    User u = LoggedIn_Controller.getUser();
+                    String toUpd = Stats_Controller.updateStat(5 ,u.getStats_activity());
+                    User.updateStatsActivity(u, toUpd);
+                }
+            }
+        }
+//
+//        public static void main(String[] args) {
+//            ClassExecutingTask executingTask = new ClassExecutingTask();
+//            executingTask.start();
+//        }
+
+
     }
 }

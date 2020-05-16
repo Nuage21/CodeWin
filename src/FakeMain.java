@@ -44,6 +44,7 @@ public class FakeMain {
             Debug.debugMsg("" + pwd);
             Debug.debugMsg("" + port);
 
+            sc.close();
         } catch (Exception e) {
             Debug.debugException(e);
         }
@@ -54,6 +55,7 @@ public class FakeMain {
             Settings.appLang = sc.nextLine().split("[=]")[1].trim();
             Settings.courseLang = sc.nextLine().split("[=]")[1].trim();
             Settings.dataPath += Settings.courseLang+ "\\";
+            sc.close();
         } catch (Exception e) {
             Debug.debugException(e);
         }

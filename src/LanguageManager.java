@@ -109,7 +109,7 @@ public class LanguageManager {
             myWriter.write("appLang = " + Settings.appLang + "\n");
             myWriter.write("courseLang = " + Settings.courseLang + "\n");
             myWriter.write("firstTime = 0");
-
+            myWriter.close();
         }
         catch (Exception e)
         {

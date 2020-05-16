@@ -17,6 +17,7 @@ public class Main extends Application {
 
         if(Settings.SKIP_AUTHENTICATION)
         {
+
             User u = new User("Barack_Hawaii_123", "Hakim123l;", "obama@wh.gov", "Barack", "Obama", java.sql.Date.valueOf(LocalDate.of(2000, 11, 9)), "Honolulu, Hawaii, United States", "(860)-231-1234");
             LoggedIn_Controller.setUser(u);
             FXMLLoader loader = new FXMLLoader(getClass().getResource("LoggedIn.fxml"));
