@@ -294,6 +294,7 @@ public class Params_Controller {
                 if (state) {
                     Design.setVisible(notActivatedPane, false);
                     Design.setVisible(enterKeyPane, false);
+                    Design.setVisible(activatedPane, true);
                     DialogLauncher.launchDialog("productActivatedSuccess", DialogLauncher.SUCCESS_BOX);
                 } else
                     Checker.showConnexionError();

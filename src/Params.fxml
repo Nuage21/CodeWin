@@ -205,19 +205,19 @@
                               <Font name="Rockwell" size="23.0" />
                            </font>
                         </Label>
-                        <Label fx:id="emailLabel" layoutX="136.0" layoutY="145.0" prefHeight="28.0" text="ih_beldjoudi@esi.dz">
+                        <Label fx:id="emailLabel" layoutX="182.0" layoutY="146.0" prefHeight="28.0" text="ih_beldjoudi@esi.dz">
                            <font>
-                              <Font name="Times New Roman" size="26.0" />
+                              <Font name="Times New Roman" size="22.0" />
                            </font>
                         </Label>
-                        <Label fx:id="surnameLabel" layoutX="141.0" layoutY="41.0" prefHeight="28.0" text="Beldjoudi">
+                        <Label fx:id="surnameLabel" layoutX="180.0" layoutY="42.0" prefHeight="28.0" text="Beldjoudi">
                            <font>
-                              <Font name="Times New Roman" size="26.0" />
+                              <Font name="Times New Roman" size="23.0" />
                            </font>
                         </Label>
                         <Label fx:id="firstnameLabel" layoutX="633.0" layoutY="38.0" prefHeight="28.0" text="Hakim">
                            <font>
-                              <Font name="Times New Roman" size="26.0" />
+                              <Font name="Times New Roman" size="23.0" />
                            </font>
                         </Label>
                         <TextField fx:id="newEmailTField" layoutX="485.0" layoutY="139.0" prefHeight="40.0" prefWidth="265.0" promptText="Nouvelle Email">
@@ -261,9 +261,9 @@
                               <Font name="Rockwell" size="23.0" />
                            </font>
                         </Label>
-                        <Label fx:id="mobileLabel" layoutX="959.0" layoutY="39.0" prefHeight="28.0" text="Hakim">
+                        <Label fx:id="mobileLabel" layoutX="979.0" layoutY="40.0" prefHeight="28.0" text="Hakim">
                            <font>
-                              <Font name="Times New Roman" size="26.0" />
+                              <Font name="Times New Roman" size="23.0" />
                            </font>
                         </Label>
                         <PasswordField fx:id="codePField" layoutX="1032.0" layoutY="138.0" prefHeight="45.0" prefWidth="149.0" promptText="Code">
@@ -351,7 +351,7 @@
                               <Cursor fx:constant="DEFAULT" />
                            </cursor>
                         </Label>
-                        <ComboBox fx:id="langCBox" layoutX="270.0" layoutY="20.0" prefHeight="32.0" prefWidth="247.0" visibleRowCount="5" />
+                        <ComboBox fx:id="langCBox" layoutX="235.0" layoutY="20.0" prefHeight="32.0" prefWidth="282.0" visibleRowCount="5" />
                         <Button fx:id="saveLangButton" layoutX="585.0" layoutY="14.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="134.0" styleClass="save-btn" text="Save">
                            <font>
                               <Font name="Rockwell" size="18.0" />
@@ -392,7 +392,7 @@
                <center>
                   <Pane prefHeight="67.0" prefWidth="1197.0" BorderPane.alignment="CENTER">
                      <children>
-                        <Label fx:id="helpTitleLabel" layoutX="65.0" layoutY="16.0" prefHeight="28.0" text="Aide">
+                        <Label fx:id="helpTitleLabel" layoutX="65.0" layoutY="16.0" prefHeight="28.0" styleClass="param-label" text="Aide">
                            <font>
                               <Font name="Rockwell" size="23.0" />
                            </font>

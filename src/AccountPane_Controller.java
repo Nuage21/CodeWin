@@ -34,8 +34,8 @@ public class AccountPane_Controller {
         quitPane.setOnMouseClicked( event -> {
             stage.close();
             Settings.appStage.close();
-            System.exit(0);
             Platform.exit();
+            System.exit(0);
         });
 
         minimizePane.setOnMouseClicked(mouseEvent -> {

@@ -64,7 +64,9 @@ public class EmailConfirm_Controller implements Controller{
 
         errorPane.setVisible(false); // hide no error (left visible for design purposes)
         cancealButton.setOnMouseClicked(mouseEvent -> {
+            Settings.appStage.close();
             Platform.exit();
+            System.exit(0);
         });
 
         digits.add(c1);

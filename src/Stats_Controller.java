@@ -227,6 +227,10 @@ public class Stats_Controller implements Controller {
         GregorianCalendar calendar = new GregorianCalendar();
         LocalDate tm = calendar.toZonedDateTime().toLocalDate();
         String s = tm.format(DateTimeFormatter.ofPattern("MM/dd"));
+
+        if(chaine_intiale.equals(""))
+            return s + "," + Integer.toString(value);
+
         if (chaine_intiale.contains(s)) {
             int last = Integer.parseInt(chaine_intiale.substring(chaine_intiale.lastIndexOf(s) + 6));
             chaine_intiale = chaine_intiale.substring(0, chaine_intiale.indexOf(s) - 1);
@@ -245,7 +249,6 @@ public class Stats_Controller implements Controller {
         if (chaine_sauvgarde.length() > 4) {
             for (String s : chaine_sauvgarde.split("-")) {
                 String[] date = s.split(",");
-
                 ret.put(date[0], Integer.parseInt(date[1]));
                 // Debug.debugMsg("" + date[0]+"  "+date[1]);
             }

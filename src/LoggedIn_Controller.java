@@ -768,7 +768,10 @@ public class LoggedIn_Controller implements Controller {
         }
         // update Displaying_What
         if (u.neverReadACourse())
+        {
+            LoggedIn_Controller.getUser().setLastAnsweredQuestion("0/0/0");
             User.updateLastQuestion(u, "0/0/0");
+        }
 
         this.setDiplayingWhat(Settings.DISPLAYING_COURSE);
         CourseCoord.CO = this.courseCO; // static

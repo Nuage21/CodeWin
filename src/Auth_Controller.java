@@ -125,12 +125,16 @@ public class Auth_Controller {
         applyTabStyle(signupTab, true);
 
         signInCancealBtn.setOnAction((event) -> {
+            Settings.appStage.close();
             Platform.exit();
+            System.exit(0);
 
         });
 
         signUpCancealBtn.setOnAction((event) -> {
+            Settings.appStage.close();
             Platform.exit();
+            System.exit(0);
         });
 
         signinTab.setOnSelectionChanged(event -> {
