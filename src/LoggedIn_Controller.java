@@ -488,7 +488,7 @@ public class LoggedIn_Controller implements Controller {
 
         SwitchButton sw = new SwitchButton();
         volumeHolder.getChildren().add(sw);
-        sw.setOnMouseClicked(mouseEvent -> Settings.volume = 0.6f - Settings.volume);
+        sw.setOnMouseClicked(mouseEvent -> Settings.volume = 0.7f - Settings.volume);
     }
 
     public ArrayList<CourseCoord> getCoursesThatContains(String fetchQuery) {
@@ -770,12 +770,28 @@ public class LoggedIn_Controller implements Controller {
         if (u.neverReadACourse())
         {
             LoggedIn_Controller.getUser().setLastAnsweredQuestion("0/0/0");
-            User.updateLastQuestion(u, "0/0/0");
+
+            Task<Void> updater = new Task<Void>() {
+                @Override
+                protected Void call() throws Exception {
+                    User.updateLastQuestion(u, "0/0/0");
+                    return null;
+                }
+            };
+            new Thread(updater).start();
+
         }
 
         this.setDiplayingWhat(Settings.DISPLAYING_COURSE);
         CourseCoord.CO = this.courseCO; // static
-        this.courseCoord = new CourseCoord(_chapID, _courseID);
+        CourseCoord c = new CourseCoord(_chapID, _courseID);
+        int cFirstQst = c.getQuestions().get(0);
+        if(!u.isQuesationAnswered(cFirstQst - 1))
+        {
+            DialogLauncher.launchDialog("courseNotReached", DialogLauncher.ERROR_BOX);
+            return;
+        }
+        this.courseCoord = c;
 
         FXMLLoader coursePaneLoader = new FXMLLoader(getClass().getResource("CoursePane.fxml"));
         Parent readCourseSPane = null;
@@ -884,18 +900,34 @@ public class LoggedIn_Controller implements Controller {
 
     public void updateUserPoints(int points, boolean savetoBD) {
         User u = LoggedIn_Controller.getUser();
-        int newPoints = u.getPoints() - points;
+        int newPoints = points - u.getPoints();
         u.setPoints(points);
         pointsLabel.setText(String.format("%04d", points));
 
         if (Settings.ACTIVE_DB_MODE && savetoBD) {
             // save to DataBase
-            User.updatePoints(u, points);
+
+            Task<Void> pointsUpdater = new Task<Void>() {
+                @Override
+                protected Void call() throws Exception {
+                    User.updatePoints(u, points);
+                    return null;
+                }
+            };
+            new Thread(pointsUpdater).start();
             String stats_p = u.getStats_points();
 
             // update Stats
             String toUpd = Stats_Controller.updateStat(newPoints, stats_p);
-            User.updateStatsPoints(u, toUpd);
+
+            Task<Void> updater = new Task<Void>() {
+                @Override
+                protected Void call() throws Exception {
+                    User.updateStatsPoints(u, toUpd);
+                    return null;
+                }
+            };
+            new Thread(updater).start();
         }
     }
 
@@ -904,7 +936,14 @@ public class LoggedIn_Controller implements Controller {
         String newLQst = courseCoord.chapterID + "/" + courseCoord.courseID + "/" + (isCourse ? "-" : "") + courseQuestions.get(questionsOffset);
         u.setLastAnsweredQuestion(newLQst);
         if (Settings.ACTIVE_DB_MODE) {
-            User.updateLastQuestion(u, newLQst);
+            Task<Void> updater = new Task<Void>() {
+                @Override
+                protected Void call() throws Exception {
+                    User.updateLastQuestion(u, newLQst);
+                    return null;
+                }
+            };
+            new Thread(updater).start();
         }
     }
 
@@ -998,7 +1037,15 @@ public class LoggedIn_Controller implements Controller {
                 {
                     User u = LoggedIn_Controller.getUser();
                     String toUpd = Stats_Controller.updateStat(5 ,u.getStats_activity());
-                    User.updateStatsActivity(u, toUpd);
+
+                    Task<Void> updater = new Task<Void>() {
+                        @Override
+                        protected Void call() throws Exception {
+                            User.updateStatsActivity(u, toUpd);
+                            return null;
+                        }
+                    };
+                    new Thread(updater).start();
                 }
             }
         }

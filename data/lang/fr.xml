@@ -107,6 +107,7 @@
         <productActivatedSuccess title="Succès">Votre produit a été activé avec succès</productActivatedSuccess>
         <langUpdateSuccess title="Succès">La langue des Cours a été mise à jour avec succès</langUpdateSuccess>
         <activateAccountPlease title="Compte désactivé">Veuillez activer votre compte !</activateAccountPlease>
+        <courseNotReached title="Cours non atteint encore!">Veuillez completer les cours et questions précédantes d'abord!</courseNotReached>
     </dialogs>
     <coverview>
         <Label id="readLabel">Temps de Lecture</Label>
@@ -121,5 +122,16 @@
         <generalOverview>Vue Générale</generalOverview>
         <paramsTitle>Paramètres</paramsTitle>
         <chooseProfilePhoto>Choisir une photo de profile</chooseProfilePhoto>
+
+        <pseudoNotTaken>Pseudo non utilisé</pseudoNotTaken>
+        <least6Chars>Au moins 6 characteres</least6Chars>
+        <least8Chars>Au moins 8 characteres</least8Chars>
+        <least3Digits>Au moins 3 chiffres</least3Digits>
+        <specialChar>au moins un caractére special</specialChar>
+        <mailFormat>Format de mail valide</mailFormat>
+        <unusedMail>Email non utilisé</unusedMail>
+        <fillField>Champs remplis</fillField>
+        <dateSelect>Selectionner une date</dateSelect>
+        <pleaseFillField>Veuillez remplir ce champ correctement</pleaseFillField>
     </miscellaneous>
 </content>

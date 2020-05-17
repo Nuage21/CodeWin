@@ -63,7 +63,7 @@ public class LogErrorController implements Initializable {
                 "-fx-border-radius: 18 18 18 18;" +
                 "-fx-background-color: #ff1a1a;");
 
-        Label er = new Label("Veuillez remplir ce champ correctement");
+        Label er = new Label(LanguageManager.getContentOf("pleaseFillField"));
         er.setStyle("-fx-text-fill: white");
         Image image = null;
         try {

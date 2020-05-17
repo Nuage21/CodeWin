@@ -20,7 +20,7 @@
          <left>
                   <Pane prefHeight="37.0" prefWidth="1790.0" style="-fx-background-color: #1d1d1d;" BorderPane.alignment="CENTER">
                       <children>
-                          <StackPane layoutX="895.0" layoutY="6.0" prefHeight="27.0" prefWidth="29.0" style="-fx-background-radius: 30; -fx-background-color: #e1e1e1;">
+                          <StackPane layoutX="890.0" layoutY="6.0" prefHeight="27.0" prefWidth="29.0" style="-fx-background-radius: 30; -fx-background-color: #e1e1e1;">
                               <children>
                                   <ImageView fitHeight="22.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true" style="-fx-border-radius: 56;">
                                       <image>
@@ -34,7 +34,7 @@
                                   <Font size="13.0" />
                               </font>
                           </Label>
-                  <Hyperlink fx:id="githubHyperLink" layoutX="933.0" layoutY="8.0" style="-fx-border-color: transparent;" text="Check us on Github" />
+                  <Hyperlink fx:id="githubHyperLink" layoutX="927.0" layoutY="8.0" style="-fx-border-color: transparent;" text="Check us on Github" />
                   <StackPane layoutX="1061.0" layoutY="1.0" prefHeight="31.0" prefWidth="25.0" style="-fx-padding: 10; -fx-background-color: black; -fx-background-radius: 20;">
                      <children>
                         <ImageView fitHeight="15.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
@@ -207,9 +207,9 @@
         </BorderPane>
     </top>
     <left>
-      <ScrollPane hbarPolicy="NEVER" style="-fx-background-color: #c1c1c1;" BorderPane.alignment="CENTER">
+      <ScrollPane hbarPolicy="NEVER" styleClass="left-spane" BorderPane.alignment="CENTER">
          <content>
-              <VBox fx:id="Sidebar_VBox" style="-fx-background-color: #e1e1e1;">
+              <VBox fx:id="Sidebar_VBox" style="-fx-background-color: #e1e1e1 !important;">
                   <children>
                       <Pane fx:id="Side_CourseName_Pane" prefHeight="117.0" prefWidth="283.0" styleClass="course-head-pane">
                           <children>
@@ -244,7 +244,7 @@
                           </children>
                       </Pane>
                   <VBox fx:id="sidebarChaptersHolder" prefHeight="514.0" prefWidth="283.0" />
-                      <VBox prefHeight="265.0" prefWidth="283.0" style="-fx-border-width: 1 0 0 0; -fx-border-color: #c1c1c1;">
+                      <VBox prefHeight="265.0" prefWidth="283.0" style="-fx-border-width: 1 0 0 0; -fx-border-color: #c1c1c1; -fx-background-color: #e1e1e1;">
                           <children>
                               <Pane fx:id="Side_Params_Pane" prefHeight="63.0" prefWidth="283.0" styleClass="side-left-pane">
                                   <children>
@@ -300,7 +300,7 @@
                                       </StackPane>
                                   </children>
                               </Pane>
-                        <Pane prefHeight="64.0" prefWidth="283.0" styleClass="side-left-pane">
+                        <Pane prefHeight="59.0" prefWidth="283.0" styleClass="side-left-pane">
                            <children>
                               <Label fx:id="Side_Help_Label" layoutX="71.0" layoutY="14.0" text="Aide" textFill="#515151">
                                  <font>

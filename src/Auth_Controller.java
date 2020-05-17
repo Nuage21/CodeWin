@@ -433,8 +433,8 @@ public class Auth_Controller {
         }
         boolean lenght = usr.length() >= 6;
         LogErrorController.list.clear();
-        LogErrorController.list.add(new Msg("pseudo non utilisé ", is_not_taken));
-        LogErrorController.list.add(new Msg("plus de 6 characteres", lenght));
+        LogErrorController.list.add(new Msg(LanguageManager.getContentOf("pseudoNotTaken"), is_not_taken));
+        LogErrorController.list.add(new Msg(LanguageManager.getContentOf("least6Chars"), lenght));
         return lenght && is_not_taken;
     }
 
@@ -444,16 +444,16 @@ public class Auth_Controller {
         boolean num = usr.matches("^.*[0-9].*.[0-9].*");
         boolean spec = usr.matches("^.*(?=.*[*#@_;,&çà]).*$");
         LogErrorController.list.clear();
-        LogErrorController.list.add(new Msg("au moins 8 caractéres", lengh));
-        LogErrorController.list.add(new Msg("au moins 3 chiffres", num));
-        LogErrorController.list.add(new Msg("au moins un caractére special", spec));
+        LogErrorController.list.add(new Msg(LanguageManager.getContentOf("least8Chars"), lengh));
+        LogErrorController.list.add(new Msg(LanguageManager.getContentOf("least3Digits"), num));
+        LogErrorController.list.add(new Msg(LanguageManager.getContentOf("specialChar"), spec));
         return lengh && num && spec;
     }
 
     public boolean notEmpty(TextField t) {
         boolean emp = t.getText().length() != 0;
         LogErrorController.list.clear();
-        LogErrorController.list.add(new Msg("remplire ce champ", emp));
+        LogErrorController.list.add(new Msg(LanguageManager.getContentOf("fillField"), emp));
         return emp;
     }
 
@@ -469,15 +469,15 @@ public class Auth_Controller {
             // valide_mail = User.userEmailExiste(email);
         }
         LogErrorController.list.clear();
-        LogErrorController.list.add(new Msg("format de mail valide", valide_mail));
-        LogErrorController.list.add(new Msg("Email non utilisé", is_not_used));
+        LogErrorController.list.add(new Msg(LanguageManager.getContentOf("mailFormat"), valide_mail));
+        LogErrorController.list.add(new Msg(LanguageManager.getContentOf("unusedMail"), is_not_used));
         return valide_mail && is_not_used;
     }
 
     public boolean dateVer() {
         boolean empty = DatePickerField.getValue() != null;
         LogErrorController.list.clear();
-        LogErrorController.list.add(new Msg("Selectionner une date", empty));
+        LogErrorController.list.add(new Msg(LanguageManager.getContentOf("dateSelect"), empty));
         return empty;
     }
 

@@ -231,12 +231,11 @@ public class Stats_Controller implements Controller {
         if(chaine_intiale.equals(""))
             return s + "," + Integer.toString(value);
 
-        if (chaine_intiale.contains(s)) {
-            int last = Integer.parseInt(chaine_intiale.substring(chaine_intiale.lastIndexOf(s) + 6));
-            chaine_intiale = chaine_intiale.substring(0, chaine_intiale.indexOf(s) - 1);
+        int index = chaine_intiale.indexOf(s);
+        if (index >= 0) {
+            int last = Integer.parseInt(chaine_intiale.substring(chaine_intiale.lastIndexOf(',') + 1));
+            chaine_intiale = (index - 1 >= 1)?chaine_intiale.substring(0, index-1):"";
             value += last;
-
-
         }
         Debug.debugMsg("" + chaine_intiale + "-" + s + "," + Integer.toString(value));
 

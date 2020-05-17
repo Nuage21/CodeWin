@@ -65,15 +65,4 @@ public class RSAUtil {
         return decrypt(Base64.getDecoder().decode(data.getBytes()), getPrivateKey(base64PrivateKey));
     }
 
-    public static void main(String[] args) throws IllegalBlockSizeException, InvalidKeyException, NoSuchPaddingException, BadPaddingException {
-        try {
-            String encryptedString = Base64.getEncoder().encodeToString(encrypt("Hakim Beldjoudi", publicKey));
-            Debug.debugMsg("" + encryptedString);
-            String decryptedString = RSAUtil.decrypt("PVQcQ3cC2rJaAxWNSihNIbyVC/W7gktFF62dTvJ23o5fjhwkjQl8uTf01Dp4m8EN3AdQCohTeufF/hYsYJYS25yq4itNOoP5wDqa98kwyxkIcr4AZmDbE8zxlgZKtldLUXEMSjSPuI4ggHISuK0vEpNzUHRfrkfG0eUJavHN1Gs=", privateKey);
-            Debug.debugMsg("" + decryptedString);
-        } catch (NoSuchAlgorithmException e) {
-            System.err.println(e.getMessage());
-        }
-
-    }
 }

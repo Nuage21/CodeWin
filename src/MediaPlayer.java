@@ -232,6 +232,7 @@ public class MediaPlayer implements Runnable {
             }
         };
 
-        new Thread(player).start();
+        if(Settings.volume >= 0.1)
+            new Thread(player).start();
     }
 }

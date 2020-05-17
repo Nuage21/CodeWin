@@ -80,3 +80,11 @@
 	-fx-cursor: hand;
 	-fx-text-fill: #2389bc;
 }
+
+.left-spane > .viewport {
+   -fx-background-color: transparent;
+}
+
+.left-spane{
+   -fx-background-color: #e1e1e1;
+}

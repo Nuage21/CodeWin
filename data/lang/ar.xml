@@ -114,6 +114,7 @@
         <productActivatedSuccess title="نجاح"> تم تنشيط منتجك بنجاح</productActivatedSuccess>
         <langUpdateSuccess title="Succès">تم تحديث لغة الدروس بنجاح</langUpdateSuccess>
         <activateAccountPlease title="الحساب غير مفعل">يرجى تفعيل حسابك !</activateAccountPlease>
+        <courseNotReached title="لم تصل الدورة!">يرجى إكمال الدورات والأسئلة السابقة</courseNotReached>
     </dialogs>
     <coverview>
         <Label id="readLabel">وقت القراءة</Label>
@@ -128,5 +129,16 @@
         <generalOverview>نظرة عامة</generalOverview>
         <paramsTitle>الاعدادات</paramsTitle>
         <chooseProfilePhoto>اختر صورة ملف شخصي</chooseProfilePhoto>
+
+        <pseudoNotTaken>اسم المستخدم غير مستخدم</pseudoNotTaken>
+        <least6Chars>ما لا يقل عن 6 سماسرة</least6Chars>
+        <least8Chars>ما لا يقل عن 3 سماسرة</least8Chars>
+        <least3Digits>3 أرقام على الأقل</least3Digits>
+        <specialChar> على الأقل خاص</specialChar>
+        <mailFormat>بريد إلكتروني صالح</mailFormat>
+        <unusedMail>البريد الإلكتروني غير المستخدم</unusedMail>
+        <fillField>الحقل ممتلئ</fillField>
+        <dateSelect>حدد تاريخًا</dateSelect>
+        <pleaseFillField>يرجى ملء هذا الحقل بشكل صحيح</pleaseFillField>
     </miscellaneous>
 </content>
