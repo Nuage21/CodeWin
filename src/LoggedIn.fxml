@@ -109,11 +109,7 @@
                     <children>
                         <StackPane layoutX="14.0" layoutY="7.0" prefHeight="47.0" prefWidth="50.0" style="-fx-background-radius: 30; -fx-background-color: #e1e1e1;">
                             <children>
-                                <ImageView fx:id="profilePhoto" fitHeight="33.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true" style="-fx-border-radius: 56;">
-                                    <image>
-                                        <Image url="@img/test/profile.jpg" />
-                                    </image>
-                                </ImageView>
+                                <ImageView fx:id="profilePhoto" fitHeight="33.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true" style="-fx-border-radius: 56;" />
                             </children>
                         </StackPane>
                         <Label fx:id="accountUsernameLabel" layoutX="78.0" layoutY="13.0" prefHeight="36.0" prefWidth="169.0" scaleShape="false" styleClass="accountUsername" text="Barack Obama" textFill="WHITE">

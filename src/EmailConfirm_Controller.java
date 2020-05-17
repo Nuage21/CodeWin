@@ -161,7 +161,7 @@ public class EmailConfirm_Controller implements Controller{
     {
         correctCode = generate6Digits();
         MailSender ms = new MailSender(Settings.CodeWinEmail, Settings.CodeWinEmailPwd);
-        return ms.sendConfirmationMail(emailLabel.getText(), correctCode);
+        return ms.sendConfirmationMail(recipient, correctCode);
     }
 
     private String getClipboardString(){

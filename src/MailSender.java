@@ -67,8 +67,8 @@ public class MailSender {
 
             Scanner scanner = null;
             try {
-                scanner = new Scanner(new File(getClass().getResource("mail.md").getFile()), "UTF-8");
-            } catch (FileNotFoundException e) {
+                scanner = new Scanner(getClass().getResourceAsStream("mail.md"), "UTF-8");
+            } catch (Exception e) {
                 Debug.debugException(e);
             }
             String mailHtml = scanner.useDelimiter("\\A").next();
