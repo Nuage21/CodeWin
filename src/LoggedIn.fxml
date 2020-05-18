@@ -34,7 +34,7 @@
                                   <Font size="13.0" />
                               </font>
                           </Label>
-                  <Hyperlink fx:id="githubHyperLink" layoutX="927.0" layoutY="8.0" style="-fx-border-color: transparent;" text="Check us on Github" />
+                  <Hyperlink fx:id="githubHyperLink" layoutX="927.0" layoutY="8.0" style="-fx-border-color: transparent; -fx-text-fill: #2389bc !important;" text="Check us on Github" />
                   <StackPane layoutX="1061.0" layoutY="1.0" prefHeight="31.0" prefWidth="25.0" style="-fx-padding: 10; -fx-background-color: black; -fx-background-radius: 20;">
                      <children>
                         <ImageView fitHeight="15.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
@@ -300,7 +300,7 @@
                                       </StackPane>
                                   </children>
                               </Pane>
-                        <Pane prefHeight="59.0" prefWidth="283.0" styleClass="side-left-pane">
+                        <Pane fx:id="Side_Help_Pane" prefHeight="59.0" prefWidth="283.0" styleClass="side-left-pane">
                            <children>
                               <Label fx:id="Side_Help_Label" layoutX="71.0" layoutY="14.0" text="Aide" textFill="#515151">
                                  <font>

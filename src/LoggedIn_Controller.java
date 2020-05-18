@@ -17,7 +17,9 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 
+import java.awt.*;
 import java.io.*;
+import java.net.URL;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -96,6 +98,8 @@ public class LoggedIn_Controller implements Controller {
 
     @FXML
     private Pane Side_CourseName_Pane;
+
+    @FXML private Pane Side_Help_Pane;
 
     @FXML
     private Pane Side_GO_Pane; // sidebar's general overview Pane
@@ -209,8 +213,21 @@ public class LoggedIn_Controller implements Controller {
         side_bar_activated_pane = Side_GO_Pane;
 
         githubHyperLink.setOnMouseClicked(mouseEvent -> {
-            Settings.application.getHostServices().showDocument(Settings.githubLink);
+            try {
+                Desktop.getDesktop().browse(new URL(Settings.githubLink).toURI());
+            } catch (Exception e) {
+                Debug.debugException(e);
+            }
         });
+
+        Side_Help_Pane.setOnMouseClicked(mouseEvent -> {
+            try {
+                Desktop.getDesktop().browse(new URL("file:///" + Settings.projectPath + "help\\index.html").toURI());
+            } catch (Exception e) {
+                Debug.debugException(e);
+            }
+        });
+
         Side_Stats_Pane.setOnMouseClicked(event -> {
             Central_Container_SPane.getChildren().clear();
             try {
@@ -339,8 +356,8 @@ public class LoggedIn_Controller implements Controller {
                                     if (eval) {
                                         if (questionsOffset + 1 < courseQuestions.size()) // not last question within chapter
                                         {
-                                            displayNeighborQuestion(true);
                                             updateLastQuestion(false);
+                                            displayNeighborQuestion(true);
                                         } else {
                                             displayNeighborCourse(true);
                                             updateLastQuestion(true);
@@ -782,7 +799,6 @@ public class LoggedIn_Controller implements Controller {
 
         }
 
-        this.setDiplayingWhat(Settings.DISPLAYING_COURSE);
         CourseCoord.CO = this.courseCO; // static
         CourseCoord c = new CourseCoord(_chapID, _courseID);
         int cFirstQst = c.getQuestions().get(0);
@@ -791,6 +807,8 @@ public class LoggedIn_Controller implements Controller {
             DialogLauncher.launchDialog("courseNotReached", DialogLauncher.ERROR_BOX);
             return;
         }
+
+        this.setDiplayingWhat(Settings.DISPLAYING_COURSE);
         this.courseCoord = c;
 
         FXMLLoader coursePaneLoader = new FXMLLoader(getClass().getResource("CoursePane.fxml"));
@@ -886,8 +904,7 @@ public class LoggedIn_Controller implements Controller {
     }
 
     public String __(String s) {
-        return s;
-//        return new String(s.getBytes(StandardCharsets.UTF_8));
+        return new String(s.getBytes(StandardCharsets.UTF_8));
     }
 
     public void setLText(Label l, String s) {
@@ -1020,7 +1037,7 @@ public class LoggedIn_Controller implements Controller {
 
     public class ClassExecutingTask {
 
-        long delay = 5 * 1000; // delay in milliseconds
+        long delay = 5 * 60 * 1000; // delay in milliseconds
         LoopTask task = new LoopTask();
         Timer timer = new Timer("TaskName");
 

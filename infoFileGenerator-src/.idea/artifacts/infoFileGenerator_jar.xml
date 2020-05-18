@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="infoFileGenerator:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/infoFileGenerator_jar</output-path>
+    <root id="archive" name="infoFileGenerator.jar">
+      <element id="module-output" name="infoFileGenerator" />
+    </root>
+  </artifact>
+</component>

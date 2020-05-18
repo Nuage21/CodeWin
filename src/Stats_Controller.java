@@ -228,8 +228,8 @@ public class Stats_Controller implements Controller {
         LocalDate tm = calendar.toZonedDateTime().toLocalDate();
         String s = tm.format(DateTimeFormatter.ofPattern("MM/dd"));
 
-        if(chaine_intiale.equals(""))
-            return s + "," + Integer.toString(value);
+        if(chaine_intiale.length() <= 2 || chaine_intiale.isEmpty() || chaine_intiale == null)
+            return s + "," + value;
 
         int index = chaine_intiale.indexOf(s);
         if (index >= 0) {
@@ -237,10 +237,12 @@ public class Stats_Controller implements Controller {
             chaine_intiale = (index - 1 >= 1)?chaine_intiale.substring(0, index-1):"";
             value += last;
         }
-        Debug.debugMsg("" + chaine_intiale + "-" + s + "," + Integer.toString(value));
 
+        String finalChaine = chaine_intiale + "-" + s + "," + value;
+        if(finalChaine.charAt(0) == '-')
+            finalChaine = finalChaine.substring(1);
 
-        return chaine_intiale + "-" + s + "," + value;
+        return finalChaine;
     }
 
     public TreeMap ConvertStringTotree(String chaine_sauvgarde) {

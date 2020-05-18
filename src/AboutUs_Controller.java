@@ -3,6 +3,9 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Hyperlink;
 import javafx.stage.Stage;
 
+import java.awt.*;
+import java.net.URL;
+
 
 public class AboutUs_Controller {
 
@@ -19,7 +22,11 @@ public class AboutUs_Controller {
     @FXML public void initialize()
     {
         githubHLink.setOnMouseClicked(mouseEvent -> {
-            Settings.application.getHostServices().showDocument(Settings.githubLink);
+            try {
+                Desktop.getDesktop().browse(new URL(Settings.githubLink).toURI());
+            } catch (Exception e) {
+                Debug.debugException(e);
+            }
         });
 
         quitButton.setOnMouseClicked(mouseEvent -> {

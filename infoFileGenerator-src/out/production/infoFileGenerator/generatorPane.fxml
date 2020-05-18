@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="637.0" prefWidth="683.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="generatorPane_Controller">
+   <children>
+      <Pane prefHeight="88.0" prefWidth="683.0" style="-fx-border-color: #eeeeee; -fx-border-width: 0 0 2 0;">
+         <children>
+            <Label layoutX="383.0" layoutY="25.0" text="info file Generator">
+               <font>
+                  <Font name="Georgia" size="33.0" />
+               </font>
+            </Label>
+            <Label layoutX="22.0" layoutY="18.0" text="CodeWin" textFill="#244c80">
+               <font>
+                  <Font name="Jokerman" size="33.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane prefHeight="88.0" prefWidth="683.0" style="-fx-border-color: #eeeeee; -fx-border-width: 0 0 2 0;">
+         <children>
+            <Label layoutX="68.0" layoutY="33.0" text="Server URL" textAlignment="RIGHT">
+               <font>
+                  <Font name="Georgia" size="19.0" />
+               </font>
+            </Label>
+            <TextField fx:id="urlField" layoutX="225.0" layoutY="30.0" prefHeight="29.0" prefWidth="428.0">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </TextField>
+         </children>
+      </Pane>
+      <Pane prefHeight="88.0" prefWidth="683.0" style="-fx-border-color: #eeeeee; -fx-border-width: 0 0 2 0;">
+         <children>
+            <Label layoutX="87.0" layoutY="33.0" text="Database" textAlignment="RIGHT">
+               <font>
+                  <Font name="Georgia" size="19.0" />
+               </font>
+            </Label>
+            <TextField fx:id="dbField" layoutX="225.0" layoutY="30.0" prefHeight="29.0" prefWidth="428.0">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </TextField>
+         </children>
+      </Pane>
+      <Pane prefHeight="88.0" prefWidth="683.0" style="-fx-border-color: #eeeeee; -fx-border-width: 0 0 2 0;">
+         <children>
+            <Label layoutX="81.0" layoutY="33.0" text="Username">
+               <font>
+                  <Font name="Georgia" size="19.0" />
+               </font>
+            </Label>
+            <TextField fx:id="usernameField" layoutX="225.0" layoutY="30.0" prefHeight="29.0" prefWidth="428.0">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </TextField>
+         </children>
+      </Pane>
+      <Pane prefHeight="88.0" prefWidth="683.0" style="-fx-border-color: #eeeeee; -fx-border-width: 0 0 2 0;">
+         <children>
+            <Label layoutX="85.0" layoutY="33.0" text="Password">
+               <font>
+                  <Font name="Georgia" size="19.0" />
+               </font>
+            </Label>
+            <TextField fx:id="pwdField" layoutX="225.0" layoutY="30.0" prefHeight="29.0" prefWidth="428.0">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </TextField>
+         </children>
+      </Pane>
+      <Pane prefHeight="88.0" prefWidth="683.0" style="-fx-border-color: #eeeeee; -fx-border-width: 0 0 2 0;">
+         <children>
+            <Label layoutX="126.0" layoutY="33.0" text="Port">
+               <font>
+                  <Font name="Georgia" size="19.0" />
+               </font>
+            </Label>
+            <TextField fx:id="portField" layoutX="225.0" layoutY="30.0" prefHeight="29.0" prefWidth="428.0">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </TextField>
+         </children>
+      </Pane>
+      <Pane prefHeight="96.0" prefWidth="683.0" style="-fx-border-color: #eeeeee; -fx-border-width: 0 0 2 0;">
+         <children>
+            <Button fx:id="generateButton" layoutX="529.0" layoutY="21.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="124.0" text="Generate File" />
+            <Button fx:id="quitButton" layoutX="382.0" layoutY="21.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="124.0" text="Quit" />
+         </children>
+      </Pane>
+      <Pane prefHeight="43.0" prefWidth="683.0" style="-fx-border-color: #eeeeee; -fx-border-width: 0 0 2 0; -fx-background-color: #1d1d1d;">
+         <children>
+            <Label layoutX="223.0" layoutY="14.0" text="© 2020 CodeWin Inc. All rights reserved." textFill="WHITE">
+               <font>
+                  <Font name="Georgia" size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+   </children>
+   <effect>
+      <InnerShadow color="#3287bf" height="26.93" radius="25.567500000000003" width="77.34" />
+   </effect>
+</VBox>

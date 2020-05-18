@@ -5,6 +5,9 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
@@ -12,9 +15,11 @@ import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
+import java.awt.*;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.net.URL;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
@@ -90,6 +95,8 @@ public class Params_Controller {
     @FXML
     private Pane freetrialPane;
 
+    @FXML private Label helpTitleLabel;
+
     private ArrayList<ImageView> expanders = new ArrayList<>();
     private ArrayList<BorderPane> extensions = new ArrayList<>();
     private ArrayList<Boolean> expandersState = new ArrayList<>(); // false -> not expanded| true -> expanded
@@ -106,6 +113,14 @@ public class Params_Controller {
         syncUserInfos();
 
         langCBox.setValue(LanguageManager.installed_languages.get(LanguageManager.installed_languages_folders.indexOf(Settings.courseLang)));
+
+        helpTitleLabel.setOnMouseClicked(mouseEvent -> {
+            try {
+                Desktop.getDesktop().browse(new URL("file:///" + Settings.projectPath + "help\\index.html").toURI());
+            } catch (Exception e) {
+                Debug.debugException(e);
+            }
+        });
 
         for(String l : LanguageManager.installed_languages)
             langCBox.getItems().add(l);

@@ -379,6 +379,8 @@ public class Auth_Controller {
             {
                 Label lab = (Label) loader.getNamespace().get("go" + l + "Label");
                 lab.setOnMouseClicked(mouseEvent -> {
+                    if(errorStage != null)
+                        errorStage.close();
                     LanguageManager.loadLangData(Settings.projectPath + "\\lang\\" + l.toLowerCase() + ".xml");
                     Settings.appLang = l.toLowerCase();
                     LanguageManager.resyncLanguage(loader, "authenticator");
