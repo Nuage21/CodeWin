@@ -1,0 +1,5 @@
+{
+  "courses": ["How does a car work", "The maintenance and repair of the vehicle" ],
+  "readTimes": [15, 10],
+  "files": ["course1.json", "course2.json"]
+}

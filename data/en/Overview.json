@@ -1,0 +1,104 @@
+{
+  "courseTitle": "Traffic Laws",
+  "chapterNomination": "Chapter",
+  "chapters": [
+    {
+      "ID": 1,
+      "chapterTitle": "The Rules of Road Traffic",
+      "nCourses": 6,
+      "nQuestions": 60,
+      "nQuizes": 1,
+      "folder": "theme1\\",
+      "courses": ["Road signs","Intersections","Priority rules","The velocity of circulation","The crossing and overtaking","The parking and stopping"]
+    }
+  ,
+    {
+      "ID": 2,
+      "chapterTitle": "The driver",
+      "nCourses": 2,
+      "nQuestions": 20,
+      "nQuizes": 1,
+      "folder": "theme2\\",
+      "courses": ["Knowing well lead - driver attitude", "Be fit to drive"]
+    }
+  ,
+    {
+      "ID": 3,
+      "chapterTitle": "The road",
+      "nCourses": 3,
+      "nQuestions": 23,
+      "nQuizes": 1,
+      "folder": "theme3\\",
+      "courses": ["How to drive in difficult conditions", "Driving on Highway", "How to tackle hazardous areas"]
+    }
+  ,
+    {
+      "ID": 4,
+      "chapterTitle": "The Basics Various",
+      "nCourses": 2,
+      "nQuestions": 10,
+      "nQuizes": 1,
+      "folder": "theme4\\",
+      "courses": ["Administrative documents", "The vehicle loading"]
+    }
+  ,
+    {
+      "ID": 5,
+      "chapterTitle": "Take Exit and its Vehicle",
+      "nCourses": 3,
+      "nQuestions": 15,
+      "nQuizes": 1,
+      "folder": "theme5\\",
+      "courses": ["The installation to the driving position", "The quick check before getting into his car", "Precautions to leave his vehicle"]
+    }
+  ,
+    {
+      "ID": 6,
+      "chapterTitle": "First aid",
+      "nCourses": 3,
+      "nQuestions": 10,
+      "nQuizes": 1,
+      "folder": "theme6\\",
+      "courses": ["Protecting the hilly area", "The assessment of the status of victims", "Help victims"]
+    }
+  ,
+    {
+      "ID": 7,
+      "chapterTitle": "The Other Road Users",
+      "nCourses": 7,
+      "nQuestions": 10,
+      "nQuizes": 1,
+      "folder": "theme7\\",
+      "courses": ["The pedestrian in the Highway Code", "The cyclist in the Highway Code", "The PTW","The buses in the Highway Code","The priority of general interest vehicles","Slow vehicles, bulky, and abnormal loads","The heavy weights" ]
+    },
+    {
+      "ID": 8,
+      "chapterTitle": "The Vehicle Mechanics and Equipment",
+      "nCourses": 2,
+      "nQuestions": 10,
+      "nQuizes": 1,
+      "folder": "theme8\\",
+      "courses": ["How does a car work", "The maintenance and repair of the vehicle" ]
+    }
+  ,
+    {
+      "ID": 9,
+      "chapterTitle": "The environment",
+      "nCourses": 3,
+      "nQuestions": 10,
+      "nQuizes": 1,
+      "folder": "theme9\\",
+      "courses": ["Ecomobility -the alternatives to the car", "Select and maintain your vehicle to reduce your impact", "How to practice eco-driving?" ]
+    }
+  ,
+    {
+      "ID": 10,
+      "chapterTitle": "Safety of Passenger and Vehicle",
+      "nCourses": 3,
+      "nQuestions": 10,
+      "nQuizes": 1,
+      "folder": "theme10\\",
+      "courses": ["Vehicle Safety Equipment", "The safety and accident prevention", "Installing passengers" ]
+    }
+  ]
+}

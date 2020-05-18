@@ -1,0 +1,5 @@
+{
+ "courses": ["Ecomobility - the alternatives to the car", "Select and maintain your vehicle to reduce your impact", "How to practice eco-driving?" ],
+  "readTimes": [15, 10, 12],
+  "files": ["course1.json", "course2.json", "course3.json"]
+}
