@@ -222,7 +222,9 @@ public class LoggedIn_Controller implements Controller {
 
         Side_Help_Pane.setOnMouseClicked(mouseEvent -> {
             try {
-                Desktop.getDesktop().browse(new URL("file:///" + Settings.projectPath + "help\\index.html").toURI());
+                String url = "file:///" + Settings.projectPath + "help\\index.html";
+                url = url.replace(" ", "%20");
+                Desktop.getDesktop().browse(new URL(url).toURI());
             } catch (Exception e) {
                 Debug.debugException(e);
             }
@@ -507,7 +509,6 @@ public class LoggedIn_Controller implements Controller {
 
         SwitchButton sw = new SwitchButton();
         volumeHolder.getChildren().add(sw);
-        sw.setOnMouseClicked(mouseEvent -> Settings.volume = 0.7f - Settings.volume);
     }
 
     public ArrayList<CourseCoord> getCoursesThatContains(String fetchQuery) {

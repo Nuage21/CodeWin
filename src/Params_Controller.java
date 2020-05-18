@@ -116,7 +116,9 @@ public class Params_Controller {
 
         helpTitleLabel.setOnMouseClicked(mouseEvent -> {
             try {
-                Desktop.getDesktop().browse(new URL("file:///" + Settings.projectPath + "help\\index.html").toURI());
+                String url = "file:///" + Settings.projectPath + "help\\index.html";
+                url = url.replace(" ", "%20");
+                Desktop.getDesktop().browse(new URL(url).toURI());
             } catch (Exception e) {
                 Debug.debugException(e);
             }

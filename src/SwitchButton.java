@@ -50,6 +50,7 @@ public class SwitchButton extends StackPane {
                     state = true;
                 }
                 Settings.volumeActivated = !Settings.volumeActivated;
+                e.consume();
             }
         };
 

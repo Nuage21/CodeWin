@@ -20,18 +20,18 @@ public class AccountPane_Controller {
     @FXML
     Pane quitPane;
 
-    @FXML Pane minimizePane;
+    @FXML
+    Pane minimizePane;
 
     @FXML
     VBox daddyVBox;
 
-    private boolean isMouseEntered = false;
-
     private Stage stage;
 
-    @FXML void initialize()
-    {
-        quitPane.setOnMouseClicked( event -> {
+    @FXML
+    void initialize() {
+        quitPane.setOnMouseClicked(event -> {
+            stage.hide();
             stage.close();
             Settings.appStage.close();
             Platform.exit();
@@ -39,36 +39,28 @@ public class AccountPane_Controller {
         });
 
         minimizePane.setOnMouseClicked(mouseEvent -> {
-            stage.close();
+            stage.hide();
             Settings.appStage.setIconified(true);
         });
-        daddyVBox.setOnMouseEntered(event -> {
-            isMouseEntered = true;
+
+        daddyVBox.setOnMouseExited(event -> {
+            stage.setOpacity(0);
+            stage.hide();
+            stage.close();
         });
 
-        daddyVBox.setOnMouseExited( event -> {
-            if (isMouseEntered);
-            {
-                stage.setWidth(0);
-                stage.setHeight(0);
-                stage.hide();
-                stage.close();
-            }
-        });
-
-        signoutPane.setOnMouseClicked(e->{
-            if(isMouseEntered){
-                stage.close();
-                SceneLoader.loadAuthenticator();
-            }
+        signoutPane.setOnMouseClicked(e -> {
+            stage.hide();
+            stage.close();
+            SceneLoader.loadAuthenticator();
         });
 
     }
 
-    public Pane getParamsPane()
-    {
+    public Pane getParamsPane() {
         return paramsPane;
     }
+
     public void setStage(Stage stage) {
         this.stage = stage;
     }

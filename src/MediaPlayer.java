@@ -65,7 +65,7 @@ public class MediaPlayer implements Runnable {
         } else //if (filename.toLowerCase().endsWith(".mp3") || filename.toLowerCase().endsWith(".ogg"))
         {
 
-            final URL fileurl = new URL("file:///" + filename);
+            final URL fileurl = new URL("file:\\\\\\" + filename);
             final AudioInputStream in = AudioSystem.getAudioInputStream(fileurl);
 
             final AudioFormat baseFormat = in.getFormat();
@@ -232,7 +232,6 @@ public class MediaPlayer implements Runnable {
             }
         };
 
-        if(Settings.volume >= 0.1)
-            new Thread(player).start();
+        new Thread(player).start();
     }
 }
