@@ -93,6 +93,16 @@
         <Label id="quitLabel">Quit</Label>
         <Label id="minimizeLabel">Minimize</Label>
     </account>
+    <email>
+        <Label id="textLabel">An email containing a confirmation code has been sent to the email you provided us - please enter it below</Label>
+        <Label id="emailTextLabel">Email:</Label>
+        <Label id="codeLabel">Code:</Label>
+        <Label id="changeEmailLabel">change email</Label>
+        <Label id="errorTextLabel">The entered code isn't valid - please retry</Label>
+
+        <Button id="submitButton">Submit</Button>
+        <Button id="cancealButton">Cancel</Button>
+    </email>
     <dialogs>
         <userNotFound title="User Not Found">"Please make sure you have the nickname between"</userNotFound>
         <cnxError title="Connection problem">Please check your Internet connection</cnxError>

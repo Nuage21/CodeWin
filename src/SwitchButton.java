@@ -49,7 +49,7 @@ public class SwitchButton extends StackPane {
                     setAlignment(button, Pos.CENTER_RIGHT);
                     state = true;
                 }
-                Settings.volume = 0.7f - Settings.volume;
+                Settings.volumeActivated = !Settings.volumeActivated;
             }
         };
 

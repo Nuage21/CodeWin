@@ -78,7 +78,7 @@
     </stats>
     <about>
         <Label id="aboutusLabel">À Propos</Label>
-        <Label id="text1">Un groupe de 6 étudiants de l'Ecole Nationale Superieure d'Informpatique, ESI, a pour intention de réussir un projet d'étude. Et cela en réalisant cette application qui aide les utilisateurs à apprendre et comprendre le code de la route. </Label>
+        <Label id="text1">Un groupe de 6 étudiants de l'Ecole Nationale Superieure d'Informaatique, ESI, a pour intention de réussir un projet d'étude. Et cela en réalisant cette application qui aide les utilisateurs à apprendre et comprendre le code de la route. </Label>
         <Label id="text2">Notre application CodeWin vous aide à obtenir votre examen du code de la route avec plus de 33 cours et 218 questions, tous bien rédigés et assurés par des moniteurs d'auto école certifiés et à jour selon la mise à jour du code de la route,datant de Avril 2020. </Label>
         <Label id="thisTool">Cet outil est destine a un usage exclusif d'un êtudiant</Label>
         <HyperLink id="githubHLink">Nous Visiter sur Github</HyperLink>
@@ -90,6 +90,18 @@
         <Label id="quitLabel">Quitter</Label>
         <Label id="minimizeLabel">Réduire</Label>
     </account>
+
+    <email>
+        <Label id="textLabel">Un email contenant un code de confirmation vous a été envoye vers l'addresse que vous nous avez fournie:</Label>
+        <Label id="emailTextLabel">Email:</Label>
+        <Label id="codeLabel">Code:</Label>
+        <Label id="changeEmailLabel">changer l'email</Label>
+        <Label id="errorTextLabel">Le code entré est incorrect, veuillez réessayer</Label>
+
+        <Button id="submitButton">S'inscrire</Button>
+        <Button id="cancealButton">Annuler</Button>
+    </email>
+
     <dialogs>
 
         <userNotFound title="Utilisateur Introuvable">"Veuillez vous assurer du pseudo entré"</userNotFound>

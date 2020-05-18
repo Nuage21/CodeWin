@@ -21,6 +21,7 @@ public class LanguageManager {
 
     public static FXMLLoader authenticatorLoader;
     public static FXMLLoader loggedinLoader;
+    public static FXMLLoader emailConfirmLoader;
 
     public static ArrayList<String> installed_languages = new ArrayList<>();
     public static ArrayList<String> installed_languages_folders = new ArrayList<>();

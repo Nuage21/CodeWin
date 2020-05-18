@@ -328,12 +328,14 @@ public class LoggedIn_Controller implements Controller {
                         boolean eval = ctr.evaluateAnswer();
                         this.questionAnswerFound = eval;
                         if (eval) {
-                            MediaPlayer.playAnswerReaction(MediaPlayer.CORRECT_SOUND);
+                            if(Settings.volumeActivated)
+                                MediaPlayer.playAnswerReaction(MediaPlayer.CORRECT_SOUND);
                             ctr.getAnswerPane_controller().setVisible(true);
                             ctr.getNotePane_controller().setVisible(true);
                             this.updateUserPoints(LoggedIn_Controller.getUser().getPoints() + ctr.getQuestion().getPoints(), true);
                         } else {
-                            MediaPlayer.playAnswerReaction(MediaPlayer.WRONG_SOUND);
+                            if(Settings.volumeActivated)
+                                MediaPlayer.playAnswerReaction(MediaPlayer.WRONG_SOUND);
                             ctr.getAnswerPane_controller().setToFalseAnswer();
                             ctr.getAnswerPane_controller().setVisible(true);
                             ctr.getNotePane_controller().setVisible(true);
@@ -904,7 +906,8 @@ public class LoggedIn_Controller implements Controller {
     }
 
     public String __(String s) {
-        return new String(s.getBytes(StandardCharsets.UTF_8));
+        return s;
+//        return new String(s.getBytes(StandardCharsets.UTF_8));
     }
 
     public void setLText(Label l, String s) {

@@ -125,7 +125,7 @@ public class User {
             // String tableQuestions = "CREATE TABLE " + username + " " + "( question text,reponse_1 text DEFAULT NULL,reponse_2 text DEFAULT NULL ,reponse_3 text DEFAULT NULL, reponse_4 text DEFAULT NULL);";
 
             stmt.setString(1, _user.username);
-            stmt.setString(2, _user.password);
+            stmt.setString(2, Hasher.getSHA256_Of(_user.password));
             stmt.setString(3, _user.email);
             stmt.setString(4, _user.firstname);
             stmt.setString(5, _user.lastname);
@@ -151,6 +151,10 @@ public class User {
             closeConnection(conn);
             return false;
         }
+        catch (NoSuchAlgorithmException e) {
+            Debug.debugException(e);
+            return false;
+        }
     }
 
 
@@ -165,7 +169,7 @@ public class User {
             ResultSet rs = null;
             rs = stmt.executeQuery();
             rs.first();
-            if (!rs.getString("password").equals(provided_pwd)) {
+            if (!rs.getString("password").equals(Hasher.getSHA256_Of(provided_pwd))) {
                 Checker.showPwdError();
                 closeConnection(conn);
                 return null;
@@ -176,6 +180,7 @@ public class User {
             user.stats_activity = rs.getString("stats_activity");
             user.pkey = rs.getString("pkey");
             user.signupDate = rs.getDate("sdate");
+            user.points = rs.getInt("points");
 
             closeConnection(conn);
         } catch (SQLException e) {

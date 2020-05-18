@@ -217,6 +217,8 @@ public class Auth_Controller {
                 FXMLLoader loader = new FXMLLoader(getClass().getResource(fxml));
                 if(!Settings.ACTIVE_EMAIL_CONFIRM)
                     LanguageManager.loggedinLoader = loader;
+                else
+                    LanguageManager.emailConfirmLoader = loader;
                 root = loader.load();
                 LanguageManager.resyncLanguage(loader, section);
                 ctr = loader.getController();
@@ -384,6 +386,8 @@ public class Auth_Controller {
                     LanguageManager.loadLangData(Settings.projectPath + "\\lang\\" + l.toLowerCase() + ".xml");
                     Settings.appLang = l.toLowerCase();
                     LanguageManager.resyncLanguage(loader, "authenticator");
+                    if(LanguageManager.emailConfirmLoader != null)
+                        LanguageManager.resyncLanguage(LanguageManager.emailConfirmLoader, "email");
                     LanguageManager.writeLanguages();
                 });
             }

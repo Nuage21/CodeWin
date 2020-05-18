@@ -98,6 +98,19 @@
         <Label id="quitLabel">المغادرة</Label>
         <Label id="minimizeLabel">قلص</Label>
     </account>
+
+    <email>
+        <Label id="textLabel">تم إرسال بريد إلكتروني يحتوي على رمز التأكيد إلى البريد الإلكتروني الذي قدمته إلينا - يرجى إدخاله أدناه</Label>
+        <Label id="emailTextLabel">البريد الإلكتروني:</Label>
+        <Label id="codeLabel">الشفرة:</Label>
+        <Label id="changeEmailLabel">تغيير البريد الالكتروني</Label>
+        <Label id="errorTextLabel">الرمز الذي تم إدخاله غير صالح - يرجى إعادة المحاولة</Label>
+        
+        <Button id="submitButton">إرسال</Button>
+        <Button id="cancealButton">إلغاء</Button>
+
+    </email>
+
     <dialogs>
         <userNotFound title="لمستخد غير موجود">االرجاء التأكد من إدخال اللقب</userNotFound>
         <cnxError title="مشكل في الاتصال">الرجاء التحقق من اتصال الانترنت الخاص بك</cnxError>

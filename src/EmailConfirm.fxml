@@ -26,14 +26,14 @@
          <children>
             <Pane prefHeight="420.0" prefWidth="894.0">
                <children>
-                  <Label alignment="TOP_LEFT" layoutX="15.0" layoutY="41.0" prefHeight="74.0" prefWidth="869.0" text="Un email contenant un code de confirmation vous a ete envoye vers l'addresse que vous nous avez fournie:" wrapText="true">
+                  <Label fx:id="textLabel" alignment="TOP_LEFT" layoutX="15.0" layoutY="41.0" prefHeight="74.0" prefWidth="869.0" text="Un email contenant un code de confirmation vous a ete envoye vers l'addresse que vous nous avez fournie:" wrapText="true">
                      <font>
                         <Font name="Times New Roman" size="23.0" />
                      </font>
                   </Label>
-                  <Pane layoutX="14.0" layoutY="129.0" prefHeight="54.0" prefWidth="869.0" style="-fx-border-color: #ababab;">
+                  <Pane layoutX="14.0" layoutY="129.0" prefHeight="54.0" prefWidth="869.0">
                      <children>
-                        <Label layoutX="8.0" prefHeight="52.0" prefWidth="104.0" text="Email:" underline="true">
+                        <Label fx:id="emailTextLabel" layoutX="8.0" prefHeight="52.0" text="Email:" underline="true">
                            <font>
                               <Font name="Times New Roman" size="24.0" />
                            </font>
@@ -43,7 +43,7 @@
                               <Font name="Times New Roman" size="22.0" />
                            </font>
                         </Label>
-                        <Label fx:id="changeEmailLabel" layoutX="726.0" layoutY="16.0" prefHeight="23.0" prefWidth="129.0" text="Changer d'Email" textFill="#3e68b2" underline="true" wrapText="true">
+                        <Label fx:id="changeEmailLabel" layoutX="726.0" layoutY="16.0" prefHeight="23.0" text="Changer d'Email" textFill="#3e68b2" underline="true" wrapText="true">
                            <font>
                               <Font name="Times New Roman" size="12.0" />
                            </font>
@@ -85,7 +85,7 @@
                               <Font name="Rockwell Bold" size="36.0" />
                            </font>
                         </TextField>
-                        <Label layoutX="8.0" layoutY="20.0" prefHeight="52.0" prefWidth="83.0" text="Code:" underline="true">
+                        <Label fx:id="codeLabel" layoutX="8.0" layoutY="20.0" prefHeight="52.0" text="Code:" underline="true">
                            <font>
                               <Font name="Times New Roman" size="24.0" />
                            </font>
@@ -94,7 +94,7 @@
                   </Pane>
                   <Pane fx:id="errorPane" layoutX="15.0" layoutY="335.0" prefHeight="54.0" prefWidth="869.0" style="-fx-border-color: #ababab; -fx-border-width: 0 0 1 0;">
                      <children>
-                        <Label layoutX="65.0" layoutY="1.0" prefHeight="52.0" prefWidth="620.0" text="Le code entre est incorrect, veuillez reessayer" textFill="#ff4d4d">
+                        <Label fx:id="errorTextLabel" layoutX="65.0" layoutY="1.0" prefHeight="52.0" text="Le code entre est incorrect, veuillez reessayer" textFill="#ff4d4d">
                            <font>
                               <Font name="Times New Roman" size="16.0" />
                            </font>
