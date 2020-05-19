@@ -6,7 +6,7 @@ public class Settings {
     public static boolean FULLSCREEN_MODE = true; // set to false if you have problems with FULLSCREEN on your device
     public static boolean ACTIVE_DB_MODE = true; // is DB activated
     public static boolean ACTIVE_EMAIL_CONFIRM = true; // if true confirmation email will be sent
-    public static boolean DEBUG_MODE = true; // debug if true (Show Exception traces etc)
+    public static boolean DEBUG_MODE = false; // debug if true (Show Exception traces etc)
     public static boolean SKIP_AUTHENTICATION = false; // skip authentication
 
     public static Stage appStage;
