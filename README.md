@@ -1,7 +1,7 @@
 # CodeWin
 
 CodeWin is an e-learning desktop app written in Java(FX), Python and MySQL.
-Courses are represented by a hierarchy of JSON files holding courses and questions presented with a specific (CodeWin's) Markdown syntax.
+Courses and Questions are represented by a hierarchy of JSON files and are presented inside by a specific (CodeWin's) Markdown syntax.
 
 CodeWin provides **The Rules of The Road** in *english* and *french* as a default course. 
 
