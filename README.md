@@ -5,7 +5,7 @@ Courses are represented by a hierarchy of JSON files holding courses and questio
 
 CodeWin provides **The Rules of The Road** in *english* and *french* as a default course. 
 
-![Irman-Translator Image](./codewin.png?raw=true "CodeWin Desktop")
+![CodeWin Desktop](./codewin.png?raw=true "CodeWin Desktop")
 
 # Contributors
 
